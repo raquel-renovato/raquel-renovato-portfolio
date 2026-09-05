@@ -7,13 +7,13 @@ const projects = [
       'Concepção de interface web e mobile com foco em usabilidade, componentes interativos e estrutura responsiva no Figma.',
     tags: ['Figma', 'UI Design', 'Responsivo'],
     main: {
-      src: 'https://placehold.co/1000x600/E5E5E5/14213D?text=Fernando+Amaral+—+Tela+Principal',
-      alt: 'Tela principal da landing page de Fernando Amaral',
+      src: '/img/img-fernando/fernando-cover1.png',
+      alt: 'Mockup da landing page de Fernando Amaral em laptop',
     },
     thumbs: [
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Desktop', alt: 'Versão desktop da landing page de Fernando Amaral' },
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Mobile', alt: 'Versão mobile da landing page de Fernando Amaral' },
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Componentes', alt: 'Componentes de UI da landing page de Fernando Amaral' },
+      { src: '/img/img-fernando/fernando-cover2.png', alt: 'Mockup da landing page de Fernando Amaral — variação 2' },
+      { src: '/img/img-fernando/fernando-cover3.png', alt: 'Mockup da landing page de Fernando Amaral — variação 3' },
+      { src: '/img/img-fernando/fernando-cover4.png', alt: 'Mockup da landing page de Fernando Amaral — variação 4' },
     ],
   },
   {
@@ -122,7 +122,7 @@ function ProjectGallery({ project, order }) {
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-brand-light">
+    <section id="portfolio" className="bg-[#EBEBEB] border-t border-brand-line">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 sm:py-20 lg:py-24">
 
         <div className="text-center mb-14 sm:mb-20">
