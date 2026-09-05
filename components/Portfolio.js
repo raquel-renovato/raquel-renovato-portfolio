@@ -58,14 +58,10 @@ const projects = [
       'Criação de conteúdo visual para redes sociais garantindo consistência de identidade de marca com rigor técnico em composição, tipografia e cores.',
     tags: ['Social Media', 'Identidade', 'Tipografia'],
     main: {
-      src: 'https://placehold.co/1000x600/E5E5E5/14213D?text=Braduca+—+Feed',
-      alt: 'Feed de redes sociais criado para Braduca',
+      src: '/img/img-braduca/braduca-cover.png',
+      alt: 'Mockup de posts e stories criados para a Braduca',
     },
-    thumbs: [
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Post+1', alt: 'Post 1 das redes sociais de Braduca' },
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Post+2', alt: 'Post 2 das redes sociais de Braduca' },
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Stories', alt: 'Stories das redes sociais de Braduca' },
-    ],
+    thumbs: [],
   },
   {
     id: 'aymee-ferraz',
@@ -106,18 +102,20 @@ function ProjectText({ project, order }) {
 function ProjectGallery({ project, order }) {
   return (
     <div className={`lg:col-span-8 ${order}`}>
-      <div className="gallery-img rounded-xl border border-brand-line mb-3">
+      <div className={`gallery-img rounded-xl border border-brand-line ${project.thumbs.length > 0 ? 'mb-3' : ''}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={project.main.src} alt={project.main.alt} className="w-full aspect-video object-cover" />
       </div>
-      <div className="grid grid-cols-3 gap-3">
-        {project.thumbs.map((thumb) => (
-          <div key={thumb.src} className="gallery-img rounded-lg border border-brand-line">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={thumb.src} alt={thumb.alt} className="w-full h-28 sm:h-32 object-cover" />
-          </div>
-        ))}
-      </div>
+      {project.thumbs.length > 0 && (
+        <div className="grid grid-cols-3 gap-3">
+          {project.thumbs.map((thumb) => (
+            <div key={thumb.src} className="gallery-img rounded-lg border border-brand-line">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={thumb.src} alt={thumb.alt} className="w-full h-28 sm:h-32 object-cover" />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
