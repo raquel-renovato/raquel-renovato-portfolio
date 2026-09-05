@@ -8,7 +8,7 @@ const checklist = [
 export default function About() {
   return (
     <section id="sobre" className="bg-brand-white">
-      <div className="max-w-3xl mx-auto px-6 md:px-10 py-16 sm:py-20 lg:py-24">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 sm:py-20 lg:py-24">
 
         <h2 className="text-brand-dark text-3xl sm:text-4xl font-extrabold tracking-tight mb-6 text-center">Sobre Mim</h2>
         <p className="text-brand-dark/60 leading-relaxed mb-8">
@@ -26,6 +26,11 @@ export default function About() {
             </li>
           ))}
         </ul>
+
+      </div>
+    </section>
+  );
+}
 
       </div>
     </section>
