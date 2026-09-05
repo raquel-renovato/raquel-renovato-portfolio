@@ -120,9 +120,9 @@ function ProjectGallery({ project, order }) {
 
 function GalleryCard({ item }) {
   const inner = (
-    <div className="relative gallery-img rounded-xl border border-brand-line overflow-hidden aspect-square">
+    <div className="relative gallery-img rounded-xl border border-brand-line overflow-hidden bg-brand-white">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+      <img src={item.src} alt={item.alt} className="w-full h-auto block" />
 
       {item.video && (
         <div className="absolute inset-0 flex items-center justify-center bg-brand-dark/25">
@@ -131,10 +131,6 @@ function GalleryCard({ item }) {
           </span>
         </div>
       )}
-
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent p-3">
-        <span className="text-brand-white text-xs font-semibold">{item.label}</span>
-      </div>
     </div>
   );
 
@@ -149,7 +145,7 @@ function GalleryCard({ item }) {
 
 function FlexGallery({ project, order }) {
   return (
-    <div className={`lg:col-span-8 flex flex-wrap justify-center gap-3 ${order}`}>
+    <div className={`lg:col-span-8 flex flex-wrap justify-center items-start gap-3 ${order}`}>
       {project.gallery.map((item) => (
         <GalleryCard key={item.label} item={item} />
       ))}
