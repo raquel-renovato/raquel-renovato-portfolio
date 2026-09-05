@@ -129,7 +129,7 @@ function ProjectGallery({ project, order }) {
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-[#EBEBEB] border-t border-brand-line">
+    <section id="portfolio" className="bg-[#F5F5F5] border-t border-brand-line">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 sm:py-20 lg:py-24">
 
         <div className="text-center mb-14 sm:mb-20">
