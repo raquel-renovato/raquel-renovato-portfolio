@@ -27,7 +27,7 @@ export default function Hero() {
             <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-2xl border-4 border-brand-gold overflow-hidden bg-brand-light">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://placehold.co/500x500/F4F4F2/14213D?text=Raquel+Renovato"
+               src="/img/img-perfil/foto-perfil.jpeg"
                 alt="Foto de perfil de Raquel Renovato"
                 className="w-full h-full object-cover"
               />
