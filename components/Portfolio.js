@@ -71,13 +71,13 @@ const projects = [
       'Criação de conteúdo visual para redes sociais garantindo consistência de identidade de marca com rigor técnico em composição, tipografia e cores.',
     tags: ['Social Media', 'Identidade', 'Tipografia'],
     main: {
-      src: 'https://placehold.co/1000x600/E5E5E5/14213D?text=Aymée+Ferraz+—+Feed',
-      alt: 'Feed de redes sociais criado para Aymée Ferraz',
+      src: '/img/img-aymee/aymee-cover1.png',
+      alt: 'Mockup principal de posts criados para Aymée Ferraz',
     },
     thumbs: [
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Post+1', alt: 'Post 1 das redes sociais de Aymée Ferraz' },
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Post+2', alt: 'Post 2 das redes sociais de Aymée Ferraz' },
-      { src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Stories', alt: 'Stories das redes sociais de Aymée Ferraz' },
+      { src: '/img/img-aymee/aymee-cover2.png', alt: 'Mockup de posts criados para Aymée Ferraz — variação 2' },
+      { src: '/img/img-aymee/aymee-cover3.png', alt: 'Mockup de posts criados para Aymée Ferraz — variação 3' },
+      { src: '/img/img-aymee/aymee-cover4.png', alt: 'Mockup de posts criados para Aymée Ferraz — variação 4' },
     ],
   },
 ];
