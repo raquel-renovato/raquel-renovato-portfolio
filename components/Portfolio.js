@@ -23,35 +23,15 @@ const projects = [
     description:
       'Planejamento de ecossistemas visuais para comunicação interna, e-books, apresentações e e-mail marketing. Aplicação de IA Generativa e LLMs para otimização de workflow e microcopy.',
     tags: ['Branding', 'Editorial', 'IA Generativa'],
-    bento: [
-      {
-        label: 'Apresentação Estratégica',
-        src: 'https://placehold.co/700x700/E5E5E5/14213D?text=Apresentação',
-        alt: 'Apresentação estratégica criada para a Voit Consultoria',
-        large: true,
-      },
-      {
-        label: 'E-book',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=E-book',
-        alt: 'E-book criado para a Voit Consultoria',
-      },
-      {
-        label: 'E-mail Marketing',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=E-mail',
-        alt: 'Peça de e-mail marketing criada para a Voit Consultoria',
-      },
-      {
-        label: 'Redes Sociais',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Redes+Sociais',
-        alt: 'Conteúdo de redes sociais criado para a Voit Consultoria',
-      },
-      {
-        label: 'Vídeo',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Vídeo',
-        alt: 'Vídeo institucional criado para a Voit Consultoria',
-        video: true,
-        href: '#',
-      },
+    main: {
+      src: '/img/img-voit/voit-cover1.png',
+      alt: 'Apresentação estratégica criada para a Voit Consultoria',
+    },
+    thumbs: [
+      { src: '/img/img-voit/voit-cover2.png', alt: 'Mockup de redes sociais criado para a Voit Consultoria' },
+      { src: '/img/img-voit/ads-cover.png', alt: 'Anúncios criados para a Voit Consultoria' },
+      { src: '/img/img-voit/emailmkt-cover.png', alt: 'Peça de e-mail marketing criada para a Voit Consultoria' },
+      { src: '/img/img-voit/Blog-cover.png', alt: 'Conteúdo de blog criado para a Voit Consultoria' },
     ],
   },
   {
@@ -120,7 +100,13 @@ function ProjectText({ project, order }) {
   );
 }
 
+const THUMB_COLS = {
+  3: 'sm:grid-cols-3',
+  4: 'sm:grid-cols-4',
+};
+
 function ProjectGallery({ project, order }) {
+  const colsClass = THUMB_COLS[project.thumbs.length] || 'sm:grid-cols-3';
   return (
     <div className={`lg:col-span-8 ${order}`}>
       <div className={`gallery-img rounded-xl border border-brand-line ${project.thumbs.length > 0 ? 'mb-3' : ''}`}>
@@ -128,7 +114,7 @@ function ProjectGallery({ project, order }) {
         <img src={project.main.src} alt={project.main.alt} className="w-full aspect-video object-cover" />
       </div>
       {project.thumbs.length > 0 && (
-        <div className="grid grid-cols-3 gap-3">
+        <div className={`grid grid-cols-2 ${colsClass} gap-3`}>
           {project.thumbs.map((thumb) => (
             <div key={thumb.src} className="gallery-img rounded-lg border border-brand-line">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -137,50 +123,6 @@ function ProjectGallery({ project, order }) {
           ))}
         </div>
       )}
-    </div>
-  );
-}
-
-function BentoCard({ item, spanClass = '' }) {
-  const inner = (
-    <div className={`relative gallery-img rounded-xl border border-brand-line overflow-hidden h-40 sm:h-full ${spanClass}`}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
-
-      {item.video && (
-        <div className="absolute inset-0 flex items-center justify-center bg-brand-dark/25">
-          <span className="w-11 h-11 rounded-full bg-brand-white/90 flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#14213D"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-        </div>
-      )}
-
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent p-3">
-        <span className="text-brand-white text-xs font-semibold">{item.label}</span>
-      </div>
-    </div>
-  );
-
-  if (item.href) {
-    return (
-      <a href={item.href} target="_blank" rel="noopener noreferrer" className={spanClass}>
-        {inner}
-      </a>
-    );
-  }
-  return inner;
-}
-
-function BentoGallery({ project, order }) {
-  const large = project.bento.find((i) => i.large);
-  const small = project.bento.filter((i) => !i.large);
-
-  return (
-    <div className={`lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-3 ${order}`}>
-      <BentoCard item={large} spanClass="sm:col-span-1 sm:row-span-2" />
-      {small.map((item) => (
-        <BentoCard key={item.label} item={item} />
-      ))}
     </div>
   );
 }
@@ -198,18 +140,17 @@ export default function Portfolio() {
         <div className="space-y-20 sm:space-y-28">
           {projects.map((project, index) => {
             const imageFirst = index % 2 === 1;
-            const Gallery = project.bento ? BentoGallery : ProjectGallery;
             return (
               <article key={project.id} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                 {imageFirst ? (
                   <>
-                    <Gallery project={project} order="lg:order-1" />
+                    <ProjectGallery project={project} order="lg:order-1" />
                     <ProjectText project={project} order="lg:order-2" />
                   </>
                 ) : (
                   <>
                     <ProjectText project={project} order="" />
-                    <Gallery project={project} order="" />
+                    <ProjectGallery project={project} order="" />
                   </>
                 )}
               </article>
