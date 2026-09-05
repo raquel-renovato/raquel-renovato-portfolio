@@ -23,3 +23,11 @@ export default function About() {
                 <path d="M8 12.5l2.5 2.5L16 9.5" stroke="#14213D" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               {item}
+            </li>
+          ))}
+        </ul>
+
+      </div>
+    </section>
+  );
+}
