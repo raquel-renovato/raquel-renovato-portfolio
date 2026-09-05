@@ -41,13 +41,13 @@ const projects = [
       'Desenvolvimento de apresentações visuais focadas em transformar dados e conceitos complexos em interfaces simples, intuitivas e de fácil absorção.',
     tags: ['Data Viz', 'Apresentações', 'Infográficos'],
     main: {
-      src: '/img/img-renata/renata-cover-1.png',
+      src: '/img/img-renata/renata-cover-2.png',
       alt: 'Slide de capa da apresentação de Renata Brandão',
     },
     thumbs: [
-      { src: '/img/img-renata/renata-cover-2.png', alt: 'Slide da apresentação de Renata Brandão — variação 2' },
       { src: '/img/img-renata/renata-cover-3.png', alt: 'Slide da apresentação de Renata Brandão — variação 3' },
       { src: '/img/img-renata/renata-cover-4.png', alt: 'Slide da apresentação de Renata Brandão — variação 4' },
+      { src: '/img/img-renata/renata-cover-1.png', alt: 'Slide da apresentação de Renata Brandão — variação 1' },
     ],
   },
   {
@@ -114,7 +114,7 @@ function ProjectGallery({ project, order }) {
         {project.thumbs.map((thumb) => (
           <div key={thumb.src} className="gallery-img rounded-lg border border-brand-line">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={thumb.src} alt={thumb.alt} className="w-full aspect-square object-cover" />
+            <img src={thumb.src} alt={thumb.alt} className="w-full h-28 sm:h-32 object-cover" />
           </div>
         ))}
       </div>
