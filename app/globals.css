@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #14213D;
+}
+
+::selection {
+  background-color: #FCA311;
+  color: #14213D;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #FCA311;
+  outline-offset: 3px;
+}
+
+.underline-grow {
+  background-image: linear-gradient(#FCA311, #FCA311);
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease;
+}
+.underline-grow:hover,
+.underline-grow:focus-visible {
+  background-size: 100% 2px;
+}
+
+.gallery-img {
+  overflow: hidden;
+}
+.gallery-img img {
+  transition: transform 0.4s ease;
+}
+.gallery-img:hover img,
+.gallery-img:focus-within img {
+  transform: scale(1.04);
+}
