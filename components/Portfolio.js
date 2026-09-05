@@ -23,35 +23,12 @@ const projects = [
     description:
       'Planejamento de ecossistemas visuais para comunicação interna, e-books, apresentações e e-mail marketing. Aplicação de IA Generativa e LLMs para otimização de workflow e microcopy.',
     tags: ['Branding', 'Editorial', 'IA Generativa'],
-    bento: [
-      {
-        label: 'Apresentação Estratégica',
-        src: 'https://placehold.co/700x700/E5E5E5/14213D?text=Apresentação',
-        alt: 'Apresentação estratégica criada para a Voit Consultoria',
-        large: true,
-      },
-      {
-        label: 'E-book',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=E-book',
-        alt: 'E-book criado para a Voit Consultoria',
-      },
-      {
-        label: 'E-mail Marketing',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=E-mail',
-        alt: 'Peça de e-mail marketing criada para a Voit Consultoria',
-      },
-      {
-        label: 'Redes Sociais',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Redes+Sociais',
-        alt: 'Conteúdo de redes sociais criado para a Voit Consultoria',
-      },
-      {
-        label: 'Vídeo',
-        src: 'https://placehold.co/400x400/E5E5E5/14213D?text=Vídeo',
-        alt: 'Vídeo institucional criado para a Voit Consultoria',
-        video: true,
-        href: '#',
-      },
+    gallery: [
+      { label: 'Apresentação Estratégica', src: '/img/img-voit/voit-cover1.png', alt: 'Apresentação estratégica criada para a Voit Consultoria' },
+      { label: 'Redes Sociais', src: '/img/img-voit/voit-cover2.png', alt: 'Mockup de redes sociais criado para a Voit Consultoria' },
+      { label: 'Anúncios & Mídia Paga', src: '/img/img-voit/ads-cover.png', alt: 'Anúncios criados para a Voit Consultoria' },
+      { label: 'E-mail Marketing', src: '/img/img-voit/emailmkt-cover.png', alt: 'Peça de e-mail marketing criada para a Voit Consultoria' },
+      { label: 'Blog & Conteúdo Institucional', src: '/img/img-voit/Blog-cover.png', alt: 'Conteúdo de blog criado para a Voit Consultoria' },
     ],
   },
   {
@@ -141,9 +118,9 @@ function ProjectGallery({ project, order }) {
   );
 }
 
-function BentoCard({ item, spanClass = '' }) {
+function GalleryCard({ item }) {
   const inner = (
-    <div className={`relative gallery-img rounded-xl border border-brand-line overflow-hidden h-40 sm:h-full ${spanClass}`}>
+    <div className="relative gallery-img rounded-xl border border-brand-line overflow-hidden aspect-square">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
 
@@ -161,25 +138,20 @@ function BentoCard({ item, spanClass = '' }) {
     </div>
   );
 
-  if (item.href) {
-    return (
-      <a href={item.href} target="_blank" rel="noopener noreferrer" className={spanClass}>
-        {inner}
-      </a>
-    );
-  }
-  return inner;
+  return item.href ? (
+    <a href={item.href} target="_blank" rel="noopener noreferrer" className="w-[47%] sm:w-[31%]">
+      {inner}
+    </a>
+  ) : (
+    <div className="w-[47%] sm:w-[31%]">{inner}</div>
+  );
 }
 
-function BentoGallery({ project, order }) {
-  const large = project.bento.find((i) => i.large);
-  const small = project.bento.filter((i) => !i.large);
-
+function FlexGallery({ project, order }) {
   return (
-    <div className={`lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 sm:grid-rows-2 gap-3 ${order}`}>
-      <BentoCard item={large} spanClass="sm:col-span-1 sm:row-span-2" />
-      {small.map((item) => (
-        <BentoCard key={item.label} item={item} />
+    <div className={`lg:col-span-8 flex flex-wrap justify-center gap-3 ${order}`}>
+      {project.gallery.map((item) => (
+        <GalleryCard key={item.label} item={item} />
       ))}
     </div>
   );
@@ -198,7 +170,7 @@ export default function Portfolio() {
         <div className="space-y-20 sm:space-y-28">
           {projects.map((project, index) => {
             const imageFirst = index % 2 === 1;
-            const Gallery = project.bento ? BentoGallery : ProjectGallery;
+            const Gallery = project.gallery ? FlexGallery : ProjectGallery;
             return (
               <article key={project.id} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                 {imageFirst ? (
