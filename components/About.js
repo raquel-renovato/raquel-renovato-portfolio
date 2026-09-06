@@ -11,7 +11,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 sm:py-20 lg:py-24">
 
         <h2 className="text-brand-dark text-3xl sm:text-4xl font-extrabold tracking-tight mb-6 text-center">Sobre Mim</h2>
-        <p className="text-brand-dark/60 leading-relaxed mb-8">
+        <p className="text-brand-dark/60 leading-relaxed mb-8 max-w-3xl mx-auto text-justify">
           Designer Gráfica formada pela Estácio, especialização em andamento na área de UI/UX Design e com 3 anos de atuação no mercado. Atuo de forma completa no desenvolvimento de interfaces visuais, arquitetura de informação, design on e off-line e gestão de redes sociais. Tenho experiência na criação de conteúdo, e-mail marketing, fluxos de nutrição no Leadlovers, e-books e ações de endomarketing, além da produção de apresentações e treinamentos. Domínio do Figma, Pacote Adobe e uso prático de IA Generativa para otimização de workflow.
         </p>
 
