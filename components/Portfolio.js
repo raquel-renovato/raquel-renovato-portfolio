@@ -14,6 +14,7 @@ const projects = [
       'Redesign Visual',
       'Componentização',
     ],
+    prototypeUrl: 'https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=Lz7Rns0SJLBiFZ9N-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912',
     main: {
       src: '/img/img-fernando/fernando-cover1.png',
       alt: 'Mockup da landing page de Fernando Amaral em laptop',
@@ -108,13 +109,26 @@ function ProjectText({ project, order }) {
       <span className="inline-block text-xs font-semibold text-brand-gold mb-3">{project.category}</span>
       <h3 className="text-brand-dark text-2xl font-extrabold tracking-tight mb-4">{project.title}</h3>
       <p className="text-brand-dark/60 text-sm leading-relaxed mb-5">{project.description}</p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mb-5">
         {project.tags.map((tag) => (
           <span key={tag} className="text-xs border border-brand-line rounded-full px-3 py-1 text-brand-dark/70">
             {tag}
           </span>
         ))}
       </div>
+      {project.prototypeUrl && (
+        
+          href={project.prototypeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark underline-grow pb-1"
+        >
+          Ver Protótipo
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+      )}
     </div>
   );
 }
