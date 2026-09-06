@@ -19,10 +19,21 @@ const projects = [
   {
     id: 'voit-consultoria',
     category: 'Design Corporativo & Workflow com IA',
-    title: 'Comunicação Visual & Design Corporativo — Voit Consultoria',
+    title: 'Social Media, Copywriting & Design — Voit Consultoria',
     description:
-      'Planejamento de ecossistemas visuais para comunicação interna, e-books, apresentações e e-mail marketing. Aplicação de IA Generativa e LLMs para otimização de workflow e microcopy.',
-    tags: ['Branding', 'Editorial', 'IA Generativa'],
+      'Atuação no gerenciamento de redes sociais, criativos ads, endomarketing, criação de conteúdo e produção gráfica/audiovisual. Concepção ponta a ponta de e-books, e-mail marketing, apresentações e edição de vídeos no CapCut, do roteiro ao layout final, utilizando IA Generativa para otimização de workflow e copywriting.',
+    tags: [
+      'Figma',
+      'Pacote Adobe',
+      'Canva',
+      'Leadlovers',
+      'Fluxo de Nutrição de Lead',
+      'Meta Business',
+      'CapCut',
+      'Copywriting',
+      'Endomarketing',
+      'IA Generativa',
+    ],
     main: {
       src: '/img/img-voit/voit-cover1.png',
       alt: 'Apresentação estratégica criada para a Voit Consultoria',
