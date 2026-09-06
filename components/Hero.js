@@ -5,12 +5,8 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
 
           <div>
-            <span className="inline-flex items-center rounded-full bg-brand-gold/15 text-brand-dark text-xs sm:text-sm font-semibold px-4 py-1.5 mb-6 border border-brand-gold/30">
-              Design Gráfico • Criação de Conteúdo • Redes Sociais • UI Design
-            </span>
-
             <h1 className="text-brand-dark text-3xl sm:text-4xl lg:text-5xl leading-[1.15] font-extrabold tracking-tight max-w-xl mb-8">
-              Transformando conceitos complexos em interfaces simples, intuitivas e funcionais.
+              Design Gráfico • Criação de Conteúdo • Redes Sociais • UI Design
             </h1>
 
             <div className="flex flex-wrap items-center gap-4">
