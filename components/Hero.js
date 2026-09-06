@@ -6,7 +6,7 @@ export default function Hero() {
 
           <div>
             <span className="inline-flex items-center rounded-full bg-brand-gold/15 text-brand-dark text-xs sm:text-sm font-semibold px-4 py-1.5 mb-6 border border-brand-gold/30">
-              Designer de Comunicação Visual & UI/UX
+              Design Gráfico • Criação de Conteúdo • Redes Sociais • UI Design
             </span>
 
             <h1 className="text-brand-dark text-3xl sm:text-4xl lg:text-5xl leading-[1.15] font-extrabold tracking-tight max-w-xl mb-8">
@@ -27,7 +27,7 @@ export default function Hero() {
             <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-2xl border-4 border-brand-gold overflow-hidden bg-brand-light">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-               src="/img/img-perfil/foto-perfil.jpeg"
+                src="/img/img-perfil/foto-perfil.jpeg"
                 alt="Foto de perfil de Raquel Renovato"
                 className="w-full h-full object-cover"
               />
