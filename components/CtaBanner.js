@@ -9,18 +9,10 @@ export default function CtaBanner() {
           Entre em contato para conversarmos sobre novos projetos e parcerias.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          
-            href="https://wa.me/5562985666229"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-brand-dark text-brand-white font-semibold px-6 py-3 text-sm hover:opacity-90 transition"
-          >
+          <a href="https://wa.me/5562985666229" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full bg-brand-dark text-brand-white font-semibold px-6 py-3 text-sm hover:opacity-90 transition">
             Falar no WhatsApp
           </a>
-          
-            href="mailto:raquel.renovato.design@gmail.com"
-            className="inline-flex items-center rounded-full border border-brand-dark text-brand-dark px-6 py-3 text-sm hover:bg-brand-dark hover:text-brand-white transition-colors"
-          >
+          <a href="mailto:raquel.renovato.design@gmail.com" className="inline-flex items-center rounded-full border border-brand-dark text-brand-dark px-6 py-3 text-sm hover:bg-brand-dark hover:text-brand-white transition-colors">
             Enviar E-mail
           </a>
         </div>
