@@ -5,20 +5,9 @@ const projects = [
     title: 'Redesign de Landing Page & UI Design — Fernando Amaral',
     description:
       'Design de interface e prototipagem no Figma para a landing page do Fernando Amaral. Organização da hierarquia e ordem das informações, redefinição da paleta de cores e atualização do layout, além de pequenas revisões de texto e inclusão de seção de logos. Construção de microinterações, como variantes de hover, estados de botões e animações de scroll.',
-    tags: [
-      'Figma',
-      'UI/UX Design',
-      'Redesign',
-      'Prototipagem Interativa',
-      'Landing Page',
-      'Redesign Visual',
-      'Componentização',
-    ],
+    tags: ['Figma', 'UI/UX Design', 'Redesign', 'Prototipagem Interativa', 'Landing Page', 'Redesign Visual', 'Componentização'],
     prototypeUrl: 'https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=Lz7Rns0SJLBiFZ9N-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912',
-    main: {
-      src: '/img/img-fernando/fernando-cover1.png',
-      alt: 'Mockup da landing page de Fernando Amaral em laptop',
-    },
+    main: { src: '/img/img-fernando/fernando-cover1.png', alt: 'Mockup da landing page de Fernando Amaral em laptop' },
     thumbs: [
       { src: '/img/img-fernando/fernando-cover2.png', alt: 'Mockup da landing page de Fernando Amaral — variação 2' },
       { src: '/img/img-fernando/fernando-cover3.png', alt: 'Mockup da landing page de Fernando Amaral — variação 3' },
@@ -31,22 +20,8 @@ const projects = [
     title: 'Social Media, Copywriting & Design — Voit Consultoria',
     description:
       'Atuação no gerenciamento de redes sociais, criativos ads, endomarketing, criação de conteúdo e produção gráfica/audiovisual. Concepção ponta a ponta de e-books, e-mail marketing, apresentações e edição de vídeos no CapCut, do roteiro ao layout final, utilizando IA Generativa para otimização de workflow e copywriting.',
-    tags: [
-      'Figma',
-      'Pacote Adobe',
-      'Canva',
-      'Leadlovers',
-      'Fluxo de Nutrição de Lead',
-      'Meta Business',
-      'CapCut',
-      'Copywriting',
-      'Endomarketing',
-      'IA Generativa',
-    ],
-    main: {
-      src: '/img/img-voit/voit-cover1.png',
-      alt: 'Apresentação estratégica criada para a Voit Consultoria',
-    },
+    tags: ['Figma', 'Pacote Adobe', 'Canva', 'Leadlovers', 'Fluxo de Nutrição de Lead', 'Meta Business', 'CapCut', 'Copywriting', 'Endomarketing', 'IA Generativa'],
+    main: { src: '/img/img-voit/voit-cover1.png', alt: 'Apresentação estratégica criada para a Voit Consultoria' },
     thumbs: [
       { src: '/img/img-voit/voit-cover2.png', alt: 'Mockup de redes sociais criado para a Voit Consultoria' },
       { src: '/img/img-voit/ads-cover.png', alt: 'Anúncios criados para a Voit Consultoria' },
@@ -61,10 +36,7 @@ const projects = [
     description:
       'Criação do conteúdo e design de apresentações e materiais de treinamento no Canva. Transformação de relatórios, dados e conteúdos educativos em slides visuais, claros e fáceis de entender, do texto ao layout final, com design e diagramação completa dos slides.',
     tags: ['Canva', 'Apresentações', 'Treinamentos', 'Redação de Conteúdo', 'Copywriting'],
-    main: {
-      src: '/img/img-renata/renata-cover-2.png',
-      alt: 'Slide de capa da apresentação de Renata Brandão',
-    },
+    main: { src: '/img/img-renata/renata-cover-2.png', alt: 'Slide de capa da apresentação de Renata Brandão' },
     thumbs: [
       { src: '/img/img-renata/renata-cover-3.png', alt: 'Slide da apresentação de Renata Brandão — variação 3' },
       { src: '/img/img-renata/renata-cover-4.png', alt: 'Slide da apresentação de Renata Brandão — variação 4' },
@@ -78,10 +50,7 @@ const projects = [
     description:
       'Criação e diagramação de posts para publicação nas redes sociais, mantendo a consistência, o padrão visual e o alinhamento com a identidade de marca da Somos Braduca.',
     tags: ['Social Media', 'Design Gráfico', 'Identidade Visual', 'Canva', 'Pacote Adobe'],
-    main: {
-      src: '/img/img-braduca/braduca-cover.png',
-      alt: 'Mockup de posts e stories criados para a Braduca',
-    },
+    main: { src: '/img/img-braduca/braduca-cover.png', alt: 'Mockup de posts e stories criados para a Braduca' },
     thumbs: [],
   },
   {
@@ -91,10 +60,7 @@ const projects = [
     description:
       'Criação e diagramação de posts para publicação nas redes sociais, mantendo a consistência, o padrão visual e o alinhamento com a identidade de marca da Aymée.',
     tags: ['Social Media', 'Design Gráfico', 'Pacote Adobe'],
-    main: {
-      src: '/img/img-aymee/aymee-cover1.png',
-      alt: 'Mockup principal de posts criados para Aymée Ferraz',
-    },
+    main: { src: '/img/img-aymee/aymee-cover1.png', alt: 'Mockup principal de posts criados para Aymée Ferraz' },
     thumbs: [
       { src: '/img/img-aymee/aymee-cover2.png', alt: 'Mockup de posts criados para Aymée Ferraz — variação 2' },
       { src: '/img/img-aymee/aymee-cover3.png', alt: 'Mockup de posts criados para Aymée Ferraz — variação 3' },
@@ -111,51 +77,37 @@ function ProjectText({ project, order }) {
       <p className="text-brand-dark/60 text-sm leading-relaxed mb-5">{project.description}</p>
       <div className="flex flex-wrap gap-2 mb-5">
         {project.tags.map((tag) => (
-          <span key={tag} className="text-xs border border-brand-line rounded-full px-3 py-1 text-brand-dark/70">
-            {tag}
-          </span>
+          <span key={tag} className="text-xs border border-brand-line rounded-full px-3 py-1 text-brand-dark/70">{tag}</span>
         ))}
       </div>
-      {project.prototypeUrl && (
-        
-          href={project.prototypeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark underline-grow pb-1"
-        >
+      {project.prototypeUrl ? (
+        <a href={project.prototypeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark underline-grow pb-1">
           Ver Protótipo
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </a>
-      )}
+      ) : null}
     </div>
   );
 }
 
-const THUMB_COLS = {
-  3: 'sm:grid-cols-3',
-  4: 'sm:grid-cols-4',
-};
+const THUMB_COLS = { 3: 'sm:grid-cols-3', 4: 'sm:grid-cols-4' };
 
 function ProjectGallery({ project, order }) {
   const colsClass = THUMB_COLS[project.thumbs.length] || 'sm:grid-cols-3';
   return (
     <div className={`lg:col-span-8 ${order}`}>
       <div className={`gallery-img rounded-xl border border-brand-line ${project.thumbs.length > 0 ? 'mb-3' : ''}`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={project.main.src} alt={project.main.alt} className="w-full aspect-video object-cover" />
       </div>
-      {project.thumbs.length > 0 && (
+      {project.thumbs.length > 0 ? (
         <div className={`grid grid-cols-2 ${colsClass} gap-3`}>
           {project.thumbs.map((thumb) => (
             <div key={thumb.src} className="gallery-img rounded-lg border border-brand-line">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={thumb.src} alt={thumb.alt} className="w-full h-28 sm:h-32 object-cover" />
             </div>
           ))}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -164,12 +116,10 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="bg-[#F5F5F5] border-t border-brand-line">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 sm:py-20 lg:py-24">
-
         <div className="text-center mb-14 sm:mb-20">
           <h2 className="text-brand-dark text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Projetos em Destaque</h2>
           <p className="text-brand-dark/60 max-w-md mx-auto">Um panorama visual do processo, das telas e das aplicações de cada trabalho.</p>
         </div>
-
         <div className="space-y-20 sm:space-y-28">
           {projects.map((project, index) => {
             const imageFirst = index % 2 === 1;
@@ -190,7 +140,6 @@ export default function Portfolio() {
             );
           })}
         </div>
-
         <div className="text-center mt-16 sm:mt-20">
           <a href="#" className="inline-flex items-center rounded-full border border-brand-dark text-brand-dark px-7 py-3 text-sm hover:bg-brand-dark hover:text-brand-white transition-colors">
             Ver Todos os Projetos
