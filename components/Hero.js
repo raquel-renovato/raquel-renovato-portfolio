@@ -5,8 +5,14 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
 
           <div>
-            <h1 className="text-brand-dark text-3xl sm:text-4xl lg:text-5xl leading-[1.15] font-extrabold tracking-tight max-w-xl mb-8">
-              Design Gráfico • Criação de Conteúdo • Redes Sociais • UI Design
+            <h1 className="text-left text-brand-dark text-3xl sm:text-4xl lg:text-5xl leading-[1.15] font-extrabold tracking-tight max-w-xl mb-8">
+              UI Design
+              <br />
+              Design Gráfico
+              <br />
+              Criação de Conteúdo
+              <br />
+              Redes Sociais
             </h1>
 
             <div className="flex flex-wrap items-center gap-4">
