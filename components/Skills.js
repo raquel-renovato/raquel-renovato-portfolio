@@ -1,7 +1,7 @@
 const skillGroups = [
   {
-    title: 'Figma',
-    items: ['Auto Layout', 'Componentes', 'Prototipagem', 'Handoff'],
+    title: 'UI/UX Design',
+    items: ['Figma (Auto Layout e Componentes)', 'Prototipagem Interativa', 'Arquitetura de Informação', 'Layout Responsivo'],
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <circle cx="12" cy="8" r="4" stroke="#FCA311" strokeWidth="1.4" />
@@ -10,8 +10,8 @@ const skillGroups = [
     ),
   },
   {
-    title: 'Pacote Adobe',
-    items: ['Photoshop', 'Illustrator', 'InDesign'],
+    title: 'Design Gráfico & Editorial',
+    items: ['Photoshop, Illustrator e InDesign', 'After Effects e Canva', 'Design On e Off-line', 'Diagramação de E-books e Apresentações'],
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <rect x="3" y="4" width="18" height="16" rx="2" stroke="#FCA311" strokeWidth="1.4" />
@@ -20,8 +20,8 @@ const skillGroups = [
     ),
   },
   {
-    title: 'UI/UX & Design Systems',
-    items: ['Grid', 'Arquitetura de Informação', 'Acessibilidade'],
+    title: 'Social Media & Growth',
+    items: ['Gestão de Redes e Meta Business', 'Edição de Vídeo no CapCut', 'Copywriting e Redação de Conteúdo', 'Leadlovers, E-mail Mkt e Endomarketing'],
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <rect x="4" y="4" width="7" height="7" stroke="#FCA311" strokeWidth="1.4" />
@@ -33,7 +33,7 @@ const skillGroups = [
   },
   {
     title: 'IA & Produtividade',
-    items: ['IA Generativa', 'Prompt Engineering para UI', 'Microcopy com LLMs'],
+    items: ['IA Generativa no Workflow', 'Otimização de Processos Criativos', 'Refinamento de Microcopy', 'Automação e Eficiência'],
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4L12 3z" stroke="#FCA311" strokeWidth="1.4" strokeLinejoin="round" />
