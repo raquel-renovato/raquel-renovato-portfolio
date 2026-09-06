@@ -1,8 +1,8 @@
 const checklist = [
+  'Canva',
   'Design de Interfaces',
   'Domínio de Figma & Pacote Adobe',
   'Workflow Otimizado com IA Generativa & LLMs',
-  'Canva',
 ];
 
 export default function About() {
@@ -15,9 +15,9 @@ export default function About() {
           Designer Gráfica formada pela Estácio, especialização em andamento na área de UI/UX Design e com 3 anos de atuação no mercado. Atuo de forma completa no desenvolvimento de interfaces visuais, arquitetura de informação, design on e off-line e gestão de redes sociais. Tenho experiência na criação de conteúdo, e-mail marketing, fluxos de nutrição no Leadlovers, e-books e ações de endomarketing, além da produção de apresentações e treinamentos. Domínio do Figma, Pacote Adobe e uso prático de IA Generativa para otimização de workflow.
         </p>
 
-        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3">
+        <ul className="grid grid-flow-col grid-rows-2 gap-x-10 gap-y-3 w-fit mx-auto">
           {checklist.map((item) => (
-            <li key={item} className="flex items-center gap-2 text-sm text-brand-dark">
+            <li key={item} className="flex items-center gap-2 text-sm text-brand-dark whitespace-nowrap">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0">
                 <circle cx="12" cy="12" r="10" fill="#FCA311" />
                 <path d="M8 12.5l2.5 2.5L16 9.5" stroke="#14213D" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
