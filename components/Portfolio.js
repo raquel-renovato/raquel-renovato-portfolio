@@ -2,7 +2,7 @@ const projects = [
   {
     id: 'fernando-amaral',
     category: 'UI/UX & Web Design',
-    title: 'Redesign de Landing Page & UI Design — Fernando Amaral',
+    title: 'Design de Landing Page & UI Design — Fernando Amaral',
     description:
       'Design de interface e prototipagem no Figma para a landing page do Fernando Amaral. Organização da hierarquia e ordem das informações, redefinição da paleta de cores e atualização do layout, além de pequenas revisões de texto e inclusão de seção de logos. Construção de microinterações, como variantes de hover, estados de botões e animações de scroll.',
     tags: [
