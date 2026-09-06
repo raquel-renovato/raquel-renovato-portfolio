@@ -2,7 +2,7 @@ const projects = [
   {
     id: 'fernando-amaral',
     category: 'UI/UX & Web Design',
-    title: 'Design de Landing Page & UI Design — Fernando Amaral',
+    title: 'Redesign de Landing Page & UI Design — Fernando Amaral',
     description:
       'Design de interface e prototipagem no Figma para a landing page do Fernando Amaral. Organização da hierarquia e ordem das informações, redefinição da paleta de cores e atualização do layout, além de pequenas revisões de texto e inclusão de seção de logos. Construção de microinterações, como variantes de hover, estados de botões e animações de scroll.',
     tags: [
@@ -55,11 +55,11 @@ const projects = [
   },
   {
     id: 'renata-brandao',
-    category: 'Data Visualization & Design de Informação',
-    title: 'Apresentações Visuais — Renata Brandão',
+    category: 'Design de Apresentações',
+    title: 'Apresentações & Treinamentos — Renata Brandão',
     description:
-      'Desenvolvimento de apresentações visuais focadas em transformar dados e conceitos complexos em interfaces simples, intuitivas e de fácil absorção.',
-    tags: ['Data Viz', 'Apresentações', 'Infográficos'],
+      'Criação do conteúdo e design de apresentações e materiais de treinamento no Canva. Transformação de relatórios, dados e conteúdos educativos em slides visuais, claros e fáceis de entender, do texto ao layout final, com design e diagramação completa dos slides.',
+    tags: ['Canva', 'Apresentações', 'Treinamentos', 'Redação de Conteúdo', 'Copywriting'],
     main: {
       src: '/img/img-renata/renata-cover-2.png',
       alt: 'Slide de capa da apresentação de Renata Brandão',
@@ -72,11 +72,11 @@ const projects = [
   },
   {
     id: 'braduca',
-    category: 'Branding & Mídias Digitais',
-    title: 'Conteúdo Visual & Redes Sociais — Braduca',
+    category: 'Design para Redes Sociais',
+    title: 'Social Media & Design — Somos Braduca',
     description:
-      'Criação de conteúdo visual para redes sociais garantindo consistência de identidade de marca com rigor técnico em composição, tipografia e cores.',
-    tags: ['Social Media', 'Identidade', 'Tipografia'],
+      'Criação e diagramação de posts para publicação nas redes sociais, mantendo a consistência, o padrão visual e o alinhamento com a identidade de marca da Somos Braduca.',
+    tags: ['Social Media', 'Design Gráfico', 'Identidade Visual', 'Canva', 'Pacote Adobe'],
     main: {
       src: '/img/img-braduca/braduca-cover.png',
       alt: 'Mockup de posts e stories criados para a Braduca',
@@ -85,11 +85,11 @@ const projects = [
   },
   {
     id: 'aymee-ferraz',
-    category: 'Branding & Mídias Digitais',
-    title: 'Conteúdo Visual & Redes Sociais — Aymée Ferraz',
+    category: 'Design para Redes Sociais',
+    title: 'Social Media & Design — Aymée',
     description:
-      'Criação de conteúdo visual para redes sociais garantindo consistência de identidade de marca com rigor técnico em composição, tipografia e cores.',
-    tags: ['Social Media', 'Identidade', 'Tipografia'],
+      'Criação e diagramação de posts para publicação nas redes sociais, mantendo a consistência, o padrão visual e o alinhamento com a identidade de marca da Aymée.',
+    tags: ['Social Media', 'Design Gráfico', 'Pacote Adobe'],
     main: {
       src: '/img/img-aymee/aymee-cover1.png',
       alt: 'Mockup principal de posts criados para Aymée Ferraz',
