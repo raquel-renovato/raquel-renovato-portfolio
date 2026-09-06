@@ -1,11 +1,12 @@
+
 const skillGroups = [
   {
     title: 'UI/UX Design',
     items: ['Figma (Auto Layout e Componentes)', 'Prototipagem Interativa', 'Arquitetura de Informação', 'Layout Responsivo'],
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="8" r="4" stroke="#FCA311" strokeWidth="1.4" />
-        <rect x="8" y="12" width="8" height="8" rx="2" stroke="#FCA311" strokeWidth="1.4" />
+        <path d="M12 20h9" stroke="#FCA311" strokeWidth="1.4" strokeLinecap="round" />
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#FCA311" strokeWidth="1.4" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -59,9 +60,12 @@ export default function Skills() {
                 {group.icon}
               </div>
               <h3 className="text-brand-dark font-bold mb-3">{group.title}</h3>
-              <ul className="text-sm text-brand-dark/60 space-y-1.5">
+              <ul className="text-sm text-brand-dark/60 space-y-2">
                 {group.items.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1 h-1 rounded-full bg-brand-gold shrink-0" />
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </div>
