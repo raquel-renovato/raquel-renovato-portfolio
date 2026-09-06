@@ -12,7 +12,7 @@ export default function About() {
 
         <h2 className="text-brand-dark text-3xl sm:text-4xl font-extrabold tracking-tight mb-6 text-center">Sobre Mim</h2>
         <p className="text-brand-dark/60 leading-relaxed mb-8">
-          Formada em Design Gráfico pela Estácio em dezembro de 2023 e com especialização em andamento em UI/UX Design, atuo como Designer de Comunicação Visual na Voit Consultoria. As minhas competências centrais incluem o desenvolvimento de interfaces visuais, a estruturação de arquitetura de informação e a criação de sistemas de design consistentes. Na Voit Consultoria, contribuo no planejamento e execução de projetos visuais focados em usabilidade, utilizando o ecossistema Adobe e Figma. Valorizo a inovação e a adoção de novas tecnologias, como a Inteligência Artificial, para otimizar processos e entregar soluções funcionais que tragam uma perspectiva estratégica e criativa para a equipe.
+          Designer Gráfica formada pela Estácio, especialização em andamento na área de UI/UX Design e com 3 anos de atuação no mercado. Atuo de forma completa no desenvolvimento de interfaces visuais, arquitetura de informação, design on e off-line e gestão de redes sociais. Tenho experiência na criação de conteúdo, e-mail marketing, fluxos de nutrição no Leadlovers, e-books e ações de endomarketing, além da produção de apresentações e treinamentos. Domínio do Figma, Pacote Adobe e uso prático de IA Generativa para otimização de workflow.
         </p>
 
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3">
