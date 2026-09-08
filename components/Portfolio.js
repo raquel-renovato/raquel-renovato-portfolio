@@ -63,6 +63,9 @@ const projects = [
     description:
       'Criação e diagramação de posts para publicação nas redes sociais, mantendo a consistência, o padrão visual e o alinhamento com a identidade de marca da Somos Braduca.',
     tags: ['Social Media', 'Design Gráfico', 'Identidade Visual', 'Canva', 'Pacote Adobe'],
+    links: [
+      { label: 'Ver Mais Posts (Drive)', url: 'https://drive.google.com/drive/folders/1UGHgxQYGRF5Jm8FvuKA3PhTgJzOsztb4?usp=sharing' },
+    ],
     main: { src: '/img/img-braduca/braduca-cover.png', alt: 'Mockup de posts e stories criados para a Braduca' },
     thumbs: [],
   },
