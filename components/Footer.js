@@ -1,21 +1,21 @@
 export default function Footer() {
   return (
-    <footer id="contato" className="bg-brand-white border-t border-brand-line">
+    <footer id="contato" className="bg-brand-dark">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 gap-8">
 
         <div>
-          <p className="text-brand-dark text-lg font-bold mb-1">Raquel Renovato</p>
-          <p className="text-brand-dark/60 text-sm mb-4">
+          <p className="text-brand-white text-lg font-bold mb-1">Raquel Renovato</p>
+          <p className="text-brand-white/70 text-sm mb-4">
             UI Design<br />
             Design Gráfico<br />
             Criação de Conteúdo<br />
             Redes Sociais
           </p>
-          <p className="text-brand-dark/40 text-xs">© 2026 Raquel Renovato. Todos os direitos reservados.</p>
+          <p className="text-brand-white/40 text-xs">© 2026 Raquel Renovato. Todos os direitos reservados.</p>
         </div>
 
         <div className="sm:text-right">
-          <ul className="space-y-2 text-sm text-brand-dark/80">
+          <ul className="space-y-2 text-sm text-brand-white/80">
             <li>
               <a href="mailto:raquel.renovato.design@gmail.com" className="underline-grow pb-1 hover:text-brand-gold transition-colors">
                 raquel.renovato.design@gmail.com
