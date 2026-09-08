@@ -12,9 +12,6 @@ export default function CtaBanner() {
           <a href="https://wa.me/5562985666229" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full bg-brand-gold text-brand-dark font-semibold px-6 py-3 text-sm hover:brightness-95 transition">
             Falar no WhatsApp
           </a>
-          <a href="mailto:raquel.renovato.design@gmail.com" className="inline-flex items-center rounded-full border border-brand-gold text-brand-gold px-6 py-3 text-sm hover:bg-brand-gold hover:text-brand-dark transition-colors">
-            Enviar E-mail
-          </a>
         </div>
       </div>
     </section>
