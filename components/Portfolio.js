@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -138,6 +137,7 @@ function ProjectGallery({ project, order, onImageClick }) {
 
 function Lightbox({ image, onClose }) {
   useEffect(() => {
+    if (!image) return;
     const onKey = (e) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
@@ -145,7 +145,7 @@ function Lightbox({ image, onClose }) {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-  }, [onClose]);
+  }, [image, onClose]);
 
   if (!image) return null;
 
