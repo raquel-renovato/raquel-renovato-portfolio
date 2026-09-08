@@ -153,25 +153,12 @@ function Lightbox({ image, onClose }) {
   if (!image) return null;
 
   return (
-    <div
-      className="fixed inset-0 z-[999] bg-brand-dark/90 flex items-center justify-center p-4 sm:p-8"
-      onClick={onClose}
-    >
-      <button
-        type="button"
-        onClick={onClose}
-        aria-label="Fechar"
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-brand-white/10 hover:bg-brand-white/20 flex items-center justify-center text-brand-white transition-colors"
-      >
+    <div className="fixed inset-0 z-[999] bg-brand-dark/90 flex items-center justify-center p-4 sm:p-8" onClick={onClose}>
+      <button type="button" onClick={onClose} aria-label="Fechar" className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-brand-white/10 hover:bg-brand-white/20 flex items-center justify-center text-brand-white transition-colors">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
       </button>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={image.src}
-        alt={image.alt}
-        onClick={(e) => e.stopPropagation()}
-        className="max-w-full max-h-full object-contain rounded-lg"
-      />
+      <img src={image.src} alt={image.alt} onClick={(e) => e.stopPropagation()} className="max-w-full max-h-full object-contain rounded-lg" />
     </div>
   );
 }
@@ -207,12 +194,7 @@ export default function Portfolio() {
           })}
         </div>
         <div className="text-center mt-16 sm:mt-20">
-          
-            href="https://canva.link/wlgd6sqdircm6pj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full border border-brand-dark text-brand-dark px-7 py-3 text-sm hover:bg-brand-dark hover:text-brand-white transition-colors"
-          >
+          <a href="https://canva.link/wlgd6sqdircm6pj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full border border-brand-dark text-brand-dark px-7 py-3 text-sm hover:bg-brand-dark hover:text-brand-white transition-colors">
             Ver Todos os Projetos
           </a>
         </div>
