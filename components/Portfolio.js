@@ -7,7 +7,7 @@ const projects = [
       'Design de interface e prototipagem no Figma para a landing page do Fernando Amaral. Organização da hierarquia e ordem das informações, redefinição da paleta de cores e atualização do layout, além de pequenas revisões de texto e inclusão de seção de logos. Construção de microinterações, como variantes de hover, estados de botões e animações de scroll.',
     tags: ['Figma', 'UI/UX Design', 'Redesign', 'Prototipagem Interativa', 'Landing Page', 'Redesign Visual', 'Componentização'],
     links: [
-      { label: 'Ver Site', url: 'https://fernando-amaral-website-web.vercel.app/' },
+      { label: 'Ver Site Original', url: 'https://fernando-amaral-website-web.vercel.app/' },
       { label: 'Ver Protótipo', url: 'https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=Lz7Rns0SJLBiFZ9N-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912' },
     ],
     main: { src: '/img/img-fernando/fernando-cover1.png', alt: 'Mockup da landing page de Fernando Amaral em laptop' },
