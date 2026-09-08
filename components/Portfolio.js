@@ -207,7 +207,12 @@ export default function Portfolio() {
           })}
         </div>
         <div className="text-center mt-16 sm:mt-20">
-          <a href="#" className="inline-flex items-center rounded-full border border-brand-dark text-brand-dark px-7 py-3 text-sm hover:bg-brand-dark hover:text-brand-white transition-colors">
+          
+            href="https://canva.link/wlgd6sqdircm6pj"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-full border border-brand-dark text-brand-dark px-7 py-3 text-sm hover:bg-brand-dark hover:text-brand-white transition-colors"
+          >
             Ver Todos os Projetos
           </a>
         </div>
