@@ -6,7 +6,10 @@ const projects = [
     description:
       'Design de interface e prototipagem no Figma para a landing page do Fernando Amaral. Organização da hierarquia e ordem das informações, redefinição da paleta de cores e atualização do layout, além de pequenas revisões de texto e inclusão de seção de logos. Construção de microinterações, como variantes de hover, estados de botões e animações de scroll.',
     tags: ['Figma', 'UI/UX Design', 'Redesign', 'Prototipagem Interativa', 'Landing Page', 'Redesign Visual', 'Componentização'],
-    prototypeUrl: 'https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=Lz7Rns0SJLBiFZ9N-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912',
+    links: [
+      { label: 'Ver Site', url: 'https://fernando-amaral-website-web.vercel.app/' },
+      { label: 'Ver Protótipo', url: 'https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=Lz7Rns0SJLBiFZ9N-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912' },
+    ],
     main: { src: '/img/img-fernando/fernando-cover1.png', alt: 'Mockup da landing page de Fernando Amaral em laptop' },
     thumbs: [
       { src: '/img/img-fernando/fernando-cover2.png', alt: 'Mockup da landing page de Fernando Amaral — variação 2' },
@@ -36,6 +39,12 @@ const projects = [
     description:
       'Criação do conteúdo e design de apresentações e materiais de treinamento no Canva. Transformação de relatórios, dados e conteúdos educativos em slides visuais, claros e fáceis de entender, do texto ao layout final, com design e diagramação completa dos slides.',
     tags: ['Canva', 'Apresentações', 'Treinamentos', 'Redação de Conteúdo', 'Copywriting'],
+    links: [
+      { label: 'Plano de Ação Comercial', url: 'https://canva.link/oraetd67you9twt' },
+      { label: 'Plano de Ação Comercial CSM Engenharia e Mondale', url: 'https://canva.link/9xoddk5skl13bli' },
+      { label: 'Excelência no Atendimento ao Cliente', url: 'https://canva.link/6nlcfzmktr1o4ha' },
+      { label: 'Plano Estratégico de Aceleração Comercial', url: 'https://canva.link/w874gu7mhg7053v' },
+    ],
     main: { src: '/img/img-renata/renata-cover-2.png', alt: 'Slide de capa da apresentação de Renata Brandão' },
     thumbs: [
       { src: '/img/img-renata/renata-cover-3.png', alt: 'Slide da apresentação de Renata Brandão — variação 3' },
@@ -80,11 +89,17 @@ function ProjectText({ project, order }) {
           <span key={tag} className="text-xs border border-brand-line rounded-full px-3 py-1 text-brand-dark/70">{tag}</span>
         ))}
       </div>
-      {project.prototypeUrl ? (
-        <a href={project.prototypeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark underline-grow pb-1">
-          Ver Protótipo
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
-        </a>
+      {project.links && project.links.length > 0 ? (
+        <ul className="space-y-2">
+          {project.links.map((link) => (
+            <li key={link.url}>
+              <a href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-dark underline-grow pb-1">
+                {link.label}
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0"><path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
+            </li>
+          ))}
+        </ul>
       ) : null}
     </div>
   );
