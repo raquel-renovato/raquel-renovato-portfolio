@@ -1,3 +1,8 @@
+
+'use client';
+
+import { useState, useEffect } from 'react';
+
 const projects = [
   {
     id: 'fernando-amaral',
@@ -7,7 +12,7 @@ const projects = [
       'Design de interface e prototipagem no Figma para a landing page do Fernando Amaral. Organização da hierarquia e ordem das informações, redefinição da paleta de cores e atualização do layout, além de pequenas revisões de texto e inclusão de seção de logos. Construção de microinterações, como variantes de hover, estados de botões e animações de scroll.',
     tags: ['Figma', 'UI/UX Design', 'Redesign', 'Prototipagem Interativa', 'Landing Page', 'Redesign Visual', 'Componentização'],
     links: [
-      { label: 'Ver Site Original', url: 'https://fernando-amaral-website-web.vercel.app/' },
+      { label: 'Ver Site Original (Antes)', url: 'https://fernando-amaral-website-web.vercel.app/' },
       { label: 'Ver Protótipo', url: 'https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=Lz7Rns0SJLBiFZ9N-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912' },
     ],
     main: { src: '/img/img-fernando/fernando-cover1.png', alt: 'Mockup da landing page de Fernando Amaral em laptop' },
@@ -107,18 +112,22 @@ function ProjectText({ project, order }) {
 
 const THUMB_COLS = { 3: 'sm:grid-cols-3', 4: 'sm:grid-cols-4' };
 
-function ProjectGallery({ project, order }) {
+function ProjectGallery({ project, order, onImageClick }) {
   const colsClass = THUMB_COLS[project.thumbs.length] || 'sm:grid-cols-3';
   return (
     <div className={`lg:col-span-8 ${order}`}>
-      <div className={`gallery-img rounded-xl border border-brand-line ${project.thumbs.length > 0 ? 'mb-3' : ''}`}>
-        <img src={project.main.src} alt={project.main.alt} className="w-full aspect-video object-cover" />
+      <div className={`gallery-img rounded-xl border border-brand-line cursor-zoom-in ${project.thumbs.length > 0 ? 'mb-3' : ''}`}>
+        <button type="button" onClick={() => onImageClick(project.main)} className="block w-full">
+          <img src={project.main.src} alt={project.main.alt} className="w-full aspect-video object-cover" />
+        </button>
       </div>
       {project.thumbs.length > 0 ? (
         <div className={`grid grid-cols-2 ${colsClass} gap-3`}>
           {project.thumbs.map((thumb) => (
-            <div key={thumb.src} className="gallery-img rounded-lg border border-brand-line">
-              <img src={thumb.src} alt={thumb.alt} className="w-full h-28 sm:h-32 object-cover" />
+            <div key={thumb.src} className="gallery-img rounded-lg border border-brand-line cursor-zoom-in">
+              <button type="button" onClick={() => onImageClick(thumb)} className="block w-full">
+                <img src={thumb.src} alt={thumb.alt} className="w-full h-28 sm:h-32 object-cover" />
+              </button>
             </div>
           ))}
         </div>
@@ -127,7 +136,46 @@ function ProjectGallery({ project, order }) {
   );
 }
 
+function Lightbox({ image, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  if (!image) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[999] bg-brand-dark/90 flex items-center justify-center p-4 sm:p-8"
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Fechar"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-brand-white/10 hover:bg-brand-white/20 flex items-center justify-center text-brand-white transition-colors"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+      </button>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={image.src}
+        alt={image.alt}
+        onClick={(e) => e.stopPropagation()}
+        className="max-w-full max-h-full object-contain rounded-lg"
+      />
+    </div>
+  );
+}
+
 export default function Portfolio() {
+  const [activeImage, setActiveImage] = useState(null);
+
   return (
     <section id="portfolio" className="bg-[#F5F5F5] border-t border-brand-line">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 sm:py-20 lg:py-24">
@@ -142,13 +190,13 @@ export default function Portfolio() {
               <article key={project.id} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                 {imageFirst ? (
                   <>
-                    <ProjectGallery project={project} order="lg:order-1" />
+                    <ProjectGallery project={project} order="lg:order-1" onImageClick={setActiveImage} />
                     <ProjectText project={project} order="lg:order-2" />
                   </>
                 ) : (
                   <>
                     <ProjectText project={project} order="" />
-                    <ProjectGallery project={project} order="" />
+                    <ProjectGallery project={project} order="" onImageClick={setActiveImage} />
                   </>
                 )}
               </article>
@@ -161,6 +209,8 @@ export default function Portfolio() {
           </a>
         </div>
       </div>
+
+      <Lightbox image={activeImage} onClose={() => setActiveImage(null)} />
     </section>
   );
 }
