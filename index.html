@@ -914,10 +914,9 @@
         <span>Raquel • UI/UX</span>
       </div>
 
-      <!-- foto circular -->
+      <!-- foto circular com caminho atualizado -->
       <div class="const-photo-frame">
-        <!-- Substitua o src abaixo pelo link da sua foto real -->
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Raquel Renovato">
+        <img src="/img/img-perfil/foto-perfil.jpeg" alt="Raquel Renovato">
       </div>
 
     </div>
@@ -1112,14 +1111,14 @@
     <h2>Vamos trabalhar juntos?</h2>
     <p>Entre em contato para conversarmos sobre novos projetos e parcerias.</p>
     <div class="cta-buttons">
-      <a class="primary" href="#">Falar no WhatsApp</a>
-      <a class="secondary" href="#">Enviar e-mail</a>
+      <a class="primary" href="https://wa.me/5562985666229" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+      <a class="secondary" href="mailto:raquel.renovato.design@gmail.com">Enviar e-mail</a>
     </div>
   </section>
 
   <footer>
     <span>© 2026 Raquel Renovato</span>
-    <span><a href="#">raquel.renovato.design@gmail.com</a> · <a href="#">LinkedIn</a></span>
+    <span><a href="#">raquel.renovato.design@gmail.com</a> · <a href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
   </footer>
 
   </div>
@@ -1156,8 +1155,6 @@
     }
     sizeIntroWordCycle();
     window.addEventListener('resize', sizeIntroWordCycle);
-    // recalcula assim que a fonte Fraunces carregar de verdade, pra evitar
-    // que a palavra "pule"/desloque quando a fonte troca no meio da intro
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(sizeIntroWordCycle);
     }
@@ -1197,7 +1194,6 @@
       const strip = block.querySelector('.strip');
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
-      // projetos "from-right" têm a galeria em row-reverse, então o scroll precisa ser invertido
       const dir = block.classList.contains('from-right') ? -1 : 1;
 
       if (strip && prevBtn && nextBtn) {
@@ -1221,29 +1217,24 @@
       });
     });
 
-    /* CALCULA SE UMA COR É CLARA OU ESCURA, PRA DECIDIR A COR DO TEXTO POR CIMA */
     function getContrastTextColor(hex) {
-      if (!hex) return ''; // sem cor = volta ao padrão do tema
+      if (!hex) return '';
       const clean = hex.replace('#', '');
       const r = parseInt(clean.substring(0, 2), 16);
       const g = parseInt(clean.substring(2, 4), 16);
       const b = parseInt(clean.substring(4, 6), 16);
-      // fórmula de luminância perceptual (YIQ)
       const luminance = (r * 299 + g * 587 + b * 114) / 1000;
       return luminance > 150 ? '#1F1C18' : '#FFFFFF';
     }
 
-    /* aplica a cor de contraste no próprio elemento e em todo texto filho,
-       preservando qualquer texto que a pessoa já tenha pintado manualmente */
     function applyContrastToChildren(el, textColor) {
       el.style.color = textColor;
       el.querySelectorAll('*').forEach((child) => {
-        if (child.dataset.textPainted === 'true') return; // respeita pintura manual de texto
+        if (child.dataset.textPainted === 'true') return;
         child.style.color = textColor;
       });
     }
 
-    /* EVENT DELEGATION PARA PINTAR ELEMENTOS DO MOCKUP */
     const wfWindow = document.getElementById('wfWindow');
     wfWindow.addEventListener('click', (e) => {
       const el = e.target.closest('.wf-paintable');
@@ -1263,13 +1254,10 @@
         applyContrastToChildren(el, textColor);
       } else if (paintType === 'text') {
         el.style.color = selectedColor || '';
-        // marca que esse texto foi pintado manualmente, pra não ser sobrescrito
-        // automaticamente se o fundo ao redor for repintado depois
         el.dataset.textPainted = selectedColor ? 'true' : 'false';
       }
     });
 
-    /* ALTERNÂNCIA DE ESTRUTURAS (DASHBOARD, INTERFACES, DESIGN SYSTEM) */
     const navItems = document.querySelectorAll('.wf-nav-item');
     const wfViews = document.querySelectorAll('.wf-view');
 
@@ -1289,7 +1277,6 @@
       });
     });
 
-    /* CONTADOR INTERATIVO (+1 ENTREGA) */
     const wfMetricBtn = document.getElementById('wfMetricBtn');
     const wfCounter = document.getElementById('wfCounter');
     let count = 14;
@@ -1298,7 +1285,6 @@
       wfCounter.textContent = count;
     });
 
-    /* CHECKBOXES INTERATIVOS */
     const taskItems = document.querySelectorAll('.wf-task-item');
     taskItems.forEach(task => {
       task.addEventListener('click', () => {
@@ -1306,7 +1292,6 @@
       });
     });
 
-    /* ALTERNAR MODO INTERNO DO MOCKUP */
     const wfSwitchBtn = document.getElementById('wfSwitchMode');
     let isAppDark = false;
     wfSwitchBtn.addEventListener('click', () => {
@@ -1324,7 +1309,6 @@
       }
     });
 
-    /* BOTÃO LIMPAR TUDO */
     const clearBtn = document.getElementById('clearBtn');
     clearBtn.addEventListener('click', () => {
       document.querySelectorAll('.wf-paintable').forEach(el => {
@@ -1333,7 +1317,6 @@
         el.style.color = '';
         delete el.dataset.textPainted;
       });
-      // limpa também a cor de contraste aplicada nos textos filhos dos cards/fundos pintados
       wfWindow.querySelectorAll('*').forEach(el => {
         if (!el.classList.contains('wf-paintable')) {
           el.style.color = '';
