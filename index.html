@@ -9,16 +9,16 @@
 <style>
   /* PALETE EDITORIAL: RAÍZES & SENSIBILIDADE (LIGHT) */
   :root {
-    --bg: #F3EFEA;            /* Papel Linho Acolhedor */
-    --ink: #1F1C18;           /* Café Tinta Profundo */
-    --dim: #59534C;           /* Terra Sombra Suave */
-    --muted: #8A8379;         /* Cinza Argila */
+    --bg: #F3EFEA;             /* Papel Linho Acolhedor */
+    --ink: #1F1C18;            /* Café Tinta Profundo */
+    --dim: #59534C;            /* Terra Sombra Suave */
+    --muted: #8A8379;          /* Cinza Argila */
     --line: rgba(31, 28, 24, 0.15);
     --line-strong: rgba(31, 28, 24, 0.35);
-    --card: #E5DFD5;          /* Card Papel Encorpado */
+    --card: #E5DFD5;           /* Card Papel Encorpado */
     --card-hover: #DCD5C9;
-    --accent: #E8590C;        /* Laranja Criativo Vibrante */
-    --accent-green: #38483A;  /* Verde Botânico */
+    --accent: #E8590C;         /* Laranja Criativo Vibrante */
+    --accent-green: #38483A;   /* Verde Botânico */
     --accent-soft: rgba(232, 89, 12, 0.10);
     --accent-hover: #C24A08;
     --nav-bg: rgba(243, 239, 234, 0.92);
@@ -32,16 +32,16 @@
 
   /* TEMA SOMBRIO BOTÂNICO (DARK) */
   [data-theme="dark"] {
-    --bg: #181614;            /* Noite Café Escura */
-    --ink: #F0ECE1;           /* Marfim Suave */
-    --dim: #A6A095;           /* Terra Clara */
+    --bg: #181614;             /* Noite Café Escura */
+    --ink: #F0ECE1;            /* Marfim Suave */
+    --dim: #A6A095;            /* Terra Clara */
     --muted: #6E685E;
     --line: rgba(240, 236, 225, 0.15);
     --line-strong: rgba(240, 236, 225, 0.30);
-    --card: #23201C;          /* Madeira/Córtex Escuro */
+    --card: #23201C;           /* Madeira/Córtex Escuro */
     --card-hover: #2C2823;
-    --accent: #F26D1D;        /* Laranja Criativo Vibrante Iluminado */
-    --accent-green: #6E8B73;  /* Verde Sálvia Suave */
+    --accent: #F26D1D;         /* Laranja Criativo Vibrante Iluminado */
+    --accent-green: #6E8B73;   /* Verde Sálvia Suave */
     --accent-soft: rgba(242, 109, 29, 0.14);
     --accent-hover: #F98A46;
     --nav-bg: rgba(24, 22, 20, 0.90);
@@ -577,9 +577,20 @@
   .strip-item {
     flex: 0 0 auto; width: min(46vw, 380px); aspect-ratio: 4/3;
     background: var(--card); border: 1px solid var(--line-strong);
-    color: var(--dim); font-size:0.72rem; text-align:center; padding: 14px;
+    color: var(--dim); font-size:0.72rem; text-align:center; padding: 0;
     border-radius: 6px; display:flex; align-items:center; justify-content:center;
-    opacity: 0; transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease, background-color 0.25s ease;
+    opacity: 0; overflow: hidden; cursor: pointer;
+    transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease, background-color 0.25s ease;
+  }
+  .strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .strip-item:hover img {
+    transform: scale(1.04);
   }
   .strip-item:hover { background: var(--card-hover); }
   .strip-item:first-child { width: min(56vw, 460px); }
@@ -645,6 +656,43 @@
   footer { padding: 36px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.8rem; color:var(--dim); }
   footer a { color:var(--dim); text-decoration:none; }
   footer a:hover { color:var(--accent); }
+
+  /* MODAL / LIGHTBOX DE IMAGENS */
+  .img-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+  }
+  .img-modal-content {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    animation: zoomModal 0.25s ease;
+  }
+  .img-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFF;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .img-modal-close:hover { color: var(--accent); }
+
+  @keyframes zoomModal {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
 
   /* RESPONSIVO */
   @media (max-width: 780px) {
@@ -916,7 +964,7 @@
 
       <!-- foto circular com caminho atualizado -->
       <div class="const-photo-frame">
-        <img src="/img/img-perfil/foto-perfil.jpeg" alt="Raquel Renovato">
+        <img src="img/img-perfil/foto-perfil.jpeg" alt="Raquel Renovato" onclick="openImageModal(this.src)">
       </div>
 
     </div>
@@ -1049,6 +1097,7 @@
       </div>
     </article>
 
+    <!-- PROJETO 05: AYMÉE FERRAZ -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">05 / 05</span>
@@ -1067,11 +1116,36 @@
         <div class="tags"><span class="tag">Social Media</span><span class="tag">Design Gráfico</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item ig-ratio mono">mockup principal</div>
-        <div class="strip-item ig-ratio mono">variação 2</div>
-        <div class="strip-item ig-ratio mono">variação 3</div>
-        <div class="strip-item ig-ratio mono">variação 4</div>
-        <div class="strip-item ig-ratio mono">variação 5</div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-01.png" alt="Aymée Ferraz - Post 01" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-02.png" alt="Aymée Ferraz - Post 02" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-03.png" alt="Aymée Ferraz - Post 03" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-04.png" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-05.png" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-06.png" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-07.png" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-08.png" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-09.png" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item ig-ratio">
+          <img src="img/Aymee-img/img-10.png" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
       </div>
       <div class="strip-nav">
         <button class="strip-btn prev" aria-label="Anterior">←</button>
@@ -1118,12 +1192,35 @@
 
   <footer>
     <span>© 2026 Raquel Renovato</span>
-    <span><a href="#">raquel.renovato.design@gmail.com</a> · <a href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+    <span><a href="mailto:raquel.renovato.design@gmail.com">raquel.renovato.design@gmail.com</a> · <a href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
   </footer>
 
   </div>
 
+  <!-- MODAL PARA EXPANDIR AS IMAGENS AO CLICAR -->
+  <div id="imgModal" class="img-modal" onclick="closeImageModal()">
+    <span class="img-modal-close">&times;</span>
+    <img class="img-modal-content" id="imgModalTarget" alt="Imagem Expandida">
+  </div>
+
   <script>
+    /* MODAL DE IMAGEM AO CLICAR */
+    function openImageModal(src) {
+      const modal = document.getElementById('imgModal');
+      const target = document.getElementById('imgModalTarget');
+      modal.style.display = 'flex';
+      target.src = src;
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imgModal');
+      modal.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeImageModal();
+    });
+
     /* TOGGLE TEMA DA PÁGINA */
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeLabel = document.getElementById('themeLabel');
