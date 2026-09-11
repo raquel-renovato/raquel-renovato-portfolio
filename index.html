@@ -596,9 +596,14 @@
 
   /* Voit Consultoria e Scroll de Social Media */
   .voit-panel.active .strip.voit-strip {
+    display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
   }
+  .voit-panel.active .strip.voit-strip::-webkit-scrollbar { display: none; }
 
   .strip.voit-strip .strip-item.ig-ratio {
     position: relative;
@@ -1156,7 +1161,7 @@
         </div>
       </div>
 
-      <!-- PAINEL BLOG (DIVIDIDO EM BLOCOS DE 6 COM CARROSSEL) -->
+      <!-- PAINEL BLOG -->
       <div class="voit-panel" id="voit-panel-blog">
         <div class="blog-carousel-container" id="blogCarousel">
           <!-- Bloco 1 (Itens 1 a 6) -->
