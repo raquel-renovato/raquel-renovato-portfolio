@@ -596,6 +596,19 @@
   .strip-item:not(.ig-ratio):first-child { width: min(56vw, 460px); }
   .strip-item.ig-ratio { aspect-ratio: 1080 / 1350; width: min(34vw, 300px); }
   .strip-item.widescreen { aspect-ratio: 1920 / 1080; width: min(56vw, 460px); }
+  .strip-item.natural-fit {
+    aspect-ratio: unset;
+    height: 420px;
+    width: auto;
+  }
+  .strip-item.natural-fit img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+  }
+  @media (max-width: 780px) {
+    .strip-item.natural-fit { height: 260px; }
+  }
 
   /* peças com conteúdo sensível do cliente: desfoque proposital, só o layout aparece */
   .strip-item.confidential { position: relative; }
@@ -1041,28 +1054,25 @@
         <div class="tags"><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Redesign</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item">
+        <div class="strip-item natural-fit">
           <img src="img/img-fernando/Layout%20-%20Web.png" alt="Fernando Amaral - Layout principal" onclick="openImageModal(this.src)" />
         </div>
-        <div class="strip-item">
+        <div class="strip-item natural-fit">
           <img src="img/img-fernando/Layout%20-%20Web-1.png" alt="Fernando Amaral - Layout 2" loading="lazy" onclick="openImageModal(this.src)" />
         </div>
-        <div class="strip-item">
+        <div class="strip-item natural-fit">
           <img src="img/img-fernando/Layout%20-%20Web-2.png" alt="Fernando Amaral - Layout 3" loading="lazy" onclick="openImageModal(this.src)" />
         </div>
-        <div class="strip-item">
-          <img src="img/img-fernando/Layout%20-%20Web-3.png" alt="Fernando Amaral - Layout 4" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item">
+        <div class="strip-item natural-fit">
           <img src="img/img-fernando/Layout%20-%20Web-4.png" alt="Fernando Amaral - Layout 5" loading="lazy" onclick="openImageModal(this.src)" />
         </div>
-        <div class="strip-item">
+        <div class="strip-item natural-fit">
           <img src="img/img-fernando/Layout%20-%20Web-5.png" alt="Fernando Amaral - Layout 6" loading="lazy" onclick="openImageModal(this.src)" />
         </div>
-        <div class="strip-item">
+        <div class="strip-item natural-fit">
           <img src="img/img-fernando/Layout%20-%20Web-6.png" alt="Fernando Amaral - Layout 7" loading="lazy" onclick="openImageModal(this.src)" />
         </div>
-        <div class="strip-item">
+        <div class="strip-item natural-fit">
           <img src="img/img-fernando/Layout%20-%20Web-7.png" alt="Fernando Amaral - Layout 8" loading="lazy" onclick="openImageModal(this.src)" />
         </div>
       </div>
