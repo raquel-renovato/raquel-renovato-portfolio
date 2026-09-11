@@ -548,6 +548,8 @@
 
   .strip { display:flex; gap: 16px; overflow-x: auto; scrollbar-width: none; padding: 0 40px 10px; scroll-behavior: smooth; }
   .strip::-webkit-scrollbar { display:none; }
+  
+  /* Efeito de zoom restaurado para todos os itens/cards de imagem do portfólio */
   .strip-item {
     flex: 0 0 auto; width: min(46vw, 380px); aspect-ratio: 4/3;
     background: var(--card); border: 1px solid var(--line);
@@ -560,12 +562,15 @@
     width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform 0.3s ease;
   }
-  /* Efeito de zoom restaurado ao passar o mouse nos cards */
   .strip-item:hover { 
     background: var(--card-hover); 
     border-color: var(--line-strong); 
-    transform: scale(1.02); 
+    transform: scale(1.03); 
   }
+  .strip-item:hover img {
+    transform: scale(1.04);
+  }
+
   .strip-item:not(.ig-ratio):first-child { width: min(56vw, 460px); }
   .strip-item.ig-ratio { aspect-ratio: 1080 / 1350; width: min(34vw, 300px); }
   .strip-item.widescreen { aspect-ratio: 1920 / 1080; width: min(56vw, 460px); }
@@ -603,7 +608,7 @@
   }
   .strip.voit-strip .strip-item.ig-ratio:hover {
     width: calc(min(34vw, 300px) * 1.4);
-    transform: scale(1.02);
+    transform: scale(1.03);
     z-index: 3;
   }
   .voit-caption {
@@ -655,39 +660,37 @@
     padding: 0 40px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
-    max-width: 800px;
+    gap: 0;
   }
   .blog-text-item {
-    padding-bottom: 24px;
+    padding: 20px 0;
     border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: background-color 0.2s ease;
   }
-  .blog-text-item .b-meta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--accent);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 6px;
+  .blog-text-item:hover {
+    background-color: rgba(0,0,0,0.02);
+  }
+  .blog-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
   .blog-text-item h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.35rem;
-    font-weight: 400;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: var(--ink);
-    margin-bottom: 8px;
-  }
-  .blog-text-item p {
-    font-size: 0.92rem;
-    color: var(--dim);
-    line-height: 1.6;
-    margin-bottom: 12px;
   }
   .blog-text-item a {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: var(--accent);
     text-decoration: none;
+    white-space: nowrap;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s ease;
   }
@@ -701,7 +704,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    padding: 10px 40px 0;
+    padding: 16px 40px 0;
     flex-wrap: wrap;
   }
   .strip-btn {
@@ -1096,7 +1099,7 @@
       </div>
     </article>
 
-    <!-- PROJETO 02: VOIT CONSULTORIA (COM SOCIAL MEDIA E BLOG EM LISTA LARGA DE TEXTO) -->
+    <!-- PROJETO 02: VOIT CONSULTORIA -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">02 / 05</span>
@@ -1137,35 +1140,40 @@
             <div class="voit-caption">Peça de e-mail marketing</div>
           </div>
         </div>
-        <div class="strip-nav">
-          <div class="strip-nav-arrows">
-            <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
-            <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
+      </div>
+
+      <!-- PAINEL BLOG (FORMATO EM LISTA COM AS SETAS ABAIXO) -->
+      <div class="voit-panel" id="voit-panel-blog">
+        <div class="blog-text-list">
+          <div class="blog-text-item">
+            <div class="blog-text-content">
+              <span class="n mono" style="font-size:0.65rem;">01 / Artigo</span>
+              <h4>Título do post do blog 1</h4>
+            </div>
+            <a href="#" target="_blank" rel="noopener noreferrer">ler ↗</a>
+          </div>
+          <div class="blog-text-item">
+            <div class="blog-text-content">
+              <span class="n mono" style="font-size:0.65rem;">02 / Artigo</span>
+              <h4>Título do post do blog 2</h4>
+            </div>
+            <a href="#" target="_blank" rel="noopener noreferrer">ler ↗</a>
+          </div>
+          <div class="blog-text-item">
+            <div class="blog-text-content">
+              <span class="n mono" style="font-size:0.65rem;">03 / Artigo</span>
+              <h4>Título do post do blog 3</h4>
+            </div>
+            <a href="#" target="_blank" rel="noopener noreferrer">ler ↗</a>
           </div>
         </div>
       </div>
 
-      <!-- PAINEL BLOG (FORMATO DE LISTA LARGA EM TEXTO VERTICAL) -->
-      <div class="voit-panel" id="voit-panel-blog">
-        <div class="blog-text-list">
-          <div class="blog-text-item">
-            <span class="b-meta">01 / Artigo</span>
-            <h4>Título do post do blog 1</h4>
-            <p>Resumo breve sobre gestão e processos corporativos aplicados ao cotidiano empresarial.</p>
-            <a href="#" target="_blank" rel="noopener noreferrer">Ler artigo completo ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <span class="b-meta">02 / Artigo</span>
-            <h4>Título do post do blog 2</h4>
-            <p>Estratégias avançadas de atendimento e sucesso do cliente para retenção de contas.</p>
-            <a href="#" target="_blank" rel="noopener noreferrer">Ler artigo completo ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <span class="b-meta">03 / Artigo</span>
-            <h4>Título do post do blog 3</h4>
-            <p>Como otimizar a cultura organizacional da sua empresa com foco em alta performance.</p>
-            <a href="#" target="_blank" rel="noopener noreferrer">Ler artigo completo ↗</a>
-          </div>
+      <!-- BARRA DE SETAS UNIVERSAL PARA O BLOCO DA VOIT -->
+      <div class="strip-nav">
+        <div class="strip-nav-arrows">
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
       </div>
     </article>
@@ -1432,14 +1440,6 @@
           const strip = target.querySelector('.strip');
           if (strip && parentBlock) {
             updateStripArrows(strip, parentBlock);
-          } else {
-            // Se for o painel de blog em texto, esconde as setas de navegação daquele bloco se necessário
-            const prevBtn = parentBlock.querySelector('.strip-btn.prev');
-            const nextBtn = parentBlock.querySelector('.strip-btn.next');
-            if (prevBtn && nextBtn) {
-              prevBtn.style.display = 'none';
-              nextBtn.style.display = 'none';
-            }
           }
         }
       });
@@ -1449,9 +1449,6 @@
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
       if (!prevBtn || !nextBtn) return;
-
-      prevBtn.style.display = '';
-      nextBtn.style.display = '';
 
       const hasOverflow = strip.scrollWidth > strip.clientWidth + 4;
       prevBtn.style.opacity = hasOverflow ? '' : '0.35';
@@ -1466,28 +1463,36 @@
       const nextBtn = block.querySelector('.strip-btn.next');
       if (!prevBtn || !nextBtn) return;
 
-      const activeStrip = block.querySelector('.voit-panel.active .strip') || block.querySelector('.strip');
-      if (activeStrip) {
-        updateStripArrows(activeStrip, block);
+      const getActiveStrip = () => {
+        const activePanel = block.querySelector('.voit-panel.active');
+        if (activePanel) {
+          return activePanel.querySelector('.strip');
+        }
+        return block.querySelector('.strip');
+      };
+
+      const currentActiveStrip = getActiveStrip();
+      if (currentActiveStrip) {
+        updateStripArrows(currentActiveStrip, block);
       }
 
       prevBtn.addEventListener('click', () => {
-        const currentStrip = block.querySelector('.voit-panel.active .strip') || block.querySelector('.strip');
-        if (!currentStrip) return;
-        const dir = currentStrip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-        currentStrip.scrollBy({ left: -320 * dir, behavior: 'smooth' });
+        const strip = getActiveStrip();
+        if (!strip) return;
+        const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+        strip.scrollBy({ left: -320 * dir, behavior: 'smooth' });
       });
 
       nextBtn.addEventListener('click', () => {
-        const currentStrip = block.querySelector('.voit-panel.active .strip') || block.querySelector('.strip');
-        if (!currentStrip) return;
-        const dir = currentStrip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-        currentStrip.scrollBy({ left: 320 * dir, behavior: 'smooth' });
+        const strip = getActiveStrip();
+        if (!strip) return;
+        const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+        strip.scrollBy({ left: 320 * dir, behavior: 'smooth' });
       });
 
       window.addEventListener('resize', () => {
-        const currentStrip = block.querySelector('.voit-panel.active .strip') || block.querySelector('.strip');
-        if (currentStrip) updateStripArrows(currentStrip, block);
+        const strip = getActiveStrip();
+        if (strip) updateStripArrows(strip, block);
       });
     });
 
