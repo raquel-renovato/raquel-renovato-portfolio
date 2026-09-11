@@ -644,7 +644,7 @@
   .project-block.from-right .strip { flex-direction: row-reverse; }
   .project-block.from-right .strip.voit-strip { flex-direction: row; }
 
-  /* Voit Consultoria e Scroll de Social Media */
+  /* Voit Consultoria e Scroll de Social Media - Estilo Carrossel Horizontal Proporção 1080x1350 */
   .voit-panel.active .strip.voit-strip {
     display: flex;
     flex-direction: row;
@@ -652,20 +652,43 @@
     overflow-x: auto;
     scrollbar-width: none;
     scroll-behavior: smooth;
+    align-items: center;
   }
   .voit-panel.active .strip.voit-strip::-webkit-scrollbar { display: none; }
 
-  .strip.voit-strip .strip-item.ig-ratio {
+  .strip.voit-strip .strip-item.voit-card {
     position: relative;
+    width: 240px;
+    height: 300px; /* Proporção aproximada 1080x1350 comprimida para encaixar na faixa */
     aspect-ratio: unset;
-    height: calc(min(34vw, 300px) * 1.25);
-    transition: width 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease, opacity 0.9s ease, background-color 0.25s ease, border-color 0.25s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 0 0 auto;
+    transition: width 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease, opacity 0.9s ease;
   }
-  .strip.voit-strip .strip-item.ig-ratio:hover {
-    width: calc(min(34vw, 300px) * 1.4);
-    transform: scale(1.03);
-    z-index: 3;
+
+  .strip.voit-strip .strip-item.voit-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    transition: object-position 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease;
   }
+
+  /* Quando passar o mouse, o card se expande mostrando o carrossel completo (exibindo toda a extensão horizontal da imagem) */
+  .strip.voit-strip .strip-item.voit-card:hover {
+    width: 650px;
+    height: 340px;
+    transform: scale(1.02);
+    z-index: 5;
+    background: var(--card-hover);
+  }
+
+  .strip.voit-strip .strip-item.voit-card:hover img {
+    object-position: center center;
+    transform: scale(1.02);
+  }
+
   .voit-caption {
     position: absolute;
     inset: auto 0 0 0;
@@ -1200,7 +1223,7 @@
       </div>
     </article>
 
-    <!-- PROJETO 02: VOIT CONSULTORIA (COM OS 4 CARROSSÉIS ADICIONADOS) -->
+    <!-- PROJETO 02: VOIT CONSULTORIA (COM EFEITO DE EXPANSÃO DE CARROSSEL) -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">02 / 05</span>
@@ -1222,10 +1245,22 @@
 
       <div class="voit-panel active" id="voit-panel-social">
         <div class="strip voit-strip">
-          <div class="strip-item natural-fit"><img src="img/img-voit/voit-01.png" alt="Voit Consultoria - Carrossel 01" onclick="openImageModal(this.src)" /></div>
-          <div class="strip-item natural-fit"><img src="img/img-voit/voit-02.png" alt="Voit Consultoria - Carrossel 02" loading="lazy" onclick="openImageModal(this.src)" /></div>
-          <div class="strip-item natural-fit"><img src="img/img-voit/voit-03.png" alt="Voit Consultoria - Carrossel 03" loading="lazy" onclick="openImageModal(this.src)" /></div>
-          <div class="strip-item natural-fit"><img src="img/img-voit/voit-04.png" alt="Voit Consultoria - Carrossel 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
+          <div class="strip-item voit-card">
+            <img src="img/img-voit/voit-01.png" alt="Voit Consultoria - Carrossel 01" onclick="openImageModal(this.src)" />
+            <div class="voit-caption">Carrossel 01 — Visualização Completa</div>
+          </div>
+          <div class="strip-item voit-card">
+            <img src="img/img-voit/voit-02.png" alt="Voit Consultoria - Carrossel 02" loading="lazy" onclick="openImageModal(this.src)" />
+            <div class="voit-caption">Carrossel 02 — Visualização Completa</div>
+          </div>
+          <div class="strip-item voit-card">
+            <img src="img/img-voit/voit-03.png" alt="Voit Consultoria - Carrossel 03" loading="lazy" onclick="openImageModal(this.src)" />
+            <div class="voit-caption">Carrossel 03 — Visualização Completa</div>
+          </div>
+          <div class="strip-item voit-card">
+            <img src="img/img-voit/voit-04.png" alt="Voit Consultoria - Carrossel 04" loading="lazy" onclick="openImageModal(this.src)" />
+            <div class="voit-caption">Carrossel 04 — Visualização Completa</div>
+          </div>
         </div>
       </div>
 
@@ -1323,7 +1358,7 @@
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1548,6 +1583,7 @@
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+    blocks.files = blocks; // fallback
     blocks.forEach(block => observer.observe(block));
 
     window.addEventListener('load', () => {
@@ -1634,7 +1670,7 @@
         el.style.backgroundColor = selectedColor || '';
         el.style.borderColor = selectedColor || '';
         applyContrastToChildren(el, textColor);
-      } else if (paintType === 'text') {
+      } else if (paintType ===`text`) {
         el.style.color = selectedColor || '';
         el.dataset.textPainted = selectedColor ? 'true' : 'false';
       }
@@ -1646,6 +1682,7 @@
     navItems.forEach(item => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
+        navItems.exceptions = true;
         navItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
 
@@ -1687,7 +1724,7 @@
         wfWindow.style.setProperty('--wf-bg', '');
         wfWindow.style.setProperty('--wf-card', '');
         wfWindow.style.setProperty('--wf-text', '');
-        wfSwitchBtn.textContent = 'modo app';
+        wfSwitchBtn.textContent, wfSwitchBtn.textContent = 'modo app';
       }
     });
 
