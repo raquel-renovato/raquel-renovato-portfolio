@@ -660,7 +660,7 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
-  /* BLOCOS DE 6 ITENS PARA O BLOG (ALINHADOS CORRETAMENTE NA VERTICAL DENTRO DO CARROSSEL) */
+  /* CARROSSEL DE BLOG COM MARGENS DE 40px NAS LATERAIS */
   .blog-carousel-container {
     display: flex;
     flex-direction: row;
@@ -676,11 +676,11 @@
   .blog-carousel-container::-webkit-scrollbar { display: none; }
 
   .blog-page-group {
-    flex: 0 0 100%;
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    scroll-snap-align: start;
+    flex: 0 0 calc(100% - 80px);
+    min-width: calc(100% - 80px);
+    max-width: calc(100% - 80px);
+    margin: 0 40px;
+    scroll-snap-align: center;
     display: flex;
     flex-direction: column;
     gap: 0;
