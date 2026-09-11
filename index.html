@@ -660,21 +660,25 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
-  /* BLOCOS DE 6 ITENS PARA O BLOG */
+  /* BLOCOS DE 6 ITENS PARA O BLOG (LADO A LADO CORRETO) */
   .blog-carousel-container {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     padding: 0 40px 10px;
     scroll-behavior: smooth;
+    width: 100%;
   }
   .blog-carousel-container::-webkit-scrollbar { display: none; }
 
   .blog-page-group {
     flex: 0 0 100%;
     width: 100%;
+    min-width: 100%;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
