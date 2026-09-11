@@ -644,7 +644,7 @@
   .project-block.from-right .strip { flex-direction: row-reverse; }
   .project-block.from-right .strip.voit-strip { flex-direction: row; }
 
-  /* Voit Consultoria - Cards Verticais 1080x1350 que expandem no Hover */
+  /* Voit Consultoria - Cards Verticais 1080x1350 com Expansão de Largura no Hover */
   .voit-panel.active .strip.voit-strip {
     display: flex;
     flex-direction: row;
@@ -658,35 +658,34 @@
 
   .strip.voit-strip .strip-item.voit-card {
     position: relative;
-    width: 300px;
-    height: 375px; /* Proporção exata 1080x1350 vertical */
+    width: 320px;
+    height: 400px;
     aspect-ratio: unset;
     border-radius: 8px;
     overflow: hidden;
     flex: 0 0 auto;
     background: var(--card);
     border: 1px solid var(--line);
-    transition: width 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease, opacity 0.9s ease;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease, opacity 0.9s ease;
   }
 
   .strip.voit-strip .strip-item.voit-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left center; /* Mostra o início do carrossel em miniatura */
-    transition: object-position 0.5s cubic-bezier(.4,0,.2,1), transform 0.3s ease;
+    object-position: left center; /* Mostra o primeiro slide do carrossel em miniatura */
+    transition: object-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* No hover, o card se alarga suavemente para a direita revelando o carrossel completo */
+  /* No hover, o card se expande horizontalmente mostrando a extensão completa do carrossel */
   .strip.voit-strip .strip-item.voit-card:hover {
-    width: 720px;
-    transform: scale(1.02);
+    width: 780px;
     z-index: 5;
     border-color: var(--accent);
   }
 
   .strip.voit-strip .strip-item.voit-card:hover img {
-    object-position: center center; /* Centraliza a visualização da tira completa */
+    object-position: right center; /* Desliza a imagem inteira revelando todo o carrossel panorâmico */
   }
 
   .voit-caption {
@@ -1355,10 +1354,10 @@
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-04.jpeg" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-05.jpeg" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
