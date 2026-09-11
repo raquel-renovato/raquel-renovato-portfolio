@@ -63,6 +63,8 @@
     transition: background-color 0.4s ease, color 0.4s ease;
   }
 
+  body.drawer-open { overflow: hidden; }
+
   .mono { font-family:'IBM Plex Mono', monospace; }
   .serif { font-family:'Fraunces', serif; }
   html { scroll-behavior: smooth; scrollbar-gutter: stable; }
@@ -339,8 +341,54 @@
 
   .hero-visual-hint { font-size: 0.68rem; color: var(--muted); text-align: center; }
 
+  /* SEÇÃO DE PROCESSO CRIATIVO LOGO DEPOIS DA DOBRA */
+  .process-fold-section {
+    padding: 40px 40px 60px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--card);
+    margin: 20px 0 40px;
+  }
+  .process-fold-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .process-fold-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 24px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .process-fold-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  .process-step-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .process-fold-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .process-fold-card p {
+    font-size: 0.88rem;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+
   /* SECTIONS */
-  .section-head { display:flex; justify-content:space-between; align-items:baseline; padding:56px 40px 30px; }
+  .section-head { display:flex; justify-content:space-between; align-items:baseline; padding:40px 40px 24px; }
   .section-head .num { font-size:0.75rem; color:var(--accent); font-weight: 600; }
   .section-head h2 { font-family:'Fraunces', serif; font-size:clamp(1.6rem,3.4vw,2.1rem); font-weight:400; }
   .section-head .count { font-size:0.75rem; color:var(--muted); }
@@ -744,15 +792,89 @@
     to { transform: scale(1); opacity: 1; }
   }
 
+  /* GAVETA LATERAL DIREITA (SIDE DRAWER) */
+  .drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 800;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .drawer-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .side-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    z-index: 900;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    padding: 50px 40px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .side-drawer.active {
+    right: 0;
+  }
+
+  .drawer-close-btn {
+    background: none;
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--ink);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    transition: color 0.2s;
+  }
+  .drawer-close-btn:hover { color: var(--accent); }
+
+  .drawer-header { margin-bottom: 36px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+  .drawer-header h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 400; margin: 10px 0 12px; }
+
+  .drawer-section { margin-bottom: 40px; }
+  .drawer-section h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+  }
+  .drawer-section p { font-size: 0.98rem; color: var(--dim); line-height: 1.75; margin-bottom: 14px; }
+
+  .drawer-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .drawer-card-info { background: var(--card); border: 1px solid var(--line); padding: 16px; border-radius: 6px; }
+  .drawer-card-info strong { display: block; font-size: 0.82rem; margin-bottom: 4px; color: var(--ink); font-family: 'IBM Plex Mono', monospace; }
+  .drawer-card-info span { font-size: 0.86rem; color: var(--dim); line-height: 1.4; }
+
   /* RESPONSIVO */
   @media (max-width: 780px) {
     nav { display: flex; justify-content: space-between; }
     nav ul { display:none; }
-    .hero, .constructivist-about, .skills, .cta-band, .section-head, footer, .project-head, .strip, .strip-nav { padding-left:22px; padding-right:22px; }
+    .hero, .constructivist-about, .skills, .cta-band, .section-head, footer, .project-head, .strip, .strip-nav, .process-fold-section { padding-left:22px; padding-right:22px; }
     .hero, .constructivist-about { grid-template-columns: 1fr; }
     .hero-visual { order: -1; margin-bottom: 20px; }
     .skill-grid { grid-template-columns: 1fr 1fr; }
+    .process-fold-grid { grid-template-columns: 1fr; gap: 16px; }
     .spec-floater { display: none; }
+    .side-drawer { padding: 40px 24px; max-width: 100%; }
+    .drawer-grid-2 { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -939,6 +1061,30 @@
     </div>
   </section>
 
+  <!-- SEÇÃO DE PROCESSO CRIATIVO E EXECUÇÃO (LOGO DEPOIS DA DOBRA) -->
+  <section class="process-fold-section">
+    <div style="max-width: 500px;">
+      <span class="mono" style="font-size: 0.72rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">método & execução</span>
+    </div>
+    <div class="process-fold-grid">
+      <div class="process-fold-card">
+        <span class="process-step-num">01 / DIAGNÓSTICO</span>
+        <h4>Entendimento & Imersão</h4>
+        <p>Investigação do problema inicial, escopo e alinhamento de expectativas com o cliente para mapear o caminho correto antes de abrir qualquer software.</p>
+      </div>
+      <div class="process-fold-card">
+        <span class="process-step-num">02 / ESTRUTURAÇÃO</span>
+        <h4>Pesquisa & Direção Visual</h4>
+        <p>Definição de hierarquia, arquitetura de informação, tom de voz e benchmarks de mercado para dar sustentação conceitual ao projeto.</p>
+      </div>
+      <div class="process-fold-card">
+        <span class="process-step-num">03 / ENTREGA</span>
+        <h4>Execução & Validação</h4>
+        <p>Desenvolvimento no Figma, Pacote Adobe ou Canva, refinamento de microinterações e validação técnica junto aos especialistas da área.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- SEÇÃO 01: SOBRE MIM -->
   <div class="section-head" id="sobre">
     <h2>Sobre mim</h2>
@@ -1052,17 +1198,19 @@
         </div>
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
-          <p>Social media, copywriting e design ponta a ponta — redes sociais, ads, e-mail marketing, e-books e apresentações, com IA generativa otimizando o workflow.</p>
+          <p>Social media, copywriting, suporte a apresentações comerciais para Leads, materiais técnicos sob medida para múltiplos setores, ações de endomarketing e design ponta a ponta.</p>
         </div>
-        <div class="tags"><span class="tag">Canva</span><span class="tag">Adobe</span><span class="tag">Figma</span><span class="tag">Copywriting</span><span class="tag">IA Generativa</span></div>
+        <div class="tags"><span class="tag">Canva</span><span class="tag">Adobe</span><span class="tag">Figma</span><span class="tag">Copywriting</span><span class="tag">Método & Processo</span></div>
       </div>
 
-      <!-- PAINEL SOCIAL MEDIA -->
       <div class="voit-panel active" id="voit-panel-social">
         <div class="strip voit-strip">
-          <div class="strip-item ig-ratio mono">
-            imagem principal<br>(apresentação estratégica)
-            <div class="voit-caption">Apresentação estratégica — visão geral do projeto</div>
+          <div class="strip-item ig-ratio mono" onclick="openVoitDrawer()" style="cursor: pointer; background: var(--card); border: 1.5px dashed var(--accent);">
+            <div style="padding: 20px; color: var(--ink);">
+              <span style="font-size: 1.1rem; display: block; margin-bottom: 8px; color: var(--accent);">✦ Ver método e processo</span>
+              <span style="font-size: 0.68rem; color: var(--dim); line-height: 1.5;">Conheça o método passo a passo: alinhamento, pesquisa, validação e entrega.</span>
+            </div>
+            <div class="voit-caption">Clique para abrir a metodologia detalhada</div>
           </div>
           <div class="strip-item ig-ratio mono">
             redes sociais
@@ -1079,11 +1227,13 @@
         </div>
       </div>
 
-      <!-- BARRA DE SETAS UNIVERSAL PARA A VOIT -->
       <div class="strip-nav">
         <div class="strip-nav-arrows">
           <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
           <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
+        </div>
+        <div class="strip-links">
+          <button type="button" class="strip-full-link" style="background:none; border:none; cursor:pointer;" onclick="openVoitDrawer()">Ver Método e Processo Completo ↗</button>
         </div>
       </div>
     </article>
@@ -1186,6 +1336,65 @@
 
   </div>
 
+  <!-- GAVETA LATERAL DIREITA: MÉTODO E PROCESSO (VOIT CONSULTORIA) -->
+  <div id="drawerOverlay" class="drawer-overlay" onclick="closeVoitDrawer()"></div>
+  <div id="voitDrawer" class="side-drawer">
+    <button class="drawer-close-btn" onclick="closeVoitDrawer()">← Fechar janela</button>
+    
+    <div class="drawer-header">
+      <span class="mono">Método e Processo • 02 / Voit Consultoria</span>
+      <h2>Metodologia de Execução: Do Planejamento à Entrega</h2>
+      <p style="font-size: 0.98rem; color: var(--dim); line-height: 1.6; margin-top: 8px;">
+        O passo a passo aplicado no dia a dia para garantir coesão de marca, rigor técnico e agilidade em múltiplos setores.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h4>01. Alinhamento Estratégico Mensal</h4>
+      <p>
+        O método começa com reuniões de planejamento junto à gerência. Nessa etapa, definimos os macrotemas, editoriais e objetivos estratégicos que vão guiar toda a comunicação do mês, assegurando alinhamento total com as metas da consultoria.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h4>02. Pesquisa de Tendências & Produção Multicanal</h4>
+      <p>
+        Antes de criar, realizo uma pesquisa investigativa para entender o que está em alta no mercado. Com base nisso, estruturo a produção para diferentes canais:
+      </p>
+      <div class="drawer-grid-2">
+        <div class="drawer-card-info">
+          <strong>Redes Sociais & Carrosséis</strong>
+          <span>Artes visuais e copys/legendas complementares para engajamento no Instagram e LinkedIn.</span>
+        </div>
+        <div class="drawer-card-info">
+          <strong>Artigos de Blog Aprofundados</strong>
+          <span>Conteúdos densos e técnicos de até 2.500 palavras para autoridade orgânica.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>03. Validação Técnica & Flexibilidade de Pauta</h4>
+      <p>
+        Nenhum conteúdo vai ao ar sem validação. Todo o material passa pelo crivo dos especialistas da área para garantir total rigor técnico e precisão conceitual. Caso o mercado exija mudanças, o método permite realinharmos as pautas dinamicamente antes do agendamento final no Meta Business Suite e LinkedIn.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h4>04. Suporte Comercial, Projetos Setoriais & Endomarketing</h4>
+      <p>
+        O método também abrange frentes estratégicas e transversais:
+      </p>
+      <p>
+        • <strong>Apoio a Apresentações Comerciais:</strong> Transformação de rascunhos e dados brutos (planilhas de Excel e anotações) em materiais de alto padrão visual para reuniões com Leads.<br>
+        • <strong>Projetos para Múltiplos Setores:</strong> Criação de materiais técnicos sob medida (como diagramações e quadros específicos baseados nas medidas e textos fornecidos por clientes de diversos ramos, finalizados no Illustrator ou Canva).<br>
+        • <strong>Endomarketing:</strong> Planejamento mensal de ações internas junto à gerência e execução de campanhas de engajamento para os colaboradores.
+      </p>
+    </div>
+
+    <button class="drawer-close-btn" style="margin-top: 30px;" onclick="closeVoitDrawer()">← Fechar janela</button>
+  </div>
+
   <!-- SEÇÃO 03: HABILIDADES -->
   <div class="section-head centered" id="habilidades">
     <h2>Habilidades & ferramentas</h2>
@@ -1235,13 +1444,25 @@
   </div>
 
   <script>
+    /* CONTROLE DA GAVETA LATERAL DIREITA (DRAWER) */
+    function openVoitDrawer() {
+      document.getElementById('voitDrawer').classList.add('active');
+      document.getElementById('drawerOverlay').classList.add('active');
+      document.body.classList.add('drawer-open');
+    }
+
+    function closeVoitDrawer() {
+      document.getElementById('voitDrawer').classList.remove('active');
+      document.getElementById('drawerOverlay').classList.remove('active');
+      document.body.classList.remove('drawer-open');
+    }
+
     /* MODAL DE IMAGEM AO CLICAR */
-    function openImageModal(src, blurred) {
+    function openImageModal(src) {
       const modal = document.getElementById('imgModal');
       const target = document.getElementById('imgModalTarget');
       modal.style.display = 'flex';
       target.src = src;
-      target.classList.toggle('confidential-modal', !!blurred);
     }
 
     function closeImageModal() {
@@ -1250,7 +1471,10 @@
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeImageModal();
+      if (e.key === 'Escape') {
+        closeImageModal();
+        closeVoitDrawer();
+      }
     });
 
     /* VOLTAR AO TOPO DE IMEDIATO AO CLICAR NO NOME */
@@ -1336,17 +1560,6 @@
       });
     });
 
-    function updateStripArrows(strip, block) {
-      const prevBtn = block.querySelector('.strip-btn.prev');
-      const nextBtn = block.querySelector('.strip-btn.next');
-      if (!prevBtn || !nextBtn) return;
-
-      prevBtn.style.opacity = '1';
-      nextBtn.style.opacity = '1';
-      prevBtn.style.cursor = 'pointer';
-      nextBtn.style.cursor = 'pointer';
-    }
-
     /* NAVEGAÇÃO POR SETAS DAS GALERIAS */
     document.querySelectorAll('.project-block').forEach(block => {
       const prevBtn = block.querySelector('.strip-btn.prev');
@@ -1361,11 +1574,6 @@
         return block.querySelector('.strip');
       };
 
-      const currentContainer = getActiveContainer();
-      if (currentContainer) {
-        updateStripArrows(currentContainer, block);
-      }
-
       prevBtn.addEventListener('click', () => {
         const container = getActiveContainer();
         if (!container) return;
@@ -1378,11 +1586,6 @@
         if (!container) return;
         const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
         container.scrollBy({ left: 380 * dir, behavior: 'smooth' });
-      });
-
-      window.addEventListener('resize', () => {
-        const container = getActiveContainer();
-        if (container) updateStripArrows(container, block);
       });
     });
 
@@ -1490,6 +1693,7 @@
     });
 
     const clearBtn = document.getElementById('clearBtn');
+    clearBtn.sliderColor = null;
     clearBtn.addEventListener('click', () => {
       document.querySelectorAll('.wf-paintable').forEach(el => {
         el.style.backgroundColor = '';
