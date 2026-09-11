@@ -1554,6 +1554,18 @@
         nextBtn.addEventListener('click', () => {
           strip.scrollBy({ left: 320 * dir, behavior: 'smooth' });
         });
+
+        // deixa as setas visualmente "apagadas" quando não há nada pra rolar ainda
+        function updateArrowState() {
+          const hasOverflow = strip.scrollWidth > strip.clientWidth + 4;
+          prevBtn.style.opacity = hasOverflow ? '' : '0.35';
+          nextBtn.style.opacity = hasOverflow ? '' : '0.35';
+          prevBtn.style.cursor = hasOverflow ? '' : 'default';
+          nextBtn.style.cursor = hasOverflow ? '' : 'default';
+        }
+        updateArrowState();
+        window.addEventListener('resize', updateArrowState);
+        strip.querySelectorAll('img').forEach(img => img.addEventListener('load', updateArrowState));
       }
     });
 
