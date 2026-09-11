@@ -67,7 +67,7 @@
   .serif { font-family:'Fraunces', serif; }
   html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
-  /* NAV REESTRUTURADA */
+  /* NAV ALINHADA EXATAMENTE COM AS MARGENS DE 40px */
   nav {
     position: sticky; top:0; z-index:60;
     display: grid;
@@ -82,6 +82,7 @@
   nav .nav-left {
     display: flex; align-items: center; gap: 20px;
     justify-self: start;
+    padding-left: 0;
   }
   nav .logo { font-family:'Fraunces', serif; font-weight:500; font-size:1.05rem; color: var(--ink); text-decoration: none; cursor: pointer; transition: opacity 0.2s ease; }
   nav .logo:hover { opacity: 0.7; }
@@ -126,6 +127,7 @@
     transition: all .25s;
     display: inline-flex;
     align-items: center;
+    margin-right: 0;
   }
   nav .cta:hover { background:var(--ink); color:var(--bg); }
 
@@ -635,7 +637,7 @@
     transform: translateY(0);
   }
 
-  /* ABAS SOCIAL MEDIA / BLOG NA VOIT */
+  /* ABAS SOCIAL MEDIA / BLOG NA VOIT (COM ALINHAMENTO NAS MARGENS DE 40px) */
   .voit-tabs {
     display: flex;
     gap: 10px;
@@ -660,7 +662,7 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
-  /* CARROSSEL DE BLOG COM MARGENS DE 40px NAS LATERAIS */
+  /* CARROSSEL DE BLOG COM ALINHAMENTO EXATO DE 40px */
   .blog-carousel-container {
     display: flex;
     flex-direction: row;
