@@ -655,15 +655,29 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
-  /* LISTA LARGA EM TEXTO PARA O BLOG */
-  .blog-text-list {
-    padding: 0 40px;
+  /* BLOCOS DE 6 ITENS PARA O BLOG */
+  .blog-carousel-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0 40px 10px;
+    scroll-behavior: smooth;
+  }
+  .blog-carousel-container::-webkit-scrollbar { display: none; }
+
+  .blog-page-group {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     gap: 0;
   }
+
   .blog-text-item {
-    padding: 20px 0;
+    padding: 18px 0;
     border-bottom: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
@@ -681,7 +695,7 @@
   }
   .blog-text-item h4 {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 600;
     color: var(--ink);
   }
@@ -1142,120 +1156,83 @@
         </div>
       </div>
 
-      <!-- PAINEL BLOG (COM OS LINKS FORNECIDOS) -->
+      <!-- PAINEL BLOG (DIVIDIDO EM BLOCOS DE 6 COM CARROSSEL) -->
       <div class="voit-panel" id="voit-panel-blog">
-        <div class="blog-text-list">
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">01 / Artigo</span>
-              <h4>NR-1 Atualizada</h4>
+        <div class="blog-carousel-container" id="blogCarousel">
+          <!-- Bloco 1 (Itens 1 a 6) -->
+          <div class="blog-page-group">
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">01 / Artigo</span><h4>NR-1 Atualizada</h4></div>
+              <a href="https://voitconsultoria.com.br/nr-1-atualizada/" target="_blank" rel="noopener noreferrer">ler ↗</a>
             </div>
-            <a href="https://voitconsultoria.com.br/nr-1-atualizada/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">02 / Artigo</span><h4>Feedback Estratégico para o Colaborador</h4></div>
+              <a href="https://voitconsultoria.com.br/feedback-estrategico-colaborador/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">03 / Artigo</span><h4>Padronização de Processos</h4></div>
+              <a href="https://voitconsultoria.com.br/padronizacao-de-processos/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">04 / Artigo</span><h4>Bombeiros do RH: Recrutamento Estratégico</h4></div>
+              <a href="https://voitconsultoria.com.br/bombeiros-do-rh-recrutamento-estrategico/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">05 / Artigo</span><h4>Planejamento Orçamentário 2025</h4></div>
+              <a href="https://voitconsultoria.com.br/planejamento-orcamentario-2025/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">06 / Artigo</span><h4>Curva ABC, PEPS, ERP: Qual a Melhor Estratégia?</h4></div>
+              <a href="https://voitconsultoria.com.br/curva-abc-peps-erp-qual-a-melhor-estrategia/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
           </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">02 / Artigo</span>
-              <h4>Feedback Estratégico para o Colaborador</h4>
+
+          <!-- Bloco 2 (Itens 7 a 12) -->
+          <div class="blog-page-group">
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">07 / Artigo</span><h4>Estratégias para Ter Qualidade na Confecção</h4></div>
+              <a href="https://voitconsultoria.com.br/estrategias-para-ter-qualidade-na-confeccao/" target="_blank" rel="noopener noreferrer">ler ↗</a>
             </div>
-            <a href="https://voitconsultoria.com.br/feedback-estrategico-colaborador/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">08 / Artigo</span><h4>Programa de Treinamento e Desenvolvimento</h4></div>
+              <a href="https://voitconsultoria.com.br/programa-de-treinamento-e-desenvolvimento/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">09 / Artigo</span><h4>Retenção de Talentos</h4></div>
+              <a href="https://voitconsultoria.com.br/retencao-de-talento/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">10 / Artigo</span><h4>Como Manter um Fluxo de Caixa Saudável</h4></div>
+              <a href="https://voitconsultoria.com.br/como-manter-um-fluxo-de-caixa-saudavel/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">11 / Artigo</span><h4>Preparando o Planejamento Orçamentário</h4></div>
+              <a href="https://voitconsultoria.com.br/preparando-o-planejamento-orcamentario/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">12 / Artigo</span><h4>Planejamento Estratégico</h4></div>
+              <a href="https://voitconsultoria.com.br/planejamento-estrategico/" target="_blank" rel="noopener noreferrer">ler ↗</a>
+            </div>
           </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">03 / Artigo</span>
-              <h4>Padronização de Processos</h4>
+
+          <!-- Bloco 3 (Itens 13 a 16) -->
+          <div class="blog-page-group">
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">13 / Artigo</span><h4>O Orçamento Base Zero</h4></div>
+              <a href="https://voitconsultoria.com.br/o-orcamento-base-zero/" target="_blank" rel="noopener noreferrer">ler ↗</a>
             </div>
-            <a href="https://voitconsultoria.com.br/padronizacao-de-processos/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">04 / Artigo</span>
-              <h4>Bombeiros do RH: Recrutamento Estratégico</h4>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">14 / Artigo</span><h4>Planos Estratégicos</h4></div>
+              <a href="https://voitconsultoria.com.br/planos-estrategicos/" target="_blank" rel="noopener noreferrer">ler ↗</a>
             </div>
-            <a href="https://voitconsultoria.com.br/bombeiros-do-rh-recrutamento-estrategico/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">05 / Artigo</span>
-              <h4>Planejamento Orçamentário 2025</h4>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">15 / Artigo</span><h4>Recrutamento e Seleção</h4></div>
+              <a href="https://voitconsultoria.com.br/recrutamento-e-selecao/" target="_blank" rel="noopener noreferrer">ler ↗</a>
             </div>
-            <a href="https://voitconsultoria.com.br/planejamento-orcamentario-2025/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">06 / Artigo</span>
-              <h4>Curva ABC, PEPS, ERP: Qual a Melhor Estratégia?</h4>
+            <div class="blog-text-item">
+              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">16 / Artigo</span><h4>Como Realizar um Planejamento Orçamentário</h4></div>
+              <a href="https://voitconsultoria.com.br/como-realizar-um-planejamento-orcamentario/" target="_blank" rel="noopener noreferrer">ler ↗</a>
             </div>
-            <a href="https://voitconsultoria.com.br/curva-abc-peps-erp-qual-a-melhor-estrategia/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">07 / Artigo</span>
-              <h4>Estratégias para Ter Qualidade na Confecção</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/estrategias-para-ter-qualidade-na-confeccao/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">08 / Artigo</span>
-              <h4>Programa de Treinamento e Desenvolvimento</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/programa-de-treinamento-e-desenvolvimento/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">09 / Artigo</span>
-              <h4>Retenção de Talentos</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/retencao-de-talento/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">10 / Artigo</span>
-              <h4>Como Manter um Fluxo de Caixa Saudável</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/como-manter-um-fluxo-de-caixa-saudavel/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">11 / Artigo</span>
-              <h4>Preparando o Planejamento Orçamentário</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/preparando-o-planejamento-orcamentario/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">12 / Artigo</span>
-              <h4>Planejamento Estratégico</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/planejamento-estrategico/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">13 / Artigo</span>
-              <h4>O Orçamento Base Zero</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/o-orcamento-base-zero/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">14 / Artigo</span>
-              <h4>Planos Estratégicos</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/planos-estrategicos/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">15 / Artigo</span>
-              <h4>Recrutamento e Seleção</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/recrutamento-e-selecao/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-          </div>
-          <div class="blog-text-item">
-            <div class="blog-text-content">
-              <span class="n mono" style="font-size:0.65rem;">16 / Artigo</span>
-              <h4>Como Realizar um Planejamento Orçamentário</h4>
-            </div>
-            <a href="https://voitconsultoria.com.br/como-realizar-um-planejamento-orcamentario/" target="_blank" rel="noopener noreferrer">ler ↗</a>
           </div>
         </div>
       </div>
@@ -1528,16 +1505,9 @@
         if (target) {
           target.classList.add('active');
           const parentBlock = target.closest('.project-block');
-          const strip = target.querySelector('.strip');
+          const strip = target.querySelector('.strip') || target.querySelector('.blog-carousel-container');
           if (strip && parentBlock) {
             updateStripArrows(strip, parentBlock);
-          } else if (parentBlock) {
-            const prevBtn = parentBlock.querySelector('.strip-btn.prev');
-            const nextBtn = parentBlock.querySelector('.strip-btn.next');
-            if (prevBtn && nextBtn) {
-              prevBtn.style.opacity = '0.35';
-              nextBtn.style.opacity = '0.35';
-            }
           }
         }
       });
@@ -1554,42 +1524,50 @@
       nextBtn.style.cursor = 'pointer';
     }
 
-    /* NAVEGAÇÃO POR SETAS DAS GALERIAS DOS PROJETOS */
+    /* NAVEGAÇÃO POR SETAS DAS GALERIAS E BLOG */
     document.querySelectorAll('.project-block').forEach(block => {
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
       if (!prevBtn || !nextBtn) return;
 
-      const getActiveStrip = () => {
+      const getActiveContainer = () => {
         const activePanel = block.querySelector('.voit-panel.active');
         if (activePanel) {
-          return activePanel.querySelector('.strip');
+          return activePanel.querySelector('.strip') || activePanel.querySelector('.blog-carousel-container');
         }
         return block.querySelector('.strip');
       };
 
-      const currentActiveStrip = getActiveStrip();
-      if (currentActiveStrip) {
-        updateStripArrows(currentActiveStrip, block);
+      const currentContainer = getActiveContainer();
+      if (currentContainer) {
+        updateStripArrows(currentContainer, block);
       }
 
       prevBtn.addEventListener('click', () => {
-        const strip = getActiveStrip();
-        if (!strip) return;
-        const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-        strip.scrollBy({ left: -380 * dir, behavior: 'smooth' });
+        const container = getActiveContainer();
+        if (!container) return;
+        if (container.classList.contains('blog-carousel-container')) {
+          container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
+        } else {
+          const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+          container.scrollBy({ left: -380 * dir, behavior: 'smooth' });
+        }
       });
 
       nextBtn.addEventListener('click', () => {
-        const strip = getActiveStrip();
-        if (!strip) return;
-        const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-        strip.scrollBy({ left: 380 * dir, behavior: 'smooth' });
+        const container = getActiveContainer();
+        if (!container) return;
+        if (container.classList.contains('blog-carousel-container')) {
+          container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+        } else {
+          const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+          container.scrollBy({ left: 380 * dir, behavior: 'smooth' });
+        }
       });
 
       window.addEventListener('resize', () => {
-        const strip = getActiveStrip();
-        if (strip) updateStripArrows(strip, block);
+        const container = getActiveContainer();
+        if (container) updateStripArrows(container, block);
       });
     });
 
