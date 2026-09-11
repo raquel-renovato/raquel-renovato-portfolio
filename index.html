@@ -83,7 +83,8 @@
     display: flex; align-items: center; gap: 20px;
     justify-self: start;
   }
-  nav .logo { font-family:'Fraunces', serif; font-weight:500; font-size:1.05rem; }
+  nav .logo { font-family:'Fraunces', serif; font-weight:500; font-size:1.05rem; color: var(--ink); text-decoration: none; cursor: pointer; transition: opacity 0.2s ease; }
+  nav .logo:hover { opacity: 0.7; }
   
   .theme-toggle {
     background: none; border: 1px solid var(--line-strong);
@@ -871,9 +872,9 @@
 
   <div id="site-content">
 
-  <nav>
+  <nav id="top">
     <div class="nav-left">
-      <div class="logo">Raquel Renovato</div>
+      <a href="#top" class="logo" id="logoHome">Raquel Renovato</a>
       <button id="themeToggle" class="theme-toggle mono" aria-label="Alternar tema">
         <span id="themeLabel">Sombrio</span>
       </button>
@@ -1171,8 +1172,8 @@
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
         <div class="strip-links">
           <a class="strip-full-link" href="https://fernando-amaral-website-web.vercel.app/" target="_blank" rel="noopener noreferrer">Site original ↗</a>
@@ -1224,8 +1225,8 @@
         </div>
         <div class="strip-nav">
           <div class="strip-nav-arrows">
-            <button class="strip-btn prev" aria-label="Anterior">←</button>
-            <button class="strip-btn next" aria-label="Próximo">→</button>
+            <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+            <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
           </div>
         </div>
       </div>
@@ -1269,8 +1270,8 @@
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
         <a class="strip-full-link" href="https://canva.link/w874gu7mhg7053v" target="_blank" rel="noopener noreferrer">Ver conteúdo completo ↗</a>
       </div>
@@ -1318,8 +1319,8 @@
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
       </div>
     </article>
@@ -1376,8 +1377,8 @@
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
       </div>
     </article>
@@ -1543,9 +1544,8 @@
       const strip = block.querySelector('.strip');
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
-      // a galeria da Voit (.voit-strip) não é invertida, mesmo em projetos "from-right"
-      const isReversed = block.classList.contains('from-right') && !strip.classList.contains('voit-strip');
-      const dir = isReversed ? -1 : 1;
+      // a galeria da Voit (.voit-strip) sempre rola na direção normal
+      const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
 
       if (strip && prevBtn && nextBtn) {
         prevBtn.addEventListener('click', () => {
