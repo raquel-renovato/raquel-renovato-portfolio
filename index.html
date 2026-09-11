@@ -688,6 +688,18 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
+  /* link "ver conteúdo completo" abaixo das tags do projeto */
+  .project-full-link-row {
+    padding: 0 40px;
+    margin: -6px 0 26px;
+  }
+  .project-full-link-row .strip-full-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+  }
+
   /* BOTÕES DE NAVEGAÇÃO POR SETA */
   .strip-nav {
     display: flex;
@@ -875,6 +887,7 @@
     .spec-floater { display: none; }
     .side-drawer { padding: 40px 24px; max-width: 100%; }
     .drawer-grid-2 { grid-template-columns: 1fr; }
+    .project-full-link-row { padding: 0 22px; }
   }
 </style>
 </head>
@@ -1203,15 +1216,12 @@
         <div class="tags"><span class="tag">Canva</span><span class="tag">Adobe</span><span class="tag">Figma</span><span class="tag">Copywriting</span><span class="tag">Método & Processo</span></div>
       </div>
 
+      <div class="project-full-link-row">
+        <button type="button" class="strip-full-link" onclick="openVoitDrawer()">Ver Método e Processo Completo ↗</button>
+      </div>
+
       <div class="voit-panel active" id="voit-panel-social">
         <div class="strip voit-strip">
-          <div class="strip-item ig-ratio mono" onclick="openVoitDrawer()" style="cursor: pointer; background: var(--card); border: 1.5px dashed var(--accent);">
-            <div style="padding: 20px; color: var(--ink);">
-              <span style="font-size: 1.1rem; display: block; margin-bottom: 8px; color: var(--accent);">✦ Ver método e processo</span>
-              <span style="font-size: 0.68rem; color: var(--dim); line-height: 1.5;">Conheça o método passo a passo: alinhamento, pesquisa, validação e entrega.</span>
-            </div>
-            <div class="voit-caption">Clique para abrir a metodologia detalhada</div>
-          </div>
           <div class="strip-item ig-ratio mono">
             redes sociais
             <div class="voit-caption">Carrossel — posts para redes sociais</div>
@@ -1231,9 +1241,6 @@
         <div class="strip-nav-arrows">
           <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
           <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
-        </div>
-        <div class="strip-links">
-          <button type="button" class="strip-full-link" style="background:none; border:none; cursor:pointer;" onclick="openVoitDrawer()">Ver Método e Processo Completo ↗</button>
         </div>
       </div>
     </article>
@@ -1562,31 +1569,30 @@
 
     /* NAVEGAÇÃO POR SETAS DAS GALERIAS */
     document.querySelectorAll('.project-block').forEach(block => {
+      const strip = block.querySelector('.strip');
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
-      if (!prevBtn || !nextBtn) return;
+      if (!strip || !prevBtn || !nextBtn) return;
 
-      const getActiveContainer = () => {
-        const activePanel = block.querySelector('.voit-panel.active');
-        if (activePanel) {
-          return activePanel.querySelector('.strip');
-        }
-        return block.querySelector('.strip');
-      };
+      const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
 
       prevBtn.addEventListener('click', () => {
-        const container = getActiveContainer();
-        if (!container) return;
-        const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-        container.scrollBy({ left: -380 * dir, behavior: 'smooth' });
+        strip.scrollBy({ left: -380 * dir, behavior: 'smooth' });
       });
 
       nextBtn.addEventListener('click', () => {
-        const container = getActiveContainer();
-        if (!container) return;
-        const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-        container.scrollBy({ left: 380 * dir, behavior: 'smooth' });
+        strip.scrollBy({ left: 380 * dir, behavior: 'smooth' });
       });
+
+      // deixa as setas visualmente "apagadas" quando não há nada pra rolar ainda
+      function updateArrowState() {
+        const hasOverflow = strip.scrollWidth > strip.clientWidth + 4;
+        prevBtn.style.opacity = hasOverflow ? '' : '0.35';
+        nextBtn.style.opacity = hasOverflow ? '' : '0.35';
+      }
+      updateArrowState();
+      window.addEventListener('resize', updateArrowState);
+      strip.querySelectorAll('img').forEach(img => img.addEventListener('load', updateArrowState));
     });
 
     /* SELEÇÃO DE COR NA PALETA INTERATIVA */
@@ -1693,7 +1699,6 @@
     });
 
     const clearBtn = document.getElementById('clearBtn');
-    clearBtn.sliderColor = null;
     clearBtn.addEventListener('click', () => {
       document.querySelectorAll('.wf-paintable').forEach(el => {
         el.style.backgroundColor = '';
