@@ -9,16 +9,16 @@
 <style>
   /* PALETE EDITORIAL: RAÍZES & SENSIBILIDADE (LIGHT) */
   :root {
-    --bg: #F3EFEA;             /* Papel Linho Acolhedor */
-    --ink: #1F1C18;            /* Café Tinta Profundo */
-    --dim: #59534C;            /* Terra Sombra Suave */
-    --muted: #8A8379;          /* Cinza Argila */
+    --bg: #F3EFEA;               /* Papel Linho Acolhedor */
+    --ink: #1F1C18;              /* Café Tinta Profundo */
+    --dim: #59534C;              /* Terra Sombra Suave */
+    --muted: #8A8379;            /* Cinza Argila */
     --line: rgba(31, 28, 24, 0.15);
     --line-strong: rgba(31, 28, 24, 0.35);
-    --card: #E5DFD5;           /* Card Papel Encorpado */
+    --card: #E5DFD5;             /* Card Papel Encorpado */
     --card-hover: #DCD5C9;
-    --accent: #E8590C;         /* Laranja Criativo Vibrante */
-    --accent-green: #38483A;   /* Verde Botânico */
+    --accent: #E8590C;           /* Laranja Criativo Vibrante */
+    --accent-green: #38483A;     /* Verde Botânico */
     --accent-soft: rgba(232, 89, 12, 0.10);
     --accent-hover: #C24A08;
     --nav-bg: rgba(243, 239, 234, 0.92);
@@ -32,16 +32,16 @@
 
   /* TEMA SOMBRIO BOTÂNICO (DARK) */
   [data-theme="dark"] {
-    --bg: #181614;             /* Noite Café Escura */
-    --ink: #F0ECE1;            /* Marfim Suave */
-    --dim: #A6A095;            /* Terra Clara */
+    --bg: #181614;               /* Noite Café Escura */
+    --ink: #F0ECE1;              /* Marfim Suave */
+    --dim: #A6A095;              /* Terra Clara */
     --muted: #6E685E;
     --line: rgba(240, 236, 225, 0.15);
     --line-strong: rgba(240, 236, 225, 0.30);
-    --card: #23201C;           /* Madeira/Córtex Escuro */
+    --card: #23201C;             /* Madeira/Córtex Escuro */
     --card-hover: #2C2823;
-    --accent: #F26D1D;         /* Laranja Criativo Vibrante Iluminado */
-    --accent-green: #6E8B73;   /* Verde Sálvia Suave */
+    --accent: #F26D1D;           /* Laranja Criativo Vibrante Iluminado */
+    --accent-green: #6E8B73;     /* Verde Sálvia Suave */
     --accent-soft: rgba(242, 109, 29, 0.14);
     --accent-hover: #F98A46;
     --nav-bg: rgba(24, 22, 20, 0.90);
@@ -63,11 +63,13 @@
     transition: background-color 0.4s ease, color 0.4s ease;
   }
 
+  body.drawer-open { overflow: hidden; }
+
   .mono { font-family:'IBM Plex Mono', monospace; }
   .serif { font-family:'Fraunces', serif; }
   html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
-  /* NAV REESTRUTURADA */
+  /* NAV ALINHADA EXATAMENTE COM AS MARGENS DE 40px */
   nav {
     position: sticky; top:0; z-index:60;
     display: grid;
@@ -82,8 +84,10 @@
   nav .nav-left {
     display: flex; align-items: center; gap: 20px;
     justify-self: start;
+    padding-left: 0;
   }
-  nav .logo { font-family:'Fraunces', serif; font-weight:500; font-size:1.05rem; }
+  nav .logo { font-family:'Fraunces', serif; font-weight:500; font-size:1.05rem; color: var(--ink); text-decoration: none; cursor: pointer; transition: opacity 0.2s ease; }
+  nav .logo:hover { opacity: 0.7; }
   
   .theme-toggle {
     background: none; border: 1px solid var(--line-strong);
@@ -125,6 +129,7 @@
     transition: all .25s;
     display: inline-flex;
     align-items: center;
+    margin-right: 0;
   }
   nav .cta:hover { background:var(--ink); color:var(--bg); }
 
@@ -336,16 +341,60 @@
 
   .hero-visual-hint { font-size: 0.68rem; color: var(--muted); text-align: center; }
 
+  /* SEÇÃO DE PROCESSO CRIATIVO LOGO DEPOIS DA DOBRA */
+  .process-fold-section {
+    padding: 40px 40px 60px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--card);
+    margin: 20px 0 40px;
+  }
+  .process-fold-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .process-fold-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 24px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .process-fold-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  .process-step-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .process-fold-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .process-fold-card p {
+    font-size: 0.88rem;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+
   /* SECTIONS */
-  .section-head { display:flex; justify-content:space-between; align-items:baseline; padding:56px 40px 30px; }
+  .section-head { display:flex; justify-content:space-between; align-items:baseline; padding:40px 40px 24px; }
   .section-head .num { font-size:0.75rem; color:var(--accent); font-weight: 600; }
   .section-head h2 { font-family:'Fraunces', serif; font-size:clamp(1.6rem,3.4vw,2.1rem); font-weight:400; }
   .section-head .count { font-size:0.75rem; color:var(--muted); }
   .section-head.centered { justify-content: center; text-align: center; }
 
-  /* ========================================================
-     DOBRA "SOBRE MIM" — CONSTRUTIVISMO RUSSO & UI/UX 
-     ======================================================== */
+  /* SOBRE MIM */
   .constructivist-about {
     padding: 20px 40px 90px;
     display: grid;
@@ -355,10 +404,7 @@
     position: relative;
   }
 
-  /* Bloco de texto */
-  .const-text-wrapper {
-    position: relative;
-  }
+  .const-text-wrapper { position: relative; }
 
   .const-manifesto-title {
     font-family: 'IBM Plex Mono', monospace;
@@ -378,12 +424,7 @@
     margin-bottom: 20px;
   }
 
-  .const-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 28px;
-  }
+  .const-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 
   .const-tag {
     font-size: 0.7rem;
@@ -401,7 +442,6 @@
     border-color: var(--accent);
   }
 
-  /* Vitrine Construtivista Geométrica para a Foto + Elementos UI/UX */
   .const-visual-showcase {
     position: relative;
     width: 100%;
@@ -413,7 +453,6 @@
     justify-content: center;
   }
 
-  /* anel de texto girando devagar ao redor da foto */
   .const-orbit-text {
     position: absolute;
     inset: 0;
@@ -436,7 +475,6 @@
     .const-orbit-text { animation: none; }
   }
 
-  /* linha tracejada, um pouco maior que a foto, reforçando o círculo */
   .const-orbit-ring {
     position: absolute;
     inset: 6%;
@@ -445,7 +483,6 @@
     z-index: 1;
   }
 
-  /* foto circular */
   .const-photo-frame {
     position: relative;
     width: 66%;
@@ -468,7 +505,6 @@
   }
   .const-photo-frame:hover img { filter: none; }
 
-  /* elementos de design/UI-UX flutuando ao redor do círculo */
   .const-floater {
     position: absolute;
     z-index: 5;
@@ -484,8 +520,7 @@
   }
 
   .const-floater.badge {
-    top: 2%;
-    right: 6%;
+    top: 2%; right: 6%;
     background: var(--bg);
     border: 1px solid var(--accent);
     color: var(--accent);
@@ -497,17 +532,9 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.06);
   }
 
-  .const-floater.pen {
-    top: 4%;
-    left: 0%;
-    width: 46px;
-    height: 46px;
-    animation-delay: 0.6s;
-  }
-
+  .const-floater.pen { top: 4%; left: 0%; width: 46px; height: 46px; animation-delay: 0.6s; }
   .const-floater.spec {
-    bottom: 6%;
-    left: -4%;
+    bottom: 6%; left: -4%;
     background: var(--bg);
     border: 1px solid var(--line-strong);
     color: var(--dim);
@@ -520,17 +547,14 @@
   }
 
   .const-floater.cursor {
-    bottom: 2%;
-    right: 0%;
+    bottom: 2%; right: 0%;
     background: var(--ink);
     color: var(--bg);
     border-radius: 4px 14px 14px 14px;
     padding: 4px 10px;
     font-size: 0.62rem;
     font-family: 'IBM Plex Mono', monospace;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    display: flex; align-items: center; gap: 5px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.1);
     animation-delay: 0.3s;
   }
@@ -574,53 +598,40 @@
 
   .strip { display:flex; gap: 16px; overflow-x: auto; scrollbar-width: none; padding: 0 40px 10px; scroll-behavior: smooth; }
   .strip::-webkit-scrollbar { display:none; }
+  
+  /* Efeito de zoom suave garantido em todos os cards de imagem */
   .strip-item {
     flex: 0 0 auto; width: min(46vw, 380px); aspect-ratio: 4/3;
-    background: var(--card); border: 1px solid var(--line-strong);
+    background: var(--card); border: 1px solid var(--line);
     color: var(--dim); font-size:0.72rem; text-align:center; padding: 0;
     border-radius: 6px; display:flex; align-items:center; justify-content:center;
     opacity: 0; overflow: hidden; cursor: pointer;
-    transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease, background-color 0.25s ease;
+    transition: transform 0.3s cubic-bezier(.16,1,.3,1), opacity 0.9s ease, background-color 0.25s ease, border-color 0.25s ease;
   }
   .strip-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform 0.3s ease;
+  }
+  .strip-item:hover { 
+    background: var(--card-hover); 
+    border-color: var(--line-strong); 
+    transform: scale(1.03); 
   }
   .strip-item:hover img {
     transform: scale(1.04);
   }
-  .strip-item:hover { background: var(--card-hover); }
+
   .strip-item:not(.ig-ratio):first-child { width: min(56vw, 460px); }
   .strip-item.ig-ratio { aspect-ratio: 1080 / 1350; width: min(34vw, 300px); }
   .strip-item.widescreen { aspect-ratio: 1920 / 1080; width: min(56vw, 460px); }
-
-  /* peças com conteúdo sensível do cliente: desfoque proposital, só o layout aparece */
-  .strip-item.confidential { position: relative; }
-  .strip-item.confidential img {
-    filter: blur(7px) brightness(0.92);
-  }
-  .strip-item.confidential:hover img {
-    transform: scale(1.04);
-    filter: blur(7px) brightness(0.92);
-  }
-  .strip-item.confidential::after {
-    content: 'material de treinamento — protegido';
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: #FFF;
-    background: rgba(0,0,0,0.55);
-    padding: 5px 8px;
-    border-radius: 4px;
-    pointer-events: none;
-    text-align: center;
-    z-index: 2;
+  .strip-item.natural-fit { aspect-ratio: unset; height: 420px; width: auto; }
+  .strip-item.natural-fit:first-child { width: min(70vw, 760px); }
+  .strip-item.natural-fit img { width: auto; height: 100%; object-fit: contain; }
+  .strip-item.natural-fit:first-child img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  
+  @media (max-width: 780px) {
+    .strip-item.natural-fit { height: 260px; }
+    .strip-item.natural-fit:first-child { width: 88vw; }
   }
 
   .project-block.from-left .strip-item { transform: translateX(-100%) scale(0.97); }
@@ -631,6 +642,63 @@
   .project-block .strip-item:nth-child(3) { transition-delay: 0.16s; }
   .project-block .strip-item:nth-child(4) { transition-delay: 0.24s; }
   .project-block.from-right .strip { flex-direction: row-reverse; }
+  .project-block.from-right .strip.voit-strip { flex-direction: row; }
+
+  /* Voit Consultoria e Scroll de Social Media */
+  .voit-panel.active .strip.voit-strip {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+  .voit-panel.active .strip.voit-strip::-webkit-scrollbar { display: none; }
+
+  .strip.voit-strip .strip-item.ig-ratio {
+    position: relative;
+    aspect-ratio: unset;
+    height: calc(min(34vw, 300px) * 1.25);
+    transition: width 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease, opacity 0.9s ease, background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .strip.voit-strip .strip-item.ig-ratio:hover {
+    width: calc(min(34vw, 300px) * 1.4);
+    transform: scale(1.03);
+    z-index: 3;
+  }
+  .voit-caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px 14px 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.78), transparent);
+    color: #FFF;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .strip.voit-strip .strip-item:hover .voit-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .voit-panel { display: none; }
+  .voit-panel.active { display: block; }
+
+  /* link "ver conteúdo completo" abaixo das tags do projeto */
+  .project-full-link-row {
+    padding: 0 40px;
+    margin: -6px 0 26px;
+  }
+  .project-full-link-row .strip-full-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+  }
 
   /* BOTÕES DE NAVEGAÇÃO POR SETA */
   .strip-nav {
@@ -638,7 +706,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    padding: 10px 40px 0;
+    padding: 16px 40px 0;
     flex-wrap: wrap;
   }
   .strip-btn {
@@ -663,6 +731,7 @@
     transform: scale(1.06);
   }
   .strip-nav-arrows { display: flex; gap: 8px; }
+  .strip-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
   .strip-full-link {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.72rem;
@@ -719,13 +788,9 @@
     box-shadow: 0 0 25px rgba(0,0,0,0.8);
     animation: zoomModal 0.25s ease;
   }
-  .img-modal-content.confidential-modal {
-    filter: blur(9px) brightness(0.9);
-  }
   .img-modal-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 20px; right: 30px;
     color: #FFF;
     font-size: 36px;
     font-weight: bold;
@@ -739,15 +804,90 @@
     to { transform: scale(1); opacity: 1; }
   }
 
+  /* GAVETA LATERAL DIREITA (SIDE DRAWER) */
+  .drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 800;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .drawer-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .side-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    z-index: 900;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    padding: 50px 40px;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .side-drawer.active {
+    right: 0;
+  }
+
+  .drawer-close-btn {
+    background: none;
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--ink);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    transition: color 0.2s;
+  }
+  .drawer-close-btn:hover { color: var(--accent); }
+
+  .drawer-header { margin-bottom: 36px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+  .drawer-header h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 400; margin: 10px 0 12px; }
+
+  .drawer-section { margin-bottom: 40px; }
+  .drawer-section h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+  }
+  .drawer-section p { font-size: 0.98rem; color: var(--dim); line-height: 1.75; margin-bottom: 14px; }
+
+  .drawer-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .drawer-card-info { background: var(--card); border: 1px solid var(--line); padding: 16px; border-radius: 6px; }
+  .drawer-card-info strong { display: block; font-size: 0.82rem; margin-bottom: 4px; color: var(--ink); font-family: 'IBM Plex Mono', monospace; }
+  .drawer-card-info span { font-size: 0.86rem; color: var(--dim); line-height: 1.4; }
+
   /* RESPONSIVO */
   @media (max-width: 780px) {
     nav { display: flex; justify-content: space-between; }
     nav ul { display:none; }
-    .hero, .constructivist-about, .skills, .cta-band, .section-head, footer, .project-head, .strip, .strip-nav { padding-left:22px; padding-right:22px; }
+    .hero, .constructivist-about, .skills, .cta-band, .section-head, footer, .project-head, .strip, .strip-nav, .process-fold-section { padding-left:22px; padding-right:22px; }
     .hero, .constructivist-about { grid-template-columns: 1fr; }
     .hero-visual { order: -1; margin-bottom: 20px; }
     .skill-grid { grid-template-columns: 1fr 1fr; }
+    .process-fold-grid { grid-template-columns: 1fr; gap: 16px; }
     .spec-floater { display: none; }
+    .side-drawer { padding: 40px 24px; max-width: 100%; }
+    .drawer-grid-2 { grid-template-columns: 1fr; }
+    .project-full-link-row { padding: 0 22px; }
   }
 </style>
 </head>
@@ -764,9 +904,9 @@
 
   <div id="site-content">
 
-  <nav>
+  <nav id="top">
     <div class="nav-left">
-      <div class="logo">Raquel Renovato</div>
+      <a href="#top" class="logo" id="logoHome">Raquel Renovato</a>
       <button id="themeToggle" class="theme-toggle mono" aria-label="Alternar tema">
         <span id="themeLabel">Sombrio</span>
       </button>
@@ -791,10 +931,7 @@
     </div>
 
     <div class="hero-visual">
-      <!-- CONTAINER COM ILUSTRAÇÕES DE DESIGN FLUTUANTES -->
       <div class="wf-wrapper">
-
-        <!-- ILUSTRAÇÃO 1: CANETA BEZIER / VETOR DE DESIGN -->
         <svg class="wf-illustration pen-tool-svg" viewBox="0 0 100 100" fill="none">
           <path d="M 15,80 C 35,20 65,80 85,20" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3"/>
           <line x1="15" y1="80" x2="35" y2="20" stroke="var(--line-strong)" stroke-width="1.5"/>
@@ -803,17 +940,14 @@
           <rect x="81" y="16" width="8" height="8" fill="var(--accent)"/>
         </svg>
 
-        <!-- ILUSTRAÇÃO 2: BADGE DE COMPONENTE AUTO-LAYOUT -->
         <div class="wf-illustration badge-floater">
           <span>❖</span> auto-layout 8px
         </div>
 
-        <!-- ILUSTRAÇÃO 3: ESPECIFICAÇÃO DE DENSIDADE DE GRID -->
         <div class="wf-illustration spec-floater">
           <span>↔</span> 380px × 260px
         </div>
 
-        <!-- ILUSTRAÇÃO 4: CURSOR FIGMA COM SEU NOME -->
         <div class="wf-illustration cursor-floater">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 3l7 18 3-7 7-3L3 3z"/>
@@ -821,7 +955,6 @@
           <span>Raquel • UI/UX</span>
         </div>
 
-        <!-- MOCKUP UI INTERATIVO -->
         <div class="wf-window" id="wfWindow">
           <div class="wf-header">
             <div class="wf-dots">
@@ -838,7 +971,6 @@
             </div>
 
             <div class="wf-main">
-              <!-- ESTRUTURA 1: DASHBOARD -->
               <div class="wf-view active" id="view-dashboard">
                 <div class="wf-top-bar">
                   <span class="wf-title">Painel de Dashboard</span>
@@ -872,7 +1004,6 @@
                 </div>
               </div>
 
-              <!-- ESTRUTURA 2: INTERFACES -->
               <div class="wf-view" id="view-interfaces">
                 <div class="wf-top-bar">
                   <span class="wf-title">Prototipagem de Wireframes</span>
@@ -904,7 +1035,6 @@
                 </div>
               </div>
 
-              <!-- ESTRUTURA 3: DESIGN SYSTEM -->
               <div class="wf-view" id="view-ds">
                 <div class="wf-top-bar">
                   <span class="wf-title">Biblioteca de Tokens</span>
@@ -926,13 +1056,11 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PALETA DE CORES INTERATIVA -->
       <div class="color-palette" id="colorPalette">
         <button type="button" class="swatch active" data-color="#E8590C" style="background:#E8590C" title="Laranja Criativo"></button>
         <button type="button" class="swatch" data-color="#38483A" style="background:#38483A" title="Verde Botânico"></button>
@@ -946,7 +1074,31 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 01: SOBRE MIM (ESTILO CONSTRUTIVISTA & UI/UX) -->
+  <!-- SEÇÃO DE PROCESSO CRIATIVO E EXECUÇÃO (LOGO DEPOIS DA DOBRA) -->
+  <section class="process-fold-section">
+    <div style="max-width: 500px;">
+      <span class="mono" style="font-size: 0.72rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">método & execução</span>
+    </div>
+    <div class="process-fold-grid">
+      <div class="process-fold-card">
+        <span class="process-step-num">01 / DIAGNÓSTICO</span>
+        <h4>Entendimento & Imersão</h4>
+        <p>Investigação do problema inicial, escopo e alinhamento de expectativas com o cliente para mapear o caminho correto antes de abrir qualquer software.</p>
+      </div>
+      <div class="process-fold-card">
+        <span class="process-step-num">02 / ESTRUTURAÇÃO</span>
+        <h4>Pesquisa & Direção Visual</h4>
+        <p>Definição de hierarquia, arquitetura de informação, tom de voz e benchmarks de mercado para dar sustentação conceitual ao projeto.</p>
+      </div>
+      <div class="process-fold-card">
+        <span class="process-step-num">03 / ENTREGA</span>
+        <h4>Execução & Validação</h4>
+        <p>Desenvolvimento no Figma, Pacote Adobe ou Canva, refinamento de microinterações e validação técnica junto aos especialistas da área.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 01: SOBRE MIM -->
   <div class="section-head" id="sobre">
     <h2>Sobre mim</h2>
   </div>
@@ -967,12 +1119,9 @@
       </div>
     </div>
 
-    <!-- VITRINE CIRCULAR COM ELEMENTOS DE UI/UX FLUTUANDO -->
     <div class="const-visual-showcase">
-
       <div class="const-orbit-ring"></div>
 
-      <!-- texto girando ao redor da foto -->
       <svg class="const-orbit-text" viewBox="0 0 200 200">
         <defs>
           <path id="orbitPath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" fill="none"/>
@@ -984,7 +1133,6 @@
         </text>
       </svg>
 
-      <!-- caneta bezier flutuante -->
       <svg class="const-floater pen" viewBox="0 0 100 100" fill="none">
         <path d="M 15,80 C 35,20 65,80 85,20" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3"/>
         <line x1="15" y1="80" x2="35" y2="20" stroke="var(--line-strong)" stroke-width="1.5"/>
@@ -993,13 +1141,9 @@
         <rect x="81" y="16" width="8" height="8" fill="var(--accent)"/>
       </svg>
 
-      <!-- badge auto-layout -->
       <div class="const-floater badge mono">❖ auto-layout 8px</div>
-
-      <!-- especificação de medida -->
       <div class="const-floater spec mono">↔ 380px × 380px</div>
 
-      <!-- cursor com nome -->
       <div class="const-floater cursor mono">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
           <path d="M3 3l7 18 3-7 7-3L3 3z"/>
@@ -1007,11 +1151,9 @@
         <span>Raquel • UI/UX</span>
       </div>
 
-      <!-- foto circular com caminho atualizado -->
       <div class="const-photo-frame">
         <img src="img/img-perfil/foto-perfil.jpeg" alt="Raquel Renovato" onclick="openImageModal(this.src)">
       </div>
-
     </div>
   </section>
 
@@ -1022,213 +1164,278 @@
 
   <div id="projects-container">
 
+    <!-- PROJETO 01 -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">01 / 05</span>
         <h3>Fernando Amaral</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>Fernando atua desde 2013 no desenvolvimento de projetos elétricos para residências, condomínios e empreendimentos comerciais de alto padrão — já são mais de 80.000m² projetados, com foco em precisão técnica e conformidade normativa.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Redesign de landing page e UI design — reorganização da hierarquia, nova paleta e microinterações de hover, botão e scroll, prototipado no Figma.</p>
         </div>
-
         <div class="tags"><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Redesign</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item mono">imagem principal<br>(mockup da landing page)</div>
-        <div class="strip-item mono">variação 2</div>
-        <div class="strip-item mono">variação 3</div>
-        <div class="strip-item mono">variação 4</div>
-        <div class="strip-item mono">variação 5</div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web.png" alt="Fernando Amaral - Layout principal" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-1.png" alt="Fernando Amaral - Layout 2" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-2.png" alt="Fernando Amaral - Layout 3" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-4.png" alt="Fernando Amaral - Layout 5" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-5.png" alt="Fernando Amaral - Layout 6" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-6.png" alt="Fernando Amaral - Layout 7" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-7.png" alt="Fernando Amaral - Layout 8" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
+        </div>
+        <div class="strip-links">
+          <a class="strip-full-link" href="https://fernando-amaral-website-web.vercel.app/" target="_blank" rel="noopener noreferrer">Site original ↗</a>
+          <a class="strip-full-link" href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=OoO2WC6j0nlgSkMM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912" target="_blank" rel="noopener noreferrer">Protótipo ↗</a>
         </div>
       </div>
     </article>
 
+    <!-- PROJETO 02: VOIT CONSULTORIA (12 CARDS) -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">02 / 05</span>
         <h3>Voit Consultoria</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>A Voit é uma consultoria com mais de 15 anos de mercado e 500+ empresas atendidas, dedicada a transformar e impulsionar pessoas e negócios através de gestão comercial, de processos e de pessoas.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
-          <p>Social media, copywriting e design ponta a ponta — redes sociais, ads, e-mail marketing, e-books e apresentações, com IA generativa otimizando o workflow.</p>
+          <p>Social media, copywriting, suporte a apresentações comerciais para Leads, materiais técnicos sob medida para múltiplos setores, ações de endomarketing e design ponta a ponta.</p>
         </div>
+        <div class="tags"><span class="tag">Canva</span><span class="tag">Adobe</span><span class="tag">Figma</span><span class="tag">Copywriting</span><span class="tag">Método & Processo</span></div>
+      </div>
 
-        <div class="tags"><span class="tag">Canva</span><span class="tag">Adobe</span><span class="tag">Figma</span><span class="tag">Copywriting</span><span class="tag">IA Generativa</span></div>
+      <div class="project-full-link-row">
+        <button type="button" class="strip-full-link" onclick="openVoitDrawer()">Ver Método e Processo Completo ↗</button>
       </div>
-      <div class="strip">
-        <div class="strip-item mono">imagem principal<br>(apresentação estratégica)</div>
-        <div class="strip-item ig-ratio mono">redes sociais</div>
-        <div class="strip-item mono">ads</div>
-        <div class="strip-item mono">e-mail mkt</div>
-        <div class="strip-item mono">blog</div>
+
+      <div class="voit-panel active" id="voit-panel-social">
+        <div class="strip voit-strip">
+          <div class="strip-item ig-ratio mono">
+            Card 01 — Redes Sociais
+            <div class="voit-caption">Carrossel institucional estratégico</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 02 — Anúncios Ads
+            <div class="voit-caption">Criativos para conversão de leads</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 03 — E-mail Mkt
+            <div class="voit-caption">Campanha segmentada de vendas</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 04 — Apresentação
+            <div class="voit-caption">Suporte comercial para reuniões</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 05 — Endomarketing
+            <div class="voit-caption">Ações internas de engajamento</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 06 — Material Técnico
+            <div class="voit-caption">Documentações diagramadas sob medida</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 07 — Identidade Visual
+            <div class="voit-caption">Ajustes e desdobramentos de marca</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 08 — Banner Institucional
+            <div class="voit-caption">Comunicação visual para eventos</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 09 — Proposta Comercial
+            <div class="voit-caption">Layout limpo focado em fechamento</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 10 — Relatório Mensal
+            <div class="voit-caption">Infográficos de desempenho</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 11 — Capa para LinkedIn
+            <div class="voit-caption">Padronização de presença digital</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 12 — Peça de Lançamento
+            <div class="voit-caption">Divulgação de nova consultoria</div>
+          </div>
+        </div>
       </div>
+
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
       </div>
     </article>
 
+    <!-- PROJETO 03 -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">03 / 05</span>
         <h3>Renata Brandão</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>Renata é especialista em vendas de alta performance, com mais de 17 anos de experiência em gestão comercial e consultoria, formação em Gestão Empresarial e MBA em Controladoria e Finanças.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Criação de treinamentos, apresentações e propostas comerciais no Canva — do conteúdo ao design dos slides.</p>
         </div>
-
         <div class="tags"><span class="tag">Canva</span><span class="tag">Apresentações</span><span class="tag">Copywriting</span><span class="tag">IA Generativa</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item widescreen">
-          <img src="img/img-renata/renata-01.jpg" alt="Renata Brandão - Slide de capa" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item widescreen">
-          <img src="img/img-renata/renata-02.jpg" alt="Renata Brandão - Slide 2" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item widescreen">
-          <img src="img/img-renata/renata-03.jpg" alt="Renata Brandão - Slide 3" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
+        <div class="strip-item widescreen"><img src="img/img-renata/renata-01.jpg" alt="Renata Brandão - Slide de capa" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item widescreen"><img src="img/img-renata/renata-02.jpg" alt="Renata Brandão - Slide 2" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item widescreen"><img src="img/img-renata/renata-03.jpg" alt="Renata Brandão - Slide 3" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
         <a class="strip-full-link" href="https://canva.link/w874gu7mhg7053v" target="_blank" rel="noopener noreferrer">Ver conteúdo completo ↗</a>
       </div>
     </article>
 
+    <!-- PROJETO 04 -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">04 / 05</span>
         <h3>Somos Braduca</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>A Braduca oferece mentorias gratuitas de inglês e testes de proficiência para estudantes da rede pública, com a missão de tornar o domínio do idioma acessível e transformar vidas pela educação.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Criação e diagramação de posts para redes sociais, mantendo consistência e identidade de marca em cada publicação.</p>
         </div>
-
         <div class="tags"><span class="tag">Social Media</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-01.jpeg" alt="Somos Braduca - Post 01" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-02.jpeg" alt="Somos Braduca - Post 02" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-03.jpeg" alt="Somos Braduca - Post 03" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-04.jpeg" alt="Somos Braduca - Post 04" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-05.jpeg" alt="Somos Braduca - Post 05" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-06.jpeg" alt="Somos Braduca - Post 06" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-07.jpeg" alt="Somos Braduca - Post 07" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-01.jpeg" alt="Somos Braduca - Post 01" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-02.jpeg" alt="Somos Braduca - Post 02" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-03.jpeg" alt="Somos Braduca - Post 03" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-04.jpeg" alt="Somos Braduca - Post 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-05.jpeg" alt="Somos Braduca - Post 05" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-06.jpeg" alt="Somos Braduca - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-07.jpeg" alt="Somos Braduca - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
       </div>
     </article>
 
-    <!-- PROJETO 05: AYMÉE FERRAZ -->
+    <!-- PROJETO 05 -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">05 / 05</span>
         <h3>Aymée Ferraz</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>Aymée é sócia fundadora da Empower CX e da Voit Consultoria, palestrante e consultora em CS/CX e Felicidade Corporativa, com mais de 15 anos ajudando empresas a construir estratégias e equipes de alta performance.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Criação e diagramação de posts para redes sociais, mantendo consistência e identidade de marca em cada publicação.</p>
         </div>
-
         <div class="tags"><span class="tag">Social Media</span><span class="tag">Design Gráfico</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-01.jpeg" alt="Aymée Ferraz - Post 01" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-02.jpeg" alt="Aymée Ferraz - Post 02" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-03.jpeg" alt="Aymée Ferraz - Post 03" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-04.jpeg" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-05.jpeg" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-01.jpeg" alt="Aymée Ferraz - Post 01" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-02.jpeg" alt="Aymée Ferraz - Post 02" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-03.jpeg" alt="Aymée Ferraz - Post 03" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-04.jpeg" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-05.jpeg" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
-          <button class="strip-btn prev" aria-label="Anterior">←</button>
-          <button class="strip-btn next" aria-label="Próximo">→</button>
+          <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+          <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
         </div>
       </div>
     </article>
 
+  </div>
+
+  <!-- GAVETA LATERAL DIREITA: MÉTODO E PROCESSO (VOIT CONSULTORIA) -->
+  <div id="drawerOverlay" class="drawer-overlay" onclick="closeVoitDrawer()"></div>
+  <div id="voitDrawer" class="side-drawer">
+    <button class="drawer-close-btn" onclick="closeVoitDrawer()">← Fechar janela</button>
+    
+    <div class="drawer-header">
+      <span class="mono">Método e Processo • 02 / Voit Consultoria</span>
+      <h2>Metodologia de Execução: Do Planejamento à Entrega</h2>
+      <p style="font-size: 0.98rem; color: var(--dim); line-height: 1.6; margin-top: 8px;">
+        O passo a passo aplicado no dia a dia para garantir coesão de marca, rigor técnico e agilidade em múltiplos setores.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h4>01. Alinhamento Estratégico Mensal</h4>
+      <p>
+        O método começa com reuniões de planejamento junto à gerência. Nessa etapa, definimos os macrotemas, editoriais e objetivos estratégicos que vão guiar toda a comunicação do mês, assegurando alinhamento total com as metas da consultoria.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h4>02. Pesquisa de Tendências & Produção Multicanal</h4>
+      <p>
+        Antes de criar, realizo uma pesquisa investigativa para entender o que está em alta no mercado. Com base nisso, estruturo a produção para diferentes canais:
+      </p>
+      <div class="drawer-grid-2">
+        <div class="drawer-card-info">
+          <strong>Redes Sociais & Carrosséis</strong>
+          <span>Artes visuais e copys/legendas complementares para engajamento no Instagram e LinkedIn.</span>
+        </div>
+        <div class="drawer-card-info">
+          <strong>Artigos de Blog Aprofundados</strong>
+          <span>Conteúdos densos e técnicos de até 2.500 palavras para autoridade orgânica.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>03. Validação Técnica & Flexibilidade de Pauta</h4>
+      <p>
+        Nenhum conteúdo vai ao ar sem validação. Todo o material passa pelo crivo dos especialistas da área para garantir total rigor técnico e precisão conceitual. Caso o mercado exija mudanças, o método permite realinharmos as pautas dinamicamente antes do agendamento final no Meta Business Suite e LinkedIn.
+      </p>
+    </div>
+
+    <div class="drawer-section">
+      <h4>04. Suporte Comercial, Projetos Setoriais & Endomarketing</h4>
+      <p>
+        O método também abrange frentes estratégicas e transversais:
+      </p>
+      <p>
+        • <strong>Apoio a Apresentações Comerciais:</strong> Transformação de rascunhos e dados brutos (planilhas de Excel e anotações) em materiais de alto padrão visual para reuniões com Leads.<br>
+        • <strong>Projetos para Múltiplos Setores:</strong> Criação de materiais técnicos sob medida (como diagramações e quadros específicos baseados nas medidas e textos fornecidos por clientes de diversos ramos, finalizados no Illustrator ou Canva).<br>
+        • <strong>Endomarketing:</strong> Planejamento mensal de ações internas junto à gerência e execução de campanhas de engajamento para os colaboradores.
+      </p>
+    </div>
+
+    <button class="drawer-close-btn" style="margin-top: 30px;" onclick="closeVoitDrawer()">← Fechar janela</button>
   </div>
 
   <!-- SEÇÃO 03: HABILIDADES -->
@@ -1280,13 +1487,25 @@
   </div>
 
   <script>
+    /* CONTROLE DA GAVETA LATERAL DIREITA (DRAWER) */
+    function openVoitDrawer() {
+      document.getElementById('voitDrawer').classList.add('active');
+      document.getElementById('drawerOverlay').classList.add('active');
+      document.body.classList.add('drawer-open');
+    }
+
+    function closeVoitDrawer() {
+      document.getElementById('voitDrawer').classList.remove('active');
+      document.getElementById('drawerOverlay').classList.remove('active');
+      document.body.classList.remove('drawer-open');
+    }
+
     /* MODAL DE IMAGEM AO CLICAR */
-    function openImageModal(src, blurred) {
+    function openImageModal(src) {
       const modal = document.getElementById('imgModal');
       const target = document.getElementById('imgModalTarget');
       modal.style.display = 'flex';
       target.src = src;
-      target.classList.toggle('confidential-modal', !!blurred);
     }
 
     function closeImageModal() {
@@ -1295,8 +1514,20 @@
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeImageModal();
+      if (e.key === 'Escape') {
+        closeImageModal();
+        closeVoitDrawer();
+      }
     });
+
+    /* VOLTAR AO TOPO DE IMEDIATO AO CLICAR NO NOME */
+    const logoHome = document.getElementById('logoHome');
+    if (logoHome) {
+      logoHome.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      });
+    }
 
     /* TOGGLE TEMA DA PÁGINA */
     const themeToggleBtn = document.getElementById('themeToggle');
@@ -1363,7 +1594,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
     blocks.forEach(block => observer.observe(block));
 
-    // reforço: garante que blocos já visíveis ao carregar a página também animem
     window.addEventListener('load', () => {
       blocks.forEach(block => {
         const rect = block.getBoundingClientRect();
@@ -1373,21 +1603,33 @@
       });
     });
 
-    /* NAVEGAÇÃO POR SETAS DAS GALERIAS DOS PROJETOS */
+    /* NAVEGAÇÃO POR SETAS DAS GALERIAS */
     document.querySelectorAll('.project-block').forEach(block => {
-      const strip = block.querySelector('.strip');
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
-      const dir = block.classList.contains('from-right') ? -1 : 1;
+      if (!prevBtn || !nextBtn) return;
 
-      if (strip && prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-          strip.scrollBy({ left: -320 * dir, behavior: 'smooth' });
-        });
-        nextBtn.addEventListener('click', () => {
-          strip.scrollBy({ left: 320 * dir, behavior: 'smooth' });
-        });
-      }
+      const getActiveContainer = () => {
+        const activePanel = block.querySelector('.voit-panel.active');
+        if (activePanel) {
+          return activePanel.querySelector('.strip');
+        }
+        return block.querySelector('.strip');
+      };
+
+      prevBtn.addEventListener('click', () => {
+        const container = getActiveContainer();
+        if (!container) return;
+        const scrollAmount = container.clientWidth > 0 ? container.clientWidth * 0.75 : 380;
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        const container = getActiveContainer();
+        if (!container) return;
+        const scrollAmount = container.clientWidth > 0 ? container.clientWidth * 0.75 : 380;
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
     });
 
     /* SELEÇÃO DE COR NA PALETA INTERATIVA */
