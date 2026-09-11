@@ -65,12 +65,7 @@
 
   .mono { font-family:'IBM Plex Mono', monospace; }
   .serif { font-family:'Fraunces', serif; }
-  
-  html { 
-    scroll-behavior: smooth; 
-    scrollbar-gutter: stable; 
-    scroll-padding-top: 90px; /* Compensa a altura da barra fixa ao clicar no logo */
-  }
+  html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
   /* NAV REESTRUTURADA */
   nav {
@@ -649,52 +644,6 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
-  /* ESTILOS DA LISTA VERTICAL PARA O BLOG */
-  .blog-list {
-    list-style: none;
-    padding: 0 40px 10px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-  .blog-item {
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 28px;
-    max-width: 700px;
-  }
-  .blog-meta {
-    font-size: 0.65rem;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 6px;
-    font-family: 'IBM Plex Mono', monospace;
-  }
-  .blog-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-  .blog-summary {
-    font-size: 0.92rem;
-    color: var(--dim);
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-  .blog-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-    display: inline-block;
-  }
-  .blog-link:hover { border-color: var(--accent); }
-
   /* BOTÕES DE NAVEGAÇÃO POR SETA */
   .strip-nav {
     display: flex;
@@ -1096,7 +1045,7 @@
       </div>
     </article>
 
-    <!-- PROJETO 02: VOIT CONSULTORIA (COM SOCIAL MEDIA E BLOG EM LISTA) -->
+    <!-- PROJETO 02: VOIT CONSULTORIA (COM SOCIAL MEDIA E BLOG ORIGINAL) -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">02 / 05</span>
@@ -1145,28 +1094,31 @@
         </div>
       </div>
 
-      <!-- PAINEL BLOG (FORMATO DE LISTA VERTICAL) -->
+      <!-- PAINEL BLOG (FORMATO ORIGINAL DE STRIP COM SETAS) -->
       <div class="voit-panel" id="voit-panel-blog">
-        <ul class="blog-list">
-          <li class="blog-item">
-            <span class="blog-meta">01 / Artigo</span>
-            <h4 class="blog-title">Título do post do blog 1</h4>
-            <p class="blog-summary">Resumo breve sobre gestão e processos corporativos aplicados ao cotidiano empresarial.</p>
-            <a href="#" class="blog-link">Ler artigo completo ↗</a>
-          </li>
-          <li class="blog-item">
-            <span class="blog-meta">02 / Artigo</span>
-            <h4 class="blog-title">Título do post do blog 2</h4>
-            <p class="blog-summary">Estratégias avançadas de atendimento e sucesso do cliente para retenção de contas.</p>
-            <a href="#" class="blog-link">Ler artigo completo ↗</a>
-          </li>
-          <li class="blog-item">
-            <span class="blog-meta">03 / Artigo</span>
-            <h4 class="blog-title">Título do post do blog 3</h4>
-            <p class="blog-summary">Como otimizar a cultura organizacional da sua empresa com foco em alta performance.</p>
-            <a href="#" class="blog-link">Ler artigo completo ↗</a>
-          </li>
-        </ul>
+        <div class="strip voit-strip">
+          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
+            <span style="font-size: 0.65rem; color: var(--accent);">01 / Artigo</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 1</span>
+            <span style="font-size: 0.75rem; color: var(--dim);">Resumo breve sobre gestão e processos corporativos.</span>
+          </div>
+          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
+            <span style="font-size: 0.65rem; color: var(--accent);">02 / Artigo</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 2</span>
+            <span style="font-size: 0.75rem; color: var(--dim);">Estratégias avançadas de atendimento e sucesso do cliente.</span>
+          </div>
+          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
+            <span style="font-size: 0.65rem; color: var(--accent);">03 / Artigo</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 3</span>
+            <span style="font-size: 0.75rem; color: var(--dim);">Como otimizar a cultura organizacional da sua empresa.</span>
+          </div>
+        </div>
+        <div class="strip-nav">
+          <div class="strip-nav-arrows">
+            <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+            <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
+          </div>
+        </div>
       </div>
     </article>
 
@@ -1252,11 +1204,11 @@
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-03.jpeg" alt="Aymée Ferraz - Post 03" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-04.jpeg" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-05.jpeg" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1334,6 +1286,15 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeImageModal();
     });
+
+    /* VOLTAR AO TOPO DE IMEDIATO AO CLICAR NO NOME */
+    const logoHome = document.getElementById('logoHome');
+    if (logoHome) {
+      logoHome.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      });
+    }
 
     /* TOGGLE TEMA DA PÁGINA */
     const themeToggleBtn = document.getElementById('themeToggle');
@@ -1417,21 +1378,40 @@
         tab.classList.add('active');
         document.querySelectorAll('.voit-panel').forEach(p => p.classList.remove('active'));
         const target = document.getElementById(`voit-panel-${tab.dataset.voitTab}`);
-        if (target) target.classList.add('active');
+        if (target) {
+          target.classList.add('active');
+          // Atualiza o estado das setas ao trocar de aba
+          target.querySelectorAll('.strip').forEach(strip => {
+            const block = target.closest('.project-block');
+            updateStripArrows(strip, block);
+          });
+        }
       });
     });
+
+    function updateStripArrows(strip, block) {
+      const parent = strip.closest('.project-block') || block;
+      if (!parent) return;
+      const prevBtn = parent.querySelector('.strip-btn.prev');
+      const nextBtn = parent.querySelector('.strip-btn.next');
+      if (!prevBtn || !nextBtn) return;
+
+      const hasOverflow = strip.scrollWidth > strip.clientWidth + 4;
+      prevBtn.style.opacity = hasOverflow ? '' : '0.35';
+      nextBtn.style.opacity = hasOverflow ? '' : '0.35';
+      prevBtn.style.cursor = hasOverflow ? '' : 'default';
+      nextBtn.style.cursor = hasOverflow ? '' : 'default';
+    }
 
     /* NAVEGAÇÃO POR SETAS DAS GALERIAS DOS PROJETOS */
     document.querySelectorAll('.project-block').forEach(block => {
       const strips = block.querySelectorAll('.strip');
-      const prevBtns = block.querySelectorAll('.strip-btn.prev');
-      const nextBtns = block.querySelectorAll('.strip-btn.next');
+      const prevBtn = block.querySelector('.strip-btn.prev');
+      const nextBtn = block.querySelector('.strip-btn.next');
 
-      strips.forEach((strip, index) => {
-        const prevBtn = prevBtns[index];
-        const nextBtn = nextBtns[index];
-        if (!prevBtn || !nextBtn) return;
+      if (!prevBtn || !nextBtn) return;
 
+      strips.forEach(strip => {
         const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
 
         prevBtn.addEventListener('click', () => {
@@ -1441,15 +1421,8 @@
           strip.scrollBy({ left: 320 * dir, behavior: 'smooth' });
         });
 
-        function updateArrowState() {
-          const hasOverflow = strip.scrollWidth > strip.clientWidth + 4;
-          prevBtn.style.opacity = hasOverflow ? '' : '0.35';
-          nextBtn.style.opacity = hasOverflow ? '' : '0.35';
-          prevBtn.style.cursor = hasOverflow ? '' : 'default';
-          nextBtn.style.cursor = hasOverflow ? '' : 'default';
-        }
-        updateArrowState();
-        window.addEventListener('resize', updateArrowState);
+        updateStripArrows(strip, block);
+        window.addEventListener('resize', () => updateStripArrows(strip, block));
       });
     });
 
