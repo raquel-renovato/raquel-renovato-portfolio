@@ -637,93 +637,8 @@
     transform: translateY(0);
   }
 
-  /* ABAS SOCIAL MEDIA / BLOG NA VOIT ALINHADAS COM 40px */
-  .voit-tabs {
-    display: flex;
-    gap: 10px;
-    padding: 0 40px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  .voit-tab {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 8px 16px;
-    border: 1.5px solid var(--line-strong);
-    background: transparent;
-    color: var(--dim);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .voit-tab:hover { border-color: var(--accent); color: var(--accent); }
-  .voit-tab.active { background: var(--accent); border-color: var(--accent); color: #FFF; }
-
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
-
-  /* CARROSSEL DE BLOG COM PADDING EXATO DE 40px NAS LATERAIS */
-  .blog-carousel-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding: 0 40px 10px;
-    scroll-behavior: smooth;
-    width: 100%;
-  }
-  .blog-carousel-container::-webkit-scrollbar { display: none; }
-
-  .blog-page-group {
-    flex: 0 0 100%;
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .blog-text-item {
-    padding: 18px 0;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    transition: background-color 0.2s ease;
-  }
-  .blog-text-item:hover {
-    background-color: rgba(0,0,0,0.02);
-  }
-  .blog-text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .blog-text-item h4 {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-  .blog-text-item a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--accent);
-    text-decoration: none;
-    white-space: nowrap;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-  }
-  .blog-text-item a:hover {
-    border-color: var(--accent);
-  }
 
   /* BOTÕES DE NAVEGAÇÃO POR SETA */
   .strip-nav {
@@ -1141,11 +1056,6 @@
         </div>
         <div class="tags"><span class="tag">Canva</span><span class="tag">Adobe</span><span class="tag">Figma</span><span class="tag">Copywriting</span><span class="tag">IA Generativa</span></div>
       </div>
-      
-      <div class="voit-tabs">
-        <button type="button" class="voit-tab active" data-voit-tab="social">Social Media</button>
-        <button type="button" class="voit-tab" data-voit-tab="blog">Blog</button>
-      </div>
 
       <!-- PAINEL SOCIAL MEDIA -->
       <div class="voit-panel active" id="voit-panel-social">
@@ -1165,87 +1075,6 @@
           <div class="strip-item ig-ratio mono">
             e-mail mkt
             <div class="voit-caption">Peça de e-mail marketing</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAINEL BLOG -->
-      <div class="voit-panel" id="voit-panel-blog">
-        <div class="blog-carousel-container" id="blogCarousel">
-          <!-- Bloco 1 (Itens 1 a 6) -->
-          <div class="blog-page-group">
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">01 / Artigo</span><h4>NR-1 Atualizada</h4></div>
-              <a href="https://voitconsultoria.com.br/nr-1-atualizada/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">02 / Artigo</span><h4>Feedback Estratégico para o Colaborador</h4></div>
-              <a href="https://voitconsultoria.com.br/feedback-estrategico-colaborador/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">03 / Artigo</span><h4>Padronização de Processos</h4></div>
-              <a href="https://voitconsultoria.com.br/padronizacao-de-processos/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">04 / Artigo</span><h4>Bombeiros do RH: Recrutamento Estratégico</h4></div>
-              <a href="https://voitconsultoria.com.br/bombeiros-do-rh-recrutamento-estrategico/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">05 / Artigo</span><h4>Planejamento Orçamentário 2025</h4></div>
-              <a href="https://voitconsultoria.com.br/planejamento-orcamentario-2025/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">06 / Artigo</span><h4>Curva ABC, PEPS, ERP: Qual a Melhor Estratégia?</h4></div>
-              <a href="https://voitconsultoria.com.br/curva-abc-peps-erp-qual-a-melhor-estrategia/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-          </div>
-
-          <!-- Bloco 2 (Itens 7 a 12) -->
-          <div class="blog-page-group">
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">07 / Artigo</span><h4>Estratégias para Ter Qualidade na Confecção</h4></div>
-              <a href="https://voitconsultoria.com.br/estrategias-para-ter-qualidade-na-confeccao/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">08 / Artigo</span><h4>Programa de Treinamento e Desenvolvimento</h4></div>
-              <a href="https://voitconsultoria.com.br/programa-de-treinamento-e-desenvolvimento/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">09 / Artigo</span><h4>Retenção de Talentos</h4></div>
-              <a href="https://voitconsultoria.com.br/retencao-de-talento/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">10 / Artigo</span><h4>Como Manter um Fluxo de Caixa Saudável</h4></div>
-              <a href="https://voitconsultoria.com.br/como-manter-um-fluxo-de-caixa-saudavel/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">11 / Artigo</span><h4>Preparando o Planejamento Orçamentário</h4></div>
-              <a href="https://voitconsultoria.com.br/preparando-o-planejamento-orcamentario/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">12 / Artigo</span><h4>Planejamento Estratégico</h4></div>
-              <a href="https://voitconsultoria.com.br/planejamento-estrategico/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-          </div>
-
-          <!-- Bloco 3 (Itens 13 a 16) -->
-          <div class="blog-page-group">
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">13 / Artigo</span><h4>O Orçamento Base Zero</h4></div>
-              <a href="https://voitconsultoria.com.br/o-orcamento-base-zero/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">14 / Artigo</span><h4>Planos Estratégicos</h4></div>
-              <a href="https://voitconsultoria.com.br/planos-estrategicos/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">15 / Artigo</span><h4>Recrutamento e Seleção</h4></div>
-              <a href="https://voitconsultoria.com.br/recrutamento-e-selecao/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
-            <div class="blog-text-item">
-              <div class="blog-text-content"><span class="n mono" style="font-size:0.65rem;">16 / Artigo</span><h4>Como Realizar um Planejamento Orçamentário</h4></div>
-              <a href="https://voitconsultoria.com.br/como-realizar-um-planejamento-orcamentario/" target="_blank" rel="noopener noreferrer">ler ↗</a>
-            </div>
           </div>
         </div>
       </div>
@@ -1507,25 +1336,6 @@
       });
     });
 
-    /* ABAS SOCIAL MEDIA / BLOG NA VOIT */
-    const voitTabs = document.querySelectorAll('.voit-tab');
-    voitTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        voitTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        document.querySelectorAll('.voit-panel').forEach(p => p.classList.remove('active'));
-        const target = document.getElementById(`voit-panel-${tab.dataset.voitTab}`);
-        if (target) {
-          target.classList.add('active');
-          const parentBlock = target.closest('.project-block');
-          const strip = target.querySelector('.strip') || target.querySelector('.blog-carousel-container');
-          if (strip && parentBlock) {
-            updateStripArrows(strip, parentBlock);
-          }
-        }
-      });
-    });
-
     function updateStripArrows(strip, block) {
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
@@ -1537,7 +1347,7 @@
       nextBtn.style.cursor = 'pointer';
     }
 
-    /* NAVEGAÇÃO POR SETAS DAS GALERIAS E BLOG */
+    /* NAVEGAÇÃO POR SETAS DAS GALERIAS */
     document.querySelectorAll('.project-block').forEach(block => {
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
@@ -1546,7 +1356,7 @@
       const getActiveContainer = () => {
         const activePanel = block.querySelector('.voit-panel.active');
         if (activePanel) {
-          return activePanel.querySelector('.strip') || activePanel.querySelector('.blog-carousel-container');
+          return activePanel.querySelector('.strip');
         }
         return block.querySelector('.strip');
       };
@@ -1559,23 +1369,15 @@
       prevBtn.addEventListener('click', () => {
         const container = getActiveContainer();
         if (!container) return;
-        if (container.classList.contains('blog-carousel-container')) {
-          container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
-        } else {
-          const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-          container.scrollBy({ left: -380 * dir, behavior: 'smooth' });
-        }
+        const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+        container.scrollBy({ left: -380 * dir, behavior: 'smooth' });
       });
 
       nextBtn.addEventListener('click', () => {
         const container = getActiveContainer();
         if (!container) return;
-        if (container.classList.contains('blog-carousel-container')) {
-          container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
-        } else {
-          const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
-          container.scrollBy({ left: 380 * dir, behavior: 'smooth' });
-        }
+        const dir = container.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+        container.scrollBy({ left: 380 * dir, behavior: 'smooth' });
       });
 
       window.addEventListener('resize', () => {
