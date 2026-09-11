@@ -65,7 +65,12 @@
 
   .mono { font-family:'IBM Plex Mono', monospace; }
   .serif { font-family:'Fraunces', serif; }
-  html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+  
+  html { 
+    scroll-behavior: smooth; 
+    scrollbar-gutter: stable; 
+    scroll-padding-top: 90px; /* Compensa a altura da barra fixa ao clicar no logo */
+  }
 
   /* NAV REESTRUTURADA */
   nav {
@@ -344,9 +349,7 @@
   .section-head .count { font-size:0.75rem; color:var(--muted); }
   .section-head.centered { justify-content: center; text-align: center; }
 
-  /* ========================================================
-     DOBRA "SOBRE MIM" — CONSTRUTIVISMO RUSSO & UI/UX 
-     ======================================================== */
+  /* SOBRE MIM */
   .constructivist-about {
     padding: 20px 40px 90px;
     display: grid;
@@ -356,10 +359,7 @@
     position: relative;
   }
 
-  /* Bloco de texto */
-  .const-text-wrapper {
-    position: relative;
-  }
+  .const-text-wrapper { position: relative; }
 
   .const-manifesto-title {
     font-family: 'IBM Plex Mono', monospace;
@@ -379,12 +379,7 @@
     margin-bottom: 20px;
   }
 
-  .const-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 28px;
-  }
+  .const-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 
   .const-tag {
     font-size: 0.7rem;
@@ -402,7 +397,6 @@
     border-color: var(--accent);
   }
 
-  /* Vitrine Construtivista Geométrica para a Foto + Elementos UI/UX */
   .const-visual-showcase {
     position: relative;
     width: 100%;
@@ -414,7 +408,6 @@
     justify-content: center;
   }
 
-  /* anel de texto girando devagar ao redor da foto */
   .const-orbit-text {
     position: absolute;
     inset: 0;
@@ -437,7 +430,6 @@
     .const-orbit-text { animation: none; }
   }
 
-  /* linha tracejada, um pouco maior que a foto, reforçando o círculo */
   .const-orbit-ring {
     position: absolute;
     inset: 6%;
@@ -446,7 +438,6 @@
     z-index: 1;
   }
 
-  /* foto circular */
   .const-photo-frame {
     position: relative;
     width: 66%;
@@ -469,7 +460,6 @@
   }
   .const-photo-frame:hover img { filter: none; }
 
-  /* elementos de design/UI-UX flutuando ao redor do círculo */
   .const-floater {
     position: absolute;
     z-index: 5;
@@ -485,8 +475,7 @@
   }
 
   .const-floater.badge {
-    top: 2%;
-    right: 6%;
+    top: 2%; right: 6%;
     background: var(--bg);
     border: 1px solid var(--accent);
     color: var(--accent);
@@ -498,17 +487,9 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.06);
   }
 
-  .const-floater.pen {
-    top: 4%;
-    left: 0%;
-    width: 46px;
-    height: 46px;
-    animation-delay: 0.6s;
-  }
-
+  .const-floater.pen { top: 4%; left: 0%; width: 46px; height: 46px; animation-delay: 0.6s; }
   .const-floater.spec {
-    bottom: 6%;
-    left: -4%;
+    bottom: 6%; left: -4%;
     background: var(--bg);
     border: 1px solid var(--line-strong);
     color: var(--dim);
@@ -521,17 +502,14 @@
   }
 
   .const-floater.cursor {
-    bottom: 2%;
-    right: 0%;
+    bottom: 2%; right: 0%;
     background: var(--ink);
     color: var(--bg);
     border-radius: 4px 14px 14px 14px;
     padding: 4px 10px;
     font-size: 0.62rem;
     font-family: 'IBM Plex Mono', monospace;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    display: flex; align-items: center; gap: 5px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.1);
     animation-delay: 0.3s;
   }
@@ -584,64 +562,21 @@
     transition: transform 0.9s cubic-bezier(.16,1,.3,1), opacity 0.9s ease, background-color 0.25s ease, border-color 0.25s ease;
   }
   .strip-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform 0.3s ease;
   }
   .strip-item:hover { background: var(--card-hover); border-color: var(--line-strong); }
   .strip-item:not(.ig-ratio):first-child { width: min(56vw, 460px); }
   .strip-item.ig-ratio { aspect-ratio: 1080 / 1350; width: min(34vw, 300px); }
   .strip-item.widescreen { aspect-ratio: 1920 / 1080; width: min(56vw, 460px); }
-  .strip-item.natural-fit {
-    aspect-ratio: unset;
-    height: 420px;
-    width: auto;
-  }
-  .strip-item.natural-fit:first-child {
-    width: min(70vw, 760px);
-  }
-  .strip-item.natural-fit img {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
-  }
-  .strip-item.natural-fit:first-child img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
+  .strip-item.natural-fit { aspect-ratio: unset; height: 420px; width: auto; }
+  .strip-item.natural-fit:first-child { width: min(70vw, 760px); }
+  .strip-item.natural-fit img { width: auto; height: 100%; object-fit: contain; }
+  .strip-item.natural-fit:first-child img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  
   @media (max-width: 780px) {
     .strip-item.natural-fit { height: 260px; }
     .strip-item.natural-fit:first-child { width: 88vw; }
-  }
-
-  /* peças com conteúdo sensível do cliente: desfoque proposital, só o layout aparece */
-  .strip-item.confidential { position: relative; }
-  .strip-item.confidential img {
-    filter: blur(7px) brightness(0.92);
-  }
-  .strip-item.confidential:hover img {
-    transform: scale(1.04);
-    filter: blur(7px) brightness(0.92);
-  }
-  .strip-item.confidential::after {
-    content: 'material de treinamento — protegido';
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: #FFF;
-    background: rgba(0,0,0,0.55);
-    padding: 5px 8px;
-    border-radius: 4px;
-    pointer-events: none;
-    text-align: center;
-    z-index: 2;
   }
 
   .project-block.from-left .strip-item { transform: translateX(-100%) scale(0.97); }
@@ -654,7 +589,12 @@
   .project-block.from-right .strip { flex-direction: row-reverse; }
   .project-block.from-right .strip.voit-strip { flex-direction: row; }
 
-  /* Voit Consultoria: card expande a largura só pra direita, revelando o conteúdo */
+  /* Voit Consultoria e Ajuste do Scroll de Social Media */
+  .voit-panel.active .strip.voit-strip {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
   .strip.voit-strip .strip-item.ig-ratio {
     position: relative;
     aspect-ratio: unset;
@@ -683,11 +623,8 @@
     opacity: 1;
     transform: translateY(0);
   }
-  @media (prefers-reduced-motion: reduce) {
-    .strip.voit-strip .strip-item:hover { width: auto; }
-  }
 
-  /* abas Social Media / Blog na Voit */
+  /* ABAS SOCIAL MEDIA / BLOG NA VOIT */
   .voit-tabs {
     display: flex;
     gap: 10px;
@@ -711,6 +648,52 @@
 
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
+
+  /* ESTILOS DA LISTA VERTICAL PARA O BLOG */
+  .blog-list {
+    list-style: none;
+    padding: 0 40px 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .blog-item {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+    max-width: 700px;
+  }
+  .blog-meta {
+    font-size: 0.65rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .blog-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .blog-summary {
+    font-size: 0.92rem;
+    color: var(--dim);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .blog-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+    display: inline-block;
+  }
+  .blog-link:hover { border-color: var(--accent); }
 
   /* BOTÕES DE NAVEGAÇÃO POR SETA */
   .strip-nav {
@@ -800,13 +783,9 @@
     box-shadow: 0 0 25px rgba(0,0,0,0.8);
     animation: zoomModal 0.25s ease;
   }
-  .img-modal-content.confidential-modal {
-    filter: blur(9px) brightness(0.9);
-  }
   .img-modal-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 20px; right: 30px;
     color: #FFF;
     font-size: 36px;
     font-weight: bold;
@@ -872,10 +851,7 @@
     </div>
 
     <div class="hero-visual">
-      <!-- CONTAINER COM ILUSTRAÇÕES DE DESIGN FLUTUANTES -->
       <div class="wf-wrapper">
-
-        <!-- ILUSTRAÇÃO 1: CANETA BEZIER / VETOR DE DESIGN -->
         <svg class="wf-illustration pen-tool-svg" viewBox="0 0 100 100" fill="none">
           <path d="M 15,80 C 35,20 65,80 85,20" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3"/>
           <line x1="15" y1="80" x2="35" y2="20" stroke="var(--line-strong)" stroke-width="1.5"/>
@@ -884,17 +860,14 @@
           <rect x="81" y="16" width="8" height="8" fill="var(--accent)"/>
         </svg>
 
-        <!-- ILUSTRAÇÃO 2: BADGE DE COMPONENTE AUTO-LAYOUT -->
         <div class="wf-illustration badge-floater">
           <span>❖</span> auto-layout 8px
         </div>
 
-        <!-- ILUSTRAÇÃO 3: ESPECIFICAÇÃO DE DENSIDADE DE GRID -->
         <div class="wf-illustration spec-floater">
           <span>↔</span> 380px × 260px
         </div>
 
-        <!-- ILUSTRAÇÃO 4: CURSOR FIGMA COM SEU NOME -->
         <div class="wf-illustration cursor-floater">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 3l7 18 3-7 7-3L3 3z"/>
@@ -902,7 +875,6 @@
           <span>Raquel • UI/UX</span>
         </div>
 
-        <!-- MOCKUP UI INTERATIVO -->
         <div class="wf-window" id="wfWindow">
           <div class="wf-header">
             <div class="wf-dots">
@@ -919,7 +891,6 @@
             </div>
 
             <div class="wf-main">
-              <!-- ESTRUTURA 1: DASHBOARD -->
               <div class="wf-view active" id="view-dashboard">
                 <div class="wf-top-bar">
                   <span class="wf-title">Painel de Dashboard</span>
@@ -953,7 +924,6 @@
                 </div>
               </div>
 
-              <!-- ESTRUTURA 2: INTERFACES -->
               <div class="wf-view" id="view-interfaces">
                 <div class="wf-top-bar">
                   <span class="wf-title">Prototipagem de Wireframes</span>
@@ -985,7 +955,6 @@
                 </div>
               </div>
 
-              <!-- ESTRUTURA 3: DESIGN SYSTEM -->
               <div class="wf-view" id="view-ds">
                 <div class="wf-top-bar">
                   <span class="wf-title">Biblioteca de Tokens</span>
@@ -1007,13 +976,11 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PALETA DE CORES INTERATIVA -->
       <div class="color-palette" id="colorPalette">
         <button type="button" class="swatch active" data-color="#E8590C" style="background:#E8590C" title="Laranja Criativo"></button>
         <button type="button" class="swatch" data-color="#38483A" style="background:#38483A" title="Verde Botânico"></button>
@@ -1027,7 +994,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 01: SOBRE MIM (ESTILO CONSTRUTIVISTA & UI/UX) -->
+  <!-- SEÇÃO 01: SOBRE MIM -->
   <div class="section-head" id="sobre">
     <h2>Sobre mim</h2>
   </div>
@@ -1048,12 +1015,9 @@
       </div>
     </div>
 
-    <!-- VITRINE CIRCULAR COM ELEMENTOS DE UI/UX FLUTUANDO -->
     <div class="const-visual-showcase">
-
       <div class="const-orbit-ring"></div>
 
-      <!-- texto girando ao redor da foto -->
       <svg class="const-orbit-text" viewBox="0 0 200 200">
         <defs>
           <path id="orbitPath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" fill="none"/>
@@ -1065,7 +1029,6 @@
         </text>
       </svg>
 
-      <!-- caneta bezier flutuante -->
       <svg class="const-floater pen" viewBox="0 0 100 100" fill="none">
         <path d="M 15,80 C 35,20 65,80 85,20" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3"/>
         <line x1="15" y1="80" x2="35" y2="20" stroke="var(--line-strong)" stroke-width="1.5"/>
@@ -1074,13 +1037,9 @@
         <rect x="81" y="16" width="8" height="8" fill="var(--accent)"/>
       </svg>
 
-      <!-- badge auto-layout -->
       <div class="const-floater badge mono">❖ auto-layout 8px</div>
-
-      <!-- especificação de medida -->
       <div class="const-floater spec mono">↔ 380px × 380px</div>
 
-      <!-- cursor com nome -->
       <div class="const-floater cursor mono">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
           <path d="M3 3l7 18 3-7 7-3L3 3z"/>
@@ -1088,11 +1047,9 @@
         <span>Raquel • UI/UX</span>
       </div>
 
-      <!-- foto circular com caminho atualizado -->
       <div class="const-photo-frame">
         <img src="img/img-perfil/foto-perfil.jpeg" alt="Raquel Renovato" onclick="openImageModal(this.src)">
       </div>
-
     </div>
   </section>
 
@@ -1103,45 +1060,29 @@
 
   <div id="projects-container">
 
+    <!-- PROJETO 01 -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">01 / 05</span>
         <h3>Fernando Amaral</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>Fernando atua desde 2013 no desenvolvimento de projetos elétricos para residências, condomínios e empreendimentos comerciais de alto padrão — já são mais de 80.000m² projetados, com foco em precisão técnica e conformidade normativa.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Redesign de landing page e UI design — reorganização da hierarquia, nova paleta e microinterações de hover, botão e scroll, prototipado no Figma.</p>
         </div>
-
         <div class="tags"><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Redesign</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item natural-fit">
-          <img src="img/img-fernando/Layout%20-%20Web.png" alt="Fernando Amaral - Layout principal" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item natural-fit">
-          <img src="img/img-fernando/Layout%20-%20Web-1.png" alt="Fernando Amaral - Layout 2" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item natural-fit">
-          <img src="img/img-fernando/Layout%20-%20Web-2.png" alt="Fernando Amaral - Layout 3" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item natural-fit">
-          <img src="img/img-fernando/Layout%20-%20Web-4.png" alt="Fernando Amaral - Layout 5" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item natural-fit">
-          <img src="img/img-fernando/Layout%20-%20Web-5.png" alt="Fernando Amaral - Layout 6" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item natural-fit">
-          <img src="img/img-fernando/Layout%20-%20Web-6.png" alt="Fernando Amaral - Layout 7" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item natural-fit">
-          <img src="img/img-fernando/Layout%20-%20Web-7.png" alt="Fernando Amaral - Layout 8" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web.png" alt="Fernando Amaral - Layout principal" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-1.png" alt="Fernando Amaral - Layout 2" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-2.png" alt="Fernando Amaral - Layout 3" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-4.png" alt="Fernando Amaral - Layout 5" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-5.png" alt="Fernando Amaral - Layout 6" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-6.png" alt="Fernando Amaral - Layout 7" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item natural-fit"><img src="img/img-fernando/Layout%20-%20Web-7.png" alt="Fernando Amaral - Layout 8" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1155,23 +1096,22 @@
       </div>
     </article>
 
+    <!-- PROJETO 02: VOIT CONSULTORIA (COM SOCIAL MEDIA E BLOG EM LISTA) -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">02 / 05</span>
         <h3>Voit Consultoria</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>A Voit é uma consultoria com mais de 15 anos de mercado e 500+ empresas atendidas, dedicada a transformar e impulsionar pessoas e negócios através de gestão comercial, de processos e de pessoas.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Social media, copywriting e design ponta a ponta — redes sociais, ads, e-mail marketing, e-books e apresentações, com IA generativa otimizando o workflow.</p>
         </div>
-
         <div class="tags"><span class="tag">Canva</span><span class="tag">Adobe</span><span class="tag">Figma</span><span class="tag">Copywriting</span><span class="tag">IA Generativa</span></div>
       </div>
+      
       <div class="voit-tabs">
         <button type="button" class="voit-tab active" data-voit-tab="social">Social Media</button>
         <button type="button" class="voit-tab" data-voit-tab="blog">Blog</button>
@@ -1205,61 +1145,50 @@
         </div>
       </div>
 
-      <!-- PAINEL BLOG (COM O MESMO COMPORTAMENTO DE STRIP E SETAS) -->
+      <!-- PAINEL BLOG (FORMATO DE LISTA VERTICAL) -->
       <div class="voit-panel" id="voit-panel-blog">
-        <div class="strip voit-strip">
-          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
-            <span style="font-size: 0.65rem; color: var(--accent);">01 / Artigo</span>
-            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 1</span>
-            <span style="font-size: 0.75rem; color: var(--dim);">Resumo breve sobre gestão e processos corporativos.</span>
-          </div>
-          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
-            <span style="font-size: 0.65rem; color: var(--accent);">02 / Artigo</span>
-            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 2</span>
-            <span style="font-size: 0.75rem; color: var(--dim);">Estratégias avançadas de atendimento e sucesso do cliente.</span>
-          </div>
-          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
-            <span style="font-size: 0.65rem; color: var(--accent);">03 / Artigo</span>
-            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 3</span>
-            <span style="font-size: 0.75rem; color: var(--dim);">Como otimizar a cultura organizacional da sua empresa.</span>
-          </div>
-        </div>
-        <div class="strip-nav">
-          <div class="strip-nav-arrows">
-            <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
-            <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
-          </div>
-        </div>
+        <ul class="blog-list">
+          <li class="blog-item">
+            <span class="blog-meta">01 / Artigo</span>
+            <h4 class="blog-title">Título do post do blog 1</h4>
+            <p class="blog-summary">Resumo breve sobre gestão e processos corporativos aplicados ao cotidiano empresarial.</p>
+            <a href="#" class="blog-link">Ler artigo completo ↗</a>
+          </li>
+          <li class="blog-item">
+            <span class="blog-meta">02 / Artigo</span>
+            <h4 class="blog-title">Título do post do blog 2</h4>
+            <p class="blog-summary">Estratégias avançadas de atendimento e sucesso do cliente para retenção de contas.</p>
+            <a href="#" class="blog-link">Ler artigo completo ↗</a>
+          </li>
+          <li class="blog-item">
+            <span class="blog-meta">03 / Artigo</span>
+            <h4 class="blog-title">Título do post do blog 3</h4>
+            <p class="blog-summary">Como otimizar a cultura organizacional da sua empresa com foco em alta performance.</p>
+            <a href="#" class="blog-link">Ler artigo completo ↗</a>
+          </li>
+        </ul>
       </div>
     </article>
 
+    <!-- PROJETO 03 -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">03 / 05</span>
         <h3>Renata Brandão</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>Renata é especialista em vendas de alta performance, com mais de 17 anos de experiência em gestão comercial e consultoria, formação em Gestão Empresarial e MBA em Controladoria e Finanças.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Criação de treinamentos, apresentações e propostas comerciais no Canva — do conteúdo ao design dos slides.</p>
         </div>
-
         <div class="tags"><span class="tag">Canva</span><span class="tag">Apresentações</span><span class="tag">Copywriting</span><span class="tag">IA Generativa</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item widescreen">
-          <img src="img/img-renata/renata-01.jpg" alt="Renata Brandão - Slide de capa" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item widescreen">
-          <img src="img/img-renata/renata-02.jpg" alt="Renata Brandão - Slide 2" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item widescreen">
-          <img src="img/img-renata/renata-03.jpg" alt="Renata Brandão - Slide 3" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
+        <div class="strip-item widescreen"><img src="img/img-renata/renata-01.jpg" alt="Renata Brandão - Slide de capa" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item widescreen"><img src="img/img-renata/renata-02.jpg" alt="Renata Brandão - Slide 2" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item widescreen"><img src="img/img-renata/renata-03.jpg" alt="Renata Brandão - Slide 3" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1270,45 +1199,29 @@
       </div>
     </article>
 
+    <!-- PROJETO 04 -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">04 / 05</span>
         <h3>Somos Braduca</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>A Braduca oferece mentorias gratuitas de inglês e testes de proficiência para estudantes da rede pública, com a missão de tornar o domínio do idioma acessível e transformar vidas pela educação.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Criação e diagramação de posts para redes sociais, mantendo consistência e identidade de marca em cada publicação.</p>
         </div>
-
         <div class="tags"><span class="tag">Social Media</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-01.jpeg" alt="Somos Braduca - Post 01" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-02.jpeg" alt="Somos Braduca - Post 02" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-03.jpeg" alt="Somos Braduca - Post 03" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-04.jpeg" alt="Somos Braduca - Post 04" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-05.jpeg" alt="Somos Braduca - Post 05" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-06.jpeg" alt="Somos Braduca - Post 06" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/img-braduca/braduca-07.jpeg" alt="Somos Braduca - Post 07" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-01.jpeg" alt="Somos Braduca - Post 01" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-02.jpeg" alt="Somos Braduca - Post 02" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-03.jpeg" alt="Somos Braduca - Post 03" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-04.jpeg" alt="Somos Braduca - Post 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-05.jpeg" alt="Somos Braduca - Post 05" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-06.jpeg" alt="Somos Braduca - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/img-braduca/braduca-07.jpeg" alt="Somos Braduca - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1318,55 +1231,32 @@
       </div>
     </article>
 
-    <!-- PROJETO 05: AYMÉE FERRAZ -->
+    <!-- PROJETO 05 -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">05 / 05</span>
         <h3>Aymée Ferraz</h3>
-
         <div class="project-client">
           <span class="project-block-label">o cliente</span>
           <p>Aymée é sócia fundadora da Empower CX e da Voit Consultoria, palestrante e consultora em CS/CX e Felicidade Corporativa, com mais de 15 anos ajudando empresas a construir estratégias e equipes de alta performance.</p>
         </div>
-
         <div class="project-work">
           <span class="project-block-label">o trabalho</span>
           <p>Criação e diagramação de posts para redes sociais, mantendo consistência e identidade de marca em cada publicação.</p>
         </div>
-
         <div class="tags"><span class="tag">Social Media</span><span class="tag">Design Gráfico</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-01.jpeg" alt="Aymée Ferraz - Post 01" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-02.jpeg" alt="Aymée Ferraz - Post 02" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-03.jpeg" alt="Aymée Ferraz - Post 03" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-04.jpeg" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-05.jpeg" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
-        <div class="strip-item ig-ratio">
-          <img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" />
-        </div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-01.jpeg" alt="Aymée Ferraz - Post 01" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-02.jpeg" alt="Aymée Ferraz - Post 02" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-03.jpeg" alt="Aymée Ferraz - Post 03" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-04.jpeg" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-05.jpeg" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1510,7 +1400,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
     blocks.forEach(block => observer.observe(block));
 
-    // reforço: garante que blocos já visíveis ao carregar a página também animem
     window.addEventListener('load', () => {
       blocks.forEach(block => {
         const rect = block.getBoundingClientRect();
