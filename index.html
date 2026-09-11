@@ -1200,7 +1200,7 @@
       </div>
     </article>
 
-    <!-- PROJETO 02: VOIT CONSULTORIA -->
+    <!-- PROJETO 02: VOIT CONSULTORIA (12 CARDS) -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">02 / 05</span>
@@ -1223,16 +1223,52 @@
       <div class="voit-panel active" id="voit-panel-social">
         <div class="strip voit-strip">
           <div class="strip-item ig-ratio mono">
-            redes sociais
-            <div class="voit-caption">Carrossel — posts para redes sociais</div>
+            Card 01 — Redes Sociais
+            <div class="voit-caption">Carrossel institucional estratégico</div>
           </div>
           <div class="strip-item ig-ratio mono">
-            ads
-            <div class="voit-caption">Criativos para anúncios pagos</div>
+            Card 02 — Anúncios Ads
+            <div class="voit-caption">Criativos para conversão de leads</div>
           </div>
           <div class="strip-item ig-ratio mono">
-            e-mail mkt
-            <div class="voit-caption">Peça de e-mail marketing</div>
+            Card 03 — E-mail Mkt
+            <div class="voit-caption">Campanha segmentada de vendas</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 04 — Apresentação
+            <div class="voit-caption">Suporte comercial para reuniões</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 05 — Endomarketing
+            <div class="voit-caption">Ações internas de engajamento</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 06 — Material Técnico
+            <div class="voit-caption">Documentações diagramadas sob medida</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 07 — Identidade Visual
+            <div class="voit-caption">Ajustes e desdobramentos de marca</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 08 — Banner Institucional
+            <div class="voit-caption">Comunicação visual para eventos</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 09 — Proposta Comercial
+            <div class="voit-caption">Layout limpo focado em fechamento</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 10 — Relatório Mensal
+            <div class="voit-caption">Infográficos de desempenho</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 11 — Capa para LinkedIn
+            <div class="voit-caption">Padronização de presença digital</div>
+          </div>
+          <div class="strip-item ig-ratio mono">
+            Card 12 — Peça de Lançamento
+            <div class="voit-caption">Divulgação de nova consultoria</div>
           </div>
         </div>
       </div>
@@ -1331,7 +1367,7 @@
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1569,30 +1605,31 @@
 
     /* NAVEGAÇÃO POR SETAS DAS GALERIAS */
     document.querySelectorAll('.project-block').forEach(block => {
-      const strip = block.querySelector('.strip');
       const prevBtn = block.querySelector('.strip-btn.prev');
       const nextBtn = block.querySelector('.strip-btn.next');
-      if (!strip || !prevBtn || !nextBtn) return;
+      if (!prevBtn || !nextBtn) return;
 
-      const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+      const getActiveContainer = () => {
+        const activePanel = block.querySelector('.voit-panel.active');
+        if (activePanel) {
+          return activePanel.querySelector('.strip');
+        }
+        return block.querySelector('.strip');
+      };
 
       prevBtn.addEventListener('click', () => {
-        strip.scrollBy({ left: -380 * dir, behavior: 'smooth' });
+        const container = getActiveContainer();
+        if (!container) return;
+        const scrollAmount = container.clientWidth > 0 ? container.clientWidth * 0.75 : 380;
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       });
 
       nextBtn.addEventListener('click', () => {
-        strip.scrollBy({ left: 380 * dir, behavior: 'smooth' });
+        const container = getActiveContainer();
+        if (!container) return;
+        const scrollAmount = container.clientWidth > 0 ? container.clientWidth * 0.75 : 380;
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       });
-
-      // deixa as setas visualmente "apagadas" quando não há nada pra rolar ainda
-      function updateArrowState() {
-        const hasOverflow = strip.scrollWidth > strip.clientWidth + 4;
-        prevBtn.style.opacity = hasOverflow ? '' : '0.35';
-        nextBtn.style.opacity = hasOverflow ? '' : '0.35';
-      }
-      updateArrowState();
-      window.addEventListener('resize', updateArrowState);
-      strip.querySelectorAll('img').forEach(img => img.addEventListener('load', updateArrowState));
     });
 
     /* SELEÇÃO DE COR NA PALETA INTERATIVA */
