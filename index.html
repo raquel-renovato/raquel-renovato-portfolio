@@ -712,33 +712,6 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
-  .voit-blog-list {
-    list-style: none;
-    padding: 0 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .voit-blog-list li {
-    border-bottom: 1px solid var(--line);
-  }
-  .voit-blog-list a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 4px;
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 0.95rem;
-    transition: color 0.2s ease, padding-left 0.2s ease;
-  }
-  .voit-blog-list a:hover { color: var(--accent); padding-left: 10px; }
-  .voit-blog-list a span {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-  }
-
   /* BOTÕES DE NAVEGAÇÃO POR SETA */
   .strip-nav {
     display: flex;
@@ -1204,6 +1177,7 @@
         <button type="button" class="voit-tab" data-voit-tab="blog">Blog</button>
       </div>
 
+      <!-- PAINEL SOCIAL MEDIA -->
       <div class="voit-panel active" id="voit-panel-social">
         <div class="strip voit-strip">
           <div class="strip-item ig-ratio mono">
@@ -1231,12 +1205,31 @@
         </div>
       </div>
 
+      <!-- PAINEL BLOG (COM O MESMO COMPORTAMENTO DE STRIP E SETAS) -->
       <div class="voit-panel" id="voit-panel-blog">
-        <ul class="voit-blog-list mono">
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Título do post do blog 1 <span>↗ ler</span></a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Título do post do blog 2 <span>↗ ler</span></a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Título do post do blog 3 <span>↗ ler</span></a></li>
-        </ul>
+        <div class="strip voit-strip">
+          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
+            <span style="font-size: 0.65rem; color: var(--accent);">01 / Artigo</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 1</span>
+            <span style="font-size: 0.75rem; color: var(--dim);">Resumo breve sobre gestão e processos corporativos.</span>
+          </div>
+          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
+            <span style="font-size: 0.65rem; color: var(--accent);">02 / Artigo</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 2</span>
+            <span style="font-size: 0.75rem; color: var(--dim);">Estratégias avançadas de atendimento e sucesso do cliente.</span>
+          </div>
+          <div class="strip-item widescreen mono" style="justify-content: flex-start; padding: 24px; text-align: left; flex-direction: column; gap: 8px;">
+            <span style="font-size: 0.65rem; color: var(--accent);">03 / Artigo</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--ink);">Título do post do blog 3</span>
+            <span style="font-size: 0.75rem; color: var(--dim);">Como otimizar a cultura organizacional da sua empresa.</span>
+          </div>
+        </div>
+        <div class="strip-nav">
+          <div class="strip-nav-arrows">
+            <button type="button" class="strip-btn prev" aria-label="Anterior">←</button>
+            <button type="button" class="strip-btn next" aria-label="Próximo">→</button>
+          </div>
+        </div>
       </div>
     </article>
 
@@ -1541,13 +1534,17 @@
 
     /* NAVEGAÇÃO POR SETAS DAS GALERIAS DOS PROJETOS */
     document.querySelectorAll('.project-block').forEach(block => {
-      const strip = block.querySelector('.strip');
-      const prevBtn = block.querySelector('.strip-btn.prev');
-      const nextBtn = block.querySelector('.strip-btn.next');
-      // a galeria da Voit (.voit-strip) sempre rola na direção normal
-      const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+      const strips = block.querySelectorAll('.strip');
+      const prevBtns = block.querySelectorAll('.strip-btn.prev');
+      const nextBtns = block.querySelectorAll('.strip-btn.next');
 
-      if (strip && prevBtn && nextBtn) {
+      strips.forEach((strip, index) => {
+        const prevBtn = prevBtns[index];
+        const nextBtn = nextBtns[index];
+        if (!prevBtn || !nextBtn) return;
+
+        const dir = strip.classList.contains('voit-strip') ? 1 : (block.classList.contains('from-right') ? -1 : 1);
+
         prevBtn.addEventListener('click', () => {
           strip.scrollBy({ left: -320 * dir, behavior: 'smooth' });
         });
@@ -1555,7 +1552,6 @@
           strip.scrollBy({ left: 320 * dir, behavior: 'smooth' });
         });
 
-        // deixa as setas visualmente "apagadas" quando não há nada pra rolar ainda
         function updateArrowState() {
           const hasOverflow = strip.scrollWidth > strip.clientWidth + 4;
           prevBtn.style.opacity = hasOverflow ? '' : '0.35';
@@ -1565,8 +1561,7 @@
         }
         updateArrowState();
         window.addEventListener('resize', updateArrowState);
-        strip.querySelectorAll('img').forEach(img => img.addEventListener('load', updateArrowState));
-      }
+      });
     });
 
     /* SELEÇÃO DE COR NA PALETA INTERATIVA */
