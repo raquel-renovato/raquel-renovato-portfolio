@@ -637,7 +637,7 @@
     transform: translateY(0);
   }
 
-  /* ABAS SOCIAL MEDIA / BLOG NA VOIT (COM ALINHAMENTO NAS MARGENS DE 40px) */
+  /* ABAS SOCIAL MEDIA / BLOG NA VOIT */
   .voit-tabs {
     display: flex;
     gap: 10px;
@@ -662,7 +662,7 @@
   .voit-panel { display: none; }
   .voit-panel.active { display: block; }
 
-  /* CARROSSEL DE BLOG COM ALINHAMENTO EXATO DE 40px */
+  /* CARROSSEL DE BLOG CORRIGIDO COM PADDING DE 40px NAS PONTAS */
   .blog-carousel-container {
     display: flex;
     flex-direction: row;
@@ -678,11 +678,11 @@
   .blog-carousel-container::-webkit-scrollbar { display: none; }
 
   .blog-page-group {
-    flex: 0 0 calc(100% - 80px);
-    min-width: calc(100% - 80px);
-    max-width: calc(100% - 80px);
-    margin: 0 40px;
-    scroll-snap-align: center;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     gap: 0;
