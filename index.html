@@ -7,40 +7,46 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
+  /* PALETE EDITORIAL: RAÍZES & SENSIBILIDADE (LIGHT) */
   :root {
-    --bg: #F3EFEA;
-    --ink: #1F1C18;
-    --dim: #59534C;
-    --muted: #8A8379;
+    --bg: #F3EFEA;             /* Papel Linho Acolhedor */
+    --ink: #1F1C18;            /* Café Tinta Profundo */
+    --dim: #59534C;            /* Terra Sombra Suave */
+    --muted: #8A8379;          /* Cinza Argila */
     --line: rgba(31, 28, 24, 0.15);
     --line-strong: rgba(31, 28, 24, 0.35);
-    --card: #E5DFD5;
+    --card: #E5DFD5;           /* Card Papel Encorpado */
     --card-hover: #DCD5C9;
-    --accent: #E8590C;
-    --accent-green: #38483A;
+    --accent: #E8590C;         /* Laranja Criativo Vibrante */
+    --accent-green: #38483A;   /* Verde Botânico */
     --accent-soft: rgba(232, 89, 12, 0.10);
     --accent-hover: #C24A08;
     --nav-bg: rgba(243, 239, 234, 0.92);
+
+    /* Variáveis do Wireframe App (Light) */
     --wf-bg: #FAF7F2;
     --wf-card: #EAE4D9;
     --wf-text: #1F1C18;
     --wf-line: rgba(31, 28, 24, 0.12);
   }
 
+  /* TEMA SOMBRIO BOTÂNICO (DARK) */
   [data-theme="dark"] {
-    --bg: #181614;
-    --ink: #F0ECE1;
-    --dim: #A6A095;
+    --bg: #181614;             /* Noite Café Escura */
+    --ink: #F0ECE1;            /* Marfim Suave */
+    --dim: #A6A095;            /* Terra Clara */
     --muted: #6E685E;
     --line: rgba(240, 236, 225, 0.15);
     --line-strong: rgba(240, 236, 225, 0.30);
-    --card: #23201C;
+    --card: #23201C;           /* Madeira/Córtex Escuro */
     --card-hover: #2C2823;
-    --accent: #F26D1D;
-    --accent-green: #6E8B73;
+    --accent: #F26D1D;         /* Laranja Criativo Vibrante Iluminado */
+    --accent-green: #6E8B73;   /* Verde Sálvia Suave */
     --accent-soft: rgba(242, 109, 29, 0.14);
     --accent-hover: #F98A46;
     --nav-bg: rgba(24, 22, 20, 0.90);
+
+    /* Variáveis do Wireframe App (Dark) */
     --wf-bg: #12110F;
     --wf-card: #1C1A17;
     --wf-text: #F0ECE1;
@@ -61,6 +67,7 @@
   .serif { font-family:'Fraunces', serif; }
   html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
+  /* NAV REESTRUTURADA */
   nav {
     position: sticky; top:0; z-index:60;
     display: grid;
@@ -86,6 +93,7 @@
   }
   .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
+  /* LINKS DE NAVEGAÇÃO */
   nav ul {
     display: flex;
     align-items: center;
@@ -120,6 +128,7 @@
   }
   nav .cta:hover { background:var(--ink); color:var(--bg); }
 
+  /* INTRO OVERLAY */
   body.intro-active { overflow: hidden; height: 100vh; }
   #intro-overlay {
     position: fixed; inset: 0; z-index: 200; background: var(--bg);
@@ -140,6 +149,7 @@
   #site-content { opacity: 0; transition: opacity 0.9s cubic-bezier(.65,0,.35,1); }
   #site-content.visible { opacity: 1; }
 
+  /* HERO */
   .hero {
     padding: 90px 40px 70px;
     display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;
@@ -152,6 +162,7 @@
   .hero-cta { display:inline-flex; align-items:center; gap:10px; font-size:0.85rem; border-bottom:1.5px solid var(--accent); padding-bottom:4px; text-decoration:none; color:var(--accent); font-weight:500; transition: color 0.2s ease, border-color 0.2s ease; }
   .hero-cta:hover { color: var(--ink); border-color: var(--ink); }
 
+  /* WIREFRAME CONTAINER UI */
   .hero-visual { display:flex; flex-direction: column; align-items:center; gap: 16px; }
 
   .wf-wrapper {
@@ -160,6 +171,7 @@
     max-width: 380px;
   }
 
+  /* ILUSTRAÇÕES DE DESIGN FLUTUANTES */
   .wf-illustration {
     position: absolute;
     pointer-events: none;
@@ -324,12 +336,16 @@
 
   .hero-visual-hint { font-size: 0.68rem; color: var(--muted); text-align: center; }
 
+  /* SECTIONS */
   .section-head { display:flex; justify-content:space-between; align-items:baseline; padding:56px 40px 30px; }
   .section-head .num { font-size:0.75rem; color:var(--accent); font-weight: 600; }
   .section-head h2 { font-family:'Fraunces', serif; font-size:clamp(1.6rem,3.4vw,2.1rem); font-weight:400; }
   .section-head .count { font-size:0.75rem; color:var(--muted); }
   .section-head.centered { justify-content: center; text-align: center; }
 
+  /* ========================================================
+     DOBRA "SOBRE MIM" — CONSTRUTIVISMO RUSSO & UI/UX 
+     ======================================================== */
   .constructivist-about {
     padding: 20px 40px 90px;
     display: grid;
@@ -339,6 +355,7 @@
     position: relative;
   }
 
+  /* Bloco de texto */
   .const-text-wrapper {
     position: relative;
   }
@@ -384,6 +401,7 @@
     border-color: var(--accent);
   }
 
+  /* Vitrine Construtivista Geométrica para a Foto + Elementos UI/UX */
   .const-visual-showcase {
     position: relative;
     width: 100%;
@@ -395,6 +413,7 @@
     justify-content: center;
   }
 
+  /* anel de texto girando devagar ao redor da foto */
   .const-orbit-text {
     position: absolute;
     inset: 0;
@@ -417,6 +436,7 @@
     .const-orbit-text { animation: none; }
   }
 
+  /* linha tracejada, um pouco maior que a foto, reforçando o círculo */
   .const-orbit-ring {
     position: absolute;
     inset: 6%;
@@ -425,6 +445,7 @@
     z-index: 1;
   }
 
+  /* foto circular */
   .const-photo-frame {
     position: relative;
     width: 66%;
@@ -447,6 +468,7 @@
   }
   .const-photo-frame:hover img { filter: none; }
 
+  /* elementos de design/UI-UX flutuando ao redor do círculo */
   .const-floater {
     position: absolute;
     z-index: 5;
@@ -517,6 +539,7 @@
     .const-floater.pen, .const-floater.spec { display: none; }
   }
 
+  /* PROJECTS */
   .project-block { padding: 56px 0 10px; }
   .project-head { padding: 0 40px; margin-bottom: 30px; }
   .project-head .n { font-size:0.78rem; font-weight: 600; color: var(--accent); }
@@ -572,6 +595,33 @@
   .strip-item:hover { background: var(--card-hover); }
   .strip-item:not(.ig-ratio):first-child { width: min(56vw, 460px); }
   .strip-item.ig-ratio { aspect-ratio: 1080 / 1350; width: min(34vw, 300px); }
+  .strip-item.widescreen { aspect-ratio: 1920 / 1080; width: min(56vw, 460px); }
+
+  /* peças com conteúdo sensível do cliente: desfoque proposital, só o layout aparece */
+  .strip-item.confidential { position: relative; }
+  .strip-item.confidential img {
+    filter: blur(7px) brightness(0.92);
+  }
+  .strip-item.confidential:hover img {
+    transform: scale(1.04);
+    filter: blur(7px) brightness(0.92);
+  }
+  .strip-item.confidential::after {
+    content: 'material de treinamento — protegido';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: #FFF;
+    background: rgba(0,0,0,0.55);
+    padding: 5px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    text-align: center;
+    z-index: 2;
+  }
 
   .project-block.from-left .strip-item { transform: translateX(-100%) scale(0.97); }
   .project-block.from-right .strip-item { transform: translateX(100%) scale(0.97); }
@@ -582,10 +632,14 @@
   .project-block .strip-item:nth-child(4) { transition-delay: 0.24s; }
   .project-block.from-right .strip { flex-direction: row-reverse; }
 
+  /* BOTÕES DE NAVEGAÇÃO POR SETA */
   .strip-nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 8px;
     padding: 10px 40px 0;
+    flex-wrap: wrap;
   }
   .strip-btn {
     background: transparent;
@@ -608,14 +662,29 @@
     background: var(--accent-soft);
     transform: scale(1.06);
   }
+  .strip-nav-arrows { display: flex; gap: 8px; }
+  .strip-full-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+  .strip-full-link:hover { border-color: var(--accent); }
   .strip-btn:active { transform: scale(0.95); }
 
+  /* SKILLS & FOOTER */
   .skills { padding: 0 40px 70px; }
   .skill-grid { display:grid; grid-template-columns:repeat(4, 1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
   .skill-item { padding:24px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
   .skill-item h4 { font-size:0.9rem; font-weight:600; margin-bottom:10px; color: var(--ink); }
   .skill-item p { font-size:0.8rem; color:var(--dim); line-height:1.6; }
 
+  /* SEÇÃO DE CONTATO */
   .cta-band { padding: 80px 40px 80px; text-align:center; }
   .cta-band h2 { font-family:'Fraunces', serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:400; margin:14px 0 12px; }
   .cta-band p { color:var(--dim); margin-bottom:26px; }
@@ -630,6 +699,7 @@
   footer a { color:var(--dim); text-decoration:none; }
   footer a:hover { color:var(--accent); }
 
+  /* MODAL / LIGHTBOX DE IMAGENS */
   .img-modal {
     display: none;
     position: fixed;
@@ -649,6 +719,9 @@
     box-shadow: 0 0 25px rgba(0,0,0,0.8);
     animation: zoomModal 0.25s ease;
   }
+  .img-modal-content.confidential-modal {
+    filter: blur(9px) brightness(0.9);
+  }
   .img-modal-close {
     position: absolute;
     top: 20px;
@@ -666,6 +739,7 @@
     to { transform: scale(1); opacity: 1; }
   }
 
+  /* RESPONSIVO */
   @media (max-width: 780px) {
     nav { display: flex; justify-content: space-between; }
     nav ul { display:none; }
@@ -679,6 +753,7 @@
 </head>
 <body class="intro-active">
 
+  <!-- INTRO OVERLAY -->
   <div id="intro-overlay">
     <h1 class="intro-title">Design com <span class="intro-word-cycle" id="introWordCycle">
       <span class="w">clareza.</span>
@@ -704,6 +779,7 @@
     <a class="cta" href="#contato">contato</a>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
       <div class="hero-eyebrow mono">portfólio — 2026</div>
@@ -715,8 +791,10 @@
     </div>
 
     <div class="hero-visual">
+      <!-- CONTAINER COM ILUSTRAÇÕES DE DESIGN FLUTUANTES -->
       <div class="wf-wrapper">
 
+        <!-- ILUSTRAÇÃO 1: CANETA BEZIER / VETOR DE DESIGN -->
         <svg class="wf-illustration pen-tool-svg" viewBox="0 0 100 100" fill="none">
           <path d="M 15,80 C 35,20 65,80 85,20" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3"/>
           <line x1="15" y1="80" x2="35" y2="20" stroke="var(--line-strong)" stroke-width="1.5"/>
@@ -725,14 +803,17 @@
           <rect x="81" y="16" width="8" height="8" fill="var(--accent)"/>
         </svg>
 
+        <!-- ILUSTRAÇÃO 2: BADGE DE COMPONENTE AUTO-LAYOUT -->
         <div class="wf-illustration badge-floater">
           <span>❖</span> auto-layout 8px
         </div>
 
+        <!-- ILUSTRAÇÃO 3: ESPECIFICAÇÃO DE DENSIDADE DE GRID -->
         <div class="wf-illustration spec-floater">
           <span>↔</span> 380px × 260px
         </div>
 
+        <!-- ILUSTRAÇÃO 4: CURSOR FIGMA COM SEU NOME -->
         <div class="wf-illustration cursor-floater">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 3l7 18 3-7 7-3L3 3z"/>
@@ -740,6 +821,7 @@
           <span>Raquel • UI/UX</span>
         </div>
 
+        <!-- MOCKUP UI INTERATIVO -->
         <div class="wf-window" id="wfWindow">
           <div class="wf-header">
             <div class="wf-dots">
@@ -756,6 +838,7 @@
             </div>
 
             <div class="wf-main">
+              <!-- ESTRUTURA 1: DASHBOARD -->
               <div class="wf-view active" id="view-dashboard">
                 <div class="wf-top-bar">
                   <span class="wf-title">Painel de Dashboard</span>
@@ -789,6 +872,7 @@
                 </div>
               </div>
 
+              <!-- ESTRUTURA 2: INTERFACES -->
               <div class="wf-view" id="view-interfaces">
                 <div class="wf-top-bar">
                   <span class="wf-title">Prototipagem de Wireframes</span>
@@ -820,6 +904,7 @@
                 </div>
               </div>
 
+              <!-- ESTRUTURA 3: DESIGN SYSTEM -->
               <div class="wf-view" id="view-ds">
                 <div class="wf-top-bar">
                   <span class="wf-title">Biblioteca de Tokens</span>
@@ -847,6 +932,7 @@
         </div>
       </div>
 
+      <!-- PALETA DE CORES INTERATIVA -->
       <div class="color-palette" id="colorPalette">
         <button type="button" class="swatch active" data-color="#E8590C" style="background:#E8590C" title="Laranja Criativo"></button>
         <button type="button" class="swatch" data-color="#38483A" style="background:#38483A" title="Verde Botânico"></button>
@@ -860,6 +946,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO 01: SOBRE MIM (ESTILO CONSTRUTIVISTA & UI/UX) -->
   <div class="section-head" id="sobre">
     <h2>Sobre mim</h2>
   </div>
@@ -880,10 +967,12 @@
       </div>
     </div>
 
+    <!-- VITRINE CIRCULAR COM ELEMENTOS DE UI/UX FLUTUANDO -->
     <div class="const-visual-showcase">
 
       <div class="const-orbit-ring"></div>
 
+      <!-- texto girando ao redor da foto -->
       <svg class="const-orbit-text" viewBox="0 0 200 200">
         <defs>
           <path id="orbitPath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" fill="none"/>
@@ -895,6 +984,7 @@
         </text>
       </svg>
 
+      <!-- caneta bezier flutuante -->
       <svg class="const-floater pen" viewBox="0 0 100 100" fill="none">
         <path d="M 15,80 C 35,20 65,80 85,20" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3"/>
         <line x1="15" y1="80" x2="35" y2="20" stroke="var(--line-strong)" stroke-width="1.5"/>
@@ -903,10 +993,13 @@
         <rect x="81" y="16" width="8" height="8" fill="var(--accent)"/>
       </svg>
 
+      <!-- badge auto-layout -->
       <div class="const-floater badge mono">❖ auto-layout 8px</div>
 
+      <!-- especificação de medida -->
       <div class="const-floater spec mono">↔ 380px × 380px</div>
 
+      <!-- cursor com nome -->
       <div class="const-floater cursor mono">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
           <path d="M3 3l7 18 3-7 7-3L3 3z"/>
@@ -914,6 +1007,7 @@
         <span>Raquel • UI/UX</span>
       </div>
 
+      <!-- foto circular com caminho atualizado -->
       <div class="const-photo-frame">
         <img src="img/img-perfil/foto-perfil.jpeg" alt="Raquel Renovato" onclick="openImageModal(this.src)">
       </div>
@@ -921,6 +1015,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO 02: PROJETOS -->
   <div class="section-head" id="projetos">
     <h2>Projetos selecionados</h2>
   </div>
@@ -952,8 +1047,10 @@
         <div class="strip-item mono">variação 5</div>
       </div>
       <div class="strip-nav">
-        <button class="strip-btn prev" aria-label="Anterior">←</button>
-        <button class="strip-btn next" aria-label="Próximo">→</button>
+        <div class="strip-nav-arrows">
+          <button class="strip-btn prev" aria-label="Anterior">←</button>
+          <button class="strip-btn next" aria-label="Próximo">→</button>
+        </div>
       </div>
     </article>
 
@@ -982,8 +1079,10 @@
         <div class="strip-item mono">blog</div>
       </div>
       <div class="strip-nav">
-        <button class="strip-btn prev" aria-label="Anterior">←</button>
-        <button class="strip-btn next" aria-label="Próximo">→</button>
+        <div class="strip-nav-arrows">
+          <button class="strip-btn prev" aria-label="Anterior">←</button>
+          <button class="strip-btn next" aria-label="Próximo">→</button>
+        </div>
       </div>
     </article>
 
@@ -1005,15 +1104,22 @@
         <div class="tags"><span class="tag">Canva</span><span class="tag">Apresentações</span><span class="tag">Copywriting</span><span class="tag">IA Generativa</span></div>
       </div>
       <div class="strip">
-        <div class="strip-item mono">slide de capa</div>
-        <div class="strip-item mono">variação 2</div>
-        <div class="strip-item mono">variação 3</div>
-        <div class="strip-item mono">variação 4</div>
-        <div class="strip-item mono">variação 5</div>
+        <div class="strip-item widescreen">
+          <img src="img/img-renata/renata-01.jpg" alt="Renata Brandão - Slide de capa" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item widescreen">
+          <img src="img/img-renata/renata-02.jpg" alt="Renata Brandão - Slide 2" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
+        <div class="strip-item widescreen">
+          <img src="img/img-renata/renata-03.jpg" alt="Renata Brandão - Slide 3" loading="lazy" onclick="openImageModal(this.src)" />
+        </div>
       </div>
       <div class="strip-nav">
-        <button class="strip-btn prev" aria-label="Anterior">←</button>
-        <button class="strip-btn next" aria-label="Próximo">→</button>
+        <div class="strip-nav-arrows">
+          <button class="strip-btn prev" aria-label="Anterior">←</button>
+          <button class="strip-btn next" aria-label="Próximo">→</button>
+        </div>
+        <a class="strip-full-link" href="https://canva.link/w874gu7mhg7053v" target="_blank" rel="noopener noreferrer">Ver conteúdo completo ↗</a>
       </div>
     </article>
 
@@ -1058,11 +1164,14 @@
         </div>
       </div>
       <div class="strip-nav">
-        <button class="strip-btn prev" aria-label="Anterior">←</button>
-        <button class="strip-btn next" aria-label="Próximo">→</button>
+        <div class="strip-nav-arrows">
+          <button class="strip-btn prev" aria-label="Anterior">←</button>
+          <button class="strip-btn next" aria-label="Próximo">→</button>
+        </div>
       </div>
     </article>
 
+    <!-- PROJETO 05: AYMÉE FERRAZ -->
     <article class="project-block from-left">
       <div class="project-head">
         <span class="n mono">05 / 05</span>
@@ -1113,13 +1222,16 @@
         </div>
       </div>
       <div class="strip-nav">
-        <button class="strip-btn prev" aria-label="Anterior">←</button>
-        <button class="strip-btn next" aria-label="Próximo">→</button>
+        <div class="strip-nav-arrows">
+          <button class="strip-btn prev" aria-label="Anterior">←</button>
+          <button class="strip-btn next" aria-label="Próximo">→</button>
+        </div>
       </div>
     </article>
 
   </div>
 
+  <!-- SEÇÃO 03: HABILIDADES -->
   <div class="section-head centered" id="habilidades">
     <h2>Habilidades & ferramentas</h2>
   </div>
@@ -1144,6 +1256,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO 04: CONTATO -->
   <section class="cta-band" id="contato">
     <h2>Vamos trabalhar juntos?</h2>
     <p>Entre em contato para conversarmos sobre novos projetos e parcerias.</p>
@@ -1160,17 +1273,20 @@
 
   </div>
 
+  <!-- MODAL PARA EXPANDIR AS IMAGENS AO CLICAR -->
   <div id="imgModal" class="img-modal" onclick="closeImageModal()">
     <span class="img-modal-close">&times;</span>
     <img class="img-modal-content" id="imgModalTarget" alt="Imagem Expandida">
   </div>
 
   <script>
-    function openImageModal(src) {
+    /* MODAL DE IMAGEM AO CLICAR */
+    function openImageModal(src, blurred) {
       const modal = document.getElementById('imgModal');
       const target = document.getElementById('imgModalTarget');
       modal.style.display = 'flex';
       target.src = src;
+      target.classList.toggle('confidential-modal', !!blurred);
     }
 
     function closeImageModal() {
@@ -1182,6 +1298,7 @@
       if (e.key === 'Escape') closeImageModal();
     });
 
+    /* TOGGLE TEMA DA PÁGINA */
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeLabel = document.getElementById('themeLabel');
 
@@ -1196,6 +1313,7 @@
       }
     });
 
+    /* INTRO ANIMADA */
     const introOverlay = document.getElementById('intro-overlay');
     const introWordCycleEl = document.getElementById('introWordCycle');
     const introWordEls = document.querySelectorAll('#introWordCycle .w');
@@ -1234,6 +1352,7 @@
     });
     setTimeout(expandSite, STEP * introWordEls.length + 500);
 
+    /* ANIMAÇÃO DOS BLOCOS DE PROJETO AO ROLAR */
     const blocks = document.querySelectorAll('.project-block');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1244,6 +1363,7 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
     blocks.forEach(block => observer.observe(block));
 
+    // reforço: garante que blocos já visíveis ao carregar a página também animem
     window.addEventListener('load', () => {
       blocks.forEach(block => {
         const rect = block.getBoundingClientRect();
@@ -1253,6 +1373,7 @@
       });
     });
 
+    /* NAVEGAÇÃO POR SETAS DAS GALERIAS DOS PROJETOS */
     document.querySelectorAll('.project-block').forEach(block => {
       const strip = block.querySelector('.strip');
       const prevBtn = block.querySelector('.strip-btn.prev');
@@ -1269,6 +1390,7 @@
       }
     });
 
+    /* SELEÇÃO DE COR NA PALETA INTERATIVA */
     let selectedColor = '#E8590C';
     const swatches = document.querySelectorAll('.swatch');
     swatches.forEach(swatch => {
