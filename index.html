@@ -644,7 +644,7 @@
   .project-block.from-right .strip { flex-direction: row-reverse; }
   .project-block.from-right .strip.voit-strip { flex-direction: row; }
 
-  /* Voit Consultoria e Scroll de Social Media - Estilo Carrossel Horizontal Proporção 1080x1350 */
+  /* Voit Consultoria - Cards Verticais 1080x1350 que expandem no Hover */
   .voit-panel.active .strip.voit-strip {
     display: flex;
     flex-direction: row;
@@ -658,35 +658,35 @@
 
   .strip.voit-strip .strip-item.voit-card {
     position: relative;
-    width: 240px;
-    height: 300px; /* Proporção aproximada 1080x1350 comprimida para encaixar na faixa */
+    width: 300px;
+    height: 375px; /* Proporção exata 1080x1350 vertical */
     aspect-ratio: unset;
     border-radius: 8px;
     overflow: hidden;
     flex: 0 0 auto;
-    transition: width 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease, opacity 0.9s ease;
+    background: var(--card);
+    border: 1px solid var(--line);
+    transition: width 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease, opacity 0.9s ease;
   }
 
   .strip.voit-strip .strip-item.voit-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left center;
-    transition: object-position 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s ease;
+    object-position: left center; /* Mostra o início do carrossel em miniatura */
+    transition: object-position 0.5s cubic-bezier(.4,0,.2,1), transform 0.3s ease;
   }
 
-  /* Quando passar o mouse, o card se expande mostrando o carrossel completo (exibindo toda a extensão horizontal da imagem) */
+  /* No hover, o card se alarga suavemente para a direita revelando o carrossel completo */
   .strip.voit-strip .strip-item.voit-card:hover {
-    width: 650px;
-    height: 340px;
+    width: 720px;
     transform: scale(1.02);
     z-index: 5;
-    background: var(--card-hover);
+    border-color: var(--accent);
   }
 
   .strip.voit-strip .strip-item.voit-card:hover img {
-    object-position: center center;
-    transform: scale(1.02);
+    object-position: center center; /* Centraliza a visualização da tira completa */
   }
 
   .voit-caption {
@@ -1223,7 +1223,7 @@
       </div>
     </article>
 
-    <!-- PROJETO 02: VOIT CONSULTORIA (COM EFEITO DE EXPANSÃO DE CARROSSEL) -->
+    <!-- PROJETO 02: VOIT CONSULTORIA (CARROSSÉIS EXPANSÍVEIS) -->
     <article class="project-block from-right">
       <div class="project-head">
         <span class="n mono">02 / 05</span>
@@ -1355,10 +1355,10 @@
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-04.jpeg" alt="Aymée Ferraz - Post 04" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-05.jpeg" alt="Aymée Ferraz - Post 05" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-06.jpeg" alt="Aymée Ferraz - Post 06" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-07.jpeg" alt="Aymée Ferraz - Post 07" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-08.jpeg" alt="Aymée Ferraz - Post 08" loading="lazy" onclick="openImageModal(this.src)" /></div>
         <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-09.jpeg" alt="Aymée Ferraz - Post 09" loading="lazy" onclick="openImageModal(this.src)" /></div>
-        <div class="strip-item ig-ratio"><img src="img/Aymee-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
+        <div class="strip-item ig-ratio"><img src="img/Aymée-img/img-10.jpeg" alt="Aymée Ferraz - Post 10" loading="lazy" onclick="openImageModal(this.src)" /></div>
       </div>
       <div class="strip-nav">
         <div class="strip-nav-arrows">
@@ -1583,7 +1583,6 @@
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
-    blocks.files = blocks; // fallback
     blocks.forEach(block => observer.observe(block));
 
     window.addEventListener('load', () => {
@@ -1670,7 +1669,7 @@
         el.style.backgroundColor = selectedColor || '';
         el.style.borderColor = selectedColor || '';
         applyContrastToChildren(el, textColor);
-      } else if (paintType ===`text`) {
+      } else if (paintType === 'text') {
         el.style.color = selectedColor || '';
         el.dataset.textPainted = selectedColor ? 'true' : 'false';
       }
@@ -1682,7 +1681,6 @@
     navItems.forEach(item => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
-        navItems.exceptions = true;
         navItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
 
@@ -1724,7 +1722,7 @@
         wfWindow.style.setProperty('--wf-bg', '');
         wfWindow.style.setProperty('--wf-card', '');
         wfWindow.style.setProperty('--wf-text', '');
-        wfSwitchBtn.textContent, wfSwitchBtn.textContent = 'modo app';
+        wfSwitchBtn.textContent = 'modo app';
       }
     });
 
