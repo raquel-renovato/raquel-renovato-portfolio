@@ -3234,6 +3234,128 @@
       text-decoration: none;
     }
 
+    .social-compact-block .project-summary {
+      max-width: 800px;
+    }
+
+    .social-showcase {
+      padding: 0 var(--page-pad);
+    }
+
+    .social-showcase-grid {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+
+      gap: 18px;
+
+      align-items: stretch;
+    }
+
+    .social-showcase-copy {
+      display: flex;
+      flex-direction: column;
+
+      padding: 25px;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--card);
+    }
+
+    .social-showcase-copy > span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .social-showcase-copy h4 {
+      margin: 17px 0 12px;
+
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.6rem, 2.7vw, 2.25rem);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    .social-showcase-copy p {
+      color: var(--dim);
+
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+
+    .social-showcase-note {
+      display: grid;
+
+      gap: 8px;
+
+      margin-top: auto;
+      padding-top: 28px;
+    }
+
+    .social-showcase-note div {
+      padding-top: 13px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .social-showcase-note strong {
+      display: block;
+
+      margin-bottom: 4px;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+      font-weight: 600;
+
+      color: var(--accent);
+    }
+
+    .social-showcase-note span {
+      color: var(--dim);
+
+      font-size: 0.7rem;
+      line-height: 1.55;
+    }
+
+    .social-gallery-shell {
+      min-width: 0;
+
+      padding: 18px;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--bg);
+    }
+
+    .social-gallery-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 14px;
+
+      margin-bottom: 15px;
+    }
+
+    .social-gallery-head span {
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.53rem;
+    }
+
+    .social-gallery-head strong {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.53rem;
+      font-weight: 600;
+    }
+
     .skills {
       padding: 0 var(--page-pad) 70px;
     }
@@ -3498,6 +3620,10 @@
 
         width: auto;
       }
+
+      .social-showcase-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 900px) {
@@ -3633,6 +3759,15 @@
 
       .renata-side {
         padding: 23px 18px;
+      }
+
+      .social-showcase {
+        padding-inline: 16px;
+      }
+
+      .social-showcase-copy,
+      .social-gallery-shell {
+        padding: 18px;
       }
     }
 
@@ -4357,6 +4492,10 @@
       </div>
 
       <div id="projects-container">
+
+        <!-- =====================================================
+             FERNANDO AMARAL
+             ===================================================== -->
 
         <article
           class="project-block"
@@ -5915,6 +6054,10 @@
 
         </article>
 
+        <!-- =====================================================
+             VOIT
+             ===================================================== -->
+
         <article class="project-block">
 
           <div class="project-head">
@@ -6070,6 +6213,10 @@
 
         </article>
 
+        <!-- =====================================================
+             RENATA BRANDÃO
+             ===================================================== -->
+
         <article
           class="project-block"
           id="renata-project"
@@ -6148,7 +6295,6 @@
 
             </div>
 
-            <!-- ALTERAÇÃO: IA GENERATIVA REMOVIDA -->
             <div class="project-proof">
               <span>Canva</span>
               <span>Presentation Design</span>
@@ -6352,12 +6498,16 @@
 
         </article>
 
-        <article class="project-block">
+        <!-- =====================================================
+             SOMOS BRADUCA
+             ===================================================== -->
+
+        <article class="project-block social-compact-block">
 
           <div class="project-head">
 
             <span class="n mono">
-              04 / 05 • SOCIAL MEDIA
+              04 / 05 • SOCIAL MEDIA / DESIGN GRÁFICO
             </span>
 
             <h3>
@@ -6365,9 +6515,10 @@
             </h3>
 
             <p class="project-summary">
-              Comunicação visual para uma iniciativa educacional que oferece
-              mentorias de inglês e testes de proficiência a estudantes da rede
-              pública.
+              Criação e diagramação de conteúdos para as redes sociais de uma
+              iniciativa educacional voltada a estudantes da rede pública.
+              A partir dos conteúdos e da identidade visual fornecidos,
+              desenvolvi peças claras, acessíveis e consistentes com a marca.
             </p>
 
             <div class="case-grid">
@@ -6379,7 +6530,8 @@
                 </span>
 
                 <p>
-                  Comunicação educacional nas redes sociais.
+                  Comunicação sobre mentorias de inglês, testes de proficiência
+                  e oportunidades educacionais.
                 </p>
 
               </div>
@@ -6391,7 +6543,8 @@
                 </span>
 
                 <p>
-                  Criação e diagramação das peças.
+                  Transformação dos conteúdos fornecidos em posts e carrosséis,
+                  aplicando a identidade visual existente.
                 </p>
 
               </div>
@@ -6399,11 +6552,12 @@
               <div class="case-item">
 
                 <span class="project-block-label">
-                  03 / foco
+                  03 / desafio
                 </span>
 
                 <p>
-                  Legibilidade e consistência visual.
+                  Organizar informações educacionais de maneira simples,
+                  atrativa e adequada ao público estudantil.
                 </p>
 
               </div>
@@ -6415,7 +6569,8 @@
                 </span>
 
                 <p>
-                  Sistema de peças para social media.
+                  Conjunto de peças para redes sociais, com hierarquia,
+                  legibilidade e consistência visual.
                 </p>
 
               </div>
@@ -6425,88 +6580,188 @@
             <div class="project-proof">
               <span>Social Media</span>
               <span>Design Gráfico</span>
-              <span>Comunicação Visual</span>
+              <span>Diagramação</span>
+              <span>Desdobramento de Identidade</span>
             </div>
 
           </div>
 
-          <div class="strip">
+          <div class="social-showcase">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/img-braduca/braduca-01.jpeg"
-                alt="Braduca 01"
-                class="js-lightbox-image"
-              >
-            </div>
+            <div class="social-showcase-grid">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/img-braduca/braduca-02.jpeg"
-                alt="Braduca 02"
-                class="js-lightbox-image"
-              >
-            </div>
+              <aside class="social-showcase-copy">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/img-braduca/braduca-03.jpeg"
-                alt="Braduca 03"
-                class="js-lightbox-image"
-              >
-            </div>
+                <span>
+                  APLICAÇÃO DE IDENTIDADE
+                </span>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/img-braduca/braduca-04.jpeg"
-                alt="Braduca 04"
-                class="js-lightbox-image"
-              >
-            </div>
+                <h4>
+                  Conteúdo educacional com leitura simples e linguagem consistente.
+                </h4>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/img-braduca/braduca-05.jpeg"
-                alt="Braduca 05"
-                class="js-lightbox-image"
-              >
-            </div>
+                <p>
+                  A identidade visual e os conteúdos-base já eram fornecidos.
+                  Meu trabalho foi transformar essas informações em peças
+                  adequadas às redes sociais, mantendo reconhecimento de marca,
+                  hierarquia e legibilidade.
+                </p>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/img-braduca/braduca-06.jpeg"
-                alt="Braduca 06"
-                class="js-lightbox-image"
-              >
-            </div>
+                <div class="social-showcase-note">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/img-braduca/braduca-07.jpeg"
-                alt="Braduca 07"
-                class="js-lightbox-image"
-              >
-            </div>
+                  <div>
+                    <strong>
+                      PÚBLICO
+                    </strong>
 
-          </div>
+                    <span>
+                      Estudantes da rede pública e jovens interessados em inglês
+                      e oportunidades educacionais.
+                    </span>
+                  </div>
 
-          <div class="strip-nav">
+                  <div>
+                    <strong>
+                      FOCO
+                    </strong>
 
-            <div class="strip-nav-arrows">
+                    <span>
+                      Clareza, acessibilidade visual e adaptação consistente da
+                      identidade já existente.
+                    </span>
+                  </div>
 
-              <button
-                class="strip-btn prev"
-                type="button"
-              >
-                ←
-              </button>
+                </div>
 
-              <button
-                class="strip-btn next"
-                type="button"
-              >
-                →
-              </button>
+              </aside>
+
+              <div class="social-gallery-shell">
+
+                <div class="social-gallery-head">
+                  <span>
+                    seleção de peças
+                  </span>
+
+                  <strong>
+                    07 projetos visuais
+                  </strong>
+                </div>
+
+                <div
+                  class="strip"
+                  aria-label="Galeria de conteúdos para redes sociais da Somos Braduca"
+                >
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/img-braduca/braduca-01.jpeg"
+                      alt="Somos Braduca — peça para redes sociais 01"
+                      class="js-lightbox-image"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/img-braduca/braduca-02.jpeg"
+                      alt="Somos Braduca — peça para redes sociais 02"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/img-braduca/braduca-03.jpeg"
+                      alt="Somos Braduca — peça para redes sociais 03"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/img-braduca/braduca-04.jpeg"
+                      alt="Somos Braduca — peça para redes sociais 04"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/img-braduca/braduca-05.jpeg"
+                      alt="Somos Braduca — peça para redes sociais 05"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/img-braduca/braduca-06.jpeg"
+                      alt="Somos Braduca — peça para redes sociais 06"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/img-braduca/braduca-07.jpeg"
+                      alt="Somos Braduca — peça para redes sociais 07"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                </div>
+
+                <div class="strip-nav">
+
+                  <div class="strip-nav-arrows">
+
+                    <button
+                      class="strip-btn prev"
+                      type="button"
+                      aria-label="Ver peças anteriores da Somos Braduca"
+                    >
+                      ←
+                    </button>
+
+                    <button
+                      class="strip-btn next"
+                      type="button"
+                      aria-label="Ver próximas peças da Somos Braduca"
+                    >
+                      →
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
 
             </div>
 
@@ -6514,7 +6769,11 @@
 
         </article>
 
-        <article class="project-block">
+        <!-- =====================================================
+             AYMÉE FERRAZ
+             ===================================================== -->
+
+        <article class="project-block social-compact-block">
 
           <div class="project-head">
 
@@ -6527,8 +6786,10 @@
             </h3>
 
             <p class="project-summary">
-              Desenvolvimento de comunicação visual para redes sociais de uma
-              especialista em CS/CX, Felicidade Corporativa e gestão.
+              Desenvolvimento de peças para as redes sociais de uma especialista
+              em CS/CX, Felicidade Corporativa e gestão. A partir dos conteúdos
+              e da identidade visual fornecidos, organizei as informações e
+              desenvolvi o design dos posts.
             </p>
 
             <div class="case-grid">
@@ -6540,7 +6801,8 @@
                 </span>
 
                 <p>
-                  Conteúdo profissional para uma marca pessoal.
+                  Conteúdo profissional para fortalecer o posicionamento e a
+                  presença digital de uma marca pessoal.
                 </p>
 
               </div>
@@ -6552,7 +6814,8 @@
                 </span>
 
                 <p>
-                  Criação e diagramação de posts.
+                  Criação e diagramação de posts e carrosséis com base nos
+                  conteúdos e na identidade visual da cliente.
                 </p>
 
               </div>
@@ -6560,11 +6823,12 @@
               <div class="case-item">
 
                 <span class="project-block-label">
-                  03 / foco
+                  03 / desafio
                 </span>
 
                 <p>
-                  Hierarquia, ritmo e identidade.
+                  Apresentar temas conceituais e profissionais com clareza,
+                  mantendo personalidade e autoridade.
                 </p>
 
               </div>
@@ -6576,7 +6840,8 @@
                 </span>
 
                 <p>
-                  Sistema visual para social media.
+                  Conjunto de peças para redes sociais, adaptadas a diferentes
+                  conteúdos e formatos.
                 </p>
 
               </div>
@@ -6587,111 +6852,199 @@
               <span>Social Media</span>
               <span>Design Gráfico</span>
               <span>Marca Pessoal</span>
+              <span>Diagramação</span>
             </div>
 
           </div>
 
-          <div class="strip">
+          <div class="social-showcase">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-01.jpeg"
-                alt="Aymée 01"
-                class="js-lightbox-image"
-              >
-            </div>
+            <div class="social-showcase-grid">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-02.jpeg"
-                alt="Aymée 02"
-                class="js-lightbox-image"
-              >
-            </div>
+              <aside class="social-showcase-copy">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-03.jpeg"
-                alt="Aymée 03"
-                class="js-lightbox-image"
-              >
-            </div>
+                <span>
+                  MARCA PESSOAL / SOCIAL MEDIA
+                </span>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-04.jpeg"
-                alt="Aymée 04"
-                class="js-lightbox-image"
-              >
-            </div>
+                <h4>
+                  Conteúdo profissional com clareza, personalidade e autoridade.
+                </h4>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-05.jpeg"
-                alt="Aymée 05"
-                class="js-lightbox-image"
-              >
-            </div>
+                <p>
+                  A identidade visual e os conteúdos-base eram fornecidos pela
+                  cliente. A partir desse material, organizei as informações e
+                  desenvolvi posts e carrosséis capazes de manter consistência
+                  entre temas diferentes.
+                </p>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-06.jpeg"
-                alt="Aymée 06"
-                class="js-lightbox-image"
-              >
-            </div>
+                <div class="social-showcase-note">
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-07.jpeg"
-                alt="Aymée 07"
-                class="js-lightbox-image"
-              >
-            </div>
+                  <div>
+                    <strong>
+                      PÚBLICO
+                    </strong>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-08.jpeg"
-                alt="Aymée 08"
-                class="js-lightbox-image"
-              >
-            </div>
+                    <span>
+                      Profissionais e lideranças interessados em experiência do
+                      cliente, gestão e felicidade corporativa.
+                    </span>
+                  </div>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-09.jpeg"
-                alt="Aymée 09"
-                class="js-lightbox-image"
-              >
-            </div>
+                  <div>
+                    <strong>
+                      FOCO
+                    </strong>
 
-            <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-10.jpeg"
-                alt="Aymée 10"
-                class="js-lightbox-image"
-              >
-            </div>
+                    <span>
+                      Transformar temas conceituais em peças de leitura clara sem
+                      perder o caráter profissional da marca pessoal.
+                    </span>
+                  </div>
 
-          </div>
+                </div>
 
-          <div class="strip-nav">
+              </aside>
 
-            <div class="strip-nav-arrows">
+              <div class="social-gallery-shell">
 
-              <button
-                class="strip-btn prev"
-                type="button"
-              >
-                ←
-              </button>
+                <div class="social-gallery-head">
+                  <span>
+                    seleção de peças
+                  </span>
 
-              <button
-                class="strip-btn next"
-                type="button"
-              >
-                →
-              </button>
+                  <strong>
+                    08 projetos visuais
+                  </strong>
+                </div>
+
+                <div
+                  class="strip"
+                  aria-label="Galeria de conteúdos para redes sociais de Aymée Ferraz"
+                >
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-01.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 01"
+                      class="js-lightbox-image"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-02.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 02"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-03.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 03"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-04.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 04"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-05.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 05"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-06.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 06"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-07.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 07"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                  <div class="strip-item ig-ratio">
+                    <img
+                      src="img/Aymee-img/img-08.jpeg"
+                      alt="Aymée Ferraz — peça para redes sociais 08"
+                      class="js-lightbox-image"
+                      loading="lazy"
+                      tabindex="0"
+                      role="button"
+                      aria-haspopup="dialog"
+                    >
+                  </div>
+
+                </div>
+
+                <div class="strip-nav">
+
+                  <div class="strip-nav-arrows">
+
+                    <button
+                      class="strip-btn prev"
+                      type="button"
+                      aria-label="Ver peças anteriores de Aymée Ferraz"
+                    >
+                      ←
+                    </button>
+
+                    <button
+                      class="strip-btn next"
+                      type="button"
+                      aria-label="Ver próximas peças de Aymée Ferraz"
+                    >
+                      →
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
 
             </div>
 
@@ -6845,6 +7198,10 @@
 
   </div>
 
+  <!-- =======================================================
+       DRAWER VOIT
+       ======================================================= -->
+
   <div
     id="drawerOverlay"
     class="drawer-overlay"
@@ -6935,6 +7292,10 @@
 
   </aside>
 
+  <!-- =======================================================
+       MODAL
+       ======================================================= -->
+
   <div
     id="imgModal"
     class="img-modal"
@@ -6955,6 +7316,10 @@
     >
 
   </div>
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
 
   <script>
     (() => {
@@ -7835,6 +8200,19 @@
             image.addEventListener(
               "click",
               () => openImage(image)
+            );
+
+            image.addEventListener(
+              "keydown",
+              event => {
+                if (
+                  event.key === "Enter" ||
+                  event.key === " "
+                ) {
+                  event.preventDefault();
+                  openImage(image);
+                }
+              }
             );
           }
         );
