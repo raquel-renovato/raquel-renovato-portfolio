@@ -29,10 +29,6 @@
   >
 
   <style>
-    /* =========================================================
-       TOKENS
-       ========================================================= */
-
     :root {
       --bg: #F3EFEA;
       --ink: #1F1C18;
@@ -95,10 +91,6 @@
       --wf-line: rgba(240, 236, 225, 0.12);
     }
 
-    /* =========================================================
-       RESET
-       ========================================================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -113,9 +105,7 @@
     body {
       background: var(--bg);
       color: var(--ink);
-
       font-family: "IBM Plex Sans", sans-serif;
-
       -webkit-font-smoothing: antialiased;
 
       transition:
@@ -172,10 +162,6 @@
       outline-offset: 4px;
     }
 
-    /* =========================================================
-       INTRO
-       ========================================================= */
-
     body.intro-active {
       overflow: hidden;
       height: 100vh;
@@ -215,11 +201,8 @@
 
     .intro-word-cycle {
       position: relative;
-
       display: inline-block;
-
       height: 1.15em;
-
       vertical-align: bottom;
       overflow: hidden;
     }
@@ -232,12 +215,10 @@
       white-space: nowrap;
 
       color: var(--accent);
-
       font-style: italic;
       font-weight: 400;
 
       opacity: 0;
-
       transform: translateY(100%);
 
       transition:
@@ -257,18 +238,12 @@
 
     #site-content {
       opacity: 0;
-
-      transition:
-        opacity 0.35s ease;
+      transition: opacity 0.35s ease;
     }
 
     #site-content.visible {
       opacity: 1;
     }
-
-    /* =========================================================
-       NAV
-       ========================================================= */
 
     nav {
       position: sticky;
@@ -290,7 +265,6 @@
 
     .nav-left {
       justify-self: start;
-
       display: flex;
       align-items: center;
       gap: 20px;
@@ -298,11 +272,9 @@
 
     .logo {
       color: var(--ink);
-
       font-family: "Fraunces", serif;
       font-size: 1.05rem;
       font-weight: 500;
-
       text-decoration: none;
     }
 
@@ -317,11 +289,9 @@
       border-radius: 999px;
 
       background: none;
-
       color: var(--ink);
 
       font-size: 0.72rem;
-
       cursor: pointer;
     }
 
@@ -333,13 +303,11 @@
       gap: 32px;
 
       list-style: none;
-
       font-size: 0.78rem;
     }
 
     nav ul a {
       color: var(--dim);
-
       text-decoration: none;
     }
 
@@ -358,7 +326,6 @@
       border: 1px solid var(--ink);
 
       color: var(--ink);
-
       font-size: 0.78rem;
       text-decoration: none;
     }
@@ -367,10 +334,6 @@
       color: var(--bg);
       background: var(--ink);
     }
-
-    /* =========================================================
-       HERO
-       ========================================================= */
 
     .hero {
       display: grid;
@@ -402,7 +365,6 @@
 
     .hero h1 em {
       color: var(--accent);
-
       font-style: italic;
       font-weight: 400;
     }
@@ -439,7 +401,6 @@
       border-bottom: 1.5px solid var(--accent);
 
       color: var(--accent);
-
       font-size: 0.85rem;
       font-weight: 500;
       text-decoration: none;
@@ -447,14 +408,9 @@
 
     .hero-secondary-link {
       color: var(--dim);
-
       font-size: 0.72rem;
       text-decoration: none;
     }
-
-    /* =========================================================
-       HERO WIREFRAME
-       ========================================================= */
 
     .hero-visual {
       display: flex;
@@ -465,23 +421,19 @@
 
     .wf-wrapper {
       position: relative;
-
       width: 100%;
       max-width: 380px;
     }
 
     .wf-illustration {
       position: absolute;
-
       z-index: 10;
-
       pointer-events: none;
     }
 
     .pen-tool-svg {
       top: -28px;
       left: -28px;
-
       width: 76px;
       height: 76px;
     }
@@ -558,7 +510,6 @@
 
     .wf-window {
       position: relative;
-
       z-index: 1;
 
       display: flex;
@@ -586,7 +537,6 @@
       justify-content: space-between;
 
       height: 34px;
-
       padding: 0 14px;
 
       border-bottom: 1px solid var(--wf-line);
@@ -620,14 +570,12 @@
       color: var(--dim);
 
       font-size: 0.62rem;
-
       cursor: pointer;
     }
 
     .wf-body {
       display: flex;
       flex: 1;
-
       min-height: 0;
     }
 
@@ -666,13 +614,11 @@
     .wf-nav-item.active {
       background: var(--accent);
       color: #FFF;
-
       font-weight: 500;
     }
 
     .wf-main {
       flex: 1;
-
       min-width: 0;
 
       padding: 12px;
@@ -699,7 +645,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 8px;
     }
 
@@ -718,14 +663,12 @@
       color: #FFF;
 
       font-size: 0.62rem;
-
       cursor: pointer;
     }
 
     .wf-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 8px;
     }
 
@@ -746,7 +689,6 @@
 
     .wf-card-label {
       color: var(--muted);
-
       font-size: 0.58rem;
     }
 
@@ -795,7 +737,6 @@
 
     .wf-task-item.checked span {
       text-decoration: line-through;
-
       opacity: 0.55;
     }
 
@@ -861,10 +802,6 @@
       text-align: center;
     }
 
-    /* =========================================================
-       PROCESSO
-       ========================================================= */
-
     .process-fold-section {
       margin: 20px 0 40px;
 
@@ -928,10 +865,6 @@
       line-height: 1.6;
     }
 
-    /* =========================================================
-       SECTION HEAD
-       ========================================================= */
-
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -948,13 +881,8 @@
 
     .section-head.centered {
       justify-content: center;
-
       text-align: center;
     }
-
-    /* =========================================================
-       SOBRE
-       ========================================================= */
 
     .constructivist-about {
       position: relative;
@@ -1088,15 +1016,12 @@
     .const-photo-frame img {
       width: 100%;
       height: 100%;
-
       object-fit: cover;
     }
 
     .const-floater {
       position: absolute;
-
       z-index: 5;
-
       pointer-events: none;
     }
 
@@ -1148,10 +1073,6 @@
       font-size: 0.62rem;
     }
 
-    /* =========================================================
-       PROJETOS BASE
-       ========================================================= */
-
     .project-block {
       padding: 56px 0 10px;
     }
@@ -1162,7 +1083,6 @@
 
     .project-head {
       padding: 0 var(--page-pad);
-
       margin-bottom: 30px;
     }
 
@@ -1204,7 +1124,6 @@
       font-size: 0.68rem;
       font-weight: 600;
       letter-spacing: 0.1em;
-
       text-transform: uppercase;
     }
 
@@ -1258,10 +1177,6 @@
       font-size: 0.67rem;
     }
 
-    /* =========================================================
-       FERNANDO OVERVIEW
-       ========================================================= */
-
     .fernando-summary {
       max-width: 810px !important;
 
@@ -1308,7 +1223,6 @@
 
     .fernando-overview-card .project-block-label {
       margin-bottom: 28px;
-
       font-size: 0.58rem;
     }
 
@@ -1396,10 +1310,6 @@
 
       color: var(--accent);
     }
-
-    /* =========================================================
-       FERNANDO TABS
-       ========================================================= */
 
     .fernando-case-shell {
       padding: 0 var(--page-pad) 25px;
@@ -1489,10 +1399,6 @@
     .fernando-view.active {
       display: block;
     }
-
-    /* =========================================================
-       FERNANDO CASE
-       ========================================================= */
 
     .fernando-case-editorial {
       display: grid;
@@ -1659,10 +1565,6 @@
       line-height: 1.65;
     }
 
-    /* =========================================================
-       FERNANDO DECISÕES
-       ========================================================= */
-
     .fernando-decision-heading {
       max-width: 700px;
 
@@ -1671,7 +1573,6 @@
 
     .fernando-decision-heading > span {
       color: var(--accent);
-
       font-size: 0.55rem;
     }
 
@@ -1685,13 +1586,11 @@
 
     .fernando-decision-heading p {
       color: var(--dim);
-
       font-size: 0.86rem;
     }
 
     .fernando-decisions {
       display: grid;
-
       gap: 18px;
     }
 
@@ -1851,10 +1750,6 @@
       transform-origin: top left;
     }
 
-    /* =========================================================
-       BROWSER FERNANDO
-       ========================================================= */
-
     .fa-browser {
       position: relative;
 
@@ -1887,7 +1782,6 @@
 
     .fa-browser-dots {
       display: flex;
-
       gap: 5px;
     }
 
@@ -1955,10 +1849,6 @@
       background: #FFF;
     }
 
-    /* =========================================================
-       COMPARAÇÃO
-       ========================================================= */
-
     .fernando-compare-intro,
     .fernando-system-intro {
       max-width: 720px;
@@ -2001,7 +1891,6 @@
 
     .fernando-compare-copy > span {
       color: var(--accent);
-
       font-size: 0.52rem;
     }
 
@@ -2069,7 +1958,6 @@
 
     .fernando-compare-browsers {
       grid-template-columns: 1fr 1fr !important;
-
       align-items: stretch;
     }
 
@@ -2100,7 +1988,6 @@
 
     .fernando-compare-points span {
       color: var(--accent);
-
       font-size: 0.49rem;
     }
 
@@ -2118,10 +2005,6 @@
       font-size: 0.69rem;
       line-height: 1.6;
     }
-
-    /* =========================================================
-       DESIGN SYSTEM FERNANDO
-       ========================================================= */
 
     .fa-system {
       display: grid;
@@ -2369,7 +2252,6 @@
 
     .fa-primary-demo.is-hover {
       transform: translateY(-2px);
-
       filter: brightness(0.86);
     }
 
@@ -2508,13 +2390,11 @@
 
     .fa-form-system-demo {
       display: grid;
-
       gap: 13px;
     }
 
     .fa-form-system-row {
       display: grid;
-
       gap: 11px;
     }
 
@@ -2528,7 +2408,6 @@
 
     .fa-form-system-demo label {
       display: grid;
-
       gap: 6px;
     }
 
@@ -2557,13 +2436,11 @@
     .fa-form-system-demo input,
     .fa-form-system-demo select {
       min-height: 43px;
-
       padding: 0 11px;
     }
 
     .fa-form-system-demo textarea {
       min-height: 95px;
-
       padding: 11px;
     }
 
@@ -2603,10 +2480,6 @@
       font-size: 0.61rem;
     }
 
-    /* =========================================================
-       RESPONSIVO FERNANDO
-       ========================================================= */
-
     .fa-responsive-showcase {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 340px;
@@ -2637,11 +2510,7 @@
       box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
     }
 
-    .fa-device-desktop {
-      display: flex;
-      flex-direction: column;
-    }
-
+    .fa-device-desktop,
     .fa-device-mobile-artboard {
       display: flex;
       flex-direction: column;
@@ -2779,10 +2648,6 @@
       line-height: 1.6;
     }
 
-    /* =========================================================
-       FIGMA
-       ========================================================= */
-
     .fa-figma-shell {
       overflow: hidden;
 
@@ -2837,10 +2702,6 @@
       border: 0;
     }
 
-    /* =========================================================
-       FECHAMENTO FERNANDO
-       ========================================================= */
-
     .fernando-closing {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
@@ -2869,7 +2730,6 @@
     .fernando-closing-main span,
     .fernando-closing-grid span {
       color: var(--accent);
-
       font-size: 0.49rem;
     }
 
@@ -2905,10 +2765,6 @@
     .fernando-closing-grid p {
       margin-top: 17px;
     }
-
-    /* =========================================================
-       GALERIAS
-       ========================================================= */
 
     .strip {
       display: flex;
@@ -2999,7 +2855,6 @@
 
     .strip-nav-arrows {
       display: flex;
-
       gap: 8px;
     }
 
@@ -3028,10 +2883,6 @@
 
       text-decoration: none;
     }
-
-    /* =========================================================
-       RENATA — PRESENTATION DESIGN
-       ========================================================= */
 
     .renata-presentation {
       padding: 0 var(--page-pad) 20px;
@@ -3075,9 +2926,7 @@
 
     .renata-deck-dots {
       display: flex;
-
       gap: 5px;
-
       flex: 0 0 auto;
     }
 
@@ -3385,10 +3234,6 @@
       text-decoration: none;
     }
 
-    /* =========================================================
-       SKILLS
-       ========================================================= */
-
     .skills {
       padding: 0 var(--page-pad) 70px;
     }
@@ -3410,7 +3255,6 @@
 
     .skill-item h3 {
       margin-bottom: 10px;
-
       font-size: 0.9rem;
     }
 
@@ -3420,10 +3264,6 @@
       font-size: 0.8rem;
       line-height: 1.6;
     }
-
-    /* =========================================================
-       CONTATO
-       ========================================================= */
 
     .cta-band {
       padding: 80px var(--page-pad);
@@ -3492,13 +3332,8 @@
 
     footer a {
       color: var(--dim);
-
       text-decoration: none;
     }
-
-    /* =========================================================
-       MODAL
-       ========================================================= */
 
     .img-modal {
       position: fixed;
@@ -3540,10 +3375,6 @@
 
       cursor: pointer;
     }
-
-    /* =========================================================
-       DRAWER
-       ========================================================= */
 
     .drawer-overlay {
       position: fixed;
@@ -3627,10 +3458,6 @@
 
       color: var(--accent);
     }
-
-    /* =========================================================
-       RESPONSIVO
-       ========================================================= */
 
     @media (max-width: 1050px) {
       .fernando-case-editorial {
@@ -3838,10 +3665,6 @@
 
 <body class="intro-active">
 
-  <!-- =======================================================
-       INTRO
-       ======================================================= -->
-
   <div
     id="intro-overlay"
     aria-hidden="true"
@@ -3861,10 +3684,6 @@
   </div>
 
   <div id="site-content">
-
-    <!-- =====================================================
-         NAV
-         ===================================================== -->
 
     <nav id="top">
 
@@ -3921,10 +3740,6 @@
 
     <main>
 
-      <!-- ===================================================
-           HERO
-           =================================================== -->
-
       <section class="hero">
 
         <div class="hero-text">
@@ -3969,8 +3784,6 @@
           </div>
 
         </div>
-
-        <!-- HERO INTERATIVO -->
 
         <div class="hero-visual">
 
@@ -4373,10 +4186,6 @@
 
       </section>
 
-      <!-- ===================================================
-           PROCESSO
-           =================================================== -->
-
       <section class="process-fold-section">
 
         <span class="process-kicker mono">
@@ -4439,10 +4248,6 @@
         </div>
 
       </section>
-
-      <!-- ===================================================
-           SOBRE
-           =================================================== -->
 
       <div
         class="section-head"
@@ -4542,10 +4347,6 @@
 
       </section>
 
-      <!-- ===================================================
-           PROJETOS
-           =================================================== -->
-
       <div
         class="section-head"
         id="projetos"
@@ -4556,10 +4357,6 @@
       </div>
 
       <div id="projects-container">
-
-        <!-- =================================================
-             FERNANDO
-             ================================================= -->
 
         <article
           class="project-block"
@@ -4751,8 +4548,6 @@
               </a>
 
             </div>
-
-            <!-- CASE -->
 
             <section
               class="fernando-view active"
@@ -5108,8 +4903,6 @@
 
             </section>
 
-            <!-- ANTES / DEPOIS -->
-
             <section
               class="fernando-view"
               data-fernando-view="compare"
@@ -5349,8 +5142,6 @@
               </div>
 
             </section>
-
-            <!-- SISTEMA VISUAL -->
 
             <section
               class="fernando-view"
@@ -5849,8 +5640,6 @@
 
             </section>
 
-            <!-- RESPONSIVO -->
-
             <section
               class="fernando-view"
               data-fernando-view="responsive"
@@ -6028,8 +5817,6 @@
 
             </section>
 
-            <!-- PROTÓTIPO -->
-
             <section
               class="fernando-view"
               data-fernando-view="prototype"
@@ -6127,10 +5914,6 @@
           </div>
 
         </article>
-
-        <!-- =================================================
-             VOIT
-             ================================================= -->
 
         <article class="project-block">
 
@@ -6287,10 +6070,6 @@
 
         </article>
 
-        <!-- =================================================
-             RENATA — 50 SLIDES
-             ================================================= -->
-
         <article
           class="project-block"
           id="renata-project"
@@ -6369,13 +6148,13 @@
 
             </div>
 
+            <!-- ALTERAÇÃO: IA GENERATIVA REMOVIDA -->
             <div class="project-proof">
               <span>Canva</span>
               <span>Presentation Design</span>
               <span>Estrutura de Conteúdo</span>
               <span>Narrativa Visual</span>
               <span>Copywriting</span>
-              <span>IA Generativa</span>
             </div>
 
           </div>
@@ -6573,10 +6352,6 @@
 
         </article>
 
-        <!-- =================================================
-             BRADUCA
-             ================================================= -->
-
         <article class="project-block">
 
           <div class="project-head">
@@ -6598,6 +6373,7 @@
             <div class="case-grid">
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   01 / contexto
                 </span>
@@ -6605,9 +6381,11 @@
                 <p>
                   Comunicação educacional nas redes sociais.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
@@ -6615,9 +6393,11 @@
                 <p>
                   Criação e diagramação das peças.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   03 / foco
                 </span>
@@ -6625,9 +6405,11 @@
                 <p>
                   Legibilidade e consistência visual.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   04 / entrega
                 </span>
@@ -6635,6 +6417,7 @@
                 <p>
                   Sistema de peças para social media.
                 </p>
+
               </div>
 
             </div>
@@ -6730,10 +6513,6 @@
           </div>
 
         </article>
-
-        <!-- =================================================
-             AYMÉE
-             ================================================= -->
 
         <article class="project-block">
 
@@ -6922,10 +6701,6 @@
 
       </div>
 
-      <!-- ===================================================
-           HABILIDADES
-           =================================================== -->
-
       <div
         class="section-head centered"
         id="habilidades"
@@ -6994,10 +6769,6 @@
         </div>
 
       </section>
-
-      <!-- ===================================================
-           CONTATO
-           =================================================== -->
 
       <section
         class="cta-band"
@@ -7073,10 +6844,6 @@
     </footer>
 
   </div>
-
-  <!-- =======================================================
-       VOIT DRAWER
-       ======================================================= -->
 
   <div
     id="drawerOverlay"
@@ -7168,10 +6935,6 @@
 
   </aside>
 
-  <!-- =======================================================
-       MODAL
-       ======================================================= -->
-
   <div
     id="imgModal"
     class="img-modal"
@@ -7193,10 +6956,6 @@
 
   </div>
 
-  <!-- =======================================================
-       JAVASCRIPT
-       ======================================================= -->
-
   <script>
     (() => {
       "use strict";
@@ -7211,10 +6970,6 @@
         window.matchMedia(
           "(prefers-reduced-motion: reduce)"
         );
-
-      /* =====================================================
-         INTRO
-         ===================================================== */
 
       const introOverlay =
         $("#intro-overlay");
@@ -7352,10 +7107,6 @@
 
       startIntro();
 
-      /* =====================================================
-         TOPO
-         ===================================================== */
-
       $("#logoHome")
         ?.addEventListener(
           "click",
@@ -7372,10 +7123,6 @@
             });
           }
         );
-
-      /* =====================================================
-         TEMA
-         ===================================================== */
 
       const themeToggle =
         $("#themeToggle");
@@ -7427,10 +7174,6 @@
 
       updateTheme();
 
-      /* =====================================================
-         HERO WIREFRAME
-         ===================================================== */
-
       const wfNavItems =
         $$(".wf-nav-item");
 
@@ -7473,10 +7216,6 @@
           );
         }
       );
-
-      /* =====================================================
-         HERO PALETA
-         ===================================================== */
 
       let selectedColor =
         "#E8590C";
@@ -7656,10 +7395,6 @@
           }
         );
 
-      /* =====================================================
-         CONTADOR HERO
-         ===================================================== */
-
       let deliveryCount =
         14;
 
@@ -7681,10 +7416,6 @@
           }
         );
 
-      /* =====================================================
-         TASKS
-         ===================================================== */
-
       $$(".wf-task-item")
         .forEach(
           task => {
@@ -7698,10 +7429,6 @@
             );
           }
         );
-
-      /* =====================================================
-         WIREFRAME MODE
-         ===================================================== */
 
       const wfWindow =
         $("#wfWindow");
@@ -7758,10 +7485,6 @@
           }
         );
 
-      /* =====================================================
-         FERNANDO TABS
-         ===================================================== */
-
       const fernandoTabs =
         $$(".fernando-tab");
 
@@ -7813,10 +7536,6 @@
           );
         }
       );
-
-      /* =====================================================
-         FERNANDO IFRAMES
-         ===================================================== */
 
       const FA_DESKTOP_BASE_WIDTH =
         1440;
@@ -7910,10 +7629,6 @@
 
       resizeFernandoFrames();
 
-      /* =====================================================
-         DESIGN SYSTEM
-         ===================================================== */
-
       const systemButtons =
         $$(".fa-system-btn");
 
@@ -7957,10 +7672,6 @@
           );
         }
       );
-
-      /* =====================================================
-         BUTTON STATES
-         ===================================================== */
 
       const faPrimaryDemo =
         $("#faPrimaryDemo");
@@ -8031,10 +7742,6 @@
           }
         );
 
-      /* =====================================================
-         GALERIAS
-         ===================================================== */
-
       $$(".project-block")
         .forEach(
           block => {
@@ -8079,10 +7786,6 @@
               );
           }
         );
-
-      /* =====================================================
-         MODAL
-         ===================================================== */
 
       const imgModal =
         $("#imgModal");
@@ -8154,10 +7857,6 @@
             }
           }
         );
-
-      /* =====================================================
-         RENATA — 50 SLIDES
-         ===================================================== */
 
       const RENATA_TOTAL_SLIDES =
         50;
@@ -8506,8 +8205,6 @@
           }
         );
 
-      /* SWIPE */
-
       renataStage
         ?.addEventListener(
           "touchstart",
@@ -8555,8 +8252,6 @@
             passive: true
           }
         );
-
-      /* TECLADO */
 
       document.addEventListener(
         "keydown",
@@ -8608,10 +8303,6 @@
         0,
         false
       );
-
-      /* =====================================================
-         DRAWER VOIT
-         ===================================================== */
 
       const drawer =
         $("#voitDrawer");
