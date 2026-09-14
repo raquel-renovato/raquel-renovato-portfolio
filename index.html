@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
 <meta
@@ -13,9 +15,19 @@
   content="Portfólio de Raquel Renovato — Designer de Comunicação Visual e UI, criando interfaces, sistemas visuais, apresentações e experiências digitais."
 >
 
-<title>Raquel Renovato — Comunicação Visual & UI</title>
+<title>
+  Raquel Renovato — Comunicação Visual & UI
+</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<!-- ========================================================
+     FONTS
+======================================================== -->
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
 
 <link
   rel="preconnect"
@@ -24,9 +36,10 @@
 >
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&display=swap"
   rel="stylesheet"
 >
+
 
 <style>
 
@@ -35,79 +48,181 @@
 ========================================================== */
 
 :root{
+
   --bg:#F3EFEA;
+
   --ink:#1F1C18;
   --dim:#59534C;
   --muted:#8A8379;
 
-  --line:rgba(31,28,24,.15);
-  --line-strong:rgba(31,28,24,.34);
+  --line:
+    rgba(
+      31,
+      28,
+      24,
+      .15
+    );
+
+  --line-strong:
+    rgba(
+      31,
+      28,
+      24,
+      .34
+    );
 
   --card:#E5DFD5;
   --card-hover:#DCD5C9;
 
+  --surface:#FAF7F2;
+
   --accent:#E8590C;
   --accent-hover:#C24A08;
-  --accent-soft:rgba(232,89,12,.10);
+
+  --accent-soft:
+    rgba(
+      232,
+      89,
+      12,
+      .10
+    );
 
   --green:#38483A;
 
-  --nav-bg:rgba(243,239,234,.92);
+  --nav-bg:
+    rgba(
+      243,
+      239,
+      234,
+      .92
+    );
+
+
+  /* WIREFRAME */
 
   --wf-bg:#FAF7F2;
   --wf-card:#EAE4D9;
   --wf-text:#1F1C18;
-  --wf-line:rgba(31,28,24,.12);
 
-  --surface:#FAF7F2;
+  --wf-line:
+    rgba(
+      31,
+      28,
+      24,
+      .12
+    );
 
-  --pad:40px;
 
-  --shadow:
-    0 22px 60px rgba(31,28,24,.11);
+  /* FERNANDO */
 
-  --ease:
-    cubic-bezier(.16,1,.3,1);
-
-  /* Fernando */
   --fa-navy:#00152A;
-  --fa-navy-soft:#0D2E48;
   --fa-gold:#B8860B;
   --fa-slate:#64748B;
   --fa-light:#F4F6F8;
   --fa-white:#FFFFFF;
+
+
+  --pad:40px;
+
+
+  --shadow:
+    0 22px 60px
+    rgba(
+      31,
+      28,
+      24,
+      .11
+    );
+
+
+  --ease:
+    cubic-bezier(
+      .16,
+      1,
+      .3,
+      1
+    );
+
 }
 
 
-[data-theme="dark"]{
+/* ==========================================================
+   DARK
+========================================================== */
+
+html[data-theme="dark"]{
+
   --bg:#181614;
+
   --ink:#F0ECE1;
   --dim:#A6A095;
-  --muted:#6E685E;
+  --muted:#777066;
 
-  --line:rgba(240,236,225,.15);
-  --line-strong:rgba(240,236,225,.30);
+  --line:
+    rgba(
+      240,
+      236,
+      225,
+      .15
+    );
+
+  --line-strong:
+    rgba(
+      240,
+      236,
+      225,
+      .30
+    );
 
   --card:#23201C;
   --card-hover:#2C2823;
 
+  --surface:#1D1A17;
+
   --accent:#F26D1D;
   --accent-hover:#F98A46;
-  --accent-soft:rgba(242,109,29,.14);
+
+  --accent-soft:
+    rgba(
+      242,
+      109,
+      29,
+      .14
+    );
 
   --green:#6E8B73;
 
-  --nav-bg:rgba(24,22,20,.90);
+  --nav-bg:
+    rgba(
+      24,
+      22,
+      20,
+      .91
+    );
+
 
   --wf-bg:#12110F;
   --wf-card:#1C1A17;
   --wf-text:#F0ECE1;
-  --wf-line:rgba(240,236,225,.12);
 
-  --surface:#1D1A17;
+  --wf-line:
+    rgba(
+      240,
+      236,
+      225,
+      .12
+    );
+
 
   --shadow:
-    0 22px 70px rgba(0,0,0,.32);
+    0 22px 70px
+    rgba(
+      0,
+      0,
+      0,
+      .32
+    );
+
 }
 
 
@@ -115,66 +230,116 @@
    RESET
 ========================================================== */
 
-*{
-  margin:0;
-  padding:0;
+*,
+*::before,
+*::after{
   box-sizing:border-box;
 }
 
+
 html{
   scroll-behavior:smooth;
-  scrollbar-gutter:stable;
+  scroll-padding-top:88px;
 }
+
 
 body{
-  background:var(--bg);
-  color:var(--ink);
 
-  font-family:"IBM Plex Sans",sans-serif;
+  margin:0;
 
-  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+
+  background:
+    var(--bg);
+
+  color:
+    var(--ink);
+
+  font-family:
+    "IBM Plex Sans",
+    sans-serif;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  text-rendering:
+    optimizeLegibility;
 
   transition:
-    background-color .4s ease,
-    color .4s ease;
+    background-color .3s ease,
+    color .3s ease;
+
 }
 
-body.locked,
-body.intro-active{
+
+body.intro-active,
+body.locked{
   overflow:hidden;
 }
 
+
 img{
   display:block;
+
   max-width:100%;
 }
 
+
 button,
-input{
+input,
+textarea,
+select{
   font:inherit;
 }
+
+
+button,
+a{
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
 
 button{
   color:inherit;
 }
 
+
 a{
   color:inherit;
+
+  text-decoration:none;
 }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+  margin:0;
+}
+
+
+ul{
+  margin:0;
+  padding:0;
+}
+
+
+::selection{
+  background:
+    var(--accent);
+
+  color:white;
+}
+
 
 .mono{
-  font-family:"IBM Plex Mono",monospace;
-}
-
-.serif{
-  font-family:"Fraunces",serif;
-}
-
-a:focus-visible,
-button:focus-visible,
-[tabindex]:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:4px;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
 }
 
 
@@ -183,90 +348,194 @@ button:focus-visible,
 ========================================================== */
 
 #intro-overlay{
+
   position:fixed;
   inset:0;
+
   z-index:9999;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
   padding:24px;
 
-  background:var(--bg);
+  background:
+    var(--bg);
 
   cursor:pointer;
 
+  opacity:1;
+  visibility:visible;
+
   transition:
-    opacity .4s ease,
-    transform .4s var(--ease);
+    opacity .48s ease,
+    transform .48s var(--ease),
+    visibility .48s ease;
+
 }
+
 
 #intro-overlay.hide{
-  opacity:0;
 
-  transform:scale(1.02);
+  opacity:0;
+  visibility:hidden;
+
+  transform:
+    scale(1.025);
 
   pointer-events:none;
+
 }
+
 
 .intro-title{
-  font-family:"Fraunces",serif;
-  font-size:clamp(2.3rem,6.8vw,4.9rem);
+
+  display:flex;
+
+  align-items:baseline;
+  justify-content:center;
+
+  gap:.22em;
+
+  flex-wrap:wrap;
+
+  margin:0;
+
+  color:
+    var(--ink);
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    clamp(
+      2.3rem,
+      6.8vw,
+      4.9rem
+    );
+
   font-weight:300;
 
+  line-height:1.08;
+
   text-align:center;
+
 }
 
+
 .intro-word-cycle{
+
   position:relative;
 
   display:inline-block;
 
-  height:1.15em;
+  min-width:4.8em;
+
+  height:1.16em;
 
   overflow:hidden;
 
-  vertical-align:bottom;
-}
-
-.intro-word-cycle .w{
-  position:absolute;
-  top:0;
-  left:0;
-
-  opacity:0;
-
-  color:var(--accent);
-
-  white-space:nowrap;
+  color:
+    var(--accent);
 
   font-style:italic;
 
-  transform:translateY(100%);
+  vertical-align:bottom;
+
+}
+
+
+.intro-word-cycle .w{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  display:block;
+
+  opacity:0;
+
+  color:
+    var(--accent);
+
+  white-space:nowrap;
+
+  transform:
+    translateY(
+      105%
+    );
 
   transition:
-    opacity .25s ease,
-    transform .25s var(--ease);
+    opacity .34s ease,
+    transform .48s var(--ease);
+
 }
+
+
+/*
+  A primeira palavra já nasce visível,
+  mesmo antes do JavaScript executar.
+*/
+
+.intro-word-cycle .w:first-child{
+
+  opacity:1;
+
+  transform:
+    translateY(
+      0
+    );
+
+}
+
 
 .intro-word-cycle .w.active{
+
   opacity:1;
-  transform:translateY(0);
+
+  transform:
+    translateY(
+      0
+    );
+
 }
+
 
 .intro-word-cycle .w.exit{
+
   opacity:0;
-  transform:translateY(-100%);
+
+  transform:
+    translateY(
+      -105%
+    );
+
 }
 
+
 .intro-help{
+
   position:absolute;
+
+  left:50%;
   bottom:28px;
 
-  color:var(--muted);
+  color:
+    var(--muted);
 
   font-size:.58rem;
+
+  letter-spacing:.02em;
+
+  transform:
+    translateX(
+      -50%
+    );
+
 }
 
 
@@ -274,101 +543,199 @@ button:focus-visible,
    NAV
 ========================================================== */
 
-nav.site-nav{
+.site-nav{
+
   position:sticky;
+
   top:0;
 
-  z-index:100;
+  z-index:1000;
+
+  min-height:76px;
 
   display:grid;
-  grid-template-columns:1fr auto 1fr;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
   align-items:center;
 
-  padding:20px var(--pad);
+  gap:30px;
 
-  background:var(--nav-bg);
+  padding:
+    0
+    var(--pad);
 
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  border-bottom:
+    1px solid
+    var(--line);
+
+  background:
+    var(--nav-bg);
+
+  backdrop-filter:
+    blur(
+      18px
+    );
+
 }
+
 
 .nav-left{
+
   display:flex;
+
   align-items:center;
-  gap:20px;
+
+  gap:12px;
+
 }
+
 
 .logo{
-  color:var(--ink);
 
-  font-family:"Fraunces",serif;
-  font-size:1.05rem;
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1rem;
   font-weight:500;
 
-  text-decoration:none;
+  white-space:nowrap;
+
 }
 
-.logo:hover{
-  opacity:.7;
-}
 
 .theme-toggle{
-  padding:6px 14px;
 
-  border:1px solid var(--line-strong);
-  border-radius:100px;
+  min-height:31px;
 
-  background:transparent;
-  color:var(--ink);
+  padding:
+    0
+    10px;
 
-  font-size:.7rem;
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    999px;
+
+  background:
+    transparent;
+
+  color:
+    var(--dim);
+
+  font-size:.57rem;
 
   cursor:pointer;
+
+  transition:
+    border-color .2s,
+    color .2s,
+    background-color .2s;
+
 }
+
 
 .theme-toggle:hover{
-  border-color:var(--accent);
-  color:var(--accent);
+
+  border-color:
+    var(--accent);
+
+  color:
+    var(--accent);
+
 }
 
+
 .site-nav ul{
+
   display:flex;
-  gap:32px;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:28px;
 
   list-style:none;
 
-  font-size:.77rem;
 }
+
 
 .site-nav ul a{
-  color:var(--dim);
 
-  text-decoration:none;
+  color:
+    var(--dim);
+
+  font-size:.73rem;
+
+  transition:
+    color .2s;
+
 }
+
 
 .site-nav ul a:hover{
-  color:var(--accent);
+
+  color:
+    var(--accent);
+
 }
+
 
 .nav-cta{
+
   justify-self:end;
 
-  padding:8px 16px;
+  min-height:38px;
 
-  border:1px solid var(--ink);
+  display:flex;
 
-  color:var(--ink);
+  align-items:center;
 
-  font-size:.77rem;
+  justify-content:center;
 
-  text-decoration:none;
+  padding:
+    0
+    17px;
 
-  transition:.22s;
+  border:
+    1px solid
+    var(--line-strong);
+
+  border-radius:
+    999px;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.58rem;
+
+  transition:
+    background-color .2s,
+    color .2s,
+    border-color .2s;
+
 }
 
+
 .nav-cta:hover{
-  background:var(--ink);
-  color:var(--bg);
+
+  background:
+    var(--ink);
+
+  border-color:
+    var(--ink);
+
+  color:
+    var(--bg);
+
 }
 
 
@@ -377,470 +744,915 @@ nav.site-nav{
 ========================================================== */
 
 .hero{
+
+  min-height:
+    calc(
+      100svh -
+      76px
+    );
+
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:50px;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.05fr
+    )
+    minmax(
+      360px,
+      .95fr
+    );
+
+  gap:
+    clamp(
+      45px,
+      6vw,
+      110px
+    );
+
   align-items:center;
 
-  min-height:76vh;
+  padding:
+    clamp(
+      74px,
+      8vw,
+      130px
+    )
+    var(--pad);
 
-  padding:90px var(--pad) 75px;
 }
+
+
+.hero-text{
+
+  max-width:
+    780px;
+
+}
+
 
 .hero-eyebrow{
-  margin-bottom:20px;
 
-  color:var(--green);
+  margin-bottom:24px;
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.7rem;
-  font-weight:600;
-  letter-spacing:.06em;
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.6rem;
+
+  line-height:1.5;
+
+  letter-spacing:.08em;
+
 }
+
 
 .hero h1{
-  max-width:760px;
 
-  font-family:"Fraunces",serif;
-  font-size:clamp(2.4rem,5vw,4rem);
+  max-width:
+    820px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    clamp(
+      3.6rem,
+      7.6vw,
+      7.5rem
+    );
+
   font-weight:300;
-  line-height:1.05;
+
+  line-height:.91;
+
+  letter-spacing:
+    -.045em;
+
 }
+
 
 .hero h1 em{
-  color:var(--accent);
 
+  color:
+    var(--accent);
+
+  font-weight:300;
   font-style:italic;
-  font-weight:400;
+
 }
+
 
 .hero-sub{
-  margin-top:30px;
+
+  max-width:
+    650px;
+
+  margin-top:
+    clamp(
+      30px,
+      4vw,
+      55px
+    );
+
 }
+
 
 .hero-sub p{
-  max-width:540px;
 
-  color:var(--dim);
+  max-width:
+    610px;
 
-  line-height:1.7;
+  color:
+    var(--dim);
+
+  font-size:
+    clamp(
+      .92rem,
+      1.35vw,
+      1.08rem
+    );
+
+  line-height:1.75;
+
 }
+
 
 .hero-actions{
+
   display:flex;
-  gap:18px;
+
   flex-wrap:wrap;
 
-  margin-top:24px;
+  gap:12px;
+
+  margin-top:28px;
+
 }
+
 
 .hero-cta{
+
+  min-height:43px;
+
   display:inline-flex;
 
-  padding-bottom:4px;
+  align-items:center;
 
-  border-bottom:1.5px solid var(--accent);
+  padding:
+    0
+    16px;
 
-  color:var(--accent);
+  border:
+    1px solid
+    var(--line-strong);
 
-  font-size:.83rem;
-  font-weight:500;
+  border-radius:
+    999px;
 
-  text-decoration:none;
+  color:
+    var(--ink);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.58rem;
+
+  transition:
+    background .2s,
+    color .2s,
+    border-color .2s,
+    transform .2s;
+
 }
 
+
+.hero-cta:first-child{
+
+  background:
+    var(--ink);
+
+  color:
+    var(--bg);
+
+}
+
+
 .hero-cta:hover{
-  color:var(--ink);
-  border-color:var(--ink);
+
+  transform:
+    translateY(
+      -2px
+    );
+
+  border-color:
+    var(--accent);
+
+  background:
+    var(--accent);
+
+  color:white;
+
 }
 
 
 /* ==========================================================
-   HERO WIREFRAME
+   HERO VISUAL
 ========================================================== */
 
 .hero-visual{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
-}
-
-.wf-wrapper{
-  position:relative;
-
-  width:100%;
-  max-width:380px;
-}
-
-.wf-illustration{
-  position:absolute;
-
-  z-index:10;
-
-  pointer-events:none;
-}
-
-.pen-tool-svg{
-  top:-28px;
-  left:-28px;
-
-  width:76px;
-  height:76px;
-}
-
-.cursor-floater{
-  right:-16px;
-  bottom:-14px;
-
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  padding:4px 10px;
-
-  border-radius:4px 14px 14px 14px;
-
-  background:var(--accent);
-  color:#FFF;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.65rem;
-
-  box-shadow:0 8px 18px rgba(0,0,0,.12);
-
-  animation:floatAnim 4s ease-in-out infinite;
-}
-
-.badge-floater{
-  top:-16px;
-  right:-14px;
-
-  display:flex;
-  align-items:center;
-  gap:5px;
-
-  padding:3px 10px;
-
-  border:1px solid var(--green);
-  border-radius:20px;
-
-  background:var(--bg);
-  color:var(--green);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.62rem;
-
-  box-shadow:0 4px 12px rgba(0,0,0,.06);
-
-  animation:floatAnim 5s ease-in-out infinite .5s;
-}
-
-.spec-floater{
-  bottom:30px;
-  left:-32px;
-
-  padding:2px 8px;
-
-  border:1px solid var(--line-strong);
-  border-radius:4px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
-}
-
-@keyframes floatAnim{
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-5px);
-  }
-}
-
-.wf-window{
-  position:relative;
-  z-index:1;
-
-  width:100%;
-  height:260px;
-
-  display:flex;
-  flex-direction:column;
-
-  overflow:hidden;
-
-  border:1.5px solid var(--line-strong);
-  border-radius:10px;
-
-  background:var(--wf-bg);
-  color:var(--wf-text);
-
-  box-shadow:0 12px 28px rgba(0,0,0,.06);
-
-  user-select:none;
-}
-
-.wf-header{
-  height:34px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  padding:0 14px;
-
-  border-bottom:1px solid var(--wf-line);
-
-  background:var(--wf-card);
-}
-
-.wf-dots{
-  display:flex;
-  gap:5px;
-}
-
-.wf-dot{
-  width:7px;
-  height:7px;
-
-  border-radius:50%;
-
-  background:var(--muted);
-
-  opacity:.6;
-}
-
-.wf-switch-mode{
-  padding:2px 8px;
-
-  border:1px solid var(--line-strong);
-  border-radius:10px;
-
-  background:transparent;
-  color:var(--dim);
-
-  font-size:.62rem;
-
-  cursor:pointer;
-}
-
-.wf-body{
-  flex:1;
-
-  display:flex;
-
-  min-height:0;
-}
-
-.wf-sidebar{
-  width:110px;
-
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-
-  padding:12px 8px;
-
-  border-right:1px solid var(--wf-line);
-
-  background:var(--wf-card);
-}
-
-.wf-nav-item{
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  padding:6px 8px;
-
-  border-radius:4px;
-
-  color:var(--dim);
-
-  font-size:.62rem;
-
-  cursor:pointer;
-}
-
-.wf-nav-item.active{
-  background:var(--accent);
-  color:#FFF;
-}
-
-.wf-main{
-  flex:1;
 
   min-width:0;
 
-  padding:12px;
-
-  overflow:auto;
 }
 
-.wf-view{
-  display:none;
-  flex-direction:column;
-  gap:10px;
-}
 
-.wf-view.active{
-  display:flex;
-}
+.wf-wrapper{
 
-.wf-top-bar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+  position:relative;
 
-.wf-title{
-  font-size:.76rem;
-}
-
-.wf-badge-btn{
-  padding:4px 10px;
-
-  border:0;
-  border-radius:4px;
-
-  background:var(--accent);
-  color:#FFF;
-
-  font-size:.6rem;
-
-  cursor:pointer;
-}
-
-.wf-card-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-}
-
-.wf-card{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-
-  padding:8px;
-
-  border:1px solid var(--wf-line);
-  border-radius:6px;
-
-  background:var(--wf-card);
-
-  cursor:pointer;
-}
-
-.wf-card-label{
-  color:var(--muted);
-
-  font-size:.56rem;
-}
-
-.wf-card-val{
-  font-size:.94rem;
-  font-weight:600;
-}
-
-.wf-task-list{
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-}
-
-.wf-task-item{
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  color:var(--dim);
-
-  font-size:.6rem;
-
-  cursor:pointer;
-}
-
-.wf-checkbox{
-  width:11px;
-  height:11px;
+  min-height:
+    540px;
 
   display:grid;
+
   place-items:center;
 
-  border:1px solid var(--line-strong);
-  border-radius:2px;
+}
 
-  color:#FFF;
+
+.wf-window{
+
+  position:relative;
+
+  z-index:2;
+
+  width:
+    min(
+      100%,
+      570px
+    );
+
+  overflow:hidden;
+
+  border:
+    1px solid
+    var(--line-strong);
+
+  border-radius:
+    10px;
+
+  background:
+    var(--wf-bg);
+
+  color:
+    var(--wf-text);
+
+  box-shadow:
+    var(--shadow);
+
+  transition:
+    background-color .25s,
+    color .25s;
+
+}
+
+
+.wf-titlebar{
+
+  height:43px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  padding:
+    0
+    14px;
+
+  border-bottom:
+    1px solid
+    var(--wf-line);
+
+}
+
+
+.wf-titlebar i{
+
+  width:8px;
+  height:8px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--muted);
+
+  opacity:.45;
+
+}
+
+
+.wf-titlebar span{
+
+  margin-left:auto;
+
+  color:
+    var(--muted);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
 
   font-size:.48rem;
+
 }
 
-.wf-task-item.checked span{
-  opacity:.55;
 
-  text-decoration:line-through;
-}
+.wf-toolbar{
 
-.wf-task-item.checked .wf-checkbox{
-  background:var(--accent);
-  border-color:var(--accent);
-}
-
-.color-palette{
   display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+
   flex-wrap:wrap;
+
+  gap:6px;
+
+  padding:
+    11px 12px;
+
+  border-bottom:
+    1px solid
+    var(--wf-line);
+
 }
 
-.swatch{
-  width:22px;
-  height:22px;
 
-  border:1.5px solid var(--line-strong);
-  border-radius:50%;
+.wf-toolbar button{
+
+  padding:
+    6px
+    9px;
+
+  border:
+    1px solid
+    var(--wf-line);
+
+  border-radius:
+    4px;
+
+  background:
+    transparent;
+
+  color:
+    var(--wf-text);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.48rem;
 
   cursor:pointer;
+
 }
 
-.swatch.active{
-  transform:scale(1.18);
 
-  border-color:var(--ink);
+.wf-toolbar button:hover{
+
+  border-color:
+    var(--accent);
+
+  color:
+    var(--accent);
+
 }
 
-.swatch.reset{
+
+.wf-canvas{
+
   display:grid;
-  place-items:center;
 
-  background:var(--bg);
-  color:var(--muted);
+  grid-template-columns:
+    .82fr
+    1.18fr;
+
+  min-height:
+    390px;
+
 }
 
-.clear-btn{
-  border:0;
 
-  background:none;
-  color:var(--muted);
+.wf-sidebar{
 
-  font-size:.65rem;
-  text-decoration:underline;
+  padding:13px;
+
+  border-right:
+    1px solid
+    var(--wf-line);
+
+}
+
+
+.wf-sidebar-label{
+
+  margin-bottom:9px;
+
+  color:
+    var(--muted);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.44rem;
+
+}
+
+
+.wf-task-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  margin-bottom:7px;
+
+  padding:
+    9px;
+
+  border:
+    1px solid
+    var(--wf-line);
+
+  border-radius:
+    4px;
+
+  background:
+    var(--wf-card);
+
+  font-size:.55rem;
 
   cursor:pointer;
+
+  transition:
+    opacity .2s,
+    transform .2s;
+
 }
 
-.hero-visual-hint{
-  color:var(--muted);
 
-  font-size:.65rem;
-  text-align:center;
+.wf-task-item:hover{
+
+  transform:
+    translateX(
+      2px
+    );
+
+}
+
+
+.wf-task-item::before{
+
+  content:"";
+
+  width:7px;
+  height:7px;
+
+  flex:0 0 7px;
+
+  border:
+    1px solid
+    var(--accent);
+
+  border-radius:
+    2px;
+
+}
+
+
+.wf-task-item.checked{
+
+  opacity:.46;
+
+  text-decoration:
+    line-through;
+
+}
+
+
+.wf-task-item.checked::before{
+
+  background:
+    var(--accent);
+
+}
+
+
+.wf-main{
+
+  padding:15px;
+
+}
+
+
+.wf-topline{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  margin-bottom:12px;
+
+}
+
+
+.wf-mini-title{
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1.1rem;
+
+}
+
+
+.wf-mini-action{
+
+  padding:
+    6px
+    8px;
+
+  border:
+    1px solid
+    var(--accent);
+
+  border-radius:
+    4px;
+
+  background:
+    var(--accent);
+
+  color:white;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.44rem;
+
+  cursor:pointer;
+
+}
+
+
+.wf-stats{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      1fr
+    );
+
+  gap:8px;
+
+  margin-bottom:9px;
+
+}
+
+
+.wf-stat{
+
+  min-height:
+    90px;
+
+  padding:
+    10px;
+
+  border:
+    1px solid
+    var(--wf-line);
+
+  background:
+    var(--wf-card);
+
+}
+
+
+.wf-stat span{
+
+  display:block;
+
+  margin-bottom:8px;
+
+  color:
+    var(--muted);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.43rem;
+
+}
+
+
+.wf-stat strong{
+
+  display:block;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1.55rem;
+  font-weight:400;
+
+}
+
+
+.wf-chart{
+
+  position:relative;
+
+  height:
+    150px;
+
+  overflow:hidden;
+
+  border:
+    1px solid
+    var(--wf-line);
+
+  background:
+    var(--wf-card);
+
+}
+
+
+.wf-chart::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:14px;
+
+  background:
+
+    linear-gradient(
+      to right,
+      transparent 49.5%,
+      var(--wf-line) 50%
+    ),
+
+    linear-gradient(
+      to bottom,
+      transparent 49.5%,
+      var(--wf-line) 50%
+    );
+
+  background-size:
+    25% 100%,
+    100% 33.33%;
+
+}
+
+
+.wf-chart svg{
+
+  position:absolute;
+
+  inset:15px;
+
+  width:
+    calc(
+      100% -
+      30px
+    );
+
+  height:
+    calc(
+      100% -
+      30px
+    );
+
+}
+
+
+.wf-illustration{
+
+  position:absolute;
+
+  z-index:4;
+
+}
+
+
+.pen-tool-svg{
+
+  top:28px;
+  right:-8px;
+
+  width:
+    130px;
+
+  opacity:.86;
+
+}
+
+
+.badge-floater{
+
+  left:-14px;
+  bottom:51px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  padding:
+    8px
+    10px;
+
+  border:
+    1px solid
+    var(--line-strong);
+
+  border-radius:
+    4px;
+
+  background:
+    var(--bg);
+
+  color:
+    var(--dim);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.47rem;
+
+  box-shadow:
+    0 10px 30px
+    rgba(
+      0,
+      0,
+      0,
+      .08
+    );
+
+}
+
+
+.badge-floater span{
+
+  color:
+    var(--accent);
+
+}
+
+
+.spec-floater{
+
+  top:76px;
+  left:-29px;
+
+  padding:
+    6px
+    8px;
+
+  border:
+    1px solid
+    var(--line-strong);
+
+  background:
+    var(--bg);
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.44rem;
+
+}
+
+
+.cursor-floater{
+
+  right:-8px;
+  bottom:86px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  padding:
+    7px
+    8px;
+
+  border-radius:
+    4px;
+
+  background:
+    var(--accent);
+
+  color:white;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.44rem;
+
+}
+
+
+/* ==========================================================
+   SECTION HEAD
+========================================================== */
+
+.section-head{
+
+  padding:
+    86px
+    var(--pad)
+    30px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+}
+
+
+.section-head h2{
+
+  max-width:
+    940px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    clamp(
+      2rem,
+      4.7vw,
+      4.7rem
+    );
+
+  font-weight:300;
+
+  line-height:1.02;
+
+  letter-spacing:
+    -.03em;
+
+}
+
+
+.section-kicker{
+
+  display:block;
+
+  margin-bottom:11px;
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.55rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
 }
 
 
@@ -848,78 +1660,114 @@ nav.site-nav{
    PROCESS
 ========================================================== */
 
-.process-section{
-  padding:46px var(--pad) 60px;
+.process{
 
-  border-block:1px solid var(--line);
+  padding:
+    0
+    var(--pad)
+    90px;
 
-  background:var(--card);
 }
 
-.section-kicker{
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.63rem;
-  font-weight:600;
-  letter-spacing:.1em;
-
-  text-transform:uppercase;
-}
 
 .process-grid{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
 
-  margin-top:20px;
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
 
-  border:1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
 
-  background:var(--line);
+  border-left:
+    1px solid
+    var(--line);
+
 }
+
 
 .process-card{
-  padding:25px;
 
-  background:var(--bg);
+  min-height:
+    300px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  padding:
+    28px;
+
+  border-right:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  transition:
+    background .25s;
+
 }
 
-.process-card span{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.65rem;
+.process-card:hover{
+
+  background:
+    var(--card);
+
 }
+
+
+.process-card .n{
+
+  margin-bottom:auto;
+
+  color:
+    var(--accent);
+
+  font-size:.55rem;
+
+}
+
 
 .process-card h3{
-  margin:10px 0;
 
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
+  max-width:
+    300px;
+
+  margin-bottom:12px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    1.55rem;
+
   font-weight:400;
+
 }
+
 
 .process-card p{
-  color:var(--dim);
 
-  font-size:.84rem;
+  color:
+    var(--dim);
+
+  font-size:.82rem;
+
   line-height:1.65;
-}
 
-
-/* ==========================================================
-   SECTION
-========================================================== */
-
-.section-head{
-  padding:75px var(--pad) 30px;
-}
-
-.section-head h2{
-  font-family:"Fraunces",serif;
-  font-size:clamp(1.9rem,3.8vw,2.8rem);
-  font-weight:400;
 }
 
 
@@ -928,191 +1776,405 @@ nav.site-nav{
 ========================================================== */
 
 .about{
+
   display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:60px;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.2fr
+    )
+    minmax(
+      320px,
+      .8fr
+    );
+
+  gap:
+    clamp(
+      50px,
+      8vw,
+      130px
+    );
+
   align-items:center;
 
-  padding:10px var(--pad) 95px;
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
+
+
+.about-copy{
+
+  max-width:
+    760px;
+
+}
+
 
 .about-copy p{
-  margin-top:18px;
 
-  color:var(--dim);
+  max-width:
+    670px;
 
-  line-height:1.75;
+  margin-bottom:18px;
+
+  color:
+    var(--dim);
+
+  font-size:
+    clamp(
+      .93rem,
+      1.3vw,
+      1.06rem
+    );
+
+  line-height:1.78;
+
 }
+
 
 .about-tags{
+
   display:flex;
-  gap:9px;
+
   flex-wrap:wrap;
 
-  margin-top:25px;
+  gap:7px;
+
+  margin-top:29px;
+
 }
+
 
 .about-tag{
-  padding:6px 11px;
 
-  border:1px solid var(--line-strong);
+  padding:
+    7px
+    10px;
 
-  background:var(--accent-soft);
+  border:
+    1px solid
+    var(--line);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.64rem;
+  border-radius:
+    999px;
+
+  color:
+    var(--dim);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.52rem;
+
 }
+
 
 .about-visual{
-  position:relative;
 
-  width:100%;
-  max-width:380px;
+  position:relative;
 
   display:grid;
+
   place-items:center;
 
-  margin:auto;
+  min-height:
+    430px;
 
-  aspect-ratio:1;
 }
+
 
 .about-orbit{
-  position:absolute;
-  inset:6%;
 
-  border:1.5px dashed var(--line-strong);
-  border-radius:50%;
+  position:absolute;
+
+  width:
+    min(
+      88%,
+      370px
+    );
+
+  aspect-ratio:
+    1;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    50%;
+
 }
 
-.about-photo{
-  position:relative;
-  z-index:3;
 
-  width:66%;
-  height:66%;
+.about-orbit::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:
+    16%;
+
+  right:
+    3%;
+
+  width:
+    10px;
+
+  height:
+    10px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--accent);
+
+}
+
+
+.about-photo{
+
+  position:relative;
+
+  z-index:2;
+
+  width:
+    min(
+      76%,
+      310px
+    );
+
+  aspect-ratio:
+    4 / 5;
 
   overflow:hidden;
 
-  border:4px solid var(--bg);
-  border-radius:50%;
+  border-radius:
+    50%
+    50%
+    8px
+    8px;
 
-  outline:3px solid var(--accent);
+  background:
+    var(--card);
+
+  box-shadow:
+    var(--shadow);
+
 }
 
+
 .about-photo img{
+
   width:100%;
   height:100%;
 
   object-fit:cover;
 
   cursor:zoom-in;
+
 }
 
 
 /* ==========================================================
-   PROJECT BASE
+   PROJECT
 ========================================================== */
 
 .project{
-  padding:70px 0 105px;
 
-  border-top:1px solid var(--line);
+  border-top:
+    1px solid
+    var(--line);
+
 }
+
 
 .project-head{
-  max-width:1040px;
 
-  padding:0 var(--pad);
+  padding:
+    76px
+    var(--pad)
+    46px;
 
-  margin-bottom:32px;
 }
+
 
 .project-number{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.68rem;
-  font-weight:600;
-}
-
-.project-head h3{
-  margin:12px 0 15px;
-
-  font-family:"Fraunces",serif;
-  font-size:clamp(2.1rem,4.7vw,3.6rem);
-  font-weight:400;
-}
-
-.project-summary{
-  max-width:760px;
-
-  color:var(--dim);
-
-  font-size:1rem;
-  line-height:1.7;
-}
-
-.project-meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-
-  margin-top:20px;
-}
-
-.project-meta span{
-  padding:5px 10px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:var(--accent-soft);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.6rem;
-}
-
-.case-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-
-  max-width:920px;
-
-  margin-top:26px;
-
-  border:1px solid var(--line);
-
-  background:var(--line);
-
-  gap:1px;
-}
-
-.case-card{
-  padding:20px;
-
-  background:var(--bg);
-}
-
-.case-card span{
   display:block;
 
-  margin-bottom:7px;
+  margin-bottom:15px;
 
-  color:var(--accent);
+  color:
+    var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.6rem;
-  font-weight:600;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
 
-  text-transform:uppercase;
+  font-size:.55rem;
+
+  letter-spacing:.06em;
+
 }
 
-.case-card p{
-  color:var(--dim);
 
-  font-size:.82rem;
+.project-head > h3{
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    clamp(
+      2.8rem,
+      6.5vw,
+      6.6rem
+    );
+
+  font-weight:300;
+
+  line-height:.95;
+
+  letter-spacing:
+    -.04em;
+
+}
+
+
+.project-summary{
+
+  max-width:
+    800px;
+
+  margin-top:25px;
+
+  color:
+    var(--dim);
+
+  font-size:
+    clamp(
+      .9rem,
+      1.35vw,
+      1.06rem
+    );
+
+  line-height:1.7;
+
+}
+
+
+.project-meta{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:6px;
+
+  margin-top:24px;
+
+}
+
+
+.project-meta span{
+
+  padding:
+    6px
+    9px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    999px;
+
+  color:
+    var(--dim);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.49rem;
+
+}
+
+
+.case-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:1px;
+
+  margin-top:35px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    var(--line);
+
+}
+
+
+.case-card{
+
+  min-height:
+    190px;
+
+  padding:20px;
+
+  background:
+    var(--bg);
+
+}
+
+
+.case-card span{
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.5rem;
+
+  text-transform:uppercase;
+
+}
+
+
+.case-card p{
+
+  margin-top:16px;
+
+  color:
+    var(--dim);
+
+  font-size:.72rem;
+
   line-height:1.65;
+
 }
 
 
@@ -1121,128 +2183,482 @@ nav.site-nav{
 ========================================================== */
 
 .fa-case{
-  padding:0 var(--pad);
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
+
 
 .fa-tabs{
+
   display:flex;
-  gap:6px;
-  flex-wrap:wrap;
 
-  margin-bottom:18px;
+  gap:5px;
+
+  margin-bottom:24px;
+
+  overflow-x:auto;
+
+  scrollbar-width:none;
+
 }
 
-.fa-tab{
-  padding:8px 13px;
 
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:transparent;
-  color:var(--dim);
-
-  font-size:.62rem;
-
-  cursor:pointer;
-
-  transition:.2s ease;
-}
-
-.fa-tab:hover{
-  color:var(--accent);
-  border-color:var(--accent);
-}
-
-.fa-tab.active{
-  background:var(--accent);
-  border-color:var(--accent);
-
-  color:#FFF;
-}
-
-.fa-view{
+.fa-tabs::-webkit-scrollbar{
   display:none;
 }
 
-.fa-view.active{
-  display:block;
 
-  animation:viewIn .32s ease;
+.fa-tab{
+
+  flex:0 0 auto;
+
+  padding:
+    9px
+    13px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    999px;
+
+  background:
+    transparent;
+
+  color:
+    var(--dim);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.52rem;
+
+  white-space:nowrap;
+
+  cursor:pointer;
+
+  transition:
+    background .2s,
+    color .2s,
+    border-color .2s;
+
 }
 
-@keyframes viewIn{
+
+.fa-tab:hover,
+.fa-tab.active{
+
+  border-color:
+    var(--accent);
+
+  background:
+    var(--accent);
+
+  color:white;
+
+}
+
+
+.fa-view{
+
+  display:none;
+
+}
+
+
+.fa-view.active{
+
+  display:block;
+
+  animation:
+    faFade
+    .35s ease;
+
+}
+
+
+@keyframes faFade{
+
   from{
     opacity:0;
-    transform:translateY(7px);
+
+    transform:
+      translateY(
+        7px
+      );
   }
 
   to{
     opacity:1;
-    transform:none;
+
+    transform:
+      translateY(
+        0
+      );
   }
+
 }
 
 
-/* ==========================================================
-   FERNANDO — STORY
-========================================================== */
+/* STORY */
 
 .fa-story{
+
   display:grid;
-  grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
-  gap:18px;
+
+  grid-template-columns:
+    minmax(
+      0,
+      .77fr
+    )
+    minmax(
+      0,
+      1.23fr
+    );
+
+  gap:22px;
+
 }
+
 
 .fa-story-copy{
-  padding:28px;
 
-  border:1px solid var(--line);
-  border-radius:10px;
+  padding:30px;
 
-  background:var(--card);
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    11px;
+
+  background:
+    var(--card);
+
 }
+
+
+.fa-story-copy > span{
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.52rem;
+
+}
+
 
 .fa-story-copy h4{
-  margin:10px 0;
 
-  font-family:"Fraunces",serif;
-  font-size:1.55rem;
-  font-weight:400;
+  max-width:
+    520px;
+
+  margin:
+    18px
+    0;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    clamp(
+      1.8rem,
+      3vw,
+      3rem
+    );
+
+  font-weight:300;
+
+  line-height:1.08;
+
 }
 
-.fa-story-copy > p{
-  color:var(--dim);
 
-  font-size:.85rem;
-  line-height:1.7;
+.fa-story-copy p{
+
+  color:
+    var(--dim);
+
+  font-size:.79rem;
+
+  line-height:1.72;
+
 }
 
-.fa-story-list{
-  margin-top:24px;
-}
 
-.fa-story-list article{
+.fa-story-flow{
+
   display:grid;
-  grid-template-columns:36px 1fr;
-  gap:10px;
 
-  padding:14px 0;
+  gap:7px;
 
-  border-top:1px solid var(--line);
+  margin-top:23px;
+
 }
 
-.fa-story-list strong{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
+.fa-story-flow div{
+
+  display:grid;
+
+  grid-template-columns:
+    34px
+    1fr;
+
+  gap:12px;
+
+  align-items:start;
+
+  padding:
+    10px
+    0;
+
+  border-top:
+    1px solid
+    var(--line);
+
 }
 
-.fa-story-list p{
-  color:var(--dim);
 
-  font-size:.75rem;
-  line-height:1.55;
+.fa-story-flow span{
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.5rem;
+
+}
+
+
+.fa-story-flow strong{
+
+  display:block;
+
+  font-size:.72rem;
+
+}
+
+
+.fa-story-flow p{
+
+  margin-top:3px;
+
+  font-size:.66rem;
+
+}
+
+
+.fa-live-cover{
+
+  position:relative;
+
+  overflow:hidden;
+
+  min-height:
+    600px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    11px;
+
+  background:
+    var(--surface);
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.fa-live-cover iframe{
+
+  width:100%;
+  height:600px;
+
+  border:0;
+
+  background:#fff;
+
+}
+
+
+.fa-live-caption{
+
+  position:absolute;
+
+  left:16px;
+  right:16px;
+  bottom:16px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  padding:
+    13px
+    15px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      .4
+    );
+
+  border-radius:
+    8px;
+
+  background:
+    rgba(
+      0,
+      21,
+      42,
+      .86
+    );
+
+  color:white;
+
+  backdrop-filter:
+    blur(
+      12px
+    );
+
+}
+
+
+.fa-live-caption span{
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.49rem;
+
+}
+
+
+.fa-live-caption a{
+
+  color:
+    #E2B648;
+
+  font-size:.56rem;
+
+}
+
+
+/* RESULT STRIP */
+
+.fa-result-strip{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  margin-top:18px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    10px;
+
+  overflow:hidden;
+
+}
+
+
+.fa-result-item{
+
+  min-height:
+    150px;
+
+  padding:20px;
+
+  border-right:
+    1px solid
+    var(--line);
+
+}
+
+
+.fa-result-item:last-child{
+
+  border-right:0;
+
+}
+
+
+.fa-result-item > span{
+
+  display:block;
+
+  margin-bottom:15px;
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.49rem;
+
+}
+
+
+.fa-result-item strong{
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1rem;
+  font-weight:400;
+
+}
+
+
+.fa-result-item p{
+
+  margin-top:6px;
+
+  color:
+    var(--dim);
+
+  font-size:.68rem;
+
+  line-height:1.5;
+
 }
 
 
@@ -1251,770 +2667,1250 @@ nav.site-nav{
 ========================================================== */
 
 .browser-shell{
+
   overflow:hidden;
 
-  border:1px solid var(--line-strong);
-  border-radius:11px;
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--card);
+  border-radius:
+    11px;
 
-  box-shadow:var(--shadow);
+  background:
+    var(--surface);
+
+  box-shadow:
+    var(--shadow);
+
 }
+
 
 .browser-bar{
+
+  min-height:
+    48px;
+
   display:grid;
-  grid-template-columns:70px minmax(0,1fr) auto;
-  gap:12px;
+
+  grid-template-columns:
+    70px
+    minmax(
+      0,
+      1fr
+    )
+    auto;
+
   align-items:center;
 
-  min-height:44px;
+  gap:12px;
 
-  padding:8px 12px;
+  padding:
+    0
+    13px;
 
-  border-bottom:1px solid var(--line);
+  border-bottom:
+    1px solid
+    var(--line);
 
-  background:var(--card);
+  background:
+    var(--card);
+
 }
+
 
 .browser-dots{
+
   display:flex;
+
   gap:5px;
+
 }
 
+
 .browser-dots i{
+
   width:7px;
   height:7px;
 
-  border-radius:50%;
+  border-radius:
+    50%;
 
-  background:var(--muted);
+  background:
+    var(--muted);
+
+  opacity:.5;
+
 }
 
+
 .browser-address{
-  width:min(580px,100%);
-
-  justify-self:center;
-
-  padding:6px 13px;
 
   overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:100px;
+  color:
+    var(--muted);
 
-  background:var(--bg);
-  color:var(--muted);
+  font-size:.48rem;
 
-  font-size:.52rem;
+  text-overflow:
+    ellipsis;
 
-  text-align:center;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  white-space:
+    nowrap;
+
 }
+
 
 .browser-link{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.56rem;
+  color:
+    var(--accent);
 
-  text-decoration:none;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.49rem;
+
+  white-space:nowrap;
+
 }
 
-.browser-shell iframe{
+
+.browser-shell > iframe{
+
   display:block;
 
   width:100%;
-  height:650px;
+
+  height:
+    min(
+      720px,
+      72vh
+    );
 
   border:0;
 
-  background:#FFF;
-}
+  background:white;
 
-
-/* LIVE BROWSER */
-
-.fa-live-cover{
-  min-width:0;
-}
-
-.fa-live-cover .browser-shell{
-  height:100%;
-}
-
-.fa-live-cover iframe{
-  height:560px;
 }
 
 
 /* ==========================================================
-   RESULT STRIP
-========================================================== */
-
-.fa-result-strip{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-
-  margin-top:18px;
-
-  border:1px solid var(--line);
-  border-radius:9px;
-
-  overflow:hidden;
-}
-
-.fa-result-item{
-  padding:18px;
-
-  background:var(--surface);
-
-  border-right:1px solid var(--line);
-}
-
-.fa-result-item:last-child{
-  border-right:0;
-}
-
-.fa-result-item span{
-  display:block;
-
-  margin-bottom:7px;
-
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
-
-  text-transform:uppercase;
-}
-
-.fa-result-item strong{
-  font-family:"Fraunces",serif;
-  font-size:1rem;
-  font-weight:400;
-}
-
-.fa-result-item p{
-  margin-top:6px;
-
-  color:var(--dim);
-
-  font-size:.72rem;
-  line-height:1.5;
-}
-
-
-/* ==========================================================
-   DESIGN SYSTEM
+   FERNANDO DESIGN SYSTEM
 ========================================================== */
 
 .system-layout{
+
   display:grid;
-  grid-template-columns:210px 1fr;
+
+  grid-template-columns:
+    210px
+    minmax(
+      0,
+      1fr
+    );
+
   gap:1px;
 
   overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:11px;
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--line);
+  border-radius:
+    11px;
 
-  box-shadow:var(--shadow);
+  background:
+    var(--line);
+
+  box-shadow:
+    var(--shadow);
+
 }
+
 
 .system-sidebar{
+
   padding:18px;
 
-  background:var(--card);
+  background:
+    var(--card);
+
 }
 
+
 .system-sidebar > span{
+
   display:block;
 
   margin-bottom:10px;
 
-  color:var(--muted);
+  color:
+    var(--muted);
 
-  font-family:"IBM Plex Mono",monospace;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
   font-size:.53rem;
 
-  text-transform:uppercase;
+  text-transform:
+    uppercase;
+
 }
 
+
 .system-nav-btn{
+
   width:100%;
 
   padding:8px;
 
   border:0;
-  border-radius:4px;
 
-  background:transparent;
-  color:var(--dim);
+  border-radius:
+    4px;
+
+  background:
+    transparent;
+
+  color:
+    var(--dim);
 
   font-size:.64rem;
 
   text-align:left;
 
   cursor:pointer;
+
 }
+
 
 .system-nav-btn:hover,
 .system-nav-btn.active{
-  background:var(--accent-soft);
-  color:var(--accent);
+
+  background:
+    var(--accent-soft);
+
+  color:
+    var(--accent);
+
 }
 
+
 .system-canvas{
+
   min-width:0;
 
   padding:30px;
 
-  background:var(--surface);
+  background:
+    var(--surface);
+
 }
+
 
 .system-panel{
+
   display:none;
+
 }
+
 
 .system-panel.active{
+
   display:block;
+
 }
+
 
 .system-panel-title{
+
   margin-bottom:22px;
 
-  font-family:"Fraunces",serif;
+  font-family:
+    "Fraunces",
+    serif;
+
   font-size:1.55rem;
+
   font-weight:400;
+
 }
+
 
 .component-grid{
+
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
   gap:12px;
+
 }
 
+
 .component-box{
-  min-height:190px;
+
+  min-height:
+    190px;
 
   padding:18px;
 
-  border:1px solid var(--line);
-  border-radius:7px;
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--card);
+  border-radius:
+    7px;
+
+  background:
+    var(--card);
+
 }
+
 
 .component-box.wide{
-  grid-column:1 / -1;
+
+  grid-column:
+    1 / -1;
+
 }
 
+
 .component-label{
+
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   gap:20px;
 
   margin-bottom:25px;
 
-  color:var(--muted);
+  color:
+    var(--muted);
 
-  font-family:"IBM Plex Mono",monospace;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
   font-size:.53rem;
+
 }
+
 
 .demo-button-row{
+
   display:flex;
+
   align-items:center;
+
   gap:9px;
+
   flex-wrap:wrap;
+
 }
+
 
 .fa-demo-primary,
 .fa-demo-secondary{
-  padding:10px 16px;
 
-  border-radius:5px;
+  padding:
+    10px
+    16px;
+
+  border-radius:
+    5px;
 
   font-size:.66rem;
 
   cursor:pointer;
 
   transition:.2s;
+
 }
+
 
 .fa-demo-primary{
-  border:1px solid var(--fa-gold);
 
-  background:var(--fa-gold);
+  border:
+    1px solid
+    var(--fa-gold);
+
+  background:
+    var(--fa-gold);
+
   color:#FFF;
+
 }
+
 
 .fa-demo-secondary{
-  border:1px solid var(--fa-navy);
 
-  background:transparent;
-  color:var(--fa-navy);
+  border:
+    1px solid
+    var(--fa-navy);
+
+  background:
+    transparent;
+
+  color:
+    var(--fa-navy);
+
 }
+
 
 .fa-demo-primary.is-hover{
-  filter:brightness(.84);
 
-  transform:translateY(-2px);
+  filter:
+    brightness(
+      .84
+    );
+
+  transform:
+    translateY(
+      -2px
+    );
+
 }
+
 
 .fa-demo-primary.is-disabled{
+
   opacity:.32;
+
 }
 
+
 .variant-controls{
+
   display:flex;
+
   gap:5px;
+
   flex-wrap:wrap;
 
   margin-top:20px;
+
 }
 
+
 .variant-controls button{
-  padding:5px 8px;
 
-  border:1px solid var(--line);
-  border-radius:4px;
+  padding:
+    5px
+    8px;
 
-  background:var(--bg);
-  color:var(--dim);
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    4px;
+
+  background:
+    var(--bg);
+
+  color:
+    var(--dim);
 
   font-size:.52rem;
 
   cursor:pointer;
+
 }
 
+
 .variant-controls button.active{
-  border-color:var(--accent);
-  color:var(--accent);
+
+  border-color:
+    var(--accent);
+
+  color:
+    var(--accent);
+
 }
 
 
 /* COLORS */
 
 .fa-color-grid{
+
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+
+  grid-template-columns:
+    repeat(
+      5,
+      1fr
+    );
+
   gap:8px;
+
 }
 
+
 .fa-color{
-  min-height:150px;
+
+  min-height:
+    150px;
 
   display:flex;
+
   flex-direction:column;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
 
   padding:14px;
 
-  border-radius:6px;
+  border-radius:
+    6px;
 
-  font-family:"IBM Plex Mono",monospace;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
   font-size:.52rem;
+
 }
+
 
 .fa-color.navy{
-  background:#00152A;
+
+  background:
+    #00152A;
+
   color:#FFF;
+
 }
+
 
 .fa-color.gold{
-  background:#B8860B;
+
+  background:
+    #B8860B;
+
   color:#FFF;
+
 }
+
 
 .fa-color.slate{
-  background:#64748B;
+
+  background:
+    #64748B;
+
   color:#FFF;
+
 }
+
 
 .fa-color.light{
-  border:1px solid #CFD7DE;
 
-  background:#F4F6F8;
+  border:
+    1px solid
+    #CFD7DE;
+
+  background:
+    #F4F6F8;
+
   color:#00152A;
+
 }
+
 
 .fa-color.white{
-  border:1px solid #CFD7DE;
 
-  background:#FFF;
+  border:
+    1px solid
+    #CFD7DE;
+
+  background:
+    #FFF;
+
   color:#00152A;
+
 }
 
 
-/* TYPOGRAPHY */
+/* TYPE */
 
 .fa-type-demo{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
   gap:12px;
+
 }
 
+
 .fa-type-card{
-  min-height:220px;
+
+  min-height:
+    220px;
 
   padding:20px;
 
-  border-radius:6px;
+  border-radius:
+    6px;
 
   background:#FFF;
+
   color:#00152A;
+
 }
 
+
 .fa-type-card span{
+
   display:block;
 
   color:#64748B;
 
-  font-family:"IBM Plex Mono",monospace;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
   font-size:.52rem;
+
 }
+
 
 .fa-type-card strong{
+
   display:block;
 
-  margin:20px 0 10px;
+  margin:
+    20px
+    0
+    10px;
 
   font-size:3.2rem;
+
   line-height:1;
+
 }
+
 
 .fa-type-card.manrope strong,
 .fa-type-card.manrope p{
-  font-family:"Manrope","IBM Plex Sans",sans-serif;
+
+  font-family:
+    "Manrope",
+    sans-serif;
+
 }
+
 
 .fa-type-card.dm strong,
 .fa-type-card.dm p{
-  font-family:"DM Sans","IBM Plex Sans",sans-serif;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
 }
 
+
 .fa-type-card p{
+
   font-size:.75rem;
+
   line-height:1.5;
+
 }
 
 
 /* FILTER */
 
 .demo-filter-row{
+
   display:flex;
+
   gap:6px;
+
   flex-wrap:wrap;
+
 }
 
+
 .demo-filter{
-  padding:7px 11px;
 
-  border:1px solid #9DA6AF;
+  padding:
+    7px
+    11px;
 
-  background:transparent;
+  border:
+    1px solid
+    #9DA6AF;
+
+  background:
+    transparent;
+
   color:#0D2E48;
 
   font-size:.57rem;
 
   cursor:pointer;
+
 }
 
+
 .demo-filter.active{
-  background:#B8860B;
-  border-color:#B8860B;
+
+  border-color:
+    var(--fa-gold);
+
+  background:
+    var(--fa-gold);
 
   color:#FFF;
+
 }
 
 
 /* ARROWS */
 
 .fa-arrow-row{
+
   display:flex;
+
   gap:10px;
+
 }
 
+
 .demo-arrow{
+
   width:44px;
   height:44px;
 
   display:grid;
+
   place-items:center;
 
   border:0;
-  border-radius:50%;
 
-  background:#B8860B;
+  border-radius:
+    50%;
+
+  background:
+    var(--fa-gold);
+
   color:#FFF;
 
   font-size:1.25rem;
+
+  cursor:pointer;
+
 }
 
 
 /* FORM */
 
 .fa-field-demo{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
   gap:8px;
+
 }
 
+
 .fa-field{
-  min-height:44px;
+
+  min-height:
+    44px;
 
   display:flex;
+
   align-items:center;
 
-  padding:0 12px;
+  padding:
+    0
+    12px;
 
-  border:1px solid #7185A0;
-  border-radius:7px;
+  border:
+    1px solid
+    #7185A0;
+
+  border-radius:
+    7px;
 
   background:#FFF;
+
   color:#8793A4;
 
   font-size:.6rem;
+
 }
 
 
 /* CARDS */
 
 .demo-quality{
+
   padding:16px;
 
-  border:1px solid #CED3D7;
+  border:
+    1px solid
+    #CED3D7;
 
-  border-radius:7px;
+  border-radius:
+    7px;
 
   background:#FFF;
+
   color:#0D2E48;
 
   transition:.2s;
+
 }
 
-.demo-quality strong{
-  display:block;
-
-  margin-bottom:7px;
-}
-
-.demo-quality p{
-  font-size:.65rem;
-  line-height:1.5;
-}
 
 .demo-quality:hover,
 .demo-quality.dark{
-  border-color:#00152A;
 
-  background:#00152A;
+  border-color:
+    #00152A;
+
+  background:
+    #00152A;
+
   color:#FFF;
+
 }
+
+
+.demo-quality strong{
+
+  display:block;
+
+  margin-bottom:7px;
+
+}
+
+
+.demo-quality p{
+
+  font-size:.65rem;
+
+  line-height:1.5;
+
+}
+
 
 .demo-project-card{
+
   overflow:hidden;
 
-  border-radius:7px;
+  border-radius:
+    7px;
 
   background:#FFF;
+
   color:#0D2E48;
+
 }
 
+
 .demo-project-img{
+
   height:100px;
 
   background:
-    linear-gradient(135deg,#CBD2D8,#7F8E9A);
+    linear-gradient(
+      135deg,
+      #CBD2D8,
+      #7F8E9A
+    );
 
-  transition:transform .5s var(--ease);
+  transition:
+    transform .5s var(--ease);
+
 }
 
-.demo-project-card:hover .demo-project-img{
-  transform:scale(1.04);
+
+.demo-project-card:hover
+.demo-project-img{
+
+  transform:
+    scale(
+      1.04
+    );
+
 }
+
 
 .demo-project-copy{
+
   padding:11px;
 
   font-size:.56rem;
+
 }
 
+
 .demo-project-copy strong{
+
   display:block;
 
   margin-bottom:5px;
+
 }
 
 
 /* TOKENS */
 
 .fa-token-list{
+
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
   gap:8px;
+
 }
+
 
 .fa-token{
+
   padding:16px;
 
-  border:1px solid var(--line);
-  border-radius:6px;
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--bg);
+  border-radius:
+    6px;
+
+  background:
+    var(--bg);
+
 }
+
 
 .fa-token strong{
+
   display:block;
 
-  color:var(--accent);
+  color:
+    var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
   font-size:.65rem;
+
 }
 
+
 .fa-token span{
+
   display:block;
 
   margin-top:8px;
 
-  color:var(--dim);
+  color:
+    var(--dim);
 
   font-size:.65rem;
+
 }
 
 
 /* ==========================================================
-   RESPONSIVE CASE
+   FERNANDO RESPONSIVE
 ========================================================== */
 
 .fa-responsive-showcase{
+
   display:grid;
-  grid-template-columns:minmax(0,1fr) 300px;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    300px;
+
   gap:30px;
+
   align-items:end;
 
   padding:30px;
 
-  border:1px solid var(--line);
-  border-radius:11px;
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--card);
+  border-radius:
+    11px;
 
-  box-shadow:var(--shadow);
+  background:
+    var(--card);
+
+  box-shadow:
+    var(--shadow);
+
 }
 
+
 .fa-device-desktop{
+
   overflow:hidden;
 
-  border:1px solid var(--line-strong);
-  border-radius:9px;
+  border:
+    1px solid
+    var(--line-strong);
+
+  border-radius:
+    9px;
 
   background:#FFF;
 
-  box-shadow:0 18px 40px rgba(0,0,0,.12);
+  box-shadow:
+    0 18px 40px
+    rgba(
+      0,
+      0,
+      0,
+      .12
+    );
+
 }
 
-.fa-device-desktop .browser-bar{
-  min-height:34px;
+
+.fa-device-desktop
+.browser-bar{
+
+  min-height:
+    34px;
+
 }
+
 
 .fa-device-desktop iframe{
+
+  display:block;
+
   width:100%;
-  height:510px;
+
+  height:
+    510px;
 
   border:0;
+
 }
+
 
 .fa-mobile-wrap{
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   gap:15px;
+
 }
+
 
 .fa-device-mobile{
-  width:245px;
 
-  padding:8px;
+  width:
+    245px;
 
-  border-radius:29px;
+  padding:
+    8px;
 
-  background:#121212;
+  border:
+    1px solid
+    var(--line-strong);
 
-  box-shadow:0 25px 45px rgba(0,0,0,.22);
+  border-radius:
+    30px;
+
+  background:
+    #111;
+
+  box-shadow:
+    0 18px 45px
+    rgba(
+      0,
+      0,
+      0,
+      .18
+    );
+
 }
 
+
+.fa-phone-notch{
+
+  width:74px;
+  height:17px;
+
+  margin:
+    0
+    auto
+    7px;
+
+  border-radius:
+    0
+    0
+    13px
+    13px;
+
+  background:#111;
+
+}
+
+
 .fa-phone-screen{
+
   position:relative;
 
-  width:100%;
-
-  aspect-ratio:390/780;
+  height:
+    500px;
 
   overflow:hidden;
 
-  border-radius:22px;
+  border-radius:
+    21px;
 
-  background:#00152A;
+  background:#FFF;
+
 }
 
+
 .fa-phone-screen iframe{
+
   position:absolute;
+
   top:0;
   left:0;
 
-  width:390px;
-  height:780px;
+  width:
+    390px;
+
+  height:
+    1000px;
 
   border:0;
 
-  transform:scale(.587);
+  transform:
+    scale(
+      .588
+    );
 
-  transform-origin:top left;
+  transform-origin:
+    top left;
+
 }
 
+
 .fa-responsive-notes{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
   gap:1px;
 
   margin-top:18px;
 
-  border:1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--line);
+  background:
+    var(--line);
+
 }
+
 
 .fa-responsive-note{
-  padding:18px;
 
-  background:var(--bg);
+  padding:20px;
+
+  background:
+    var(--bg);
+
 }
+
 
 .fa-responsive-note span{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.49rem;
+
 }
+
 
 .fa-responsive-note h4{
-  margin:8px 0;
 
-  font-family:"Fraunces",serif;
+  margin:
+    10px
+    0
+    6px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1.05rem;
+
   font-weight:400;
+
 }
 
-.fa-responsive-note p{
-  color:var(--dim);
 
-  font-size:.72rem;
+.fa-responsive-note p{
+
+  color:
+    var(--dim);
+
+  font-size:.67rem;
+
   line-height:1.55;
+
 }
 
 
@@ -2023,66 +3919,115 @@ nav.site-nav{
 ========================================================== */
 
 .figma-shell{
+
   overflow:hidden;
 
-  border:1px solid var(--line-strong);
-  border-radius:11px;
+  border:
+    1px solid
+    var(--line);
 
-  background:#111;
+  border-radius:
+    11px;
 
-  box-shadow:var(--shadow);
+  background:
+    var(--surface);
+
+  box-shadow:
+    var(--shadow);
+
 }
+
 
 .figma-head{
+
+  min-height:
+    68px;
+
   display:flex;
+
   align-items:center;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   gap:20px;
 
-  padding:14px 16px;
+  padding:
+    13px
+    16px;
 
-  border-bottom:1px solid #343434;
+  border-bottom:
+    1px solid
+    var(--line);
 
-  background:#1B1B1B;
-  color:#FFF;
 }
+
 
 .figma-head span{
+
   display:block;
 
-  margin-bottom:4px;
+  color:
+    var(--accent);
 
-  color:#F48A4A;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
+  font-size:.47rem;
+
 }
+
 
 .figma-head strong{
-  font-family:"Fraunces",serif;
+
+  display:block;
+
+  margin-top:4px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
   font-size:1rem;
   font-weight:400;
+
 }
+
 
 .figma-head a{
-  color:#F48A4A;
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
+  color:
+    var(--accent);
 
-  text-decoration:none;
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.5rem;
+
 }
+
 
 .figma-frame{
-  height:min(78vh,800px);
-  min-height:600px;
+
+  min-height:
+    700px;
+
 }
 
+
 .figma-frame iframe{
+
+  display:block;
+
   width:100%;
-  height:100%;
+  height:700px;
 
   border:0;
+
+  background:#222;
+
 }
 
 
@@ -2091,234 +4036,257 @@ nav.site-nav{
 ========================================================== */
 
 .voit-case{
-  padding:0 var(--pad);
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
 
-.voit-shell{
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:11px;
-
-  background:var(--card);
-
-  box-shadow:var(--shadow);
-}
-
-.voit-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-
-  padding:17px;
-
-  border-bottom:1px solid var(--line);
-}
-
-.voit-tabs{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
-.voit-tab{
-  padding:6px 10px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-size:.6rem;
-
-  cursor:pointer;
-}
-
-.voit-tab.active{
-  background:var(--accent);
-  border-color:var(--accent);
-
-  color:#FFF;
-}
-
-.voit-view{
-  display:none;
-
-  padding:34px;
-}
-
-.voit-view.active{
-  display:block;
-}
 
 .voit-ecosystem{
-  display:grid;
-  grid-template-columns:1fr 180px 1fr;
-  grid-template-rows:1fr 1fr;
-  gap:22px;
-  align-items:center;
 
-  min-height:520px;
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      6,
+      1fr
+    );
+
+  grid-template-rows:
+    210px
+    210px;
+
+  gap:10px;
+
 }
+
 
 .voit-core{
-  grid-column:2;
-  grid-row:1 / 3;
 
-  width:170px;
-  height:170px;
+  grid-column:
+    1 / 4;
 
-  display:grid;
-  place-items:center;
+  grid-row:
+    1 / 3;
 
-  border-radius:50%;
+  display:flex;
 
-  background:var(--ink);
-  color:var(--bg);
+  flex-direction:column;
 
-  font-family:"Fraunces",serif;
-  font-size:1.5rem;
+  justify-content:
+    space-between;
 
-  box-shadow:var(--shadow);
+  padding:34px;
+
+  border-radius:
+    10px;
+
+  background:
+    var(--green);
+
+  color:#F4EFE8;
+
 }
 
-.voit-domain{
-  padding:20px;
 
-  border:1px solid var(--line);
-  border-radius:8px;
+.voit-core span{
 
-  background:var(--bg);
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.52rem;
+
 }
 
-.voit-domain span{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
+.voit-core h4{
+
+  max-width:
+    420px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      4rem
+    );
+
+  font-weight:300;
+
+  line-height:1;
+
 }
 
-.voit-domain h4{
-  margin:8px 0;
 
-  font-family:"Fraunces",serif;
-  font-size:1.2rem;
-  font-weight:400;
-}
+.voit-core p{
 
-.voit-domain p{
-  color:var(--dim);
+  max-width:
+    460px;
 
-  font-size:.77rem;
+  opacity:.76;
+
+  font-size:.73rem;
+
   line-height:1.6;
+
 }
 
-.voit-process{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
 
-  border:1px solid var(--line);
+.voit-card{
 
-  background:var(--line);
+  position:relative;
 
-  gap:1px;
-}
-
-.voit-process article{
-  padding:20px;
-
-  background:var(--bg);
-}
-
-.voit-process span{
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.54rem;
-}
-
-.voit-process h4{
-  margin:7px 0;
-
-  font-family:"Fraunces",serif;
-  font-weight:400;
-}
-
-.voit-process p{
-  color:var(--dim);
-
-  font-size:.72rem;
-  line-height:1.55;
-}
-
-.voit-social{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-
-.voit-piece{
   overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:7px;
+  border-radius:
+    8px;
 
-  background:var(--bg);
+  background:
+    var(--card);
 
   cursor:zoom-in;
 
-  transition:.25s var(--ease);
 }
 
-.voit-piece:hover{
-  transform:translateY(-5px);
-}
 
-.voit-piece img{
+.voit-card img{
+
   width:100%;
-
-  aspect-ratio:1080/1350;
+  height:100%;
 
   object-fit:cover;
+
+  transition:
+    transform .5s var(--ease);
+
 }
 
-.voit-professional{
+
+.voit-card:hover img{
+
+  transform:
+    scale(
+      1.04
+    );
+
+}
+
+
+.voit-card:nth-child(2){
+
+  grid-column:
+    4 / 6;
+
+}
+
+
+.voit-card:nth-child(3){
+
+  grid-column:
+    6 / 7;
+
+}
+
+
+.voit-card:nth-child(4){
+
+  grid-column:
+    4 / 5;
+
+}
+
+
+.voit-card:nth-child(5){
+
+  grid-column:
+    5 / 7;
+
+}
+
+
+.voit-process{
+
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:1px;
+
+  margin-top:18px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    var(--line);
+
 }
 
-.voit-professional article{
+
+.voit-process article{
+
   padding:24px;
 
-  border:1px solid var(--line);
-  border-radius:8px;
+  background:
+    var(--bg);
 
-  background:var(--bg);
 }
 
-.voit-professional span{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
+.voit-process span{
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.48rem;
+
 }
 
-.voit-professional h4{
-  margin:8px 0;
 
-  font-family:"Fraunces",serif;
-  font-size:1.25rem;
+.voit-process h4{
+
+  margin:
+    12px
+    0
+    7px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1.15rem;
+
   font-weight:400;
+
 }
 
-.voit-professional p{
-  color:var(--dim);
 
-  font-size:.8rem;
-  line-height:1.65;
+.voit-process p{
+
+  color:
+    var(--dim);
+
+  font-size:.69rem;
+
+  line-height:1.55;
+
 }
 
 
@@ -2326,170 +4294,210 @@ nav.site-nav{
    RENATA
 ========================================================== */
 
-.renata-case{
-  padding:0 var(--pad);
+.deck-case{
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
+
 
 .deck-shell{
+
   overflow:hidden;
 
-  border:1px solid #343434;
-  border-radius:11px;
+  border-radius:
+    10px;
 
-  background:#151515;
-  color:#FFF;
+  background:
+    #171717;
 
-  box-shadow:var(--shadow);
+  color:
+    #F2EFE7;
+
+  box-shadow:
+    var(--shadow);
+
 }
 
-.deck-top{
-  min-height:44px;
+
+.deck-topbar{
+
+  min-height:
+    54px;
 
   display:flex;
+
   align-items:center;
-  justify-content:space-between;
 
-  padding:0 15px;
+  justify-content:
+    space-between;
 
-  border-bottom:1px solid #333;
+  gap:20px;
 
-  font-size:.6rem;
+  padding:
+    0
+    18px;
+
+  border-bottom:
+    1px solid
+    #333;
+
 }
 
-.deck-body{
-  display:grid;
-  grid-template-columns:1fr 255px;
 
-  min-height:540px;
+.deck-topbar span{
+
+  color:
+    #aaa;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.48rem;
+
 }
 
-.deck-stage{
-  display:grid;
-  place-items:center;
-
-  padding:38px;
-
-  background:#181818;
-}
-
-.deck-screen{
-  width:min(850px,100%);
-
-  overflow:hidden;
-
-  aspect-ratio:16/9;
-
-  background:#000;
-
-  box-shadow:0 24px 65px rgba(0,0,0,.48);
-}
-
-.deck-screen img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  cursor:zoom-in;
-}
-
-.deck-side{
-  padding:22px;
-
-  border-left:1px solid #333;
-
-  background:#202020;
-}
-
-.deck-side h4{
-  margin:10px 0;
-
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
-  font-weight:400;
-}
-
-.deck-side p{
-  color:#BEBEBE;
-
-  font-size:.75rem;
-  line-height:1.65;
-}
 
 .deck-controls{
-  display:flex;
-  gap:8px;
 
-  margin-top:22px;
+  display:flex;
+
+  gap:7px;
+
 }
 
+
 .deck-controls button{
+
   width:35px;
   height:35px;
 
-  border:1px solid #555;
-  border-radius:50%;
+  border:
+    1px solid
+    #444;
 
-  background:#292929;
-  color:#FFF;
+  border-radius:
+    50%;
+
+  background:
+    transparent;
+
+  color:white;
 
   cursor:pointer;
+
 }
 
-.deck-progress{
-  height:3px;
 
-  margin-top:18px;
+.deck-body{
 
-  background:#333;
+  display:grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    190px;
+
 }
 
-.deck-progress span{
-  display:block;
 
-  height:100%;
+.deck-stage{
 
-  background:var(--accent);
+  min-height:
+    590px;
 
-  transition:width .3s;
+  display:grid;
+
+  place-items:center;
+
+  padding:40px;
+
 }
 
-.deck-thumbs{
-  display:flex;
-  gap:6px;
 
-  margin-top:18px;
+.deck-stage img{
 
-  overflow:auto;
+  max-width:100%;
+  max-height:
+    510px;
+
+  object-fit:contain;
+
+  box-shadow:
+    0 15px 45px
+    rgba(
+      0,
+      0,
+      0,
+      .45
+    );
+
+  cursor:zoom-in;
+
 }
+
+
+.deck-side{
+
+  max-height:
+    590px;
+
+  overflow-y:auto;
+
+  padding:12px;
+
+  border-left:
+    1px solid
+    #333;
+
+}
+
 
 .deck-thumb{
-  flex:0 0 72px;
+
+  width:100%;
+
+  margin-bottom:9px;
+
+  padding:0;
 
   overflow:hidden;
 
-  border:1px solid #444;
-  border-radius:4px;
+  border:
+    2px solid
+    transparent;
 
-  background:#111;
+  background:
+    none;
+
+  opacity:.54;
 
   cursor:pointer;
 
-  opacity:.55;
 }
 
-.deck-thumb.active{
+
+.deck-thumb.active,
+.deck-thumb:hover{
+
+  border-color:
+    var(--accent);
+
   opacity:1;
 
-  border-color:var(--accent);
 }
 
+
 .deck-thumb img{
+
   width:100%;
 
-  aspect-ratio:16/9;
-
-  object-fit:cover;
 }
 
 
@@ -2497,132 +4505,224 @@ nav.site-nav{
    BRADUCA
 ========================================================== */
 
-.braduca-case{
-  padding:0 var(--pad);
+.editorial-case{
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
+
 
 .editorial-shell{
+
   display:grid;
-  grid-template-columns:minmax(0,1fr) 330px;
-  gap:20px;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    270px;
+
+  gap:22px;
+
 }
+
+
+.editorial-main{
+
+  min-width:0;
+
+}
+
 
 .editorial-ribbon{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
 
-  align-items:start;
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:10px;
+
 }
 
+
 .editorial-card{
+
   position:relative;
 
   overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:7px;
+  aspect-ratio:
+    4 / 5;
 
-  background:var(--card);
+  padding:0;
+
+  border:
+    2px solid
+    transparent;
+
+  border-radius:
+    4px;
+
+  background:
+    var(--card);
 
   cursor:pointer;
 
   transition:
-    transform .3s var(--ease),
-    box-shadow .3s,
-    border-color .3s;
+    transform .35s var(--ease),
+    border-color .2s;
+
 }
+
 
 .editorial-card:nth-child(2n){
-  transform:translateY(22px);
+
+  transform:
+    translateY(
+      28px
+    );
+
 }
 
-.editorial-card:hover,
+
+.editorial-card:nth-child(3n){
+
+  transform:
+    translateY(
+      10px
+    );
+
+}
+
+
+.editorial-card:hover{
+
+  border-color:
+    var(--accent);
+
+}
+
+
 .editorial-card.active{
-  border-color:var(--accent);
 
-  box-shadow:0 0 0 2px var(--accent-soft);
+  border-color:
+    var(--accent);
+
 }
+
 
 .editorial-card img{
-  width:100%;
 
-  aspect-ratio:1080/1350;
+  width:100%;
+  height:100%;
 
   object-fit:cover;
+
 }
 
-.editorial-number{
-  position:absolute;
-  top:7px;
-  left:7px;
 
-  padding:4px 6px;
+.editorial-preview{
 
-  border-radius:3px;
+  margin-top:38px;
 
-  background:rgba(0,0,0,.75);
-  color:#FFF;
+  min-height:
+    570px;
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.5rem;
+  display:grid;
+
+  place-items:center;
+
+  padding:30px;
+
+  background:
+    #111;
+
 }
+
+
+.editorial-preview img{
+
+  max-height:
+    510px;
+
+  object-fit:contain;
+
+  cursor:zoom-in;
+
+}
+
 
 .editorial-inspector{
+
   position:sticky;
+
   top:100px;
 
   align-self:start;
 
-  padding:20px;
+  padding:22px;
 
-  border:1px solid var(--line);
-  border-radius:8px;
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--card);
+  background:
+    var(--surface);
+
 }
 
-.editorial-preview{
-  overflow:hidden;
 
-  margin-bottom:17px;
+.editorial-inspector span{
 
-  border-radius:5px;
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.49rem;
+
 }
 
-.editorial-preview img{
-  width:100%;
 
-  aspect-ratio:1080/1350;
+.editorial-inspector h4{
 
-  object-fit:cover;
+  margin:
+    13px
+    0;
 
-  cursor:zoom-in;
-}
+  font-family:
+    "Fraunces",
+    serif;
 
-.inspector-row{
-  padding:11px 0;
+  font-size:1.35rem;
 
-  border-top:1px solid var(--line);
-}
-
-.inspector-row span{
-  display:block;
-
-  margin-bottom:3px;
-
-  color:var(--muted);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.51rem;
-
-  text-transform:uppercase;
-}
-
-.inspector-row strong{
-  font-size:.76rem;
   font-weight:400;
-  line-height:1.45;
+
+}
+
+
+.editorial-inspector p{
+
+  color:
+    var(--dim);
+
+  font-size:.69rem;
+
+  line-height:1.55;
+
 }
 
 
@@ -2630,143 +4730,265 @@ nav.site-nav{
    AYMÉE
 ========================================================== */
 
-.aymee-case{
-  padding:0 var(--pad);
+.brand-case{
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
 
-.brand-shell{
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:11px;
-
-  background:var(--card);
-
-  box-shadow:var(--shadow);
-}
 
 .brand-top{
+
   display:flex;
-  justify-content:space-between;
+
   align-items:center;
-  gap:20px;
 
-  padding:17px;
+  justify-content:
+    space-between;
 
-  border-bottom:1px solid var(--line);
+  gap:25px;
+
+  margin-bottom:18px;
+
 }
+
+
+.brand-top p{
+
+  max-width:
+    580px;
+
+  color:
+    var(--dim);
+
+  font-size:.74rem;
+
+  line-height:1.6;
+
+}
+
 
 .brand-filter{
+
   display:flex;
-  gap:6px;
+
+  gap:5px;
+
   flex-wrap:wrap;
+
 }
+
 
 .brand-filter button{
-  padding:6px 10px;
 
-  border:1px solid var(--line-strong);
-  border-radius:100px;
+  padding:
+    7px
+    10px;
 
-  background:var(--bg);
-  color:var(--dim);
+  border:
+    1px solid
+    var(--line);
 
-  font-size:.58rem;
+  border-radius:
+    999px;
+
+  background:
+    transparent;
+
+  color:
+    var(--dim);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.48rem;
 
   cursor:pointer;
+
 }
 
+
+.brand-filter button:hover,
 .brand-filter button.active{
-  background:var(--accent);
-  border-color:var(--accent);
 
-  color:#FFF;
+  border-color:
+    var(--accent);
+
+  background:
+    var(--accent);
+
+  color:white;
+
 }
+
 
 .brand-body{
-  display:grid;
-  grid-template-columns:1fr 300px;
-  gap:22px;
 
-  padding:30px;
+  display:grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    290px;
+
+  gap:25px;
+
 }
+
 
 .brand-grid{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:10px;
+
 }
 
+
 .brand-card{
+
   overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:7px;
+  padding:0;
 
-  background:var(--bg);
+  border:
+    0;
+
+  border-radius:
+    5px;
+
+  background:
+    var(--card);
+
+  aspect-ratio:
+    1;
 
   cursor:zoom-in;
 
-  transition:.25s var(--ease);
 }
 
-.brand-card:hover{
-  transform:translateY(-4px);
-
-  border-color:var(--accent);
-}
 
 .brand-card img{
-  width:100%;
 
-  aspect-ratio:1080/1350;
+  width:100%;
+  height:100%;
 
   object-fit:cover;
+
+  transition:
+    transform .45s var(--ease);
+
 }
 
-.brand-rules{
+
+.brand-card:hover img{
+
+  transform:
+    scale(
+      1.04
+    );
+
+}
+
+
+.brand-notes{
+
   align-self:start;
 
-  padding:20px;
+  padding:22px;
 
-  border:1px solid var(--line);
-  border-radius:8px;
+  border:
+    1px solid
+    var(--line);
 
-  background:var(--bg);
+  background:
+    var(--surface);
+
 }
 
-.brand-rules h4{
-  margin:8px 0 15px;
 
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
+.brand-notes > span{
+
+  color:
+    var(--accent);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.48rem;
+
+}
+
+
+.brand-notes > h4{
+
+  margin:
+    13px
+    0
+    20px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1.45rem;
+
   font-weight:400;
+
 }
+
 
 .brand-rule{
-  padding:13px 0;
 
-  border-bottom:1px solid var(--line);
+  padding:
+    15px
+    0;
+
+  border-top:
+    1px solid
+    var(--line);
+
 }
 
-.brand-rule:last-child{
-  border-bottom:0;
-}
 
 .brand-rule span{
-  color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.52rem;
+  color:
+    var(--muted);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.46rem;
+
 }
 
+
 .brand-rule p{
-  margin-top:5px;
 
-  color:var(--dim);
+  margin-top:7px;
 
-  font-size:.74rem;
+  color:
+    var(--dim);
+
+  font-size:.67rem;
+
   line-height:1.55;
+
 }
 
 
@@ -2775,35 +4997,85 @@ nav.site-nav{
 ========================================================== */
 
 .skills{
-  padding:0 var(--pad) 80px;
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
+
 
 .skill-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
 
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line);
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
+  gap:1px;
+
+  border:
+    1px solid
+    var(--line);
+
+  background:
+    var(--line);
+
 }
+
 
 .skill-card{
-  padding:24px;
 
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  min-height:
+    220px;
+
+  padding:25px;
+
+  background:
+    var(--bg);
+
+  transition:
+    background .2s;
+
 }
+
+
+.skill-card:hover{
+
+  background:
+    var(--card);
+
+}
+
 
 .skill-card h3{
-  margin-bottom:10px;
 
-  font-size:.88rem;
+  margin-bottom:12px;
+
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:1.35rem;
+
+  font-weight:400;
+
 }
 
-.skill-card p{
-  color:var(--dim);
 
-  font-size:.78rem;
-  line-height:1.62;
+.skill-card p{
+
+  color:
+    var(--dim);
+
+  font-size:.72rem;
+
+  line-height:1.65;
+
 }
 
 
@@ -2812,67 +5084,163 @@ nav.site-nav{
 ========================================================== */
 
 .contact{
-  padding:90px var(--pad);
 
-  text-align:center;
+  padding:
+    100px
+    var(--pad);
+
+  border-top:
+    1px solid
+    var(--line);
+
 }
+
 
 .contact h2{
-  max-width:760px;
 
-  margin:12px auto;
+  max-width:
+    1000px;
 
-  font-family:"Fraunces",serif;
-  font-size:clamp(2rem,4.6vw,3.1rem);
-  font-weight:400;
+  font-family:
+    "Fraunces",
+    serif;
+
+  font-size:
+    clamp(
+      2.7rem,
+      6.5vw,
+      6.5rem
+    );
+
+  font-weight:300;
+
+  line-height:.96;
+
+  letter-spacing:
+    -.04em;
+
 }
 
-.contact p{
-  max-width:620px;
 
-  margin:0 auto 27px;
+.contact > p{
 
-  color:var(--dim);
+  max-width:
+    580px;
 
-  line-height:1.6;
+  margin-top:25px;
+
+  color:
+    var(--dim);
+
+  font-size:.89rem;
+
+  line-height:1.65;
+
 }
+
 
 .contact-actions{
+
   display:flex;
-  justify-content:center;
-  gap:11px;
+
   flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:30px;
+
 }
+
 
 .contact-actions a{
-  padding:11px 20px;
 
-  border:1px solid var(--line-strong);
-  border-radius:4px;
+  min-height:
+    44px;
 
-  font-size:.78rem;
+  display:flex;
 
-  text-decoration:none;
+  align-items:center;
+
+  padding:
+    0
+    15px;
+
+  border:
+    1px solid
+    var(--line-strong);
+
+  border-radius:
+    999px;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.53rem;
+
+  transition:
+    background .2s,
+    color .2s,
+    border-color .2s;
+
 }
 
-.contact-actions .primary{
-  background:var(--accent);
-  border-color:var(--accent);
 
-  color:#FFF;
+.contact-actions a.primary{
+
+  background:
+    var(--ink);
+
+  color:
+    var(--bg);
+
 }
+
+
+.contact-actions a:hover{
+
+  border-color:
+    var(--accent);
+
+  background:
+    var(--accent);
+
+  color:white;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
 
 footer{
+
   display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
 
-  padding:35px var(--pad);
+  justify-content:
+    space-between;
 
-  color:var(--dim);
+  gap:20px;
 
-  font-size:.74rem;
+  padding:
+    24px
+    var(--pad)
+    34px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  color:
+    var(--muted);
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:.48rem;
+
 }
 
 
@@ -2881,378 +5249,1084 @@ footer{
 ========================================================== */
 
 .lightbox{
+
   position:fixed;
+
   inset:0;
-  z-index:6000;
+
+  z-index:9998;
 
   display:none;
+
   align-items:center;
+
   justify-content:center;
 
-  padding:55px 25px 25px;
+  padding:35px;
 
-  background:rgba(0,0,0,.92);
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      .92
+    );
 
-  backdrop-filter:blur(5px);
+  backdrop-filter:
+    blur(
+      5px
+    );
+
 }
+
 
 .lightbox.open{
+
   display:flex;
+
 }
 
+
 .lightbox img{
-  max-width:94vw;
-  max-height:87vh;
+
+  max-width:
+    94vw;
+
+  max-height:
+    87vh;
 
   object-fit:contain;
 
-  border-radius:7px;
+  border-radius:
+    7px;
+
 }
 
+
 .lightbox-close{
+
   position:absolute;
+
   top:18px;
   right:25px;
 
   border:0;
 
-  background:none;
+  background:
+    none;
+
   color:#FFF;
 
   font-size:2.1rem;
 
   cursor:pointer;
+
 }
 
 
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE 1100
 ========================================================== */
 
-@media(max-width:1000px){
+@media(max-width:1100px){
 
   :root{
-    --pad:24px;
+    --pad:28px;
   }
+
 
   .hero{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
 
   .hero-visual{
+
     order:-1;
+
   }
+
+
+  .wf-wrapper{
+
+    min-height:
+      500px;
+
+  }
+
 
   .about{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
+
+  .about-visual{
+
+    min-height:
+      470px;
+
+  }
+
+
+  .case-grid{
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+  }
+
 
   .fa-story{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
 
   .fa-live-cover iframe{
-    height:600px;
+
+    height:
+      630px;
+
   }
 
-  .system-layout{
-    grid-template-columns:165px 1fr;
-  }
-
-  .fa-color-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .fa-token-list{
-    grid-template-columns:repeat(2,1fr);
-  }
 
   .fa-responsive-showcase{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr
+      270px;
+
   }
 
-  .fa-mobile-wrap{
-    margin-top:20px;
+
+  .voit-ecosystem{
+
+    grid-template-columns:
+      repeat(
+        4,
+        1fr
+      );
+
+    grid-template-rows:
+      260px
+      190px
+      190px;
+
   }
 
-  .voit-process{
-    grid-template-columns:1fr;
+
+  .voit-core{
+
+    grid-column:
+      1 / 5;
+
+    grid-row:
+      1;
+
   }
 
-  .voit-social{
-    grid-template-columns:1fr 1fr;
+
+  .voit-card:nth-child(2){
+
+    grid-column:
+      1 / 3;
+
   }
 
-  .deck-body{
-    grid-template-columns:1fr;
+
+  .voit-card:nth-child(3){
+
+    grid-column:
+      3 / 5;
+
   }
 
-  .deck-side{
-    border-left:0;
-    border-top:1px solid #333;
+
+  .voit-card:nth-child(4){
+
+    grid-column:
+      1 / 3;
+
   }
 
-  .editorial-shell{
-    grid-template-columns:1fr;
+
+  .voit-card:nth-child(5){
+
+    grid-column:
+      3 / 5;
+
   }
 
-  .editorial-inspector{
-    position:relative;
-    top:auto;
-
-    display:grid;
-    grid-template-columns:170px 1fr;
-    gap:17px;
-  }
-
-  .brand-body{
-    grid-template-columns:1fr;
-  }
 
   .skill-grid{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
   }
+
 }
 
+
+/* ==========================================================
+   RESPONSIVE 760
+========================================================== */
 
 @media(max-width:760px){
 
-  .site-nav{
-    display:flex!important;
-    justify-content:space-between;
+  :root{
+    --pad:20px;
   }
+
+
+  /* INTRO */
+
+  #intro-overlay{
+
+    padding:
+      24px
+      20px;
+
+  }
+
+
+  .intro-title{
+
+    max-width:100%;
+
+    font-size:
+      clamp(
+        2.05rem,
+        10.5vw,
+        3.7rem
+      );
+
+    line-height:1.12;
+
+  }
+
+
+  .intro-word-cycle{
+
+    min-width:
+      4.9em;
+
+  }
+
+
+  .intro-help{
+
+    bottom:
+      max(
+        22px,
+        env(
+          safe-area-inset-bottom
+        )
+      );
+
+  }
+
+
+  /* NAV */
+
+  .site-nav{
+
+    min-height:
+      68px;
+
+    grid-template-columns:
+      1fr
+      auto;
+
+    gap:10px;
+
+  }
+
 
   .site-nav ul{
+
     display:none;
+
   }
+
 
   .theme-toggle{
+
     display:none;
+
   }
+
+
+  .nav-cta{
+
+    min-height:
+      35px;
+
+    padding:
+      0
+      13px;
+
+  }
+
+
+  /* HERO */
 
   .hero{
-    padding-top:48px;
+
+    min-height:auto;
+
+    gap:20px;
+
+    padding-top:
+      35px;
+
+    padding-bottom:
+      80px;
+
   }
+
+
+  .hero-visual{
+
+    order:0;
+
+  }
+
 
   .hero h1{
-    font-size:clamp(2.4rem,12vw,3.8rem);
+
+    font-size:
+      clamp(
+        3.05rem,
+        14.5vw,
+        5rem
+      );
+
   }
+
+
+  .hero-sub{
+
+    margin-top:
+      28px;
+
+  }
+
+
+  .hero-actions{
+
+    flex-direction:
+      column;
+
+    align-items:flex-start;
+
+  }
+
+
+  .wf-wrapper{
+
+    min-height:
+      450px;
+
+  }
+
+
+  .wf-window{
+
+    width:100%;
+
+  }
+
+
+  .wf-canvas{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .wf-sidebar{
+
+    display:none;
+
+  }
+
+
+  .pen-tool-svg{
+
+    display:none;
+
+  }
+
 
   .spec-floater{
+
     display:none;
+
   }
+
+
+  .badge-floater{
+
+    left:8px;
+
+  }
+
+
+  .cursor-floater{
+
+    right:8px;
+
+  }
+
+
+  /* PROCESS */
 
   .process-grid{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
+
+  .process-card{
+
+    min-height:
+      220px;
+
+  }
+
+
+  /* ABOUT */
+
+  .about{
+
+    gap:30px;
+
+  }
+
+
+  .about-visual{
+
+    min-height:
+      380px;
+
+  }
+
+
+  /* PROJECT */
+
+  .project-head{
+
+    padding-top:
+      58px;
+
+  }
+
+
+  .project-head > h3{
+
+    font-size:
+      clamp(
+        2.8rem,
+        14vw,
+        4.9rem
+      );
+
+  }
+
 
   .case-grid{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
+
+  .case-card{
+
+    min-height:
+      150px;
+
+  }
+
+
+  /* FERNANDO */
 
   .fa-tabs{
+
     flex-wrap:nowrap;
 
-    margin-right:calc(var(--pad) * -1);
-    margin-left:calc(var(--pad) * -1);
+    margin-right:
+      calc(
+        var(--pad) *
+        -1
+      );
 
-    padding:0 var(--pad) 6px;
+    margin-left:
+      calc(
+        var(--pad) *
+        -1
+      );
 
-    overflow-x:auto;
+    padding:
+      0
+      var(--pad)
+      6px;
 
-    scrollbar-width:none;
   }
 
-  .fa-tabs::-webkit-scrollbar{
-    display:none;
-  }
-
-  .fa-tab{
-    flex:0 0 auto;
-
-    white-space:nowrap;
-  }
 
   .browser-bar{
-    grid-template-columns:50px minmax(0,1fr) auto;
+
+    grid-template-columns:
+      50px
+      minmax(
+        0,
+        1fr
+      )
+      auto;
+
   }
 
-  .browser-shell iframe,
+
+  .browser-shell > iframe,
   .fa-live-cover iframe{
-    height:520px;
+
+    height:
+      520px;
+
   }
+
 
   .browser-address{
-    max-width:180px;
+
+    max-width:
+      180px;
+
   }
 
+
   .browser-link{
-    font-size:.5rem;
+
+    font-size:.47rem;
+
   }
+
 
   .fa-result-strip,
   .fa-responsive-notes{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
 
   .fa-result-item{
+
     border-right:0;
-    border-bottom:1px solid var(--line);
+
+    border-bottom:
+      1px solid
+      var(--line);
+
   }
+
 
   .fa-result-item:last-child{
+
     border-bottom:0;
+
   }
+
 
   .system-layout{
+
     display:block;
+
   }
+
 
   .system-sidebar{
+
     display:flex;
+
     gap:5px;
 
-    overflow:auto;
+    overflow-x:auto;
+
   }
+
 
   .system-sidebar > span{
+
     display:none;
+
   }
+
 
   .system-nav-btn{
+
     width:auto;
 
-    flex:0 0 auto;
+    flex:
+      0 0 auto;
 
-    white-space:nowrap;
+    white-space:
+      nowrap;
+
   }
+
+
+  .system-canvas{
+
+    padding:
+      20px;
+
+  }
+
 
   .component-grid,
   .fa-type-demo{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
 
   .fa-color-grid{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
   }
+
 
   .fa-color{
-    min-height:125px;
+
+    min-height:
+      125px;
+
   }
+
 
   .fa-token-list{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
   }
+
 
   .fa-field-demo{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
 
   .fa-responsive-showcase{
-    padding:16px;
+
+    grid-template-columns:
+      1fr;
+
+    padding:
+      16px;
+
   }
+
 
   .fa-device-desktop iframe{
-    height:420px;
+
+    height:
+      420px;
+
   }
+
 
   .fa-device-mobile{
-    width:245px;
+
+    width:
+      245px;
+
   }
+
 
   .figma-frame{
-    min-height:520px;
+
+    min-height:
+      520px;
+
   }
+
+
+  .figma-frame iframe{
+
+    height:
+      520px;
+
+  }
+
+
+  /* VOIT */
 
   .voit-ecosystem{
-    display:grid;
-    grid-template-columns:1fr;
-    grid-template-rows:auto;
 
-    min-height:0;
+    display:grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    grid-template-rows:
+      auto
+      200px
+      200px;
+
   }
 
+
   .voit-core{
-    grid-column:auto;
+
+    grid-column:
+      1 / 3;
+
     grid-row:auto;
 
     width:100%;
-    height:auto;
+
+    min-height:
+      320px;
 
     padding:24px;
 
-    border-radius:8px;
   }
 
-  .voit-social{
-    grid-template-columns:1fr 1fr;
+
+  .voit-card:nth-child(n){
+
+    grid-column:auto;
+
   }
 
-  .voit-professional{
-    grid-template-columns:1fr;
+
+  .voit-process{
+
+    grid-template-columns:
+      1fr;
+
   }
+
+
+  /* RENATA */
+
+  .deck-body{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
 
   .deck-stage{
+
+    min-height:
+      430px;
+
     padding:18px;
+
   }
+
+
+  .deck-stage img{
+
+    max-height:
+      390px;
+
+  }
+
+
+  .deck-side{
+
+    display:flex;
+
+    gap:7px;
+
+    max-height:none;
+
+    overflow-x:auto;
+
+    padding:10px;
+
+    border-left:0;
+
+    border-top:
+      1px solid
+      #333;
+
+  }
+
+
+  .deck-thumb{
+
+    flex:
+      0 0 105px;
+
+    margin:0;
+
+  }
+
+
+  /* BRADUCA */
+
+  .editorial-shell{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
 
   .editorial-ribbon{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
   }
+
 
   .editorial-card:nth-child(n){
+
     transform:none;
+
   }
+
+
+  .editorial-preview{
+
+    min-height:
+      440px;
+
+  }
+
+
+  .editorial-preview img{
+
+    max-height:
+      390px;
+
+  }
+
 
   .editorial-inspector{
-    grid-template-columns:110px 1fr;
 
-    padding:14px;
+    position:relative;
+
+    top:auto;
+
   }
+
+
+  /* AYMEE */
+
+  .brand-top{
+
+    align-items:flex-start;
+
+    flex-direction:
+      column;
+
+  }
+
+
+  .brand-body{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
 
   .brand-grid{
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
   }
+
+
+  /* SKILLS */
 
   .skill-grid{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
+
+  .skill-card{
+
+    min-height:
+      170px;
+
+  }
+
+
+  /* CONTACT */
+
+  .contact-actions{
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+  }
+
+
+  /* FOOTER */
+
+  footer{
+
+    flex-direction:
+      column;
+
+  }
+
 }
 
+
+/* ==========================================================
+   520
+========================================================== */
 
 @media(max-width:520px){
 
   .fa-color-grid,
   .fa-token-list{
-    grid-template-columns:1fr;
+
+    grid-template-columns:
+      1fr;
+
   }
+
 
   .fa-device-mobile{
-    width:210px;
+
+    width:
+      210px;
+
   }
 
+
   .fa-phone-screen iframe{
-    transform:scale(.497);
+
+    transform:
+      scale(
+        .497
+      );
+
+  }
+
+
+  .voit-ecosystem{
+
+    grid-template-columns:
+      1fr;
+
+    grid-template-rows:
+      auto;
+
+  }
+
+
+  .voit-core{
+
+    grid-column:auto;
+
+  }
+
+
+  .voit-card{
+
+    min-height:
+      230px;
+
   }
 
 }
 
 
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
 @media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
 
   *,
   *::before,
   *::after{
-    animation:none!important;
 
-    transition-duration:.01ms!important;
+    animation-duration:
+      .01ms!important;
 
-    scroll-behavior:auto!important;
+    animation-iteration-count:
+      1!important;
+
+    transition-duration:
+      .01ms!important;
+
+    scroll-behavior:
+      auto!important;
+
+  }
+
+
+  #intro-overlay{
+
+    transition:
+      opacity .2s ease!important;
+
+  }
+
+
+  .intro-word-cycle .w{
+
+    transition:none!important;
+
   }
 
 }
 
 </style>
+
 </head>
 
 
@@ -3327,9 +6401,11 @@ footer{
       class="theme-toggle mono"
       aria-label="Alternar tema"
     >
+
       <span id="themeLabel">
         Sombrio
       </span>
+
     </button>
 
   </div>
@@ -3419,6 +6495,7 @@ footer{
           Ver projetos selecionados ↓
         </a>
 
+
         <a
           href="#contato"
           class="hero-cta"
@@ -3433,7 +6510,9 @@ footer{
   </div>
 
 
-  <!-- WIREFRAME -->
+  <!-- ======================================================
+       HERO WIREFRAME
+  ======================================================= -->
 
   <div class="hero-visual">
 
@@ -3445,6 +6524,7 @@ footer{
         fill="none"
         aria-hidden="true"
       >
+
         <path
           d="M15,80 C35,20 65,80 85,20"
           stroke="var(--accent)"
@@ -3485,17 +6565,23 @@ footer{
           height="8"
           fill="var(--accent)"
         />
+
       </svg>
 
 
       <div class="wf-illustration badge-floater">
-        <span>❖</span>
+
+        <span>
+          ❖
+        </span>
+
         auto-layout 8px
+
       </div>
 
 
       <div class="wf-illustration spec-floater">
-        ↔ 380px × 260px
+        ↔ 570px × 430px
       </div>
 
 
@@ -3506,8 +6592,11 @@ footer{
           height="11"
           viewBox="0 0 24 24"
           fill="currentColor"
+          aria-hidden="true"
         >
-          <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+          <path
+            d="M3 3l7 18 3-7 7-3L3 3z"
+          />
         </svg>
 
         <span>
@@ -3522,268 +6611,150 @@ footer{
         id="wfWindow"
       >
 
-        <div class="wf-header">
+        <div class="wf-titlebar">
 
-          <div class="wf-dots">
-            <span class="wf-dot"></span>
-            <span class="wf-dot"></span>
-            <span class="wf-dot"></span>
-          </div>
+          <i></i>
+          <i></i>
+          <i></i>
+
+          <span>
+            design-workspace.fig
+          </span>
+
+        </div>
+
+
+        <div class="wf-toolbar">
 
           <button
-            class="wf-switch-mode mono"
-            id="wfSwitchMode"
             type="button"
+            id="wfSwitchMode"
           >
             modo app
+          </button>
+
+
+          <button
+            type="button"
+            id="wfAccent"
+          >
+            aplicar destaque
+          </button>
+
+
+          <button
+            type="button"
+            id="wfClear"
+          >
+            limpar
           </button>
 
         </div>
 
 
-        <div class="wf-body">
+        <div class="wf-canvas">
 
-          <div class="wf-sidebar">
+          <aside class="wf-sidebar">
 
-            <div
-              class="wf-nav-item active wf-paintable"
-              data-tab="dashboard"
-            >
-              <span>▧</span>
-              Dashboard
+            <div class="wf-sidebar-label">
+              COMPONENTES
             </div>
 
-            <div
-              class="wf-nav-item wf-paintable"
-              data-tab="interfaces"
-            >
-              <span>✦</span>
-              Interfaces
+
+            <div class="wf-task-item">
+              organizar informação
             </div>
 
-            <div
-              class="wf-nav-item wf-paintable"
-              data-tab="system"
-            >
-              <span>❖</span>
-              Design System
+
+            <div class="wf-task-item">
+              criar hierarquia
             </div>
 
-          </div>
+
+            <div class="wf-task-item">
+              testar estados
+            </div>
+
+
+            <div class="wf-task-item">
+              adaptar layouts
+            </div>
+
+
+            <div class="wf-task-item">
+              documentar decisões
+            </div>
+
+          </aside>
 
 
           <div class="wf-main">
 
-            <div
-              class="wf-view active"
-              id="wf-dashboard"
-            >
+            <div class="wf-topline">
 
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Painel de Dashboard
-                </span>
-
-                <button
-                  type="button"
-                  class="wf-badge-btn wf-paintable"
-                  id="wfMetricBtn"
-                >
-                  +1 Entrega
-                </button>
-
-              </div>
-
-
-              <div class="wf-card-grid">
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Entregas
-                  </span>
-
-                  <span
-                    class="wf-card-val"
-                    id="wfCounter"
-                  >
-                    14
-                  </span>
-
-                </div>
-
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Status
-                  </span>
-
-                  <span
-                    class="wf-card-val"
-                    style="color:var(--accent)"
-                  >
-                    100%
-                  </span>
-
-                </div>
-
-              </div>
-
-
-              <div class="wf-task-list">
-
-                <div class="wf-task-item checked">
-
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Hierarquia visual definida
-                  </span>
-
-                </div>
-
-
-                <div class="wf-task-item">
-
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Prototipagem de interações
-                  </span>
-
-                </div>
-
-
-                <div class="wf-task-item">
-
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Design System alinhado
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="wf-view"
-              id="wf-interfaces"
-            >
-
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Wireframes
-                </span>
-
-                <span class="wf-card-label mono">
-                  12 cols
-                </span>
-
-              </div>
-
-
-              <div class="wf-card wf-paintable">
-
-                <span class="wf-card-label mono">
-                  Hero / Desktop
-                </span>
-
-                <strong style="font-size:.7rem">
-                  UI responsiva
-                </strong>
-
-              </div>
-
-
-              <div class="wf-card-grid">
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Button
-                  </span>
-
-                  <strong style="font-size:.6rem">
-                    Primary
-                  </strong>
-
-                </div>
-
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Card
-                  </span>
-
-                  <strong style="font-size:.6rem">
-                    Content
-                  </strong>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="wf-view"
-              id="wf-system"
-            >
-
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Biblioteca
-                </span>
-
-                <span class="wf-card-label mono">
-                  UI Kit
-                </span>
-
+              <div class="wf-mini-title">
+                Projeto
               </div>
 
 
               <button
                 type="button"
-                class="wf-badge-btn wf-paintable"
+                class="wf-mini-action"
+                id="wfMetricBtn"
               >
-                Primary
+                + entrega
               </button>
 
+            </div>
 
-              <div class="wf-card wf-paintable">
 
-                <span class="wf-card-label mono">
-                  Typography
+            <div class="wf-stats">
+
+              <div class="wf-stat wf-paintable">
+
+                <span>
+                  entregas
                 </span>
 
-                <span class="serif">
-                  Fraunces
-                </span>
-
-                <span
-                  class="mono"
-                  style="font-size:.53rem"
-                >
-                  IBM Plex Mono
-                </span>
+                <strong id="wfCounter">
+                  14
+                </strong>
 
               </div>
+
+
+              <div class="wf-stat wf-paintable">
+
+                <span>
+                  sistema
+                </span>
+
+                <strong>
+                  8px
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="wf-chart wf-paintable">
+
+              <svg
+                viewBox="0 0 300 130"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+
+                <path
+                  d="M0 112 C35 90 58 100 84 74 C118 39 139 75 171 52 C202 29 229 41 300 6"
+                  stroke="var(--accent)"
+                  stroke-width="4"
+                  vector-effect="non-scaling-stroke"
+                />
+
+              </svg>
 
             </div>
 
@@ -3795,74 +6766,6 @@ footer{
 
     </div>
 
-
-    <div class="color-palette">
-
-      <button
-        type="button"
-        class="swatch active"
-        data-color="#E8590C"
-        style="background:#E8590C"
-        aria-label="Laranja"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#38483A"
-        style="background:#38483A"
-        aria-label="Verde"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#2B3A4A"
-        style="background:#2B3A4A"
-        aria-label="Azul"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#B37838"
-        style="background:#B37838"
-        aria-label="Ocre"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#1F1C18"
-        style="background:#1F1C18"
-        aria-label="Escuro"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch reset"
-        data-color=""
-        aria-label="Borracha"
-      >
-        ×
-      </button>
-
-
-      <button
-        type="button"
-        class="clear-btn mono"
-        id="wfClear"
-      >
-        limpar tudo
-      </button>
-
-    </div>
-
-
-    <div class="hero-visual-hint mono">
-      escolha uma cor e clique nos componentes
-    </div>
-
   </div>
 
 </section>
@@ -3872,28 +6775,37 @@ footer{
      PROCESS
 ======================================================== -->
 
-<section class="process-section">
+<div class="section-head">
 
   <span class="section-kicker">
-    método & execução
+    processo
   </span>
 
+  <h2>
+    Da informação bruta até uma solução visual clara.
+  </h2>
+
+</div>
+
+
+<section class="process">
 
   <div class="process-grid">
 
     <article class="process-card">
 
-      <span>
-        01 / DIAGNÓSTICO
+      <span class="n mono">
+        01 / ENTENDER
       </span>
 
       <h3>
-        Entendimento & Imersão
+        Contexto antes da estética.
       </h3>
 
       <p>
-        Contexto, conteúdo, necessidade e objetivo vêm
-        antes da execução visual.
+        Entendimento do negócio, público, conteúdo,
+        objetivos, restrições e do que realmente precisa
+        ser resolvido.
       </p>
 
     </article>
@@ -3901,17 +6813,18 @@ footer{
 
     <article class="process-card">
 
-      <span>
-        02 / ESTRUTURAÇÃO
+      <span class="n mono">
+        02 / ESTRUTURAR
       </span>
 
       <h3>
-        Pesquisa & Direção
+        Hierarquia, direção e sistema.
       </h3>
 
       <p>
-        Hierarquia, referências e critérios sustentam
-        as decisões do projeto.
+        Organização da informação, referências,
+        arquitetura, decisões visuais e construção
+        dos elementos que sustentam a experiência.
       </p>
 
     </article>
@@ -3919,17 +6832,18 @@ footer{
 
     <article class="process-card">
 
-      <span>
-        03 / EXECUÇÃO
+      <span class="n mono">
+        03 / REFINAR
       </span>
 
       <h3>
-        Design & Refinamento
+        Execução com atenção aos detalhes.
       </h3>
 
       <p>
-        Desenvolvimento, prototipagem e refinamento
-        adaptados ao contexto de cada entrega.
+        Prototipagem, responsividade, estados,
+        revisão e refinamento para chegar a uma
+        entrega consistente e utilizável.
       </p>
 
     </article>
@@ -3947,9 +6861,11 @@ footer{
   class="section-head"
   id="sobre"
 >
+
   <h2>
     Sobre mim
   </h2>
+
 </div>
 
 
@@ -4017,6 +6933,7 @@ footer{
 
     <div class="about-orbit"></div>
 
+
     <div class="about-photo">
 
       <img
@@ -4046,6 +6963,7 @@ footer{
     projetos selecionados
   </span>
 
+
   <h2 style="margin-top:8px">
     Cada projeto pede uma forma diferente de contar a história.
   </h2>
@@ -4054,7 +6972,7 @@ footer{
 
 
 <!-- ========================================================
-     FERNANDO
+     01 — FERNANDO
 ======================================================== -->
 
 <article
@@ -4148,13 +7066,33 @@ footer{
 
     <div class="project-meta">
 
-      <span>Figma</span>
-      <span>UI Design</span>
-      <span>Design System</span>
-      <span>Responsive</span>
-      <span>Prototyping</span>
-      <span>Front-end</span>
-      <span>Live Product</span>
+      <span>
+        Figma
+      </span>
+
+      <span>
+        UI Design
+      </span>
+
+      <span>
+        Design System
+      </span>
+
+      <span>
+        Responsive
+      </span>
+
+      <span>
+        Prototyping
+      </span>
+
+      <span>
+        Front-end
+      </span>
+
+      <span>
+        Live Product
+      </span>
 
     </div>
 
@@ -4162,6 +7100,7 @@ footer{
 
 
   <div class="fa-case">
+
 
     <!-- TABS -->
 
@@ -4179,6 +7118,7 @@ footer{
         Case
       </button>
 
+
       <button
         type="button"
         class="fa-tab"
@@ -4186,6 +7126,7 @@ footer{
       >
         Antes
       </button>
+
 
       <button
         type="button"
@@ -4195,6 +7136,7 @@ footer{
         Site publicado
       </button>
 
+
       <button
         type="button"
         class="fa-tab"
@@ -4203,6 +7145,7 @@ footer{
         Design System
       </button>
 
+
       <button
         type="button"
         class="fa-tab"
@@ -4210,6 +7153,7 @@ footer{
       >
         Responsivo
       </button>
+
 
       <button
         type="button"
@@ -4235,151 +7179,137 @@ footer{
 
         <div class="fa-story-copy">
 
-          <span class="section-kicker">
-            lógica do redesign
+          <span>
+            REDESIGN → IMPLEMENTAÇÃO
           </span>
 
 
           <h4>
-            Complexidade técnica sem parecer complexa.
+            Transformar densidade técnica em uma experiência mais fácil de percorrer.
           </h4>
 
 
           <p>
-            A nova experiência preserva a profundidade
-            do conteúdo de engenharia, mas organiza a leitura
-            em uma sequência mais clara e previsível.
+            A solução parte de uma arquitetura mais hierárquica:
+            posicionamento, serviços, processo, projetos, autoridade
+            técnica e contato são organizados para reduzir esforço
+            de leitura e deixar mais clara a proposta do profissional.
           </p>
 
 
-          <div class="fa-story-list">
+          <div class="fa-story-flow">
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 01
-              </strong>
+              </span>
 
-              <p>
-                Hero com proposta de valor direta,
-                vídeo e ações prioritárias.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Conteúdo
+                </strong>
+
+                <p>
+                  Reorganização de textos e prioridades.
+                </p>
+
+              </section>
+
+            </div>
 
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 02
-              </strong>
+              </span>
 
-              <p>
-                Oito especialidades reunidas em um componente
-                navegável em vez de uma sequência longa de blocos.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Sistema visual
+                </strong>
+
+                <p>
+                  Tipografia, cor, componentes, estados e ritmo.
+                </p>
+
+              </section>
+
+            </div>
 
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 03
-              </strong>
+              </span>
 
-              <p>
-                Processo tratado como uma jornada visual,
-                acompanhando o scroll do usuário.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Responsividade
+                </strong>
+
+                <p>
+                  Comportamentos próprios para desktop e mobile.
+                </p>
+
+              </section>
+
+            </div>
 
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 04
-              </strong>
+              </span>
 
-              <p>
-                Projetos organizados por filtros, cards,
-                área, escopo e contexto do empreendimento.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Produto real
+                </strong>
 
+                <p>
+                  Design implementado e publicado.
+                </p>
 
-            <article>
+              </section>
 
-              <strong>
-                05
-              </strong>
-
-              <p>
-                Sistema responsivo com decisões próprias
-                para mobile, em vez de apenas reduzir
-                o layout desktop.
-              </p>
-
-            </article>
-
-
-            <article>
-
-              <strong>
-                06
-              </strong>
-
-              <p>
-                Light como experiência principal e
-                Dark Mode opcional para quem quiser ativá-lo.
-              </p>
-
-            </article>
+            </div>
 
           </div>
 
         </div>
 
 
-        <!-- SITE REAL EM VEZ DA IMAGEM -->
-
         <div class="fa-live-cover">
 
-          <div class="browser-shell">
-
-            <div class="browser-bar">
-
-              <div class="browser-dots">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
+          <iframe
+            src="https://fernando-amaral.vercel.app/"
+            title="Site publicado de Fernando Amaral"
+            loading="lazy"
+          ></iframe>
 
 
-              <div class="browser-address mono">
-                fernando-amaral.vercel.app
-              </div>
+          <div class="fa-live-caption">
+
+            <span>
+              PRODUTO PUBLICADO
+            </span>
 
 
-              <a
-                href="https://fernando-amaral.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="browser-link"
-              >
-                abrir ↗
-              </a>
-
-            </div>
-
-
-            <iframe
-              src="https://fernando-amaral.vercel.app/"
-              title="Site publicado de Fernando Amaral"
-              loading="lazy"
-            ></iframe>
+            <a
+              href="https://fernando-amaral.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              abrir site ↗
+            </a>
 
           </div>
 
@@ -4632,108 +7562,112 @@ footer{
             </h4>
 
 
-            <div class="component-grid">
+            <div class="fa-color-grid">
 
-              <article class="component-box wide">
+              <div class="fa-color navy">
 
-                <div class="component-label">
+                <strong>
+                  Navy
+                </strong>
 
-                  <span>
-                    Color system
-                  </span>
+                <span>
+                  #00152A
+                </span>
 
-                  <span>
-                    05 tokens
-                  </span>
-
-                </div>
+              </div>
 
 
-                <div class="fa-color-grid">
+              <div class="fa-color gold">
 
-                  <div class="fa-color navy">
-                    <strong>Primary</strong>
-                    <span>#00152A</span>
-                  </div>
+                <strong>
+                  Gold
+                </strong>
 
-                  <div class="fa-color gold">
-                    <strong>Accent</strong>
-                    <span>#B8860B</span>
-                  </div>
+                <span>
+                  #B8860B
+                </span>
 
-                  <div class="fa-color slate">
-                    <strong>Slate</strong>
-                    <span>#64748B</span>
-                  </div>
+              </div>
 
-                  <div class="fa-color light">
-                    <strong>Background</strong>
-                    <span>#F4F6F8</span>
-                  </div>
 
-                  <div class="fa-color white">
-                    <strong>Surface</strong>
-                    <span>#FFFFFF</span>
-                  </div>
+              <div class="fa-color slate">
 
-                </div>
+                <strong>
+                  Slate
+                </strong>
+
+                <span>
+                  #64748B
+                </span>
+
+              </div>
+
+
+              <div class="fa-color light">
+
+                <strong>
+                  Background
+                </strong>
+
+                <span>
+                  #F4F6F8
+                </span>
+
+              </div>
+
+
+              <div class="fa-color white">
+
+                <strong>
+                  Surface
+                </strong>
+
+                <span>
+                  #FFFFFF
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div
+              class="fa-type-demo"
+              style="margin-top:12px"
+            >
+
+              <article class="fa-type-card manrope">
+
+                <span>
+                  DISPLAY / MANROPE
+                </span>
+
+                <strong>
+                  Aa
+                </strong>
+
+                <p>
+                  Projetos elétricos para arquitetos,
+                  engenheiros, construtoras e incorporadoras.
+                </p>
 
               </article>
 
 
-              <article class="component-box wide">
+              <article class="fa-type-card dm">
 
-                <div class="component-label">
+                <span>
+                  BODY / DM SANS
+                </span>
 
-                  <span>
-                    Typography
-                  </span>
+                <strong>
+                  Aa
+                </strong>
 
-                  <span>
-                    02 families
-                  </span>
-
-                </div>
-
-
-                <div class="fa-type-demo">
-
-                  <div class="fa-type-card manrope">
-
-                    <span>
-                      MANROPE / DISPLAY
-                    </span>
-
-                    <strong>
-                      Aa
-                    </strong>
-
-                    <p>
-                      Títulos, navegação, botões,
-                      números e elementos de maior hierarquia.
-                    </p>
-
-                  </div>
-
-
-                  <div class="fa-type-card dm">
-
-                    <span>
-                      DM SANS / BODY
-                    </span>
-
-                    <strong>
-                      Aa
-                    </strong>
-
-                    <p>
-                      Textos corridos, descrições,
-                      campos, legendas e informações auxiliares.
-                    </p>
-
-                  </div>
-
-                </div>
+                <p>
+                  Clareza, legibilidade e consistência
+                  para informações técnicas.
+                </p>
 
               </article>
 
@@ -4750,7 +7684,7 @@ footer{
           >
 
             <h4 class="system-panel-title">
-              Botões & estados
+              Buttons & states
             </h4>
 
 
@@ -4761,11 +7695,11 @@ footer{
                 <div class="component-label">
 
                   <span>
-                    Button / Primary
+                    Primary
                   </span>
 
                   <span>
-                    Variable
+                    Interactive state
                   </span>
 
                 </div>
@@ -4774,11 +7708,19 @@ footer{
                 <div class="demo-button-row">
 
                   <button
-                    type="button"
-                    class="fa-demo-primary"
                     id="faDemoPrimary"
+                    class="fa-demo-primary"
+                    type="button"
                   >
                     SOLICITAR ORÇAMENTO
+                  </button>
+
+
+                  <button
+                    class="fa-demo-secondary"
+                    type="button"
+                  >
+                    VER SERVIÇOS
                   </button>
 
                 </div>
@@ -4791,21 +7733,23 @@ footer{
                     class="active"
                     data-fa-button-state="default"
                   >
-                    Default
+                    default
                   </button>
+
 
                   <button
                     type="button"
                     data-fa-button-state="hover"
                   >
-                    Hover
+                    hover
                   </button>
+
 
                   <button
                     type="button"
                     data-fa-button-state="disabled"
                   >
-                    Disabled
+                    disabled
                   </button>
 
                 </div>
@@ -4818,23 +7762,44 @@ footer{
                 <div class="component-label">
 
                   <span>
-                    Button / Secondary
+                    Filters
                   </span>
 
                   <span>
-                    Outline
+                    Selected state
                   </span>
 
                 </div>
 
 
-                <div class="demo-button-row">
+                <div class="demo-filter-row">
 
                   <button
                     type="button"
-                    class="fa-demo-secondary"
+                    class="demo-filter active"
                   >
-                    VER SERVIÇOS
+                    Todos
+                  </button>
+
+                  <button
+                    type="button"
+                    class="demo-filter"
+                  >
+                    Elétrica
+                  </button>
+
+                  <button
+                    type="button"
+                    class="demo-filter"
+                  >
+                    SPDA
+                  </button>
+
+                  <button
+                    type="button"
+                    class="demo-filter"
+                  >
+                    BIM
                   </button>
 
                 </div>
@@ -4847,11 +7812,11 @@ footer{
                 <div class="component-label">
 
                   <span>
-                    Service arrows
+                    Carousel
                   </span>
 
                   <span>
-                    Circular
+                    Navigation
                   </span>
 
                 </div>
@@ -4862,53 +7827,17 @@ footer{
                   <button
                     type="button"
                     class="demo-arrow"
+                    aria-label="Anterior"
                   >
-                    ‹
+                    ←
                   </button>
 
                   <button
                     type="button"
                     class="demo-arrow"
+                    aria-label="Próximo"
                   >
-                    ›
-                  </button>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Project filters
-                  </span>
-
-                  <span>
-                    Default / Active
-                  </span>
-
-                </div>
-
-
-                <div class="demo-filter-row">
-
-                  <button class="demo-filter active">
-                    Todos
-                  </button>
-
-                  <button class="demo-filter">
-                    SPDA
-                  </button>
-
-                  <button class="demo-filter">
-                    Residencial
-                  </button>
-
-                  <button class="demo-filter">
-                    Comercial
+                    →
                   </button>
 
                 </div>
@@ -4928,13 +7857,13 @@ footer{
           >
 
             <h4 class="system-panel-title">
-              Navegação & padrões
+              Navigation
             </h4>
 
 
             <div class="component-grid">
 
-              <article class="component-box">
+              <article class="component-box wide">
 
                 <div class="component-label">
 
@@ -4984,9 +7913,23 @@ footer{
                         font-size:.55rem;
                       "
                     >
-                      <span>Serviços</span>
-                      <span>Processo</span>
-                      <span>Portfólio</span>
+
+                      <span>
+                        Serviços
+                      </span>
+
+                      <span>
+                        Processo
+                      </span>
+
+                      <span>
+                        Portfólio
+                      </span>
+
+                      <span>
+                        Sobre
+                      </span>
+
                     </div>
 
                   </div>
@@ -5034,6 +7977,7 @@ footer{
                     ☾
                   </div>
 
+
                   <span
                     style="
                       color:var(--dim);
@@ -5043,48 +7987,6 @@ footer{
                     Light é o tema principal.
                     Dark é opcional.
                   </span>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box wide">
-
-                <div class="component-label">
-
-                  <span>
-                    Interaction architecture
-                  </span>
-
-                  <span>
-                    Main flow
-                  </span>
-
-                </div>
-
-
-                <div class="fa-token-list">
-
-                  <div class="fa-token">
-                    <strong>01</strong>
-                    <span>Hero / posicionamento</span>
-                  </div>
-
-                  <div class="fa-token">
-                    <strong>02</strong>
-                    <span>Serviços / capacidade</span>
-                  </div>
-
-                  <div class="fa-token">
-                    <strong>03</strong>
-                    <span>Processo / método</span>
-                  </div>
-
-                  <div class="fa-token">
-                    <strong>04</strong>
-                    <span>Projetos / evidência</span>
-                  </div>
 
                 </div>
 
@@ -5103,7 +8005,7 @@ footer{
           >
 
             <h4 class="system-panel-title">
-              Cards
+              Cards reutilizáveis
             </h4>
 
 
@@ -5114,11 +8016,11 @@ footer{
                 <div class="component-label">
 
                   <span>
-                    Quality Card
+                    Quality / Light
                   </span>
 
                   <span>
-                    Hover
+                    Default
                   </span>
 
                 </div>
@@ -5131,8 +8033,37 @@ footer{
                   </strong>
 
                   <p>
-                    O componente muda para o azul
-                    profundo durante o hover.
+                    Informações organizadas em uma unidade consistente.
+                  </p>
+
+                </div>
+
+              </article>
+
+
+              <article class="component-box">
+
+                <div class="component-label">
+
+                  <span>
+                    Quality / Dark
+                  </span>
+
+                  <span>
+                    Variant
+                  </span>
+
+                </div>
+
+
+                <div class="demo-quality dark">
+
+                  <strong>
+                    Clareza para execução
+                  </strong>
+
+                  <p>
+                    Mesmo componente aplicado em outro contexto visual.
                   </p>
 
                 </div>
@@ -5149,7 +8080,7 @@ footer{
                   </span>
 
                   <span>
-                    Image scale
+                    Hover
                   </span>
 
                 </div>
@@ -5157,50 +8088,20 @@ footer{
 
                 <div class="demo-project-card">
 
-                  <div class="demo-project-img"></div>
+                  <div class="demo-project-img">
+                  </div>
 
                   <div class="demo-project-copy">
 
                     <strong>
-                      Residência Alto Padrão
+                      Residencial Alto Padrão
                     </strong>
 
-                    542m² • Projeto Elétrico + VDI
+                    Projeto elétrico • BIM
 
                   </div>
 
                 </div>
-
-              </article>
-
-
-              <article class="component-box wide">
-
-                <div class="component-label">
-
-                  <span>
-                    Service component
-                  </span>
-
-                  <span>
-                    Desktop / Mobile
-                  </span>
-
-                </div>
-
-
-                <p
-                  style="
-                    color:var(--dim);
-                    font-size:.75rem;
-                    line-height:1.6;
-                  "
-                >
-                  No desktop, a experiência mostra o serviço atual
-                  e uma prévia do próximo item. No mobile, apenas
-                  uma imagem aparece por vez para preservar foco,
-                  largura e leitura.
-                </p>
 
               </article>
 
@@ -5217,7 +8118,7 @@ footer{
           >
 
             <h4 class="system-panel-title">
-              Inputs & forms
+              Forms
             </h4>
 
 
@@ -5228,7 +8129,7 @@ footer{
                 <div class="component-label">
 
                   <span>
-                    Contact fields
+                    Fields
                   </span>
 
                   <span>
@@ -5241,11 +8142,11 @@ footer{
                 <div class="fa-field-demo">
 
                   <div class="fa-field">
-                    Nome completo
+                    Nome
                   </div>
 
                   <div class="fa-field">
-                    E-mail ou WhatsApp
+                    Contato
                   </div>
 
                   <div class="fa-field">
@@ -5253,35 +8154,10 @@ footer{
                   </div>
 
                   <div class="fa-field">
-                    Tipo de projeto ↓
+                    Tipo de projeto
                   </div>
 
                 </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    CTA
-                  </span>
-
-                  <span>
-                    Hover feedback
-                  </span>
-
-                </div>
-
-
-                <button
-                  type="button"
-                  class="fa-demo-primary"
-                >
-                  ENVIAR SOLICITAÇÃO
-                </button>
 
               </article>
 
@@ -5298,50 +8174,120 @@ footer{
           >
 
             <h4 class="system-panel-title">
-              Tokens & estrutura
+              Tokens e arquitetura
             </h4>
 
 
             <div class="fa-token-list">
 
               <div class="fa-token">
-                <strong>04</strong>
-                <span>Micro spacing</span>
+
+                <strong>
+                  8
+                </strong>
+
+                <span>
+                  Radius base
+                </span>
+
               </div>
 
-              <div class="fa-token">
-                <strong>08</strong>
-                <span>Small spacing</span>
-              </div>
 
               <div class="fa-token">
-                <strong>12</strong>
-                <span>Compact gap</span>
+
+                <strong>
+                  100
+                </strong>
+
+                <span>
+                  Desktop page gutter
+                </span>
+
               </div>
 
-              <div class="fa-token">
-                <strong>16</strong>
-                <span>Base spacing</span>
-              </div>
 
               <div class="fa-token">
-                <strong>24</strong>
-                <span>Component spacing</span>
+
+                <strong>
+                  22
+                </strong>
+
+                <span>
+                  Mobile gutter
+                </span>
+
               </div>
 
-              <div class="fa-token">
-                <strong>32</strong>
-                <span>Section internal</span>
-              </div>
 
               <div class="fa-token">
-                <strong>48</strong>
-                <span>Content rhythm</span>
+
+                <strong>
+                  1440
+                </strong>
+
+                <span>
+                  Max content
+                </span>
+
               </div>
 
+            </div>
+
+
+            <div
+              class="fa-token-list"
+              style="margin-top:8px"
+            >
+
               <div class="fa-token">
-                <strong>64+</strong>
-                <span>Section spacing</span>
+
+                <strong>
+                  01
+                </strong>
+
+                <span>
+                  Hero / posicionamento
+                </span>
+
+              </div>
+
+
+              <div class="fa-token">
+
+                <strong>
+                  02
+                </strong>
+
+                <span>
+                  Serviços
+                </span>
+
+              </div>
+
+
+              <div class="fa-token">
+
+                <strong>
+                  03
+                </strong>
+
+                <span>
+                  Processo
+                </span>
+
+              </div>
+
+
+              <div class="fa-token">
+
+                <strong>
+                  04
+                </strong>
+
+                <span>
+                  Prova / contato
+                </span>
+
               </div>
 
             </div>
@@ -5377,19 +8323,17 @@ footer{
             </div>
 
             <div class="browser-address mono">
-              desktop / 1440
+              Desktop / Fernando Amaral
             </div>
 
-            <span class="browser-link">
-              LIVE
-            </span>
+            <span></span>
 
           </div>
 
 
           <iframe
             src="https://fernando-amaral.vercel.app/"
-            title="Fernando Amaral versão desktop"
+            title="Fernando Amaral — versão desktop"
             loading="lazy"
           ></iframe>
 
@@ -5400,11 +8344,15 @@ footer{
 
           <div class="fa-device-mobile">
 
+            <div class="fa-phone-notch">
+            </div>
+
+
             <div class="fa-phone-screen">
 
               <iframe
                 src="https://fernando-amaral.vercel.app/"
-                title="Fernando Amaral versão mobile"
+                title="Fernando Amaral — versão mobile"
                 loading="lazy"
               ></iframe>
 
@@ -5413,7 +8361,13 @@ footer{
           </div>
 
 
-          <span class="mono" style="font-size:.58rem;color:var(--muted)">
+          <span
+            class="mono"
+            style="
+              font-size:.58rem;
+              color:var(--muted)
+            "
+          >
             MOBILE / 390
           </span>
 
@@ -5540,7 +8494,7 @@ footer{
 
 
 <!-- ========================================================
-     VOIT
+     02 — VOIT
 ======================================================== -->
 
 <article
@@ -5567,11 +8521,84 @@ footer{
     </p>
 
 
+    <div class="case-grid">
+
+      <article class="case-card">
+
+        <span>
+          contexto
+        </span>
+
+        <p>
+          Uma consultoria com diferentes frentes, públicos e
+          formatos de comunicação.
+        </p>
+
+      </article>
+
+
+      <article class="case-card">
+
+        <span>
+          desafio
+        </span>
+
+        <p>
+          Manter unidade visual sem transformar todos
+          os materiais na mesma peça.
+        </p>
+
+      </article>
+
+
+      <article class="case-card">
+
+        <span>
+          atuação
+        </span>
+
+        <p>
+          Social media, apresentações, materiais comerciais,
+          comunicação interna e apoio de conteúdo.
+        </p>
+
+      </article>
+
+
+      <article class="case-card">
+
+        <span>
+          direção
+        </span>
+
+        <p>
+          Adaptar linguagem e formato ao objetivo,
+          preservando reconhecimento e consistência.
+        </p>
+
+      </article>
+
+    </div>
+
+
     <div class="project-meta">
-      <span>Social Media</span>
-      <span>Copywriting</span>
-      <span>Apresentações</span>
-      <span>Endomarketing</span>
+
+      <span>
+        Comunicação Visual
+      </span>
+
+      <span>
+        Social Media
+      </span>
+
+      <span>
+        Apresentações
+      </span>
+
+      <span>
+        Conteúdo
+      </span>
+
     </div>
 
   </div>
@@ -5579,342 +8606,146 @@ footer{
 
   <div class="voit-case">
 
-    <div class="voit-shell">
+    <div class="voit-ecosystem">
 
-      <div class="voit-top">
+      <article class="voit-core">
 
-        <span
-          class="mono"
-          style="font-size:.61rem"
-        >
-          VOIT / COMMUNICATION SYSTEM
+        <span>
+          SISTEMA DE COMUNICAÇÃO
         </span>
 
 
-        <div class="voit-tabs">
-
-          <button
-            type="button"
-            class="voit-tab active"
-            data-voit-tab="ecosystem"
-          >
-            Ecossistema
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="process"
-          >
-            Processo
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="social"
-          >
-            Social
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="professional"
-          >
-            Profissional
-          </button>
-
-        </div>
-
-      </div>
+        <h4>
+          Uma marca, diferentes contextos.
+        </h4>
 
 
-      <section
-        class="voit-view active"
-        data-voit-view="ecosystem"
+        <p>
+          O trabalho não parte de uma peça isolada,
+          mas de um sistema capaz de acompanhar
+          conteúdo, eventos, serviços, apresentações
+          e comunicação institucional.
+        </p>
+
+      </article>
+
+
+      <button
+        type="button"
+        class="voit-card"
       >
 
-        <div class="voit-ecosystem">
+        <img
+          src="img/img-voit/voit-01.jpeg"
+          alt="Material de comunicação da Voit Consultoria"
+          class="js-lightbox"
+          loading="lazy"
+        >
 
-          <article class="voit-domain">
-
-            <span>
-              ESTRATÉGIA
-            </span>
-
-            <h4>
-              Planejamento
-            </h4>
-
-            <p>
-              Pautas e prioridades definidas em conjunto
-              com gestão e necessidades comerciais.
-            </p>
-
-          </article>
+      </button>
 
 
-          <div class="voit-core">
-            VOIT
-          </div>
-
-
-          <article class="voit-domain">
-
-            <span>
-              DIGITAL
-            </span>
-
-            <h4>
-              Social Media
-            </h4>
-
-            <p>
-              Conteúdo visual e editorial adaptado
-              para diferentes temas e objetivos.
-            </p>
-
-          </article>
-
-
-          <article class="voit-domain">
-
-            <span>
-              COMERCIAL
-            </span>
-
-            <h4>
-              Apresentações
-            </h4>
-
-            <p>
-              Materiais estruturados para apoiar
-              conversas com leads e clientes.
-            </p>
-
-          </article>
-
-
-          <article class="voit-domain">
-
-            <span>
-              INTERNO
-            </span>
-
-            <h4>
-              Endomarketing
-            </h4>
-
-            <p>
-              Campanhas e materiais de comunicação
-              voltados à equipe.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <section
-        class="voit-view"
-        data-voit-view="process"
+      <button
+        type="button"
+        class="voit-card"
       >
 
-        <div class="voit-process">
+        <img
+          src="img/img-voit/voit-02.jpeg"
+          alt="Projeto gráfico da Voit Consultoria"
+          class="js-lightbox"
+          loading="lazy"
+        >
 
-          <article>
-            <span>01</span>
-            <h4>Planejamento</h4>
-            <p>
-              Definição de temas e necessidades
-              junto à gerência.
-            </p>
-          </article>
-
-          <article>
-            <span>02</span>
-            <h4>Pesquisa</h4>
-            <p>
-              Referências, tendências e aprofundamento
-              dos temas.
-            </p>
-          </article>
-
-          <article>
-            <span>03</span>
-            <h4>Produção</h4>
-            <p>
-              Copywriting, peças, apresentações
-              e materiais.
-            </p>
-          </article>
-
-          <article>
-            <span>04</span>
-            <h4>Validação</h4>
-            <p>
-              Conteúdo técnico revisado pelos
-              especialistas responsáveis.
-            </p>
-          </article>
-
-          <article>
-            <span>05</span>
-            <h4>Distribuição</h4>
-            <p>
-              Adaptação e publicação nos canais
-              adequados.
-            </p>
-          </article>
-
-        </div>
-
-      </section>
+      </button>
 
 
-      <section
-        class="voit-view"
-        data-voit-view="social"
+      <button
+        type="button"
+        class="voit-card"
       >
 
-        <div class="voit-social">
+        <img
+          src="img/img-voit/voit-03.jpeg"
+          alt="Material digital da Voit Consultoria"
+          class="js-lightbox"
+          loading="lazy"
+        >
 
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-01.jpeg"
-              alt="Voit Consultoria — Carrossel 01"
-              class="js-lightbox"
-            >
-          </button>
-
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-02.jpeg"
-              alt="Voit Consultoria — Carrossel 02"
-              class="js-lightbox"
-              loading="lazy"
-            >
-          </button>
-
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-03.jpeg"
-              alt="Voit Consultoria — Carrossel 03"
-              class="js-lightbox"
-              loading="lazy"
-            >
-          </button>
-
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-04.jpeg"
-              alt="Voit Consultoria — Carrossel 04"
-              class="js-lightbox"
-              loading="lazy"
-            >
-          </button>
-
-        </div>
-
-      </section>
+      </button>
 
 
-      <section
-        class="voit-view"
-        data-voit-view="professional"
+      <button
+        type="button"
+        class="voit-card"
       >
 
-        <div class="voit-professional">
+        <img
+          src="img/img-voit/voit-04.jpeg"
+          alt="Peça de comunicação da Voit Consultoria"
+          class="js-lightbox"
+          loading="lazy"
+        >
 
-          <article>
+      </button>
 
-            <span>
-              COMERCIAL
-            </span>
-
-            <h4>
-              Apresentações para leads
-            </h4>
-
-            <p>
-              Organização visual de dados e informações
-              para apoiar propostas e conversas comerciais.
-            </p>
-
-          </article>
+    </div>
 
 
-          <article>
+    <div class="voit-process">
 
-            <span>
-              MATERIAIS
-            </span>
+      <article>
 
-            <h4>
-              Projetos setoriais
-            </h4>
+        <span>
+          01 / PLANEJAMENTO
+        </span>
 
-            <p>
-              Materiais específicos desenvolvidos de acordo
-              com diferentes áreas e demandas.
-            </p>
+        <h4>
+          Necessidade e canal
+        </h4>
 
-          </article>
+        <p>
+          Identificação do objetivo, público,
+          formato e prioridade de comunicação.
+        </p>
 
-
-          <article>
-
-            <span>
-              ENDOMARKETING
-            </span>
-
-            <h4>
-              Comunicação interna
-            </h4>
-
-            <p>
-              Desenvolvimento visual de campanhas
-              e comunicações destinadas à equipe.
-            </p>
-
-          </article>
+      </article>
 
 
-          <article>
+      <article>
 
-            <span>
-              CONTEÚDO
-            </span>
+        <span>
+          02 / PRODUÇÃO
+        </span>
 
-            <h4>
-              Rigor técnico
-            </h4>
+        <h4>
+          Sistema adaptável
+        </h4>
 
-            <p>
-              Informações especializadas passam
-              por validação antes da publicação.
-            </p>
+        <p>
+          Layout, hierarquia, imagens,
+          tipografia e conteúdo adaptados ao canal.
+        </p>
 
-          </article>
+      </article>
 
-        </div>
 
-      </section>
+      <article>
+
+        <span>
+          03 / REVISÃO
+        </span>
+
+        <h4>
+          Consistência final
+        </h4>
+
+        <p>
+          Refinamento visual e textual antes
+          da publicação ou entrega do material.
+        </p>
+
+      </article>
 
     </div>
 
@@ -5924,7 +8755,7 @@ footer{
 
 
 <!-- ========================================================
-     RENATA
+     03 — RENATA
 ======================================================== -->
 
 <article
@@ -5935,7 +8766,7 @@ footer{
   <div class="project-head">
 
     <span class="project-number">
-      03 / 05 • PRESENTATION DESIGN
+      03 / 05 • PRESENTAÇÃO
     </span>
 
 
@@ -5945,38 +8776,62 @@ footer{
 
 
     <p class="project-summary">
-      Treinamentos, apresentações e propostas comerciais
-      construídos da organização do conteúdo à narrativa
-      visual dos slides.
+      Design de apresentação para organizar conteúdo,
+      narrativa e posicionamento em uma sequência visual
+      mais clara, profissional e coerente.
     </p>
 
 
     <div class="project-meta">
-      <span>Canva</span>
-      <span>Presentation Design</span>
-      <span>Copywriting</span>
-      <span>IA Generativa</span>
+
+      <span>
+        Presentation Design
+      </span>
+
+      <span>
+        Hierarquia
+      </span>
+
+      <span>
+        Storytelling Visual
+      </span>
+
     </div>
 
   </div>
 
 
-  <div class="renata-case">
+  <div class="deck-case">
 
     <div class="deck-shell">
 
-      <div class="deck-top">
+      <div class="deck-topbar">
 
-        <span class="mono">
-          RENATA / PRESENTATION
+        <span>
+          APRESENTAÇÃO / RENATA BRANDÃO
         </span>
 
-        <span
-          class="mono"
-          id="deckCounter"
-        >
-          01 / 03
-        </span>
+
+        <div class="deck-controls">
+
+          <button
+            type="button"
+            id="deckPrev"
+            aria-label="Slide anterior"
+          >
+            ←
+          </button>
+
+
+          <button
+            type="button"
+            id="deckNext"
+            aria-label="Próximo slide"
+          >
+            →
+          </button>
+
+        </div>
 
       </div>
 
@@ -5985,86 +8840,21 @@ footer{
 
         <div class="deck-stage">
 
-          <div class="deck-screen">
-
-            <img
-              src="img/img-renata/renata-01.jpg"
-              alt="Slide de Renata Brandão"
-              id="deckImage"
-              class="js-lightbox"
-              tabindex="0"
-            >
-
-          </div>
+          <img
+            id="deckMain"
+            src="img/img-renata/renata-01.jpg"
+            alt="Apresentação Renata Brandão"
+            class="js-lightbox"
+          >
 
         </div>
 
 
-        <aside class="deck-side">
-
-          <span class="section-kicker">
-            decisão de design
-          </span>
-
-
-          <h4 id="deckTitle">
-            Entrada e posicionamento
-          </h4>
-
-
-          <p id="deckText">
-            A capa estabelece a linguagem visual da
-            apresentação e cria a primeira hierarquia
-            entre tema, especialista e contexto.
-          </p>
-
-
-          <div class="deck-controls">
-
-            <button
-              type="button"
-              id="deckPrev"
-              aria-label="Slide anterior"
-            >
-              ←
-            </button>
-
-            <button
-              type="button"
-              id="deckNext"
-              aria-label="Próximo slide"
-            >
-              →
-            </button>
-
-          </div>
-
-
-          <div class="deck-progress">
-            <span
-              id="deckProgress"
-              style="width:33.333%"
-            ></span>
-          </div>
-
-
-          <div
-            class="deck-thumbs"
-            id="deckThumbs"
-          ></div>
-
-
-          <a
-            href="https://canva.link/w874gu7mhg7053v"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hero-cta"
-            style="margin-top:23px"
-          >
-            Ver apresentação completa ↗
-          </a>
-
-        </aside>
+        <div
+          class="deck-side"
+          id="deckThumbs"
+        >
+        </div>
 
       </div>
 
@@ -6076,7 +8866,7 @@ footer{
 
 
 <!-- ========================================================
-     BRADUCA
+     04 — BRADUCA
 ======================================================== -->
 
 <article
@@ -6097,223 +8887,205 @@ footer{
 
 
     <p class="project-summary">
-      Sistema visual para comunicação educacional,
-      organizando diferentes pautas com hierarquia,
-      legibilidade e consistência.
+      Conteúdo visual para redes sociais construído
+      com um sistema editorial flexível, mantendo
+      reconhecimento de marca sem repetir sempre a mesma composição.
     </p>
 
 
     <div class="project-meta">
-      <span>Social Media</span>
-      <span>Design Gráfico</span>
-      <span>Comunicação</span>
+
+      <span>
+        Social Media
+      </span>
+
+      <span>
+        Editorial
+      </span>
+
+      <span>
+        Design Gráfico
+      </span>
+
     </div>
 
   </div>
 
 
-  <div
-    class="braduca-case"
-    id="braducaCase"
-  >
+  <div class="editorial-case">
 
-    <div class="editorial-shell">
+    <div
+      class="editorial-shell"
+      id="braducaCase"
+    >
 
-      <div class="editorial-ribbon">
+      <div class="editorial-main">
 
-        <button
-          type="button"
-          class="editorial-card active"
-          data-index="0"
-        >
-          <span class="editorial-number">
-            01
-          </span>
+        <div class="editorial-ribbon">
+
+
+          <button
+            type="button"
+            class="editorial-card active"
+            data-index="0"
+          >
+
+            <img
+              src="img/img-braduca/braduca-01.jpeg"
+              alt="Somos Braduca — publicação 01"
+              loading="lazy"
+            >
+
+          </button>
+
+
+          <button
+            type="button"
+            class="editorial-card"
+            data-index="1"
+          >
+
+            <img
+              src="img/img-braduca/braduca-02.jpeg"
+              alt="Somos Braduca — publicação 02"
+              loading="lazy"
+            >
+
+          </button>
+
+
+          <button
+            type="button"
+            class="editorial-card"
+            data-index="2"
+          >
+
+            <img
+              src="img/img-braduca/braduca-03.jpeg"
+              alt="Somos Braduca — publicação 03"
+              loading="lazy"
+            >
+
+          </button>
+
+
+          <button
+            type="button"
+            class="editorial-card"
+            data-index="3"
+          >
+
+            <img
+              src="img/img-braduca/braduca-04.jpeg"
+              alt="Somos Braduca — publicação 04"
+              loading="lazy"
+            >
+
+          </button>
+
+
+          <button
+            type="button"
+            class="editorial-card"
+            data-index="4"
+          >
+
+            <img
+              src="img/img-braduca/braduca-05.jpeg"
+              alt="Somos Braduca — publicação 05"
+              loading="lazy"
+            >
+
+          </button>
+
+
+          <button
+            type="button"
+            class="editorial-card"
+            data-index="5"
+          >
+
+            <img
+              src="img/img-braduca/braduca-06.jpeg"
+              alt="Somos Braduca — publicação 06"
+              loading="lazy"
+            >
+
+          </button>
+
+
+          <button
+            type="button"
+            class="editorial-card"
+            data-index="6"
+          >
+
+            <img
+              src="img/img-braduca/braduca-07.jpeg"
+              alt="Somos Braduca — publicação 07"
+              loading="lazy"
+            >
+
+          </button>
+
+        </div>
+
+
+        <div class="editorial-preview">
 
           <img
+            id="braducaPreview"
             src="img/img-braduca/braduca-01.jpeg"
-            alt="Somos Braduca — Peça 01"
+            alt="Somos Braduca — publicação selecionada"
+            class="js-lightbox"
           >
-        </button>
 
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="1"
-        >
-          <span class="editorial-number">
-            02
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-02.jpeg"
-            alt="Somos Braduca — Peça 02"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="2"
-        >
-          <span class="editorial-number">
-            03
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-03.jpeg"
-            alt="Somos Braduca — Peça 03"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="3"
-        >
-          <span class="editorial-number">
-            04
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-04.jpeg"
-            alt="Somos Braduca — Peça 04"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="4"
-        >
-          <span class="editorial-number">
-            05
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-05.jpeg"
-            alt="Somos Braduca — Peça 05"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="5"
-        >
-          <span class="editorial-number">
-            06
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-06.jpeg"
-            alt="Somos Braduca — Peça 06"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="6"
-        >
-          <span class="editorial-number">
-            07
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-07.jpeg"
-            alt="Somos Braduca — Peça 07"
-            loading="lazy"
-          >
-        </button>
+        </div>
 
       </div>
 
 
       <aside class="editorial-inspector">
 
-        <div class="editorial-preview">
-
-          <img
-            src="img/img-braduca/braduca-01.jpeg"
-            alt="Peça selecionada da Braduca"
-            id="braducaPreview"
-            class="js-lightbox"
-            tabindex="0"
-          >
-
-        </div>
+        <span>
+          EDITORIAL SYSTEM
+        </span>
 
 
-        <div>
+        <h4>
+          Composição com variação.
+        </h4>
 
-          <span class="section-kicker">
-            peça selecionada
+
+        <p>
+          As peças exploram diferentes pesos,
+          ritmos e enquadramentos sem abandonar
+          a linguagem geral da marca.
+        </p>
+
+
+        <div
+          style="
+            margin-top:22px;
+            padding-top:16px;
+            border-top:1px solid var(--line);
+          "
+        >
+
+          <span>
+            SELECTED
           </span>
 
 
-          <div class="inspector-row">
-
-            <span>
-              projeto
-            </span>
-
-            <strong>
-              Somos Braduca
-            </strong>
-
-          </div>
-
-
-          <div class="inspector-row">
-
-            <span>
-              foco
-            </span>
-
-            <strong>
-              Hierarquia, legibilidade e consistência
-              em comunicação educacional.
-            </strong>
-
-          </div>
-
-
-          <div class="inspector-row">
-
-            <span>
-              intenção
-            </span>
-
-            <strong>
-              Transformar conteúdo em uma peça clara
-              sem descaracterizar a identidade da iniciativa.
-            </strong>
-
-          </div>
-
-
-          <div class="inspector-row">
-
-            <span>
-              peça
-            </span>
-
-            <strong id="braducaPosition">
-              01 / 07
-            </strong>
-
+          <div
+            id="braducaPosition"
+            style="
+              margin-top:8px;
+              font-family:Fraunces,serif;
+              font-size:2rem;
+            "
+          >
+            01 / 07
           </div>
 
         </div>
@@ -6328,7 +9100,7 @@ footer{
 
 
 <!-- ========================================================
-     AYMÉE
+     05 — AYMÉE
 ======================================================== -->
 
 <article
@@ -6339,7 +9111,7 @@ footer{
   <div class="project-head">
 
     <span class="project-number">
-      05 / 05 • MARCA PESSOAL
+      05 / 05 • PERSONAL BRAND • SOCIAL
     </span>
 
 
@@ -6349,130 +9121,137 @@ footer{
 
 
     <p class="project-summary">
-      Comunicação visual para uma especialista em CS/CX,
-      Felicidade Corporativa e gestão, trabalhando a
-      consistência da marca pessoal através de diferentes
-      tipos de conteúdo.
+      Criação e diagramação de conteúdos para redes sociais,
+      mantendo consistência e identidade de marca ao mesmo
+      tempo em que diferentes pautas recebem composições próprias.
     </p>
 
 
     <div class="project-meta">
-      <span>Social Media</span>
-      <span>Design Gráfico</span>
-      <span>Marca Pessoal</span>
+
+      <span>
+        Social Media
+      </span>
+
+      <span>
+        Personal Brand
+      </span>
+
+      <span>
+        Design Gráfico
+      </span>
+
     </div>
 
   </div>
 
 
-  <div class="aymee-case">
+  <div class="brand-case">
 
-    <div class="brand-shell">
+    <div class="brand-top">
 
-      <div class="brand-top">
+      <p>
+        Um sistema de conteúdo precisa ser reconhecível
+        sem transformar todas as publicações no mesmo layout.
+        Aqui, hierarquia e flexibilidade trabalham juntas.
+      </p>
 
-        <span
-          class="mono"
-          style="font-size:.61rem"
+
+      <div class="brand-filter">
+
+        <button
+          type="button"
+          class="active"
+          data-brand-filter="all"
         >
-          AYMÉE / CONTENT SYSTEM
+          todos
+        </button>
+
+
+        <button
+          type="button"
+          data-brand-filter="a"
+        >
+          grupo A
+        </button>
+
+
+        <button
+          type="button"
+          data-brand-filter="b"
+        >
+          grupo B
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="brand-body">
+
+      <div
+        class="brand-grid"
+        id="aymeeGrid"
+      >
+      </div>
+
+
+      <aside class="brand-notes">
+
+        <span>
+          PERSONAL BRAND SYSTEM
         </span>
 
 
-        <div class="brand-filter">
-
-          <button
-            type="button"
-            class="active"
-            data-brand-filter="all"
-          >
-            Todos
-          </button>
-
-          <button
-            type="button"
-            data-brand-filter="a"
-          >
-            Seleção A
-          </button>
-
-          <button
-            type="button"
-            data-brand-filter="b"
-          >
-            Seleção B
-          </button>
-
-        </div>
-
-      </div>
+        <h4>
+          Variação sem perder identidade.
+        </h4>
 
 
-      <div class="brand-body">
+        <article class="brand-rule">
 
-        <div
-          class="brand-grid"
-          id="aymeeGrid"
-        ></div>
-
-
-        <aside class="brand-rules">
-
-          <span class="section-kicker">
-            sistema de conteúdo
+          <span>
+            01 / CONSISTÊNCIA
           </span>
 
+          <p>
+            As publicações precisam continuar
+            reconhecíveis como parte da mesma marca.
+          </p>
 
-          <h4>
-            Variação sem perder identidade.
-          </h4>
-
-
-          <article class="brand-rule">
-
-            <span>
-              01 / CONSISTÊNCIA
-            </span>
-
-            <p>
-              As publicações precisam continuar
-              reconhecíveis como parte da mesma marca.
-            </p>
-
-          </article>
+        </article>
 
 
-          <article class="brand-rule">
+        <article class="brand-rule">
 
-            <span>
-              02 / HIERARQUIA
-            </span>
+          <span>
+            02 / HIERARQUIA
+          </span>
 
-            <p>
-              Conteúdo profissional precisa ser
-              lido antes de ser apenas decorado.
-            </p>
+          <p>
+            Conteúdo profissional precisa ser
+            lido antes de ser apenas decorado.
+          </p>
 
-          </article>
+        </article>
 
 
-          <article class="brand-rule">
+        <article class="brand-rule">
 
-            <span>
-              03 / FLEXIBILIDADE
-            </span>
+          <span>
+            03 / FLEXIBILIDADE
+          </span>
 
-            <p>
-              O sistema visual permite diferentes
-              pautas sem transformar todas as peças
-              na mesma composição.
-            </p>
+          <p>
+            O sistema visual permite diferentes
+            pautas sem transformar todas as peças
+            na mesma composição.
+          </p>
 
-          </article>
+        </article>
 
-        </aside>
-
-      </div>
+      </aside>
 
     </div>
 
@@ -6599,11 +9378,13 @@ footer{
       Falar no WhatsApp
     </a>
 
+
     <a
       href="mailto:raquel.renovato.design@gmail.com"
     >
       Enviar e-mail
     </a>
+
 
     <a
       href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
@@ -6621,11 +9402,16 @@ footer{
 </main>
 
 
+<!-- ========================================================
+     FOOTER
+======================================================== -->
+
 <footer>
 
   <span>
     © 2026 Raquel Renovato
   </span>
+
 
   <span>
     Comunicação Visual • UI • Design
@@ -6666,6 +9452,7 @@ footer{
 
 
 <script>
+
 (() => {
 
 "use strict";
@@ -6678,14 +9465,18 @@ footer{
 const $ = (
   selector,
   root = document
-) => root.querySelector(selector);
+) => root.querySelector(
+  selector
+);
 
 
 const $$ = (
   selector,
   root = document
 ) => [
-  ...root.querySelectorAll(selector)
+  ...root.querySelectorAll(
+    selector
+  )
 ];
 
 
@@ -6715,48 +9506,202 @@ let introTimers =
   [];
 
 
+let introClosed =
+  false;
+
+
+/* ----------------------------------------------------------
+   MEDIR MAIOR PALAVRA
+---------------------------------------------------------- */
+
 function sizeIntro(){
 
-  let width =
+  if(
+    !introCycle ||
+    !introWords.length
+  ){
+    return;
+  }
+
+
+  let maxWidth =
     0;
 
 
   introWords.forEach(
     word => {
 
-      width =
+      const rect =
+        word.getBoundingClientRect();
+
+
+      maxWidth =
         Math.max(
-          width,
-          word.getBoundingClientRect().width
+          maxWidth,
+          rect.width
         );
 
     }
   );
 
 
-  if(introCycle){
+  if(
+    maxWidth >
+    0
+  ){
 
     introCycle.style.width =
-      `${Math.ceil(width) + 6}px`;
+      `${
+        Math.ceil(
+          maxWidth
+        ) +
+        8
+      }px`;
 
   }
 
 }
 
 
-function closeIntro(){
+/* ----------------------------------------------------------
+   RESET
+---------------------------------------------------------- */
+
+function resetIntroWords(){
+
+  introWords.forEach(
+    (
+      word,
+      index
+    ) => {
+
+      word.classList.remove(
+        "active",
+        "exit"
+      );
+
+
+      if(
+        index ===
+        0
+      ){
+
+        word.classList.add(
+          "active"
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+/* ----------------------------------------------------------
+   MOSTRAR PALAVRA
+---------------------------------------------------------- */
+
+function showIntroWord(
+  index
+){
 
   if(
-    !intro ||
-    intro.classList.contains("hide")
+    !introWords[index]
   ){
     return;
   }
 
 
-  introTimers.forEach(
-    clearTimeout
+  introWords.forEach(
+    (
+      word,
+      currentIndex
+    ) => {
+
+      if(
+        currentIndex <
+        index
+      ){
+
+        word.classList.remove(
+          "active"
+        );
+
+
+        word.classList.add(
+          "exit"
+        );
+
+      }
+
+
+      if(
+        currentIndex ===
+        index
+      ){
+
+        word.classList.remove(
+          "exit"
+        );
+
+
+        word.classList.add(
+          "active"
+        );
+
+      }
+
+
+      if(
+        currentIndex >
+        index
+      ){
+
+        word.classList.remove(
+          "active",
+          "exit"
+        );
+
+      }
+
+    }
   );
+
+}
+
+
+/* ----------------------------------------------------------
+   FECHAR INTRO
+---------------------------------------------------------- */
+
+function closeIntro(){
+
+  if(
+    !intro ||
+    introClosed
+  ){
+    return;
+  }
+
+
+  introClosed =
+    true;
+
+
+  introTimers.forEach(
+    timer => {
+
+      clearTimeout(
+        timer
+      );
+
+    }
+  );
+
+
+  introTimers =
+    [];
 
 
   intro.classList.add(
@@ -6769,123 +9714,152 @@ function closeIntro(){
   );
 
 
-  sessionStorage.setItem(
-    "portfolioIntroSeen",
-    "1"
-  );
-
-
   window.setTimeout(
     () => {
 
-      intro.style.display =
-        "none";
+      if(intro){
+
+        intro.style.display =
+          "none";
+
+      }
 
     },
     reduceMotion.matches
-      ? 0
-      : 420
+      ? 220
+      : 500
   );
 
 }
 
 
+/* ----------------------------------------------------------
+   INICIAR INTRO
+
+   IMPORTANTE:
+   - Não existe sessionStorage aqui.
+   - Portanto aparece em cada carregamento/reload.
+---------------------------------------------------------- */
+
 function startIntro(){
 
   if(
-    sessionStorage.getItem(
-      "portfolioIntroSeen"
-    ) === "1" ||
-    reduceMotion.matches
+    !intro
   ){
-
-    intro.style.display =
-      "none";
-
-
-    document.body.classList.remove(
-      "intro-active"
-    );
-
-
     return;
-
   }
 
 
-  sizeIntro();
+  introClosed =
+    false;
 
 
-  if(
-    introWords.length
-  ){
-
-    introWords[0]
-      .classList
-      .add("active");
-
-  }
+  intro.style.display =
+    "flex";
 
 
-  introWords.forEach(
-    (
-      word,
-      index
-    ) => {
-
-      if(index === 0){
-        return;
-      }
+  intro.classList.remove(
+    "hide"
+  );
 
 
-      introTimers.push(
-        setTimeout(
-          () => {
-
-            introWords.forEach(
-              current => {
-
-                current.classList.remove(
-                  "active",
-                  "exit"
-                );
-
-              }
-            );
+  document.body.classList.add(
+    "intro-active"
+  );
 
 
-            introWords[
-              index - 1
-            ]?.classList.add(
-              "exit"
-            );
+  resetIntroWords();
 
 
-            word.classList.add(
-              "active"
-            );
+  requestAnimationFrame(
+    () => {
 
-          },
-          index * 650
-        )
+      requestAnimationFrame(
+        sizeIntro
       );
 
     }
   );
 
 
-  introTimers.push(
-    setTimeout(
-      closeIntro,
-      Math.max(
-        1750,
-        introWords.length * 650 + 350
+  /*
+    Prefers reduced motion:
+    frase continua existindo,
+    mas sem sequência intensa.
+  */
+
+  if(
+    reduceMotion.matches
+  ){
+
+    showIntroWord(
+      0
+    );
+
+
+    introTimers.push(
+      window.setTimeout(
+        closeIntro,
+        1200
       )
+    );
+
+
+    return;
+  }
+
+
+  const STEP =
+    760;
+
+
+  showIntroWord(
+    0
+  );
+
+
+  introTimers.push(
+    window.setTimeout(
+      () => {
+
+        showIntroWord(
+          1
+        );
+
+      },
+      STEP
+    )
+  );
+
+
+  introTimers.push(
+    window.setTimeout(
+      () => {
+
+        showIntroWord(
+          2
+        );
+
+      },
+      STEP *
+      2
+    )
+  );
+
+
+  introTimers.push(
+    window.setTimeout(
+      closeIntro,
+      STEP *
+      3 +
+      320
     )
   );
 
 }
 
+
+/* CLICK */
 
 intro?.addEventListener(
   "click",
@@ -6893,23 +9867,40 @@ intro?.addEventListener(
 );
 
 
+/* KEYBOARD */
+
 document.addEventListener(
   "keydown",
   event => {
 
     if(
-      event.key === "Escape" ||
-      event.key === "Enter" ||
-      event.key === " "
-    ){
-
-      if(
-        document.body.classList.contains(
+      !document.body
+        .classList
+        .contains(
           "intro-active"
         )
-      ){
-        closeIntro();
-      }
+    ){
+      return;
+    }
+
+
+    const skipKeys = [
+      "Escape",
+      "Enter",
+      " "
+    ];
+
+
+    if(
+      skipKeys.includes(
+        event.key
+      )
+    ){
+
+      event.preventDefault();
+
+
+      closeIntro();
 
     }
 
@@ -6917,10 +9908,80 @@ document.addEventListener(
 );
 
 
+/* FONT READY */
+
+if(
+  document.fonts &&
+  document.fonts.ready
+){
+
+  document.fonts.ready
+    .then(
+      sizeIntro
+    )
+    .catch(
+      () => {}
+    );
+
+}
+
+
+/* RESIZE */
+
 window.addEventListener(
-  "load",
-  startIntro
+  "resize",
+  sizeIntro,
+  {
+    passive:true
+  }
 );
+
+
+/* DOM READY */
+
+if(
+  document.readyState ===
+  "loading"
+){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    startIntro,
+    {
+      once:true
+    }
+  );
+
+}else{
+
+  startIntro();
+
+}
+
+
+/* ==========================================================
+   HOME
+========================================================== */
+
+$("#logoHome")
+  ?.addEventListener(
+    "click",
+    event => {
+
+      event.preventDefault();
+
+
+      window.scrollTo({
+        top:0,
+
+        behavior:
+          reduceMotion.matches
+            ? "auto"
+            : "smooth"
+      });
+
+    }
+  );
 
 
 /* ==========================================================
@@ -6936,7 +9997,8 @@ const themeLabel =
 
 
 function setTheme(
-  theme
+  theme,
+  persist = true
 ){
 
   document.documentElement
@@ -6946,19 +10008,39 @@ function setTheme(
     );
 
 
-  localStorage.setItem(
-    "raquel-theme",
-    theme
-  );
+  if(
+    persist
+  ){
+
+    localStorage.setItem(
+      "raquel-theme",
+      theme
+    );
+
+  }
 
 
-  themeLabel.textContent =
-    theme === "dark"
-      ? "Claro"
-      : "Sombrio";
+  if(
+    themeLabel
+  ){
+
+    themeLabel.textContent =
+      theme === "dark"
+        ? "Claro"
+        : "Sombrio";
+
+  }
 
 }
 
+
+/*
+  Se o usuário já escolheu,
+  preservamos a escolha.
+
+  Sem escolha salva,
+  o portfólio inicia LIGHT.
+*/
 
 const savedTheme =
   localStorage.getItem(
@@ -6969,220 +10051,39 @@ const savedTheme =
 setTheme(
   savedTheme === "dark"
     ? "dark"
-    : "light"
+    : "light",
+  false
 );
 
 
-themeToggle?.addEventListener(
-  "click",
-  () => {
+themeToggle
+  ?.addEventListener(
+    "click",
+    () => {
 
-    const current =
-      document.documentElement
-        .getAttribute(
-          "data-theme"
-        );
+      const current =
+        document.documentElement
+          .getAttribute(
+            "data-theme"
+          );
 
 
-    setTheme(
-      current === "dark"
-        ? "light"
-        : "dark"
-    );
+      setTheme(
+        current === "dark"
+          ? "light"
+          : "dark"
+      );
 
-  }
-);
+    }
+  );
 
 
 /* ==========================================================
    WIREFRAME
 ========================================================== */
 
-let selectedColor =
-  "#E8590C";
-
-
-function contrastColor(
-  hex
-){
-
-  const value =
-    hex.replace(
-      "#",
-      ""
-    );
-
-
-  const r =
-    parseInt(
-      value.substring(0,2),
-      16
-    );
-
-
-  const g =
-    parseInt(
-      value.substring(2,4),
-      16
-    );
-
-
-  const b =
-    parseInt(
-      value.substring(4,6),
-      16
-    );
-
-
-  const luminance =
-    (
-      r * 299 +
-      g * 587 +
-      b * 114
-    ) /
-    1000;
-
-
-  return luminance > 145
-    ? "#1F1C18"
-    : "#FFFFFF";
-
-}
-
-
-$$(".swatch")
-  .forEach(
-    swatch => {
-
-      swatch.addEventListener(
-        "click",
-        () => {
-
-          $$(".swatch")
-            .forEach(
-              item =>
-                item.classList.remove(
-                  "active"
-                )
-            );
-
-
-          swatch.classList.add(
-            "active"
-          );
-
-
-          selectedColor =
-            swatch.dataset.color ||
-            "";
-
-        }
-      );
-
-    }
-  );
-
-
 const wfWindow =
   $("#wfWindow");
-
-
-wfWindow?.addEventListener(
-  "click",
-  event => {
-
-    const target =
-      event.target.closest(
-        ".wf-paintable"
-      );
-
-
-    if(!target){
-      return;
-    }
-
-
-    if(!selectedColor){
-
-      target.style.backgroundColor =
-        "";
-
-      target.style.borderColor =
-        "";
-
-      target.style.color =
-        "";
-
-
-      return;
-
-    }
-
-
-    target.style.backgroundColor =
-      selectedColor;
-
-
-    target.style.borderColor =
-      selectedColor;
-
-
-    target.style.color =
-      contrastColor(
-        selectedColor
-      );
-
-  }
-);
-
-
-$$(".wf-nav-item")
-  .forEach(
-    item => {
-
-      item.addEventListener(
-        "click",
-        event => {
-
-          event.stopPropagation();
-
-
-          $$(".wf-nav-item")
-            .forEach(
-              current =>
-                current.classList.remove(
-                  "active"
-                )
-            );
-
-
-          item.classList.add(
-            "active"
-          );
-
-
-          const tab =
-            item.dataset.tab;
-
-
-          $$(".wf-view")
-            .forEach(
-              view => {
-
-                view.classList.toggle(
-                  "active",
-                  view.id ===
-                    `wf-${tab}`
-                );
-
-              }
-            );
-
-        }
-      );
-
-    }
-  );
 
 
 let deliveries =
@@ -7201,7 +10102,8 @@ $("#wfMetricBtn")
         1;
 
 
-      $("#wfCounter").textContent =
+      $("#wfCounter")
+        .textContent =
         String(
           deliveries
         );
@@ -7242,7 +10144,9 @@ $("#wfSwitchMode")
         !wfDark;
 
 
-      if(wfDark){
+      if(
+        wfDark
+      ){
 
         wfWindow.style.setProperty(
           "--wf-bg",
@@ -7291,6 +10195,39 @@ $("#wfSwitchMode")
   );
 
 
+$("#wfAccent")
+  ?.addEventListener(
+    "click",
+    () => {
+
+      $$(".wf-paintable")
+        .forEach(
+          (
+            element,
+            index
+          ) => {
+
+            element.style.borderColor =
+              "var(--accent)";
+
+
+            if(
+              index <
+              2
+            ){
+
+              element.style.backgroundColor =
+                "var(--accent-soft)";
+
+            }
+
+          }
+        );
+
+    }
+  );
+
+
 $("#wfClear")
   ?.addEventListener(
     "click",
@@ -7303,8 +10240,10 @@ $("#wfClear")
             element.style.backgroundColor =
               "";
 
+
             element.style.borderColor =
               "";
+
 
             element.style.color =
               "";
@@ -7330,19 +10269,25 @@ $$(".fa-tab")
 
           $$(".fa-tab")
             .forEach(
-              current =>
+              current => {
+
                 current.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
           $$(".fa-view")
             .forEach(
-              view =>
+              view => {
+
                 view.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
@@ -7369,7 +10314,7 @@ $$(".fa-tab")
 
 
 /* ==========================================================
-   FERNANDO — SYSTEM
+   FERNANDO — SYSTEM NAVIGATION
 ========================================================== */
 
 $$(".system-nav-btn")
@@ -7382,19 +10327,25 @@ $$(".system-nav-btn")
 
           $$(".system-nav-btn")
             .forEach(
-              current =>
+              current => {
+
                 current.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
           $$(".system-panel")
             .forEach(
-              panel =>
+              panel => {
+
                 panel.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
@@ -7417,6 +10368,8 @@ $$(".system-nav-btn")
   );
 
 
+/* BUTTON STATES */
+
 const demoPrimary =
   $("#faDemoPrimary");
 
@@ -7429,13 +10382,18 @@ $$("[data-fa-button-state]")
         "click",
         () => {
 
-          $$("[data-fa-button-state]")
-            .forEach(
-              current =>
-                current.classList.remove(
-                  "active"
-                )
-            );
+          $$(
+            "[data-fa-button-state]"
+          )
+          .forEach(
+            current => {
+
+              current.classList.remove(
+                "active"
+              );
+
+            }
+          );
 
 
           button.classList.add(
@@ -7443,25 +10401,18 @@ $$("[data-fa-button-state]")
           );
 
 
-          demoPrimary.classList.remove(
+          demoPrimary?.classList.remove(
             "is-hover",
             "is-disabled"
           );
 
 
-          demoPrimary.disabled =
-            false;
-
-
-          const state =
-            button.dataset.faButtonState;
-
-
           if(
-            state === "hover"
+            button.dataset.faButtonState ===
+            "hover"
           ){
 
-            demoPrimary.classList.add(
+            demoPrimary?.classList.add(
               "is-hover"
             );
 
@@ -7469,16 +10420,13 @@ $$("[data-fa-button-state]")
 
 
           if(
-            state === "disabled"
+            button.dataset.faButtonState ===
+            "disabled"
           ){
 
-            demoPrimary.classList.add(
+            demoPrimary?.classList.add(
               "is-disabled"
             );
-
-
-            demoPrimary.disabled =
-              true;
 
           }
 
@@ -7489,73 +10437,29 @@ $$("[data-fa-button-state]")
   );
 
 
+/* FILTER DEMO */
+
 $$(".demo-filter")
   .forEach(
-    button => {
+    filter => {
 
-      button.addEventListener(
+      filter.addEventListener(
         "click",
         () => {
 
           $$(".demo-filter")
             .forEach(
-              current =>
+              current => {
+
                 current.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
-          button.classList.add(
-            "active"
-          );
-
-        }
-      );
-
-    }
-  );
-
-
-/* ==========================================================
-   VOIT
-========================================================== */
-
-$$(".voit-tab")
-  .forEach(
-    button => {
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          $$(".voit-tab")
-            .forEach(
-              current =>
-                current.classList.remove(
-                  "active"
-                )
-            );
-
-
-          $$(".voit-view")
-            .forEach(
-              view =>
-                view.classList.remove(
-                  "active"
-                )
-            );
-
-
-          button.classList.add(
-            "active"
-          );
-
-
-          $(
-            `[data-voit-view="${button.dataset.voitTab}"]`
-          )
-          ?.classList.add(
+          filter.classList.add(
             "active"
           );
 
@@ -7576,33 +10480,24 @@ const renataSlides = [
     src:
       "img/img-renata/renata-01.jpg",
 
-    title:
-      "Entrada e posicionamento",
-
-    text:
-      "A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto."
+    alt:
+      "Apresentação Renata Brandão — slide 01"
   },
 
   {
     src:
       "img/img-renata/renata-02.jpg",
 
-    title:
-      "Hierarquia de conteúdo",
-
-    text:
-      "A composição organiza as informações em blocos para preservar leitura, ritmo e entendimento durante a apresentação."
+    alt:
+      "Apresentação Renata Brandão — slide 02"
   },
 
   {
     src:
       "img/img-renata/renata-03.jpg",
 
-    title:
-      "Consistência narrativa",
-
-    text:
-      "Elementos visuais recorrentes criam unidade sem obrigar todos os slides a usar exatamente a mesma composição."
+    alt:
+      "Apresentação Renata Brandão — slide 03"
   }
 
 ];
@@ -7612,24 +10507,8 @@ let renataIndex =
   0;
 
 
-const deckImage =
-  $("#deckImage");
-
-
-const deckCounter =
-  $("#deckCounter");
-
-
-const deckTitle =
-  $("#deckTitle");
-
-
-const deckText =
-  $("#deckText");
-
-
-const deckProgress =
-  $("#deckProgress");
+const deckMain =
+  $("#deckMain");
 
 
 const deckThumbs =
@@ -7638,56 +10517,26 @@ const deckThumbs =
 
 function renderRenata(){
 
-  const slide =
+  if(
+    !deckMain ||
+    !deckThumbs
+  ){
+    return;
+  }
+
+
+  const item =
     renataSlides[
       renataIndex
     ];
 
 
-  deckImage.src =
-    slide.src;
+  deckMain.src =
+    item.src;
 
 
-  deckImage.alt =
-    slide.title;
-
-
-  deckTitle.textContent =
-    slide.title;
-
-
-  deckText.textContent =
-    slide.text;
-
-
-  deckCounter.textContent =
-    `${
-      String(
-        renataIndex + 1
-      ).padStart(
-        2,
-        "0"
-      )
-    } / ${
-      String(
-        renataSlides.length
-      ).padStart(
-        2,
-        "0"
-      )
-    }`;
-
-
-  deckProgress.style.width =
-    `${
-      (
-        (
-          renataIndex + 1
-        ) /
-        renataSlides.length
-      ) *
-      100
-    }%`;
+  deckMain.alt =
+    item.alt;
 
 
   deckThumbs.innerHTML =
@@ -7696,7 +10545,7 @@ function renderRenata(){
 
   renataSlides.forEach(
     (
-      item,
+      slide,
       index
     ) => {
 
@@ -7714,8 +10563,17 @@ function renderRenata(){
         "deck-thumb";
 
 
+      button.setAttribute(
+        "aria-label",
+        `Abrir slide ${
+          index + 1
+        }`
+      );
+
+
       if(
-        index === renataIndex
+        index ===
+        renataIndex
       ){
 
         button.classList.add(
@@ -7727,8 +10585,11 @@ function renderRenata(){
 
       button.innerHTML = `
         <img
-          src="${item.src}"
-          alt="Miniatura ${index + 1}"
+          src="${slide.src}"
+          alt="Miniatura ${
+            index +
+            1
+          }"
         >
       `;
 
@@ -7815,67 +10676,90 @@ const braducaPosition =
   $("#braducaPosition");
 
 
-$$(
-  ".editorial-card",
-  braducaCase
-)
-.forEach(
-  card => {
+if(
+  braducaCase &&
+  braducaPreview &&
+  braducaPosition
+){
 
-    card.addEventListener(
-      "click",
-      () => {
+  $$(
+    ".editorial-card",
+    braducaCase
+  )
+  .forEach(
+    card => {
 
-        $$(
-          ".editorial-card",
-          braducaCase
-        )
-        .forEach(
-          current =>
-            current.classList.remove(
-              "active"
-            )
-        );
+      card.addEventListener(
+        "click",
+        () => {
 
+          $$(
+            ".editorial-card",
+            braducaCase
+          )
+          .forEach(
+            current => {
 
-        card.classList.add(
-          "active"
-        );
+              current.classList.remove(
+                "active"
+              );
 
-
-        const image =
-          $("img",card);
-
-
-        braducaPreview.src =
-          image.src;
-
-
-        braducaPreview.alt =
-          image.alt;
-
-
-        const index =
-          Number(
-            card.dataset.index
+            }
           );
 
 
-        braducaPosition.textContent =
-          `${
-            String(
-              index + 1
-            ).padStart(
-              2,
-              "0"
-            )
-          } / 07`;
+          card.classList.add(
+            "active"
+          );
 
-      }
-    );
 
-  }
-);
+          const image =
+            $(
+              "img",
+              card
+            );
+
+
+          if(
+            !image
+          ){
+            return;
+          }
+
+
+          braducaPreview.src =
+            image.src;
+
+
+          braducaPreview.alt =
+            image.alt;
+
+
+          const index =
+            Number(
+              card.dataset.index
+            );
+
+
+          braducaPosition.textContent =
+            `${
+              String(
+                index +
+                1
+              )
+              .padStart(
+                2,
+                "0"
+              )
+            } / 07`;
+
+        }
+      );
+
+    }
+  );
+
+}
 
 
 /* ==========================================================
@@ -7906,6 +10790,13 @@ function renderAymee(
   filter = "all"
 ){
 
+  if(
+    !aymeeGrid
+  ){
+    return;
+  }
+
+
   aymeeGrid.innerHTML =
     "";
 
@@ -7917,12 +10808,15 @@ function renderAymee(
     ) => {
 
       const number =
-        index + 1;
+        index +
+        1;
 
 
       if(
         filter === "a" &&
-        number % 2 === 0
+        number %
+        2 ===
+        0
       ){
         return;
       }
@@ -7930,7 +10824,9 @@ function renderAymee(
 
       if(
         filter === "b" &&
-        number % 2 !== 0
+        number %
+        2 !==
+        0
       ){
         return;
       }
@@ -7950,10 +10846,25 @@ function renderAymee(
         "brand-card";
 
 
+      button.setAttribute(
+        "aria-label",
+        `Abrir publicação ${
+          number
+        } de Aymée Ferraz`
+      );
+
+
       button.innerHTML = `
         <img
           src="${src}"
-          alt="Aymée Ferraz — Post ${String(number).padStart(2,"0")}"
+          alt="Aymée Ferraz — Post ${
+            String(
+              number
+            ).padStart(
+              2,
+              "0"
+            )
+          }"
           loading="lazy"
           class="js-lightbox"
         >
@@ -7985,10 +10896,13 @@ $$(".brand-filter button")
 
           $$(".brand-filter button")
             .forEach(
-              current =>
+              current => {
+
                 current.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
@@ -7998,7 +10912,8 @@ $$(".brand-filter button")
 
 
           renderAymee(
-            button.dataset.brandFilter
+            button.dataset
+              .brandFilter
           );
 
         }
@@ -8032,6 +10947,15 @@ function openLightbox(
   image,
   trigger
 ){
+
+  if(
+    !lightbox ||
+    !lightboxImage ||
+    !lightboxClose
+  ){
+    return;
+  }
+
 
   lightboxTrigger =
     trigger;
@@ -8071,6 +10995,7 @@ function openLightbox(
 function closeLightbox(){
 
   if(
+    !lightbox ||
     !lightbox.classList.contains(
       "open"
     )
@@ -8090,7 +11015,7 @@ function closeLightbox(){
   );
 
 
-  lightboxImage.removeAttribute(
+  lightboxImage?.removeAttribute(
     "src"
   );
 
@@ -8101,7 +11026,8 @@ function closeLightbox(){
 
 
   if(
-    lightboxTrigger instanceof HTMLElement
+    lightboxTrigger instanceof
+    HTMLElement
   ){
 
     lightboxTrigger.focus();
@@ -8149,7 +11075,9 @@ function registerLightboxImages(
         image;
 
 
-      if(!button){
+      if(
+        !button
+      ){
 
         image.setAttribute(
           "role",
@@ -8210,7 +11138,9 @@ function registerLightboxImages(
       );
 
 
-      if(!button){
+      if(
+        !button
+      ){
 
         trigger.addEventListener(
           "keydown",
@@ -8226,14 +11156,14 @@ function registerLightboxImages(
 
 
 lightboxClose
-  .addEventListener(
+  ?.addEventListener(
     "click",
     closeLightbox
   );
 
 
 lightbox
-  .addEventListener(
+  ?.addEventListener(
     "click",
     event => {
 
@@ -8256,7 +11186,10 @@ document.addEventListener(
 
     if(
       event.key ===
-      "Escape"
+      "Escape" &&
+      lightbox?.classList.contains(
+        "open"
+      )
     ){
 
       closeLightbox();
@@ -8267,12 +11200,20 @@ document.addEventListener(
 );
 
 
+/* ==========================================================
+   START DYNAMIC SECTIONS
+========================================================== */
+
 renderAymee();
+
 
 registerLightboxImages();
 
+
 })();
+
 </script>
 
 </body>
+
 </html>
