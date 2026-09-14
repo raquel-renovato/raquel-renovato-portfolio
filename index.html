@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
 
@@ -30,34 +29,29 @@
   >
 
   <style>
-
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
     :root {
       --bg:#F3EFEA;
       --ink:#1F1C18;
       --dim:#5F5850;
       --muted:#8A837A;
 
-      --line:rgba(31,28,24,.14);
-      --line-strong:rgba(31,28,24,.31);
+      --line:rgba(31,28,24,.15);
+      --line-strong:rgba(31,28,24,.32);
 
       --card:#E5DFD5;
       --card-2:#ECE7DF;
       --surface:#FAF7F2;
 
       --accent:#E8590C;
-      --accent-soft:rgba(232,89,12,.09);
+      --accent-soft:rgba(232,89,12,.08);
 
       --green:#40594A;
 
-      --nav-bg:rgba(243,239,234,.92);
+      --nav-bg:rgba(243,239,234,.94);
 
       --shadow:
-        0 24px 65px
-        rgba(31,28,24,.11);
+        0 26px 65px
+        rgba(31,28,24,.10);
 
       --pad:40px;
 
@@ -68,7 +62,6 @@
       --wf-text:#1F1C18;
       --wf-line:rgba(31,28,24,.13);
     }
-
 
     html[data-theme="dark"] {
       --bg:#181614;
@@ -88,11 +81,11 @@
 
       --green:#829789;
 
-      --nav-bg:rgba(24,22,20,.92);
+      --nav-bg:rgba(24,22,20,.94);
 
       --shadow:
-        0 24px 70px
-        rgba(0,0,0,.30);
+        0 26px 65px
+        rgba(0,0,0,.32);
 
       --wf-bg:#201D1A;
       --wf-card:#292520;
@@ -100,18 +93,11 @@
       --wf-line:rgba(241,236,227,.12);
     }
 
-
-
-    /* =========================================================
-       RESET
-    ========================================================= */
-
     * {
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
-
 
     html {
       scroll-behavior:smooth;
@@ -119,34 +105,26 @@
       scroll-padding-top:90px;
     }
 
-
     body {
       overflow-x:hidden;
-
       background:var(--bg);
       color:var(--ink);
-
       font-family:"IBM Plex Sans",sans-serif;
-
       -webkit-font-smoothing:antialiased;
-
       transition:
         background-color .35s ease,
         color .35s ease;
     }
-
 
     body.intro-active,
     body.locked {
       overflow:hidden;
     }
 
-
     img {
       display:block;
       max-width:100%;
     }
-
 
     button,
     input,
@@ -155,33 +133,27 @@
       font:inherit;
     }
 
-
     button {
       color:inherit;
     }
-
 
     a {
       color:inherit;
       text-decoration:none;
     }
 
-
     ul {
       padding:0;
       margin:0;
     }
 
-
     .mono {
       font-family:"IBM Plex Mono",monospace;
     }
 
-
     .serif {
       font-family:"Fraunces",serif;
     }
-
 
     a:focus-visible,
     button:focus-visible,
@@ -190,8 +162,6 @@
       outline-offset:4px;
     }
 
-
-
     /* =========================================================
        INTRO
     ========================================================= */
@@ -199,7 +169,6 @@
     #intro-overlay {
       position:fixed;
       inset:0;
-
       z-index:9999;
 
       display:grid;
@@ -220,38 +189,23 @@
         visibility .48s ease;
     }
 
-
     #intro-overlay.hide {
       opacity:0;
       visibility:hidden;
-
       transform:scale(1.012);
-
       pointer-events:none;
     }
-
-
-    /*
-      IMPORTANTE:
-      Agora a frase usa GRID.
-
-      "Design com" ocupa a primeira coluna.
-      A palavra animada ocupa SEMPRE a segunda coluna.
-
-      Assim clareza / estrutura / detalhes
-      não alteram a posição horizontal da frase.
-    */
 
     .intro-title {
       display:grid;
 
       grid-template-columns:
         max-content
-        5.3em;
+        5.4em;
 
       align-items:baseline;
 
-      column-gap:.18em;
+      column-gap:.16em;
 
       width:max-content;
       max-width:100%;
@@ -263,7 +217,7 @@
       font-size:
         clamp(
           3rem,
-          6.4vw,
+          6.2vw,
           5.8rem
         );
 
@@ -276,20 +230,14 @@
       white-space:nowrap;
     }
 
-
     .intro-fixed {
-      display:block;
-
       line-height:1;
     }
-
 
     .intro-word-cycle {
       position:relative;
 
-      display:block;
-
-      width:5.3em;
+      width:5.4em;
       height:1em;
 
       overflow:hidden;
@@ -297,41 +245,29 @@
       color:var(--accent);
 
       font-style:italic;
-
       line-height:1;
     }
 
-
     .intro-word-cycle .w {
       position:absolute;
-
       top:0;
       left:0;
 
       width:max-content;
-
-      display:block;
-
-      color:var(--accent);
-
-      line-height:1;
-
-      white-space:nowrap;
 
       opacity:0;
 
       transform:
         translate3d(
           0,
-          110%,
+          115%,
           0
         );
 
       transition:
-        opacity .32s ease,
+        opacity .3s ease,
         transform .56s var(--ease);
     }
-
 
     .intro-word-cycle .w.active {
       opacity:1;
@@ -344,18 +280,16 @@
         );
     }
 
-
     .intro-word-cycle .w.exit {
       opacity:0;
 
       transform:
         translate3d(
           0,
-          -110%,
+          -115%,
           0
         );
     }
-
 
     .intro-help {
       position:absolute;
@@ -363,8 +297,7 @@
       left:50%;
       bottom:28px;
 
-      transform:
-        translateX(-50%);
+      transform:translateX(-50%);
 
       color:var(--muted);
 
@@ -372,8 +305,6 @@
 
       white-space:nowrap;
     }
-
-
 
     /* =========================================================
        NAV
@@ -394,13 +325,11 @@
 
       align-items:center;
 
-      min-height:66px;
+      min-height:62px;
 
       padding:
-        0 var(--pad);
-
-      border-bottom:
-        1px solid var(--line);
+        0
+        var(--pad);
 
       background:var(--nav-bg);
 
@@ -408,34 +337,29 @@
       -webkit-backdrop-filter:blur(14px);
     }
 
-
     .nav-left {
       display:flex;
       align-items:center;
       gap:18px;
     }
 
-
     .logo {
       font-family:"Fraunces",serif;
 
-      font-size:1.03rem;
-
+      font-size:1.14rem;
       font-weight:500;
 
       white-space:nowrap;
     }
 
-
     .logo:hover {
       color:var(--accent);
     }
 
-
     .theme-toggle {
-      min-height:30px;
+      min-height:32px;
 
-      padding:0 11px;
+      padding:0 13px;
 
       border:
         1px solid
@@ -447,35 +371,36 @@
 
       color:var(--dim);
 
-      font-size:.56rem;
+      font-family:"IBM Plex Mono",monospace;
+      font-size:.65rem;
 
       cursor:pointer;
     }
-
 
     .theme-toggle:hover {
       border-color:var(--accent);
       color:var(--accent);
     }
 
-
     .site-nav ul {
       display:flex;
-      gap:30px;
+      gap:34px;
       list-style:none;
     }
 
-
     .site-nav ul a {
       color:var(--dim);
-      font-size:.72rem;
-    }
 
+      font-size:.82rem;
+      font-weight:400;
+
+      transition:
+        color .2s ease;
+    }
 
     .site-nav ul a:hover {
       color:var(--accent);
     }
-
 
     .nav-cta {
       justify-self:end;
@@ -483,29 +408,24 @@
       display:flex;
       align-items:center;
 
-      min-height:37px;
+      min-height:38px;
 
-      padding:0 18px;
+      padding:0 20px;
 
       border:
         1px solid
         var(--line-strong);
 
-      border-radius:999px;
-
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.55rem;
+      font-size:.62rem;
     }
-
 
     .nav-cta:hover {
       border-color:var(--ink);
       background:var(--ink);
       color:var(--bg);
     }
-
-
 
     /* =========================================================
        HERO
@@ -515,84 +435,78 @@
       min-height:
         calc(
           100svh -
-          66px
+          62px
         );
 
       display:grid;
 
       grid-template-columns:
-        minmax(0,1.1fr)
-        minmax(430px,.9fr);
+        minmax(0,1.08fr)
+        minmax(430px,.92fr);
 
       align-items:center;
 
       gap:
         clamp(
-          40px,
-          6vw,
-          90px
+          42px,
+          7vw,
+          100px
         );
 
       padding:
-        78px
+        74px
         var(--pad)
-        82px;
+        78px;
     }
-
 
     .hero-text {
       max-width:720px;
     }
 
-
     .hero-eyebrow {
-      margin-bottom:25px;
+      margin-bottom:27px;
 
       color:var(--ink);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.58rem;
+      font-size:.64rem;
       font-weight:500;
 
+      line-height:1.5;
       letter-spacing:.045em;
     }
 
-
     .hero h1 {
-      max-width:720px;
+      max-width:730px;
 
       font-family:"Fraunces",serif;
 
       font-size:
         clamp(
-          3.7rem,
-          5.7vw,
-          6rem
+          3.85rem,
+          5.9vw,
+          6.15rem
         );
 
       font-weight:300;
 
-      line-height:.94;
+      line-height:.95;
 
       letter-spacing:-.047em;
     }
 
-
     .hero h1 em {
       color:var(--accent);
-
       font-weight:300;
       font-style:italic;
     }
 
-
     .hero-sub {
       max-width:690px;
 
-      margin-top:37px;
+      margin-top:36px;
     }
-
 
     .hero-sub p {
       max-width:660px;
@@ -601,14 +515,13 @@
 
       font-size:
         clamp(
-          .92rem,
-          1.18vw,
-          1.05rem
+          1rem,
+          1.22vw,
+          1.1rem
         );
 
       line-height:1.75;
     }
-
 
     .hero-actions {
       display:flex;
@@ -616,20 +529,18 @@
       align-items:center;
       flex-wrap:wrap;
 
-      gap:26px;
+      gap:28px;
 
       margin-top:25px;
     }
-
 
     .hero-project-link {
       position:relative;
 
       color:var(--accent);
 
-      font-size:.74rem;
+      font-size:.8rem;
     }
-
 
     .hero-project-link::after {
       content:"";
@@ -645,34 +556,28 @@
       background:var(--accent);
     }
 
-
     .hero-contact-link {
       color:var(--dim);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.56rem;
+      font-size:.62rem;
     }
-
 
     .hero-contact-link:hover {
       color:var(--accent);
     }
 
-
-
     /* =========================================================
-       HERO / WIREFRAME
+       WIREFRAME
     ========================================================= */
 
     .hero-visual {
       min-width:0;
 
       display:flex;
-
       justify-content:center;
     }
-
 
     .wf-wrapper {
       position:relative;
@@ -692,7 +597,6 @@
       justify-content:center;
     }
 
-
     .wf-illustration {
       position:absolute;
 
@@ -701,7 +605,6 @@
       pointer-events:none;
     }
 
-
     .pen-tool-svg {
       top:25px;
       left:-22px;
@@ -709,7 +612,6 @@
       width:78px;
       height:78px;
     }
-
 
     .badge-floater {
       top:23px;
@@ -749,7 +651,6 @@
         infinite;
     }
 
-
     .spec-floater {
       left:-34px;
       bottom:100px;
@@ -771,7 +672,6 @@
 
       font-size:.5rem;
     }
-
 
     .cursor-floater {
       right:-12px;
@@ -808,7 +708,6 @@
         infinite;
     }
 
-
     @keyframes floatAnim {
       0%,
       100% {
@@ -819,7 +718,6 @@
         transform:translateY(-5px);
       }
     }
-
 
     .wf-window {
       --wf-bg-local:var(--wf-bg);
@@ -858,7 +756,6 @@
       user-select:none;
     }
 
-
     .wf-header {
       height:34px;
 
@@ -879,12 +776,10 @@
       background:var(--wf-card-local);
     }
 
-
     .wf-dots {
       display:flex;
       gap:5px;
     }
-
 
     .wf-dot {
       width:7px;
@@ -896,7 +791,6 @@
 
       opacity:.57;
     }
-
 
     .wf-switch-mode {
       padding:
@@ -917,7 +811,6 @@
       cursor:pointer;
     }
 
-
     .wf-body {
       flex:1;
 
@@ -925,7 +818,6 @@
 
       min-height:0;
     }
-
 
     .wf-sidebar {
       width:110px;
@@ -953,7 +845,6 @@
         );
     }
 
-
     .wf-nav-item {
       display:flex;
 
@@ -978,17 +869,14 @@
         transform .18s ease;
     }
 
-
     .wf-nav-item:hover {
       transform:translateX(2px);
     }
-
 
     .wf-nav-item.active {
       background:var(--accent);
       color:#fff;
     }
-
 
     .wf-main {
       flex:1;
@@ -998,12 +886,10 @@
       padding:13px;
     }
 
-
     .wf-view {
       display:none;
       height:100%;
     }
-
 
     .wf-view.active {
       display:block;
@@ -1012,7 +898,6 @@
         wfViewIn
         .25s ease;
     }
-
 
     @keyframes wfViewIn {
       from {
@@ -1026,7 +911,6 @@
       }
     }
 
-
     .wf-top-bar {
       display:flex;
 
@@ -1039,14 +923,12 @@
       margin-bottom:11px;
     }
 
-
     .wf-title {
       color:var(--wf-text-local);
 
       font-size:.7rem;
       font-weight:500;
     }
-
 
     .wf-version {
       color:var(--muted);
@@ -1055,7 +937,6 @@
 
       font-size:.42rem;
     }
-
 
     .wf-badge-btn {
       padding:
@@ -1078,7 +959,6 @@
       cursor:pointer;
     }
 
-
     .wf-card-grid {
       display:grid;
 
@@ -1089,7 +969,6 @@
 
       margin-bottom:10px;
     }
-
 
     .wf-card {
       min-height:55px;
@@ -1107,7 +986,6 @@
       color:var(--wf-text-local);
     }
 
-
     .wf-card-label {
       display:block;
 
@@ -1118,7 +996,6 @@
       font-size:.42rem;
     }
 
-
     .wf-card-val {
       color:var(--wf-text-local);
 
@@ -1127,7 +1004,6 @@
       font-size:.82rem;
       font-weight:600;
     }
-
 
     .wf-task-list {
       display:flex;
@@ -1138,7 +1014,6 @@
 
       margin-top:7px;
     }
-
 
     .wf-task-item {
       display:flex;
@@ -1153,7 +1028,6 @@
 
       cursor:pointer;
     }
-
 
     .wf-checkbox {
       width:11px;
@@ -1174,24 +1048,15 @@
       font-size:.4rem;
     }
 
-
     .wf-task-item.checked .wf-checkbox {
       border-color:var(--accent);
       background:var(--accent);
       color:#fff;
     }
 
-
     .wf-task-item.checked {
       color:var(--wf-text-local);
     }
-
-
-
-    /* =========================================================
-       IMPORTANTE:
-       CONTRASTE AUTOMÁTICO DA PINTURA
-    ========================================================= */
 
     .wf-paintable {
       transition:
@@ -1199,15 +1064,6 @@
         border-color .18s ease,
         color .18s ease;
     }
-
-
-    /*
-      Quando JavaScript adiciona .is-painted,
-      TODAS as letras internas passam a utilizar
-      --paint-foreground.
-
-      Isso resolve cards verdes, azuis, pretos etc.
-    */
 
     .wf-paintable.is-painted,
     .wf-paintable.is-painted *,
@@ -1219,12 +1075,6 @@
           #fff
         ) !important;
     }
-
-
-
-    /* =========================================================
-       INTERFACES SCREEN
-    ========================================================= */
 
     .wf-wireframe-main {
       min-height:95px;
@@ -1240,7 +1090,6 @@
       background:var(--wf-card-local);
     }
 
-
     .wf-wireframe-header {
       margin-bottom:16px;
 
@@ -1248,7 +1097,6 @@
 
       font-size:.47rem;
     }
-
 
     .wf-wireframe-row {
       display:flex;
@@ -1262,11 +1110,9 @@
       font-size:.47rem;
     }
 
-
     .wf-wireframe-row strong {
       font-size:.52rem;
     }
-
 
     .wf-interface-grid {
       display:grid;
@@ -1278,7 +1124,6 @@
 
       margin-top:9px;
     }
-
 
     .wf-interface-component {
       min-height:49px;
@@ -1294,7 +1139,6 @@
       background:var(--wf-card-local);
     }
 
-
     .wf-interface-component span {
       display:block;
 
@@ -1307,17 +1151,10 @@
       font-size:.4rem;
     }
 
-
     .wf-interface-component strong {
       font-size:.46rem;
       font-weight:400;
     }
-
-
-
-    /* =========================================================
-       DESIGN SYSTEM SCREEN
-    ========================================================= */
 
     .wf-system-label {
       margin:
@@ -1330,7 +1167,6 @@
       font-size:.42rem;
     }
 
-
     .wf-system-buttons {
       display:flex;
 
@@ -1338,7 +1174,6 @@
 
       gap:6px;
     }
-
 
     .wf-token-btn {
       padding:
@@ -1361,7 +1196,6 @@
       cursor:pointer;
     }
 
-
     .wf-token-link {
       border:0;
 
@@ -1378,7 +1212,6 @@
       cursor:pointer;
     }
 
-
     .wf-type-token {
       margin-top:6px;
 
@@ -1394,7 +1227,6 @@
       background:var(--wf-card-local);
     }
 
-
     .wf-type-token strong {
       display:block;
 
@@ -1406,18 +1238,11 @@
       font-weight:400;
     }
 
-
     .wf-type-token span {
       font-family:"IBM Plex Mono",monospace;
 
       font-size:.4rem;
     }
-
-
-
-    /* =========================================================
-       PALETTE
-    ========================================================= */
 
     .wf-palette {
       display:flex;
@@ -1430,7 +1255,6 @@
 
       margin-top:14px;
     }
-
 
     .swatch {
       width:24px;
@@ -1451,18 +1275,15 @@
         box-shadow .18s ease;
     }
 
-
     .swatch:hover {
       transform:scale(1.08);
     }
-
 
     .swatch.active {
       box-shadow:
         0 0 0 3px var(--bg),
         0 0 0 4px var(--ink);
     }
-
 
     .swatch.reset {
       display:grid;
@@ -1474,7 +1295,6 @@
 
       font-size:.83rem;
     }
-
 
     .clear-btn {
       padding:
@@ -1495,7 +1315,6 @@
       cursor:pointer;
     }
 
-
     .hero-visual-hint {
       margin-top:14px;
 
@@ -1508,12 +1327,16 @@
       letter-spacing:.02em;
     }
 
-
-
     /* =========================================================
-       RESTANTE DO PORTFÓLIO
-       A PARTIR DAQUI MANTIDO
+       PROCESS
     ========================================================= */
+
+    .process-section {
+      padding:
+        90px
+        var(--pad)
+        105px;
+    }
 
     .section-kicker {
       display:block;
@@ -1524,60 +1347,12 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.54rem;
+      font-size:.59rem;
 
       letter-spacing:.06em;
 
       text-transform:uppercase;
     }
-
-
-    .section-head {
-      padding:
-        85px
-        var(--pad)
-        32px;
-
-      border-top:
-        1px solid
-        var(--line);
-    }
-
-
-    .section-head h2 {
-      max-width:950px;
-
-      font-family:"Fraunces",serif;
-
-      font-size:
-        clamp(
-          2.2rem,
-          4.6vw,
-          4.5rem
-        );
-
-      font-weight:300;
-
-      line-height:1.04;
-
-      letter-spacing:-.03em;
-    }
-
-
-
-    /* PROCESS */
-
-    .process-section {
-      padding:
-        80px
-        var(--pad)
-        100px;
-
-      border-top:
-        1px solid
-        var(--line);
-    }
-
 
     .process-grid {
       display:grid;
@@ -1588,20 +1363,15 @@
           1fr
         );
 
-      margin-top:27px;
-
-      border-top:
-        1px solid
-        var(--line);
+      margin-top:30px;
 
       border-left:
         1px solid
         var(--line);
     }
 
-
     .process-card {
-      min-height:270px;
+      min-height:275px;
 
       display:flex;
 
@@ -1609,24 +1379,18 @@
 
       justify-content:flex-end;
 
-      padding:27px;
+      padding:28px;
 
       border-right:
-        1px solid
-        var(--line);
-
-      border-bottom:
         1px solid
         var(--line);
 
       transition:.2s;
     }
 
-
     .process-card:hover {
       background:var(--card);
     }
-
 
     .process-card > span {
       margin-bottom:auto;
@@ -1635,59 +1399,242 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.52rem;
+      font-size:.57rem;
     }
 
-
     .process-card h3 {
-      margin-bottom:10px;
+      margin-bottom:11px;
 
       font-family:"Fraunces",serif;
 
-      font-size:1.55rem;
+      font-size:1.68rem;
       font-weight:400;
     }
-
 
     .process-card p {
       color:var(--dim);
 
-      font-size:.78rem;
+      font-size:.83rem;
 
-      line-height:1.6;
+      line-height:1.62;
     }
 
-
-
-    /* ABOUT */
+    /* =========================================================
+       ABOUT
+    ========================================================= */
 
     .about {
       display:grid;
 
       grid-template-columns:
-        minmax(0,1fr)
-        minmax(300px,.78fr);
+        minmax(320px,.82fr)
+        minmax(0,1.18fr);
 
       gap:
         clamp(
-          50px,
+          55px,
           8vw,
-          125px
+          120px
         );
 
       align-items:center;
 
       padding:
-        10px
+        110px
         var(--pad)
-        105px;
+        120px;
     }
 
+    .about-visual {
+      position:relative;
+
+      min-height:470px;
+
+      display:grid;
+
+      place-items:center;
+    }
+
+    .profile-system {
+      position:relative;
+
+      width:min(100%,450px);
+      aspect-ratio:1;
+
+      display:grid;
+
+      place-items:center;
+    }
+
+    .profile-system::before {
+      content:"";
+
+      position:absolute;
+
+      inset:7%;
+
+      border:
+        1px dashed
+        var(--line-strong);
+
+      border-radius:50%;
+    }
+
+    .profile-system::after {
+      content:"";
+
+      position:absolute;
+
+      inset:17%;
+
+      border:
+        2px solid
+        var(--accent);
+
+      border-radius:50%;
+    }
+
+    .profile-image-circle {
+      position:relative;
+
+      z-index:2;
+
+      width:62%;
+      aspect-ratio:1;
+
+      overflow:hidden;
+
+      border-radius:50%;
+
+      background:var(--card);
+
+      box-shadow:
+        0 24px 54px
+        rgba(31,28,24,.13);
+    }
+
+    .profile-image-circle img {
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      cursor:zoom-in;
+    }
+
+    .profile-ring-text {
+      position:absolute;
+
+      z-index:3;
+
+      top:9%;
+      left:50%;
+
+      width:73%;
+
+      transform:translateX(-50%);
+
+      color:var(--accent);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.72rem;
+      font-weight:600;
+
+      letter-spacing:.14em;
+
+      text-align:center;
+
+      text-transform:uppercase;
+    }
+
+    .profile-badge {
+      position:absolute;
+
+      z-index:4;
+
+      top:8%;
+      right:4%;
+
+      padding:
+        7px 12px;
+
+      border:
+        1px solid
+        var(--accent);
+
+      border-radius:999px;
+
+      background:var(--bg);
+
+      color:var(--accent);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.52rem;
+      font-weight:600;
+
+      box-shadow:var(--shadow);
+    }
+
+    .profile-spec {
+      position:absolute;
+
+      z-index:4;
+
+      left:0;
+      bottom:6%;
+
+      padding:
+        6px 10px;
+
+      border:
+        1px solid
+        var(--line-strong);
+
+      border-radius:5px;
+
+      background:var(--bg);
+
+      color:var(--dim);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.5rem;
+    }
+
+    .profile-pointer {
+      position:absolute;
+
+      z-index:4;
+
+      right:0;
+      bottom:4%;
+
+      padding:
+        7px 13px;
+
+      border-radius:
+        5px 15px 15px 15px;
+
+      background:var(--ink);
+
+      color:var(--bg);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.52rem;
+
+      box-shadow:var(--shadow);
+    }
+
+    .about-copy {
+      max-width:750px;
+    }
 
     .about-owner {
-      margin-bottom:28px;
+      margin-bottom:25px;
     }
-
 
     .about-owner small {
       display:block;
@@ -1698,67 +1645,65 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.52rem;
+      font-size:.58rem;
 
       letter-spacing:.08em;
     }
-
 
     .about-owner h3 {
       font-family:"Fraunces",serif;
 
       font-size:
         clamp(
-          3.2rem,
-          6vw,
+          3.5rem,
+          5.8vw,
           6rem
         );
 
       font-weight:300;
 
-      line-height:.91;
+      line-height:.93;
 
       letter-spacing:-.045em;
     }
 
-
     .about-owner h3 em {
       color:var(--accent);
+
       font-weight:300;
+      font-style:italic;
     }
 
-
     .about-copy > p {
-      max-width:680px;
+      max-width:760px;
 
-      margin-bottom:17px;
+      margin-bottom:23px;
 
       color:var(--dim);
 
       font-size:
         clamp(
-          .91rem,
-          1.25vw,
-          1.02rem
+          1rem,
+          1.3vw,
+          1.1rem
         );
 
-      line-height:1.77;
+      line-height:1.78;
     }
-
 
     .about-tags {
       display:flex;
+
       flex-wrap:wrap;
 
       gap:7px;
 
-      margin-top:25px;
+      margin-top:28px;
     }
-
 
     .about-tag {
       padding:
-        7px 10px;
+        7px 11px;
 
       border:
         1px solid
@@ -1770,99 +1715,27 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.5rem;
+      font-size:.54rem;
     }
 
-
-    .about-visual {
-      position:relative;
-
-      min-height:420px;
-
-      display:grid;
-      place-items:center;
-    }
-
-
-    .about-orbit {
-      position:absolute;
-
-      width:min(90%,370px);
-
-      aspect-ratio:1;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:50%;
-    }
-
-
-    .about-orbit::after {
-      content:"";
-
-      position:absolute;
-
-      top:12%;
-      right:6%;
-
-      width:10px;
-      height:10px;
-
-      border-radius:50%;
-
-      background:var(--accent);
-    }
-
-
-    .about-photo {
-      position:relative;
-
-      z-index:2;
-
-      width:min(76%,310px);
-
-      aspect-ratio:4 / 5;
-
-      overflow:hidden;
-
-      border-radius:
-        48% 48% 8px 8px;
-
-      background:var(--card);
-
-      box-shadow:var(--shadow);
-    }
-
-
-    .about-photo img {
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-
-      cursor:zoom-in;
-    }
-
-
-
-    /* PROJECT */
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
 
     .project {
-      border-top:
-        1px solid
-        var(--line);
+      padding-top:55px;
     }
 
+    .project:first-of-type {
+      padding-top:35px;
+    }
 
     .project-head {
       padding:
-        70px
+        50px
         var(--pad)
         42px;
     }
-
 
     .project-identity {
       display:flex;
@@ -1876,24 +1749,22 @@
       margin-bottom:15px;
     }
 
-
     .project-number {
       color:var(--accent);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.54rem;
+      font-size:.58rem;
     }
-
 
     .case-badge {
       display:inline-flex;
 
       align-items:center;
 
-      min-height:24px;
+      min-height:25px;
 
-      padding:0 8px;
+      padding:0 9px;
 
       border:
         1px solid
@@ -1905,20 +1776,19 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.45rem;
+      font-size:.48rem;
 
       letter-spacing:.04em;
     }
-
 
     .project-head > h3 {
       font-family:"Fraunces",serif;
 
       font-size:
         clamp(
-          2.7rem,
-          5.8vw,
-          5.7rem
+          3rem,
+          5.9vw,
+          5.8rem
         );
 
       font-weight:300;
@@ -1928,24 +1798,22 @@
       letter-spacing:-.04em;
     }
 
-
     .project-summary {
-      max-width:780px;
+      max-width:790px;
 
-      margin-top:22px;
+      margin-top:23px;
 
       color:var(--dim);
 
       font-size:
         clamp(
-          .9rem,
-          1.2vw,
-          1.02rem
+          .98rem,
+          1.22vw,
+          1.08rem
         );
 
-      line-height:1.7;
+      line-height:1.72;
     }
-
 
     .project-meta {
       display:flex;
@@ -1954,9 +1822,8 @@
 
       gap:6px;
 
-      margin-top:22px;
+      margin-top:23px;
     }
-
 
     .project-meta span {
       padding:
@@ -1972,9 +1839,8 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.48rem;
+      font-size:.51rem;
     }
-
 
     .case-grid {
       display:grid;
@@ -1987,57 +1853,49 @@
 
       gap:1px;
 
-      margin-top:32px;
-
-      border:
-        1px solid
-        var(--line);
+      margin-top:34px;
 
       background:var(--line);
     }
 
-
     .case-card {
-      min-height:180px;
+      min-height:185px;
 
-      padding:19px;
+      padding:20px;
 
       background:var(--bg);
     }
-
 
     .case-card > span {
       color:var(--accent);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.48rem;
+      font-size:.52rem;
 
       text-transform:uppercase;
     }
-
 
     .case-card p {
       margin-top:14px;
 
       color:var(--dim);
 
-      font-size:.7rem;
+      font-size:.75rem;
 
-      line-height:1.62;
+      line-height:1.64;
     }
 
-
-
-    /* FERNANDO CASE */
+    /* =========================================================
+       FERNANDO CASE
+    ========================================================= */
 
     .fa-case {
       padding:
         0
         var(--pad)
-        90px;
+        100px;
     }
-
 
     .fa-tabs {
       display:flex;
@@ -2051,11 +1909,9 @@
       scrollbar-width:none;
     }
 
-
     .fa-tabs::-webkit-scrollbar {
       display:none;
     }
-
 
     .fa-tab {
       flex:0 0 auto;
@@ -2075,26 +1931,25 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.5rem;
+      font-size:.53rem;
 
       white-space:nowrap;
 
       cursor:pointer;
     }
 
-
     .fa-tab:hover,
     .fa-tab.active {
       border-color:var(--accent);
+
       background:var(--accent);
+
       color:white;
     }
-
 
     .fa-view {
       display:none;
     }
-
 
     .fa-view.active {
       display:block;
@@ -2103,7 +1958,6 @@
         faViewIn
         .35s ease;
     }
-
 
     @keyframes faViewIn {
       from {
@@ -2117,10 +1971,6 @@
       }
     }
 
-
-
-    /* STORY */
-
     .fa-story {
       display:grid;
 
@@ -2130,7 +1980,6 @@
 
       gap:20px;
     }
-
 
     .fa-story-copy {
       padding:27px;
@@ -2144,15 +1993,13 @@
       background:var(--card);
     }
 
-
     .fa-story-copy > span {
       color:var(--accent);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.48rem;
+      font-size:.5rem;
     }
-
 
     .fa-story-copy h4 {
       margin:17px 0;
@@ -2161,9 +2008,9 @@
 
       font-size:
         clamp(
-          1.8rem,
-          2.8vw,
-          2.8rem
+          1.9rem,
+          2.9vw,
+          2.9rem
         );
 
       font-weight:300;
@@ -2171,20 +2018,17 @@
       line-height:1.08;
     }
 
-
     .fa-story-copy > p {
       color:var(--dim);
 
-      font-size:.77rem;
+      font-size:.81rem;
 
-      line-height:1.7;
+      line-height:1.72;
     }
-
 
     .fa-story-flow {
       margin-top:22px;
     }
-
 
     .fa-story-flow > div {
       display:grid;
@@ -2203,35 +2047,29 @@
         var(--line);
     }
 
-
     .fa-story-flow span {
       color:var(--accent);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.48rem;
+      font-size:.5rem;
     }
-
 
     .fa-story-flow strong {
       display:block;
-      font-size:.7rem;
-    }
 
+      font-size:.74rem;
+    }
 
     .fa-story-flow p {
       margin-top:4px;
 
       color:var(--dim);
 
-      font-size:.64rem;
+      font-size:.67rem;
 
       line-height:1.5;
     }
-
-
-
-    /* BROWSER */
 
     .browser-shell {
       overflow:hidden;
@@ -2246,7 +2084,6 @@
 
       box-shadow:var(--shadow);
     }
-
 
     .browser-bar {
       min-height:44px;
@@ -2265,19 +2102,13 @@
       padding:
         0 12px;
 
-      border-bottom:
-        1px solid
-        var(--line);
-
       background:var(--card);
     }
-
 
     .browser-dots {
       display:flex;
       gap:5px;
     }
-
 
     .browser-dots i {
       width:7px;
@@ -2290,31 +2121,25 @@
       opacity:.48;
     }
 
-
     .browser-address {
       overflow:hidden;
 
       color:var(--muted);
 
-      font-size:.47rem;
+      font-size:.5rem;
 
       white-space:nowrap;
 
       text-overflow:ellipsis;
     }
 
-
     .browser-link {
       color:var(--accent);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.47rem;
+      font-size:.5rem;
     }
-
-
-
-    /* DESKTOP PREVIEW */
 
     .fa-desktop-viewport {
       position:relative;
@@ -2326,7 +2151,6 @@
       background:white;
     }
 
-
     .fa-desktop-canvas {
       position:absolute;
 
@@ -2337,7 +2161,6 @@
 
       transform-origin:top left;
     }
-
 
     .fa-desktop-canvas iframe {
       display:block;
@@ -2351,7 +2174,6 @@
 
       background:white;
     }
-
 
     .fa-result-strip {
       display:grid;
@@ -2373,22 +2195,19 @@
       border-radius:9px;
     }
 
-
     .fa-result-item {
-      min-height:135px;
+      min-height:140px;
 
-      padding:18px;
+      padding:19px;
 
       border-right:
         1px solid
         var(--line);
     }
 
-
     .fa-result-item:last-child {
       border-right:0;
     }
-
 
     .fa-result-item span {
       display:block;
@@ -2399,32 +2218,30 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.47rem;
+      font-size:.5rem;
     }
-
 
     .fa-result-item strong {
       font-family:"Fraunces",serif;
 
-      font-size:1rem;
+      font-size:1.08rem;
 
       font-weight:400;
     }
 
-
     .fa-result-item p {
-      margin-top:6px;
+      margin-top:7px;
 
       color:var(--dim);
 
-      font-size:.65rem;
+      font-size:.7rem;
 
       line-height:1.5;
     }
 
-
-
-    /* DESIGN SYSTEM */
+    /* =========================================================
+       DESIGN SYSTEM
+    ========================================================= */
 
     .system-layout {
       display:grid;
@@ -2446,13 +2263,11 @@
       background:var(--line);
     }
 
-
     .system-sidebar {
       padding:17px;
 
       background:var(--card);
     }
-
 
     .system-sidebar > span {
       display:block;
@@ -2461,9 +2276,8 @@
 
       color:var(--muted);
 
-      font-size:.5rem;
+      font-size:.52rem;
     }
-
 
     .system-nav-btn {
       width:100%;
@@ -2478,13 +2292,12 @@
 
       color:var(--dim);
 
-      font-size:.62rem;
+      font-size:.65rem;
 
       text-align:left;
 
       cursor:pointer;
     }
-
 
     .system-nav-btn:hover,
     .system-nav-btn.active {
@@ -2492,34 +2305,29 @@
       color:var(--accent);
     }
 
-
     .system-canvas {
       padding:28px;
 
       background:var(--surface);
     }
 
-
     .system-panel {
       display:none;
     }
 
-
     .system-panel.active {
       display:block;
     }
-
 
     .system-panel-title {
       margin-bottom:20px;
 
       font-family:"Fraunces",serif;
 
-      font-size:1.5rem;
+      font-size:1.55rem;
 
       font-weight:400;
     }
-
 
     .fa-color-grid {
       display:grid;
@@ -2532,7 +2340,6 @@
 
       gap:8px;
     }
-
 
     .fa-color {
       min-height:130px;
@@ -2549,33 +2356,28 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.49rem;
+      font-size:.5rem;
     }
-
 
     .fa-color.navy {
       background:#00152A;
       color:white;
     }
 
-
     .fa-color.gold {
       background:#B8860B;
       color:white;
     }
-
 
     .fa-color.slate {
       background:#64748B;
       color:white;
     }
 
-
     .fa-color.light {
       background:#F4F6F8;
       color:#00152A;
     }
-
 
     .fa-color.white {
       border:1px solid #CED5DC;
@@ -2584,7 +2386,6 @@
 
       color:#00152A;
     }
-
 
     .fa-type-demo {
       display:grid;
@@ -2597,13 +2398,14 @@
       margin-top:12px;
     }
 
-
     .fa-type-card {
       min-height:200px;
 
       padding:18px;
 
-      border:1px solid #D8DEE4;
+      border:
+        1px solid
+        #D8DEE4;
 
       border-radius:6px;
 
@@ -2612,12 +2414,10 @@
       color:#00152A;
     }
 
-
     .fa-type-card span {
       color:#64748B;
-      font-size:.49rem;
+      font-size:.51rem;
     }
-
 
     .fa-type-card strong {
       display:block;
@@ -2627,16 +2427,13 @@
       font-size:2.8rem;
     }
 
-
     .fa-type-card.manrope {
       font-family:"Manrope",sans-serif;
     }
 
-
     .fa-type-card.dm {
       font-family:"DM Sans",sans-serif;
     }
-
 
     .component-grid {
       display:grid;
@@ -2649,7 +2446,6 @@
 
       gap:12px;
     }
-
 
     .component-box {
       min-height:180px;
@@ -2665,11 +2461,9 @@
       background:var(--card);
     }
 
-
     .component-box.wide {
       grid-column:1 / -1;
     }
-
 
     .component-label {
       display:flex;
@@ -2682,16 +2476,14 @@
 
       color:var(--muted);
 
-      font-size:.5rem;
+      font-size:.52rem;
     }
-
 
     .demo-button-row {
       display:flex;
       flex-wrap:wrap;
       gap:8px;
     }
-
 
     .fa-demo-primary,
     .fa-demo-secondary {
@@ -2700,45 +2492,46 @@
 
       border-radius:5px;
 
-      font-size:.63rem;
+      font-size:.66rem;
 
       cursor:pointer;
     }
 
-
     .fa-demo-primary {
       border:1px solid #B8860B;
+
       background:#B8860B;
+
       color:white;
     }
 
-
     .fa-demo-secondary {
       border:1px solid #00152A;
+
       background:transparent;
+
       color:#00152A;
     }
 
-
     .fa-demo-primary.is-hover {
       filter:brightness(.83);
+
       transform:translateY(-1px);
     }
-
 
     .fa-demo-primary.is-disabled {
       opacity:.32;
     }
 
-
     .variant-controls {
       display:flex;
+
       flex-wrap:wrap;
+
       gap:5px;
 
       margin-top:18px;
     }
-
 
     .variant-controls button {
       padding:
@@ -2752,20 +2545,19 @@
 
       background:var(--bg);
 
-      font-size:.5rem;
+      font-size:.52rem;
 
       cursor:pointer;
     }
-
 
     .variant-controls button.active {
       border-color:var(--accent);
       color:var(--accent);
     }
 
-
-
-    /* RESPONSIVE CASE */
+    /* =========================================================
+       RESPONSIVE CASE
+    ========================================================= */
 
     .fa-responsive-showcase {
       display:grid;
@@ -2789,7 +2581,6 @@
       background:var(--card);
     }
 
-
     .fa-device-desktop {
       min-width:0;
 
@@ -2808,7 +2599,6 @@
         rgba(0,0,0,.12);
     }
 
-
     .fa-mobile-wrap {
       display:flex;
 
@@ -2818,7 +2608,6 @@
 
       gap:13px;
     }
-
 
     .fa-device-mobile {
       width:245px;
@@ -2834,7 +2623,6 @@
         rgba(0,0,0,.22);
     }
 
-
     .fa-phone-screen {
       position:relative;
 
@@ -2846,7 +2634,6 @@
 
       background:white;
     }
-
 
     .fa-phone-screen iframe {
       position:absolute;
@@ -2865,7 +2652,6 @@
 
       transform-origin:top left;
     }
-
 
     .fa-responsive-notes {
       display:grid;
@@ -2887,20 +2673,17 @@
       background:var(--line);
     }
 
-
     .fa-responsive-note {
       padding:17px;
 
       background:var(--bg);
     }
 
-
     .fa-responsive-note span {
       color:var(--accent);
 
-      font-size:.5rem;
+      font-size:.52rem;
     }
-
 
     .fa-responsive-note h4 {
       margin:7px 0;
@@ -2910,18 +2693,17 @@
       font-weight:400;
     }
 
-
     .fa-responsive-note p {
       color:var(--dim);
 
-      font-size:.69rem;
+      font-size:.72rem;
 
       line-height:1.55;
     }
 
-
-
-    /* FIGMA */
+    /* =========================================================
+       FIGMA
+    ========================================================= */
 
     .figma-shell {
       overflow:hidden;
@@ -2937,7 +2719,6 @@
       box-shadow:var(--shadow);
     }
 
-
     .figma-head {
       display:flex;
 
@@ -2951,13 +2732,14 @@
 
       padding:12px 15px;
 
-      border-bottom:1px solid #333;
+      border-bottom:
+        1px solid
+        #333;
 
       background:#1B1B1B;
 
       color:white;
     }
-
 
     .figma-head span {
       display:block;
@@ -2966,31 +2748,27 @@
 
       color:#F48A4A;
 
-      font-size:.5rem;
+      font-size:.52rem;
     }
-
 
     .figma-head strong {
       font-family:"Fraunces",serif;
 
-      font-size:.98rem;
+      font-size:1rem;
 
       font-weight:400;
     }
 
-
     .figma-head a {
       color:#F48A4A;
 
-      font-size:.5rem;
+      font-size:.52rem;
     }
-
 
     .figma-frame {
       height:min(78vh,780px);
       min-height:600px;
     }
-
 
     .figma-frame iframe {
       width:100%;
@@ -2998,17 +2776,16 @@
       border:0;
     }
 
-
-
-    /* SECONDARY PROJECTS */
+    /* =========================================================
+       SECONDARY PROJECTS
+    ========================================================= */
 
     .secondary-case {
       padding:
         0
         var(--pad)
-        80px;
+        95px;
     }
-
 
     .secondary-shell {
       overflow:hidden;
@@ -3024,9 +2801,9 @@
       box-shadow:var(--shadow);
     }
 
-
     .case-tabs {
       display:flex;
+
       flex-wrap:wrap;
 
       gap:6px;
@@ -3037,7 +2814,6 @@
         1px solid
         var(--line);
     }
-
 
     .case-tab {
       padding:
@@ -3053,33 +2829,33 @@
 
       color:var(--dim);
 
-      font-size:.55rem;
+      font-size:.58rem;
 
       cursor:pointer;
     }
 
-
     .case-tab.active,
     .case-tab:hover {
       border-color:var(--accent);
+
       background:var(--accent);
+
       color:white;
     }
 
-
     .case-view {
       display:none;
+
       padding:26px;
     }
-
 
     .case-view.active {
       display:block;
     }
 
-
-
-    /* VOIT */
+    /* =========================================================
+       VOIT
+    ========================================================= */
 
     .voit-overview {
       display:grid;
@@ -3096,12 +2872,12 @@
       align-items:center;
     }
 
-
     .voit-core {
       width:155px;
       height:155px;
 
       display:grid;
+
       place-items:center;
 
       border-radius:50%;
@@ -3115,7 +2891,6 @@
       font-size:1.35rem;
     }
 
-
     .voit-domain {
       min-height:135px;
 
@@ -3128,12 +2903,11 @@
       border-radius:7px;
     }
 
-
     .voit-domain span {
       color:var(--accent);
-      font-size:.48rem;
-    }
 
+      font-size:.5rem;
+    }
 
     .voit-domain h4 {
       margin:7px 0;
@@ -3143,15 +2917,13 @@
       font-weight:400;
     }
 
-
     .voit-domain p {
       color:var(--dim);
 
-      font-size:.69rem;
+      font-size:.72rem;
 
       line-height:1.55;
     }
-
 
     .voit-social {
       display:grid;
@@ -3165,7 +2937,6 @@
       gap:10px;
     }
 
-
     .voit-piece {
       overflow:hidden;
 
@@ -3178,31 +2949,32 @@
       cursor:zoom-in;
     }
 
-
     .voit-piece img {
       width:100%;
-
       aspect-ratio:1;
 
       object-fit:cover;
     }
 
+    /* =========================================================
+       RENATA
+    ========================================================= */
 
-
-    /* RENATA */
-
-    .deck-shell {
+    .renata-viewer {
       overflow:hidden;
 
-      border-radius:8px;
+      border-radius:10px;
 
       background:#171717;
 
-      color:white;
+      color:#fff;
+
+      box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.13);
     }
 
-
-    .deck-topbar {
+    .renata-topbar {
       min-height:46px;
 
       display:flex;
@@ -3211,77 +2983,178 @@
 
       justify-content:space-between;
 
-      padding:0 15px;
+      padding:
+        0
+        16px;
 
-      border-bottom:1px solid #333;
+      border-bottom:
+        1px solid
+        #333;
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.54rem;
     }
 
-
-    .deck-controls {
-      display:flex;
-      gap:6px;
-    }
-
-
-    .deck-controls button {
-      width:32px;
-      height:32px;
-
-      border:1px solid #444;
-
-      border-radius:50%;
-
-      background:transparent;
-
-      color:white;
-
-      cursor:pointer;
-    }
-
-
-    .deck-body {
+    .renata-layout {
       display:grid;
 
       grid-template-columns:
-        1fr
-        155px;
+        minmax(0,1fr)
+        255px;
     }
 
-
-    .deck-stage {
-      min-height:480px;
+    .renata-main {
+      min-height:520px;
 
       display:grid;
+
       place-items:center;
 
-      padding:27px;
+      padding:38px 28px;
+
+      background:#191919;
     }
 
+    .renata-main img {
+      width:100%;
 
-    .deck-stage img {
-      max-height:425px;
+      max-height:455px;
 
       object-fit:contain;
 
       cursor:zoom-in;
     }
 
+    .renata-inspector {
+      padding:
+        28px 22px;
 
-    .deck-side {
-      max-height:480px;
+      border-left:
+        1px solid
+        #343434;
 
-      overflow-y:auto;
-
-      padding:10px;
-
-      border-left:1px solid #333;
+      background:#242424;
     }
 
+    .renata-kicker {
+      display:block;
 
-    .deck-thumb {
-      width:100%;
+      margin-bottom:12px;
 
-      margin-bottom:7px;
+      color:var(--accent);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.52rem;
+
+      letter-spacing:.12em;
+    }
+
+    .renata-inspector h4 {
+      margin-bottom:14px;
+
+      font-family:"Fraunces",serif;
+
+      font-size:1.55rem;
+
+      font-weight:400;
+
+      line-height:1.05;
+    }
+
+    .renata-inspector p {
+      color:#C6C6C6;
+
+      font-size:.76rem;
+
+      line-height:1.65;
+    }
+
+    .renata-arrows {
+      display:flex;
+
+      gap:8px;
+
+      margin-top:24px;
+    }
+
+    .renata-arrows button {
+      width:38px;
+      height:38px;
+
+      display:grid;
+
+      place-items:center;
+
+      border:
+        1px solid
+        #555;
+
+      border-radius:50%;
+
+      background:transparent;
+
+      color:#fff;
+
+      cursor:pointer;
+    }
+
+    .renata-arrows button:hover {
+      border-color:var(--accent);
+
+      background:var(--accent);
+    }
+
+    .renata-progress {
+      position:relative;
+
+      height:2px;
+
+      margin:
+        20px 0;
+
+      overflow:hidden;
+
+      background:#555;
+    }
+
+    .renata-progress::before {
+      content:"";
+
+      position:absolute;
+
+      top:0;
+      left:0;
+
+      height:100%;
+
+      width:
+        var(
+          --renata-progress,
+          33.333%
+        );
+
+      background:var(--accent);
+
+      transition:
+        width .3s ease;
+    }
+
+    .renata-thumbs {
+      display:flex;
+
+      gap:7px;
+
+      overflow-x:auto;
+
+      padding-bottom:7px;
+    }
+
+    .renata-thumb {
+      flex:
+        0 0
+        73px;
 
       padding:0;
 
@@ -3291,20 +3164,44 @@
 
       background:none;
 
-      opacity:.48;
-
       cursor:pointer;
+
+      opacity:.55;
     }
 
-
-    .deck-thumb.active {
+    .renata-thumb.active {
       border-color:var(--accent);
+
       opacity:1;
     }
 
+    .renata-thumb img {
+      width:100%;
 
+      aspect-ratio:16 / 9;
 
-    /* BRADUCA */
+      object-fit:cover;
+    }
+
+    .renata-full-link {
+      display:inline-block;
+
+      margin-top:23px;
+
+      color:var(--accent);
+
+      font-size:.73rem;
+
+      border-bottom:
+        1px solid
+        var(--accent);
+
+      padding-bottom:5px;
+    }
+
+    /* =========================================================
+       BRADUCA
+    ========================================================= */
 
     .editorial-layout {
       display:grid;
@@ -3315,7 +3212,6 @@
 
       gap:18px;
     }
-
 
     .editorial-ribbon {
       display:grid;
@@ -3328,7 +3224,6 @@
 
       gap:8px;
     }
-
 
     .editorial-card {
       aspect-ratio:4 / 5;
@@ -3346,11 +3241,9 @@
       cursor:pointer;
     }
 
-
     .editorial-card.active {
       border-color:var(--accent);
     }
-
 
     .editorial-card img {
       width:100%;
@@ -3359,11 +3252,11 @@
       object-fit:cover;
     }
 
-
     .editorial-preview {
       min-height:440px;
 
       display:grid;
+
       place-items:center;
 
       margin-top:15px;
@@ -3373,12 +3266,11 @@
       background:#111;
     }
 
-
     .editorial-preview img {
       max-height:405px;
+
       cursor:zoom-in;
     }
-
 
     .editorial-inspector {
       align-self:start;
@@ -3390,35 +3282,33 @@
         var(--line);
     }
 
-
     .editorial-inspector > span {
       color:var(--accent);
-      font-size:.48rem;
-    }
 
+      font-size:.5rem;
+    }
 
     .editorial-inspector h4 {
       margin:11px 0;
 
       font-family:"Fraunces",serif;
 
-      font-size:1.26rem;
+      font-size:1.3rem;
 
       font-weight:400;
     }
 
-
     .editorial-inspector p {
       color:var(--dim);
 
-      font-size:.66rem;
+      font-size:.7rem;
 
       line-height:1.55;
     }
 
-
-
-    /* AYMEE */
+    /* =========================================================
+       AYMÉE
+    ========================================================= */
 
     .brand-layout {
       display:grid;
@@ -3429,7 +3319,6 @@
 
       gap:18px;
     }
-
 
     .brand-grid {
       display:grid;
@@ -3442,7 +3331,6 @@
 
       gap:8px;
     }
-
 
     .brand-card {
       aspect-ratio:1;
@@ -3458,14 +3346,12 @@
       cursor:zoom-in;
     }
 
-
     .brand-card img {
       width:100%;
       height:100%;
 
       object-fit:cover;
     }
-
 
     .brand-notes {
       padding:19px;
@@ -3475,60 +3361,78 @@
         var(--line);
     }
 
-
     .brand-notes > span {
       color:var(--accent);
-      font-size:.48rem;
+
+      font-size:.5rem;
     }
 
-
     .brand-notes h4 {
-      margin:11px 0 17px;
+      margin:
+        11px 0 17px;
 
       font-family:"Fraunces",serif;
 
-      font-size:1.26rem;
+      font-size:1.3rem;
 
       font-weight:400;
     }
 
-
     .brand-rule {
-      padding:13px 0;
+      padding:
+        13px 0;
 
       border-top:
         1px solid
         var(--line);
     }
 
-
     .brand-rule span {
       color:var(--muted);
-      font-size:.46rem;
-    }
 
+      font-size:.48rem;
+    }
 
     .brand-rule p {
       margin-top:5px;
 
       color:var(--dim);
 
-      font-size:.65rem;
+      font-size:.69rem;
 
       line-height:1.5;
     }
 
+    /* =========================================================
+       SKILLS
+    ========================================================= */
 
-
-    /* SKILLS */
-
-    .skills {
+    .skills-wrap {
       padding:
-        0
+        90px
         var(--pad)
-        95px;
+        105px;
     }
 
+    .skills-title {
+      margin-bottom:38px;
+    }
+
+    .skills-title h2 {
+      font-family:"Fraunces",serif;
+
+      font-size:
+        clamp(
+          2.8rem,
+          4.8vw,
+          4.8rem
+        );
+
+      font-weight:300;
+
+      line-height:1;
+      letter-spacing:-.035em;
+    }
 
     .skill-grid {
       display:grid;
@@ -3541,137 +3445,136 @@
 
       gap:1px;
 
-      border:
-        1px solid
-        var(--line);
-
       background:var(--line);
     }
 
-
     .skill-card {
-      min-height:210px;
+      min-height:215px;
 
-      padding:23px;
+      padding:24px;
 
       background:var(--bg);
     }
-
 
     .skill-card:hover {
       background:var(--card);
     }
 
-
     .skill-card h3 {
-      margin-bottom:11px;
+      margin-bottom:12px;
 
       font-family:"Fraunces",serif;
 
-      font-size:1.3rem;
+      font-size:1.38rem;
 
       font-weight:400;
     }
 
-
     .skill-card p {
       color:var(--dim);
 
-      font-size:.7rem;
+      font-size:.75rem;
 
       line-height:1.65;
     }
 
-
-
-    /* CONTACT */
+    /* =========================================================
+       CONTACT
+    ========================================================= */
 
     .contact {
+      min-height:420px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      align-items:center;
+
+      justify-content:center;
+
       padding:
         95px
         var(--pad);
 
-      border-top:
-        1px solid
-        var(--line);
+      text-align:center;
     }
 
-
     .contact h2 {
-      max-width:980px;
+      max-width:900px;
 
       font-family:"Fraunces",serif;
 
       font-size:
         clamp(
-          2.7rem,
-          6vw,
-          6rem
+          2.8rem,
+          4.8vw,
+          4.9rem
         );
 
-      font-weight:300;
+      font-weight:400;
 
-      line-height:.97;
+      line-height:1;
 
-      letter-spacing:-.04em;
+      letter-spacing:-.035em;
     }
 
-
     .contact > p {
-      max-width:580px;
+      max-width:620px;
 
-      margin-top:23px;
+      margin-top:18px;
 
       color:var(--dim);
 
-      line-height:1.65;
-    }
+      font-size:1rem;
 
+      line-height:1.6;
+    }
 
     .contact-actions {
       display:flex;
+
       flex-wrap:wrap;
 
-      gap:8px;
+      justify-content:center;
 
-      margin-top:28px;
+      gap:12px;
+
+      margin-top:27px;
     }
 
-
     .contact-actions a {
-      min-height:42px;
+      min-height:45px;
 
       display:flex;
 
       align-items:center;
 
-      padding:0 15px;
+      padding:
+        0 24px;
 
       border:
         1px solid
         var(--line-strong);
 
-      border-radius:999px;
-
-      font-size:.52rem;
+      font-size:.78rem;
     }
-
 
     .contact-actions a.primary {
-      background:var(--ink);
-      color:var(--bg);
-    }
-
-
-    .contact-actions a:hover {
       border-color:var(--accent);
+
       background:var(--accent);
+
       color:white;
     }
 
+    .contact-actions a:hover {
+      border-color:var(--ink);
 
+      background:var(--ink);
 
-    /* FOOTER */
+      color:var(--bg);
+    }
 
     footer {
       display:flex;
@@ -3685,18 +3588,14 @@
         var(--pad)
         34px;
 
-      border-top:
-        1px solid
-        var(--line);
-
       color:var(--muted);
 
-      font-size:.46rem;
+      font-size:.5rem;
     }
 
-
-
-    /* LIGHTBOX */
+    /* =========================================================
+       LIGHTBOX
+    ========================================================= */
 
     .lightbox {
       position:fixed;
@@ -3712,14 +3611,18 @@
 
       padding:34px;
 
-      background:rgba(0,0,0,.92);
+      background:
+        rgba(
+          0,
+          0,
+          0,
+          .92
+        );
     }
-
 
     .lightbox.open {
       display:flex;
     }
-
 
     .lightbox img {
       max-width:94vw;
@@ -3727,7 +3630,6 @@
 
       object-fit:contain;
     }
-
 
     .lightbox-close {
       position:absolute;
@@ -3746,18 +3648,14 @@
       cursor:pointer;
     }
 
-
-
     /* =========================================================
        RESPONSIVE
     ========================================================= */
 
     @media(max-width:1050px) {
-
       :root {
         --pad:28px;
       }
-
 
       .hero {
         grid-template-columns:1fr;
@@ -3767,48 +3665,47 @@
         padding-top:72px;
       }
 
-
       .hero-text {
         max-width:780px;
       }
-
 
       .hero-visual {
         width:100%;
         max-width:590px;
 
-        margin:20px auto 0;
+        margin:
+          20px auto 0;
       }
-
 
       .about {
         grid-template-columns:1fr;
       }
 
+      .about-visual {
+        order:1;
+      }
+
+      .about-copy {
+        order:2;
+      }
 
       .case-grid {
         grid-template-columns:1fr 1fr;
       }
 
-
       .fa-story {
         grid-template-columns:1fr;
       }
-
 
       .skill-grid {
         grid-template-columns:1fr 1fr;
       }
     }
 
-
-
     @media(max-width:760px) {
-
       :root {
         --pad:20px;
       }
-
 
       .intro-title {
         grid-template-columns:1fr;
@@ -3831,11 +3728,9 @@
         white-space:normal;
       }
 
-
       .intro-word-cycle {
-        width:5.3em;
+        width:5.4em;
       }
-
 
       .intro-word-cycle .w {
         left:50%;
@@ -3843,11 +3738,10 @@
         transform:
           translate3d(
             -50%,
-            110%,
+            115%,
             0
           );
       }
-
 
       .intro-word-cycle .w.active {
         transform:
@@ -3858,43 +3752,45 @@
           );
       }
 
-
       .intro-word-cycle .w.exit {
         transform:
           translate3d(
             -50%,
-            -110%,
+            -115%,
             0
           );
       }
-
 
       .site-nav {
         display:flex;
 
         justify-content:space-between;
 
-        min-height:66px;
+        min-height:68px;
       }
 
+      .logo {
+        font-size:1.25rem;
+      }
 
       .site-nav ul {
         display:none;
       }
 
-
       .theme-toggle {
         display:none;
       }
 
+      .nav-cta {
+        min-height:38px;
+      }
 
       .hero {
         min-height:auto;
 
-        padding-top:48px;
-        padding-bottom:68px;
+        padding-top:49px;
+        padding-bottom:75px;
       }
-
 
       .hero h1 {
         font-size:
@@ -3905,12 +3801,17 @@
           );
       }
 
-
       .hero-eyebrow {
         max-width:330px;
+
+        font-size:.61rem;
+
         line-height:1.55;
       }
 
+      .hero-sub p {
+        font-size:1rem;
+      }
 
       .hero-actions {
         align-items:flex-start;
@@ -3920,50 +3821,54 @@
         gap:20px;
       }
 
-
       .hero-visual {
         order:2;
 
         margin-top:20px;
       }
 
-
       .wf-wrapper {
         width:100%;
-
         min-height:400px;
       }
-
 
       .wf-window {
         width:100%;
       }
 
-
       .pen-tool-svg {
         left:-3px;
       }
-
 
       .badge-floater {
         right:3px;
       }
 
-
       .cursor-floater {
         right:0;
       }
-
 
       .spec-floater {
         display:none;
       }
 
-
       .process-grid {
         grid-template-columns:1fr;
+
+        border-left:0;
       }
 
+      .process-card {
+        border-right:0;
+      }
+
+      .about {
+        padding-top:80px;
+      }
+
+      .profile-system {
+        width:min(100%,410px);
+      }
 
       .about-owner h3 {
         font-size:
@@ -3974,21 +3879,17 @@
           );
       }
 
-
-      .about-visual {
-        min-height:370px;
+      .about-copy > p {
+        font-size:1rem;
       }
-
 
       .case-grid {
         grid-template-columns:1fr;
       }
 
-
       .project-head {
-        padding-top:58px;
+        padding-top:48px;
       }
-
 
       .project-head > h3 {
         font-size:
@@ -3998,7 +3899,6 @@
             4.9rem
           );
       }
-
 
       .fa-tabs {
         margin-left:
@@ -4019,12 +3919,10 @@
           5px;
       }
 
-
       .fa-result-strip,
       .fa-responsive-notes {
         grid-template-columns:1fr;
       }
-
 
       .fa-result-item {
         border-right:0;
@@ -4034,11 +3932,9 @@
           var(--line);
       }
 
-
       .system-layout {
         display:block;
       }
-
 
       .system-sidebar {
         display:flex;
@@ -4048,11 +3944,9 @@
         overflow-x:auto;
       }
 
-
       .system-sidebar > span {
         display:none;
       }
-
 
       .system-nav-btn {
         width:auto;
@@ -4062,17 +3956,14 @@
         white-space:nowrap;
       }
 
-
       .fa-color-grid {
         grid-template-columns:1fr 1fr;
       }
-
 
       .fa-type-demo,
       .component-grid {
         grid-template-columns:1fr;
       }
-
 
       .fa-responsive-showcase {
         grid-template-columns:1fr;
@@ -4080,99 +3971,86 @@
         padding:15px;
       }
 
-
-      .fa-device-mobile {
-        width:245px;
-      }
-
-
       .figma-frame {
         min-height:500px;
+
         height:65vh;
       }
-
 
       .voit-overview {
         grid-template-columns:1fr;
       }
 
-
       .voit-core {
         margin:auto;
       }
-
 
       .voit-social {
         grid-template-columns:1fr 1fr;
       }
 
-
-      .deck-body {
+      .renata-layout {
         grid-template-columns:1fr;
       }
 
+      .renata-main {
+        min-height:300px;
 
-      .deck-side {
-        display:flex;
+        padding:20px;
+      }
 
-        gap:6px;
-
-        overflow-x:auto;
-
+      .renata-inspector {
         border-left:0;
 
-        border-top:1px solid #333;
+        border-top:
+          1px solid
+          #343434;
       }
-
-
-      .deck-thumb {
-        flex:0 0 100px;
-      }
-
 
       .editorial-layout,
       .brand-layout {
         grid-template-columns:1fr;
       }
 
-
       .editorial-ribbon {
         grid-template-columns:1fr 1fr;
       }
-
 
       .brand-grid {
         grid-template-columns:1fr 1fr;
       }
 
-
       .skill-grid {
         grid-template-columns:1fr;
       }
 
+      .contact h2 {
+        font-size:
+          clamp(
+            2.7rem,
+            12vw,
+            4rem
+          );
+      }
 
       footer {
         flex-direction:column;
       }
     }
 
-
-
     @media(max-width:520px) {
-
       .wf-wrapper {
         min-height:380px;
       }
 
-
       .wf-sidebar {
         width:91px;
+
         flex-basis:91px;
 
         padding:
           10px 6px;
       }
-
 
       .wf-nav-item {
         gap:5px;
@@ -4183,16 +4061,13 @@
         font-size:.44rem;
       }
 
-
       .wf-main {
         padding:10px;
       }
 
-
       .wf-title {
         font-size:.58rem;
       }
-
 
       .wf-badge-btn {
         padding:
@@ -4201,57 +4076,57 @@
         font-size:.39rem;
       }
 
-
       .wf-card {
         padding:7px;
       }
-
 
       .wf-task-item {
         font-size:.42rem;
       }
 
-
       .wf-palette {
         gap:5px;
       }
-
 
       .swatch {
         width:22px;
         height:22px;
       }
 
-
       .clear-btn {
         font-size:.42rem;
       }
-
 
       .hero-visual-hint {
         font-size:.43rem;
       }
 
-
       .fa-color-grid {
         grid-template-columns:1fr;
       }
-
 
       .fa-device-mobile {
         width:210px;
       }
 
-
       .fa-phone-screen iframe {
         transform:scale(.497);
       }
+
+      .profile-ring-text {
+        font-size:.57rem;
+      }
+
+      .profile-badge {
+        font-size:.45rem;
+      }
+
+      .profile-pointer {
+        font-size:.44rem;
+      }
     }
 
-
-
     @media(prefers-reduced-motion:reduce) {
-
       *,
       *::before,
       *::after {
@@ -4262,18 +4137,12 @@
         scroll-behavior:auto !important;
       }
     }
-
   </style>
 </head>
 
-
-
 <body class="intro-active">
 
-
-  <!-- =======================================================
-       INTRO
-  ======================================================== -->
+  <!-- INTRO -->
 
   <div
     id="intro-overlay"
@@ -4286,7 +4155,6 @@
         Design com
       </span>
 
-
       <span
         class="intro-word-cycle"
         id="introWordCycle"
@@ -4296,11 +4164,9 @@
           clareza.
         </span>
 
-
         <span class="w">
           estrutura.
         </span>
-
 
         <span class="w">
           detalhes.
@@ -4310,18 +4176,13 @@
 
     </div>
 
-
     <span class="intro-help mono">
       clique para continuar
     </span>
 
   </div>
 
-
-
-  <!-- =======================================================
-       NAV
-  ======================================================== -->
+  <!-- NAV -->
 
   <nav
     class="site-nav"
@@ -4338,22 +4199,18 @@
         Raquel Renovato
       </a>
 
-
       <button
         type="button"
         id="themeToggle"
-        class="theme-toggle mono"
+        class="theme-toggle"
         aria-label="Alternar tema"
       >
-
         <span id="themeLabel">
           Sombrio
         </span>
-
       </button>
 
     </div>
-
 
     <ul>
 
@@ -4377,7 +4234,6 @@
 
     </ul>
 
-
     <a
       href="#contato"
       class="nav-cta"
@@ -4387,24 +4243,17 @@
 
   </nav>
 
-
-
   <main>
 
-
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <!-- HERO -->
 
     <section class="hero">
-
 
       <div class="hero-text">
 
         <div class="hero-eyebrow">
           COMUNICAÇÃO VISUAL • INTERFACES • EXPERIÊNCIAS DIGITAIS
         </div>
-
 
         <h1>
 
@@ -4428,14 +4277,12 @@
 
         </h1>
 
-
         <div class="hero-sub">
 
           <p>
             Designer de Comunicação Visual e UI, criando interfaces e
             experiências de marca claras, consistentes e orientadas a objetivos.
           </p>
-
 
           <div class="hero-actions">
 
@@ -4445,7 +4292,6 @@
             >
               Ver projetos selecionados ↓
             </a>
-
 
             <a
               href="#contato"
@@ -4460,16 +4306,11 @@
 
       </div>
 
-
-
-      <!-- ===================================================
-           WIREFRAME
-      ==================================================== -->
+      <!-- WIREFRAME -->
 
       <div class="hero-visual">
 
         <div class="wf-wrapper">
-
 
           <svg
             class="wf-illustration pen-tool-svg"
@@ -4521,23 +4362,14 @@
 
           </svg>
 
-
-
           <div class="wf-illustration badge-floater">
-
             <span>❖</span>
-
             auto-layout 8px
-
           </div>
-
-
 
           <div class="wf-illustration spec-floater">
             ↔ 380px × 260px
           </div>
-
-
 
           <div class="wf-illustration cursor-floater">
 
@@ -4556,8 +4388,6 @@
 
           </div>
 
-
-
           <div
             class="wf-window"
             id="wfWindow"
@@ -4566,13 +4396,10 @@
             <div class="wf-header">
 
               <div class="wf-dots">
-
                 <div class="wf-dot"></div>
                 <div class="wf-dot"></div>
                 <div class="wf-dot"></div>
-
               </div>
-
 
               <button
                 class="wf-switch-mode mono"
@@ -4584,12 +4411,7 @@
 
             </div>
 
-
-
             <div class="wf-body">
-
-
-              <!-- SIDEBAR -->
 
               <div class="wf-sidebar">
 
@@ -4600,14 +4422,12 @@
                   ▧ Dashboard
                 </div>
 
-
                 <div
                   class="wf-nav-item wf-paintable"
                   data-tab="interfaces"
                 >
                   ✦ Interfaces
                 </div>
-
 
                 <div
                   class="wf-nav-item wf-paintable"
@@ -4618,14 +4438,7 @@
 
               </div>
 
-
-
-              <!-- MAIN -->
-
               <div class="wf-main">
-
-
-                <!-- DASHBOARD -->
 
                 <div
                   class="wf-view active"
@@ -4638,7 +4451,6 @@
                       Painel de Dashboard
                     </span>
 
-
                     <button
                       type="button"
                       class="wf-badge-btn wf-paintable"
@@ -4649,8 +4461,6 @@
 
                   </div>
 
-
-
                   <div class="wf-card-grid">
 
                     <div class="wf-card wf-paintable">
@@ -4658,7 +4468,6 @@
                       <span class="wf-card-label mono">
                         Entregas
                       </span>
-
 
                       <span
                         class="wf-card-val"
@@ -4669,13 +4478,11 @@
 
                     </div>
 
-
                     <div class="wf-card wf-paintable">
 
                       <span class="wf-card-label mono">
                         Status
                       </span>
-
 
                       <span
                         class="wf-card-val"
@@ -4687,8 +4494,6 @@
                     </div>
 
                   </div>
-
-
 
                   <div class="wf-task-list">
 
@@ -4704,7 +4509,6 @@
 
                     </div>
 
-
                     <div class="wf-task-item">
 
                       <span class="wf-checkbox wf-paintable">
@@ -4716,7 +4520,6 @@
                       </span>
 
                     </div>
-
 
                     <div class="wf-task-item">
 
@@ -4734,10 +4537,6 @@
 
                 </div>
 
-
-
-                <!-- INTERFACES -->
-
                 <div
                   class="wf-view"
                   id="wf-interfaces"
@@ -4749,21 +4548,17 @@
                       Prototipagem de Wireframes
                     </span>
 
-
                     <span class="wf-version">
                       12 cols
                     </span>
 
                   </div>
 
-
-
                   <div class="wf-wireframe-main wf-paintable">
 
                     <div class="wf-wireframe-header">
                       Header Bar Navigation
                     </div>
-
 
                     <div class="wf-wireframe-row">
 
@@ -4779,8 +4574,6 @@
 
                   </div>
 
-
-
                   <div class="wf-interface-grid">
 
                     <div class="wf-interface-component wf-paintable">
@@ -4794,7 +4587,6 @@
                       </strong>
 
                     </div>
-
 
                     <div class="wf-interface-component wf-paintable">
 
@@ -4812,10 +4604,6 @@
 
                 </div>
 
-
-
-                <!-- DESIGN SYSTEM -->
-
                 <div
                   class="wf-view"
                   id="wf-system"
@@ -4827,18 +4615,15 @@
                       Biblioteca de Tokens
                     </span>
 
-
                     <span class="wf-version">
                       v2.4
                     </span>
 
                   </div>
 
-
                   <div class="wf-system-label">
                     Estados de Botão
                   </div>
-
 
                   <div class="wf-system-buttons">
 
@@ -4849,14 +4634,12 @@
                       Primary
                     </button>
 
-
                     <button
                       type="button"
                       class="wf-token-btn wf-paintable"
                     >
                       Secondary
                     </button>
-
 
                     <button
                       type="button"
@@ -4867,18 +4650,15 @@
 
                   </div>
 
-
                   <div class="wf-system-label">
                     Tipografia & Escala
                   </div>
-
 
                   <div class="wf-type-token wf-paintable">
 
                     <strong>
                       Fraunces Serif 400
                     </strong>
-
 
                     <span>
                       IBM Plex Mono 12px / 1.4
@@ -4888,16 +4668,11 @@
 
                 </div>
 
-
               </div>
 
             </div>
 
           </div>
-
-
-
-          <!-- PALETA -->
 
           <div class="wf-palette">
 
@@ -4909,7 +4684,6 @@
               aria-label="Laranja"
             ></button>
 
-
             <button
               type="button"
               class="swatch"
@@ -4917,7 +4691,6 @@
               style="background:#40594A"
               aria-label="Verde"
             ></button>
-
 
             <button
               type="button"
@@ -4927,7 +4700,6 @@
               aria-label="Azul"
             ></button>
 
-
             <button
               type="button"
               class="swatch"
@@ -4935,7 +4707,6 @@
               style="background:#B37838"
               aria-label="Ocre"
             ></button>
-
 
             <button
               type="button"
@@ -4945,7 +4716,6 @@
               aria-label="Preto"
             ></button>
 
-
             <button
               type="button"
               class="swatch reset"
@@ -4954,7 +4724,6 @@
             >
               ×
             </button>
-
 
             <button
               type="button"
@@ -4966,7 +4735,6 @@
 
           </div>
 
-
           <div class="hero-visual-hint mono">
             escolha uma cor e clique nos componentes para explorar a interface
           </div>
@@ -4977,18 +4745,13 @@
 
     </section>
 
-
-
-    <!-- =====================================================
-         PROCESS
-    ====================================================== -->
+    <!-- PROCESSO -->
 
     <section class="process-section">
 
       <span class="section-kicker">
         método & execução
       </span>
-
 
       <div class="process-grid">
 
@@ -5003,12 +4766,10 @@
           </h3>
 
           <p>
-            Contexto, conteúdo, necessidade e objetivo vêm
-            antes da execução visual.
+            Contexto, conteúdo, necessidade e objetivo vêm antes da execução visual.
           </p>
 
         </article>
-
 
         <article class="process-card">
 
@@ -5021,12 +4782,10 @@
           </h3>
 
           <p>
-            Hierarquia, referências e critérios sustentam
-            as decisões do projeto.
+            Hierarquia, referências e critérios sustentam as decisões do projeto.
           </p>
 
         </article>
-
 
         <article class="process-card">
 
@@ -5039,8 +4798,7 @@
           </h3>
 
           <p>
-            Desenvolvimento, prototipagem e refinamento
-            adaptados ao contexto de cada entrega.
+            Desenvolvimento, prototipagem e refinamento adaptados ao contexto de cada entrega.
           </p>
 
         </article>
@@ -5049,31 +4807,47 @@
 
     </section>
 
+    <!-- SOBRE -->
 
-
-    <!-- =====================================================
-         SOBRE
-    ====================================================== -->
-
-    <div
-      class="section-head"
+    <section
+      class="about"
       id="sobre"
     >
 
-      <span class="section-kicker">
-        sobre mim
-      </span>
+      <div class="about-visual">
 
+        <div class="profile-system">
 
-      <h2>
-        Quem está por trás dos projetos.
-      </h2>
+          <div class="profile-ring-text">
+            UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO
+          </div>
 
-    </div>
+          <div class="profile-image-circle">
 
+            <img
+              src="img/img-perfil/foto-perfil.jpeg"
+              alt="Retrato de Raquel Renovato"
+              class="js-lightbox"
+              tabindex="0"
+            >
 
+          </div>
 
-    <section class="about">
+          <div class="profile-badge mono">
+            ❖ auto-layout 8px
+          </div>
+
+          <div class="profile-spec">
+            ↔ 380px × 380px
+          </div>
+
+          <div class="profile-pointer">
+            ➤ Raquel • Design
+          </div>
+
+        </div>
+
+      </div>
 
       <div class="about-copy">
 
@@ -5083,44 +4857,26 @@
             DESIGNER
           </small>
 
-
           <h3>
-
             Raquel
-
             <em>
               Renovato
             </em>
-
           </h3>
 
         </div>
 
-
-        <span class="section-kicker">
-          design como ferramenta de clareza
-        </span>
-
-
         <p>
-          Sou Designer Gráfica formada pela Estácio, com
-          especialização em UI/UX Design em andamento e três
-          anos de atuação no mercado.
+          Sou Designer Gráfica formada pela Estácio, com especialização em UI/UX Design em andamento e três anos de atuação no mercado. Trabalho entre comunicação visual e interfaces digitais, transformando informações, necessidades de negócio e identidade de marca em soluções visuais claras e consistentes.
         </p>
 
-
         <p>
-          Trabalho entre comunicação visual e interfaces digitais,
-          transformando informações, necessidades de negócio e
-          identidade de marca em soluções visuais claras e consistentes.
+          Minha atuação passa por Figma, Pacote Adobe e Canva, da organização da informação à execução final. Também utilizo IA generativa como ferramenta de apoio ao workflow, principalmente em exploração, produtividade e refinamento de conteúdo.
         </p>
 
-
         <p>
-          Minha atuação passa por Figma, Pacote Adobe e Canva,
-          da organização da informação à entrega final.
+          Mais do que escolher uma estética, procuro entender o problema, estruturar prioridades e construir soluções que façam sentido para quem comunica e para quem utiliza.
         </p>
-
 
         <div class="about-tags">
 
@@ -5152,55 +4908,15 @@
 
       </div>
 
-
-
-      <div class="about-visual">
-
-        <div class="about-orbit"></div>
-
-
-        <div class="about-photo">
-
-          <img
-            src="img/img-perfil/foto-perfil.jpeg"
-            alt="Retrato de Raquel Renovato"
-            class="js-lightbox"
-            tabindex="0"
-          >
-
-        </div>
-
-      </div>
-
     </section>
 
-
-
     <!-- =====================================================
-         PROJETOS
+         PROJETOS — SEM A DOBRA/TÍTULO EXTRA
     ====================================================== -->
 
-    <div
-      class="section-head"
-      id="projetos"
-    >
+    <div id="projetos"></div>
 
-      <span class="section-kicker">
-        projetos selecionados
-      </span>
-
-
-      <h2 style="margin-top:8px">
-        Cada projeto pede uma forma diferente de contar a história.
-      </h2>
-
-    </div>
-
-
-
-    <!-- =====================================================
-         FERNANDO
-    ====================================================== -->
+    <!-- FERNANDO -->
 
     <article
       class="project"
@@ -5215,11 +4931,9 @@
             01 / 05
           </span>
 
-
           <span class="case-badge">
             CASE • UI DESIGN
           </span>
-
 
           <span class="case-badge">
             PRODUTO PUBLICADO
@@ -5227,19 +4941,13 @@
 
         </div>
 
-
         <h3>
           Fernando Amaral
         </h3>
 
-
         <p class="project-summary">
-          Redesign e implementação de uma experiência digital
-          para transformar conteúdo técnico de engenharia em
-          uma interface mais clara, consistente, responsiva
-          e orientada à conversão.
+          Redesign e implementação de uma experiência digital para transformar conteúdo técnico de engenharia em uma interface mais clara, consistente, responsiva e orientada à conversão.
         </p>
-
 
         <div class="case-grid">
 
@@ -5250,13 +4958,10 @@
             </span>
 
             <p>
-              O projeto partiu de um site existente, com grande
-              volume de serviços e informações técnicas distribuídas
-              em uma landing page extensa.
+              O projeto partiu de um site existente, com grande volume de serviços e informações técnicas distribuídas em uma landing page extensa.
             </p>
 
           </article>
-
 
           <article class="case-card">
 
@@ -5265,13 +4970,10 @@
             </span>
 
             <p>
-              Organizar essa complexidade sem reduzir a profundidade
-              técnica, tornando escopo, processo, autoridade,
-              projetos e contato mais fáceis de compreender.
+              Organizar essa complexidade sem reduzir a profundidade técnica, tornando escopo, processo, autoridade, projetos e contato mais fáceis de compreender.
             </p>
 
           </article>
-
 
           <article class="case-card">
 
@@ -5280,13 +4982,10 @@
             </span>
 
             <p>
-              Arquitetura da informação, direção visual,
-              UI Design, componentes, variantes, responsividade,
-              prototipagem e acompanhamento da implementação.
+              Arquitetura da informação, direção visual, UI Design, componentes, variantes, responsividade, prototipagem e acompanhamento da implementação.
             </p>
 
           </article>
-
 
           <article class="case-card">
 
@@ -5295,15 +4994,12 @@
             </span>
 
             <p>
-              O redesign deixou de existir apenas como protótipo:
-              a experiência foi implementada, adaptada para
-              desktop e mobile e publicada como produto real.
+              O redesign deixou de existir apenas como protótipo: a experiência foi implementada, adaptada para desktop e mobile e publicada como produto real.
             </p>
 
           </article>
 
         </div>
-
 
         <div class="project-meta">
 
@@ -5318,8 +5014,6 @@
 
       </div>
 
-
-
       <div class="fa-case">
 
         <div class="fa-tabs">
@@ -5332,7 +5026,6 @@
             Case
           </button>
 
-
           <button
             type="button"
             class="fa-tab"
@@ -5340,7 +5033,6 @@
           >
             Site anterior
           </button>
-
 
           <button
             type="button"
@@ -5350,7 +5042,6 @@
             Site publicado
           </button>
 
-
           <button
             type="button"
             class="fa-tab"
@@ -5359,7 +5050,6 @@
             Design System
           </button>
 
-
           <button
             type="button"
             class="fa-tab"
@@ -5367,7 +5057,6 @@
           >
             Responsivo
           </button>
-
 
           <button
             type="button"
@@ -5378,8 +5067,6 @@
           </button>
 
         </div>
-
-
 
         <section
           class="fa-view active"
@@ -5394,19 +5081,13 @@
                 CASE STUDY / RAQUEL RENOVATO
               </span>
 
-
               <h4>
                 Complexidade técnica sem parecer complexa.
               </h4>
 
-
               <p>
-                A nova experiência preserva a profundidade
-                do conteúdo de engenharia, mas organiza
-                a leitura em uma sequência mais clara
-                e previsível.
+                A nova experiência preserva a profundidade do conteúdo de engenharia, mas organiza a leitura em uma sequência mais clara e previsível.
               </p>
-
 
               <div class="fa-story-flow">
 
@@ -5419,14 +5100,12 @@
                     <strong>Hero</strong>
 
                     <p>
-                      Proposta de valor direta, vídeo
-                      e ações prioritárias.
+                      Proposta de valor direta, vídeo e ações prioritárias.
                     </p>
 
                   </section>
 
                 </div>
-
 
                 <div>
 
@@ -5437,14 +5116,12 @@
                     <strong>Serviços</strong>
 
                     <p>
-                      Oito especialidades organizadas
-                      em um componente navegável.
+                      Oito especialidades organizadas em um componente navegável.
                     </p>
 
                   </section>
 
                 </div>
-
 
                 <div>
 
@@ -5455,14 +5132,12 @@
                     <strong>Processo</strong>
 
                     <p>
-                      Jornada visual acompanhando
-                      o scroll do usuário.
+                      Jornada visual acompanhando o scroll do usuário.
                     </p>
 
                   </section>
 
                 </div>
-
 
                 <div>
 
@@ -5473,14 +5148,12 @@
                     <strong>Projetos</strong>
 
                     <p>
-                      Cards organizados por filtros,
-                      área, escopo e contexto.
+                      Cards organizados por filtros, área, escopo e contexto.
                     </p>
 
                   </section>
 
                 </div>
-
 
                 <div>
 
@@ -5491,8 +5164,7 @@
                     <strong>Mobile</strong>
 
                     <p>
-                      Decisões próprias para
-                      telas menores.
+                      Decisões próprias para telas menores.
                     </p>
 
                   </section>
@@ -5502,8 +5174,6 @@
               </div>
 
             </div>
-
-
 
             <div class="browser-shell">
 
@@ -5515,11 +5185,9 @@
                   <i></i>
                 </div>
 
-
                 <div class="browser-address mono">
                   fernando-amaral.vercel.app
                 </div>
-
 
                 <a
                   class="browser-link"
@@ -5531,7 +5199,6 @@
                 </a>
 
               </div>
-
 
               <div
                 class="fa-desktop-viewport"
@@ -5554,8 +5221,6 @@
 
           </div>
 
-
-
           <div class="fa-result-strip">
 
             <article class="fa-result-item">
@@ -5567,12 +5232,10 @@
               </strong>
 
               <p>
-                O redesign está implementado
-                e disponível online.
+                O redesign está implementado e disponível online.
               </p>
 
             </article>
-
 
             <article class="fa-result-item">
 
@@ -5583,12 +5246,10 @@
               </strong>
 
               <p>
-                Componentes e layouts adaptam
-                comportamento conforme o dispositivo.
+                Componentes e layouts adaptam comportamento conforme o dispositivo.
               </p>
 
             </article>
-
 
             <article class="fa-result-item">
 
@@ -5599,8 +5260,7 @@
               </strong>
 
               <p>
-                Light é a experiência principal;
-                Dark funciona como escolha do usuário.
+                Light é a experiência principal; Dark funciona como escolha do usuário.
               </p>
 
             </article>
@@ -5608,8 +5268,6 @@
           </div>
 
         </section>
-
-
 
         <section
           class="fa-view"
@@ -5626,11 +5284,9 @@
                 <i></i>
               </div>
 
-
               <div class="browser-address mono">
                 versão anterior
               </div>
-
 
               <a
                 class="browser-link"
@@ -5642,7 +5298,6 @@
               </a>
 
             </div>
-
 
             <div
               class="fa-desktop-viewport"
@@ -5665,8 +5320,6 @@
 
         </section>
 
-
-
         <section
           class="fa-view"
           data-fa-view="live"
@@ -5682,11 +5335,9 @@
                 <i></i>
               </div>
 
-
               <div class="browser-address mono">
                 fernando-amaral.vercel.app
               </div>
-
 
               <a
                 class="browser-link"
@@ -5698,7 +5349,6 @@
               </a>
 
             </div>
-
 
             <div
               class="fa-desktop-viewport"
@@ -5721,8 +5371,6 @@
 
         </section>
 
-
-
         <section
           class="fa-view"
           data-fa-view="system"
@@ -5736,7 +5384,6 @@
                 Fernando UI
               </span>
 
-
               <button
                 class="system-nav-btn active"
                 type="button"
@@ -5745,7 +5392,6 @@
                 Foundations
               </button>
 
-
               <button
                 class="system-nav-btn"
                 type="button"
@@ -5753,7 +5399,6 @@
               >
                 Components
               </button>
-
 
               <button
                 class="system-nav-btn"
@@ -5764,8 +5409,6 @@
               </button>
 
             </aside>
-
-
 
             <div class="system-canvas">
 
@@ -5778,7 +5421,6 @@
                   Foundations
                 </h4>
 
-
                 <div class="fa-color-grid">
 
                   <div class="fa-color navy">
@@ -5786,24 +5428,20 @@
                     <span>#00152A</span>
                   </div>
 
-
                   <div class="fa-color gold">
                     <strong>Secondary</strong>
                     <span>#B8860B</span>
                   </div>
-
 
                   <div class="fa-color slate">
                     <strong>Slate</strong>
                     <span>#64748B</span>
                   </div>
 
-
                   <div class="fa-color light">
                     <strong>Background</strong>
                     <span>#F4F6F8</span>
                   </div>
-
 
                   <div class="fa-color white">
                     <strong>Surface</strong>
@@ -5811,8 +5449,6 @@
                   </div>
 
                 </div>
-
-
 
                 <div class="fa-type-demo">
 
@@ -5825,12 +5461,10 @@
                     <strong>Aa</strong>
 
                     <p>
-                      Projetos elétricos para
-                      arquitetos e engenheiros.
+                      Projetos elétricos para arquitetos e engenheiros.
                     </p>
 
                   </article>
-
 
                   <article class="fa-type-card dm">
 
@@ -5841,8 +5475,7 @@
                     <strong>Aa</strong>
 
                     <p>
-                      Legibilidade para informações
-                      técnicas e conteúdos longos.
+                      Legibilidade para informações técnicas e conteúdos longos.
                     </p>
 
                   </article>
@@ -5850,8 +5483,6 @@
                 </div>
 
               </section>
-
-
 
               <section
                 class="system-panel"
@@ -5861,7 +5492,6 @@
                 <h4 class="system-panel-title">
                   Componentes & estados
                 </h4>
-
 
                 <div class="component-grid">
 
@@ -5874,7 +5504,6 @@
 
                     </div>
 
-
                     <div class="demo-button-row">
 
                       <button
@@ -5885,7 +5514,6 @@
                         SOLICITAR ORÇAMENTO
                       </button>
 
-
                       <button
                         class="fa-demo-secondary"
                         type="button"
@@ -5894,7 +5522,6 @@
                       </button>
 
                     </div>
-
 
                     <div class="variant-controls">
 
@@ -5906,14 +5533,12 @@
                         default
                       </button>
 
-
                       <button
                         type="button"
                         data-fa-button-state="hover"
                       >
                         hover
                       </button>
-
 
                       <button
                         type="button"
@@ -5926,8 +5551,6 @@
 
                   </article>
 
-
-
                   <article class="component-box">
 
                     <div class="component-label mono">
@@ -5936,7 +5559,6 @@
                       <span>Light / Dark</span>
 
                     </div>
-
 
                     <div
                       style="
@@ -5961,16 +5583,14 @@
                         ☾
                       </div>
 
-
                       <p
                         style="
                           color:var(--dim);
-                          font-size:.68rem;
+                          font-size:.72rem;
                           line-height:1.55;
                         "
                       >
-                        Light como experiência principal.
-                        Dark como opção.
+                        Light como experiência principal. Dark como opção.
                       </p>
 
                     </div>
@@ -5981,8 +5601,6 @@
 
               </section>
 
-
-
               <section
                 class="system-panel"
                 data-system-panel="navigation"
@@ -5991,7 +5609,6 @@
                 <h4 class="system-panel-title">
                   Navegação
                 </h4>
-
 
                 <article class="component-box wide">
 
@@ -6006,7 +5623,6 @@
                     </span>
 
                   </div>
-
 
                   <div
                     style="
@@ -6029,18 +5645,17 @@
                       <strong
                         style="
                           font-family:Manrope,sans-serif;
-                          font-size:.72rem;
+                          font-size:.76rem;
                         "
                       >
                         FERNANDO AMARAL
                       </strong>
 
-
                       <div
                         style="
                           display:flex;
                           gap:15px;
-                          font-size:.54rem;
+                          font-size:.58rem;
                         "
                       >
 
@@ -6065,8 +5680,6 @@
 
         </section>
 
-
-
         <section
           class="fa-view"
           data-fa-view="responsive"
@@ -6084,18 +5697,15 @@
                   <i></i>
                 </div>
 
-
                 <div class="browser-address mono">
                   DESKTOP / 1440
                 </div>
-
 
                 <span class="browser-link">
                   LIVE
                 </span>
 
               </div>
-
 
               <div
                 class="fa-desktop-viewport"
@@ -6116,8 +5726,6 @@
 
             </div>
 
-
-
             <div class="fa-mobile-wrap">
 
               <div class="fa-device-mobile">
@@ -6134,7 +5742,6 @@
 
               </div>
 
-
               <span class="mono">
                 MOBILE / 390
               </span>
@@ -6142,8 +5749,6 @@
             </div>
 
           </div>
-
-
 
           <div class="fa-responsive-notes">
 
@@ -6158,12 +5763,10 @@
               </h4>
 
               <p>
-                Tipografia responde ao tamanho
-                do dispositivo.
+                Tipografia responde ao tamanho do dispositivo.
               </p>
 
             </article>
-
 
             <article class="fa-responsive-note">
 
@@ -6176,12 +5779,10 @@
               </h4>
 
               <p>
-                Desktop e mobile mantêm
-                a mesma ordem de importância.
+                Desktop e mobile mantêm a mesma ordem de importância.
               </p>
 
             </article>
-
 
             <article class="fa-responsive-note">
 
@@ -6194,8 +5795,7 @@
               </h4>
 
               <p>
-                Elementos mudam composição
-                quando necessário.
+                Elementos mudam composição quando necessário.
               </p>
 
             </article>
@@ -6203,8 +5803,6 @@
           </div>
 
         </section>
-
-
 
         <section
           class="fa-view"
@@ -6227,7 +5825,6 @@
 
               </div>
 
-
               <a
                 href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=GvyvZBX7e4nj5iXq-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912"
                 target="_blank"
@@ -6237,7 +5834,6 @@
               </a>
 
             </div>
-
 
             <div class="figma-frame">
 
@@ -6258,11 +5854,7 @@
 
     </article>
 
-
-
-    <!-- =====================================================
-         VOIT
-    ====================================================== -->
+    <!-- VOIT -->
 
     <article
       class="project"
@@ -6283,18 +5875,13 @@
 
         </div>
 
-
         <h3>
           Voit Consultoria
         </h3>
 
-
         <p class="project-summary">
-          Atuação em conteúdo, social media,
-          materiais técnicos, apresentações,
-          comunicação comercial e endomarketing.
+          Atuação em conteúdo, social media, materiais técnicos, apresentações, comunicação comercial e endomarketing.
         </p>
-
 
         <div class="project-meta">
 
@@ -6306,8 +5893,6 @@
         </div>
 
       </div>
-
-
 
       <div class="secondary-case">
 
@@ -6324,7 +5909,6 @@
               Visão geral
             </button>
 
-
             <button
               type="button"
               class="case-tab"
@@ -6335,8 +5919,6 @@
             </button>
 
           </div>
-
-
 
           <section
             class="case-view active"
@@ -6349,7 +5931,6 @@
                 VOIT
               </div>
 
-
               <article class="voit-domain">
 
                 <span>CONTEÚDO</span>
@@ -6357,12 +5938,10 @@
                 <h4>Social Media</h4>
 
                 <p>
-                  Conteúdos e peças adaptados
-                  aos temas e objetivos de comunicação.
+                  Conteúdos e peças adaptados aos temas e objetivos de comunicação.
                 </p>
 
               </article>
-
 
               <article class="voit-domain">
 
@@ -6371,12 +5950,10 @@
                 <h4>Apresentações</h4>
 
                 <p>
-                  Materiais de apoio a reuniões,
-                  propostas e processos comerciais.
+                  Materiais de apoio a reuniões, propostas e processos comerciais.
                 </p>
 
               </article>
-
 
               <article class="voit-domain">
 
@@ -6385,12 +5962,10 @@
                 <h4>Endomarketing</h4>
 
                 <p>
-                  Campanhas e materiais
-                  voltados à equipe.
+                  Campanhas e materiais voltados à equipe.
                 </p>
 
               </article>
-
 
               <article class="voit-domain">
 
@@ -6399,8 +5974,7 @@
                 <h4>Consistência</h4>
 
                 <p>
-                  Unidade visual entre
-                  formatos e canais diferentes.
+                  Unidade visual entre formatos e canais diferentes.
                 </p>
 
               </article>
@@ -6408,8 +5982,6 @@
             </div>
 
           </section>
-
-
 
           <section
             class="case-view"
@@ -6419,50 +5991,39 @@
             <div class="voit-social">
 
               <button class="voit-piece" type="button">
-
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-01.jpeg"
                   alt="Projeto Voit 01"
                   loading="lazy"
                 >
-
               </button>
 
-
               <button class="voit-piece" type="button">
-
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-02.jpeg"
                   alt="Projeto Voit 02"
                   loading="lazy"
                 >
-
               </button>
 
-
               <button class="voit-piece" type="button">
-
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-03.jpeg"
                   alt="Projeto Voit 03"
                   loading="lazy"
                 >
-
               </button>
 
-
               <button class="voit-piece" type="button">
-
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-04.jpeg"
                   alt="Projeto Voit 04"
                   loading="lazy"
                 >
-
               </button>
 
             </div>
@@ -6475,11 +6036,7 @@
 
     </article>
 
-
-
-    <!-- =====================================================
-         RENATA
-    ====================================================== -->
+    <!-- RENATA -->
 
     <article
       class="project"
@@ -6500,75 +6057,100 @@
 
         </div>
 
-
         <h3>
           Renata Brandão
         </h3>
 
-
         <p class="project-summary">
-          Design de apresentação trabalhando
-          estrutura de informação, narrativa,
-          hierarquia e leitura profissional.
+          Design de apresentação trabalhando estrutura de informação, narrativa, hierarquia e leitura profissional.
         </p>
 
       </div>
 
-
-
       <div class="secondary-case">
 
-        <div class="deck-shell">
+        <div
+          class="renata-viewer"
+          id="renataViewer"
+        >
 
-          <div class="deck-topbar">
+          <div class="renata-topbar">
 
-            <span class="mono">
-              PRESENTATION / RENATA BRANDÃO
+            <span>
+              RENATA / PRESENTATION
             </span>
 
-
-            <div class="deck-controls">
-
-              <button
-                type="button"
-                id="deckPrev"
-                aria-label="Slide anterior"
-              >
-                ←
-              </button>
-
-
-              <button
-                type="button"
-                id="deckNext"
-                aria-label="Próximo slide"
-              >
-                →
-              </button>
-
-            </div>
+            <span id="renataCounter">
+              01 / 03
+            </span>
 
           </div>
 
+          <div class="renata-layout">
 
-          <div class="deck-body">
-
-            <div class="deck-stage">
+            <div class="renata-main">
 
               <img
-                id="deckMain"
+                id="renataMain"
                 src="img/img-renata/renata-01.jpg"
-                alt="Projeto Renata Brandão"
+                alt="Apresentação Renata Brandão"
                 class="js-lightbox"
               >
 
             </div>
 
+            <aside class="renata-inspector">
 
-            <div
-              class="deck-side"
-              id="deckThumbs"
-            ></div>
+              <span class="renata-kicker">
+                DECISÃO DE DESIGN
+              </span>
+
+              <h4 id="renataTitle">
+                Entrada e posicionamento
+              </h4>
+
+              <p id="renataDescription">
+                A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto.
+              </p>
+
+              <div class="renata-arrows">
+
+                <button
+                  type="button"
+                  id="renataPrev"
+                  aria-label="Slide anterior"
+                >
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  id="renataNext"
+                  aria-label="Próximo slide"
+                >
+                  →
+                </button>
+
+              </div>
+
+              <div
+                class="renata-progress"
+                id="renataProgress"
+              ></div>
+
+              <div
+                class="renata-thumbs"
+                id="renataThumbs"
+              ></div>
+
+              <a
+                href="#"
+                class="renata-full-link"
+              >
+                Ver apresentação completa ↗
+              </a>
+
+            </aside>
 
           </div>
 
@@ -6578,11 +6160,7 @@
 
     </article>
 
-
-
-    <!-- =====================================================
-         BRADUCA
-    ====================================================== -->
+    <!-- BRADUCA -->
 
     <article
       class="project"
@@ -6603,21 +6181,15 @@
 
         </div>
 
-
         <h3>
           Somos Braduca
         </h3>
 
-
         <p class="project-summary">
-          Sistema editorial para redes sociais,
-          preservando identidade de marca sem
-          repetir sempre a mesma composição.
+          Sistema editorial para redes sociais, preservando identidade de marca sem repetir sempre a mesma composição.
         </p>
 
       </div>
-
-
 
       <div class="secondary-case">
 
@@ -6630,92 +6202,35 @@
               id="braducaCase"
             >
 
-              <button
-                class="editorial-card active"
-                type="button"
-                data-index="0"
-              >
-                <img
-                  src="img/img-braduca/braduca-01.jpeg"
-                  alt="Somos Braduca 01"
-                >
+              <button class="editorial-card active" type="button" data-index="0">
+                <img src="img/img-braduca/braduca-01.jpeg" alt="Somos Braduca 01">
               </button>
 
-
-              <button
-                class="editorial-card"
-                type="button"
-                data-index="1"
-              >
-                <img
-                  src="img/img-braduca/braduca-02.jpeg"
-                  alt="Somos Braduca 02"
-                >
+              <button class="editorial-card" type="button" data-index="1">
+                <img src="img/img-braduca/braduca-02.jpeg" alt="Somos Braduca 02">
               </button>
 
-
-              <button
-                class="editorial-card"
-                type="button"
-                data-index="2"
-              >
-                <img
-                  src="img/img-braduca/braduca-03.jpeg"
-                  alt="Somos Braduca 03"
-                >
+              <button class="editorial-card" type="button" data-index="2">
+                <img src="img/img-braduca/braduca-03.jpeg" alt="Somos Braduca 03">
               </button>
 
-
-              <button
-                class="editorial-card"
-                type="button"
-                data-index="3"
-              >
-                <img
-                  src="img/img-braduca/braduca-04.jpeg"
-                  alt="Somos Braduca 04"
-                >
+              <button class="editorial-card" type="button" data-index="3">
+                <img src="img/img-braduca/braduca-04.jpeg" alt="Somos Braduca 04">
               </button>
 
-
-              <button
-                class="editorial-card"
-                type="button"
-                data-index="4"
-              >
-                <img
-                  src="img/img-braduca/braduca-05.jpeg"
-                  alt="Somos Braduca 05"
-                >
+              <button class="editorial-card" type="button" data-index="4">
+                <img src="img/img-braduca/braduca-05.jpeg" alt="Somos Braduca 05">
               </button>
 
-
-              <button
-                class="editorial-card"
-                type="button"
-                data-index="5"
-              >
-                <img
-                  src="img/img-braduca/braduca-06.jpeg"
-                  alt="Somos Braduca 06"
-                >
+              <button class="editorial-card" type="button" data-index="5">
+                <img src="img/img-braduca/braduca-06.jpeg" alt="Somos Braduca 06">
               </button>
 
-
-              <button
-                class="editorial-card"
-                type="button"
-                data-index="6"
-              >
-                <img
-                  src="img/img-braduca/braduca-07.jpeg"
-                  alt="Somos Braduca 07"
-                >
+              <button class="editorial-card" type="button" data-index="6">
+                <img src="img/img-braduca/braduca-07.jpeg" alt="Somos Braduca 07">
               </button>
 
             </div>
-
-
 
             <div class="editorial-preview">
 
@@ -6730,27 +6245,19 @@
 
           </div>
 
-
-
           <aside class="editorial-inspector">
 
             <span>
               EDITORIAL SYSTEM
             </span>
 
-
             <h4>
               Variação sem perder unidade.
             </h4>
 
-
             <p>
-              Diferentes composições,
-              pesos e enquadramentos
-              convivem dentro da mesma
-              linguagem visual.
+              Diferentes composições, pesos e enquadramentos convivem dentro da mesma linguagem visual.
             </p>
-
 
             <div
               id="braducaPosition"
@@ -6771,11 +6278,7 @@
 
     </article>
 
-
-
-    <!-- =====================================================
-         AYMEE
-    ====================================================== -->
+    <!-- AYMÉE -->
 
     <article
       class="project"
@@ -6796,21 +6299,15 @@
 
         </div>
 
-
         <h3>
           Aymée Ferraz
         </h3>
 
-
         <p class="project-summary">
-          Criação e diagramação de conteúdos
-          para redes sociais, mantendo consistência
-          e identidade visual entre diferentes pautas.
+          Criação e diagramação de conteúdos para redes sociais, mantendo consistência e identidade visual entre diferentes pautas.
         </p>
 
       </div>
-
-
 
       <div class="secondary-case">
 
@@ -6821,18 +6318,15 @@
             id="aymeeGrid"
           ></div>
 
-
           <aside class="brand-notes">
 
             <span>
               PERSONAL BRAND SYSTEM
             </span>
 
-
             <h4>
               Variação sem perder identidade.
             </h4>
-
 
             <article class="brand-rule">
 
@@ -6841,13 +6335,10 @@
               </span>
 
               <p>
-                As publicações permanecem
-                reconhecíveis como parte
-                da mesma marca.
+                As publicações permanecem reconhecíveis como parte da mesma marca.
               </p>
 
             </article>
-
 
             <article class="brand-rule">
 
@@ -6856,12 +6347,10 @@
               </span>
 
               <p>
-                O conteúdo precisa ser lido
-                antes de ser apenas decorado.
+                O conteúdo precisa ser lido antes de ser apenas decorado.
               </p>
 
             </article>
-
 
             <article class="brand-rule">
 
@@ -6870,9 +6359,7 @@
               </span>
 
               <p>
-                O sistema acomoda diferentes
-                pautas sem transformar todas
-                as peças na mesma composição.
+                O sistema acomoda diferentes pautas sem transformar todas as peças na mesma composição.
               </p>
 
             </article>
@@ -6885,31 +6372,24 @@
 
     </article>
 
+    <!-- HABILIDADES -->
 
-
-    <!-- =====================================================
-         SKILLS
-    ====================================================== -->
-
-    <div
-      class="section-head"
+    <section
+      class="skills-wrap"
       id="habilidades"
     >
 
-      <span class="section-kicker">
-        repertório
-      </span>
+      <div class="skills-title">
 
+        <span class="section-kicker">
+          repertório
+        </span>
 
-      <h2>
-        Habilidades & ferramentas
-      </h2>
+        <h2>
+          Habilidades & ferramentas
+        </h2>
 
-    </div>
-
-
-
-    <section class="skills">
+      </div>
 
       <div class="skill-grid">
 
@@ -6920,13 +6400,10 @@
           </h3>
 
           <p>
-            Figma, Auto Layout, componentes,
-            variantes, protótipos, arquitetura
-            da informação e layouts responsivos.
+            Figma, Auto Layout, componentes, variantes, protótipos, arquitetura da informação e layouts responsivos.
           </p>
 
         </article>
-
 
         <article class="skill-card">
 
@@ -6935,13 +6412,10 @@
           </h3>
 
           <p>
-            Photoshop, Illustrator, InDesign,
-            Canva e desenvolvimento
-            de sistemas gráficos.
+            Photoshop, Illustrator, InDesign, Canva e desenvolvimento de sistemas gráficos.
           </p>
 
         </article>
-
 
         <article class="skill-card">
 
@@ -6950,13 +6424,10 @@
           </h3>
 
           <p>
-            Social media, copywriting,
-            apresentações, endomarketing
-            e comunicação multicanal.
+            Social media, copywriting, apresentações, endomarketing e comunicação multicanal.
           </p>
 
         </article>
-
 
         <article class="skill-card">
 
@@ -6965,9 +6436,7 @@
           </h3>
 
           <p>
-            Apoio em pesquisa, estruturação,
-            produtividade e refinamento
-            com revisão humana.
+            Apoio em pesquisa, estruturação, produtividade e refinamento com revisão humana.
           </p>
 
         </article>
@@ -6976,33 +6445,20 @@
 
     </section>
 
-
-
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
+    <!-- CONTATO -->
 
     <section
       class="contact"
       id="contato"
     >
 
-      <span class="section-kicker">
-        contato
-      </span>
-
-
       <h2>
-        Tem uma vaga, um projeto ou um problema que precisa de design?
+        Vamos trabalhar juntos?
       </h2>
 
-
       <p>
-        Estou aberta a conversar sobre oportunidades
-        em Comunicação Visual, UI Design
-        e experiências digitais.
+        Entre em contato para conversarmos sobre novos projetos e parcerias.
       </p>
-
 
       <div class="contact-actions">
 
@@ -7015,20 +6471,10 @@
           Falar no WhatsApp
         </a>
 
-
         <a
           href="mailto:raquel.renovato.design@gmail.com"
         >
           Enviar e-mail
-        </a>
-
-
-        <a
-          href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn ↗
         </a>
 
       </div>
@@ -7037,22 +6483,17 @@
 
   </main>
 
-
-
   <footer>
 
     <span>
       © 2026 Raquel Renovato
     </span>
 
-
     <span>
       Comunicação Visual • UI • Design
     </span>
 
   </footer>
-
-
 
   <!-- LIGHTBOX -->
 
@@ -7073,7 +6514,6 @@
       ×
     </button>
 
-
     <img
       id="lightboxImage"
       src=""
@@ -7082,18 +6522,9 @@
 
   </div>
 
-
-
   <script>
-
     (() => {
-
       "use strict";
-
-
-      /* =====================================================
-         HELPERS
-      ====================================================== */
 
       const $ = (
         selector,
@@ -7102,7 +6533,6 @@
         root.querySelector(
           selector
         );
-
 
       const $$ = (
         selector,
@@ -7114,8 +6544,6 @@
           )
         ];
 
-
-
       /* =====================================================
          INTRO
       ====================================================== */
@@ -7123,34 +6551,27 @@
       const intro =
         $("#intro-overlay");
 
-
       const introWords =
         $$("#introWordCycle .w");
-
 
       let introClosed =
         false;
 
-
       let introTimers =
         [];
-
 
       function showIntroWord(
         index
       ) {
-
         introWords.forEach(
           (
             word,
             current
           ) => {
-
             word.classList.remove(
               "active",
               "exit"
             );
-
 
             if(
               current < index
@@ -7160,7 +6581,6 @@
               );
             }
 
-
             if(
               current === index
             ) {
@@ -7168,15 +6588,11 @@
                 "active"
               );
             }
-
           }
         );
-
       }
 
-
       function closeIntro() {
-
         if(
           !intro ||
           introClosed
@@ -7184,10 +6600,8 @@
           return;
         }
 
-
         introClosed =
           true;
-
 
         introTimers.forEach(
           timer =>
@@ -7196,47 +6610,36 @@
             )
         );
 
-
         intro.classList.add(
           "hide"
         );
-
 
         intro.setAttribute(
           "aria-hidden",
           "true"
         );
 
-
         document.body.classList.remove(
           "intro-active"
         );
 
-
         window.setTimeout(
           () => {
-
             intro.style.display =
               "none";
-
           },
           520
         );
-
       }
 
-
       function startIntro() {
-
         if(!intro) {
           return;
         }
 
-
         showIntroWord(
           0
         );
-
 
         introTimers.push(
           setTimeout(
@@ -7248,7 +6651,6 @@
           )
         );
 
-
         introTimers.push(
           setTimeout(
             () =>
@@ -7259,27 +6661,22 @@
           )
         );
 
-
         introTimers.push(
           setTimeout(
             closeIntro,
             2350
           )
         );
-
       }
-
 
       intro?.addEventListener(
         "click",
         closeIntro
       );
 
-
       document.addEventListener(
         "keydown",
         event => {
-
           if(
             document.body.classList.contains(
               "intro-active"
@@ -7290,20 +6687,13 @@
               event.key === " "
             )
           ) {
-
             event.preventDefault();
-
             closeIntro();
-
           }
-
         }
       );
 
-
       startIntro();
-
-
 
       /* =====================================================
          THEME
@@ -7312,110 +6702,79 @@
       const themeToggle =
         $("#themeToggle");
 
-
       const themeLabel =
         $("#themeLabel");
-
 
       const storedTheme =
         localStorage.getItem(
           "raquel-theme"
         );
 
-
       function applyTheme(
         theme
       ) {
-
         if(
           theme ===
           "dark"
         ) {
-
           document.documentElement.setAttribute(
             "data-theme",
             "dark"
           );
 
-
           themeLabel.textContent =
             "Claro";
-
         } else {
-
           document.documentElement.removeAttribute(
             "data-theme"
           );
 
-
           themeLabel.textContent =
             "Sombrio";
-
         }
-
       }
 
-
       applyTheme(
-        storedTheme ===
-          "dark"
+        storedTheme === "dark"
           ? "dark"
           : "light"
       );
 
-
       themeToggle?.addEventListener(
         "click",
         () => {
-
           const current =
             document.documentElement.getAttribute(
               "data-theme"
             );
 
-
           const next =
-            current ===
-              "dark"
+            current === "dark"
               ? "light"
               : "dark";
-
 
           localStorage.setItem(
             "raquel-theme",
             next
           );
 
-
           applyTheme(
             next
           );
-
         }
       );
-
-
-
-      /* =====================================================
-         LOGO
-      ====================================================== */
 
       $("#logoHome")?.addEventListener(
         "click",
         event => {
-
           event.preventDefault();
-
 
           window.scrollTo({
             top:0,
             behavior:"smooth"
           });
-
         }
       );
-
-
 
       /* =====================================================
          WIREFRAME
@@ -7424,25 +6783,12 @@
       let selectedColor =
         "#E8590C";
 
-
       const wfWindow =
         $("#wfWindow");
-
-
-
-      /*
-        WCAG-like luminance.
-
-        Diferente da versão anterior,
-        agora convertemos sRGB em luminância linear.
-
-        Isso dá contraste muito mais confiável.
-      */
 
       function getReadableTextColor(
         hex
       ) {
-
         if(
           !hex ||
           !/^#[0-9A-F]{6}$/i.test(
@@ -7452,46 +6798,28 @@
           return "#FFFFFF";
         }
 
-
         const r =
           parseInt(
-            hex.slice(
-              1,
-              3
-            ),
+            hex.slice(1,3),
             16
-          ) /
-          255;
-
+          ) / 255;
 
         const g =
           parseInt(
-            hex.slice(
-              3,
-              5
-            ),
+            hex.slice(3,5),
             16
-          ) /
-          255;
-
+          ) / 255;
 
         const b =
           parseInt(
-            hex.slice(
-              5,
-              7
-            ),
+            hex.slice(5,7),
             16
-          ) /
-          255;
-
+          ) / 255;
 
         const linearize =
           channel =>
-            channel <=
-              .03928
-              ? channel /
-                12.92
+            channel <= .03928
+              ? channel / 12.92
               : Math.pow(
                   (
                     channel +
@@ -7501,75 +6829,45 @@
                   2.4
                 );
 
-
         const luminance =
-          .2126 *
-            linearize(
-              r
-            ) +
-          .7152 *
-            linearize(
-              g
-            ) +
-          .0722 *
-            linearize(
-              b
-            );
+          .2126 * linearize(r) +
+          .7152 * linearize(g) +
+          .0722 * linearize(b);
 
-
-        /*
-          Cores abaixo deste ponto
-          recebem texto branco.
-        */
-
-        return luminance <
-          .48
-            ? "#FFFFFF"
-            : "#1F1C18";
-
+        return luminance < .48
+          ? "#FFFFFF"
+          : "#1F1C18";
       }
-
-
 
       function resetPaint(
         element
       ) {
-
         element.classList.remove(
           "is-painted"
         );
-
 
         element.style.removeProperty(
           "background-color"
         );
 
-
         element.style.removeProperty(
           "border-color"
         );
-
 
         element.style.removeProperty(
           "color"
         );
 
-
         element.style.removeProperty(
           "--paint-foreground"
         );
-
       }
-
-
 
       function paintElement(
         element,
         color
       ) {
-
         if(!color) {
-
           resetPaint(
             element
           );
@@ -7577,50 +6875,36 @@
           return;
         }
 
-
         const foreground =
           getReadableTextColor(
             color
           );
 
-
         element.classList.add(
           "is-painted"
         );
 
-
         element.style.backgroundColor =
           color;
-
 
         element.style.borderColor =
           color;
 
-
         element.style.color =
           foreground;
-
 
         element.style.setProperty(
           "--paint-foreground",
           foreground
         );
-
       }
-
-
-
-      /* PALETA */
 
       $$(".swatch").forEach(
         swatch => {
-
           swatch.addEventListener(
             "click",
             event => {
-
               event.stopPropagation();
-
 
               $$(".swatch").forEach(
                 current =>
@@ -7629,62 +6913,43 @@
                   )
               );
 
-
               swatch.classList.add(
                 "active"
               );
 
-
               selectedColor =
                 swatch.dataset.color ||
                 "";
-
             }
           );
-
         }
       );
-
-
-
-      /* PINTAR */
 
       wfWindow?.addEventListener(
         "click",
         event => {
-
           const target =
             event.target.closest(
               ".wf-paintable"
             );
 
-
           if(!target) {
             return;
           }
-
 
           paintElement(
             target,
             selectedColor
           );
-
         }
       );
 
-
-
-      /* ABAS */
-
       $$(".wf-nav-item").forEach(
         item => {
-
           item.addEventListener(
             "click",
             event => {
-
               event.stopPropagation();
-
 
               $$(".wf-nav-item").forEach(
                 current =>
@@ -7693,66 +6958,40 @@
                   )
               );
 
-
               item.classList.add(
                 "active"
               );
 
-
               const tab =
                 item.dataset.tab;
 
-
               $$(".wf-view").forEach(
                 view => {
-
                   view.classList.toggle(
                     "active",
                     view.id ===
                       `wf-${tab}`
                   );
-
                 }
               );
-
-
-              /*
-                Não pinta automaticamente
-                só porque clicou na aba.
-
-                Se já houver uma cor selecionada,
-                um segundo clique no item ainda
-                pode pintá-lo através da interação normal.
-              */
-
             }
           );
-
         }
       );
-
-
-
-      /* +1 ENTREGA */
 
       let deliveries =
         14;
 
-
       $("#wfMetricBtn")?.addEventListener(
         "click",
         event => {
-
           event.stopPropagation();
-
 
           deliveries +=
             1;
 
-
           const counter =
             $("#wfCounter");
-
 
           if(counter) {
             counter.textContent =
@@ -7760,157 +6999,94 @@
                 deliveries
               );
           }
-
-
-          event.currentTarget.animate(
-            [
-              {
-                transform:"scale(1)"
-              },
-
-              {
-                transform:"scale(1.08)"
-              },
-
-              {
-                transform:"scale(1)"
-              }
-            ],
-            {
-              duration:220,
-              easing:"ease-out"
-            }
-          );
-
         }
       );
 
-
-
-      /* CHECKLIST */
-
       $$(".wf-task-item").forEach(
         task => {
-
           task.addEventListener(
             "click",
             event => {
-
               event.stopPropagation();
-
 
               task.classList.toggle(
                 "checked"
               );
-
             }
           );
-
         }
       );
-
-
-
-      /* MODO APP */
 
       let wfDark =
         false;
 
-
       $("#wfSwitchMode")?.addEventListener(
         "click",
         event => {
-
           event.stopPropagation();
-
 
           wfDark =
             !wfDark;
 
-
           if(wfDark) {
-
             wfWindow.style.setProperty(
               "--wf-bg-local",
               "#151412"
             );
-
 
             wfWindow.style.setProperty(
               "--wf-card-local",
               "#211F1B"
             );
 
-
             wfWindow.style.setProperty(
               "--wf-text-local",
               "#F0ECE1"
             );
 
-
             event.currentTarget.textContent =
               "modo clean";
-
           } else {
-
             wfWindow.style.removeProperty(
               "--wf-bg-local"
             );
-
 
             wfWindow.style.removeProperty(
               "--wf-card-local"
             );
 
-
             wfWindow.style.removeProperty(
               "--wf-text-local"
             );
 
-
             event.currentTarget.textContent =
               "modo app";
-
           }
-
         }
       );
-
-
-
-      /* LIMPAR */
 
       $("#wfClear")?.addEventListener(
         "click",
         () => {
-
           selectedColor =
             "#E8590C";
 
-
           $$(".swatch").forEach(
             swatch => {
-
               swatch.classList.toggle(
                 "active",
-                swatch.dataset.color ===
-                  "#E8590C"
+                swatch.dataset.color === "#E8590C"
               );
-
             }
           );
-
 
           $$(".wf-paintable").forEach(
             element => {
-
               resetPaint(
                 element
               );
-
             }
           );
-
 
           $$(".wf-nav-item").forEach(
             item =>
@@ -7919,92 +7095,68 @@
               )
           );
 
-
-          const dashboardTab =
-            $(
-              '.wf-nav-item[data-tab="dashboard"]'
-            );
-
-
-          dashboardTab?.classList.add(
+          $(
+            '.wf-nav-item[data-tab="dashboard"]'
+          )?.classList.add(
             "active"
           );
 
-
           $$(".wf-view").forEach(
             view => {
-
               view.classList.toggle(
                 "active",
-                view.id ===
-                  "wf-dashboard"
+                view.id === "wf-dashboard"
               );
-
             }
           );
-
 
           deliveries =
             14;
 
-
           const counter =
             $("#wfCounter");
-
 
           if(counter) {
             counter.textContent =
               "14";
           }
 
-
           $$(".wf-task-item").forEach(
             (
               task,
               index
             ) => {
-
               task.classList.toggle(
                 "checked",
                 index === 0
               );
-
             }
           );
 
-
           wfDark =
             false;
-
 
           wfWindow?.style.removeProperty(
             "--wf-bg-local"
           );
 
-
           wfWindow?.style.removeProperty(
             "--wf-card-local"
           );
-
 
           wfWindow?.style.removeProperty(
             "--wf-text-local"
           );
 
-
           const modeButton =
             $("#wfSwitchMode");
-
 
           if(modeButton) {
             modeButton.textContent =
               "modo app";
           }
-
         }
       );
-
-
 
       /* =====================================================
          FERNANDO TABS
@@ -8012,18 +7164,15 @@
 
       $$(".fa-tab").forEach(
         tab => {
-
           tab.addEventListener(
             "click",
             () => {
-
               $$(".fa-tab").forEach(
                 item =>
                   item.classList.remove(
                     "active"
                   )
               );
-
 
               $$(".fa-view").forEach(
                 view =>
@@ -8032,53 +7181,42 @@
                   )
               );
 
-
               tab.classList.add(
                 "active"
               );
-
 
               const target =
                 $(
                   `[data-fa-view="${tab.dataset.faTab}"]`
                 );
 
-
               target?.classList.add(
                 "active"
               );
 
-
               requestAnimationFrame(
                 resizeAllDesktopPreviews
               );
-
             }
           );
-
         }
       );
 
-
-
       /* =====================================================
-         DESIGN SYSTEM CASE
+         DESIGN SYSTEM
       ====================================================== */
 
       $$(".system-nav-btn").forEach(
         button => {
-
           button.addEventListener(
             "click",
             () => {
-
               $$(".system-nav-btn").forEach(
                 item =>
                   item.classList.remove(
                     "active"
                   )
               );
-
 
               $$(".system-panel").forEach(
                 panel =>
@@ -8087,41 +7225,30 @@
                   )
               );
 
-
               button.classList.add(
                 "active"
               );
-
 
               $(
                 `[data-system-panel="${button.dataset.system}"]`
               )?.classList.add(
                 "active"
               );
-
             }
           );
-
         }
       );
 
-
-
-      /* COMPONENT STATES */
-
       const demoPrimary =
         $("#faDemoPrimary");
-
 
       $$(
         "[data-fa-button-state]"
       ).forEach(
         button => {
-
           button.addEventListener(
             "click",
             () => {
-
               $$(
                 "[data-fa-button-state]"
               ).forEach(
@@ -8131,44 +7258,34 @@
                   )
               );
 
-
               button.classList.add(
                 "active"
               );
-
 
               demoPrimary?.classList.remove(
                 "is-hover",
                 "is-disabled"
               );
 
-
               if(
-                button.dataset.faButtonState ===
-                "hover"
+                button.dataset.faButtonState === "hover"
               ) {
                 demoPrimary?.classList.add(
                   "is-hover"
                 );
               }
 
-
               if(
-                button.dataset.faButtonState ===
-                "disabled"
+                button.dataset.faButtonState === "disabled"
               ) {
                 demoPrimary?.classList.add(
                   "is-disabled"
                 );
               }
-
             }
           );
-
         }
       );
-
-
 
       /* =====================================================
          DESKTOP PREVIEW
@@ -8177,30 +7294,24 @@
       const DESKTOP_WIDTH =
         1440;
 
-
       function resizeDesktopPreview(
         viewport
       ) {
-
         if(!viewport) {
           return;
         }
-
 
         const canvas =
           viewport.querySelector(
             ".fa-desktop-canvas"
           );
 
-
         if(!canvas) {
           return;
         }
 
-
         const availableWidth =
           viewport.clientWidth;
-
 
         if(
           availableWidth <= 0
@@ -8208,18 +7319,14 @@
           return;
         }
 
-
         const scale =
           Math.min(
             1,
-            availableWidth /
-            DESKTOP_WIDTH
+            availableWidth / DESKTOP_WIDTH
           );
-
 
         canvas.style.transform =
           `scale(${scale})`;
-
 
         const desiredHeight =
           Number(
@@ -8227,56 +7334,42 @@
             700
           );
 
-
         viewport.style.height =
           `${
             desiredHeight *
             scale
           }px`;
-
       }
 
-
       function resizeAllDesktopPreviews() {
-
         $$(".fa-desktop-viewport").forEach(
           resizeDesktopPreview
         );
-
       }
-
 
       if(
         "ResizeObserver" in window
       ) {
-
         const desktopObserver =
           new ResizeObserver(
             entries => {
-
               entries.forEach(
                 entry =>
                   resizeDesktopPreview(
                     entry.target
                   )
               );
-
             }
           );
 
-
         $$(".fa-desktop-viewport").forEach(
           viewport => {
-
             desktopObserver.observe(
               viewport
             );
-
           }
         );
-
       }
-
 
       window.addEventListener(
         "resize",
@@ -8286,37 +7379,29 @@
         }
       );
 
-
       window.addEventListener(
         "load",
         resizeAllDesktopPreviews
       );
 
-
       requestAnimationFrame(
         resizeAllDesktopPreviews
       );
 
-
-
       /* =====================================================
-         GENERIC CASE TABS
+         GENERIC TABS
       ====================================================== */
 
       $$(".case-tab").forEach(
         button => {
-
           button.addEventListener(
             "click",
             () => {
-
               const caseName =
                 button.dataset.case;
 
-
               const viewName =
                 button.dataset.view;
-
 
               $$(
                 `.case-tab[data-case="${caseName}"]`
@@ -8327,7 +7412,6 @@
                   )
               );
 
-
               $$(
                 `[data-case-view^="${caseName}-"]`
               ).forEach(
@@ -8337,166 +7421,194 @@
                   )
               );
 
-
               button.classList.add(
                 "active"
               );
-
 
               $(
                 `[data-case-view="${caseName}-${viewName}"]`
               )?.classList.add(
                 "active"
               );
-
             }
           );
-
         }
       );
 
-
-
       /* =====================================================
-         RENATA
+         RENATA — VISUAL ANTERIOR
       ====================================================== */
 
       const renataSlides = [
-
         {
-          src:
-            "img/img-renata/renata-01.jpg",
+          src:"img/img-renata/renata-01.jpg",
 
-          alt:
-            "Renata Brandão — apresentação 01"
+          alt:"Renata Brandão — apresentação 01",
+
+          title:"Entrada e posicionamento",
+
+          description:
+            "A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto."
         },
-
         {
-          src:
-            "img/img-renata/renata-02.jpg",
+          src:"img/img-renata/renata-02.jpg",
 
-          alt:
-            "Renata Brandão — apresentação 02"
+          alt:"Renata Brandão — apresentação 02",
+
+          title:"Informação com direção",
+
+          description:
+            "A estrutura combina conteúdo estratégico, hierarquia tipográfica e apoio visual para reduzir densidade e orientar a leitura."
         },
-
         {
-          src:
-            "img/img-renata/renata-03.jpg",
+          src:"img/img-renata/renata-03.jpg",
 
-          alt:
-            "Renata Brandão — apresentação 03"
+          alt:"Renata Brandão — apresentação 03",
+
+          title:"Consistência entre slides",
+
+          description:
+            "Elementos, escalas e grid permanecem coerentes para criar ritmo e unidade durante toda a apresentação."
         }
-
       ];
-
 
       let renataIndex =
         0;
 
+      const renataMain =
+        $("#renataMain");
 
-      const deckMain =
-        $("#deckMain");
+      const renataTitle =
+        $("#renataTitle");
 
+      const renataDescription =
+        $("#renataDescription");
 
-      const deckThumbs =
-        $("#deckThumbs");
+      const renataCounter =
+        $("#renataCounter");
 
+      const renataThumbs =
+        $("#renataThumbs");
+
+      const renataProgress =
+        $("#renataProgress");
 
       function renderRenata() {
-
         if(
-          !deckMain ||
-          !deckThumbs
+          !renataMain ||
+          !renataThumbs
         ) {
           return;
         }
-
 
         const current =
           renataSlides[
             renataIndex
           ];
 
-
-        deckMain.src =
+        renataMain.src =
           current.src;
 
-
-        deckMain.alt =
+        renataMain.alt =
           current.alt;
 
+        renataTitle.textContent =
+          current.title;
 
-        deckThumbs.innerHTML =
+        renataDescription.textContent =
+          current.description;
+
+        renataCounter.textContent =
+          `${
+            String(
+              renataIndex +
+              1
+            ).padStart(
+              2,
+              "0"
+            )
+          } / ${
+            String(
+              renataSlides.length
+            ).padStart(
+              2,
+              "0"
+            )
+          }`;
+
+        const progress =
+          (
+            (
+              renataIndex +
+              1
+            ) /
+            renataSlides.length
+          ) *
+          100;
+
+        renataProgress.style.setProperty(
+          "--renata-progress",
+          `${progress}%`
+        );
+
+        renataThumbs.innerHTML =
           "";
-
 
         renataSlides.forEach(
           (
             item,
             index
           ) => {
-
             const button =
               document.createElement(
                 "button"
               );
 
-
             button.type =
               "button";
 
-
             button.className =
-              "deck-thumb";
-
+              "renata-thumb";
 
             if(
-              index ===
-              renataIndex
+              index === renataIndex
             ) {
               button.classList.add(
                 "active"
               );
             }
 
-
             button.innerHTML =
               `
                 <img
                   src="${item.src}"
-                  alt="Miniatura ${index + 1}"
+                  alt="Miniatura ${
+                    index +
+                    1
+                  }"
                 >
               `;
-
 
             button.addEventListener(
               "click",
               () => {
-
                 renataIndex =
                   index;
 
-
                 renderRenata();
-
               }
             );
 
-
-            deckThumbs.appendChild(
+            renataThumbs.appendChild(
               button
             );
-
           }
         );
-
       }
 
-
-      $("#deckPrev")?.addEventListener(
+      $("#renataPrev")?.addEventListener(
         "click",
         () => {
-
           renataIndex =
             (
               renataIndex -
@@ -8505,17 +7617,13 @@
             ) %
             renataSlides.length;
 
-
           renderRenata();
-
         }
       );
 
-
-      $("#deckNext")?.addEventListener(
+      $("#renataNext")?.addEventListener(
         "click",
         () => {
-
           renataIndex =
             (
               renataIndex +
@@ -8523,16 +7631,11 @@
             ) %
             renataSlides.length;
 
-
           renderRenata();
-
         }
       );
 
-
       renderRenata();
-
-
 
       /* =====================================================
          BRADUCA
@@ -8541,25 +7644,20 @@
       const braducaCase =
         $("#braducaCase");
 
-
       const braducaPreview =
         $("#braducaPreview");
 
-
       const braducaPosition =
         $("#braducaPosition");
-
 
       $$(
         ".editorial-card",
         braducaCase
       ).forEach(
         card => {
-
           card.addEventListener(
             "click",
             () => {
-
               $$(
                 ".editorial-card",
                 braducaCase
@@ -8570,34 +7668,27 @@
                   )
               );
 
-
               card.classList.add(
                 "active"
               );
 
-
               const image =
                 $("img",card);
-
 
               if(!image) {
                 return;
               }
 
-
               braducaPreview.src =
                 image.src;
 
-
               braducaPreview.alt =
                 image.alt;
-
 
               const index =
                 Number(
                   card.dataset.index
                 );
-
 
               braducaPosition.textContent =
                 `${
@@ -8609,21 +7700,16 @@
                     "0"
                   )
                 } / 07`;
-
             }
           );
-
         }
       );
 
-
-
       /* =====================================================
-         AYMEE
+         AYMÉE
       ====================================================== */
 
       const aymeeImages = [
-
         "img/Aymee-img/img-01.jpeg",
         "img/Aymee-img/img-02.jpeg",
         "img/Aymee-img/img-03.jpeg",
@@ -8634,44 +7720,34 @@
         "img/Aymee-img/img-08.jpeg",
         "img/Aymee-img/img-09.jpeg",
         "img/Aymee-img/img-10.jpeg"
-
       ];
-
 
       const aymeeGrid =
         $("#aymeeGrid");
 
-
       function renderAymee() {
-
         if(!aymeeGrid) {
           return;
         }
 
-
         aymeeGrid.innerHTML =
           "";
-
 
         aymeeImages.forEach(
           (
             src,
             index
           ) => {
-
             const button =
               document.createElement(
                 "button"
               );
 
-
             button.type =
               "button";
 
-
             button.className =
               "brand-card";
-
 
             button.innerHTML =
               `
@@ -8691,22 +7767,16 @@
                 >
               `;
 
-
             aymeeGrid.appendChild(
               button
             );
-
           }
         );
-
 
         registerLightboxImages(
           aymeeGrid
         );
-
       }
-
-
 
       /* =====================================================
          LIGHTBOX
@@ -8715,60 +7785,46 @@
       const lightbox =
         $("#lightbox");
 
-
       const lightboxImage =
         $("#lightboxImage");
-
 
       const lightboxClose =
         $("#lightboxClose");
 
-
       let lightboxTrigger =
         null;
-
 
       function openLightbox(
         image,
         trigger
       ) {
-
         lightboxTrigger =
           trigger;
-
 
         lightboxImage.src =
           image.currentSrc ||
           image.src;
 
-
         lightboxImage.alt =
           image.alt;
-
 
         lightbox.classList.add(
           "open"
         );
-
 
         lightbox.setAttribute(
           "aria-hidden",
           "false"
         );
 
-
         document.body.classList.add(
           "locked"
         );
 
-
         lightboxClose.focus();
-
       }
 
-
       function closeLightbox() {
-
         if(
           !lightbox.classList.contains(
             "open"
@@ -8777,63 +7833,49 @@
           return;
         }
 
-
         lightbox.classList.remove(
           "open"
         );
-
 
         lightbox.setAttribute(
           "aria-hidden",
           "true"
         );
 
-
         document.body.classList.remove(
           "locked"
         );
-
 
         lightboxImage.removeAttribute(
           "src"
         );
 
-
         if(
-          lightboxTrigger instanceof
-          HTMLElement
+          lightboxTrigger instanceof HTMLElement
         ) {
           lightboxTrigger.focus();
         }
 
-
         lightboxTrigger =
           null;
-
       }
-
 
       function registerLightboxImages(
         root = document
       ) {
-
         $$(
           ".js-lightbox",
           root
         ).forEach(
           image => {
-
             if(
-              image.dataset.lightboxReady ===
-              "1"
+              image.dataset.lightboxReady === "1"
             ) {
               return;
             }
 
-
             image.dataset.lightboxReady =
               "1";
-
 
             const trigger =
               image.closest(
@@ -8841,63 +7883,48 @@
               ) ||
               image;
 
-
             if(
               !image.closest(
                 "button"
               )
             ) {
-
               image.setAttribute(
                 "role",
                 "button"
               );
 
-
               image.tabIndex =
                 image.tabIndex >= 0
                   ? image.tabIndex
                   : 0;
-
             }
-
 
             const activate =
               event => {
-
                 if(
-                  event.type ===
-                    "keydown" &&
-                  event.key !==
-                    "Enter" &&
-                  event.key !==
-                    " "
+                  event.type === "keydown" &&
+                  event.key !== "Enter" &&
+                  event.key !== " "
                 ) {
                   return;
                 }
 
-
                 if(
-                  event.type ===
-                  "keydown"
+                  event.type === "keydown"
                 ) {
                   event.preventDefault();
                 }
-
 
                 openLightbox(
                   image,
                   trigger
                 );
-
               };
-
 
             trigger.addEventListener(
               "click",
               activate
             );
-
 
             if(
               !image.closest(
@@ -8909,56 +7936,41 @@
                 activate
               );
             }
-
           }
         );
-
       }
-
 
       lightboxClose.addEventListener(
         "click",
         closeLightbox
       );
 
-
       lightbox.addEventListener(
         "click",
         event => {
-
           if(
-            event.target ===
-            lightbox
+            event.target === lightbox
           ) {
             closeLightbox();
           }
-
         }
       );
-
 
       document.addEventListener(
         "keydown",
         event => {
-
           if(
-            event.key ===
-            "Escape"
+            event.key === "Escape"
           ) {
             closeLightbox();
           }
-
         }
       );
 
-
       renderAymee();
 
-
       registerLightboxImages();
-
     })();
-
   </script>
 
 </body>
