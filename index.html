@@ -32,13 +32,13 @@
     :root {
       --bg:#F3EFEA;
       --ink:#1F1C18;
-      --dim:#5F5850;
-      --muted:#8A837A;
+      --dim:#62584E;
+      --muted:#8E857B;
 
       --line:rgba(31,28,24,.15);
       --line-strong:rgba(31,28,24,.32);
 
-      --card:#E5DFD5;
+      --card:#E7E0D6;
       --card-2:#ECE7DF;
       --surface:#FAF7F2;
 
@@ -47,7 +47,7 @@
 
       --green:#40594A;
 
-      --nav-bg:rgba(243,239,234,.94);
+      --nav-bg:rgba(243,239,234,.95);
 
       --shadow:
         0 26px 65px
@@ -67,7 +67,7 @@
       --bg:#181614;
       --ink:#F1ECE3;
       --dim:#AAA299;
-      --muted:#7D766D;
+      --muted:#817A72;
 
       --line:rgba(241,236,227,.13);
       --line-strong:rgba(241,236,227,.29);
@@ -81,7 +81,7 @@
 
       --green:#829789;
 
-      --nav-bg:rgba(24,22,20,.94);
+      --nav-bg:rgba(24,22,20,.95);
 
       --shadow:
         0 26px 65px
@@ -102,15 +102,19 @@
     html {
       scroll-behavior:smooth;
       scrollbar-gutter:stable;
-      scroll-padding-top:90px;
+      scroll-padding-top:80px;
     }
 
     body {
       overflow-x:hidden;
+
       background:var(--bg);
       color:var(--ink);
+
       font-family:"IBM Plex Sans",sans-serif;
+
       -webkit-font-smoothing:antialiased;
+
       transition:
         background-color .35s ease,
         color .35s ease;
@@ -128,8 +132,8 @@
 
     button,
     input,
-    textarea,
-    select {
+    select,
+    textarea {
       font:inherit;
     }
 
@@ -143,8 +147,8 @@
     }
 
     ul {
-      padding:0;
       margin:0;
+      padding:0;
     }
 
     .mono {
@@ -169,12 +173,12 @@
     #intro-overlay {
       position:fixed;
       inset:0;
+
       z-index:9999;
 
-      display:grid;
-      place-items:center;
-
-      padding:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
 
       background:var(--bg);
 
@@ -192,23 +196,26 @@
     #intro-overlay.hide {
       opacity:0;
       visibility:hidden;
-      transform:scale(1.012);
+      transform:scale(1.015);
       pointer-events:none;
     }
 
-    .intro-title {
-      display:grid;
+    /*
+      O conjunto inteiro possui largura previsível.
+      Assim "clareza", "estrutura" e "detalhes" sempre começam
+      exatamente na mesma coordenada.
+    */
 
-      grid-template-columns:
-        max-content
-        5.4em;
+    .intro-title {
+      display:flex;
 
       align-items:baseline;
+      justify-content:center;
 
-      column-gap:.16em;
+      gap:.18em;
 
       width:max-content;
-      max-width:100%;
+      max-width:94vw;
 
       margin:auto;
 
@@ -216,42 +223,49 @@
 
       font-size:
         clamp(
-          3rem,
-          6.2vw,
-          5.8rem
+          4.5rem,
+          7.3vw,
+          8rem
         );
 
       font-weight:300;
 
-      line-height:1;
+      line-height:.9;
 
-      letter-spacing:-.045em;
+      letter-spacing:-.055em;
 
       white-space:nowrap;
     }
 
     .intro-fixed {
-      line-height:1;
+      display:block;
+      line-height:.9;
     }
 
     .intro-word-cycle {
       position:relative;
 
-      width:5.4em;
-      height:1em;
+      display:block;
+
+      width:5.15em;
+      height:1.06em;
 
       overflow:hidden;
 
       color:var(--accent);
 
       font-style:italic;
-      line-height:1;
+
+      line-height:.92;
     }
 
     .intro-word-cycle .w {
       position:absolute;
-      top:0;
+
       left:0;
+      bottom:0;
+
+      display:block;
 
       width:max-content;
 
@@ -266,7 +280,7 @@
 
       transition:
         opacity .3s ease,
-        transform .56s var(--ease);
+        transform .65s var(--ease);
     }
 
     .intro-word-cycle .w.active {
@@ -316,6 +330,8 @@
 
       z-index:1000;
 
+      min-height:62px;
+
       display:grid;
 
       grid-template-columns:
@@ -324,8 +340,6 @@
         1fr;
 
       align-items:center;
-
-      min-height:62px;
 
       padding:
         0
@@ -346,7 +360,7 @@
     .logo {
       font-family:"Fraunces",serif;
 
-      font-size:1.14rem;
+      font-size:1.17rem;
       font-weight:500;
 
       white-space:nowrap;
@@ -359,7 +373,9 @@
     .theme-toggle {
       min-height:32px;
 
-      padding:0 13px;
+      padding:
+        0
+        13px;
 
       border:
         1px solid
@@ -384,7 +400,11 @@
 
     .site-nav ul {
       display:flex;
+
+      align-items:center;
+
       gap:34px;
+
       list-style:none;
     }
 
@@ -392,7 +412,6 @@
       color:var(--dim);
 
       font-size:.82rem;
-      font-weight:400;
 
       transition:
         color .2s ease;
@@ -405,24 +424,26 @@
     .nav-cta {
       justify-self:end;
 
+      min-height:38px;
+
       display:flex;
       align-items:center;
 
-      min-height:38px;
-
-      padding:0 20px;
+      padding:
+        0
+        20px;
 
       border:
         1px solid
         var(--line-strong);
 
       font-family:"IBM Plex Mono",monospace;
-
       font-size:.62rem;
     }
 
     .nav-cta:hover {
       border-color:var(--ink);
+
       background:var(--ink);
       color:var(--bg);
     }
@@ -442,25 +463,25 @@
 
       grid-template-columns:
         minmax(0,1.08fr)
-        minmax(430px,.92fr);
+        minmax(390px,.92fr);
 
       align-items:center;
 
       gap:
         clamp(
-          42px,
+          55px,
           7vw,
-          100px
+          110px
         );
 
       padding:
-        74px
+        70px
         var(--pad)
-        78px;
+        80px;
     }
 
     .hero-text {
-      max-width:720px;
+      max-width:710px;
     }
 
     .hero-eyebrow {
@@ -474,19 +495,20 @@
       font-weight:500;
 
       line-height:1.5;
+
       letter-spacing:.045em;
     }
 
     .hero h1 {
-      max-width:730px;
+      max-width:740px;
 
       font-family:"Fraunces",serif;
 
       font-size:
         clamp(
-          3.85rem,
-          5.9vw,
-          6.15rem
+          3.9rem,
+          5.8vw,
+          6.1rem
         );
 
       font-weight:300;
@@ -498,6 +520,7 @@
 
     .hero h1 em {
       color:var(--accent);
+
       font-weight:300;
       font-style:italic;
     }
@@ -505,12 +528,10 @@
     .hero-sub {
       max-width:690px;
 
-      margin-top:36px;
+      margin-top:35px;
     }
 
     .hero-sub p {
-      max-width:660px;
-
       color:var(--dim);
 
       font-size:
@@ -526,8 +547,9 @@
     .hero-actions {
       display:flex;
 
-      align-items:center;
       flex-wrap:wrap;
+
+      align-items:center;
 
       gap:28px;
 
@@ -569,53 +591,58 @@
     }
 
     /* =========================================================
-       WIREFRAME
+       HERO WIREFRAME
+       FORMATO 380 × 260 DA REFERÊNCIA
     ========================================================= */
 
     .hero-visual {
-      min-width:0;
-
       display:flex;
       justify-content:center;
+      align-items:center;
+
+      min-width:0;
     }
 
     .wf-wrapper {
       position:relative;
 
-      width:
-        min(
-          100%,
-          500px
-        );
+      width:430px;
+      max-width:100%;
 
-      min-height:430px;
+      min-height:365px;
 
       display:flex;
-
       flex-direction:column;
-
+      align-items:center;
       justify-content:center;
+    }
+
+    .wf-stage {
+      position:relative;
+
+      width:380px;
+      max-width:100%;
     }
 
     .wf-illustration {
       position:absolute;
 
-      z-index:4;
+      z-index:5;
 
       pointer-events:none;
     }
 
     .pen-tool-svg {
-      top:25px;
-      left:-22px;
+      top:-43px;
+      left:-36px;
 
-      width:78px;
-      height:78px;
+      width:74px;
+      height:74px;
     }
 
     .badge-floater {
-      top:23px;
-      right:13px;
+      top:-31px;
+      right:-10px;
 
       display:flex;
 
@@ -624,7 +651,8 @@
       gap:5px;
 
       padding:
-        4px 11px;
+        4px
+        11px;
 
       border:
         1px solid
@@ -638,7 +666,7 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.54rem;
+      font-size:.52rem;
 
       box-shadow:
         0 4px 12px
@@ -653,10 +681,11 @@
 
     .spec-floater {
       left:-34px;
-      bottom:100px;
+      bottom:28px;
 
       padding:
-        4px 9px;
+        4px
+        9px;
 
       border:
         1px solid
@@ -670,12 +699,12 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.5rem;
+      font-size:.48rem;
     }
 
     .cursor-floater {
-      right:-12px;
-      bottom:79px;
+      right:-17px;
+      bottom:-17px;
 
       display:flex;
 
@@ -684,18 +713,22 @@
       gap:6px;
 
       padding:
-        5px 11px;
+        5px
+        11px;
 
       border-radius:
-        5px 16px 16px 16px;
+        5px
+        16px
+        16px
+        16px;
 
       background:var(--accent);
 
-      color:#fff;
+      color:white;
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.54rem;
+      font-size:.51rem;
 
       box-shadow:
         0 8px 20px
@@ -724,17 +757,12 @@
       --wf-card-local:var(--wf-card);
       --wf-text-local:var(--wf-text);
 
-      position:relative;
+      width:380px;
+      max-width:100%;
 
-      z-index:1;
-
-      width:100%;
       height:260px;
 
-      margin:auto;
-
       display:flex;
-
       flex-direction:column;
 
       overflow:hidden;
@@ -767,7 +795,9 @@
 
       flex:0 0 auto;
 
-      padding:0 14px;
+      padding:
+        0
+        13px;
 
       border-bottom:
         1px solid
@@ -794,7 +824,8 @@
 
     .wf-switch-mode {
       padding:
-        2px 8px;
+        2px
+        8px;
 
       border:
         1px solid
@@ -806,7 +837,7 @@
 
       color:var(--dim);
 
-      font-size:.52rem;
+      font-size:.49rem;
 
       cursor:pointer;
     }
@@ -822,16 +853,19 @@
     .wf-sidebar {
       width:110px;
 
-      flex:0 0 110px;
+      flex:
+        0 0
+        110px;
 
       display:flex;
 
       flex-direction:column;
 
-      gap:6px;
+      gap:5px;
 
       padding:
-        12px 8px;
+        11px
+        8px;
 
       border-right:
         1px solid
@@ -853,13 +887,14 @@
       gap:7px;
 
       padding:
-        8px 9px;
+        8px
+        9px;
 
       border-radius:4px;
 
       color:var(--wf-text-local);
 
-      font-size:.52rem;
+      font-size:.49rem;
 
       cursor:pointer;
 
@@ -875,7 +910,7 @@
 
     .wf-nav-item.active {
       background:var(--accent);
-      color:#fff;
+      color:white;
     }
 
     .wf-main {
@@ -883,11 +918,12 @@
 
       min-width:0;
 
-      padding:13px;
+      padding:12px;
     }
 
     .wf-view {
       display:none;
+
       height:100%;
     }
 
@@ -920,13 +956,13 @@
 
       gap:8px;
 
-      margin-bottom:11px;
+      margin-bottom:10px;
     }
 
     .wf-title {
       color:var(--wf-text-local);
 
-      font-size:.7rem;
+      font-size:.66rem;
       font-weight:500;
     }
 
@@ -935,12 +971,13 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.42rem;
+      font-size:.4rem;
     }
 
     .wf-badge-btn {
       padding:
-        6px 8px;
+        6px
+        8px;
 
       border:
         1px solid
@@ -950,11 +987,11 @@
 
       background:var(--accent);
 
-      color:#fff;
+      color:white;
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.46rem;
+      font-size:.43rem;
 
       cursor:pointer;
     }
@@ -963,17 +1000,18 @@
       display:grid;
 
       grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
       gap:8px;
 
-      margin-bottom:10px;
+      margin-bottom:9px;
     }
 
     .wf-card {
-      min-height:55px;
+      min-height:52px;
 
-      padding:9px;
+      padding:8px;
 
       border:
         1px solid
@@ -989,11 +1027,11 @@
     .wf-card-label {
       display:block;
 
-      margin-bottom:6px;
+      margin-bottom:5px;
 
       color:var(--muted);
 
-      font-size:.42rem;
+      font-size:.4rem;
     }
 
     .wf-card-val {
@@ -1001,7 +1039,7 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.82rem;
+      font-size:.78rem;
       font-weight:600;
     }
 
@@ -1010,9 +1048,9 @@
 
       flex-direction:column;
 
-      gap:7px;
+      gap:6px;
 
-      margin-top:7px;
+      margin-top:5px;
     }
 
     .wf-task-item {
@@ -1024,16 +1062,18 @@
 
       color:var(--dim);
 
-      font-size:.49rem;
+      font-size:.45rem;
 
       cursor:pointer;
     }
 
     .wf-checkbox {
-      width:11px;
-      height:11px;
+      width:10px;
+      height:10px;
 
-      flex:0 0 11px;
+      flex:
+        0 0
+        10px;
 
       display:grid;
 
@@ -1045,13 +1085,13 @@
 
       color:transparent;
 
-      font-size:.4rem;
+      font-size:.37rem;
     }
 
     .wf-task-item.checked .wf-checkbox {
       border-color:var(--accent);
       background:var(--accent);
-      color:#fff;
+      color:white;
     }
 
     .wf-task-item.checked {
@@ -1072,14 +1112,14 @@
       color:
         var(
           --paint-foreground,
-          #fff
+          white
         ) !important;
     }
 
     .wf-wireframe-main {
-      min-height:95px;
+      min-height:91px;
 
-      padding:13px;
+      padding:12px;
 
       border:
         1px solid
@@ -1091,11 +1131,11 @@
     }
 
     .wf-wireframe-header {
-      margin-bottom:16px;
+      margin-bottom:15px;
 
       color:var(--wf-text-local);
 
-      font-size:.47rem;
+      font-size:.44rem;
     }
 
     .wf-wireframe-row {
@@ -1105,30 +1145,27 @@
 
       justify-content:space-between;
 
-      gap:12px;
+      gap:10px;
 
-      font-size:.47rem;
-    }
-
-    .wf-wireframe-row strong {
-      font-size:.52rem;
+      font-size:.44rem;
     }
 
     .wf-interface-grid {
       display:grid;
 
       grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
-      gap:8px;
+      gap:7px;
 
-      margin-top:9px;
+      margin-top:8px;
     }
 
     .wf-interface-component {
-      min-height:49px;
+      min-height:46px;
 
-      padding:8px;
+      padding:7px;
 
       border:
         1px solid
@@ -1148,23 +1185,25 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.4rem;
+      font-size:.38rem;
     }
 
     .wf-interface-component strong {
-      font-size:.46rem;
+      font-size:.43rem;
       font-weight:400;
     }
 
     .wf-system-label {
       margin:
-        8px 0 6px;
+        7px
+        0
+        5px;
 
       color:var(--muted);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.42rem;
+      font-size:.4rem;
     }
 
     .wf-system-buttons {
@@ -1177,7 +1216,8 @@
 
     .wf-token-btn {
       padding:
-        5px 9px;
+        5px
+        8px;
 
       border:
         1px solid
@@ -1187,11 +1227,11 @@
 
       background:var(--accent);
 
-      color:#fff;
+      color:white;
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.42rem;
+      font-size:.4rem;
 
       cursor:pointer;
     }
@@ -1207,16 +1247,15 @@
 
       color:var(--wf-text-local);
 
-      font-size:.43rem;
+      font-size:.4rem;
 
       cursor:pointer;
     }
 
     .wf-type-token {
-      margin-top:6px;
+      margin-top:5px;
 
-      padding:
-        9px;
+      padding:8px;
 
       border:
         1px solid
@@ -1234,14 +1273,14 @@
 
       font-family:"Fraunces",serif;
 
-      font-size:.75rem;
+      font-size:.7rem;
       font-weight:400;
     }
 
     .wf-type-token span {
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.4rem;
+      font-size:.37rem;
     }
 
     .wf-palette {
@@ -1253,7 +1292,7 @@
 
       gap:7px;
 
-      margin-top:14px;
+      margin-top:17px;
     }
 
     .swatch {
@@ -1287,6 +1326,7 @@
 
     .swatch.reset {
       display:grid;
+
       place-items:center;
 
       background:transparent !important;
@@ -1298,7 +1338,8 @@
 
     .clear-btn {
       padding:
-        4px 7px;
+        4px
+        7px;
 
       border:
         1px solid
@@ -1308,7 +1349,7 @@
 
       color:var(--dim);
 
-      font-size:.49rem;
+      font-size:.48rem;
 
       text-decoration:underline;
 
@@ -1316,11 +1357,11 @@
     }
 
     .hero-visual-hint {
-      margin-top:14px;
+      margin-top:13px;
 
       color:var(--muted);
 
-      font-size:.49rem;
+      font-size:.48rem;
 
       text-align:center;
 
@@ -1328,14 +1369,15 @@
     }
 
     /* =========================================================
-       PROCESS
+       PROCESSO
+       MAIS COMPACTO
     ========================================================= */
 
     .process-section {
       padding:
-        90px
+        76px
         var(--pad)
-        105px;
+        88px;
     }
 
     .section-kicker {
@@ -1371,21 +1413,19 @@
     }
 
     .process-card {
-      min-height:275px;
+      min-height:220px;
 
-      display:flex;
-
-      flex-direction:column;
-
-      justify-content:flex-end;
-
-      padding:28px;
+      padding:
+        28px
+        30px
+        30px;
 
       border-right:
         1px solid
         var(--line);
 
-      transition:.2s;
+      transition:
+        background-color .2s ease;
     }
 
     .process-card:hover {
@@ -1393,13 +1433,15 @@
     }
 
     .process-card > span {
-      margin-bottom:auto;
+      display:block;
+
+      margin-bottom:72px;
 
       color:var(--accent);
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.57rem;
+      font-size:.55rem;
     }
 
     .process-card h3 {
@@ -1407,32 +1449,42 @@
 
       font-family:"Fraunces",serif;
 
-      font-size:1.68rem;
+      font-size:
+        clamp(
+          1.55rem,
+          2vw,
+          1.85rem
+        );
+
       font-weight:400;
+
+      line-height:1.12;
     }
 
     .process-card p {
+      max-width:390px;
+
       color:var(--dim);
 
-      font-size:.83rem;
+      font-size:.82rem;
 
       line-height:1.62;
     }
 
     /* =========================================================
-       ABOUT
+       SOBRE
     ========================================================= */
 
     .about {
       display:grid;
 
       grid-template-columns:
-        minmax(320px,.82fr)
-        minmax(0,1.18fr);
+        minmax(380px,.88fr)
+        minmax(0,1.12fr);
 
       gap:
         clamp(
-          55px,
+          60px,
           8vw,
           120px
         );
@@ -1440,25 +1492,27 @@
       align-items:center;
 
       padding:
-        110px
+        100px
         var(--pad)
-        120px;
+        115px;
     }
 
     .about-visual {
-      position:relative;
-
-      min-height:470px;
-
       display:grid;
-
       place-items:center;
+
+      min-height:490px;
     }
 
     .profile-system {
       position:relative;
 
-      width:min(100%,450px);
+      width:
+        min(
+          100%,
+          470px
+        );
+
       aspect-ratio:1;
 
       display:grid;
@@ -1466,51 +1520,85 @@
       place-items:center;
     }
 
-    .profile-system::before {
-      content:"";
+    /*
+      Texto realmente circulando ao redor da foto.
+    */
 
+    .profile-orbit {
       position:absolute;
 
-      inset:7%;
+      inset:0;
 
-      border:
-        1px dashed
-        var(--line-strong);
+      z-index:3;
 
-      border-radius:50%;
+      width:100%;
+      height:100%;
+
+      overflow:visible;
+
+      pointer-events:none;
     }
 
-    .profile-system::after {
-      content:"";
+    .profile-orbit-path {
+      fill:none;
 
-      position:absolute;
+      stroke:
+        var(--line-strong);
 
-      inset:17%;
+      stroke-width:1;
+
+      stroke-dasharray:
+        4
+        5;
+    }
+
+    .profile-orbit text {
+      fill:var(--accent);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:14px;
+      font-weight:600;
+
+      letter-spacing:3.4px;
+    }
+
+    .profile-image-ring {
+      position:relative;
+
+      z-index:2;
+
+      width:64%;
+      aspect-ratio:1;
+
+      display:grid;
+
+      place-items:center;
 
       border:
         2px solid
         var(--accent);
 
       border-radius:50%;
+
+      padding:7px;
+
+      background:var(--bg);
+
+      box-shadow:
+        0 25px 60px
+        rgba(31,28,24,.10);
     }
 
     .profile-image-circle {
-      position:relative;
-
-      z-index:2;
-
-      width:62%;
-      aspect-ratio:1;
+      width:100%;
+      height:100%;
 
       overflow:hidden;
 
       border-radius:50%;
 
       background:var(--card);
-
-      box-shadow:
-        0 24px 54px
-        rgba(31,28,24,.13);
     }
 
     .profile-image-circle img {
@@ -1522,30 +1610,18 @@
       cursor:zoom-in;
     }
 
-    .profile-ring-text {
+    .profile-pen {
       position:absolute;
 
-      z-index:3;
+      z-index:4;
 
-      top:9%;
-      left:50%;
+      top:5%;
+      left:4%;
 
-      width:73%;
+      width:60px;
+      height:60px;
 
-      transform:translateX(-50%);
-
-      color:var(--accent);
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.72rem;
-      font-weight:600;
-
-      letter-spacing:.14em;
-
-      text-align:center;
-
-      text-transform:uppercase;
+      pointer-events:none;
     }
 
     .profile-badge {
@@ -1553,11 +1629,12 @@
 
       z-index:4;
 
-      top:8%;
-      right:4%;
+      top:2%;
+      right:1%;
 
       padding:
-        7px 12px;
+        7px
+        13px;
 
       border:
         1px solid
@@ -1571,7 +1648,7 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.52rem;
+      font-size:.5rem;
       font-weight:600;
 
       box-shadow:var(--shadow);
@@ -1582,11 +1659,12 @@
 
       z-index:4;
 
-      left:0;
-      bottom:6%;
+      left:1%;
+      bottom:1%;
 
       padding:
-        6px 10px;
+        6px
+        10px;
 
       border:
         1px solid
@@ -1600,7 +1678,7 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.5rem;
+      font-size:.48rem;
     }
 
     .profile-pointer {
@@ -1609,13 +1687,17 @@
       z-index:4;
 
       right:0;
-      bottom:4%;
+      bottom:0;
 
       padding:
-        7px 13px;
+        7px
+        13px;
 
       border-radius:
-        5px 15px 15px 15px;
+        5px
+        15px
+        15px
+        15px;
 
       background:var(--ink);
 
@@ -1623,23 +1705,23 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.52rem;
+      font-size:.49rem;
 
       box-shadow:var(--shadow);
     }
 
     .about-copy {
-      max-width:750px;
+      max-width:760px;
     }
 
     .about-owner {
-      margin-bottom:25px;
+      margin-bottom:27px;
     }
 
     .about-owner small {
       display:block;
 
-      margin-bottom:8px;
+      margin-bottom:9px;
 
       color:var(--accent);
 
@@ -1655,16 +1737,16 @@
 
       font-size:
         clamp(
-          3.5rem,
-          5.8vw,
-          6rem
+          4.2rem,
+          6.3vw,
+          6.8rem
         );
 
       font-weight:300;
 
-      line-height:.93;
+      line-height:.9;
 
-      letter-spacing:-.045em;
+      letter-spacing:-.05em;
     }
 
     .about-owner h3 em {
@@ -1684,11 +1766,11 @@
       font-size:
         clamp(
           1rem,
-          1.3vw,
-          1.1rem
+          1.25vw,
+          1.08rem
         );
 
-      line-height:1.78;
+      line-height:1.8;
     }
 
     .about-tags {
@@ -1703,7 +1785,8 @@
 
     .about-tag {
       padding:
-        7px 11px;
+        7px
+        11px;
 
       border:
         1px solid
@@ -1715,11 +1798,11 @@
 
       font-family:"IBM Plex Mono",monospace;
 
-      font-size:.54rem;
+      font-size:.53rem;
     }
 
     /* =========================================================
-       PROJECTS
+       PROJETOS
     ========================================================= */
 
     .project {
@@ -1764,7 +1847,9 @@
 
       min-height:25px;
 
-      padding:0 9px;
+      padding:
+        0
+        9px;
 
       border:
         1px solid
@@ -1827,7 +1912,8 @@
 
     .project-meta span {
       padding:
-        6px 9px;
+        6px
+        9px;
 
       border:
         1px solid
@@ -1887,7 +1973,7 @@
     }
 
     /* =========================================================
-       FERNANDO CASE
+       FERNANDO
     ========================================================= */
 
     .fa-case {
@@ -1917,7 +2003,8 @@
       flex:0 0 auto;
 
       padding:
-        8px 12px;
+        8px
+        12px;
 
       border:
         1px solid
@@ -1955,11 +2042,11 @@
       display:block;
 
       animation:
-        faViewIn
+        fadeUp
         .35s ease;
     }
 
-    @keyframes faViewIn {
+    @keyframes fadeUp {
       from {
         opacity:0;
         transform:translateY(7px);
@@ -2002,7 +2089,9 @@
     }
 
     .fa-story-copy h4 {
-      margin:17px 0;
+      margin:
+        17px
+        0;
 
       font-family:"Fraunces",serif;
 
@@ -2040,7 +2129,8 @@
       gap:10px;
 
       padding:
-        12px 0;
+        12px
+        0;
 
       border-top:
         1px solid
@@ -2100,7 +2190,8 @@
       gap:10px;
 
       padding:
-        0 12px;
+        0
+        12px;
 
       background:var(--card);
     }
@@ -2239,9 +2330,7 @@
       line-height:1.5;
     }
 
-    /* =========================================================
-       DESIGN SYSTEM
-    ========================================================= */
+    /* DESIGN SYSTEM */
 
     .system-layout {
       display:grid;
@@ -2391,7 +2480,8 @@
       display:grid;
 
       grid-template-columns:
-        1fr 1fr;
+        1fr
+        1fr;
 
       gap:10px;
 
@@ -2422,7 +2512,10 @@
     .fa-type-card strong {
       display:block;
 
-      margin:17px 0 10px;
+      margin:
+        17px
+        0
+        10px;
 
       font-size:2.8rem;
     }
@@ -2462,7 +2555,9 @@
     }
 
     .component-box.wide {
-      grid-column:1 / -1;
+      grid-column:
+        1 /
+        -1;
     }
 
     .component-label {
@@ -2488,7 +2583,8 @@
     .fa-demo-primary,
     .fa-demo-secondary {
       padding:
-        10px 15px;
+        10px
+        15px;
 
       border-radius:5px;
 
@@ -2498,7 +2594,9 @@
     }
 
     .fa-demo-primary {
-      border:1px solid #B8860B;
+      border:
+        1px solid
+        #B8860B;
 
       background:#B8860B;
 
@@ -2506,7 +2604,9 @@
     }
 
     .fa-demo-secondary {
-      border:1px solid #00152A;
+      border:
+        1px solid
+        #00152A;
 
       background:transparent;
 
@@ -2515,7 +2615,6 @@
 
     .fa-demo-primary.is-hover {
       filter:brightness(.83);
-
       transform:translateY(-1px);
     }
 
@@ -2535,7 +2634,8 @@
 
     .variant-controls button {
       padding:
-        5px 8px;
+        5px
+        8px;
 
       border:
         1px solid
@@ -2555,9 +2655,7 @@
       color:var(--accent);
     }
 
-    /* =========================================================
-       RESPONSIVE CASE
-    ========================================================= */
+    /* RESPONSIVO FERNANDO */
 
     .fa-responsive-showcase {
       display:grid;
@@ -2681,12 +2779,13 @@
 
     .fa-responsive-note span {
       color:var(--accent);
-
       font-size:.52rem;
     }
 
     .fa-responsive-note h4 {
-      margin:7px 0;
+      margin:
+        7px
+        0;
 
       font-family:"Fraunces",serif;
 
@@ -2701,9 +2800,7 @@
       line-height:1.55;
     }
 
-    /* =========================================================
-       FIGMA
-    ========================================================= */
+    /* FIGMA */
 
     .figma-shell {
       overflow:hidden;
@@ -2730,7 +2827,9 @@
 
       min-height:64px;
 
-      padding:12px 15px;
+      padding:
+        12px
+        15px;
 
       border-bottom:
         1px solid
@@ -2755,7 +2854,6 @@
       font-family:"Fraunces",serif;
 
       font-size:1rem;
-
       font-weight:400;
     }
 
@@ -2766,13 +2864,19 @@
     }
 
     .figma-frame {
-      height:min(78vh,780px);
+      height:
+        min(
+          78vh,
+          780px
+        );
+
       min-height:600px;
     }
 
     .figma-frame iframe {
       width:100%;
       height:100%;
+
       border:0;
     }
 
@@ -2817,7 +2921,8 @@
 
     .case-tab {
       padding:
-        7px 10px;
+        7px
+        10px;
 
       border:
         1px solid
@@ -2853,9 +2958,7 @@
       display:block;
     }
 
-    /* =========================================================
-       VOIT
-    ========================================================= */
+    /* VOIT */
 
     .voit-overview {
       display:grid;
@@ -2910,7 +3013,9 @@
     }
 
     .voit-domain h4 {
-      margin:7px 0;
+      margin:
+        7px
+        0;
 
       font-family:"Fraunces",serif;
 
@@ -2951,6 +3056,7 @@
 
     .voit-piece img {
       width:100%;
+
       aspect-ratio:1;
 
       object-fit:cover;
@@ -2958,6 +3064,7 @@
 
     /* =========================================================
        RENATA
+       SEM SCROLLBAR VISÍVEL
     ========================================================= */
 
     .renata-viewer {
@@ -2967,7 +3074,7 @@
 
       background:#171717;
 
-      color:#fff;
+      color:white;
 
       box-shadow:
         0 20px 50px
@@ -3011,7 +3118,9 @@
 
       place-items:center;
 
-      padding:38px 28px;
+      padding:
+        38px
+        28px;
 
       background:#191919;
     }
@@ -3028,7 +3137,8 @@
 
     .renata-inspector {
       padding:
-        28px 22px;
+        28px
+        22px;
 
       border-left:
         1px solid
@@ -3095,7 +3205,7 @@
 
       background:transparent;
 
-      color:#fff;
+      color:white;
 
       cursor:pointer;
     }
@@ -3112,7 +3222,8 @@
       height:2px;
 
       margin:
-        20px 0;
+        20px
+        0;
 
       overflow:hidden;
 
@@ -3127,13 +3238,13 @@
       top:0;
       left:0;
 
-      height:100%;
-
       width:
         var(
           --renata-progress,
           33.333%
         );
+
+      height:100%;
 
       background:var(--accent);
 
@@ -3148,7 +3259,21 @@
 
       overflow-x:auto;
 
-      padding-bottom:7px;
+      padding-bottom:0;
+
+      /*
+        remove a barra visual sem remover
+        a possibilidade de navegar pelas miniaturas.
+      */
+
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+
+    .renata-thumbs::-webkit-scrollbar {
+      display:none;
+      width:0;
+      height:0;
     }
 
     .renata-thumb {
@@ -3171,7 +3296,6 @@
 
     .renata-thumb.active {
       border-color:var(--accent);
-
       opacity:1;
     }
 
@@ -3188,20 +3312,18 @@
 
       margin-top:23px;
 
-      color:var(--accent);
-
-      font-size:.73rem;
+      padding-bottom:5px;
 
       border-bottom:
         1px solid
         var(--accent);
 
-      padding-bottom:5px;
+      color:var(--accent);
+
+      font-size:.73rem;
     }
 
-    /* =========================================================
-       BRADUCA
-    ========================================================= */
+    /* BRADUCA */
 
     .editorial-layout {
       display:grid;
@@ -3289,7 +3411,9 @@
     }
 
     .editorial-inspector h4 {
-      margin:11px 0;
+      margin:
+        11px
+        0;
 
       font-family:"Fraunces",serif;
 
@@ -3306,9 +3430,7 @@
       line-height:1.55;
     }
 
-    /* =========================================================
-       AYMÉE
-    ========================================================= */
+    /* AYMÉE */
 
     .brand-layout {
       display:grid;
@@ -3369,7 +3491,9 @@
 
     .brand-notes h4 {
       margin:
-        11px 0 17px;
+        11px
+        0
+        17px;
 
       font-family:"Fraunces",serif;
 
@@ -3380,7 +3504,8 @@
 
     .brand-rule {
       padding:
-        13px 0;
+        13px
+        0;
 
       border-top:
         1px solid
@@ -3404,7 +3529,7 @@
     }
 
     /* =========================================================
-       SKILLS
+       HABILIDADES
     ========================================================= */
 
     .skills-wrap {
@@ -3431,6 +3556,7 @@
       font-weight:300;
 
       line-height:1;
+
       letter-spacing:-.035em;
     }
 
@@ -3479,7 +3605,7 @@
     }
 
     /* =========================================================
-       CONTACT
+       CONTATO
     ========================================================= */
 
     .contact {
@@ -3551,7 +3677,8 @@
       align-items:center;
 
       padding:
-        0 24px;
+        0
+        24px;
 
       border:
         1px solid
@@ -3662,7 +3789,7 @@
 
         min-height:auto;
 
-        padding-top:72px;
+        padding-top:70px;
       }
 
       .hero-text {
@@ -3671,26 +3798,33 @@
 
       .hero-visual {
         width:100%;
-        max-width:590px;
+
+        max-width:560px;
 
         margin:
-          20px auto 0;
+          45px
+          auto
+          0;
       }
 
       .about {
         grid-template-columns:1fr;
+
+        gap:45px;
       }
 
       .about-visual {
-        order:1;
+        min-height:auto;
       }
 
       .about-copy {
-        order:2;
+        max-width:800px;
       }
 
       .case-grid {
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr
+          1fr;
       }
 
       .fa-story {
@@ -3698,7 +3832,9 @@
       }
 
       .skill-grid {
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr
+          1fr;
       }
     }
 
@@ -3708,19 +3844,19 @@
       }
 
       .intro-title {
-        grid-template-columns:1fr;
+        flex-direction:column;
 
-        justify-items:center;
+        align-items:center;
 
-        row-gap:.08em;
+        gap:.08em;
 
         width:100%;
 
         font-size:
           clamp(
-            2.7rem,
-            12vw,
-            4.4rem
+            3.3rem,
+            14vw,
+            5rem
           );
 
         text-align:center;
@@ -3729,7 +3865,7 @@
       }
 
       .intro-word-cycle {
-        width:5.4em;
+        width:5.2em;
       }
 
       .intro-word-cycle .w {
@@ -3786,10 +3922,8 @@
       }
 
       .hero {
-        min-height:auto;
-
-        padding-top:49px;
-        padding-bottom:75px;
+        padding-top:48px;
+        padding-bottom:70px;
       }
 
       .hero h1 {
@@ -3805,8 +3939,6 @@
         max-width:330px;
 
         font-size:.61rem;
-
-        line-height:1.55;
       }
 
       .hero-sub p {
@@ -3814,22 +3946,25 @@
       }
 
       .hero-actions {
-        align-items:flex-start;
-
         flex-direction:column;
+
+        align-items:flex-start;
 
         gap:20px;
       }
 
-      .hero-visual {
-        order:2;
-
-        margin-top:20px;
-      }
-
       .wf-wrapper {
         width:100%;
-        min-height:400px;
+
+        min-height:360px;
+      }
+
+      .wf-stage {
+        width:
+          min(
+            100%,
+            380px
+          );
       }
 
       .wf-window {
@@ -3837,11 +3972,11 @@
       }
 
       .pen-tool-svg {
-        left:-3px;
+        left:-2px;
       }
 
       .badge-floater {
-        right:3px;
+        right:2px;
       }
 
       .cursor-floater {
@@ -3852,6 +3987,11 @@
         display:none;
       }
 
+      .process-section {
+        padding-top:65px;
+        padding-bottom:65px;
+      }
+
       .process-grid {
         grid-template-columns:1fr;
 
@@ -3859,23 +3999,45 @@
       }
 
       .process-card {
+        min-height:auto;
+
+        padding:
+          28px
+          4px;
+
         border-right:0;
+
+        border-bottom:
+          1px solid
+          var(--line);
+      }
+
+      .process-card > span {
+        margin-bottom:33px;
+      }
+
+      .process-card h3 {
+        font-size:1.8rem;
       }
 
       .about {
-        padding-top:80px;
+        padding-top:75px;
       }
 
       .profile-system {
-        width:min(100%,410px);
+        width:
+          min(
+            100%,
+            430px
+          );
       }
 
       .about-owner h3 {
         font-size:
           clamp(
-            3.4rem,
+            3.6rem,
             17vw,
-            5.1rem
+            5.2rem
           );
       }
 
@@ -3903,14 +4065,12 @@
       .fa-tabs {
         margin-left:
           calc(
-            var(--pad) *
-            -1
+            var(--pad) * -1
           );
 
         margin-right:
           calc(
-            var(--pad) *
-            -1
+            var(--pad) * -1
           );
 
         padding:
@@ -3942,6 +4102,12 @@
         gap:4px;
 
         overflow-x:auto;
+
+        scrollbar-width:none;
+      }
+
+      .system-sidebar::-webkit-scrollbar {
+        display:none;
       }
 
       .system-sidebar > span {
@@ -3951,13 +4117,17 @@
       .system-nav-btn {
         width:auto;
 
-        flex:0 0 auto;
+        flex:
+          0 0
+          auto;
 
         white-space:nowrap;
       }
 
       .fa-color-grid {
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr
+          1fr;
       }
 
       .fa-type-demo,
@@ -3986,7 +4156,9 @@
       }
 
       .voit-social {
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr
+          1fr;
       }
 
       .renata-layout {
@@ -4013,11 +4185,15 @@
       }
 
       .editorial-ribbon {
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr
+          1fr;
       }
 
       .brand-grid {
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+          1fr
+          1fr;
       }
 
       .skill-grid {
@@ -4040,25 +4216,27 @@
 
     @media(max-width:520px) {
       .wf-wrapper {
-        min-height:380px;
+        min-height:345px;
       }
 
       .wf-sidebar {
-        width:91px;
+        width:90px;
 
-        flex-basis:91px;
+        flex-basis:90px;
 
         padding:
-          10px 6px;
+          10px
+          6px;
       }
 
       .wf-nav-item {
         gap:5px;
 
         padding:
-          7px 5px;
+          7px
+          5px;
 
-        font-size:.44rem;
+        font-size:.43rem;
       }
 
       .wf-main {
@@ -4066,14 +4244,15 @@
       }
 
       .wf-title {
-        font-size:.58rem;
+        font-size:.56rem;
       }
 
       .wf-badge-btn {
         padding:
-          5px 6px;
+          5px
+          6px;
 
-        font-size:.39rem;
+        font-size:.38rem;
       }
 
       .wf-card {
@@ -4081,7 +4260,7 @@
       }
 
       .wf-task-item {
-        font-size:.42rem;
+        font-size:.41rem;
       }
 
       .wf-palette {
@@ -4094,11 +4273,17 @@
       }
 
       .clear-btn {
-        font-size:.42rem;
+        font-size:.41rem;
       }
 
       .hero-visual-hint {
-        font-size:.43rem;
+        font-size:.42rem;
+      }
+
+      .profile-orbit text {
+        font-size:12px;
+
+        letter-spacing:2.7px;
       }
 
       .fa-color-grid {
@@ -4112,18 +4297,6 @@
       .fa-phone-screen iframe {
         transform:scale(.497);
       }
-
-      .profile-ring-text {
-        font-size:.57rem;
-      }
-
-      .profile-badge {
-        font-size:.45rem;
-      }
-
-      .profile-pointer {
-        font-size:.44rem;
-      }
     }
 
     @media(prefers-reduced-motion:reduce) {
@@ -4131,9 +4304,7 @@
       *::before,
       *::after {
         animation:none !important;
-
         transition-duration:.01ms !important;
-
         scroll-behavior:auto !important;
       }
     }
@@ -4142,7 +4313,9 @@
 
 <body class="intro-active">
 
-  <!-- INTRO -->
+  <!-- =======================================================
+       INTRO
+  ======================================================== -->
 
   <div
     id="intro-overlay"
@@ -4182,7 +4355,9 @@
 
   </div>
 
-  <!-- NAV -->
+  <!-- =======================================================
+       NAV
+  ======================================================== -->
 
   <nav
     class="site-nav"
@@ -4245,7 +4420,9 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <section class="hero">
 
@@ -4256,7 +4433,6 @@
         </div>
 
         <h1>
-
           Design com
 
           <em>
@@ -4274,7 +4450,6 @@
           <em>
             detalhes.
           </em>
-
         </h1>
 
         <div class="hero-sub">
@@ -4306,363 +4481,367 @@
 
       </div>
 
-      <!-- WIREFRAME -->
+      <!-- WIREFRAME EXATAMENTE NO FORMATO 380 × 260 -->
 
       <div class="hero-visual">
 
         <div class="wf-wrapper">
 
-          <svg
-            class="wf-illustration pen-tool-svg"
-            viewBox="0 0 100 100"
-            fill="none"
-            aria-hidden="true"
-          >
-
-            <path
-              d="M15,80 C35,20 65,80 85,20"
-              stroke="var(--accent)"
-              stroke-width="2"
-              stroke-dasharray="3 3"
-            />
-
-            <line
-              x1="15"
-              y1="80"
-              x2="35"
-              y2="20"
-              stroke="var(--line-strong)"
-              stroke-width="1.5"
-            />
-
-            <circle
-              cx="35"
-              cy="20"
-              r="3.5"
-              fill="var(--bg)"
-              stroke="var(--accent)"
-              stroke-width="2"
-            />
-
-            <rect
-              x="11"
-              y="76"
-              width="8"
-              height="8"
-              fill="var(--accent)"
-            />
-
-            <rect
-              x="81"
-              y="16"
-              width="8"
-              height="8"
-              fill="var(--accent)"
-            />
-
-          </svg>
-
-          <div class="wf-illustration badge-floater">
-            <span>❖</span>
-            auto-layout 8px
-          </div>
-
-          <div class="wf-illustration spec-floater">
-            ↔ 380px × 260px
-          </div>
-
-          <div class="wf-illustration cursor-floater">
+          <div class="wf-stage">
 
             <svg
-              width="11"
-              height="11"
-              viewBox="0 0 24 24"
-              fill="currentColor"
+              class="wf-illustration pen-tool-svg"
+              viewBox="0 0 100 100"
+              fill="none"
+              aria-hidden="true"
             >
-              <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+
+              <path
+                d="M15 80 C35 20 65 80 85 20"
+                stroke="var(--accent)"
+                stroke-width="2"
+                stroke-dasharray="3 3"
+              />
+
+              <line
+                x1="15"
+                y1="80"
+                x2="35"
+                y2="20"
+                stroke="var(--line-strong)"
+                stroke-width="1.5"
+              />
+
+              <circle
+                cx="35"
+                cy="20"
+                r="3.5"
+                fill="var(--bg)"
+                stroke="var(--accent)"
+                stroke-width="2"
+              />
+
+              <rect
+                x="11"
+                y="76"
+                width="8"
+                height="8"
+                fill="var(--accent)"
+              />
+
+              <rect
+                x="81"
+                y="16"
+                width="8"
+                height="8"
+                fill="var(--accent)"
+              />
+
             </svg>
 
-            <span>
-              Raquel • UI
-            </span>
+            <div class="wf-illustration badge-floater">
+              <span>❖</span>
+              auto-layout 8px
+            </div>
 
-          </div>
+            <div class="wf-illustration spec-floater">
+              ↔ 380px × 260px
+            </div>
 
-          <div
-            class="wf-window"
-            id="wfWindow"
-          >
+            <div class="wf-illustration cursor-floater">
 
-            <div class="wf-header">
-
-              <div class="wf-dots">
-                <div class="wf-dot"></div>
-                <div class="wf-dot"></div>
-                <div class="wf-dot"></div>
-              </div>
-
-              <button
-                class="wf-switch-mode mono"
-                id="wfSwitchMode"
-                type="button"
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="currentColor"
               >
-                modo app
-              </button>
+                <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+              </svg>
+
+              <span>
+                Raquel • UI/UX
+              </span>
 
             </div>
 
-            <div class="wf-body">
+            <div
+              class="wf-window"
+              id="wfWindow"
+            >
 
-              <div class="wf-sidebar">
+              <div class="wf-header">
 
-                <div
-                  class="wf-nav-item active wf-paintable"
-                  data-tab="dashboard"
-                >
-                  ▧ Dashboard
+                <div class="wf-dots">
+                  <div class="wf-dot"></div>
+                  <div class="wf-dot"></div>
+                  <div class="wf-dot"></div>
                 </div>
 
-                <div
-                  class="wf-nav-item wf-paintable"
-                  data-tab="interfaces"
+                <button
+                  class="wf-switch-mode mono"
+                  id="wfSwitchMode"
+                  type="button"
                 >
-                  ✦ Interfaces
-                </div>
-
-                <div
-                  class="wf-nav-item wf-paintable"
-                  data-tab="system"
-                >
-                  ❖ Design System
-                </div>
+                  modo app
+                </button>
 
               </div>
 
-              <div class="wf-main">
+              <div class="wf-body">
 
-                <div
-                  class="wf-view active"
-                  id="wf-dashboard"
-                >
+                <div class="wf-sidebar">
 
-                  <div class="wf-top-bar">
-
-                    <span class="wf-title">
-                      Painel de Dashboard
-                    </span>
-
-                    <button
-                      type="button"
-                      class="wf-badge-btn wf-paintable"
-                      id="wfMetricBtn"
-                    >
-                      +1 Entrega
-                    </button>
-
+                  <div
+                    class="wf-nav-item active wf-paintable"
+                    data-tab="dashboard"
+                  >
+                    ▧ Dashboard
                   </div>
 
-                  <div class="wf-card-grid">
-
-                    <div class="wf-card wf-paintable">
-
-                      <span class="wf-card-label mono">
-                        Entregas
-                      </span>
-
-                      <span
-                        class="wf-card-val"
-                        id="wfCounter"
-                      >
-                        14
-                      </span>
-
-                    </div>
-
-                    <div class="wf-card wf-paintable">
-
-                      <span class="wf-card-label mono">
-                        Status
-                      </span>
-
-                      <span
-                        class="wf-card-val"
-                        style="color:var(--accent)"
-                      >
-                        100%
-                      </span>
-
-                    </div>
-
+                  <div
+                    class="wf-nav-item wf-paintable"
+                    data-tab="interfaces"
+                  >
+                    ✦ Interfaces
                   </div>
 
-                  <div class="wf-task-list">
-
-                    <div class="wf-task-item checked">
-
-                      <span class="wf-checkbox wf-paintable">
-                        ✓
-                      </span>
-
-                      <span>
-                        Hierarquia visual definida
-                      </span>
-
-                    </div>
-
-                    <div class="wf-task-item">
-
-                      <span class="wf-checkbox wf-paintable">
-                        ✓
-                      </span>
-
-                      <span>
-                        Prototipagem de interações
-                      </span>
-
-                    </div>
-
-                    <div class="wf-task-item">
-
-                      <span class="wf-checkbox wf-paintable">
-                        ✓
-                      </span>
-
-                      <span>
-                        Design System alinhado
-                      </span>
-
-                    </div>
-
+                  <div
+                    class="wf-nav-item wf-paintable"
+                    data-tab="system"
+                  >
+                    ❖ Design System
                   </div>
 
                 </div>
 
-                <div
-                  class="wf-view"
-                  id="wf-interfaces"
-                >
+                <div class="wf-main">
 
-                  <div class="wf-top-bar">
+                  <div
+                    class="wf-view active"
+                    id="wf-dashboard"
+                  >
 
-                    <span class="wf-title">
-                      Prototipagem de Wireframes
-                    </span>
+                    <div class="wf-top-bar">
 
-                    <span class="wf-version">
-                      12 cols
-                    </span>
+                      <span class="wf-title">
+                        Painel de Dashboard
+                      </span>
+
+                      <button
+                        type="button"
+                        class="wf-badge-btn wf-paintable"
+                        id="wfMetricBtn"
+                      >
+                        +1 Entrega
+                      </button>
+
+                    </div>
+
+                    <div class="wf-card-grid">
+
+                      <div class="wf-card wf-paintable">
+
+                        <span class="wf-card-label mono">
+                          Entregas
+                        </span>
+
+                        <span
+                          class="wf-card-val"
+                          id="wfCounter"
+                        >
+                          14
+                        </span>
+
+                      </div>
+
+                      <div class="wf-card wf-paintable">
+
+                        <span class="wf-card-label mono">
+                          Status
+                        </span>
+
+                        <span
+                          class="wf-card-val"
+                          style="color:var(--accent)"
+                        >
+                          100%
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                    <div class="wf-task-list">
+
+                      <div class="wf-task-item checked">
+
+                        <span class="wf-checkbox wf-paintable">
+                          ✓
+                        </span>
+
+                        <span>
+                          Hierarquia visual definida
+                        </span>
+
+                      </div>
+
+                      <div class="wf-task-item">
+
+                        <span class="wf-checkbox wf-paintable">
+                          ✓
+                        </span>
+
+                        <span>
+                          Prototipagem de interações
+                        </span>
+
+                      </div>
+
+                      <div class="wf-task-item">
+
+                        <span class="wf-checkbox wf-paintable">
+                          ✓
+                        </span>
+
+                        <span>
+                          Design System alinhado
+                        </span>
+
+                      </div>
+
+                    </div>
 
                   </div>
 
-                  <div class="wf-wireframe-main wf-paintable">
+                  <div
+                    class="wf-view"
+                    id="wf-interfaces"
+                  >
 
-                    <div class="wf-wireframe-header">
-                      Header Bar Navigation
-                    </div>
+                    <div class="wf-top-bar">
 
-                    <div class="wf-wireframe-row">
+                      <span class="wf-title">
+                        Prototipagem de Wireframes
+                      </span>
 
-                      <strong>
-                        Hero Card
-                      </strong>
-
-                      <span>
-                        Widget
+                      <span class="wf-version">
+                        12 cols
                       </span>
 
                     </div>
 
-                  </div>
+                    <div class="wf-wireframe-main wf-paintable">
 
-                  <div class="wf-interface-grid">
+                      <div class="wf-wireframe-header">
+                        Header Bar Navigation
+                      </div>
 
-                    <div class="wf-interface-component wf-paintable">
+                      <div class="wf-wireframe-row">
 
-                      <span>
-                        Componente A
-                      </span>
+                        <strong>
+                          Hero Card
+                        </strong>
 
-                      <strong>
-                        Layout Responsivo
-                      </strong>
+                        <span>
+                          Widget
+                        </span>
 
-                    </div>
-
-                    <div class="wf-interface-component wf-paintable">
-
-                      <span>
-                        Componente B
-                      </span>
-
-                      <strong>
-                        Auto-layout Figma
-                      </strong>
+                      </div>
 
                     </div>
 
-                  </div>
+                    <div class="wf-interface-grid">
 
-                </div>
+                      <div class="wf-interface-component wf-paintable">
 
-                <div
-                  class="wf-view"
-                  id="wf-system"
-                >
+                        <span>
+                          Componente A
+                        </span>
 
-                  <div class="wf-top-bar">
+                        <strong>
+                          Layout Responsivo
+                        </strong>
 
-                    <span class="wf-title">
-                      Biblioteca de Tokens
-                    </span>
+                      </div>
 
-                    <span class="wf-version">
-                      v2.4
-                    </span>
+                      <div class="wf-interface-component wf-paintable">
 
-                  </div>
+                        <span>
+                          Componente B
+                        </span>
 
-                  <div class="wf-system-label">
-                    Estados de Botão
-                  </div>
+                        <strong>
+                          Auto-layout Figma
+                        </strong>
 
-                  <div class="wf-system-buttons">
+                      </div>
 
-                    <button
-                      type="button"
-                      class="wf-token-btn wf-paintable"
-                    >
-                      Primary
-                    </button>
-
-                    <button
-                      type="button"
-                      class="wf-token-btn wf-paintable"
-                    >
-                      Secondary
-                    </button>
-
-                    <button
-                      type="button"
-                      class="wf-token-link"
-                    >
-                      Hover
-                    </button>
+                    </div>
 
                   </div>
 
-                  <div class="wf-system-label">
-                    Tipografia & Escala
-                  </div>
+                  <div
+                    class="wf-view"
+                    id="wf-system"
+                  >
 
-                  <div class="wf-type-token wf-paintable">
+                    <div class="wf-top-bar">
 
-                    <strong>
-                      Fraunces Serif 400
-                    </strong>
+                      <span class="wf-title">
+                        Biblioteca de Tokens
+                      </span>
 
-                    <span>
-                      IBM Plex Mono 12px / 1.4
-                    </span>
+                      <span class="wf-version">
+                        v2.4
+                      </span>
+
+                    </div>
+
+                    <div class="wf-system-label">
+                      Estados de Botão
+                    </div>
+
+                    <div class="wf-system-buttons">
+
+                      <button
+                        type="button"
+                        class="wf-token-btn wf-paintable"
+                      >
+                        Primary
+                      </button>
+
+                      <button
+                        type="button"
+                        class="wf-token-btn wf-paintable"
+                      >
+                        Secondary
+                      </button>
+
+                      <button
+                        type="button"
+                        class="wf-token-link"
+                      >
+                        Hover
+                      </button>
+
+                    </div>
+
+                    <div class="wf-system-label">
+                      Tipografia & Escala
+                    </div>
+
+                    <div class="wf-type-token wf-paintable">
+
+                      <strong>
+                        Fraunces Serif 400
+                      </strong>
+
+                      <span>
+                        IBM Plex Mono 12px / 1.4
+                      </span>
+
+                    </div>
 
                   </div>
 
@@ -4736,7 +4915,7 @@
           </div>
 
           <div class="hero-visual-hint mono">
-            escolha uma cor e clique nos componentes para explorar a interface
+            escolha uma cor na paleta e clique nos elementos para pintar individualmente
           </div>
 
         </div>
@@ -4745,7 +4924,9 @@
 
     </section>
 
-    <!-- PROCESSO -->
+    <!-- =====================================================
+         PROCESSO
+    ====================================================== -->
 
     <section class="process-section">
 
@@ -4807,7 +4988,9 @@
 
     </section>
 
-    <!-- SOBRE -->
+    <!-- =====================================================
+         SOBRE
+    ====================================================== -->
 
     <section
       class="about"
@@ -4818,22 +5001,103 @@
 
         <div class="profile-system">
 
-          <div class="profile-ring-text">
-            UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO
+          <svg
+            class="profile-orbit"
+            viewBox="0 0 470 470"
+            aria-hidden="true"
+          >
+
+            <defs>
+
+              <path
+                id="profileCirclePath"
+                d="
+                  M 235,29
+                  A 206,206
+                  0 1,1
+                  234.9,29
+                "
+              />
+
+            </defs>
+
+            <circle
+              class="profile-orbit-path"
+              cx="235"
+              cy="235"
+              r="206"
+            />
+
+            <text>
+
+              <textPath
+                href="#profileCirclePath"
+                startOffset="6%"
+              >
+                UI/UX DESIGN • RAQUEL RENOVATO • COMUNICAÇÃO VISUAL • INTERFACES •
+              </textPath>
+
+            </text>
+
+          </svg>
+
+          <svg
+            class="profile-pen"
+            viewBox="0 0 100 100"
+            fill="none"
+            aria-hidden="true"
+          >
+
+            <path
+              d="M15 80 C35 20 65 80 85 20"
+              stroke="var(--accent)"
+              stroke-width="2"
+              stroke-dasharray="3 3"
+            />
+
+            <circle
+              cx="35"
+              cy="20"
+              r="3.5"
+              fill="var(--bg)"
+              stroke="var(--accent)"
+              stroke-width="2"
+            />
+
+            <rect
+              x="11"
+              y="76"
+              width="8"
+              height="8"
+              fill="var(--accent)"
+            />
+
+            <rect
+              x="81"
+              y="16"
+              width="8"
+              height="8"
+              fill="var(--accent)"
+            />
+
+          </svg>
+
+          <div class="profile-image-ring">
+
+            <div class="profile-image-circle">
+
+              <img
+                src="img/img-perfil/foto-perfil.jpeg"
+                alt="Retrato de Raquel Renovato"
+                class="js-lightbox"
+                tabindex="0"
+              >
+
+            </div>
+
           </div>
 
-          <div class="profile-image-circle">
-
-            <img
-              src="img/img-perfil/foto-perfil.jpeg"
-              alt="Retrato de Raquel Renovato"
-              class="js-lightbox"
-              tabindex="0"
-            >
-
-          </div>
-
-          <div class="profile-badge mono">
+          <div class="profile-badge">
             ❖ auto-layout 8px
           </div>
 
@@ -4842,7 +5106,7 @@
           </div>
 
           <div class="profile-pointer">
-            ➤ Raquel • Design
+            ➤ Raquel • UI/UX
           </div>
 
         </div>
@@ -4854,7 +5118,7 @@
         <div class="about-owner">
 
           <small>
-            DESIGNER
+            DESIGNER DE COMUNICAÇÃO VISUAL & UI
           </small>
 
           <h3>
@@ -4911,12 +5175,14 @@
     </section>
 
     <!-- =====================================================
-         PROJETOS — SEM A DOBRA/TÍTULO EXTRA
+         PROJETOS
     ====================================================== -->
 
     <div id="projetos"></div>
 
-    <!-- FERNANDO -->
+    <!-- =====================================================
+         FERNANDO
+    ====================================================== -->
 
     <article
       class="project"
@@ -5067,6 +5333,8 @@
           </button>
 
         </div>
+
+        <!-- CASE -->
 
         <section
           class="fa-view active"
@@ -5225,7 +5493,9 @@
 
             <article class="fa-result-item">
 
-              <span>STATUS</span>
+              <span>
+                STATUS
+              </span>
 
               <strong>
                 Produto publicado
@@ -5239,7 +5509,9 @@
 
             <article class="fa-result-item">
 
-              <span>EXPERIÊNCIA</span>
+              <span>
+                EXPERIÊNCIA
+              </span>
 
               <strong>
                 Desktop + Mobile
@@ -5253,7 +5525,9 @@
 
             <article class="fa-result-item">
 
-              <span>SISTEMA</span>
+              <span>
+                SISTEMA
+              </span>
 
               <strong>
                 Light + Dark
@@ -5268,6 +5542,8 @@
           </div>
 
         </section>
+
+        <!-- ANTERIOR -->
 
         <section
           class="fa-view"
@@ -5320,6 +5596,8 @@
 
         </section>
 
+        <!-- LIVE -->
+
         <section
           class="fa-view"
           data-fa-view="live"
@@ -5370,6 +5648,8 @@
           </div>
 
         </section>
+
+        <!-- DESIGN SYSTEM -->
 
         <section
           class="fa-view"
@@ -5499,8 +5779,13 @@
 
                     <div class="component-label mono">
 
-                      <span>Button</span>
-                      <span>Variable</span>
+                      <span>
+                        Button
+                      </span>
+
+                      <span>
+                        Variable
+                      </span>
 
                     </div>
 
@@ -5555,8 +5840,13 @@
 
                     <div class="component-label mono">
 
-                      <span>Theme</span>
-                      <span>Light / Dark</span>
+                      <span>
+                        Theme
+                      </span>
+
+                      <span>
+                        Light / Dark
+                      </span>
 
                     </div>
 
@@ -5679,6 +5969,8 @@
           </div>
 
         </section>
+
+        <!-- RESPONSIVO -->
 
         <section
           class="fa-view"
@@ -5804,6 +6096,8 @@
 
         </section>
 
+        <!-- PROTÓTIPO -->
+
         <section
           class="fa-view"
           data-fa-view="prototype"
@@ -5854,7 +6148,9 @@
 
     </article>
 
-    <!-- VOIT -->
+    <!-- =====================================================
+         VOIT
+    ====================================================== -->
 
     <article
       class="project"
@@ -5933,9 +6229,13 @@
 
               <article class="voit-domain">
 
-                <span>CONTEÚDO</span>
+                <span>
+                  CONTEÚDO
+                </span>
 
-                <h4>Social Media</h4>
+                <h4>
+                  Social Media
+                </h4>
 
                 <p>
                   Conteúdos e peças adaptados aos temas e objetivos de comunicação.
@@ -5945,9 +6245,13 @@
 
               <article class="voit-domain">
 
-                <span>COMERCIAL</span>
+                <span>
+                  COMERCIAL
+                </span>
 
-                <h4>Apresentações</h4>
+                <h4>
+                  Apresentações
+                </h4>
 
                 <p>
                   Materiais de apoio a reuniões, propostas e processos comerciais.
@@ -5957,9 +6261,13 @@
 
               <article class="voit-domain">
 
-                <span>INTERNO</span>
+                <span>
+                  INTERNO
+                </span>
 
-                <h4>Endomarketing</h4>
+                <h4>
+                  Endomarketing
+                </h4>
 
                 <p>
                   Campanhas e materiais voltados à equipe.
@@ -5969,9 +6277,13 @@
 
               <article class="voit-domain">
 
-                <span>SISTEMA</span>
+                <span>
+                  SISTEMA
+                </span>
 
-                <h4>Consistência</h4>
+                <h4>
+                  Consistência
+                </h4>
 
                 <p>
                   Unidade visual entre formatos e canais diferentes.
@@ -5990,7 +6302,10 @@
 
             <div class="voit-social">
 
-              <button class="voit-piece" type="button">
+              <button
+                class="voit-piece"
+                type="button"
+              >
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-01.jpeg"
@@ -5999,7 +6314,10 @@
                 >
               </button>
 
-              <button class="voit-piece" type="button">
+              <button
+                class="voit-piece"
+                type="button"
+              >
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-02.jpeg"
@@ -6008,7 +6326,10 @@
                 >
               </button>
 
-              <button class="voit-piece" type="button">
+              <button
+                class="voit-piece"
+                type="button"
+              >
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-03.jpeg"
@@ -6017,7 +6338,10 @@
                 >
               </button>
 
-              <button class="voit-piece" type="button">
+              <button
+                class="voit-piece"
+                type="button"
+              >
                 <img
                   class="js-lightbox"
                   src="img/img-voit/voit-04.jpeg"
@@ -6036,7 +6360,9 @@
 
     </article>
 
-    <!-- RENATA -->
+    <!-- =====================================================
+         RENATA
+    ====================================================== -->
 
     <article
       class="project"
@@ -6160,7 +6486,9 @@
 
     </article>
 
-    <!-- BRADUCA -->
+    <!-- =====================================================
+         BRADUCA
+    ====================================================== -->
 
     <article
       class="project"
@@ -6278,7 +6606,9 @@
 
     </article>
 
-    <!-- AYMÉE -->
+    <!-- =====================================================
+         AYMÉE
+    ====================================================== -->
 
     <article
       class="project"
@@ -6372,7 +6702,9 @@
 
     </article>
 
-    <!-- HABILIDADES -->
+    <!-- =====================================================
+         HABILIDADES
+    ====================================================== -->
 
     <section
       class="skills-wrap"
@@ -6445,7 +6777,9 @@
 
     </section>
 
-    <!-- CONTATO -->
+    <!-- =====================================================
+         CONTATO
+    ====================================================== -->
 
     <section
       class="contact"
@@ -6495,7 +6829,9 @@
 
   </footer>
 
-  <!-- LIGHTBOX -->
+  <!-- =======================================================
+       LIGHTBOX
+  ======================================================== -->
 
   <div
     class="lightbox"
@@ -6557,16 +6893,16 @@
       let introClosed =
         false;
 
-      let introTimers =
+      const introTimers =
         [];
 
-      function showIntroWord(
-        index
+      function setIntroWord(
+        nextIndex
       ) {
         introWords.forEach(
           (
             word,
-            current
+            index
           ) => {
             word.classList.remove(
               "active",
@@ -6574,7 +6910,7 @@
             );
 
             if(
-              current < index
+              index < nextIndex
             ) {
               word.classList.add(
                 "exit"
@@ -6582,7 +6918,7 @@
             }
 
             if(
-              current === index
+              index === nextIndex
             ) {
               word.classList.add(
                 "active"
@@ -6623,7 +6959,7 @@
           "intro-active"
         );
 
-        window.setTimeout(
+        setTimeout(
           () => {
             intro.style.display =
               "none";
@@ -6632,39 +6968,39 @@
         );
       }
 
-      function startIntro() {
+      function runIntro() {
         if(!intro) {
           return;
         }
 
-        showIntroWord(
+        setIntroWord(
           0
         );
 
         introTimers.push(
           setTimeout(
             () =>
-              showIntroWord(
+              setIntroWord(
                 1
               ),
-            720
+            780
           )
         );
 
         introTimers.push(
           setTimeout(
             () =>
-              showIntroWord(
+              setIntroWord(
                 2
               ),
-            1440
+            1560
           )
         );
 
         introTimers.push(
           setTimeout(
             closeIntro,
-            2350
+            2600
           )
         );
       }
@@ -6678,14 +7014,17 @@
         "keydown",
         event => {
           if(
-            document.body.classList.contains(
+            !document.body.classList.contains(
               "intro-active"
-            ) &&
-            (
-              event.key === "Escape" ||
-              event.key === "Enter" ||
-              event.key === " "
             )
+          ) {
+            return;
+          }
+
+          if(
+            event.key === "Escape" ||
+            event.key === "Enter" ||
+            event.key === " "
           ) {
             event.preventDefault();
             closeIntro();
@@ -6693,10 +7032,10 @@
         }
       );
 
-      startIntro();
+      runIntro();
 
       /* =====================================================
-         THEME
+         TEMA
       ====================================================== */
 
       const themeToggle =
@@ -6714,8 +7053,7 @@
         theme
       ) {
         if(
-          theme ===
-          "dark"
+          theme === "dark"
         ) {
           document.documentElement.setAttribute(
             "data-theme",
@@ -6786,7 +7124,7 @@
       const wfWindow =
         $("#wfWindow");
 
-      function getReadableTextColor(
+      function readableColor(
         hex
       ) {
         if(
@@ -6817,12 +7155,12 @@
           ) / 255;
 
         const linearize =
-          channel =>
-            channel <= .03928
-              ? channel / 12.92
+          value =>
+            value <= .03928
+              ? value / 12.92
               : Math.pow(
                   (
-                    channel +
+                    value +
                     .055
                   ) /
                   1.055,
@@ -6830,9 +7168,12 @@
                 );
 
         const luminance =
-          .2126 * linearize(r) +
-          .7152 * linearize(g) +
-          .0722 * linearize(b);
+          .2126 *
+            linearize(r) +
+          .7152 *
+            linearize(g) +
+          .0722 *
+            linearize(b);
 
         return luminance < .48
           ? "#FFFFFF"
@@ -6876,7 +7217,7 @@
         }
 
         const foreground =
-          getReadableTextColor(
+          readableColor(
             color
           );
 
@@ -6987,18 +7328,12 @@
         event => {
           event.stopPropagation();
 
-          deliveries +=
-            1;
+          deliveries++;
 
-          const counter =
-            $("#wfCounter");
-
-          if(counter) {
-            counter.textContent =
-              String(
-                deliveries
-              );
-          }
+          $("#wfCounter").textContent =
+            String(
+              deliveries
+            );
         }
       );
 
@@ -7075,17 +7410,17 @@
             swatch => {
               swatch.classList.toggle(
                 "active",
-                swatch.dataset.color === "#E8590C"
+                swatch.dataset.color ===
+                  "#E8590C"
               );
             }
           );
 
           $$(".wf-paintable").forEach(
-            element => {
+            element =>
               resetPaint(
                 element
-              );
-            }
+              )
           );
 
           $$(".wf-nav-item").forEach(
@@ -7105,7 +7440,8 @@
             view => {
               view.classList.toggle(
                 "active",
-                view.id === "wf-dashboard"
+                view.id ===
+                  "wf-dashboard"
               );
             }
           );
@@ -7113,13 +7449,8 @@
           deliveries =
             14;
 
-          const counter =
-            $("#wfCounter");
-
-          if(counter) {
-            counter.textContent =
-              "14";
-          }
+          $("#wfCounter").textContent =
+            "14";
 
           $$(".wf-task-item").forEach(
             (
@@ -7136,25 +7467,20 @@
           wfDark =
             false;
 
-          wfWindow?.style.removeProperty(
+          wfWindow.style.removeProperty(
             "--wf-bg-local"
           );
 
-          wfWindow?.style.removeProperty(
+          wfWindow.style.removeProperty(
             "--wf-card-local"
           );
 
-          wfWindow?.style.removeProperty(
+          wfWindow.style.removeProperty(
             "--wf-text-local"
           );
 
-          const modeButton =
-            $("#wfSwitchMode");
-
-          if(modeButton) {
-            modeButton.textContent =
-              "modo app";
-          }
+          $("#wfSwitchMode").textContent =
+            "modo app";
         }
       );
 
@@ -7168,8 +7494,8 @@
             "click",
             () => {
               $$(".fa-tab").forEach(
-                item =>
-                  item.classList.remove(
+                current =>
+                  current.classList.remove(
                     "active"
                   )
               );
@@ -7185,12 +7511,9 @@
                 "active"
               );
 
-              const target =
-                $(
-                  `[data-fa-view="${tab.dataset.faTab}"]`
-                );
-
-              target?.classList.add(
+              $(
+                `[data-fa-view="${tab.dataset.faTab}"]`
+              )?.classList.add(
                 "active"
               );
 
@@ -7212,8 +7535,8 @@
             "click",
             () => {
               $$(".system-nav-btn").forEach(
-                item =>
-                  item.classList.remove(
+                current =>
+                  current.classList.remove(
                     "active"
                   )
               );
@@ -7252,8 +7575,8 @@
               $$(
                 "[data-fa-button-state]"
               ).forEach(
-                item =>
-                  item.classList.remove(
+                current =>
+                  current.classList.remove(
                     "active"
                   )
               );
@@ -7268,7 +7591,8 @@
               );
 
               if(
-                button.dataset.faButtonState === "hover"
+                button.dataset.faButtonState ===
+                "hover"
               ) {
                 demoPrimary?.classList.add(
                   "is-hover"
@@ -7276,7 +7600,8 @@
               }
 
               if(
-                button.dataset.faButtonState === "disabled"
+                button.dataset.faButtonState ===
+                "disabled"
               ) {
                 demoPrimary?.classList.add(
                   "is-disabled"
@@ -7288,7 +7613,7 @@
       );
 
       /* =====================================================
-         DESKTOP PREVIEW
+         DESKTOP PREVIEWS
       ====================================================== */
 
       const DESKTOP_WIDTH =
@@ -7322,7 +7647,8 @@
         const scale =
           Math.min(
             1,
-            availableWidth / DESKTOP_WIDTH
+            availableWidth /
+              DESKTOP_WIDTH
           );
 
         canvas.style.transform =
@@ -7350,7 +7676,7 @@
       if(
         "ResizeObserver" in window
       ) {
-        const desktopObserver =
+        const observer =
           new ResizeObserver(
             entries => {
               entries.forEach(
@@ -7363,11 +7689,10 @@
           );
 
         $$(".fa-desktop-viewport").forEach(
-          viewport => {
-            desktopObserver.observe(
+          viewport =>
+            observer.observe(
               viewport
-            );
-          }
+            )
         );
       }
 
@@ -7389,7 +7714,7 @@
       );
 
       /* =====================================================
-         GENERIC TABS
+         TABS GENÉRICAS
       ====================================================== */
 
       $$(".case-tab").forEach(
@@ -7406,8 +7731,8 @@
               $$(
                 `.case-tab[data-case="${caseName}"]`
               ).forEach(
-                item =>
-                  item.classList.remove(
+                current =>
+                  current.classList.remove(
                     "active"
                   )
               );
@@ -7436,36 +7761,45 @@
       );
 
       /* =====================================================
-         RENATA — VISUAL ANTERIOR
+         RENATA
       ====================================================== */
 
       const renataSlides = [
         {
-          src:"img/img-renata/renata-01.jpg",
+          src:
+            "img/img-renata/renata-01.jpg",
 
-          alt:"Renata Brandão — apresentação 01",
+          alt:
+            "Renata Brandão — apresentação 01",
 
-          title:"Entrada e posicionamento",
+          title:
+            "Entrada e posicionamento",
 
           description:
             "A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto."
         },
         {
-          src:"img/img-renata/renata-02.jpg",
+          src:
+            "img/img-renata/renata-02.jpg",
 
-          alt:"Renata Brandão — apresentação 02",
+          alt:
+            "Renata Brandão — apresentação 02",
 
-          title:"Informação com direção",
+          title:
+            "Informação com direção",
 
           description:
             "A estrutura combina conteúdo estratégico, hierarquia tipográfica e apoio visual para reduzir densidade e orientar a leitura."
         },
         {
-          src:"img/img-renata/renata-03.jpg",
+          src:
+            "img/img-renata/renata-03.jpg",
 
-          alt:"Renata Brandão — apresentação 03",
+          alt:
+            "Renata Brandão — apresentação 03",
 
-          title:"Consistência entre slides",
+          title:
+            "Consistência entre slides",
 
           description:
             "Elementos, escalas e grid permanecem coerentes para criar ritmo e unidade durante toda a apresentação."
@@ -7571,7 +7905,8 @@
               "renata-thumb";
 
             if(
-              index === renataIndex
+              index ===
+              renataIndex
             ) {
               button.classList.add(
                 "active"
@@ -7583,8 +7918,7 @@
                 <img
                   src="${item.src}"
                   alt="Miniatura ${
-                    index +
-                    1
+                    index + 1
                   }"
                 >
               `;
@@ -7604,6 +7938,17 @@
             );
           }
         );
+
+        const activeThumb =
+          renataThumbs.children[
+            renataIndex
+          ];
+
+        activeThumb?.scrollIntoView({
+          behavior:"smooth",
+          inline:"center",
+          block:"nearest"
+        });
       }
 
       $("#renataPrev")?.addEventListener(
@@ -7662,8 +8007,8 @@
                 ".editorial-card",
                 braducaCase
               ).forEach(
-                item =>
-                  item.classList.remove(
+                current =>
+                  current.classList.remove(
                     "active"
                   )
               );
@@ -7693,8 +8038,7 @@
               braducaPosition.textContent =
                 `${
                   String(
-                    index +
-                    1
+                    index + 1
                   ).padStart(
                     2,
                     "0"
@@ -7756,8 +8100,7 @@
                   src="${src}"
                   alt="Aymée Ferraz — Post ${
                     String(
-                      index +
-                      1
+                      index + 1
                     ).padStart(
                       2,
                       "0"
@@ -7851,7 +8194,8 @@
         );
 
         if(
-          lightboxTrigger instanceof HTMLElement
+          lightboxTrigger instanceof
+          HTMLElement
         ) {
           lightboxTrigger.focus();
         }
@@ -7869,7 +8213,8 @@
         ).forEach(
           image => {
             if(
-              image.dataset.lightboxReady === "1"
+              image.dataset.lightboxReady ===
+              "1"
             ) {
               return;
             }
@@ -7902,15 +8247,19 @@
             const activate =
               event => {
                 if(
-                  event.type === "keydown" &&
-                  event.key !== "Enter" &&
-                  event.key !== " "
+                  event.type ===
+                    "keydown" &&
+                  event.key !==
+                    "Enter" &&
+                  event.key !==
+                    " "
                 ) {
                   return;
                 }
 
                 if(
-                  event.type === "keydown"
+                  event.type ===
+                  "keydown"
                 ) {
                   event.preventDefault();
                 }
@@ -7949,7 +8298,8 @@
         "click",
         event => {
           if(
-            event.target === lightbox
+            event.target ===
+            lightbox
           ) {
             closeLightbox();
           }
@@ -7960,7 +8310,8 @@
         "keydown",
         event => {
           if(
-            event.key === "Escape"
+            event.key ===
+            "Escape"
           ) {
             closeLightbox();
           }
@@ -7970,6 +8321,7 @@
       renderAymee();
 
       registerLightboxImages();
+
     })();
   </script>
 
