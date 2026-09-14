@@ -177,7 +177,6 @@
     #intro-overlay {
       position: fixed;
       inset: 0;
-
       z-index: 200;
 
       display: flex;
@@ -208,7 +207,6 @@
 
     .intro-word-cycle {
       position: relative;
-
       display: inline-block;
 
       height: 1.15em;
@@ -225,12 +223,10 @@
       white-space: nowrap;
 
       color: var(--accent);
-
       font-style: italic;
       font-weight: 400;
 
       opacity: 0;
-
       transform: translateY(100%);
 
       transition:
@@ -264,7 +260,6 @@
     nav {
       position: sticky;
       top: 0;
-
       z-index: 60;
 
       display: grid;
@@ -316,7 +311,6 @@
       border-radius: 999px;
 
       background: none;
-
       color: var(--ink);
 
       font-size: 0.72rem;
@@ -1388,144 +1382,162 @@
       font-size: 0.67rem;
     }
 
-    .strip {
-      display: flex;
-      gap: 16px;
+    /* =========================================================
+       FERNANDO — INTRO DO CASE
+       ========================================================= */
 
-      padding: 0 var(--page-pad) 10px;
-
-      overflow-x: auto;
-
-      scrollbar-width: none;
-      scroll-behavior: smooth;
+    #fernando-project .project-head {
+      margin-bottom: 34px;
     }
 
-    .strip::-webkit-scrollbar {
-      display: none;
+    #fernando-project .project-summary {
+      max-width: 880px;
+
+      margin-bottom: 34px;
+
+      font-size: clamp(1.22rem, 2vw, 1.55rem);
+      line-height: 1.5;
     }
 
-    .strip-item {
-      flex: 0 0 auto;
+    #fernando-project .case-grid {
+      position: relative;
+
+      max-width: 1040px;
+
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 12px;
+
+      margin: 0 0 26px;
+
+      border: 0;
+
+      background: transparent;
+    }
+
+    #fernando-project .case-item {
+      position: relative;
+
+      min-height: 190px;
 
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: space-between;
 
-      width: min(46vw, 380px);
-
-      aspect-ratio: 4 / 3;
-
-      padding: 0;
+      padding: 24px;
 
       overflow: hidden;
 
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 12px;
 
-      background: var(--card);
-
-      opacity: 0;
-
-      cursor: pointer;
+      background:
+        linear-gradient(
+          145deg,
+          color-mix(in srgb, var(--card) 75%, transparent),
+          color-mix(in srgb, var(--bg) 96%, transparent)
+        );
 
       transition:
-        transform 0.3s cubic-bezier(.16, 1, .3, 1),
-        opacity 0.8s ease,
-        border-color 0.25s ease;
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
     }
 
-    .strip-item img {
-      display: block;
+    #fernando-project .case-item::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
 
       width: 100%;
-      height: 100%;
+      height: 3px;
 
-      object-fit: cover;
+      background: var(--accent);
 
-      cursor: zoom-in;
+      transform: scaleX(0.12);
+      transform-origin: left;
 
       transition: transform 0.3s ease;
     }
 
-    .strip-item:hover {
-      border-color: var(--line-strong);
+    #fernando-project .case-item:hover {
+      transform: translateY(-4px);
 
-      transform: scale(1.025);
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+
+      box-shadow: 0 18px 40px rgba(31, 28, 24, 0.07);
     }
 
-    .strip-item:hover img {
-      transform: scale(1.035);
+    #fernando-project .case-item:hover::before {
+      transform: scaleX(1);
     }
 
-    .strip-item.ig-ratio {
-      width: min(34vw, 300px);
-
-      aspect-ratio: 1080 / 1350;
+    #fernando-project .case-item:nth-child(1),
+    #fernando-project .case-item:nth-child(4) {
+      grid-column: span 7;
     }
 
-    .strip-item.widescreen {
-      width: min(56vw, 460px);
-
-      aspect-ratio: 1920 / 1080;
+    #fernando-project .case-item:nth-child(2),
+    #fernando-project .case-item:nth-child(3) {
+      grid-column: span 5;
     }
 
-    .strip-item.natural-fit {
-      width: auto;
-      height: 420px;
+    #fernando-project .case-item .project-block-label {
+      margin-bottom: 30px;
 
-      aspect-ratio: unset;
+      font-size: 0.62rem;
     }
 
-    .strip-item.natural-fit:first-child {
-      width: min(70vw, 760px);
+    #fernando-project .case-item p {
+      max-width: 540px;
+
+      color: var(--dim);
+
+      font-size: 0.86rem;
+      line-height: 1.7;
     }
 
-    .strip-item.natural-fit img {
-      width: auto;
-      height: 100%;
+    #fernando-project .case-item:nth-child(4) {
+      border-color: rgba(232, 89, 12, 0.22);
 
-      object-fit: contain;
+      background:
+        linear-gradient(
+          140deg,
+          rgba(232, 89, 12, 0.10),
+          rgba(232, 89, 12, 0.025)
+        );
     }
 
-    .strip-item.natural-fit:first-child img {
-      width: 100%;
-      height: 100%;
+    #fernando-project .case-item:nth-child(4)::after {
+      content: "PUBLICADO";
 
-      object-fit: cover;
-      object-position: top;
+      position: absolute;
+      top: 21px;
+      right: 22px;
+
+      padding: 4px 8px;
+
+      border: 1px solid rgba(232, 89, 12, 0.35);
+      border-radius: 999px;
+
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.48rem;
+      letter-spacing: 0.08em;
     }
 
-    .project-block.from-left .strip-item {
-      transform: translateX(-100%) scale(0.97);
+    #fernando-project .project-proof {
+      gap: 9px;
     }
 
-    .project-block.from-right .strip-item {
-      transform: translateX(100%) scale(0.97);
-    }
+    #fernando-project .project-proof span {
+      padding: 7px 12px;
 
-    .project-block.in-view .strip-item {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-    }
+      background: transparent;
 
-    .project-block .strip-item:nth-child(2) {
-      transition-delay: 0.08s;
-    }
-
-    .project-block .strip-item:nth-child(3) {
-      transition-delay: 0.16s;
-    }
-
-    .project-block .strip-item:nth-child(4) {
-      transition-delay: 0.24s;
-    }
-
-    .project-block.from-right .strip {
-      flex-direction: row-reverse;
-    }
-
-    .project-block.from-right .strip.voit-strip {
-      flex-direction: row;
+      font-size: 0.67rem;
     }
 
     /* =========================================================
@@ -1609,36 +1621,79 @@
 
     .fernando-story {
       display: grid;
-      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
-      gap: 20px;
+      grid-template-columns: minmax(320px, 0.76fr) minmax(0, 1.24fr);
+      gap: 18px;
+      align-items: stretch;
     }
 
     .fernando-story-copy {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
       padding: 28px;
 
-      border: 1px solid var(--line);
-      border-radius: 10px;
+      overflow: hidden;
 
-      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          155deg,
+          color-mix(in srgb, var(--card) 92%, transparent),
+          color-mix(in srgb, var(--bg) 97%, transparent)
+        );
+    }
+
+    .fernando-story-copy::before {
+      content: "";
+
+      position: absolute;
+      top: -85px;
+      right: -85px;
+
+      width: 190px;
+      height: 190px;
+
+      border: 1px solid var(--line);
+      border-radius: 50%;
+
+      opacity: 0.6;
     }
 
     .fernando-story-copy > span {
+      position: relative;
+      z-index: 1;
+
       color: var(--accent);
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.54rem;
+      letter-spacing: 0.07em;
     }
 
     .fernando-story-copy h4 {
-      margin: 18px 0;
+      position: relative;
+      z-index: 1;
+
+      max-width: 390px;
+
+      margin: 20px 0 14px;
 
       font-family: "Fraunces", serif;
       font-size: clamp(2rem, 3vw, 2.9rem);
       font-weight: 400;
-      line-height: 1.08;
+      line-height: 1.03;
     }
 
     .fernando-story-copy > p {
+      position: relative;
+      z-index: 1;
+
+      max-width: 410px;
+
       color: var(--dim);
 
       font-size: 0.83rem;
@@ -1646,24 +1701,55 @@
     }
 
     .fernando-flow {
-      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+
+      margin-top: 26px;
     }
 
     .fernando-flow-item {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 10px;
+      position: relative;
 
-      padding: 12px 0;
+      display: block;
 
-      border-top: 1px solid var(--line);
+      min-height: 122px;
+
+      padding: 15px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 8px;
+
+      background: color-mix(in srgb, var(--bg) 70%, transparent);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .fernando-flow-item:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(232, 89, 12, 0.4);
+
+      background: var(--bg);
     }
 
     .fernando-flow-item > span {
+      display: block;
+
+      margin-bottom: 13px;
+
       color: var(--accent);
 
       font-family: "IBM Plex Mono", monospace;
-      font-size: 0.5rem;
+      font-size: 0.48rem;
     }
 
     .fernando-flow-item strong {
@@ -1673,11 +1759,11 @@
     }
 
     .fernando-flow-item p {
-      margin-top: 4px;
+      margin-top: 5px;
 
       color: var(--dim);
 
-      font-size: 0.69rem;
+      font-size: 0.64rem;
       line-height: 1.5;
     }
 
@@ -1686,14 +1772,16 @@
        ========================================================= */
 
     .fa-browser {
+      position: relative;
+
       overflow: hidden;
 
       border: 1px solid var(--line-strong);
-      border-radius: 10px;
+      border-radius: 12px;
 
-      background: var(--bg);
+      background: #FFF;
 
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
     }
 
     .fa-browser-bar {
@@ -1773,13 +1861,28 @@
       display: block;
 
       width: 1440px !important;
-      height: 1100px !important;
+      height: 1050px !important;
 
       max-width: none !important;
 
       border: 0;
 
       background: #FFF;
+    }
+
+    .fa-browser::after {
+      content: "";
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      height: 1px;
+
+      background: var(--line);
+
+      pointer-events: none;
     }
 
     /* =========================================================
@@ -1789,25 +1892,33 @@
     .fernando-results {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
 
-      margin-top: 18px;
+      margin-top: 16px;
 
-      overflow: hidden;
+      border: 0;
 
-      border: 1px solid var(--line);
-      border-radius: 10px;
+      background: transparent;
     }
 
     .fernando-result {
-      min-height: 140px;
+      min-height: 135px;
 
       padding: 20px;
 
-      border-right: 1px solid var(--line);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+
+      background: var(--bg);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
 
-    .fernando-result:last-child {
-      border-right: 0;
+    .fernando-result:hover {
+      transform: translateY(-2px);
+      border-color: rgba(232, 89, 12, 0.35);
     }
 
     .fernando-result > span {
@@ -2906,6 +3017,124 @@
     }
 
     /* =========================================================
+       STRIP / PROJETOS RESTANTES
+       ========================================================= */
+
+    .strip {
+      display: flex;
+      gap: 16px;
+
+      padding: 0 var(--page-pad) 10px;
+
+      overflow-x: auto;
+
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+
+    .strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .strip-item {
+      flex: 0 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: min(46vw, 380px);
+
+      aspect-ratio: 4 / 3;
+
+      padding: 0;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 6px;
+
+      background: var(--card);
+
+      opacity: 0;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s cubic-bezier(.16, 1, .3, 1),
+        opacity 0.8s ease,
+        border-color 0.25s ease;
+    }
+
+    .strip-item img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      cursor: zoom-in;
+
+      transition: transform 0.3s ease;
+    }
+
+    .strip-item:hover {
+      border-color: var(--line-strong);
+
+      transform: scale(1.025);
+    }
+
+    .strip-item:hover img {
+      transform: scale(1.035);
+    }
+
+    .strip-item.ig-ratio {
+      width: min(34vw, 300px);
+
+      aspect-ratio: 1080 / 1350;
+    }
+
+    .strip-item.widescreen {
+      width: min(56vw, 460px);
+
+      aspect-ratio: 1920 / 1080;
+    }
+
+    .project-block.from-left .strip-item {
+      transform: translateX(-100%) scale(0.97);
+    }
+
+    .project-block.from-right .strip-item {
+      transform: translateX(100%) scale(0.97);
+    }
+
+    .project-block.in-view .strip-item {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+
+    .project-block .strip-item:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+
+    .project-block .strip-item:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+
+    .project-block .strip-item:nth-child(4) {
+      transition-delay: 0.24s;
+    }
+
+    .project-block.from-right .strip {
+      flex-direction: row-reverse;
+    }
+
+    .project-block.from-right .strip.voit-strip {
+      flex-direction: row;
+    }
+
+    /* =========================================================
        VOIT
        ========================================================= */
 
@@ -3076,13 +3305,6 @@
       transform: scale(1.06);
     }
 
-    .strip-links {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
     .strip-full-link {
       display: inline-flex;
       align-items: center;
@@ -3095,12 +3317,6 @@
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.72rem;
       text-decoration: none;
-
-      transition: border-color var(--transition);
-    }
-
-    .strip-full-link:hover {
-      border-color: var(--accent);
     }
 
     /* =========================================================
@@ -3189,16 +3405,6 @@
 
       font-size: 0.85rem;
       font-weight: 500;
-
-      transition:
-        transform var(--transition),
-        background var(--transition),
-        border-color var(--transition),
-        color var(--transition);
-    }
-
-    .cta-buttons a:hover {
-      transform: translateY(-2px);
     }
 
     .cta-buttons .primary {
@@ -3206,19 +3412,9 @@
       color: #FFF;
     }
 
-    .cta-buttons .primary:hover {
-      background: var(--accent-hover);
-      border-color: var(--accent-hover);
-    }
-
     .cta-buttons .secondary {
       border-color: var(--line-strong);
       color: var(--dim);
-    }
-
-    .cta-buttons .secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
     }
 
     footer {
@@ -3240,10 +3436,6 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      color: var(--accent);
-    }
-
     /* =========================================================
        MODAL
        ========================================================= */
@@ -3261,9 +3453,6 @@
       padding: 60px 24px 24px;
 
       background: rgba(0, 0, 0, 0.9);
-
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
     }
 
     .img-modal.open {
@@ -3274,13 +3463,7 @@
       max-width: min(1200px, 92vw);
       max-height: 86vh;
 
-      border-radius: 8px;
-
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
-
       object-fit: contain;
-
-      animation: zoomModal 0.25s ease;
     }
 
     .img-modal-close {
@@ -3294,27 +3477,8 @@
       color: #FFF;
 
       font-size: 38px;
-      line-height: 1;
 
       cursor: pointer;
-
-      transition: color var(--transition);
-    }
-
-    .img-modal-close:hover {
-      color: var(--accent);
-    }
-
-    @keyframes zoomModal {
-      from {
-        opacity: 0;
-        transform: scale(0.94);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
     }
 
     /* =========================================================
@@ -3330,16 +3494,10 @@
       display: none;
 
       background: rgba(0, 0, 0, 0.65);
-
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-
-      opacity: 0;
     }
 
     .drawer-overlay.active {
       display: block;
-      opacity: 1;
     }
 
     .side-drawer {
@@ -3358,9 +3516,6 @@
       overflow-y: auto;
 
       background: var(--bg);
-      color: var(--ink);
-
-      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
 
       transition: right 0.4s cubic-bezier(.16, 1, .3, 1);
     }
@@ -3370,10 +3525,6 @@
     }
 
     .drawer-close-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
       margin-bottom: 30px;
 
       border: 0;
@@ -3381,38 +3532,19 @@
       background: none;
       color: var(--ink);
 
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.9rem;
-
       cursor: pointer;
-
-      transition: color var(--transition);
-    }
-
-    .drawer-close-btn:hover {
-      color: var(--accent);
     }
 
     .drawer-header {
       margin-bottom: 36px;
-      padding-bottom: 20px;
-
-      border-bottom: 1px solid var(--line);
     }
 
     .drawer-header h2 {
       margin: 10px 0 12px;
 
       font-family: "Fraunces", serif;
-      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      font-size: 2rem;
       font-weight: 400;
-    }
-
-    .drawer-header p {
-      color: var(--dim);
-
-      font-size: 0.98rem;
-      line-height: 1.65;
     }
 
     .drawer-section {
@@ -3421,58 +3553,13 @@
 
     .drawer-section h3 {
       margin-bottom: 12px;
-      padding-left: 10px;
-
-      border-left: 3px solid var(--accent);
 
       color: var(--accent);
-
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
     .drawer-section p {
-      margin-bottom: 14px;
-
       color: var(--dim);
-
-      font-size: 0.95rem;
-      line-height: 1.75;
-    }
-
-    .drawer-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-
-      margin: 20px 0;
-    }
-
-    .drawer-card-info {
-      padding: 16px;
-
-      border: 1px solid var(--line);
-      border-radius: 6px;
-
-      background: var(--card);
-    }
-
-    .drawer-card-info strong {
-      display: block;
-
-      margin-bottom: 5px;
-
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.8rem;
-    }
-
-    .drawer-card-info span {
-      color: var(--dim);
-
-      font-size: 0.84rem;
-      line-height: 1.5;
+      line-height: 1.7;
     }
 
     /* =========================================================
@@ -3510,18 +3597,6 @@
 
         white-space: nowrap;
       }
-
-      .fa-nav-preview {
-        grid-template-columns: 1fr auto;
-      }
-
-      .fa-nav-preview-links {
-        grid-column: 1 / -1;
-
-        order: 3;
-
-        justify-content: flex-start;
-      }
     }
 
     @media (max-width: 780px) {
@@ -3541,14 +3616,6 @@
         display: none;
       }
 
-      .nav-left {
-        gap: 12px;
-      }
-
-      nav .cta {
-        padding: 7px 11px;
-      }
-
       .hero {
         grid-template-columns: 1fr;
 
@@ -3561,92 +3628,33 @@
         margin-bottom: 24px;
       }
 
-      .hero h1 {
-        font-size: clamp(2.3rem, 12vw, 3.6rem);
-      }
-
-      .process-fold-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
+      .process-fold-grid,
       .constructivist-about {
         grid-template-columns: 1fr;
-        gap: 45px;
       }
 
       .case-grid {
         grid-template-columns: 1fr;
       }
 
-      .skill-grid {
+      #fernando-project .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #fernando-project .case-item:nth-child(n) {
+        grid-column: auto;
+      }
+
+      #fernando-project .case-item {
+        min-height: 170px;
+      }
+
+      .fernando-flow {
         grid-template-columns: 1fr 1fr;
       }
 
-      .strip-item.natural-fit {
-        height: 260px;
-      }
-
-      .strip-item.natural-fit:first-child {
-        width: 88vw;
-      }
-
-      .strip-item.ig-ratio {
-        width: 70vw;
-      }
-
-      .strip-item.widescreen {
-        width: 80vw;
-      }
-
-      .voit-strip .voit-card {
-        width: 72vw;
-        height: auto;
-
-        aspect-ratio: 1080 / 1350;
-      }
-
-      .voit-strip .voit-card:hover {
-        width: 72vw;
-      }
-
-      .const-floater.pen,
-      .const-floater.spec,
-      .spec-floater {
-        display: none;
-      }
-
-      .side-drawer {
-        max-width: 100%;
-        padding: 40px 24px;
-      }
-
-      .drawer-grid-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .fernando-case-shell {
-        padding: 0 var(--page-pad);
-      }
-
-      .fernando-tabs {
-        margin-right: calc(var(--page-pad) * -1);
-
-        padding-right: var(--page-pad);
-      }
-
-      .fernando-results,
-      .fa-responsive-notes {
-        grid-template-columns: 1fr;
-      }
-
-      .fernando-result {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .fernando-result:last-child {
-        border-bottom: 0;
+      .skill-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
       .fa-color-grid {
@@ -3662,30 +3670,22 @@
         grid-column: auto;
       }
 
-      .fa-pattern-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .fa-system-canvas {
         padding: 20px;
+      }
+
+      .fernando-results,
+      .fa-responsive-notes {
+        grid-template-columns: 1fr;
       }
 
       .fa-figma-frame iframe {
         height: 520px;
       }
 
-      .fa-project-card-system,
-      .fa-form-system-row.two,
-      .fa-form-system-row.three {
-        grid-template-columns: 1fr;
-      }
-
-      .fa-system-token-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .fa-project-card-system-media {
-        min-height: 180px;
+      .side-drawer {
+        max-width: 100%;
+        padding: 40px 24px;
       }
     }
 
@@ -3702,52 +3702,38 @@
         font-size: 0.72rem;
       }
 
+      .fernando-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .fernando-story-copy {
+        padding: 22px;
+      }
+
+      .fernando-story-copy h4 {
+        font-size: 2rem;
+      }
+
       .skill-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-actions {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
       }
 
       footer {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
       }
 
-      .fa-color-grid,
-      .fa-pattern-grid {
+      .fa-color-grid {
         grid-template-columns: 1fr;
-      }
-
-      .fa-device-mobile {
-        width: 210px;
-      }
-
-      .fa-mobile-screen iframe {
-        transform: scale(0.497);
-      }
-
-      .fa-system-token-grid,
-      .fa-nav-preview {
-        grid-template-columns: 1fr;
-      }
-
-      .fa-nav-preview-links {
-        grid-column: auto;
-      }
-
-      .fa-nav-preview > button {
-        width: max-content;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
       *,
       *::before,
       *::after {
@@ -3762,12 +3748,17 @@
 
 <body class="intro-active">
 
+  <!-- =======================================================
+       INTRO
+       ======================================================= -->
+
   <div
     id="intro-overlay"
     aria-hidden="true"
   >
     <div class="intro-title">
       Design com
+
       <span
         class="intro-word-cycle"
         id="introWordCycle"
@@ -3780,6 +3771,10 @@
   </div>
 
   <div id="site-content">
+
+    <!-- =====================================================
+         NAV
+         ===================================================== -->
 
     <nav id="top">
       <div class="nav-left">
@@ -3795,25 +3790,15 @@
           type="button"
           id="themeToggle"
           class="theme-toggle mono"
-          aria-label="Alternar para tema sombrio"
-          aria-pressed="false"
         >
           <span id="themeLabel">Sombrio</span>
         </button>
       </div>
 
-      <ul aria-label="Navegação principal">
-        <li>
-          <a href="#sobre">sobre</a>
-        </li>
-
-        <li>
-          <a href="#projetos">projetos</a>
-        </li>
-
-        <li>
-          <a href="#habilidades">habilidades</a>
-        </li>
+      <ul>
+        <li><a href="#sobre">sobre</a></li>
+        <li><a href="#projetos">projetos</a></li>
+        <li><a href="#habilidades">habilidades</a></li>
       </ul>
 
       <a
@@ -3826,16 +3811,19 @@
 
     <main>
 
-      <section
-        class="hero"
-        aria-labelledby="hero-title"
-      >
+      <!-- ===================================================
+           HERO
+           =================================================== -->
+
+      <section class="hero">
+
         <div class="hero-text">
+
           <div class="hero-eyebrow mono">
             COMUNICAÇÃO VISUAL • INTERFACES • EXPERIÊNCIAS DIGITAIS
           </div>
 
-          <h1 id="hero-title">
+          <h1>
             Design com
             <em>clareza, estrutura</em>
             e
@@ -3843,6 +3831,7 @@
           </h1>
 
           <div class="hero-sub">
+
             <p>
               Designer de Comunicação Visual e UI, criando interfaces e
               experiências de marca claras, consistentes e orientadas a
@@ -3850,6 +3839,7 @@
             </p>
 
             <div class="hero-actions">
+
               <a
                 class="hero-cta"
                 href="#projetos"
@@ -3863,18 +3853,21 @@
               >
                 entrar em contato ↗
               </a>
+
             </div>
+
           </div>
+
         </div>
 
         <div class="hero-visual">
+
           <div class="wf-wrapper">
 
             <svg
               class="wf-illustration pen-tool-svg"
               viewBox="0 0 100 100"
               fill="none"
-              aria-hidden="true"
             >
               <path
                 d="M15,80 C35,20 65,80 85,20"
@@ -3900,58 +3893,29 @@
                 stroke="var(--accent)"
                 stroke-width="2"
               />
-
-              <rect
-                x="11"
-                y="76"
-                width="8"
-                height="8"
-                fill="var(--accent)"
-              />
-
-              <rect
-                x="81"
-                y="16"
-                width="8"
-                height="8"
-                fill="var(--accent)"
-              />
             </svg>
 
             <div class="wf-illustration badge-floater">
-              <span>❖</span>
-              auto-layout 8px
+              ❖ auto-layout 8px
             </div>
 
             <div class="wf-illustration spec-floater">
-              <span>↔</span>
-              380px × 260px
+              ↔ 380px × 260px
             </div>
 
             <div class="wf-illustration cursor-floater">
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-              </svg>
-
+              <span>➤</span>
               <span>Raquel • UI</span>
             </div>
 
             <div
               class="wf-window"
               id="wfWindow"
-              aria-label="Demonstração interativa de interface"
             >
+
               <div class="wf-header">
-                <div
-                  class="wf-dots"
-                  aria-hidden="true"
-                >
+
+                <div class="wf-dots">
                   <div class="wf-dot"></div>
                   <div class="wf-dot"></div>
                   <div class="wf-dot"></div>
@@ -3964,49 +3928,37 @@
                 >
                   modo app
                 </button>
+
               </div>
 
               <div class="wf-body">
-                <div
-                  class="wf-sidebar"
-                  role="tablist"
-                  aria-label="Seções da demonstração"
-                >
+
+                <div class="wf-sidebar">
+
                   <div
                     class="wf-nav-item wf-paintable active"
                     data-paint-type="bg"
                     data-tab="dashboard"
-                    role="tab"
-                    tabindex="0"
-                    aria-selected="true"
                   >
-                    <span>▧</span>
-                    Dashboard
+                    ▧ Dashboard
                   </div>
 
                   <div
                     class="wf-nav-item wf-paintable"
                     data-paint-type="bg"
                     data-tab="interfaces"
-                    role="tab"
-                    tabindex="0"
-                    aria-selected="false"
                   >
-                    <span>✦</span>
-                    Interfaces
+                    ✦ Interfaces
                   </div>
 
                   <div
                     class="wf-nav-item wf-paintable"
                     data-paint-type="bg"
                     data-tab="ds"
-                    role="tab"
-                    tabindex="0"
-                    aria-selected="false"
                   >
-                    <span>❖</span>
-                    Design System
+                    ❖ Design System
                   </div>
+
                 </div>
 
                 <div class="wf-main">
@@ -4015,22 +3967,26 @@
                     class="wf-view active"
                     id="view-dashboard"
                   >
+
                     <div class="wf-top-bar">
+
                       <span class="wf-title">
                         Painel de Dashboard
                       </span>
 
                       <button
                         type="button"
-                        class="wf-badge-btn wf-paintable mono"
+                        class="wf-badge-btn wf-paintable"
                         data-paint-type="bg"
                         id="wfMetricBtn"
                       >
                         +1 Entrega
                       </button>
+
                     </div>
 
                     <div class="wf-card-grid">
+
                       <div
                         class="wf-card wf-paintable"
                         data-paint-type="card-bg"
@@ -4055,65 +4011,39 @@
                           Status
                         </span>
 
-                        <span
-                          class="wf-card-val"
-                          style="color: var(--accent)"
-                        >
+                        <span class="wf-card-val">
                           100%
                         </span>
                       </div>
+
                     </div>
 
                     <div class="wf-task-list">
-                      <div class="wf-task-item">
-                        <div
-                          class="wf-checkbox wf-paintable"
-                          data-paint-type="bg"
-                          style="
-                            background: var(--accent);
-                            border-color: var(--accent);
-                          "
-                        >
-                          ✓
-                        </div>
 
-                        <span>
-                          Hierarquia visual definida
-                        </span>
+                      <div class="wf-task-item">
+                        <div class="wf-checkbox">✓</div>
+                        <span>Hierarquia visual definida</span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div
-                          class="wf-checkbox wf-paintable"
-                          data-paint-type="bg"
-                        >
-                          ✓
-                        </div>
-
-                        <span>
-                          Prototipagem de interações
-                        </span>
+                        <div class="wf-checkbox">✓</div>
+                        <span>Prototipagem de interações</span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div
-                          class="wf-checkbox wf-paintable"
-                          data-paint-type="bg"
-                        >
-                          ✓
-                        </div>
-
-                        <span>
-                          Design System alinhado
-                        </span>
+                        <div class="wf-checkbox">✓</div>
+                        <span>Design System alinhado</span>
                       </div>
+
                     </div>
+
                   </div>
 
                   <div
                     class="wf-view"
                     id="view-interfaces"
                   >
+
                     <div class="wf-top-bar">
                       <span class="wf-title">
                         Prototipagem de Wireframes
@@ -4128,91 +4058,48 @@
                       class="wf-card wf-paintable"
                       data-paint-type="card-bg"
                     >
-                      <div
-                        class="wf-paintable"
-                        data-paint-type="bg"
-                        style="
-                          min-height:18px;
-                          padding:4px 6px;
-                          border-radius:3px;
-                          background:rgba(0,0,0,.06);
-                        "
-                      >
-                        <span style="font-size:.55rem">
-                          Header Bar Navigation
-                        </span>
-                      </div>
+                      <strong>
+                        Hero Card
+                      </strong>
 
-                      <div style="display:flex;gap:6px;">
-                        <div
-                          class="wf-paintable"
-                          data-paint-type="bg"
-                          style="
-                            flex:1;
-                            height:46px;
-                            padding:6px;
-                            border-radius:4px;
-                            background:rgba(0,0,0,.04);
-                          "
-                        >
-                          <span style="font-size:.58rem;font-weight:600">
-                            Hero Card
-                          </span>
-                        </div>
-
-                        <div
-                          class="wf-paintable"
-                          data-paint-type="bg"
-                          style="
-                            width:52px;
-                            height:46px;
-                            padding:6px;
-                            border-radius:4px;
-                            background:rgba(0,0,0,.04);
-                          "
-                        >
-                          <span style="font-size:.5rem">
-                            Widget
-                          </span>
-                        </div>
-                      </div>
+                      <span class="wf-card-label">
+                        Layout Responsivo
+                      </span>
                     </div>
 
-                    <div style="display:flex;gap:6px;">
+                    <div class="wf-card-grid">
+
                       <div
                         class="wf-card wf-paintable"
                         data-paint-type="card-bg"
-                        style="flex:1"
                       >
-                        <span class="wf-card-label mono">
+                        <span class="wf-card-label">
                           Componente A
                         </span>
 
-                        <span style="font-size:.6rem">
-                          Layout Responsivo
-                        </span>
+                        Layout Responsivo
                       </div>
 
                       <div
                         class="wf-card wf-paintable"
                         data-paint-type="card-bg"
-                        style="flex:1"
                       >
-                        <span class="wf-card-label mono">
+                        <span class="wf-card-label">
                           Componente B
                         </span>
 
-                        <span style="font-size:.6rem">
-                          Auto-layout Figma
-                        </span>
+                        Auto-layout Figma
                       </div>
+
                     </div>
+
                   </div>
 
                   <div
                     class="wf-view"
                     id="view-ds"
                   >
+
                     <div class="wf-top-bar">
                       <span class="wf-title">
                         Biblioteca de Tokens
@@ -4223,183 +4110,111 @@
                       </span>
                     </div>
 
-                    <div
-                      style="
-                        display:flex;
-                        flex-direction:column;
-                        gap:5px;
-                      "
-                    >
+                    <div class="wf-card">
                       <span class="wf-card-label mono">
                         Estados de Botão
                       </span>
 
-                      <div
-                        style="
-                          display:flex;
-                          gap:6px;
-                          align-items:center;
-                        "
-                      >
+                      <div style="display:flex; gap:6px;">
                         <button
-                          type="button"
-                          class="wf-badge-btn wf-paintable mono"
+                          class="wf-badge-btn wf-paintable"
                           data-paint-type="bg"
                         >
                           Primary
                         </button>
 
                         <button
-                          type="button"
-                          class="wf-badge-btn wf-paintable mono"
+                          class="wf-badge-btn wf-paintable"
                           data-paint-type="bg"
-                          style="
-                            background:transparent;
-                            border:1px solid var(--line-strong);
-                            color:var(--wf-text);
-                          "
                         >
                           Secondary
                         </button>
-
-                        <span
-                          class="wf-paintable"
-                          data-paint-type="text"
-                          style="
-                            font-size:.6rem;
-                            text-decoration:underline;
-                          "
-                        >
-                          Hover
-                        </span>
                       </div>
                     </div>
 
-                    <div
-                      style="
-                        display:flex;
-                        flex-direction:column;
-                        gap:4px;
-                      "
-                    >
+                    <div class="wf-card">
                       <span class="wf-card-label mono">
                         Tipografia & Escala
                       </span>
 
-                      <div
-                        class="wf-card wf-paintable"
-                        data-paint-type="card-bg"
-                      >
-                        <span
-                          class="serif"
-                          style="font-size:.8rem"
-                        >
-                          Fraunces Serif 400
-                        </span>
-
-                        <span
-                          class="mono"
-                          style="
-                            font-size:.55rem;
-                            color:var(--muted);
-                          "
-                        >
-                          IBM Plex Mono 12px / 1.4
-                        </span>
-                      </div>
+                      <span class="serif">
+                        Fraunces Serif 400
+                      </span>
                     </div>
+
                   </div>
 
                 </div>
+
               </div>
+
             </div>
+
           </div>
 
-          <div
-            class="color-palette"
-            id="colorPalette"
-            aria-label="Paleta interativa"
-          >
+          <div class="color-palette">
+
             <button
-              type="button"
               class="swatch active"
               data-color="#E8590C"
               style="background:#E8590C"
-              aria-label="Laranja criativo"
-              title="Laranja Criativo"
             ></button>
 
             <button
-              type="button"
               class="swatch"
               data-color="#38483A"
               style="background:#38483A"
-              aria-label="Verde botânico"
-              title="Verde Botânico"
             ></button>
 
             <button
-              type="button"
               class="swatch"
               data-color="#2B3A4A"
               style="background:#2B3A4A"
-              aria-label="Azul tinta"
-              title="Azul Tinta"
             ></button>
 
             <button
-              type="button"
               class="swatch"
               data-color="#B37838"
               style="background:#B37838"
-              aria-label="Ocre dourado"
-              title="Ocre Dourado"
             ></button>
 
             <button
-              type="button"
               class="swatch"
               data-color="#1F1C18"
               style="background:#1F1C18"
-              aria-label="Café profundo"
-              title="Café Profundo"
             ></button>
 
             <button
-              type="button"
               class="swatch reset"
               data-color=""
-              aria-label="Usar borracha"
-              title="Borracha / Sem cor"
             >
               ✕
             </button>
 
             <button
-              type="button"
-              class="clear-btn mono"
               id="clearBtn"
+              class="clear-btn mono"
             >
               limpar tudo
             </button>
+
           </div>
 
           <div class="hero-visual-hint mono">
             escolha uma cor e clique nos componentes para explorar a interface
           </div>
+
         </div>
+
       </section>
 
-      <!-- PROCESSO -->
+      <!-- ===================================================
+           PROCESSO
+           =================================================== -->
 
-      <section
-        class="process-fold-section"
-        aria-labelledby="process-title"
-      >
-        <span
-          class="process-kicker mono"
-          id="process-title"
-        >
+      <section class="process-fold-section">
+
+        <span class="process-kicker mono">
           método & execução
         </span>
 
@@ -4446,15 +4261,17 @@
 
             <p>
               Desenvolvimento, refinamento e revisão das entregas com as
-              ferramentas adequadas a cada projeto e validação com os
-              envolvidos.
+              ferramentas adequadas a cada projeto e validação com os envolvidos.
             </p>
           </article>
 
         </div>
+
       </section>
 
-      <!-- SOBRE -->
+      <!-- ===================================================
+           SOBRE
+           =================================================== -->
 
       <div
         class="section-head"
@@ -4466,6 +4283,7 @@
       <section class="constructivist-about">
 
         <div class="const-text-wrapper">
+
           <span class="const-manifesto-title">
             design como ferramenta de clareza
           </span>
@@ -4499,69 +4317,29 @@
             <span class="const-tag">Arquitetura de Informação</span>
             <span class="const-tag">Workflow com IA</span>
           </div>
+
         </div>
 
         <div class="const-visual-showcase">
+
           <div class="const-orbit-ring"></div>
 
           <svg
             class="const-orbit-text"
             viewBox="0 0 200 200"
-            aria-hidden="true"
           >
             <defs>
               <path
                 id="orbitPath"
-                d="
-                  M 100,100
-                  m -78,0
-                  a 78,78 0 1,1 156,0
-                  a 78,78 0 1,1 -156,0
-                "
-                fill="none"
+                d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
               />
             </defs>
 
             <text>
-              <textPath
-                href="#orbitPath"
-                startOffset="0%"
-              >
+              <textPath href="#orbitPath">
                 UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO •
               </textPath>
             </text>
-          </svg>
-
-          <svg
-            class="const-floater pen"
-            viewBox="0 0 100 100"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M15,80 C35,20 65,80 85,20"
-              stroke="var(--accent)"
-              stroke-width="2"
-              stroke-dasharray="3 3"
-            />
-
-            <line
-              x1="15"
-              y1="80"
-              x2="35"
-              y2="20"
-              stroke="var(--line-strong)"
-              stroke-width="1.5"
-            />
-
-            <circle
-              cx="35"
-              cy="20"
-              r="3.5"
-              fill="var(--bg)"
-              stroke="var(--accent)"
-              stroke-width="2"
-            />
           </svg>
 
           <div class="const-floater badge">
@@ -4573,17 +4351,7 @@
           </div>
 
           <div class="const-floater cursor">
-            <svg
-              width="11"
-              height="11"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-            </svg>
-
-            <span>Raquel • Design</span>
+            ➤ Raquel • Design
           </div>
 
           <div class="const-photo-frame">
@@ -4591,16 +4359,16 @@
               src="img/img-perfil/foto-perfil.jpeg"
               alt="Retrato de Raquel Renovato"
               class="js-lightbox-image"
-              tabindex="0"
-              role="button"
-              aria-haspopup="dialog"
-              aria-label="Ampliar retrato de Raquel Renovato"
             >
           </div>
+
         </div>
+
       </section>
 
-      <!-- PROJETOS -->
+      <!-- ===================================================
+           PROJETOS
+           =================================================== -->
 
       <div
         class="section-head"
@@ -4612,7 +4380,7 @@
       <div id="projects-container">
 
         <!-- =================================================
-             PROJETO 01 — FERNANDO
+             FERNANDO
              ================================================= -->
 
         <article
@@ -4621,6 +4389,7 @@
         >
 
           <div class="project-head">
+
             <span class="n mono">
               01 / 05 • UI DESIGN / FRONT-END • PRODUTO PUBLICADO
             </span>
@@ -4638,9 +4407,9 @@
 
             <div class="case-grid">
 
-              <div class="case-item">
+              <article class="case-item">
                 <span class="project-block-label">
-                  01 / contexto
+                  01 / CONTEXTO
                 </span>
 
                 <p>
@@ -4649,11 +4418,11 @@
                   uma estrutura extensa que precisava comunicar melhor a
                   especialização do profissional.
                 </p>
-              </div>
+              </article>
 
-              <div class="case-item">
+              <article class="case-item">
                 <span class="project-block-label">
-                  02 / desafio
+                  02 / DESAFIO
                 </span>
 
                 <p>
@@ -4662,11 +4431,11 @@
                   técnica, credibilidade ou informações importantes para a
                   tomada de decisão do cliente.
                 </p>
-              </div>
+              </article>
 
-              <div class="case-item">
+              <article class="case-item">
                 <span class="project-block-label">
-                  03 / meu papel
+                  03 / MEU PAPEL
                 </span>
 
                 <p>
@@ -4675,11 +4444,11 @@
                   componentes e variantes, responsividade, prototipagem e
                   implementação front-end da experiência publicada.
                 </p>
-              </div>
+              </article>
 
-              <div class="case-item">
+              <article class="case-item">
                 <span class="project-block-label">
-                  04 / resultado
+                  04 / RESULTADO
                 </span>
 
                 <p>
@@ -4688,7 +4457,7 @@
                   mobile, Light e Dark Mode, navegação mais clara e componentes
                   reutilizáveis.
                 </p>
-              </div>
+              </article>
 
             </div>
 
@@ -4701,18 +4470,14 @@
               <span>Front-end</span>
               <span>Produto publicado</span>
             </div>
+
           </div>
 
           <div class="fernando-case-shell">
 
-            <div
-              class="fernando-tabs"
-              role="tablist"
-              aria-label="Case Fernando Amaral"
-            >
+            <div class="fernando-tabs">
 
               <button
-                type="button"
                 class="fernando-tab active"
                 data-fernando-tab="case"
               >
@@ -4720,7 +4485,6 @@
               </button>
 
               <button
-                type="button"
                 class="fernando-tab"
                 data-fernando-tab="compare"
               >
@@ -4728,7 +4492,6 @@
               </button>
 
               <button
-                type="button"
                 class="fernando-tab"
                 data-fernando-tab="live"
               >
@@ -4736,7 +4499,6 @@
               </button>
 
               <button
-                type="button"
                 class="fernando-tab"
                 data-fernando-tab="system"
               >
@@ -4744,7 +4506,6 @@
               </button>
 
               <button
-                type="button"
                 class="fernando-tab"
                 data-fernando-tab="responsive"
               >
@@ -4752,7 +4513,6 @@
               </button>
 
               <button
-                type="button"
                 class="fernando-tab"
                 data-fernando-tab="prototype"
               >
@@ -4771,6 +4531,7 @@
               <div class="fernando-story">
 
                 <div class="fernando-story-copy">
+
                   <span>
                     CASE STUDY / UI DESIGN + FRONT-END
                   </span>
@@ -4788,8 +4549,8 @@
 
                   <div class="fernando-flow">
 
-                    <div class="fernando-flow-item">
-                      <span>01</span>
+                    <article class="fernando-flow-item">
+                      <span>01 /</span>
 
                       <div>
                         <strong>Posicionamento</strong>
@@ -4799,10 +4560,10 @@
                           ações prioritárias.
                         </p>
                       </div>
-                    </div>
+                    </article>
 
-                    <div class="fernando-flow-item">
-                      <span>02</span>
+                    <article class="fernando-flow-item">
+                      <span>02 /</span>
 
                       <div>
                         <strong>Serviços</strong>
@@ -4812,10 +4573,10 @@
                           navegável e responsivo.
                         </p>
                       </div>
-                    </div>
+                    </article>
 
-                    <div class="fernando-flow-item">
-                      <span>03</span>
+                    <article class="fernando-flow-item">
+                      <span>03 /</span>
 
                       <div>
                         <strong>Processo</strong>
@@ -4825,48 +4586,49 @@
                           uma sequência fácil de acompanhar.
                         </p>
                       </div>
-                    </div>
+                    </article>
 
-                    <div class="fernando-flow-item">
-                      <span>04</span>
+                    <article class="fernando-flow-item">
+                      <span>04 /</span>
 
                       <div>
                         <strong>Projetos</strong>
 
                         <p>
                           Cases estruturados por contexto, área, escopo e
-                          especialidades para facilitar a leitura do portfólio.
+                          especialidades.
                         </p>
                       </div>
-                    </div>
+                    </article>
 
-                    <div class="fernando-flow-item">
-                      <span>05</span>
+                    <article class="fernando-flow-item">
+                      <span>05 /</span>
 
                       <div>
                         <strong>Sistema responsivo</strong>
 
                         <p>
-                          Componentes com decisões próprias para desktop e
-                          mobile, em vez de apenas reduzir a interface.
+                          Decisões próprias para desktop e mobile, em vez de
+                          apenas reduzir a interface.
                         </p>
                       </div>
-                    </div>
+                    </article>
 
-                    <div class="fernando-flow-item">
-                      <span>06</span>
+                    <article class="fernando-flow-item">
+                      <span>06 /</span>
 
                       <div>
                         <strong>Implementação</strong>
 
                         <p>
-                          O produto foi desenvolvido em front-end, testado e
-                          publicado, conectando protótipo e experiência real.
+                          Produto desenvolvido em front-end, testado e
+                          publicado.
                         </p>
                       </div>
-                    </div>
+                    </article>
 
                   </div>
+
                 </div>
 
                 <div class="fa-browser">
@@ -4887,17 +4649,22 @@
                       class="fa-browser-link"
                       href="https://fernando-amaral.vercel.app/"
                       target="_blank"
-                      rel="noopener noreferrer"
                     >
                       LIVE ↗
                     </a>
+
                   </div>
+
+                  <!--
+                    ALTERADO:
+                    Antes estava alto demais.
+                    610px captura a dobra principal sem criar aquele vazio.
+                  -->
 
                   <div
                     class="fa-desktop-viewport"
-                    data-fa-desktop-height="900"
+                    data-fa-desktop-height="610"
                   >
-
                     <div class="fa-desktop-canvas">
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
@@ -4906,6 +4673,7 @@
                       ></iframe>
                     </div>
                   </div>
+
                 </div>
 
               </div>
@@ -4913,7 +4681,9 @@
               <div class="fernando-results">
 
                 <article class="fernando-result">
-                  <span>ENTREGA</span>
+                  <span>
+                    ENTREGA
+                  </span>
 
                   <strong>
                     Design + Front-end
@@ -4926,7 +4696,9 @@
                 </article>
 
                 <article class="fernando-result">
-                  <span>EXPERIÊNCIA</span>
+                  <span>
+                    EXPERIÊNCIA
+                  </span>
 
                   <strong>
                     Desktop + Mobile
@@ -4934,12 +4706,14 @@
 
                   <p>
                     Componentes e conteúdos se reorganizam conforme o espaço e
-                    contexto do dispositivo.
+                    contexto.
                   </p>
                 </article>
 
                 <article class="fernando-result">
-                  <span>SISTEMA</span>
+                  <span>
+                    SISTEMA
+                  </span>
 
                   <strong>
                     Design System aplicado
@@ -4947,7 +4721,7 @@
 
                   <p>
                     Cores, tipografia, componentes, estados e temas estruturam
-                    tanto o design quanto a implementação.
+                    design e implementação.
                   </p>
                 </article>
 
@@ -4955,7 +4729,7 @@
 
             </section>
 
-            <!-- ANTES / DEPOIS -->
+            <!-- BEFORE AFTER -->
 
             <section
               class="fernando-view"
@@ -4974,6 +4748,7 @@
                   <div class="fa-browser">
 
                     <div class="fa-browser-bar">
+
                       <div class="fa-browser-dots">
                         <i></i>
                         <i></i>
@@ -4988,26 +4763,27 @@
                         class="fa-browser-link"
                         href="https://fernando-amaral-website-web.vercel.app/"
                         target="_blank"
-                        rel="noopener noreferrer"
                       >
                         ABRIR ↗
                       </a>
+
                     </div>
 
                     <div
                       class="fa-desktop-viewport"
-                      data-fa-desktop-height="780"
+                      data-fa-desktop-height="610"
                     >
                       <div class="fa-desktop-canvas">
                         <iframe
                           src="https://fernando-amaral-website-web.vercel.app/"
-                          title="Versão anterior do site Fernando Amaral"
+                          title="Versão anterior Fernando Amaral"
                           loading="lazy"
                         ></iframe>
                       </div>
                     </div>
 
                   </div>
+
                 </article>
 
                 <article class="fa-compare-card">
@@ -5020,6 +4796,7 @@
                   <div class="fa-browser">
 
                     <div class="fa-browser-bar">
+
                       <div class="fa-browser-dots">
                         <i></i>
                         <i></i>
@@ -5034,33 +4811,34 @@
                         class="fa-browser-link"
                         href="https://fernando-amaral.vercel.app/"
                         target="_blank"
-                        rel="noopener noreferrer"
                       >
                         LIVE ↗
                       </a>
+
                     </div>
 
                     <div
                       class="fa-desktop-viewport"
-                      data-fa-desktop-height="780"
+                      data-fa-desktop-height="610"
                     >
                       <div class="fa-desktop-canvas">
                         <iframe
                           src="https://fernando-amaral.vercel.app/"
-                          title="Versão publicada do site Fernando Amaral"
+                          title="Site novo Fernando Amaral"
                           loading="lazy"
                         ></iframe>
                       </div>
                     </div>
 
                   </div>
+
                 </article>
 
               </div>
 
             </section>
 
-            <!-- SITE PUBLICADO -->
+            <!-- LIVE -->
 
             <section
               class="fernando-view"
@@ -5070,6 +4848,7 @@
               <div class="fa-browser">
 
                 <div class="fa-browser-bar">
+
                   <div class="fa-browser-dots">
                     <i></i>
                     <i></i>
@@ -5084,15 +4863,15 @@
                     class="fa-browser-link"
                     href="https://fernando-amaral.vercel.app/"
                     target="_blank"
-                    rel="noopener noreferrer"
                   >
                     ABRIR SITE ↗
                   </a>
+
                 </div>
 
                 <div
                   class="fa-desktop-viewport"
-                  data-fa-desktop-height="960"
+                  data-fa-desktop-height="720"
                 >
                   <div class="fa-desktop-canvas">
                     <iframe
@@ -5123,7 +4902,6 @@
                   </span>
 
                   <button
-                    type="button"
                     class="fa-system-btn active"
                     data-fa-system="foundation"
                   >
@@ -5131,15 +4909,13 @@
                   </button>
 
                   <button
-                    type="button"
                     class="fa-system-btn"
                     data-fa-system="buttons"
                   >
-                    Buttons &amp; states
+                    Buttons & states
                   </button>
 
                   <button
-                    type="button"
                     class="fa-system-btn"
                     data-fa-system="navigation"
                   >
@@ -5147,7 +4923,6 @@
                   </button>
 
                   <button
-                    type="button"
                     class="fa-system-btn"
                     data-fa-system="cards"
                   >
@@ -5155,7 +4930,6 @@
                   </button>
 
                   <button
-                    type="button"
                     class="fa-system-btn"
                     data-fa-system="forms"
                   >
@@ -5163,7 +4937,6 @@
                   </button>
 
                   <button
-                    type="button"
                     class="fa-system-btn"
                     data-fa-system="tokens"
                   >
@@ -5258,57 +5031,10 @@
 
                             <p>
                               Clareza, legibilidade e consistência para
-                              informações técnicas em diferentes dispositivos.
+                              informações técnicas.
                             </p>
                           </article>
 
-                        </div>
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Theme / Light</span>
-                          <span>Principal</span>
-                        </div>
-
-                        <div class="fa-theme-card fa-theme-card-light">
-                          <span class="fa-theme-mini-label">
-                            LIGHT MODE
-                          </span>
-
-                          <strong>
-                            Experiência padrão
-                          </strong>
-
-                          <p>
-                            Fundo claro, superfícies brancas, azul-marinho
-                            estrutural e dourado nas ações de destaque.
-                          </p>
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Theme / Dark</span>
-                          <span>Optional</span>
-                        </div>
-
-                        <div class="fa-theme-card fa-theme-card-dark">
-                          <span class="fa-theme-mini-label">
-                            DARK MODE
-                          </span>
-
-                          <strong>
-                            Preferência do usuário
-                          </strong>
-
-                          <p>
-                            Mantém os componentes e a hierarquia, sendo ativado
-                            apenas quando escolhido pelo usuário ou pelo sistema.
-                          </p>
                         </div>
 
                       </article>
@@ -5323,7 +5049,7 @@
                   >
 
                     <h4 class="fa-system-title">
-                      Buttons &amp; states
+                      Buttons & states
                     </h4>
 
                     <div class="fa-component-grid">
@@ -5331,26 +5057,20 @@
                       <article class="fa-component-box">
 
                         <div class="fa-component-label">
-                          <span>Primary CTA</span>
-                          <span>Interactive</span>
+                          <span>Primary</span>
+                          <span>Default</span>
                         </div>
 
-                        <div class="fa-button-demo-row">
-
-                          <button
-                            type="button"
-                            class="fa-primary-demo"
-                            id="faPrimaryDemo"
-                          >
-                            SOLICITAR ORÇAMENTO
-                          </button>
-
-                        </div>
+                        <button
+                          class="fa-primary-demo"
+                          id="faPrimaryDemo"
+                        >
+                          SOLICITAR ORÇAMENTO
+                        </button>
 
                         <div class="fa-state-controls">
 
                           <button
-                            type="button"
                             class="active"
                             data-fa-button-state="default"
                           >
@@ -5358,14 +5078,12 @@
                           </button>
 
                           <button
-                            type="button"
                             data-fa-button-state="hover"
                           >
                             Hover
                           </button>
 
                           <button
-                            type="button"
                             data-fa-button-state="disabled"
                           >
                             Disabled
@@ -5378,64 +5096,13 @@
                       <article class="fa-component-box">
 
                         <div class="fa-component-label">
-                          <span>Secondary CTA</span>
+                          <span>Secondary</span>
                           <span>Outline</span>
                         </div>
 
-                        <div class="fa-button-demo-row">
-                          <button
-                            type="button"
-                            class="fa-secondary-demo"
-                          >
-                            VER SERVIÇOS
-                          </button>
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Arrows</span>
-                          <span>Navigation</span>
-                        </div>
-
-                        <div class="fa-arrow-demo-row">
-
-                          <button
-                            type="button"
-                            class="fa-arrow-demo"
-                            aria-label="Anterior"
-                          >
-                            ←
-                          </button>
-
-                          <button
-                            type="button"
-                            class="fa-arrow-demo"
-                            aria-label="Próximo"
-                          >
-                            →
-                          </button>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Variants</span>
-                          <span>Component architecture</span>
-                        </div>
-
-                        <div class="fa-system-variant-list">
-                          <span>Default</span>
-                          <span>Hover</span>
-                          <span>Disabled</span>
-                          <span>Light</span>
-                          <span>Dark</span>
-                        </div>
+                        <button class="fa-secondary-demo">
+                          VER SERVIÇOS
+                        </button>
 
                       </article>
 
@@ -5452,101 +5119,27 @@
                       Navigation
                     </h4>
 
-                    <div class="fa-component-grid">
+                    <div class="fa-component-box">
 
-                      <article class="fa-component-box wide">
+                      <div class="fa-nav-preview">
 
-                        <div class="fa-component-label">
-                          <span>Header / Desktop</span>
-                          <span>Responsive</span>
+                        <strong>
+                          FERNANDO AMARAL
+                        </strong>
+
+                        <div class="fa-nav-preview-links">
+                          <span>Serviços</span>
+                          <span>Processo</span>
+                          <span>Portfólio</span>
+                          <span>Sobre</span>
+                          <span>Contato</span>
                         </div>
 
-                        <div class="fa-nav-preview">
+                        <button>
+                          SOLICITAR ORÇAMENTO
+                        </button>
 
-                          <strong>
-                            FERNANDO AMARAL
-                          </strong>
-
-                          <div class="fa-nav-preview-links">
-                            <span>Serviços</span>
-                            <span>Processo</span>
-                            <span>Portfólio</span>
-                            <span>Sobre</span>
-                            <span>Contato</span>
-                          </div>
-
-                          <button type="button">
-                            SOLICITAR ORÇAMENTO
-                          </button>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Header / Mobile</span>
-                          <span>Compact</span>
-                        </div>
-
-                        <div class="fa-mobile-nav-preview">
-
-                          <strong>
-                            FERNANDO AMARAL
-                          </strong>
-
-                          <button
-                            type="button"
-                            aria-label="Menu"
-                          >
-                            ☰
-                          </button>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Project filters</span>
-                          <span>Selected state</span>
-                        </div>
-
-                        <div class="fa-filter-row">
-
-                          <button
-                            type="button"
-                            class="fa-filter-demo active"
-                          >
-                            Todos
-                          </button>
-
-                          <button
-                            type="button"
-                            class="fa-filter-demo"
-                          >
-                            Residencial
-                          </button>
-
-                          <button
-                            type="button"
-                            class="fa-filter-demo"
-                          >
-                            Comercial
-                          </button>
-
-                          <button
-                            type="button"
-                            class="fa-filter-demo"
-                          >
-                            Educação
-                          </button>
-
-                        </div>
-
-                      </article>
+                      </div>
 
                     </div>
 
@@ -5565,11 +5158,6 @@
 
                       <article class="fa-component-box">
 
-                        <div class="fa-component-label">
-                          <span>Quality / Light</span>
-                          <span>Default</span>
-                        </div>
-
                         <div class="fa-quality-card">
 
                           <strong>
@@ -5577,9 +5165,8 @@
                           </strong>
 
                           <p>
-                            Projetos alinhados às normas técnicas,
-                            concessionárias e particularidades do
-                            empreendimento.
+                            Projetos alinhados às normas técnicas e
+                            particularidades do empreendimento.
                           </p>
 
                         </div>
@@ -5588,11 +5175,6 @@
 
                       <article class="fa-component-box">
 
-                        <div class="fa-component-label">
-                          <span>Quality / Dark</span>
-                          <span>Variant</span>
-                        </div>
-
                         <div class="fa-quality-card dark">
 
                           <strong>
@@ -5600,52 +5182,8 @@
                           </strong>
 
                           <p>
-                            Documentação organizada para orientar a equipe e
-                            reduzir interpretações durante a obra.
+                            Documentação organizada para orientar a equipe.
                           </p>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box wide">
-
-                        <div class="fa-component-label">
-                          <span>Project Card</span>
-                          <span>Portfolio</span>
-                        </div>
-
-                        <div class="fa-project-card-system">
-
-                          <div class="fa-project-card-system-media">
-                            <img
-                              src="img/img-fernando/Layout%20-%20Web.png"
-                              alt="Preview do projeto Fernando Amaral"
-                              loading="lazy"
-                            >
-                          </div>
-
-                          <div class="fa-project-card-system-copy">
-
-                            <div>
-                              <span>542,45m²</span>
-                              <span>Elétrico + VDI</span>
-                            </div>
-
-                            <strong>
-                              Residência Riviera de São Lourenço
-                            </strong>
-
-                            <small>
-                              Empreendimento Residencial • Bertioga, SP
-                            </small>
-
-                            <p>
-                              Planejamento e elaboração de infraestrutura
-                              elétrica e VDI para residência de alto padrão.
-                            </p>
-
-                          </div>
 
                         </div>
 
@@ -5664,150 +5202,51 @@
                       Forms
                     </h4>
 
-                    <div class="fa-component-grid">
+                    <div class="fa-component-box">
 
-                      <article class="fa-component-box wide">
+                      <div class="fa-form-system-demo">
 
-                        <div class="fa-component-label">
-                          <span>Quote form</span>
-                          <span>Responsive fields</span>
-                        </div>
+                        <div class="fa-form-system-row two">
 
-                        <div class="fa-form-system-demo">
-
-                          <div class="fa-form-system-row two">
-
-                            <label>
-                              <span>
-                                Nome completo
-                              </span>
-
-                              <input
-                                type="text"
-                                placeholder="Nome completo"
-                              >
-                            </label>
-
-                            <label>
-                              <span>
-                                E-mail ou WhatsApp
-                              </span>
-
-                              <input
-                                type="text"
-                                placeholder="E-mail ou WhatsApp"
-                              >
-                            </label>
-
-                          </div>
-
-                          <div class="fa-form-system-row three">
-
-                            <label>
-                              <span>
-                                Cidade / UF
-                              </span>
-
-                              <input
-                                type="text"
-                                placeholder="Cidade / UF"
-                              >
-                            </label>
-
-                            <label>
-                              <span>
-                                Tipo de projeto
-                              </span>
-
-                              <select>
-                                <option>Tipo de projeto</option>
-                                <option>Projeto Elétrico</option>
-                                <option>SPDA</option>
-                                <option>Subestação</option>
-                                <option>BIM</option>
-                              </select>
-                            </label>
-
-                            <label>
-                              <span>
-                                Área aproximada
-                              </span>
-
-                              <input
-                                type="text"
-                                placeholder="Área aproximada (m²)"
-                              >
-                            </label>
-
-                          </div>
-
-                          <label class="fa-form-system-message">
-                            <span>
-                              Necessidade técnica
-                            </span>
-
-                            <textarea
-                              placeholder="Descreva brevemente sua necessidade técnica..."
-                            ></textarea>
+                          <label>
+                            <span>Nome completo</span>
+                            <input placeholder="Nome completo">
                           </label>
 
-                          <div>
-                            <button
-                              type="button"
-                              class="fa-primary-demo"
-                            >
-                              ENVIAR SOLICITAÇÃO
-                            </button>
-                          </div>
+                          <label>
+                            <span>E-mail ou WhatsApp</span>
+                            <input placeholder="E-mail ou WhatsApp">
+                          </label>
 
                         </div>
 
-                      </article>
+                        <div class="fa-form-system-row three">
 
-                      <article class="fa-component-box">
+                          <label>
+                            <span>Cidade / UF</span>
+                            <input placeholder="Cidade / UF">
+                          </label>
 
-                        <div class="fa-component-label">
-                          <span>Input / Default</span>
-                          <span>State</span>
-                        </div>
+                          <label>
+                            <span>Tipo de projeto</span>
 
-                        <div class="fa-input-state-demo">
+                            <select>
+                              <option>Tipo de projeto</option>
+                              <option>Projeto Elétrico</option>
+                              <option>SPDA</option>
+                              <option>Subestação</option>
+                              <option>BIM</option>
+                            </select>
+                          </label>
 
-                          <input
-                            type="text"
-                            placeholder="Nome completo"
-                          >
-
-                          <small>
-                            Default
-                          </small>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Input / Focus</span>
-                          <span>State</span>
-                        </div>
-
-                        <div class="fa-input-state-demo focus">
-
-                          <input
-                            type="text"
-                            value="450m²"
-                            aria-label="Exemplo de input em foco"
-                          >
-
-                          <small>
-                            Focus / Accent
-                          </small>
+                          <label>
+                            <span>Área</span>
+                            <input placeholder="Área aproximada">
+                          </label>
 
                         </div>
 
-                      </article>
+                      </div>
 
                     </div>
 
@@ -5822,121 +5261,32 @@
                       Tokens
                     </h4>
 
-                    <div class="fa-component-grid">
+                    <div class="fa-system-token-grid">
 
-                      <article class="fa-component-box wide">
+                      <div>
+                        <strong>8px</strong>
+                        <span>Radius base</span>
+                      </div>
 
-                        <div class="fa-component-label">
-                          <span>Spacing &amp; sizing</span>
-                          <span>Foundation</span>
-                        </div>
+                      <div>
+                        <strong>100px</strong>
+                        <span>Desktop gutter</span>
+                      </div>
 
-                        <div class="fa-system-token-grid">
+                      <div>
+                        <strong>22px</strong>
+                        <span>Mobile gutter</span>
+                      </div>
 
-                          <div>
-                            <strong>8px</strong>
-                            <span>Radius base</span>
-                          </div>
+                      <div>
+                        <strong>1440px</strong>
+                        <span>Desktop</span>
+                      </div>
 
-                          <div>
-                            <strong>100px</strong>
-                            <span>Desktop gutter</span>
-                          </div>
-
-                          <div>
-                            <strong>22px</strong>
-                            <span>Mobile gutter</span>
-                          </div>
-
-                          <div>
-                            <strong>78px</strong>
-                            <span>Header height</span>
-                          </div>
-
-                          <div>
-                            <strong>1440px</strong>
-                            <span>Desktop reference</span>
-                          </div>
-
-                          <div>
-                            <strong>390px</strong>
-                            <span>Mobile reference</span>
-                          </div>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box wide">
-
-                        <div class="fa-component-label">
-                          <span>Semantic colors</span>
-                          <span>CSS tokens</span>
-                        </div>
-
-                        <div class="fa-system-code-list">
-
-                          <div>
-                            <code>--primary</code>
-                            <span>#00152A</span>
-                          </div>
-
-                          <div>
-                            <code>--secondary</code>
-                            <span>#B8860B</span>
-                          </div>
-
-                          <div>
-                            <code>--slate</code>
-                            <span>#64748B</span>
-                          </div>
-
-                          <div>
-                            <code>--background</code>
-                            <span>#F4F6F8</span>
-                          </div>
-
-                          <div>
-                            <code>--surface</code>
-                            <span>#FFFFFF</span>
-                          </div>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box wide">
-
-                        <div class="fa-component-label">
-                          <span>Architecture</span>
-                          <span>Content hierarchy</span>
-                        </div>
-
-                        <div class="fa-pattern-grid">
-
-                          <div class="fa-pattern-item">
-                            <strong>01</strong>
-                            <span>Hero / posicionamento</span>
-                          </div>
-
-                          <div class="fa-pattern-item">
-                            <strong>02</strong>
-                            <span>Serviços / capacidade</span>
-                          </div>
-
-                          <div class="fa-pattern-item">
-                            <strong>03</strong>
-                            <span>Processo / método</span>
-                          </div>
-
-                          <div class="fa-pattern-item">
-                            <strong>04</strong>
-                            <span>Projetos / evidência</span>
-                          </div>
-
-                        </div>
-
-                      </article>
+                      <div>
+                        <strong>390px</strong>
+                        <span>Mobile</span>
+                      </div>
 
                     </div>
 
@@ -5971,21 +5321,16 @@
                       DESKTOP / 1440
                     </div>
 
-                    <span class="fa-browser-link">
-                      LIVE
-                    </span>
-
                   </div>
 
                   <div
                     class="fa-desktop-viewport"
-                    data-fa-desktop-height="760"
+                    data-fa-desktop-height="640"
                   >
                     <div class="fa-desktop-canvas">
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
                         title="Fernando Amaral desktop"
-                        loading="lazy"
                       ></iframe>
                     </div>
                   </div>
@@ -6002,7 +5347,6 @@
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
                         title="Fernando Amaral mobile"
-                        loading="lazy"
                       ></iframe>
                     </div>
 
@@ -6019,6 +5363,7 @@
               <div class="fa-responsive-notes">
 
                 <article class="fa-responsive-note">
+
                   <span>
                     01 / TYPOGRAPHY
                   </span>
@@ -6031,9 +5376,11 @@
                     Tipografia responde ao tamanho do dispositivo sem
                     comprometer hierarquia.
                   </p>
+
                 </article>
 
                 <article class="fa-responsive-note">
+
                   <span>
                     02 / CONTENT
                   </span>
@@ -6043,12 +5390,13 @@
                   </h4>
 
                   <p>
-                    Desktop e mobile mantêm a mesma ordem de importância das
-                    informações.
+                    Desktop e mobile mantêm a mesma ordem de importância.
                   </p>
+
                 </article>
 
                 <article class="fa-responsive-note">
+
                   <span>
                     03 / COMPONENTS
                   </span>
@@ -6058,16 +5406,16 @@
                   </h4>
 
                   <p>
-                    Alguns componentes mudam composição quando a tela deixa de
-                    comportar a estrutura desktop.
+                    Componentes mudam composição quando necessário.
                   </p>
+
                 </article>
 
               </div>
 
             </section>
 
-            <!-- PROTÓTIPO -->
+            <!-- PROTOTIPO -->
 
             <section
               class="fernando-view"
@@ -6079,19 +5427,13 @@
                 <div class="fa-figma-head">
 
                   <div>
-                    <span>
-                      PROTOTYPE
-                    </span>
-
-                    <strong>
-                      Fernando Amaral
-                    </strong>
+                    <span>PROTOTYPE</span>
+                    <strong>Fernando Amaral</strong>
                   </div>
 
                   <a
-                    href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=GvyvZBX7e4nj5iXq-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912"
+                    href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
                     target="_blank"
-                    rel="noopener noreferrer"
                   >
                     abrir no Figma ↗
                   </a>
@@ -6102,9 +5444,7 @@
 
                   <iframe
                     src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
-                    title="Protótipo Fernando Amaral"
                     allowfullscreen
-                    loading="lazy"
                   ></iframe>
 
                 </div>
@@ -6117,7 +5457,9 @@
 
         </article>
 
-        <!-- PROJETO 02 -->
+        <!-- =================================================
+             VOIT
+             ================================================= -->
 
         <article class="project-block from-right">
 
@@ -6140,51 +5482,55 @@
             <div class="case-grid">
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   01 / desafio
                 </span>
 
                 <p>
-                  Manter consistência de marca e qualidade de comunicação em uma
-                  operação que envolve diferentes públicos, formatos, temas e
-                  áreas de especialidade.
+                  Manter consistência de marca e qualidade de comunicação em
+                  diferentes públicos, formatos e temas.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
 
                 <p>
-                  Atuação em social media, copywriting, apresentações
-                  comerciais, materiais técnicos, endomarketing e
-                  desenvolvimento visual ponta a ponta.
+                  Social media, copywriting, apresentações comerciais,
+                  materiais técnicos e endomarketing.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   03 / processo
                 </span>
 
                 <p>
-                  Planejamento junto à gerência, pesquisa de pautas,
-                  desenvolvimento para múltiplos canais e validação dos
-                  conteúdos técnicos com especialistas.
+                  Planejamento junto à gerência, pesquisa de pautas e
+                  desenvolvimento para múltiplos canais.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   04 / escopo
                 </span>
 
                 <p>
-                  Produção multicanal envolvendo redes sociais, artigos
-                  aprofundados, apresentações comerciais, comunicação interna e
-                  materiais específicos para diferentes setores.
+                  Redes sociais, artigos, apresentações, comunicação interna e
+                  materiais específicos.
                 </p>
+
               </div>
 
             </div>
@@ -6202,96 +5548,48 @@
           <div class="project-full-link-row">
 
             <button
-              type="button"
               class="strip-full-link"
               id="openVoitDrawer"
-              aria-haspopup="dialog"
-              aria-controls="voitDrawer"
             >
               Ver método e processo completo ↗
             </button>
 
           </div>
 
-          <div
-            class="voit-panel active"
-            id="voit-panel-social"
-          >
+          <div class="voit-panel active">
 
-            <div
-              class="strip voit-strip"
-              aria-label="Galeria da Voit Consultoria"
-            >
+            <div class="strip voit-strip">
 
               <div class="strip-item voit-card">
-
                 <img
                   src="img/img-voit/voit-01.jpeg"
-                  alt="Voit Consultoria — carrossel 01"
                   class="js-lightbox-image"
-                  tabindex="0"
-                  role="button"
-                  aria-haspopup="dialog"
+                  alt="Voit 01"
                 >
-
-                <div class="voit-caption">
-                  Carrossel 01 — Visualização completa
-                </div>
-
               </div>
 
               <div class="strip-item voit-card">
-
                 <img
                   src="img/img-voit/voit-02.jpeg"
-                  alt="Voit Consultoria — carrossel 02"
                   class="js-lightbox-image"
-                  loading="lazy"
-                  tabindex="0"
-                  role="button"
-                  aria-haspopup="dialog"
+                  alt="Voit 02"
                 >
-
-                <div class="voit-caption">
-                  Carrossel 02 — Visualização completa
-                </div>
-
               </div>
 
               <div class="strip-item voit-card">
-
                 <img
                   src="img/img-voit/voit-03.jpeg"
-                  alt="Voit Consultoria — carrossel 03"
                   class="js-lightbox-image"
-                  loading="lazy"
-                  tabindex="0"
-                  role="button"
-                  aria-haspopup="dialog"
+                  alt="Voit 03"
                 >
-
-                <div class="voit-caption">
-                  Carrossel 03 — Visualização completa
-                </div>
-
               </div>
 
               <div class="strip-item voit-card">
-
                 <img
                   src="img/img-voit/voit-04.jpeg"
-                  alt="Voit Consultoria — carrossel 04"
                   class="js-lightbox-image"
-                  loading="lazy"
-                  tabindex="0"
-                  role="button"
-                  aria-haspopup="dialog"
+                  alt="Voit 04"
                 >
-
-                <div class="voit-caption">
-                  Carrossel 04 — Visualização completa
-                </div>
-
               </div>
 
             </div>
@@ -6301,30 +5599,17 @@
           <div class="strip-nav">
 
             <div class="strip-nav-arrows">
-
-              <button
-                type="button"
-                class="strip-btn prev"
-                aria-label="Ver carrosséis anteriores da Voit"
-              >
-                ←
-              </button>
-
-              <button
-                type="button"
-                class="strip-btn next"
-                aria-label="Ver próximos carrosséis da Voit"
-              >
-                →
-              </button>
-
+              <button class="strip-btn prev">←</button>
+              <button class="strip-btn next">→</button>
             </div>
 
           </div>
 
         </article>
 
-        <!-- PROJETO 03 -->
+        <!-- =================================================
+             RENATA
+             ================================================= -->
 
         <article class="project-block from-left">
 
@@ -6344,56 +5629,6 @@
               slides.
             </p>
 
-            <div class="case-grid">
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  01 / contexto
-                </span>
-
-                <p>
-                  Renata atua com vendas de alta performance, gestão comercial e
-                  consultoria, exigindo materiais capazes de organizar conteúdos
-                  densos de forma profissional.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  02 / meu papel
-                </span>
-
-                <p>
-                  Criação de treinamentos, apresentações e propostas comerciais,
-                  atuando da organização do conteúdo ao design final dos slides.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  03 / foco
-                </span>
-
-                <p>
-                  Hierarquia de informação, legibilidade, consistência entre
-                  páginas e construção de ritmo visual para apoiar a
-                  apresentação dos conteúdos.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  04 / entrega
-                </span>
-
-                <p>
-                  Materiais editáveis e reutilizáveis no Canva, preparados para
-                  apresentações, treinamentos e comunicação comercial.
-                </p>
-              </div>
-
-            </div>
-
             <div class="project-proof">
               <span>Canva</span>
               <span>Apresentações</span>
@@ -6403,43 +5638,29 @@
 
           </div>
 
-          <div
-            class="strip"
-            aria-label="Galeria do projeto Renata Brandão"
-          >
+          <div class="strip">
 
             <div class="strip-item widescreen">
               <img
                 src="img/img-renata/renata-01.jpg"
-                alt="Renata Brandão — slide de capa"
                 class="js-lightbox-image"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Renata 01"
               >
             </div>
 
             <div class="strip-item widescreen">
               <img
                 src="img/img-renata/renata-02.jpg"
-                alt="Renata Brandão — slide da apresentação"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Renata 02"
               >
             </div>
 
             <div class="strip-item widescreen">
               <img
                 src="img/img-renata/renata-03.jpg"
-                alt="Renata Brandão — slide da apresentação"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Renata 03"
               >
             </div>
 
@@ -6448,39 +5669,17 @@
           <div class="strip-nav">
 
             <div class="strip-nav-arrows">
-
-              <button
-                type="button"
-                class="strip-btn prev"
-                aria-label="Ver slides anteriores de Renata Brandão"
-              >
-                ←
-              </button>
-
-              <button
-                type="button"
-                class="strip-btn next"
-                aria-label="Ver próximos slides de Renata Brandão"
-              >
-                →
-              </button>
-
+              <button class="strip-btn prev">←</button>
+              <button class="strip-btn next">→</button>
             </div>
-
-            <a
-              class="strip-full-link"
-              href="https://canva.link/w874gu7mhg7053v"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver conteúdo completo ↗
-            </a>
 
           </div>
 
         </article>
 
-        <!-- PROJETO 04 -->
+        <!-- =================================================
+             BRADUCA
+             ================================================= -->
 
         <article class="project-block from-right">
 
@@ -6496,58 +5695,8 @@
 
             <p class="project-summary">
               Comunicação visual para uma iniciativa educacional que oferece
-              mentorias de inglês e testes de proficiência a estudantes da rede
-              pública.
+              mentorias de inglês e testes de proficiência.
             </p>
-
-            <div class="case-grid">
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  01 / contexto
-                </span>
-
-                <p>
-                  A Braduca utiliza as redes sociais para comunicar sua missão,
-                  oportunidades e conteúdos voltados ao acesso ao idioma inglês.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  02 / meu papel
-                </span>
-
-                <p>
-                  Criação e diagramação de posts para redes sociais, respeitando
-                  a identidade visual e mantendo consistência entre as
-                  publicações.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  03 / foco
-                </span>
-
-                <p>
-                  Organização da informação, legibilidade em formatos digitais e
-                  adaptação das mensagens à linguagem visual da marca.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  04 / entrega
-                </span>
-
-                <p>
-                  Conjunto de peças para social media com aplicação consistente
-                  de identidade, tipografia, cor e hierarquia.
-                </p>
-              </div>
-
-            </div>
 
             <div class="project-proof">
               <span>Social Media</span>
@@ -6557,123 +5706,78 @@
 
           </div>
 
-          <div
-            class="strip"
-            aria-label="Galeria Somos Braduca"
-          >
+          <div class="strip">
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/img-braduca/braduca-01.jpeg"
-                alt="Somos Braduca — post 01"
                 class="js-lightbox-image"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Braduca 01"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/img-braduca/braduca-02.jpeg"
-                alt="Somos Braduca — post 02"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Braduca 02"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/img-braduca/braduca-03.jpeg"
-                alt="Somos Braduca — post 03"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Braduca 03"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/img-braduca/braduca-04.jpeg"
-                alt="Somos Braduca — post 04"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Braduca 04"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/img-braduca/braduca-05.jpeg"
-                alt="Somos Braduca — post 05"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Braduca 05"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/img-braduca/braduca-06.jpeg"
-                alt="Somos Braduca — post 06"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Braduca 06"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/img-braduca/braduca-07.jpeg"
-                alt="Somos Braduca — post 07"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Braduca 07"
               >
             </div>
 
           </div>
 
           <div class="strip-nav">
-
             <div class="strip-nav-arrows">
-
-              <button
-                type="button"
-                class="strip-btn prev"
-                aria-label="Ver posts anteriores da Braduca"
-              >
-                ←
-              </button>
-
-              <button
-                type="button"
-                class="strip-btn next"
-                aria-label="Ver próximos posts da Braduca"
-              >
-                →
-              </button>
-
+              <button class="strip-btn prev">←</button>
+              <button class="strip-btn next">→</button>
             </div>
-
           </div>
 
         </article>
 
-        <!-- PROJETO 05 -->
+        <!-- =================================================
+             AYMEE
+             ================================================= -->
 
         <article class="project-block from-left">
 
@@ -6692,56 +5796,6 @@
               especialista em CS/CX, Felicidade Corporativa e gestão.
             </p>
 
-            <div class="case-grid">
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  01 / contexto
-                </span>
-
-                <p>
-                  Aymée atua como palestrante e consultora, compartilhando
-                  conteúdos ligados a experiência do cliente, gestão e
-                  desenvolvimento de equipes.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  02 / meu papel
-                </span>
-
-                <p>
-                  Criação e diagramação de posts para redes sociais, mantendo
-                  unidade visual e consistência entre diferentes pautas.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  03 / foco
-                </span>
-
-                <p>
-                  Transformar conteúdos profissionais em peças de leitura clara,
-                  com hierarquia, ritmo visual e aplicação consistente da
-                  identidade.
-                </p>
-              </div>
-
-              <div class="case-item">
-                <span class="project-block-label">
-                  04 / entrega
-                </span>
-
-                <p>
-                  Sistema de publicações para social media adaptado à comunicação
-                  de uma marca pessoal profissional.
-                </p>
-              </div>
-
-            </div>
-
             <div class="project-proof">
               <span>Social Media</span>
               <span>Design Gráfico</span>
@@ -6750,161 +5804,104 @@
 
           </div>
 
-          <div
-            class="strip"
-            aria-label="Galeria Aymée Ferraz"
-          >
+          <div class="strip">
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-01.jpeg"
-                alt="Aymée Ferraz — post 01"
                 class="js-lightbox-image"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 01"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-02.jpeg"
-                alt="Aymée Ferraz — post 02"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 02"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-03.jpeg"
-                alt="Aymée Ferraz — post 03"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 03"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-04.jpeg"
-                alt="Aymée Ferraz — post 04"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 04"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-05.jpeg"
-                alt="Aymée Ferraz — post 05"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 05"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-06.jpeg"
-                alt="Aymée Ferraz — post 06"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 06"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-07.jpeg"
-                alt="Aymée Ferraz — post 07"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 07"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-08.jpeg"
-                alt="Aymée Ferraz — post 08"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 08"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-09.jpeg"
-                alt="Aymée Ferraz — post 09"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 09"
               >
             </div>
 
             <div class="strip-item ig-ratio">
               <img
                 src="img/Aymee-img/img-10.jpeg"
-                alt="Aymée Ferraz — post 10"
                 class="js-lightbox-image"
-                loading="lazy"
-                tabindex="0"
-                role="button"
-                aria-haspopup="dialog"
+                alt="Aymée 10"
               >
             </div>
 
           </div>
 
           <div class="strip-nav">
-
             <div class="strip-nav-arrows">
-
-              <button
-                type="button"
-                class="strip-btn prev"
-                aria-label="Ver posts anteriores de Aymée Ferraz"
-              >
-                ←
-              </button>
-
-              <button
-                type="button"
-                class="strip-btn next"
-                aria-label="Ver próximos posts de Aymée Ferraz"
-              >
-                →
-              </button>
-
+              <button class="strip-btn prev">←</button>
+              <button class="strip-btn next">→</button>
             </div>
-
           </div>
 
         </article>
 
       </div>
 
-      <!-- HABILIDADES -->
+      <!-- ===================================================
+           SKILLS
+           =================================================== -->
 
       <div
         class="section-head centered"
@@ -6920,62 +5917,48 @@
         <div class="skill-grid">
 
           <article class="skill-item">
-
-            <h3>
-              UI Design
-            </h3>
+            <h3>UI Design</h3>
 
             <p>
               Figma, prototipagem interativa, arquitetura de informação,
               componentes e layouts responsivos.
             </p>
-
           </article>
 
           <article class="skill-item">
-
-            <h3>
-              Gráfico & Editorial
-            </h3>
+            <h3>Gráfico & Editorial</h3>
 
             <p>
               Photoshop, Illustrator, InDesign, After Effects, Canva e
               diagramação de materiais visuais.
             </p>
-
           </article>
 
           <article class="skill-item">
-
-            <h3>
-              Conteúdo & Comunicação
-            </h3>
+            <h3>Conteúdo & Comunicação</h3>
 
             <p>
-              Social media, copywriting, Meta Business, apresentações,
-              endomarketing e comunicação multicanal.
+              Social media, copywriting, Meta Business, apresentações e
+              comunicação multicanal.
             </p>
-
           </article>
 
           <article class="skill-item">
-
-            <h3>
-              IA & Produtividade
-            </h3>
+            <h3>IA & Produtividade</h3>
 
             <p>
-              Uso de IA generativa no workflow para exploração, produtividade,
-              estruturação e refinamento de conteúdo.
+              IA generativa para exploração, produtividade, estruturação e
+              refinamento.
             </p>
-
           </article>
 
         </div>
 
       </section>
 
-      <!-- CONTATO -->
+      <!-- ===================================================
+           CONTATO
+           =================================================== -->
 
       <section
         class="cta-band"
@@ -7001,7 +5984,6 @@
             class="primary"
             href="https://wa.me/5562985666229"
             target="_blank"
-            rel="noopener noreferrer"
           >
             Falar no WhatsApp
           </a>
@@ -7017,7 +5999,6 @@
             class="secondary"
             href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
             target="_blank"
-            rel="noopener noreferrer"
           >
             LinkedIn ↗
           </a>
@@ -7038,59 +6019,42 @@
         <a href="mailto:raquel.renovato.design@gmail.com">
           raquel.renovato.design@gmail.com
         </a>
-
-        ·
-
-        <a
-          href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
       </span>
 
     </footer>
 
   </div>
 
-  <!-- DRAWER VOIT -->
+  <!-- =======================================================
+       DRAWER
+       ======================================================= -->
 
   <div
     id="drawerOverlay"
     class="drawer-overlay"
-    aria-hidden="true"
   ></div>
 
   <aside
     id="voitDrawer"
     class="side-drawer"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="voitDrawerTitle"
-    aria-hidden="true"
   >
 
-    <button
-      type="button"
-      class="drawer-close-btn js-close-drawer"
-    >
+    <button class="drawer-close-btn js-close-drawer">
       ← Fechar janela
     </button>
 
     <div class="drawer-header">
 
       <span class="mono">
-        Método e Processo • 02 / Voit Consultoria
+        Método e Processo • Voit Consultoria
       </span>
 
-      <h2 id="voitDrawerTitle">
-        Metodologia de Execução: Do Planejamento à Entrega
+      <h2>
+        Metodologia de Execução
       </h2>
 
       <p>
-        O passo a passo aplicado no dia a dia para garantir coesão de marca,
-        rigor técnico e agilidade em múltiplos setores.
+        Do planejamento à entrega.
       </p>
 
     </div>
@@ -7098,13 +6062,11 @@
     <section class="drawer-section">
 
       <h3>
-        01. Alinhamento Estratégico Mensal
+        01. Alinhamento Estratégico
       </h3>
 
       <p>
-        O método começa com reuniões de planejamento junto à gerência. Nessa
-        etapa, são definidos macrotemas, editoriais e objetivos estratégicos que
-        guiam a comunicação do período.
+        Planejamento junto à gerência, definição de temas e objetivos.
       </p>
 
     </section>
@@ -7112,54 +6074,11 @@
     <section class="drawer-section">
 
       <h3>
-        02. Pesquisa de Tendências & Produção Multicanal
+        02. Pesquisa & Produção
       </h3>
 
       <p>
-        Antes da criação, realizo pesquisa de referências e temas para
-        estruturar a produção em diferentes canais.
-      </p>
-
-      <div class="drawer-grid-2">
-
-        <div class="drawer-card-info">
-
-          <strong>
-            Redes Sociais & Carrosséis
-          </strong>
-
-          <span>
-            Artes visuais e copys/legendas para Instagram e LinkedIn.
-          </span>
-
-        </div>
-
-        <div class="drawer-card-info">
-
-          <strong>
-            Artigos de Blog
-          </strong>
-
-          <span>
-            Conteúdos aprofundados e técnicos de até 2.500 palavras.
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="drawer-section">
-
-      <h3>
-        03. Validação Técnica & Flexibilidade de Pauta
-      </h3>
-
-      <p>
-        Os conteúdos passam por validação dos especialistas responsáveis pelas
-        áreas para garantir precisão conceitual. Quando necessário, as pautas
-        são ajustadas antes do agendamento no Meta Business Suite e LinkedIn.
+        Pesquisa de referências e desenvolvimento multicanal.
       </p>
 
     </section>
@@ -7167,175 +6086,84 @@
     <section class="drawer-section">
 
       <h3>
-        04. Comercial, Projetos Setoriais & Endomarketing
+        03. Validação
       </h3>
 
       <p>
-        A atuação também inclui transformação de dados e rascunhos em
-        apresentações comerciais, produção de materiais técnicos sob medida e
-        planejamento de ações internas de endomarketing.
+        Validação técnica com especialistas antes da publicação.
       </p>
 
-      <div class="drawer-grid-2">
-
-        <div class="drawer-card-info">
-
-          <strong>
-            Apoio Comercial
-          </strong>
-
-          <span>
-            Organização visual de dados, anotações e materiais para
-            apresentações destinadas a leads.
-          </span>
-
-        </div>
-
-        <div class="drawer-card-info">
-
-          <strong>
-            Materiais Setoriais
-          </strong>
-
-          <span>
-            Desenvolvimento e diagramação de materiais personalizados em
-            Illustrator ou Canva.
-          </span>
-
-        </div>
-
-      </div>
-
     </section>
-
-    <button
-      type="button"
-      class="drawer-close-btn js-close-drawer"
-    >
-      ← Fechar janela
-    </button>
 
   </aside>
 
-  <!-- MODAL -->
+  <!-- =======================================================
+       MODAL
+       ======================================================= -->
 
   <div
     id="imgModal"
     class="img-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="imgModalTitle"
-    aria-hidden="true"
   >
 
-    <h2
-      id="imgModalTitle"
-      class="sr-only"
-    >
-      Visualização ampliada do projeto
-    </h2>
-
     <button
-      type="button"
-      class="img-modal-close"
       id="imgModalClose"
-      aria-label="Fechar imagem ampliada"
+      class="img-modal-close"
     >
       ×
     </button>
 
     <img
-      class="img-modal-content"
       id="imgModalTarget"
+      class="img-modal-content"
       alt=""
     >
 
   </div>
 
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
   <script>
     (() => {
       "use strict";
 
-      const $ = (
-        selector,
-        context = document
-      ) =>
+      const $ = (selector, context = document) =>
         context.querySelector(selector);
 
-      const $$ = (
-        selector,
-        context = document
-      ) =>
+      const $$ = (selector, context = document) =>
         [...context.querySelectorAll(selector)];
 
-      const reducedMotion =
-        window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        );
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
 
-      let modalTrigger = null;
-      let drawerTrigger = null;
+      /* =====================================================
+         INTRO
+         ===================================================== */
 
-      function syncBodyLock() {
-        const modalOpen =
-          $("#imgModal")
-            ?.getAttribute("aria-hidden") ===
-          "false";
+      const introOverlay = $("#intro-overlay");
+      const introWordCycle = $("#introWordCycle");
+      const introWords = $$("#introWordCycle .w");
+      const siteContent = $("#site-content");
 
-        const drawerOpen =
-          $("#voitDrawer")
-            ?.getAttribute("aria-hidden") ===
-          "false";
-
-        document.body.classList.toggle(
-          "locked",
-          modalOpen || drawerOpen
-        );
-      }
-
-      /* INTRO */
-
-      const introOverlay =
-        $("#intro-overlay");
-
-      const introWordCycle =
-        $("#introWordCycle");
-
-      const introWords =
-        $$("#introWordCycle .w");
-
-      const siteContent =
-        $("#site-content");
-
-      let introFinished =
-        false;
-
-      const introTimers =
-        [];
+      let introFinished = false;
 
       function sizeIntroWords() {
-        if (
-          !introWordCycle ||
-          !introWords.length
-        ) {
-          return;
+        let width = 0;
+
+        introWords.forEach(word => {
+          width = Math.max(
+            width,
+            word.getBoundingClientRect().width
+          );
+        });
+
+        if (introWordCycle) {
+          introWordCycle.style.width =
+            `${Math.ceil(width) + 8}px`;
         }
-
-        let maxWidth =
-          0;
-
-        introWords.forEach(
-          word => {
-            maxWidth =
-              Math.max(
-                maxWidth,
-                word.getBoundingClientRect().width
-              );
-          }
-        );
-
-        introWordCycle.style.width =
-          `${Math.ceil(maxWidth) + 6}px`;
       }
 
       function finishIntro() {
@@ -7343,38 +6171,20 @@
           return;
         }
 
-        introFinished =
-          true;
+        introFinished = true;
 
-        introTimers.forEach(
-          timer => {
-            window.clearTimeout(timer);
+        introOverlay?.classList.add("expand");
+        siteContent?.classList.add("visible");
+
+        document.body.classList.remove(
+          "intro-active"
+        );
+
+        setTimeout(() => {
+          if (introOverlay) {
+            introOverlay.style.display = "none";
           }
-        );
-
-        introOverlay
-          ?.classList
-          .add("expand");
-
-        siteContent
-          ?.classList
-          .add("visible");
-
-        document.body
-          .classList
-          .remove("intro-active");
-
-        window.setTimeout(
-          () => {
-            if (introOverlay) {
-              introOverlay.style.display =
-                "none";
-            }
-          },
-          reducedMotion.matches
-            ? 0
-            : 350
-        );
+        }, 400);
       }
 
       function startIntro() {
@@ -7382,1052 +6192,286 @@
 
         if (
           reducedMotion.matches ||
-          !introOverlay ||
-          !introWords.length
+          introWords.length < 3
         ) {
           finishIntro();
           return;
         }
 
-        introWords[0]
-          .classList
-          .add("active");
+        introWords[0].classList.add("active");
 
-        introTimers.push(
-          window.setTimeout(
-            () => {
-              introWords[0]
-                .classList
-                .remove("active");
+        setTimeout(() => {
+          introWords[0].classList.remove("active");
+          introWords[0].classList.add("exit");
+          introWords[1].classList.add("active");
+        }, 300);
 
-              introWords[0]
-                .classList
-                .add("exit");
+        setTimeout(() => {
+          introWords[1].classList.remove("active");
+          introWords[1].classList.add("exit");
+          introWords[2].classList.add("active");
+        }, 650);
 
-              introWords[1]
-                ?.classList
-                .add("active");
-            },
-            200
-          )
-        );
-
-        introTimers.push(
-          window.setTimeout(
-            () => {
-              introWords[1]
-                ?.classList
-                .remove("active");
-
-              introWords[1]
-                ?.classList
-                .add("exit");
-
-              introWords[2]
-                ?.classList
-                .add("active");
-            },
-            400
-          )
-        );
-
-        introTimers.push(
-          window.setTimeout(
-            finishIntro,
-            700
-          )
+        setTimeout(
+          finishIntro,
+          1050
         );
       }
 
-      window.addEventListener(
-        "resize",
-        sizeIntroWords
-      );
-
-      document.fonts
-        ?.ready
-        ?.then(sizeIntroWords)
-        .catch(() => {});
-
-      reducedMotion
-        .addEventListener
-        ?.(
-          "change",
-          event => {
-            if (event.matches) {
-              finishIntro();
-            }
-          }
-        );
+      document.fonts?.ready
+        ?.then(sizeIntroWords);
 
       startIntro();
 
-      /* TOPO */
+      /* =====================================================
+         THEME
+         ===================================================== */
 
-      $("#logoHome")
-        ?.addEventListener(
-          "click",
-          event => {
-            event.preventDefault();
+      const themeToggle = $("#themeToggle");
+      const themeLabel = $("#themeLabel");
 
-            window.scrollTo({
-              top: 0,
-              behavior:
-                reducedMotion.matches
-                  ? "auto"
-                  : "smooth"
-            });
-          }
-        );
+      themeToggle?.addEventListener(
+        "click",
+        () => {
+          const dark =
+            document.documentElement
+              .getAttribute("data-theme") === "dark";
 
-      /* TEMA */
-
-      const themeToggle =
-        $("#themeToggle");
-
-      const themeLabel =
-        $("#themeLabel");
-
-      function updateThemeButton(
-        isDark
-      ) {
-        if (
-          !themeToggle ||
-          !themeLabel
-        ) {
-          return;
-        }
-
-        themeLabel.textContent =
-          isDark
-            ? "Acolhedor"
-            : "Sombrio";
-
-        themeToggle.setAttribute(
-          "aria-pressed",
-          String(isDark)
-        );
-
-        themeToggle.setAttribute(
-          "aria-label",
-          isDark
-            ? "Alternar para tema acolhedor"
-            : "Alternar para tema sombrio"
-        );
-      }
-
-      themeToggle
-        ?.addEventListener(
-          "click",
-          () => {
-            const isDark =
-              document.documentElement
-                .getAttribute(
-                  "data-theme"
-                ) ===
-              "dark";
-
-            if (isDark) {
-              document.documentElement
-                .removeAttribute(
-                  "data-theme"
-                );
-            } else {
-              document.documentElement
-                .setAttribute(
-                  "data-theme",
-                  "dark"
-                );
-            }
-
-            updateThemeButton(
-              !isDark
-            );
-          }
-        );
-
-      updateThemeButton(
-        document.documentElement
-          .getAttribute("data-theme") ===
-          "dark"
-      );
-
-      /* PROJECT REVEAL */
-
-      const projectBlocks =
-        $$(".project-block");
-
-      if (
-        "IntersectionObserver" in
-          window &&
-        !reducedMotion.matches
-      ) {
-        const observer =
-          new IntersectionObserver(
-            (
-              entries,
-              currentObserver
-            ) => {
-              entries.forEach(
-                entry => {
-                  if (
-                    !entry.isIntersecting
-                  ) {
-                    return;
-                  }
-
-                  entry.target
-                    .classList
-                    .add("in-view");
-
-                  currentObserver
-                    .unobserve(
-                      entry.target
-                    );
-                }
-              );
-            },
-            {
-              threshold: 0.08,
-              rootMargin:
-                "0px 0px -5% 0px"
-            }
-          );
-
-        projectBlocks
-          .forEach(
-            block => {
-              observer.observe(block);
-            }
-          );
-      } else {
-        projectBlocks
-          .forEach(
-            block => {
-              block.classList.add(
-                "in-view"
-              );
-            }
-          );
-      }
-
-      /* CARROSSEIS */
-
-      projectBlocks.forEach(
-        block => {
-          const previousButton =
-            $(".strip-btn.prev", block);
-
-          const nextButton =
-            $(".strip-btn.next", block);
-
-          if (
-            !previousButton ||
-            !nextButton
-          ) {
-            return;
-          }
-
-          function getContainer() {
-            const activeVoitPanel =
-              $(".voit-panel.active", block);
-
-            if (activeVoitPanel) {
-              return $(
-                ".strip",
-                activeVoitPanel
-              );
-            }
-
-            return $(
-              ".strip",
-              block
-            );
-          }
-
-          function scrollGallery(
-            direction
-          ) {
-            const container =
-              getContainer();
-
-            if (!container) {
-              return;
-            }
-
-            const amount =
-              container.clientWidth > 0
-                ? container.clientWidth *
-                  0.75
-                : 380;
-
-            container.scrollBy({
-              left:
-                amount *
-                direction,
-
-              behavior:
-                reducedMotion.matches
-                  ? "auto"
-                  : "smooth"
-            });
-          }
-
-          previousButton
-            .addEventListener(
-              "click",
-              () =>
-                scrollGallery(-1)
+          if (dark) {
+            document.documentElement.removeAttribute(
+              "data-theme"
             );
 
-          nextButton
-            .addEventListener(
-              "click",
-              () =>
-                scrollGallery(1)
+            themeLabel.textContent = "Sombrio";
+          } else {
+            document.documentElement.setAttribute(
+              "data-theme",
+              "dark"
             );
+
+            themeLabel.textContent = "Acolhedor";
+          }
         }
       );
 
-      /* MODAL */
+      /* =====================================================
+         WIREFRAME TABS
+         ===================================================== */
 
-      const imageModal =
-        $("#imgModal");
-
-      const imageModalTarget =
-        $("#imgModalTarget");
-
-      const imageModalClose =
-        $("#imgModalClose");
-
-      function openImageModal(
-        image
-      ) {
-        if (
-          !imageModal ||
-          !imageModalTarget
-        ) {
-          return;
-        }
-
-        modalTrigger =
-          image;
-
-        imageModalTarget.src =
-          image.currentSrc ||
-          image.src;
-
-        imageModalTarget.alt =
-          image.alt ||
-          "Imagem ampliada do projeto";
-
-        imageModal
-          .classList
-          .add("open");
-
-        imageModal
-          .setAttribute(
-            "aria-hidden",
-            "false"
-          );
-
-        syncBodyLock();
-
-        requestAnimationFrame(
-          () => {
-            imageModalClose
-              ?.focus();
-          }
-        );
-      }
-
-      function closeImageModal() {
-        if (
-          !imageModal ||
-          imageModal
-            .getAttribute(
-              "aria-hidden"
-            ) ===
-            "true"
-        ) {
-          return;
-        }
-
-        imageModal
-          .classList
-          .remove("open");
-
-        imageModal
-          .setAttribute(
-            "aria-hidden",
-            "true"
-          );
-
-        imageModalTarget
-          ?.removeAttribute(
-            "src"
-          );
-
-        syncBodyLock();
-
-        if (
-          modalTrigger instanceof
-          HTMLElement
-        ) {
-          modalTrigger.focus();
-        }
-
-        modalTrigger =
-          null;
-      }
-
-      imageModalClose
-        ?.addEventListener(
+      $$(".wf-nav-item").forEach(item => {
+        item.addEventListener(
           "click",
-          closeImageModal
-        );
-
-      imageModal
-        ?.addEventListener(
-          "click",
-          event => {
-            if (
-              event.target ===
-              imageModal
-            ) {
-              closeImageModal();
-            }
-          }
-        );
-
-      $$(".js-lightbox-image")
-        .forEach(
-          image => {
-            image.setAttribute(
-              "aria-label",
-              `Ampliar ${
-                image.alt ||
-                "imagem"
-              }`
-            );
-
-            image.addEventListener(
-              "click",
-              () =>
-                openImageModal(
-                  image
-                )
-            );
-
-            image.addEventListener(
-              "keydown",
-              event => {
-                if (
-                  event.key !==
-                    "Enter" &&
-                  event.key !==
-                    " "
-                ) {
-                  return;
-                }
-
-                event.preventDefault();
-
-                openImageModal(
-                  image
-                );
-              }
-            );
-          }
-        );
-
-      /* DRAWER VOIT */
-
-      const drawer =
-        $("#voitDrawer");
-
-      const drawerOverlay =
-        $("#drawerOverlay");
-
-      const drawerOpenButton =
-        $("#openVoitDrawer");
-
-      const drawerCloseButtons =
-        $$(".js-close-drawer");
-
-      function openVoitDrawer() {
-        if (
-          !drawer ||
-          !drawerOverlay
-        ) {
-          return;
-        }
-
-        drawerTrigger =
-          document.activeElement;
-
-        drawer.classList.add(
-          "active"
-        );
-
-        drawerOverlay
-          .classList
-          .add("active");
-
-        drawer.setAttribute(
-          "aria-hidden",
-          "false"
-        );
-
-        drawerOverlay
-          .setAttribute(
-            "aria-hidden",
-            "false"
-          );
-
-        syncBodyLock();
-
-        requestAnimationFrame(
           () => {
+            $$(".wf-nav-item").forEach(el => {
+              el.classList.remove("active");
+            });
+
+            item.classList.add("active");
+
+            $$(".wf-view").forEach(view => {
+              view.classList.remove("active");
+            });
+
             $(
-              ".js-close-drawer",
-              drawer
-            )
-              ?.focus();
+              `#view-${item.dataset.tab}`
+            )?.classList.add("active");
           }
         );
-      }
+      });
 
-      function closeVoitDrawer() {
-        if (
-          !drawer ||
-          !drawerOverlay ||
-          drawer
-            .getAttribute(
-              "aria-hidden"
-            ) ===
-            "true"
-        ) {
-          return;
-        }
+      /* =====================================================
+         WIREFRAME PAINT
+         ===================================================== */
 
-        drawer
-          .classList
-          .remove("active");
+      let selectedColor = "#E8590C";
 
-        drawerOverlay
-          .classList
-          .remove("active");
-
-        drawer.setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-        drawerOverlay
-          .setAttribute(
-            "aria-hidden",
-            "true"
-          );
-
-        syncBodyLock();
-
-        if (
-          drawerTrigger instanceof
-          HTMLElement
-        ) {
-          drawerTrigger.focus();
-        }
-
-        drawerTrigger =
-          null;
-      }
-
-      drawerOpenButton
-        ?.addEventListener(
+      $$(".swatch").forEach(swatch => {
+        swatch.addEventListener(
           "click",
-          openVoitDrawer
-        );
+          () => {
+            $$(".swatch").forEach(el => {
+              el.classList.remove("active");
+            });
 
-      drawerCloseButtons
-        .forEach(
-          button => {
-            button.addEventListener(
-              "click",
-              closeVoitDrawer
-            );
+            swatch.classList.add("active");
+
+            selectedColor =
+              swatch.dataset.color || "";
           }
         );
+      });
 
-      drawerOverlay
-        ?.addEventListener(
-          "click",
-          closeVoitDrawer
-        );
-
-      document.addEventListener(
-        "keydown",
-        event => {
-          if (
-            event.key !==
-            "Escape"
-          ) {
-            return;
-          }
-
-          if (
-            imageModal
-              ?.getAttribute(
-                "aria-hidden"
-              ) ===
-            "false"
-          ) {
-            closeImageModal();
-            return;
-          }
-
-          if (
-            drawer
-              ?.getAttribute(
-                "aria-hidden"
-              ) ===
-            "false"
-          ) {
-            closeVoitDrawer();
-          }
-        }
-      );
-
-      /* WIREFRAME */
-
-      const wfWindow =
-        $("#wfWindow");
-
-      const swatches =
-        $$(".swatch");
-
-      let selectedColor =
-        "#E8590C";
-
-      swatches.forEach(
-        swatch => {
-          swatch.addEventListener(
-            "click",
-            () => {
-              swatches.forEach(
-                item =>
-                  item.classList
-                    .remove(
-                      "active"
-                    )
-              );
-
-              swatch
-                .classList
-                .add("active");
-
-              selectedColor =
-                swatch.dataset.color ||
-                "";
-            }
-          );
-        }
-      );
-
-      function getContrastTextColor(
-        hex
-      ) {
+      function contrast(hex) {
         if (!hex) {
           return "";
         }
 
-        const clean =
-          hex.replace("#", "");
+        const value = hex.replace("#", "");
 
-        const r =
-          parseInt(
-            clean.substring(
-              0,
-              2
-            ),
-            16
-          );
+        const r = parseInt(
+          value.substring(0, 2),
+          16
+        );
 
-        const g =
-          parseInt(
-            clean.substring(
-              2,
-              4
-            ),
-            16
-          );
+        const g = parseInt(
+          value.substring(2, 4),
+          16
+        );
 
-        const b =
-          parseInt(
-            clean.substring(
-              4,
-              6
-            ),
-            16
-          );
+        const b = parseInt(
+          value.substring(4, 6),
+          16
+        );
 
         const luminance =
           (
             r * 299 +
             g * 587 +
             b * 114
-          ) /
-          1000;
+          ) / 1000;
 
-        return luminance >
-          150
+        return luminance > 150
           ? "#1F1C18"
           : "#FFFFFF";
       }
 
-      function applyContrast(
-        element,
-        textColor
-      ) {
-        element.style.color =
-          textColor;
-
-        $$("*", element)
-          .forEach(
-            child => {
-              if (
-                child.dataset
-                  .textPainted ===
-                "true"
-              ) {
-                return;
-              }
-
-              child.style.color =
-                textColor;
-            }
-          );
-      }
-
-      wfWindow
-        ?.addEventListener(
-          "click",
-          event => {
-            const element =
-              event.target.closest(
-                ".wf-paintable"
-              );
-
-            if (!element) {
-              return;
-            }
-
-            event.stopPropagation();
-
-            const paintType =
-              element.dataset
-                .paintType;
-
-            if (
-              !selectedColor
-            ) {
-              element.style.backgroundColor =
-                "";
-
-              element.style.borderColor =
-                "";
-
-              element.style.color =
-                "";
-
-              delete element.dataset
-                .textPainted;
-
-              return;
-            }
-
-            const contrast =
-              getContrastTextColor(
-                selectedColor
-              );
-
-            if (
-              paintType ===
-                "bg" ||
-              paintType ===
-                "card-bg"
-            ) {
-              element.style.backgroundColor =
-                selectedColor;
-
-              element.style.borderColor =
-                selectedColor;
-
-              applyContrast(
-                element,
-                contrast
-              );
-            }
-
-            if (
-              paintType ===
-              "text"
-            ) {
-              element.style.color =
-                selectedColor;
-
-              element.dataset.textPainted =
-                "true";
-            }
-          }
-        );
-
-      const wfNavItems =
-        $$(".wf-nav-item");
-
-      const wfViews =
-        $$(".wf-view");
-
-      function activateWireframeTab(
-        item
-      ) {
-        const targetTab =
-          item.dataset.tab;
-
-        wfNavItems.forEach(
-          currentItem => {
-            const active =
-              currentItem ===
-              item;
-
-            currentItem
-              .classList
-              .toggle(
-                "active",
-                active
-              );
-
-            currentItem
-              .setAttribute(
-                "aria-selected",
-                String(active)
-              );
-          }
-        );
-
-        wfViews.forEach(
-          view => {
-            view.classList.toggle(
-              "active",
-              view.id ===
-                `view-${targetTab}`
+      $("#wfWindow")?.addEventListener(
+        "click",
+        event => {
+          const target =
+            event.target.closest(
+              ".wf-paintable"
             );
+
+          if (!target) {
+            return;
           }
-        );
-      }
 
-      wfNavItems.forEach(
-        item => {
-          item.addEventListener(
-            "click",
-            event => {
-              event.stopPropagation();
+          if (!selectedColor) {
+            target.style.background = "";
+            target.style.color = "";
+            return;
+          }
 
-              activateWireframeTab(
-                item
-              );
-            }
-          );
+          target.style.background =
+            selectedColor;
 
-          item.addEventListener(
-            "keydown",
-            event => {
-              if (
-                event.key !==
-                  "Enter" &&
-                event.key !==
-                  " "
-              ) {
-                return;
-              }
+          target.style.color =
+            contrast(selectedColor);
 
-              event.preventDefault();
-
-              activateWireframeTab(
-                item
-              );
-            }
-          );
+          $$("*", target).forEach(child => {
+            child.style.color =
+              contrast(selectedColor);
+          });
         }
       );
 
-      const metricButton =
-        $("#wfMetricBtn");
+      $("#clearBtn")?.addEventListener(
+        "click",
+        () => {
+          $$(".wf-paintable").forEach(el => {
+            el.style.background = "";
+            el.style.color = "";
 
-      const metricCounter =
-        $("#wfCounter");
+            $$("*", el).forEach(child => {
+              child.style.color = "";
+            });
+          });
+        }
+      );
 
-      let deliveryCount =
-        14;
+      /* =====================================================
+         COUNTER
+         ===================================================== */
 
-      metricButton
-        ?.addEventListener(
-          "click",
-          () => {
-            deliveryCount +=
-              1;
+      let count = 14;
 
-            if (
-              metricCounter
-            ) {
-              metricCounter.textContent =
-                String(
-                  deliveryCount
-                );
-            }
+      $("#wfMetricBtn")?.addEventListener(
+        "click",
+        () => {
+          count += 1;
+
+          if ($("#wfCounter")) {
+            $("#wfCounter").textContent =
+              count;
           }
-        );
+        }
+      );
 
-      $$(".wf-task-item")
-        .forEach(
-          task => {
-            task.addEventListener(
-              "click",
-              () => {
-                task
-                  .classList
-                  .toggle(
-                    "checked"
+      /* =====================================================
+         PROJECT OBSERVER
+         ===================================================== */
+
+      const projectBlocks =
+        $$(".project-block");
+
+      if ("IntersectionObserver" in window) {
+        const observer =
+          new IntersectionObserver(
+            entries => {
+              entries.forEach(entry => {
+                if (
+                  entry.isIntersecting
+                ) {
+                  entry.target.classList.add(
+                    "in-view"
                   );
-              }
-            );
-          }
-        );
-
-      const wfSwitchMode =
-        $("#wfSwitchMode");
-
-      let appDark =
-        false;
-
-      wfSwitchMode
-        ?.addEventListener(
-          "click",
-          () => {
-            if (!wfWindow) {
-              return;
-            }
-
-            appDark =
-              !appDark;
-
-            if (appDark) {
-              wfWindow.style
-                .setProperty(
-                  "--wf-bg",
-                  "#12110F"
-                );
-
-              wfWindow.style
-                .setProperty(
-                  "--wf-card",
-                  "#1C1A17"
-                );
-
-              wfWindow.style
-                .setProperty(
-                  "--wf-text",
-                  "#F0ECE1"
-                );
-
-              wfSwitchMode.textContent =
-                "modo clean";
-            } else {
-              wfWindow.style
-                .removeProperty(
-                  "--wf-bg"
-                );
-
-              wfWindow.style
-                .removeProperty(
-                  "--wf-card"
-                );
-
-              wfWindow.style
-                .removeProperty(
-                  "--wf-text"
-                );
-
-              wfSwitchMode.textContent =
-                "modo app";
-            }
-          }
-        );
-
-      $("#clearBtn")
-        ?.addEventListener(
-          "click",
-          () => {
-            $$(".wf-paintable")
-              .forEach(
-                element => {
-                  element.style.backgroundColor =
-                    "";
-
-                  element.style.borderColor =
-                    "";
-
-                  element.style.color =
-                    "";
-
-                  delete element.dataset
-                    .textPainted;
                 }
-              );
-
-            if (wfWindow) {
-              $$("*", wfWindow)
-                .forEach(
-                  element => {
-                    if (
-                      !element
-                        .classList
-                        .contains(
-                          "wf-paintable"
-                        )
-                    ) {
-                      element.style.color =
-                        "";
-                    }
-                  }
-                );
+              });
+            },
+            {
+              threshold: 0.07
             }
+          );
 
-            swatches.forEach(
-              swatch =>
-                swatch.classList
-                  .remove(
-                    "active"
-                  )
-            );
+        projectBlocks.forEach(block => {
+          observer.observe(block);
+        });
+      } else {
+        projectBlocks.forEach(block => {
+          block.classList.add("in-view");
+        });
+      }
 
-            const defaultSwatch =
-              swatches.find(
-                swatch =>
-                  swatch.dataset.color ===
-                  "#E8590C"
-              );
+      /* =====================================================
+         GALLERY
+         ===================================================== */
 
-            defaultSwatch
-              ?.classList
-              .add("active");
+      projectBlocks.forEach(block => {
+        const strip = $(".strip", block);
+        const prev = $(".prev", block);
+        const next = $(".next", block);
 
-            selectedColor =
-              "#E8590C";
+        if (!strip) {
+          return;
+        }
+
+        prev?.addEventListener(
+          "click",
+          () => {
+            strip.scrollBy({
+              left:
+                -strip.clientWidth * 0.75,
+              behavior: "smooth"
+            });
           }
         );
 
-      /* FERNANDO TABS */
+        next?.addEventListener(
+          "click",
+          () => {
+            strip.scrollBy({
+              left:
+                strip.clientWidth * 0.75,
+              behavior: "smooth"
+            });
+          }
+        );
+      });
+
+      /* =====================================================
+         FERNANDO TABS
+         ===================================================== */
 
       const fernandoTabs =
         $$(".fernando-tab");
@@ -8436,62 +6480,50 @@
         $$(".fernando-view");
 
       function activateFernandoTab(
-        tabName
+        name
       ) {
-        fernandoTabs.forEach(
-          tab => {
-            tab.classList.toggle(
-              "active",
-              tab.dataset
-                .fernandoTab ===
-                tabName
-            );
-          }
-        );
+        fernandoTabs.forEach(tab => {
+          tab.classList.toggle(
+            "active",
+            tab.dataset.fernandoTab === name
+          );
+        });
 
-        fernandoViews.forEach(
-          view => {
-            view.classList.toggle(
-              "active",
-              view.dataset
-                .fernandoView ===
-                tabName
-            );
-          }
-        );
+        fernandoViews.forEach(view => {
+          view.classList.toggle(
+            "active",
+            view.dataset.fernandoView ===
+              name
+          );
+        });
 
-        window.requestAnimationFrame(
-          resizeFernandoDesktopFrames
+        requestAnimationFrame(
+          resizeFernandoFrames
         );
       }
 
-      fernandoTabs.forEach(
-        tab => {
-          tab.addEventListener(
-            "click",
-            () => {
-              activateFernandoTab(
-                tab.dataset
-                  .fernandoTab
-              );
-            }
-          );
-        }
-      );
+      fernandoTabs.forEach(tab => {
+        tab.addEventListener(
+          "click",
+          () => {
+            activateFernandoTab(
+              tab.dataset.fernandoTab
+            );
+          }
+        );
+      });
 
-      /* FRAME SCALE */
+      /* =====================================================
+         IFRAME SCALE
+         ===================================================== */
 
-      const FA_DESKTOP_WIDTH =
-        1440;
+      const desktopWidth = 1440;
 
       function resizeFernandoFrame(
         viewport
       ) {
         const canvas =
-          $(
-            ".fa-desktop-canvas",
-            viewport
-          );
+          $(".fa-desktop-canvas", viewport);
 
         if (
           !canvas ||
@@ -8504,32 +6536,26 @@
           Math.min(
             1,
             viewport.clientWidth /
-              FA_DESKTOP_WIDTH
+              desktopWidth
           );
 
         canvas.style.transform =
           `scale(${scale})`;
 
-        const baseHeight =
+        const referenceHeight =
           Number(
             viewport.dataset
-              .faDesktopHeight ||
-            780
+              .faDesktopHeight || 610
           );
 
         viewport.style.height =
-          `${
-            Math.round(
-              baseHeight *
-              scale
-            )
-          }px`;
+          `${Math.round(
+            referenceHeight * scale
+          )}px`;
       }
 
-      function resizeFernandoDesktopFrames() {
-        $$(
-          ".fa-desktop-viewport"
-        )
+      function resizeFernandoFrames() {
+        $$(".fa-desktop-viewport")
           .forEach(
             resizeFernandoFrame
           );
@@ -8537,213 +6563,238 @@
 
       window.addEventListener(
         "load",
-        resizeFernandoDesktopFrames
+        resizeFernandoFrames
       );
 
       window.addEventListener(
         "resize",
-        resizeFernandoDesktopFrames,
-        {
-          passive: true
-        }
+        resizeFernandoFrames
       );
 
       if (
-        "ResizeObserver" in
-        window
+        "ResizeObserver" in window
       ) {
-        const iframeObserver =
-          new ResizeObserver(
-            entries => {
-              entries.forEach(
-                entry => {
-                  resizeFernandoFrame(
-                    entry.target
-                  );
-                }
+        const resizeObserver =
+          new ResizeObserver(entries => {
+            entries.forEach(entry => {
+              resizeFernandoFrame(
+                entry.target
               );
-            }
-          );
+            });
+          });
 
-        $$(
-          ".fa-desktop-viewport"
-        )
-          .forEach(
-            viewport => {
-              iframeObserver.observe(
-                viewport
-              );
-            }
-          );
+        $$(".fa-desktop-viewport")
+          .forEach(viewport => {
+            resizeObserver.observe(
+              viewport
+            );
+          });
       }
 
-      requestAnimationFrame(
-        resizeFernandoDesktopFrames
-      );
+      resizeFernandoFrames();
 
-      /* DESIGN SYSTEM */
+      /* =====================================================
+         DESIGN SYSTEM
+         ===================================================== */
 
-      const fernandoSystem =
-        $("#fernando-project .fa-system");
+      const systemButtons =
+        $$(".fa-system-btn");
 
-      if (fernandoSystem) {
+      const systemPanels =
+        $$(".fa-system-panel");
 
-        const faSystemButtons =
-          $$(
-            ".fa-system-btn",
-            fernandoSystem
-          );
+      systemButtons.forEach(button => {
+        button.addEventListener(
+          "click",
+          () => {
+            const name =
+              button.dataset.faSystem;
 
-        const faSystemPanels =
-          $$(
-            ".fa-system-panel",
-            fernandoSystem
-          );
+            systemButtons.forEach(el => {
+              el.classList.remove("active");
+            });
 
-        faSystemButtons.forEach(
-          button => {
-            button.addEventListener(
-              "click",
-              () => {
-                const target =
-                  button.dataset
-                    .faSystem;
+            button.classList.add("active");
 
-                faSystemButtons.forEach(
-                  current => {
-                    current
-                      .classList
-                      .toggle(
-                        "active",
-                        current ===
-                          button
-                      );
-                  }
-                );
-
-                faSystemPanels.forEach(
-                  panel => {
-                    panel.classList.toggle(
-                      "active",
-                      panel.dataset
-                        .faSystemPanel ===
-                        target
-                    );
-                  }
-                );
-              }
-            );
+            systemPanels.forEach(panel => {
+              panel.classList.toggle(
+                "active",
+                panel.dataset
+                  .faSystemPanel === name
+              );
+            });
           }
         );
-      }
+      });
 
-      /* BUTTON STATES */
+      /* =====================================================
+         BUTTON STATES
+         ===================================================== */
 
-      const faPrimaryDemo =
+      const demoButton =
         $("#faPrimaryDemo");
 
-      const faButtonStateButtons =
-        $$(
-          "#fernando-project [data-fa-button-state]"
-        );
-
-      faButtonStateButtons.forEach(
-        button => {
+      $$("[data-fa-button-state]")
+        .forEach(button => {
           button.addEventListener(
             "click",
             () => {
-              faButtonStateButtons
-                .forEach(
-                  current => {
-                    current
-                      .classList
-                      .toggle(
-                        "active",
-                        current ===
-                          button
-                      );
-                  }
-                );
+              $$(
+                "[data-fa-button-state]"
+              )
+                .forEach(el => {
+                  el.classList.remove(
+                    "active"
+                  );
+                });
 
-              if (!faPrimaryDemo) {
+              button.classList.add(
+                "active"
+              );
+
+              if (!demoButton) {
                 return;
               }
 
-              faPrimaryDemo
-                .classList
-                .remove(
-                  "is-hover",
-                  "is-disabled"
-                );
+              demoButton.classList.remove(
+                "is-hover",
+                "is-disabled"
+              );
 
-              faPrimaryDemo.disabled =
+              demoButton.disabled =
                 false;
 
               const state =
                 button.dataset
                   .faButtonState;
 
-              if (
-                state ===
-                "hover"
-              ) {
-                faPrimaryDemo
-                  .classList
-                  .add(
-                    "is-hover"
-                  );
+              if (state === "hover") {
+                demoButton.classList.add(
+                  "is-hover"
+                );
               }
 
               if (
-                state ===
-                "disabled"
+                state === "disabled"
               ) {
-                faPrimaryDemo
-                  .classList
-                  .add(
-                    "is-disabled"
-                  );
+                demoButton.classList.add(
+                  "is-disabled"
+                );
 
-                faPrimaryDemo.disabled =
+                demoButton.disabled =
                   true;
               }
             }
           );
-        }
-      );
+        });
 
-      /* FILTER DEMO */
+      /* =====================================================
+         LIGHTBOX
+         ===================================================== */
 
-      $$(
-        "#fernando-project .fa-filter-demo"
-      )
-        .forEach(
-          button => {
-            button.addEventListener(
-              "click",
-              () => {
-                $$(
-                  "#fernando-project .fa-filter-demo"
-                )
-                  .forEach(
-                    current => {
-                      current
-                        .classList
-                        .remove(
-                          "active"
-                        );
-                    }
-                  );
+      const modal =
+        $("#imgModal");
 
-                button
-                  .classList
-                  .add(
-                    "active"
-                  );
+      const modalImage =
+        $("#imgModalTarget");
+
+      $$(".js-lightbox-image")
+        .forEach(image => {
+          image.addEventListener(
+            "click",
+            () => {
+              if (
+                !modal ||
+                !modalImage
+              ) {
+                return;
               }
+
+              modalImage.src =
+                image.src;
+
+              modalImage.alt =
+                image.alt;
+
+              modal.classList.add(
+                "open"
+              );
+            }
+          );
+        });
+
+      $("#imgModalClose")
+        ?.addEventListener(
+          "click",
+          () => {
+            modal?.classList.remove(
+              "open"
             );
           }
         );
+
+      modal?.addEventListener(
+        "click",
+        event => {
+          if (event.target === modal) {
+            modal.classList.remove(
+              "open"
+            );
+          }
+        }
+      );
+
+      /* =====================================================
+         DRAWER
+         ===================================================== */
+
+      const drawer =
+        $("#voitDrawer");
+
+      const overlay =
+        $("#drawerOverlay");
+
+      $("#openVoitDrawer")
+        ?.addEventListener(
+          "click",
+          () => {
+            drawer?.classList.add(
+              "active"
+            );
+
+            overlay?.classList.add(
+              "active"
+            );
+          }
+        );
+
+      $$(".js-close-drawer")
+        .forEach(button => {
+          button.addEventListener(
+            "click",
+            () => {
+              drawer?.classList.remove(
+                "active"
+              );
+
+              overlay?.classList.remove(
+                "active"
+              );
+            }
+          );
+        });
+
+      overlay?.addEventListener(
+        "click",
+        () => {
+          drawer?.classList.remove(
+            "active"
+          );
+
+          overlay.classList.remove(
+            "active"
+          );
+        });
 
     })();
   </script>
