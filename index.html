@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
-  />
+  >
 
   <meta
     name="description"
     content="Portfólio de Raquel Renovato — Comunicação Visual, UI Design e experiências digitais."
-  />
+  >
 
   <title>Raquel Renovato — Portfólio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet"
-  />
+  >
 
   <style>
     :root {
@@ -130,6 +130,10 @@
       text-decoration: none;
     }
 
+    ul {
+      list-style: none;
+    }
+
     .mono {
       font-family: "IBM Plex Mono", monospace;
     }
@@ -147,6 +151,7 @@
     #intro {
       position: fixed;
       inset: 0;
+
       z-index: 9999;
 
       display: grid;
@@ -167,73 +172,95 @@
       pointer-events: none;
     }
 
+    /*
+      Duas colunas fixas:
+      1. "Design com"
+      2. palavra animada
+
+      Isso impede a palavra de empurrar o texto ou mudar a baseline.
+    */
+
     .intro-line {
-      display: flex;
+      display: grid;
+
+      grid-template-columns:
+        max-content
+        5.2em;
+
       align-items: baseline;
       justify-content: center;
 
-      gap: 0.16em;
+      column-gap: 0.17em;
 
-      width: 100%;
-
-      padding-inline: 20px;
+      width: max-content;
+      max-width: calc(100vw - 40px);
 
       font-family: "Fraunces", serif;
 
-      font-size: clamp(4.2rem, 8vw, 8.5rem);
+      font-size: clamp(4.4rem, 7.7vw, 8.3rem);
       font-weight: 300;
 
       line-height: 0.92;
       letter-spacing: -0.055em;
 
-      text-align: center;
+      white-space: nowrap;
     }
 
     .intro-fixed {
-      white-space: nowrap;
+      display: block;
+
+      line-height: 0.92;
     }
 
     .intro-cycle {
       position: relative;
 
-      display: inline-block;
+      display: block;
 
-      width: 5.25em;
-      height: 1em;
+      width: 5.2em;
+      height: 0.95em;
 
       overflow: hidden;
 
-      color: var(--accent);
+      line-height: 0.92;
 
+      color: var(--accent);
       font-style: italic;
-      text-align: left;
     }
 
     .intro-cycle span {
       position: absolute;
 
       left: 0;
-      bottom: 0;
+      top: 0;
+
+      display: block;
+
+      width: 100%;
+
+      line-height: 0.92;
 
       white-space: nowrap;
 
       opacity: 0;
 
-      transform: translateY(110%);
+      transform: translate3d(0, 110%, 0);
 
       transition:
-        transform 0.65s var(--ease),
-        opacity 0.28s ease;
+        opacity 0.28s ease,
+        transform 0.66s var(--ease);
     }
 
     .intro-cycle span.active {
       opacity: 1;
-      transform: translateY(0);
+
+      transform: translate3d(0, 0, 0);
     }
 
     .intro-cycle span.exit {
       opacity: 0;
-      transform: translateY(-110%);
+
+      transform: translate3d(0, -110%, 0);
     }
 
     .intro-tip {
@@ -248,6 +275,8 @@
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.58rem;
+
+      white-space: nowrap;
     }
 
     /* =========================================================
@@ -257,6 +286,7 @@
     .nav {
       position: sticky;
       top: 0;
+
       z-index: 2000;
 
       min-height: 64px;
@@ -316,8 +346,8 @@
     }
 
     .theme-toggle:hover {
-      color: var(--accent);
       border-color: var(--accent);
+      color: var(--accent);
     }
 
     .nav-menu {
@@ -325,8 +355,6 @@
       align-items: center;
 
       gap: 34px;
-
-      list-style: none;
     }
 
     .nav-menu a {
@@ -478,7 +506,7 @@
     }
 
     /* =========================================================
-       WIREFRAME ORIGINAL
+       WIREFRAME
     ========================================================= */
 
     .wireframe-area {
@@ -490,7 +518,7 @@
     }
 
     .wireframe-ui {
-      width: 510px;
+      width: 520px;
       max-width: 100%;
 
       display: flex;
@@ -501,10 +529,10 @@
     .wireframe-stage {
       position: relative;
 
-      width: 445px;
+      width: 455px;
       max-width: 100%;
 
-      min-height: 328px;
+      min-height: 335px;
 
       display: flex;
       align-items: center;
@@ -517,6 +545,8 @@
       --wire-card: #e9e2d7;
       --wire-text: #201d19;
       --wire-muted: #776c61;
+
+      position: relative;
 
       width: 380px;
       height: 260px;
@@ -947,7 +977,7 @@
       border-radius: 4px;
 
       background: var(--accent);
-      color: white;
+      color: #fff;
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.38rem;
@@ -996,7 +1026,9 @@
       font-size: 0.34rem;
     }
 
-    /* PINTURA */
+    /* =========================================================
+       PINTURA
+    ========================================================= */
 
     .paintable {
       transition:
@@ -1012,20 +1044,45 @@
       color: var(--paint-text, #fff) !important;
     }
 
-    /* CONTROLES FLUTUANTES */
+    /* =========================================================
+       ELEMENTOS DO WIREFRAME + ANIMAÇÕES LEVES
+    ========================================================= */
 
     .pen-tool {
       position: absolute;
 
       z-index: 5;
 
-      top: -5px;
-      left: 1px;
+      top: -4px;
+      left: 3px;
 
       width: 69px;
       height: 69px;
 
       pointer-events: none;
+
+      transform-origin: 50% 70%;
+
+      animation:
+        penFloat
+        4.5s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes penFloat {
+      0%,
+      100% {
+        transform:
+          translate3d(0, 0, 0)
+          rotate(0deg);
+      }
+
+      50% {
+        transform:
+          translate3d(2px, -4px, 0)
+          rotate(1.2deg);
+      }
     }
 
     .auto-layout-pill {
@@ -1056,6 +1113,24 @@
       box-shadow:
         0 3px 8px
         rgba(31, 28, 24, 0.05);
+
+      animation:
+        pillFloat
+        4.9s
+        ease-in-out
+        0.3s
+        infinite;
+    }
+
+    @keyframes pillFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
     }
 
     .dimension-label {
@@ -1079,6 +1154,24 @@
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.41rem;
+
+      animation:
+        specFloat
+        5.3s
+        ease-in-out
+        0.6s
+        infinite;
+    }
+
+    @keyframes specFloat {
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(4px);
+      }
     }
 
     .raquel-pointer {
@@ -1105,7 +1198,7 @@
         15px;
 
       background: var(--accent);
-      color: white;
+      color: #fff;
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.43rem;
@@ -1113,6 +1206,24 @@
       box-shadow:
         0 8px 18px
         rgba(31, 28, 24, 0.12);
+
+      animation:
+        cursorFloat
+        4.25s
+        ease-in-out
+        0.9s
+        infinite;
+    }
+
+    @keyframes cursorFloat {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      50% {
+        transform: translate3d(-3px, -4px, 0);
+      }
     }
 
     /* PALETA */
@@ -1144,7 +1255,7 @@
     }
 
     .color-dot:hover {
-      transform: scale(1.09);
+      transform: scale(1.1);
     }
 
     .color-dot.active {
@@ -1291,25 +1402,25 @@
       display: grid;
 
       grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(390px, 0.85fr);
+        minmax(0, 1.1fr)
+        minmax(420px, 0.9fr);
 
       align-items: center;
 
-      gap: clamp(60px, 8vw, 130px);
+      gap: clamp(55px, 7vw, 110px);
 
       padding:
         100px
         var(--pad)
-        110px;
+        115px;
     }
 
     .about-copy {
-      max-width: 760px;
+      max-width: 750px;
     }
 
     .about-copy .section-kicker {
-      margin-bottom: 19px;
+      margin-bottom: 18px;
     }
 
     .about-name {
@@ -1317,10 +1428,11 @@
 
       font-family: "Fraunces", serif;
 
-      font-size: clamp(4.4rem, 6.4vw, 7rem);
+      font-size: clamp(4.3rem, 6vw, 6.8rem);
       font-weight: 300;
 
       line-height: 0.9;
+
       letter-spacing: -0.052em;
     }
 
@@ -1338,7 +1450,7 @@
 
       color: var(--text);
 
-      font-size: clamp(1.02rem, 1.28vw, 1.12rem);
+      font-size: clamp(1.02rem, 1.27vw, 1.11rem);
 
       line-height: 1.8;
     }
@@ -1349,18 +1461,16 @@
 
       gap: 10px;
 
-      margin-top: 31px;
+      margin-top: 32px;
     }
 
     .about-tag {
-      min-height: 38px;
+      min-height: 40px;
 
       display: inline-flex;
       align-items: center;
 
-      padding:
-        0
-        15px;
+      padding-inline: 16px;
 
       border: 1px solid var(--line-strong);
       border-radius: 999px;
@@ -1369,10 +1479,8 @@
 
       font-family: "IBM Plex Mono", monospace;
 
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 500;
-
-      letter-spacing: 0.01em;
 
       white-space: nowrap;
 
@@ -1386,13 +1494,15 @@
       border-color: var(--accent);
 
       background: var(--accent);
-      color: white;
+      color: #fff;
     }
 
-    /* FOTO */
+    /* =========================================================
+       FOTO + TEXTO CIRCULAR
+    ========================================================= */
 
     .about-visual {
-      min-height: 500px;
+      min-height: 520px;
 
       display: grid;
       place-items: center;
@@ -1401,13 +1511,18 @@
     .profile-frame {
       position: relative;
 
-      width: min(100%, 470px);
+      width: min(100%, 485px);
 
       aspect-ratio: 1;
 
       display: grid;
       place-items: center;
     }
+
+    /*
+      O texto não está mais em um arco incompleto.
+      Agora percorre toda a circunferência.
+    */
 
     .profile-orbit-svg {
       position: absolute;
@@ -1422,6 +1537,24 @@
       overflow: visible;
 
       pointer-events: none;
+
+      transform-origin: 50% 50%;
+
+      animation:
+        orbitDrift
+        28s
+        linear
+        infinite;
+    }
+
+    @keyframes orbitDrift {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .profile-orbit-line {
@@ -1441,10 +1574,12 @@
 
       font-family: "IBM Plex Mono", monospace;
 
-      font-size: 14px;
+      font-size: 12.6px;
       font-weight: 600;
 
-      letter-spacing: 3px;
+      letter-spacing: 2.3px;
+
+      text-transform: uppercase;
     }
 
     .photo-ring {
@@ -1452,7 +1587,7 @@
 
       z-index: 2;
 
-      width: 65%;
+      width: 64%;
 
       aspect-ratio: 1;
 
@@ -1487,29 +1622,51 @@
       height: 100%;
 
       object-fit: cover;
+      object-position: center center;
     }
 
     .profile-pen {
       position: absolute;
 
-      top: 6%;
-      left: 4%;
+      top: 5%;
+      left: 3%;
 
       z-index: 4;
 
-      width: 59px;
-      height: 59px;
+      width: 61px;
+      height: 61px;
+
+      animation:
+        profilePenFloat
+        5s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes profilePenFloat {
+      0%,
+      100% {
+        transform:
+          translate3d(0, 0, 0)
+          rotate(0);
+      }
+
+      50% {
+        transform:
+          translate3d(3px, -5px, 0)
+          rotate(1.5deg);
+      }
     }
 
     .profile-auto-layout {
       position: absolute;
 
       top: 2%;
-      right: 2%;
+      right: 1%;
 
       z-index: 4;
 
-      min-height: 27px;
+      min-height: 28px;
 
       display: inline-flex;
       align-items: center;
@@ -1525,17 +1682,35 @@
 
       font-family: "IBM Plex Mono", monospace;
 
-      font-size: 0.53rem;
+      font-size: 0.54rem;
       font-weight: 600;
 
       box-shadow: var(--shadow);
+
+      animation:
+        profileBadgeFloat
+        5.4s
+        ease-in-out
+        0.4s
+        infinite;
+    }
+
+    @keyframes profileBadgeFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     .profile-size {
       position: absolute;
 
-      left: 1%;
-      bottom: 1%;
+      left: 0;
+      bottom: 2%;
 
       z-index: 4;
 
@@ -1558,7 +1733,7 @@
     .profile-label {
       position: absolute;
 
-      right: 0;
+      right: 1%;
       bottom: 0;
 
       z-index: 4;
@@ -1581,10 +1756,27 @@
       font-size: 0.52rem;
 
       box-shadow: var(--shadow);
+
+      animation:
+        profileCursorFloat
+        4.6s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes profileCursorFloat {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      50% {
+        transform: translate3d(-4px, -4px, 0);
+      }
     }
 
     /* =========================================================
-       PROJETO FERNANDO
+       PROJETO
     ========================================================= */
 
     .project {
@@ -1731,6 +1923,10 @@
       line-height: 1.64;
     }
 
+    /* =========================================================
+       FERNANDO CASE
+    ========================================================= */
+
     .fa-case {
       padding:
         0
@@ -1783,7 +1979,7 @@
       border-color: var(--accent);
 
       background: var(--accent);
-      color: white;
+      color: #fff;
     }
 
     .fa-view {
@@ -1798,13 +1994,17 @@
       display: grid;
 
       grid-template-columns:
-        minmax(320px, 0.73fr)
-        minmax(0, 1.27fr);
+        minmax(330px, 0.72fr)
+        minmax(0, 1.28fr);
 
       gap: 20px;
+
+      align-items: stretch;
     }
 
     .fa-story-copy {
+      min-height: 100%;
+
       padding: 28px;
 
       border: 1px solid var(--line);
@@ -1947,6 +2147,16 @@
       font-size: 0.5rem;
     }
 
+    /*
+      ALTURA DO PREVIEW AUMENTADA.
+
+      Canvas continua 1440px para sempre exibir o site
+      em layout DESKTOP.
+
+      data-desktop-height = 900
+      iframe real = 980
+    */
+
     .desktop-frame {
       position: relative;
 
@@ -1954,7 +2164,7 @@
 
       overflow: hidden;
 
-      background: white;
+      background: #fff;
     }
 
     .desktop-canvas {
@@ -1971,12 +2181,14 @@
     .desktop-canvas iframe {
       display: block;
 
-      width: 1440px;
-      height: 900px;
+      width: 1440px !important;
+      height: 980px !important;
+
+      max-width: none !important;
 
       border: 0;
 
-      background: white;
+      background: #fff;
     }
 
     /* =========================================================
@@ -2115,7 +2327,7 @@
       border-color: var(--accent);
 
       background: var(--accent);
-      color: white;
+      color: #fff;
     }
 
     .contact-actions a:hover {
@@ -2146,7 +2358,7 @@
        TABLET
     ========================================================= */
 
-    @media (max-width: 1080px) {
+    @media(max-width: 1080px) {
       .hero {
         grid-template-columns: 1fr;
 
@@ -2162,7 +2374,7 @@
       .about {
         grid-template-columns: 1fr;
 
-        gap: 50px;
+        gap: 55px;
       }
 
       .about-copy {
@@ -2194,23 +2406,34 @@
        MOBILE
     ========================================================= */
 
-    @media (max-width: 760px) {
+    @media(max-width: 760px) {
       :root {
         --pad: 20px;
       }
 
       .intro-line {
-        flex-direction: column;
+        grid-template-columns: 1fr;
 
-        gap: 0.06em;
+        row-gap: 0.07em;
 
-        font-size: clamp(3.3rem, 14vw, 5rem);
+        width: 100%;
 
-        line-height: 0.96;
+        font-size: clamp(3.5rem, 14vw, 5.1rem);
+
+        text-align: center;
+
+        white-space: normal;
+      }
+
+      .intro-fixed {
+        justify-self: center;
       }
 
       .intro-cycle {
-        width: 5.4em;
+        justify-self: center;
+
+        width: 5.25em;
+        height: 0.95em;
 
         text-align: center;
       }
@@ -2218,26 +2441,31 @@
       .intro-cycle span {
         left: 50%;
 
+        width: auto;
+
         transform:
-          translate(
+          translate3d(
             -50%,
-            110%
+            110%,
+            0
           );
       }
 
       .intro-cycle span.active {
         transform:
-          translate(
+          translate3d(
             -50%,
+            0,
             0
           );
       }
 
       .intro-cycle span.exit {
         transform:
-          translate(
+          translate3d(
             -50%,
-            -110%
+            -110%,
+            0
           );
       }
 
@@ -2279,10 +2507,11 @@
       }
 
       .wireframe-window {
-        width: min(
-          380px,
-          calc(100vw - 40px)
-        );
+        width:
+          min(
+            380px,
+            calc(100vw - 40px)
+          );
       }
 
       .dimension-label {
@@ -2331,11 +2560,11 @@
       }
 
       .about-tag {
-        min-height: 39px;
+        min-height: 40px;
 
-        padding-inline: 14px;
+        padding-inline: 15px;
 
-        font-size: 0.67rem;
+        font-size: 0.68rem;
       }
 
       .profile-frame {
@@ -2343,9 +2572,9 @@
       }
 
       .profile-orbit-svg text {
-        font-size: 12px;
+        font-size: 11.7px;
 
-        letter-spacing: 2.5px;
+        letter-spacing: 2px;
       }
 
       .case-grid {
@@ -2357,9 +2586,11 @@
       }
 
       .project-meta span {
-        min-height: 37px;
+        min-height: 38px;
 
-        font-size: 0.62rem;
+        padding-inline: 14px;
+
+        font-size: 0.64rem;
       }
 
       .fa-tab {
@@ -2377,7 +2608,7 @@
       }
     }
 
-    @media (max-width: 520px) {
+    @media(max-width: 520px) {
       .wireframe-stage {
         min-height: 310px;
       }
@@ -2435,18 +2666,21 @@
       }
 
       .about-visual {
-        min-height: 390px;
+        min-height: 400px;
       }
 
       .profile-frame {
-        width: min(
-          100%,
-          385px
-        );
+        width:
+          min(
+            100%,
+            390px
+          );
       }
 
       .profile-orbit-svg text {
-        font-size: 11px;
+        font-size: 10.6px;
+
+        letter-spacing: 1.9px;
       }
 
       .profile-auto-layout {
@@ -2459,7 +2693,7 @@
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
+    @media(prefers-reduced-motion: reduce) {
       *,
       *::before,
       *::after {
@@ -2594,7 +2828,7 @@
           Design com
           <em>clareza,</em>
 
-          <br />
+          <br>
 
           <em>estrutura</em>
           e
@@ -2626,7 +2860,7 @@
       </div>
 
       <!-- ===================================================
-           WIREFRAME INTERATIVO
+           WIREFRAME
       ==================================================== -->
 
       <div class="wireframe-area">
@@ -2634,8 +2868,6 @@
         <div class="wireframe-ui">
 
           <div class="wireframe-stage">
-
-            <!-- PEN -->
 
             <svg
               class="pen-tool"
@@ -2698,8 +2930,6 @@
               ➤ Raquel • UI/UX
             </div>
 
-            <!-- WINDOW -->
-
             <div
               class="wireframe-window"
               id="wireWindow"
@@ -2733,39 +2963,24 @@
                       class="wire-nav-item active paintable"
                       data-wire-tab="dashboard"
                     >
-
-                      <span class="wire-icon">
-                        ▧
-                      </span>
-
+                      <span class="wire-icon">▧</span>
                       Dashboard
-
                     </div>
 
                     <div
                       class="wire-nav-item paintable"
                       data-wire-tab="interfaces"
                     >
-
-                      <span class="wire-icon">
-                        ✦
-                      </span>
-
+                      <span class="wire-icon">✦</span>
                       Interfaces
-
                     </div>
 
                     <div
                       class="wire-nav-item paintable"
                       data-wire-tab="system"
                     >
-
-                      <span class="wire-icon">
-                        ❖
-                      </span>
-
+                      <span class="wire-icon">❖</span>
                       Design System
-
                     </div>
 
                   </nav>
@@ -2773,8 +2988,6 @@
                 </aside>
 
                 <div class="wireframe-main">
-
-                  <!-- DASHBOARD -->
 
                   <section
                     class="wire-view active"
@@ -2861,8 +3074,6 @@
 
                   </section>
 
-                  <!-- INTERFACES -->
-
                   <section
                     class="wire-view"
                     id="wire-interfaces"
@@ -2933,8 +3144,6 @@
                     </div>
 
                   </section>
-
-                  <!-- DESIGN SYSTEM -->
 
                   <section
                     class="wire-view"
@@ -3007,8 +3216,6 @@
             </div>
 
           </div>
-
-          <!-- PALETA -->
 
           <div class="wireframe-palette">
 
@@ -3147,7 +3354,6 @@
 
     <!-- =====================================================
          SOBRE
-         TEXTO À ESQUERDA / FOTO À DIREITA
     ====================================================== -->
 
     <section
@@ -3214,7 +3420,7 @@
 
         <div class="profile-frame">
 
-          <!-- ORBIT -->
+          <!-- TEXTO CIRCULAR COMPLETO -->
 
           <svg
             class="profile-orbit-svg"
@@ -3225,12 +3431,10 @@
             <defs>
 
               <path
-                id="orbitPath"
+                id="profileOrbitPath"
                 d="
-                  M 235,29
-                  A 206,206
-                  0 1,1
-                  234.9,29
+                  M235,25
+                  A210,210 0 1,1 234.99,25
                 "
               />
 
@@ -3240,23 +3444,21 @@
               class="profile-orbit-line"
               cx="235"
               cy="235"
-              r="206"
+              r="210"
             />
 
             <text>
 
               <textPath
-                href="#orbitPath"
-                startOffset="7%"
+                href="#profileOrbitPath"
+                startOffset="0%"
               >
-                UI/UX DESIGN • RAQUEL RENOVATO • COMUNICAÇÃO VISUAL • INTERFACES •
+                UI/UX DESIGN • RAQUEL RENOVATO • COMUNICAÇÃO VISUAL • UI/UX DESIGN • RAQUEL RENOVATO • COMUNICAÇÃO VISUAL •
               </textPath>
 
             </text>
 
           </svg>
-
-          <!-- PEN -->
 
           <svg
             class="profile-pen"
@@ -3310,7 +3512,7 @@
               <img
                 src="img/img-perfil/foto-perfil.jpeg"
                 alt="Raquel Renovato"
-              />
+              >
 
             </div>
 
@@ -3494,7 +3696,7 @@
 
         </div>
 
-        <div class="fa-view active">
+        <section class="fa-view active">
 
           <div class="fa-story">
 
@@ -3625,7 +3827,7 @@
 
               <div
                 class="desktop-frame"
-                data-desktop-height="740"
+                data-desktop-height="900"
               >
 
                 <div class="desktop-canvas">
@@ -3644,7 +3846,7 @@
 
           </div>
 
-        </div>
+        </section>
 
       </div>
 
@@ -3749,7 +3951,9 @@
           Falar no WhatsApp
         </a>
 
-        <a href="mailto:raquel.renovato.design@gmail.com">
+        <a
+          href="mailto:raquel.renovato.design@gmail.com"
+        >
           Enviar e-mail
         </a>
 
@@ -3778,12 +3982,20 @@
       const $ = (
         selector,
         root = document
-      ) => root.querySelector(selector);
+      ) =>
+        root.querySelector(
+          selector
+        );
 
       const $$ = (
         selector,
         root = document
-      ) => [...root.querySelectorAll(selector)];
+      ) =>
+        [
+          ...root.querySelectorAll(
+            selector
+          )
+        ];
 
       /* =====================================================
          INTRO
@@ -3798,15 +4010,16 @@
       let introFinished =
         false;
 
-      const timers = [];
+      const introTimers =
+        [];
 
       function showIntroWord(
-        index
+        targetIndex
       ) {
         introWords.forEach(
           (
             word,
-            wordIndex
+            index
           ) => {
             word.classList.remove(
               "active",
@@ -3814,8 +4027,8 @@
             );
 
             if (
-              wordIndex <
-              index
+              index <
+              targetIndex
             ) {
               word.classList.add(
                 "exit"
@@ -3823,8 +4036,8 @@
             }
 
             if (
-              wordIndex ===
-              index
+              index ===
+              targetIndex
             ) {
               word.classList.add(
                 "active"
@@ -3844,7 +4057,7 @@
         introFinished =
           true;
 
-        timers.forEach(
+        introTimers.forEach(
           clearTimeout
         );
 
@@ -3856,7 +4069,7 @@
           "intro-active"
         );
 
-        setTimeout(
+        window.setTimeout(
           () => {
             intro.style.display =
               "none";
@@ -3869,30 +4082,32 @@
         0
       );
 
-      timers.push(
-        setTimeout(
-          () =>
+      introTimers.push(
+        window.setTimeout(
+          () => {
             showIntroWord(
               1
-            ),
-          720
+            );
+          },
+          780
         )
       );
 
-      timers.push(
-        setTimeout(
-          () =>
+      introTimers.push(
+        window.setTimeout(
+          () => {
             showIntroWord(
               2
-            ),
-          1440
+            );
+          },
+          1560
         )
       );
 
-      timers.push(
-        setTimeout(
+      introTimers.push(
+        window.setTimeout(
           closeIntro,
-          2450
+          2600
         )
       );
 
@@ -3915,7 +4130,8 @@
         theme
       ) {
         if (
-          theme === "dark"
+          theme ===
+          "dark"
         ) {
           document.documentElement.setAttribute(
             "data-theme",
@@ -3940,7 +4156,8 @@
         );
 
       applyTheme(
-        savedTheme === "dark"
+        savedTheme ===
+          "dark"
           ? "dark"
           : "light"
       );
@@ -3954,18 +4171,18 @@
             ) ===
             "dark";
 
-          const nextTheme =
+          const next =
             isDark
               ? "light"
               : "dark";
 
           localStorage.setItem(
             "raquel-theme",
-            nextTheme
+            next
           );
 
           applyTheme(
-            nextTheme
+            next
           );
         }
       );
@@ -3986,7 +4203,7 @@
       let appMode =
         true;
 
-      function colorToRGB(
+      function hexToRGB(
         hex
       ) {
         const clean =
@@ -4032,7 +4249,7 @@
         };
       }
 
-      function contrastText(
+      function getReadableText(
         color
       ) {
         if (!color) {
@@ -4040,7 +4257,7 @@
         }
 
         const rgb =
-          colorToRGB(
+          hexToRGB(
             color
           );
 
@@ -4050,12 +4267,9 @@
 
         const luminance =
           (
-            rgb.r *
-              299 +
-            rgb.g *
-              587 +
-            rgb.b *
-              114
+            rgb.r * 299 +
+            rgb.g * 587 +
+            rgb.b * 114
           ) /
           1000;
 
@@ -4092,7 +4306,9 @@
       function paintElement(
         element
       ) {
-        if (!selectedColor) {
+        if (
+          !selectedColor
+        ) {
           removePaint(
             element
           );
@@ -4100,8 +4316,8 @@
           return;
         }
 
-        const textColor =
-          contrastText(
+        const readable =
+          getReadableText(
             selectedColor
           );
 
@@ -4116,15 +4332,13 @@
           selectedColor;
 
         element.style.color =
-          textColor;
+          readable;
 
         element.style.setProperty(
           "--paint-text",
-          textColor
+          readable
         );
       }
-
-      /* PALETA */
 
       $$(".color-dot").forEach(
         button => {
@@ -4134,10 +4348,11 @@
               event.stopPropagation();
 
               $$(".color-dot").forEach(
-                current =>
-                  current.classList.remove(
+                dot => {
+                  dot.classList.remove(
                     "active"
-                  )
+                  );
+                }
               );
 
               button.classList.add(
@@ -4152,29 +4367,27 @@
         }
       );
 
-      /* PINTURA */
-
       wireWindow.addEventListener(
         "click",
         event => {
-          const paintTarget =
+          const target =
             event.target.closest(
               ".paintable"
             );
 
-          if (
-            !paintTarget
-          ) {
+          if (!target) {
             return;
           }
 
           paintElement(
-            paintTarget
+            target
           );
         }
       );
 
-      /* TABS WIREFRAME */
+      /* =====================================================
+         NAVEGAÇÃO DO WIREFRAME
+      ====================================================== */
 
       $$(".wire-nav-item").forEach(
         item => {
@@ -4184,17 +4397,18 @@
               event.stopPropagation();
 
               $$(".wire-nav-item").forEach(
-                nav =>
+                nav => {
                   nav.classList.remove(
                     "active"
-                  )
+                  );
+                }
               );
 
               item.classList.add(
                 "active"
               );
 
-              const target =
+              const tab =
                 item.dataset.wireTab;
 
               $$(".wire-view").forEach(
@@ -4202,7 +4416,7 @@
                   view.classList.toggle(
                     "active",
                     view.id ===
-                      `wire-${target}`
+                      `wire-${tab}`
                   );
                 }
               );
@@ -4211,21 +4425,26 @@
         }
       );
 
-      /* +1 ENTREGA */
+      /* =====================================================
+         ENTREGA
+      ====================================================== */
 
       $("#addDelivery").addEventListener(
         "click",
         event => {
           event.stopPropagation();
 
-          deliveries++;
+          deliveries +=
+            1;
 
           $("#deliveryNumber").textContent =
             deliveries;
         }
       );
 
-      /* CHECKS */
+      /* =====================================================
+         CHECKS
+      ====================================================== */
 
       $$(".wire-check").forEach(
         check => {
@@ -4242,7 +4461,9 @@
         }
       );
 
-      /* MODO APP */
+      /* =====================================================
+         APP MODE
+      ====================================================== */
 
       $("#appMode").addEventListener(
         "click",
@@ -4314,7 +4535,9 @@
         }
       );
 
-      /* LIMPAR */
+      /* =====================================================
+         LIMPAR
+      ====================================================== */
 
       $("#clearWireframe").addEventListener(
         "click",
@@ -4337,10 +4560,11 @@
           );
 
           $$(".wire-check").forEach(
-            check =>
+            check => {
               check.classList.remove(
                 "checked"
-              )
+              );
+            }
           );
 
           deliveries =
@@ -4376,10 +4600,11 @@
             "modo app";
 
           $$(".wire-nav-item").forEach(
-            nav =>
+            nav => {
               nav.classList.remove(
                 "active"
-              )
+              );
+            }
           );
 
           $(
@@ -4401,13 +4626,13 @@
       );
 
       /* =====================================================
-         DESKTOP EMBED
+         PREVIEW DESKTOP DO FERNANDO
       ====================================================== */
 
-      const BASE_WIDTH =
+      const BASE_DESKTOP_WIDTH =
         1440;
 
-      function resizeEmbed(
+      function resizeDesktopFrame(
         frame
       ) {
         const canvas =
@@ -4426,36 +4651,36 @@
           Math.min(
             1,
             frame.clientWidth /
-              BASE_WIDTH
+              BASE_DESKTOP_WIDTH
           );
 
         canvas.style.transform =
           `scale(${scale})`;
 
-        const desktopHeight =
+        const originalHeight =
           Number(
             frame.dataset.desktopHeight ||
-            740
+            900
           );
 
         frame.style.height =
-          `${desktopHeight * scale}px`;
+          `${originalHeight * scale}px`;
       }
 
-      function resizeAllEmbeds() {
+      function resizeAllDesktopFrames() {
         $$(".desktop-frame").forEach(
-          resizeEmbed
+          resizeDesktopFrame
         );
       }
 
       window.addEventListener(
         "load",
-        resizeAllEmbeds
+        resizeAllDesktopFrames
       );
 
       window.addEventListener(
         "resize",
-        resizeAllEmbeds,
+        resizeAllDesktopFrames,
         {
           passive: true
         }
@@ -4465,29 +4690,32 @@
         "ResizeObserver" in
         window
       ) {
-        const resizeObserver =
+        const observer =
           new ResizeObserver(
             entries => {
               entries.forEach(
-                entry =>
-                  resizeEmbed(
+                entry => {
+                  resizeDesktopFrame(
                     entry.target
-                  )
+                  );
+                }
               );
             }
           );
 
         $$(".desktop-frame").forEach(
-          frame =>
-            resizeObserver.observe(
+          frame => {
+            observer.observe(
               frame
-            )
+            );
+          }
         );
       }
 
       requestAnimationFrame(
-        resizeAllEmbeds
+        resizeAllDesktopFrames
       );
+
     })();
   </script>
 
