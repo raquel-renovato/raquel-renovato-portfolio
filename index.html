@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
 <meta
   name="description"
-  content="Portfólio de Raquel Renovato — Designer de Comunicação Visual e UI, criando interfaces, sistemas visuais, apresentações e experiências digitais."
+  content="Portfólio de Raquel Renovato — Designer de Comunicação Visual e UI."
 >
 
-<title>Raquel Renovato — Comunicação Visual & UI</title>
+<title>
+  Raquel Renovato — Comunicação Visual & UI
+</title>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -24,9 +29,10 @@
 >
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700;800&display=swap"
   rel="stylesheet"
 >
+
 
 <style>
 
@@ -35,7 +41,9 @@
 ========================================================== */
 
 :root{
+
   --bg:#F3EFEA;
+
   --ink:#1F1C18;
   --dim:#59534C;
   --muted:#8A8379;
@@ -46,6 +54,8 @@
   --card:#E5DFD5;
   --card-hover:#DCD5C9;
 
+  --surface:#FAF7F2;
+
   --accent:#E8590C;
   --accent-hover:#C24A08;
   --accent-soft:rgba(232,89,12,.10);
@@ -54,36 +64,29 @@
 
   --nav-bg:rgba(243,239,234,.92);
 
-  --wf-bg:#FAF7F2;
-  --wf-card:#EAE4D9;
-  --wf-text:#1F1C18;
-  --wf-line:rgba(31,28,24,.12);
-
-  --surface:#FAF7F2;
+  --fa-navy:#00152A;
+  --fa-gold:#B8860B;
+  --fa-slate:#64748B;
 
   --pad:40px;
 
   --shadow:
-    0 22px 60px rgba(31,28,24,.11);
+    0 22px 60px
+    rgba(31,28,24,.11);
 
   --ease:
     cubic-bezier(.16,1,.3,1);
 
-  /* Fernando */
-  --fa-navy:#00152A;
-  --fa-navy-soft:#0D2E48;
-  --fa-gold:#B8860B;
-  --fa-slate:#64748B;
-  --fa-light:#F4F6F8;
-  --fa-white:#FFFFFF;
 }
 
 
-[data-theme="dark"]{
+html[data-theme="dark"]{
+
   --bg:#181614;
+
   --ink:#F0ECE1;
   --dim:#A6A095;
-  --muted:#6E685E;
+  --muted:#777066;
 
   --line:rgba(240,236,225,.15);
   --line-strong:rgba(240,236,225,.30);
@@ -91,23 +94,20 @@
   --card:#23201C;
   --card-hover:#2C2823;
 
+  --surface:#1D1A17;
+
   --accent:#F26D1D;
   --accent-hover:#F98A46;
   --accent-soft:rgba(242,109,29,.14);
 
   --green:#6E8B73;
 
-  --nav-bg:rgba(24,22,20,.90);
-
-  --wf-bg:#12110F;
-  --wf-card:#1C1A17;
-  --wf-text:#F0ECE1;
-  --wf-line:rgba(240,236,225,.12);
-
-  --surface:#1D1A17;
+  --nav-bg:rgba(24,22,20,.92);
 
   --shadow:
-    0 22px 70px rgba(0,0,0,.32);
+    0 22px 70px
+    rgba(0,0,0,.32);
+
 }
 
 
@@ -115,18 +115,25 @@
    RESET
 ========================================================== */
 
-*{
-  margin:0;
-  padding:0;
+*,
+*::before,
+*::after{
   box-sizing:border-box;
 }
 
+
 html{
   scroll-behavior:smooth;
-  scrollbar-gutter:stable;
+  scroll-padding-top:88px;
 }
 
+
 body{
+
+  margin:0;
+
+  overflow-x:hidden;
+
   background:var(--bg);
   color:var(--ink);
 
@@ -135,46 +142,67 @@ body{
   -webkit-font-smoothing:antialiased;
 
   transition:
-    background-color .4s ease,
-    color .4s ease;
+    background-color .3s ease,
+    color .3s ease;
+
 }
 
-body.locked,
-body.intro-active{
+
+body.intro-active,
+body.locked{
   overflow:hidden;
 }
+
 
 img{
   display:block;
   max-width:100%;
 }
 
+
 button,
-input{
+input,
+textarea,
+select{
   font:inherit;
 }
+
 
 button{
   color:inherit;
 }
 
+
 a{
   color:inherit;
+  text-decoration:none;
 }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+  margin:0;
+}
+
+
+ul{
+  margin:0;
+  padding:0;
+}
+
+
+::selection{
+  background:var(--accent);
+  color:white;
+}
+
 
 .mono{
   font-family:"IBM Plex Mono",monospace;
-}
-
-.serif{
-  font-family:"Fraunces",serif;
-}
-
-a:focus-visible,
-button:focus-visible,
-[tabindex]:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:4px;
 }
 
 
@@ -183,8 +211,10 @@ button:focus-visible,
 ========================================================== */
 
 #intro-overlay{
+
   position:fixed;
   inset:0;
+
   z-index:9999;
 
   display:flex;
@@ -197,43 +227,84 @@ button:focus-visible,
 
   cursor:pointer;
 
+  opacity:1;
+  visibility:visible;
+
   transition:
-    opacity .4s ease,
-    transform .4s var(--ease);
+    opacity .48s ease,
+    transform .48s var(--ease),
+    visibility .48s ease;
+
 }
+
 
 #intro-overlay.hide{
-  opacity:0;
 
-  transform:scale(1.02);
+  opacity:0;
+  visibility:hidden;
+
+  transform:scale(1.025);
 
   pointer-events:none;
+
 }
+
 
 .intro-title{
+
+  display:flex;
+
+  align-items:baseline;
+  justify-content:center;
+
+  gap:.22em;
+
+  flex-wrap:wrap;
+
+  color:var(--ink);
+
   font-family:"Fraunces",serif;
+
   font-size:clamp(2.3rem,6.8vw,4.9rem);
+
   font-weight:300;
 
+  line-height:1.08;
+
   text-align:center;
+
 }
 
+
 .intro-word-cycle{
+
   position:relative;
 
   display:inline-block;
 
-  height:1.15em;
+  width:5.3em;
+  min-width:5.3em;
+  height:1.16em;
 
   overflow:hidden;
 
+  color:var(--accent);
+
+  font-style:italic;
+
   vertical-align:bottom;
+
 }
 
+
 .intro-word-cycle .w{
+
   position:absolute;
+
   top:0;
   left:0;
+
+  display:block;
 
   opacity:0;
 
@@ -241,32 +312,55 @@ button:focus-visible,
 
   white-space:nowrap;
 
-  font-style:italic;
-
-  transform:translateY(100%);
+  transform:translateY(105%);
 
   transition:
-    opacity .25s ease,
-    transform .25s var(--ease);
+    opacity .34s ease,
+    transform .48s var(--ease);
+
 }
+
+
+.intro-word-cycle .w:first-child{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
 
 .intro-word-cycle .w.active{
+
   opacity:1;
+
   transform:translateY(0);
+
 }
+
 
 .intro-word-cycle .w.exit{
+
   opacity:0;
-  transform:translateY(-100%);
+
+  transform:translateY(-105%);
+
 }
 
+
 .intro-help{
+
   position:absolute;
+
+  left:50%;
   bottom:28px;
 
   color:var(--muted);
 
   font-size:.58rem;
+
+  transform:translateX(-50%);
+
 }
 
 
@@ -274,101 +368,142 @@ button:focus-visible,
    NAV
 ========================================================== */
 
-nav.site-nav{
+.site-nav{
+
   position:sticky;
+
   top:0;
 
-  z-index:100;
+  z-index:1000;
+
+  min-height:76px;
 
   display:grid;
-  grid-template-columns:1fr auto 1fr;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
   align-items:center;
 
-  padding:20px var(--pad);
+  gap:30px;
+
+  padding:
+    0
+    var(--pad);
+
+  border-bottom:1px solid var(--line);
 
   background:var(--nav-bg);
 
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(18px);
+
 }
+
 
 .nav-left{
+
   display:flex;
   align-items:center;
-  gap:20px;
+
+  gap:12px;
+
 }
+
 
 .logo{
-  color:var(--ink);
 
   font-family:"Fraunces",serif;
-  font-size:1.05rem;
+
+  font-size:1.12rem;
+
   font-weight:500;
 
-  text-decoration:none;
+  white-space:nowrap;
+
 }
 
-.logo:hover{
-  opacity:.7;
-}
 
 .theme-toggle{
-  padding:6px 14px;
 
-  border:1px solid var(--line-strong);
-  border-radius:100px;
+  min-height:31px;
+
+  padding:0 10px;
+
+  border:1px solid var(--line);
+
+  border-radius:999px;
 
   background:transparent;
-  color:var(--ink);
 
-  font-size:.7rem;
+  color:var(--dim);
+
+  font-size:.57rem;
 
   cursor:pointer;
+
 }
 
-.theme-toggle:hover{
-  border-color:var(--accent);
-  color:var(--accent);
-}
 
 .site-nav ul{
+
   display:flex;
-  gap:32px;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:28px;
 
   list-style:none;
 
-  font-size:.77rem;
 }
+
 
 .site-nav ul a{
+
   color:var(--dim);
 
-  text-decoration:none;
+  font-size:.73rem;
+
 }
+
 
 .site-nav ul a:hover{
   color:var(--accent);
 }
 
+
 .nav-cta{
+
   justify-self:end;
 
-  padding:8px 16px;
+  min-height:38px;
 
-  border:1px solid var(--ink);
+  display:flex;
 
-  color:var(--ink);
+  align-items:center;
+  justify-content:center;
 
-  font-size:.77rem;
+  padding:0 17px;
 
-  text-decoration:none;
+  border:1px solid var(--line-strong);
 
-  transition:.22s;
+  border-radius:999px;
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.58rem;
+
 }
 
+
 .nav-cta:hover{
+
   background:var(--ink);
+
   color:var(--bg);
+
 }
 
 
@@ -377,470 +512,534 @@ nav.site-nav{
 ========================================================== */
 
 .hero{
+
+  min-height:calc(100svh - 76px);
+
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:50px;
+
+  grid-template-columns:
+    minmax(0,1.05fr)
+    minmax(360px,.95fr);
+
+  gap:clamp(45px,6vw,110px);
+
   align-items:center;
 
-  min-height:76vh;
+  padding:
+    clamp(74px,8vw,130px)
+    var(--pad);
 
-  padding:90px var(--pad) 75px;
 }
+
+
+.hero-text{
+  max-width:820px;
+}
+
 
 .hero-eyebrow{
-  margin-bottom:20px;
 
-  color:var(--green);
+  margin-bottom:24px;
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.7rem;
-  font-weight:600;
-  letter-spacing:.06em;
-}
-
-.hero h1{
-  max-width:760px;
-
-  font-family:"Fraunces",serif;
-  font-size:clamp(2.4rem,5vw,4rem);
-  font-weight:300;
-  line-height:1.05;
-}
-
-.hero h1 em{
   color:var(--accent);
 
-  font-style:italic;
-  font-weight:400;
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.6rem;
+
+  letter-spacing:.08em;
+
 }
+
+
+.hero h1{
+
+  max-width:850px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:clamp(3.6rem,7.6vw,7.5rem);
+
+  font-weight:300;
+
+  line-height:.91;
+
+  letter-spacing:-.045em;
+
+}
+
+
+.hero h1 em{
+
+  color:var(--accent);
+
+  font-weight:300;
+
+}
+
 
 .hero-sub{
-  margin-top:30px;
+
+  max-width:650px;
+
+  margin-top:clamp(30px,4vw,55px);
+
 }
 
+
 .hero-sub p{
-  max-width:540px;
 
   color:var(--dim);
 
-  line-height:1.7;
+  font-size:clamp(.92rem,1.35vw,1.08rem);
+
+  line-height:1.75;
+
 }
+
 
 .hero-actions{
+
   display:flex;
-  gap:18px;
+
   flex-wrap:wrap;
 
-  margin-top:24px;
+  gap:12px;
+
+  margin-top:28px;
+
 }
+
 
 .hero-cta{
+
+  min-height:43px;
+
   display:inline-flex;
 
-  padding-bottom:4px;
+  align-items:center;
 
-  border-bottom:1.5px solid var(--accent);
+  padding:0 16px;
 
-  color:var(--accent);
+  border:1px solid var(--line-strong);
 
-  font-size:.83rem;
-  font-weight:500;
+  border-radius:999px;
 
-  text-decoration:none;
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.58rem;
+
 }
 
+
+.hero-cta.primary{
+
+  background:var(--ink);
+
+  color:var(--bg);
+
+}
+
+
 .hero-cta:hover{
-  color:var(--ink);
-  border-color:var(--ink);
+
+  border-color:var(--accent);
+
+  background:var(--accent);
+
+  color:white;
+
 }
 
 
 /* ==========================================================
-   HERO WIREFRAME
+   HERO MOCKUP
 ========================================================== */
 
 .hero-visual{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
+  min-width:0;
 }
+
 
 .wf-wrapper{
+
   position:relative;
 
-  width:100%;
-  max-width:380px;
+  min-height:540px;
+
+  display:grid;
+
+  place-items:center;
+
 }
 
-.wf-illustration{
-  position:absolute;
-
-  z-index:10;
-
-  pointer-events:none;
-}
-
-.pen-tool-svg{
-  top:-28px;
-  left:-28px;
-
-  width:76px;
-  height:76px;
-}
-
-.cursor-floater{
-  right:-16px;
-  bottom:-14px;
-
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  padding:4px 10px;
-
-  border-radius:4px 14px 14px 14px;
-
-  background:var(--accent);
-  color:#FFF;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.65rem;
-
-  box-shadow:0 8px 18px rgba(0,0,0,.12);
-
-  animation:floatAnim 4s ease-in-out infinite;
-}
-
-.badge-floater{
-  top:-16px;
-  right:-14px;
-
-  display:flex;
-  align-items:center;
-  gap:5px;
-
-  padding:3px 10px;
-
-  border:1px solid var(--green);
-  border-radius:20px;
-
-  background:var(--bg);
-  color:var(--green);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.62rem;
-
-  box-shadow:0 4px 12px rgba(0,0,0,.06);
-
-  animation:floatAnim 5s ease-in-out infinite .5s;
-}
-
-.spec-floater{
-  bottom:30px;
-  left:-32px;
-
-  padding:2px 8px;
-
-  border:1px solid var(--line-strong);
-  border-radius:4px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
-}
-
-@keyframes floatAnim{
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-5px);
-  }
-}
 
 .wf-window{
-  position:relative;
-  z-index:1;
 
-  width:100%;
-  height:260px;
-
-  display:flex;
-  flex-direction:column;
+  width:min(100%,570px);
 
   overflow:hidden;
 
-  border:1.5px solid var(--line-strong);
+  border:1px solid var(--line-strong);
+
   border-radius:10px;
 
-  background:var(--wf-bg);
-  color:var(--wf-text);
+  background:var(--surface);
 
-  box-shadow:0 12px 28px rgba(0,0,0,.06);
+  box-shadow:var(--shadow);
 
-  user-select:none;
 }
 
-.wf-header{
-  height:34px;
+
+.wf-titlebar{
+
+  height:43px;
 
   display:flex;
+
   align-items:center;
-  justify-content:space-between;
+
+  gap:7px;
 
   padding:0 14px;
 
-  border-bottom:1px solid var(--wf-line);
+  border-bottom:1px solid var(--line);
 
-  background:var(--wf-card);
 }
 
-.wf-dots{
-  display:flex;
-  gap:5px;
-}
 
-.wf-dot{
-  width:7px;
-  height:7px;
+.wf-titlebar i{
+
+  width:8px;
+  height:8px;
 
   border-radius:50%;
 
   background:var(--muted);
 
-  opacity:.6;
+  opacity:.45;
+
 }
 
-.wf-switch-mode{
-  padding:2px 8px;
 
-  border:1px solid var(--line-strong);
-  border-radius:10px;
+.wf-titlebar span{
+
+  margin-left:auto;
+
+  color:var(--muted);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.48rem;
+
+}
+
+
+.wf-toolbar{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:6px;
+
+  padding:11px 12px;
+
+  border-bottom:1px solid var(--line);
+
+}
+
+
+.wf-toolbar button{
+
+  padding:6px 9px;
+
+  border:1px solid var(--line);
+
+  border-radius:4px;
 
   background:transparent;
-  color:var(--dim);
 
-  font-size:.62rem;
+  color:var(--ink);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.48rem;
 
   cursor:pointer;
+
 }
 
-.wf-body{
-  flex:1;
 
-  display:flex;
+.wf-toolbar button:hover{
 
-  min-height:0;
+  border-color:var(--accent);
+
+  color:var(--accent);
+
 }
+
+
+.wf-canvas{
+
+  display:grid;
+
+  grid-template-columns:.82fr 1.18fr;
+
+  min-height:390px;
+
+}
+
 
 .wf-sidebar{
-  width:110px;
 
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+  padding:13px;
 
-  padding:12px 8px;
+  border-right:1px solid var(--line);
 
-  border-right:1px solid var(--wf-line);
-
-  background:var(--wf-card);
 }
 
-.wf-nav-item{
+
+.wf-sidebar-label{
+
+  margin-bottom:9px;
+
+  color:var(--muted);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.44rem;
+
+}
+
+
+.wf-task-item{
+
   display:flex;
+
   align-items:center;
-  gap:6px;
+
+  gap:8px;
+
+  margin-bottom:7px;
+
+  padding:9px;
+
+  border:1px solid var(--line);
+
+  border-radius:4px;
+
+  background:var(--card);
+
+  font-size:.55rem;
+
+  cursor:pointer;
+
+}
+
+
+.wf-task-item::before{
+
+  content:"";
+
+  width:7px;
+  height:7px;
+
+  border:1px solid var(--accent);
+
+  border-radius:2px;
+
+}
+
+
+.wf-task-item.checked{
+
+  opacity:.45;
+
+  text-decoration:line-through;
+
+}
+
+
+.wf-task-item.checked::before{
+  background:var(--accent);
+}
+
+
+.wf-main{
+  padding:15px;
+}
+
+
+.wf-topline{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:12px;
+
+}
+
+
+.wf-mini-title{
+
+  font-family:"Fraunces",serif;
+
+  font-size:1.1rem;
+
+}
+
+
+.wf-mini-action{
 
   padding:6px 8px;
 
-  border-radius:4px;
+  border:1px solid var(--accent);
 
-  color:var(--dim);
-
-  font-size:.62rem;
-
-  cursor:pointer;
-}
-
-.wf-nav-item.active{
-  background:var(--accent);
-  color:#FFF;
-}
-
-.wf-main{
-  flex:1;
-
-  min-width:0;
-
-  padding:12px;
-
-  overflow:auto;
-}
-
-.wf-view{
-  display:none;
-  flex-direction:column;
-  gap:10px;
-}
-
-.wf-view.active{
-  display:flex;
-}
-
-.wf-top-bar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.wf-title{
-  font-size:.76rem;
-}
-
-.wf-badge-btn{
-  padding:4px 10px;
-
-  border:0;
   border-radius:4px;
 
   background:var(--accent);
-  color:#FFF;
 
-  font-size:.6rem;
+  color:white;
+
+  font-size:.44rem;
 
   cursor:pointer;
+
 }
 
-.wf-card-grid{
+
+.wf-stats{
+
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:8px;
+
+  margin-bottom:9px;
+
 }
 
-.wf-card{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
 
-  padding:8px;
+.wf-stat{
 
-  border:1px solid var(--wf-line);
-  border-radius:6px;
+  min-height:90px;
 
-  background:var(--wf-card);
+  padding:10px;
 
-  cursor:pointer;
+  border:1px solid var(--line);
+
+  background:var(--card);
+
 }
 
-.wf-card-label{
+
+.wf-stat span{
+
+  display:block;
+
   color:var(--muted);
 
-  font-size:.56rem;
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.43rem;
+
 }
 
-.wf-card-val{
-  font-size:.94rem;
-  font-weight:600;
+
+.wf-stat strong{
+
+  display:block;
+
+  margin-top:8px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:1.55rem;
+
+  font-weight:400;
+
 }
 
-.wf-task-list{
-  display:flex;
-  flex-direction:column;
-  gap:5px;
+
+.wf-chart{
+
+  position:relative;
+
+  height:150px;
+
+  overflow:hidden;
+
+  border:1px solid var(--line);
+
+  background:var(--card);
+
 }
 
-.wf-task-item{
-  display:flex;
-  align-items:center;
-  gap:6px;
 
-  color:var(--dim);
+.wf-chart svg{
 
-  font-size:.6rem;
+  position:absolute;
 
-  cursor:pointer;
+  inset:15px;
+
+  width:calc(100% - 30px);
+  height:calc(100% - 30px);
+
 }
 
-.wf-checkbox{
-  width:11px;
-  height:11px;
 
-  display:grid;
-  place-items:center;
+/* ==========================================================
+   GENERIC SECTION
+========================================================== */
 
-  border:1px solid var(--line-strong);
-  border-radius:2px;
+.section-head{
 
-  color:#FFF;
+  padding:
+    86px
+    var(--pad)
+    30px;
 
-  font-size:.48rem;
+  border-top:1px solid var(--line);
+
 }
 
-.wf-task-item.checked span{
-  opacity:.55;
 
-  text-decoration:line-through;
+.section-head h2{
+
+  max-width:940px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:clamp(2rem,4.7vw,4.7rem);
+
+  font-weight:300;
+
+  line-height:1.02;
+
+  letter-spacing:-.03em;
+
 }
 
-.wf-task-item.checked .wf-checkbox{
-  background:var(--accent);
-  border-color:var(--accent);
-}
 
-.color-palette{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
-}
+.section-kicker{
 
-.swatch{
-  width:22px;
-  height:22px;
+  display:block;
 
-  border:1.5px solid var(--line-strong);
-  border-radius:50%;
+  margin-bottom:11px;
 
-  cursor:pointer;
-}
+  color:var(--accent);
 
-.swatch.active{
-  transform:scale(1.18);
+  font-family:"IBM Plex Mono",monospace;
 
-  border-color:var(--ink);
-}
+  font-size:.55rem;
 
-.swatch.reset{
-  display:grid;
-  place-items:center;
+  text-transform:uppercase;
 
-  background:var(--bg);
-  color:var(--muted);
-}
+  letter-spacing:.08em;
 
-.clear-btn{
-  border:0;
-
-  background:none;
-  color:var(--muted);
-
-  font-size:.65rem;
-  text-decoration:underline;
-
-  cursor:pointer;
-}
-
-.hero-visual-hint{
-  color:var(--muted);
-
-  font-size:.65rem;
-  text-align:center;
 }
 
 
@@ -848,329 +1047,770 @@ nav.site-nav{
    PROCESS
 ========================================================== */
 
-.process-section{
-  padding:46px var(--pad) 60px;
+.process{
 
-  border-block:1px solid var(--line);
+  padding:
+    0
+    var(--pad)
+    90px;
 
+}
+
+
+.process-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  border-top:1px solid var(--line);
+
+  border-left:1px solid var(--line);
+
+}
+
+
+.process-card{
+
+  min-height:300px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  padding:28px;
+
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+
+}
+
+
+.process-card:hover{
   background:var(--card);
 }
 
-.section-kicker{
+
+.process-card .n{
+
+  margin-bottom:auto;
+
   color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.63rem;
-  font-weight:600;
-  letter-spacing:.1em;
+  font-size:.55rem;
 
-  text-transform:uppercase;
 }
 
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-
-  margin-top:20px;
-
-  border:1px solid var(--line);
-
-  background:var(--line);
-}
-
-.process-card{
-  padding:25px;
-
-  background:var(--bg);
-}
-
-.process-card span{
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.65rem;
-}
 
 .process-card h3{
-  margin:10px 0;
+
+  max-width:300px;
+
+  margin-bottom:12px;
 
   font-family:"Fraunces",serif;
-  font-size:1.3rem;
+
+  font-size:1.55rem;
+
   font-weight:400;
+
 }
+
 
 .process-card p{
+
   color:var(--dim);
 
-  font-size:.84rem;
+  font-size:.82rem;
+
   line-height:1.65;
+
 }
 
 
 /* ==========================================================
-   SECTION
-========================================================== */
-
-.section-head{
-  padding:75px var(--pad) 30px;
-}
-
-.section-head h2{
-  font-family:"Fraunces",serif;
-  font-size:clamp(1.9rem,3.8vw,2.8rem);
-  font-weight:400;
-}
-
-
-/* ==========================================================
-   ABOUT
+   ABOUT — AUTORIA MAIS FORTE
 ========================================================== */
 
 .about{
+
   display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:60px;
+
+  grid-template-columns:
+    minmax(0,1.2fr)
+    minmax(320px,.8fr);
+
+  gap:clamp(50px,8vw,130px);
+
   align-items:center;
 
-  padding:10px var(--pad) 95px;
+  padding:
+    0
+    var(--pad)
+    115px;
+
 }
 
+
+.about-name{
+
+  margin-bottom:30px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:clamp(3.3rem,7vw,7.2rem);
+
+  font-weight:300;
+
+  line-height:.88;
+
+  letter-spacing:-.055em;
+
+}
+
+
+.about-name span{
+  display:block;
+}
+
+
+.about-name .surname{
+
+  color:var(--accent);
+
+  font-style:italic;
+
+}
+
+
 .about-copy p{
-  margin-top:18px;
+
+  max-width:680px;
+
+  margin-bottom:18px;
 
   color:var(--dim);
 
-  line-height:1.75;
+  font-size:clamp(.93rem,1.3vw,1.06rem);
+
+  line-height:1.78;
+
 }
+
 
 .about-tags{
+
   display:flex;
-  gap:9px;
+
   flex-wrap:wrap;
 
-  margin-top:25px;
+  gap:7px;
+
+  margin-top:29px;
+
 }
+
 
 .about-tag{
-  padding:6px 11px;
 
-  border:1px solid var(--line-strong);
+  padding:7px 10px;
 
-  background:var(--accent-soft);
+  border:1px solid var(--line);
+
+  border-radius:999px;
+
+  color:var(--dim);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.64rem;
+
+  font-size:.52rem;
+
 }
+
 
 .about-visual{
+
   position:relative;
 
-  width:100%;
-  max-width:380px;
+  min-height:430px;
 
   display:grid;
+
   place-items:center;
 
-  margin:auto;
-
-  aspect-ratio:1;
 }
+
 
 .about-orbit{
-  position:absolute;
-  inset:6%;
 
-  border:1.5px dashed var(--line-strong);
+  position:absolute;
+
+  width:min(88%,370px);
+
+  aspect-ratio:1;
+
+  border:1px solid var(--line);
+
   border-radius:50%;
+
 }
 
-.about-photo{
-  position:relative;
-  z-index:3;
 
-  width:66%;
-  height:66%;
+.about-orbit::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:16%;
+  right:3%;
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:var(--accent);
+
+}
+
+
+.about-photo{
+
+  position:relative;
+
+  z-index:2;
+
+  width:min(76%,310px);
+
+  aspect-ratio:4/5;
 
   overflow:hidden;
 
-  border:4px solid var(--bg);
-  border-radius:50%;
+  border-radius:50% 50% 8px 8px;
 
-  outline:3px solid var(--accent);
+  background:var(--card);
+
+  box-shadow:var(--shadow);
+
 }
 
+
 .about-photo img{
+
   width:100%;
   height:100%;
 
   object-fit:cover;
 
   cursor:zoom-in;
+
 }
 
 
 /* ==========================================================
-   PROJECT BASE
+   PROJECTS ENTRY
 ========================================================== */
 
-.project{
-  padding:70px 0 105px;
+.projects-intro{
+
+  position:relative;
+
+  padding:
+    110px
+    var(--pad)
+    70px;
+
+  overflow:hidden;
 
   border-top:1px solid var(--line);
+
 }
 
-.project-head{
-  max-width:1040px;
 
-  padding:0 var(--pad);
+.projects-intro::after{
 
-  margin-bottom:32px;
-}
+  content:"RAQUEL / SELECTED WORK";
 
-.project-number{
-  color:var(--accent);
+  position:absolute;
+
+  right:-20px;
+  bottom:-20px;
+
+  color:var(--line);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.68rem;
+
+  font-size:clamp(2rem,6vw,6rem);
+
   font-weight:600;
+
+  pointer-events:none;
+
 }
 
-.project-head h3{
-  margin:12px 0 15px;
+
+.projects-intro h2{
+
+  max-width:950px;
 
   font-family:"Fraunces",serif;
-  font-size:clamp(2.1rem,4.7vw,3.6rem);
-  font-weight:400;
+
+  font-size:clamp(3rem,6vw,6rem);
+
+  font-weight:300;
+
+  line-height:.97;
+
+  letter-spacing:-.045em;
+
 }
 
-.project-summary{
-  max-width:760px;
+
+.projects-intro p{
+
+  max-width:600px;
+
+  margin-top:24px;
 
   color:var(--dim);
 
-  font-size:1rem;
   line-height:1.7;
+
 }
 
-.project-meta{
+
+/* ==========================================================
+   PROJECT DIVIDER
+========================================================== */
+
+.project-divider{
+
+  position:relative;
+
+  min-height:250px;
+
   display:flex;
-  gap:8px;
-  flex-wrap:wrap;
 
-  margin-top:20px;
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+  padding:
+    70px
+    var(--pad)
+    38px;
+
+  overflow:hidden;
+
+  border-top:1px solid var(--line);
+
+  background:var(--card);
+
 }
 
-.project-meta span{
-  padding:5px 10px;
 
-  border:1px solid var(--line-strong);
-  border-radius:100px;
+.project-divider-number{
 
-  background:var(--accent-soft);
+  color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.6rem;
+
+  font-size:.58rem;
+
 }
 
+
+.project-divider h2{
+
+  max-width:850px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:clamp(3.3rem,7vw,7.2rem);
+
+  font-weight:300;
+
+  line-height:.89;
+
+  letter-spacing:-.055em;
+
+}
+
+
+.project-divider-meta{
+
+  max-width:260px;
+
+  color:var(--dim);
+
+  font-size:.7rem;
+
+  line-height:1.6;
+
+}
+
+
+.project-divider.featured{
+
+  min-height:330px;
+
+  background:var(--ink);
+
+  color:var(--bg);
+
+}
+
+
+.project-divider.featured
+.project-divider-meta{
+
+  color:rgba(255,255,255,.66);
+
+}
+
+
+.featured-pill{
+
+  display:inline-flex;
+
+  margin-bottom:13px;
+
+  padding:6px 10px;
+
+  border:1px solid var(--accent);
+
+  border-radius:999px;
+
+  color:var(--accent);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.48rem;
+
+  text-transform:uppercase;
+
+}
+
+
+/* ==========================================================
+   PROJECT
+========================================================== */
+
+.project{
+
+  border-top:1px solid var(--line);
+
+}
+
+
+.project-head{
+
+  padding:
+    70px
+    var(--pad)
+    46px;
+
+}
+
+
+.project-number{
+
+  display:block;
+
+  margin-bottom:15px;
+
+  color:var(--accent);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.55rem;
+
+}
+
+
+.project-head > h3{
+
+  font-family:"Fraunces",serif;
+
+  font-size:clamp(2.7rem,6.1vw,6rem);
+
+  font-weight:300;
+
+  line-height:.95;
+
+  letter-spacing:-.04em;
+
+}
+
+
+.project-summary{
+
+  max-width:800px;
+
+  margin-top:25px;
+
+  color:var(--dim);
+
+  font-size:clamp(.9rem,1.3vw,1.05rem);
+
+  line-height:1.7;
+
+}
+
+
+.project-meta{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:6px;
+
+  margin-top:24px;
+
+}
+
+
+.project-meta span{
+
+  padding:6px 9px;
+
+  border:1px solid var(--line);
+
+  border-radius:999px;
+
+  color:var(--dim);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.49rem;
+
+}
+
+
 .case-grid{
+
   display:grid;
-  grid-template-columns:repeat(2,1fr);
 
-  max-width:920px;
+  grid-template-columns:repeat(4,1fr);
 
-  margin-top:26px;
+  gap:1px;
+
+  margin-top:35px;
 
   border:1px solid var(--line);
 
   background:var(--line);
 
-  gap:1px;
 }
 
+
 .case-card{
+
+  min-height:190px;
+
   padding:20px;
 
   background:var(--bg);
+
 }
 
-.case-card span{
-  display:block;
 
-  margin-bottom:7px;
+.case-card span{
 
   color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.6rem;
-  font-weight:600;
+
+  font-size:.5rem;
 
   text-transform:uppercase;
+
 }
 
+
 .case-card p{
+
+  margin-top:16px;
+
   color:var(--dim);
 
-  font-size:.82rem;
+  font-size:.72rem;
+
   line-height:1.65;
+
 }
 
 
 /* ==========================================================
-   FERNANDO
+   PROJECT NAV
+========================================================== */
+
+.project-navigation{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  margin-top:65px;
+
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+
+}
+
+
+.project-nav-link{
+
+  min-height:145px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  padding:24px var(--pad);
+
+  transition:
+    background .2s,
+    color .2s;
+
+}
+
+
+.project-nav-link + .project-nav-link{
+
+  border-left:1px solid var(--line);
+
+  text-align:right;
+
+}
+
+
+.project-nav-link span{
+
+  color:var(--muted);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.48rem;
+
+}
+
+
+.project-nav-link strong{
+
+  margin-top:10px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:1.55rem;
+
+  font-weight:400;
+
+}
+
+
+.project-nav-link:hover{
+
+  background:var(--ink);
+
+  color:var(--bg);
+
+}
+
+
+/* ==========================================================
+   FERNANDO CASE
 ========================================================== */
 
 .fa-case{
-  padding:0 var(--pad);
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
+
 
 .fa-tabs{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
 
-  margin-bottom:18px;
+  display:flex;
+
+  gap:5px;
+
+  margin-bottom:24px;
+
+  overflow-x:auto;
+
+  scrollbar-width:none;
+
 }
 
-.fa-tab{
-  padding:8px 13px;
 
-  border:1px solid var(--line-strong);
-  border-radius:100px;
+.fa-tabs::-webkit-scrollbar{
+  display:none;
+}
+
+
+.fa-tab{
+
+  flex:0 0 auto;
+
+  padding:9px 13px;
+
+  border:1px solid var(--line);
+
+  border-radius:999px;
 
   background:transparent;
+
   color:var(--dim);
 
-  font-size:.62rem;
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.52rem;
+
+  white-space:nowrap;
 
   cursor:pointer;
 
-  transition:.2s ease;
 }
 
-.fa-tab:hover{
-  color:var(--accent);
-  border-color:var(--accent);
-}
 
+.fa-tab:hover,
 .fa-tab.active{
-  background:var(--accent);
+
   border-color:var(--accent);
 
-  color:#FFF;
+  background:var(--accent);
+
+  color:white;
+
 }
+
 
 .fa-view{
   display:none;
 }
 
+
 .fa-view.active{
+
   display:block;
 
-  animation:viewIn .32s ease;
+  animation:fadeUp .35s ease;
+
 }
 
-@keyframes viewIn{
+
+@keyframes fadeUp{
+
   from{
     opacity:0;
     transform:translateY(7px);
@@ -1180,69 +1820,127 @@ nav.site-nav{
     opacity:1;
     transform:none;
   }
+
 }
 
 
 /* ==========================================================
-   FERNANDO — STORY
+   STORY
 ========================================================== */
 
 .fa-story{
+
   display:grid;
-  grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
-  gap:18px;
+
+  grid-template-columns:
+    minmax(0,.77fr)
+    minmax(0,1.23fr);
+
+  gap:22px;
+
 }
+
 
 .fa-story-copy{
-  padding:28px;
+
+  padding:30px;
 
   border:1px solid var(--line);
-  border-radius:10px;
+
+  border-radius:11px;
 
   background:var(--card);
+
 }
 
-.fa-story-copy h4{
-  margin:10px 0;
 
-  font-family:"Fraunces",serif;
-  font-size:1.55rem;
-  font-weight:400;
-}
+.fa-story-copy > span{
 
-.fa-story-copy > p{
-  color:var(--dim);
-
-  font-size:.85rem;
-  line-height:1.7;
-}
-
-.fa-story-list{
-  margin-top:24px;
-}
-
-.fa-story-list article{
-  display:grid;
-  grid-template-columns:36px 1fr;
-  gap:10px;
-
-  padding:14px 0;
-
-  border-top:1px solid var(--line);
-}
-
-.fa-story-list strong{
   color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
+
+  font-size:.52rem;
+
 }
 
-.fa-story-list p{
+
+.fa-story-copy h4{
+
+  margin:18px 0;
+
+  font-family:"Fraunces",serif;
+
+  font-size:clamp(1.8rem,3vw,3rem);
+
+  font-weight:300;
+
+  line-height:1.08;
+
+}
+
+
+.fa-story-copy p{
+
   color:var(--dim);
 
-  font-size:.75rem;
-  line-height:1.55;
+  font-size:.79rem;
+
+  line-height:1.72;
+
+}
+
+
+.fa-story-flow{
+
+  display:grid;
+
+  margin-top:23px;
+
+}
+
+
+.fa-story-flow div{
+
+  display:grid;
+
+  grid-template-columns:34px 1fr;
+
+  gap:12px;
+
+  padding:12px 0;
+
+  border-top:1px solid var(--line);
+
+}
+
+
+.fa-story-flow span{
+
+  color:var(--accent);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.5rem;
+
+}
+
+
+.fa-story-flow strong{
+
+  display:block;
+
+  font-size:.72rem;
+
+}
+
+
+.fa-story-flow p{
+
+  margin-top:4px;
+
+  font-size:.66rem;
+
 }
 
 
@@ -1251,157 +1949,220 @@ nav.site-nav{
 ========================================================== */
 
 .browser-shell{
+
   overflow:hidden;
 
-  border:1px solid var(--line-strong);
+  border:1px solid var(--line);
+
   border-radius:11px;
 
-  background:var(--card);
+  background:var(--surface);
 
   box-shadow:var(--shadow);
+
 }
 
+
 .browser-bar{
+
+  min-height:48px;
+
   display:grid;
-  grid-template-columns:70px minmax(0,1fr) auto;
-  gap:12px;
+
+  grid-template-columns:
+    70px
+    minmax(0,1fr)
+    auto;
+
   align-items:center;
 
-  min-height:44px;
+  gap:12px;
 
-  padding:8px 12px;
+  padding:0 13px;
 
   border-bottom:1px solid var(--line);
 
   background:var(--card);
+
 }
+
 
 .browser-dots{
+
   display:flex;
+
   gap:5px;
+
 }
 
+
 .browser-dots i{
+
   width:7px;
   height:7px;
 
   border-radius:50%;
 
   background:var(--muted);
+
+  opacity:.5;
+
 }
 
+
 .browser-address{
-  width:min(580px,100%);
-
-  justify-self:center;
-
-  padding:6px 13px;
 
   overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:100px;
-
-  background:var(--bg);
   color:var(--muted);
 
-  font-size:.52rem;
+  font-size:.48rem;
 
-  text-align:center;
   text-overflow:ellipsis;
+
   white-space:nowrap;
+
 }
 
+
 .browser-link{
+
   color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.56rem;
 
-  text-decoration:none;
-}
+  font-size:.49rem;
 
-.browser-shell iframe{
-  display:block;
-
-  width:100%;
-  height:650px;
-
-  border:0;
-
-  background:#FFF;
-}
-
-
-/* LIVE BROWSER */
-
-.fa-live-cover{
-  min-width:0;
-}
-
-.fa-live-cover .browser-shell{
-  height:100%;
-}
-
-.fa-live-cover iframe{
-  height:560px;
 }
 
 
 /* ==========================================================
-   RESULT STRIP
+   REAL DESKTOP VIEWPORT
 ========================================================== */
 
+.fa-desktop-viewport{
+
+  position:relative;
+
+  width:100%;
+
+  overflow:hidden;
+
+  background:#fff;
+
+}
+
+
+.fa-desktop-canvas{
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:1440px;
+
+  transform-origin:top left;
+
+}
+
+
+.fa-desktop-canvas iframe{
+
+  display:block;
+
+  width:1440px !important;
+  height:900px !important;
+
+  max-width:none !important;
+
+  border:0;
+
+  background:#fff;
+
+}
+
+
+.fa-live-cover{
+
+  min-width:0;
+
+  overflow:hidden;
+
+  border-radius:11px;
+
+}
+
+
 .fa-result-strip{
+
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
 
   margin-top:18px;
 
   border:1px solid var(--line);
-  border-radius:9px;
+
+  border-radius:10px;
 
   overflow:hidden;
+
 }
+
 
 .fa-result-item{
-  padding:18px;
 
-  background:var(--surface);
+  min-height:150px;
+
+  padding:20px;
 
   border-right:1px solid var(--line);
+
 }
+
 
 .fa-result-item:last-child{
   border-right:0;
 }
 
-.fa-result-item span{
+
+.fa-result-item > span{
+
   display:block;
 
-  margin-bottom:7px;
+  margin-bottom:15px;
 
   color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
 
-  text-transform:uppercase;
+  font-size:.49rem;
+
 }
+
 
 .fa-result-item strong{
+
   font-family:"Fraunces",serif;
+
   font-size:1rem;
+
   font-weight:400;
+
 }
 
+
 .fa-result-item p{
+
   margin-top:6px;
 
   color:var(--dim);
 
-  font-size:.72rem;
+  font-size:.68rem;
+
   line-height:1.5;
+
 }
 
 
@@ -1410,48 +2171,64 @@ nav.site-nav{
 ========================================================== */
 
 .system-layout{
+
   display:grid;
-  grid-template-columns:210px 1fr;
+
+  grid-template-columns:
+    210px
+    minmax(0,1fr);
+
   gap:1px;
 
   overflow:hidden;
 
   border:1px solid var(--line);
+
   border-radius:11px;
 
   background:var(--line);
 
   box-shadow:var(--shadow);
+
 }
 
+
 .system-sidebar{
+
   padding:18px;
 
   background:var(--card);
+
 }
 
+
 .system-sidebar > span{
+
   display:block;
 
-  margin-bottom:10px;
+  margin-bottom:12px;
 
   color:var(--muted);
 
   font-family:"IBM Plex Mono",monospace;
+
   font-size:.53rem;
 
-  text-transform:uppercase;
 }
 
+
 .system-nav-btn{
+
   width:100%;
 
   padding:8px;
 
   border:0;
+
   border-radius:4px;
 
   background:transparent;
+
   color:var(--dim);
 
   font-size:.64rem;
@@ -1459,81 +2236,247 @@ nav.site-nav{
   text-align:left;
 
   cursor:pointer;
+
 }
+
 
 .system-nav-btn:hover,
 .system-nav-btn.active{
+
   background:var(--accent-soft);
+
   color:var(--accent);
+
 }
 
+
 .system-canvas{
+
   min-width:0;
 
   padding:30px;
 
   background:var(--surface);
+
 }
+
 
 .system-panel{
   display:none;
 }
 
+
 .system-panel.active{
   display:block;
 }
 
+
 .system-panel-title{
+
   margin-bottom:22px;
 
   font-family:"Fraunces",serif;
+
   font-size:1.55rem;
+
   font-weight:400;
+
 }
+
+
+.fa-color-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(5,1fr);
+
+  gap:8px;
+
+}
+
+
+.fa-color{
+
+  min-height:150px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  padding:14px;
+
+  border-radius:6px;
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.52rem;
+
+}
+
+
+.fa-color.navy{
+  background:#00152A;
+  color:#fff;
+}
+
+
+.fa-color.gold{
+  background:#B8860B;
+  color:#fff;
+}
+
+
+.fa-color.slate{
+  background:#64748B;
+  color:#fff;
+}
+
+
+.fa-color.light{
+  background:#F4F6F8;
+  color:#00152A;
+}
+
+
+.fa-color.white{
+
+  border:1px solid #CFD7DE;
+
+  background:#fff;
+
+  color:#00152A;
+
+}
+
+
+.fa-type-demo{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:12px;
+
+  margin-top:12px;
+
+}
+
+
+.fa-type-card{
+
+  min-height:220px;
+
+  padding:20px;
+
+  background:#fff;
+
+  color:#00152A;
+
+  border-radius:6px;
+
+}
+
+
+.fa-type-card span{
+
+  color:#64748B;
+
+  font-size:.52rem;
+
+}
+
+
+.fa-type-card strong{
+
+  display:block;
+
+  margin:20px 0 10px;
+
+  font-size:3rem;
+
+}
+
+
+.fa-type-card.manrope{
+
+  font-family:"Manrope",sans-serif;
+
+}
+
+
+.fa-type-card.dm{
+
+  font-family:"DM Sans",sans-serif;
+
+}
+
 
 .component-grid{
+
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:1fr 1fr;
+
   gap:12px;
+
 }
 
+
 .component-box{
-  min-height:190px;
+
+  min-height:180px;
 
   padding:18px;
 
   border:1px solid var(--line);
+
   border-radius:7px;
 
   background:var(--card);
+
 }
+
 
 .component-box.wide{
-  grid-column:1 / -1;
+
+  grid-column:1/-1;
+
 }
 
-.component-label{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
 
-  margin-bottom:25px;
+.component-label{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-bottom:24px;
 
   color:var(--muted);
 
   font-family:"IBM Plex Mono",monospace;
+
   font-size:.53rem;
+
 }
 
+
 .demo-button-row{
+
   display:flex;
-  align-items:center;
-  gap:9px;
+
   flex-wrap:wrap;
+
+  gap:9px;
+
 }
+
 
 .fa-demo-primary,
 .fa-demo-secondary{
+
   padding:10px 16px;
 
   border-radius:5px;
@@ -1542,402 +2485,145 @@ nav.site-nav{
 
   cursor:pointer;
 
-  transition:.2s;
 }
 
+
 .fa-demo-primary{
+
   border:1px solid var(--fa-gold);
 
   background:var(--fa-gold);
-  color:#FFF;
+
+  color:white;
+
 }
 
+
 .fa-demo-secondary{
+
   border:1px solid var(--fa-navy);
 
   background:transparent;
+
   color:var(--fa-navy);
+
 }
+
 
 .fa-demo-primary.is-hover{
-  filter:brightness(.84);
+
+  filter:brightness(.82);
 
   transform:translateY(-2px);
+
 }
+
 
 .fa-demo-primary.is-disabled{
-  opacity:.32;
+  opacity:.3;
 }
+
 
 .variant-controls{
+
   display:flex;
-  gap:5px;
+
   flex-wrap:wrap;
 
+  gap:5px;
+
   margin-top:20px;
+
 }
 
+
 .variant-controls button{
+
   padding:5px 8px;
 
   border:1px solid var(--line);
+
   border-radius:4px;
 
   background:var(--bg);
+
   color:var(--dim);
 
   font-size:.52rem;
 
   cursor:pointer;
+
 }
+
 
 .variant-controls button.active{
+
   border-color:var(--accent);
-  color:var(--accent);
-}
-
-
-/* COLORS */
-
-.fa-color-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:8px;
-}
-
-.fa-color{
-  min-height:150px;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-
-  padding:14px;
-
-  border-radius:6px;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.52rem;
-}
-
-.fa-color.navy{
-  background:#00152A;
-  color:#FFF;
-}
-
-.fa-color.gold{
-  background:#B8860B;
-  color:#FFF;
-}
-
-.fa-color.slate{
-  background:#64748B;
-  color:#FFF;
-}
-
-.fa-color.light{
-  border:1px solid #CFD7DE;
-
-  background:#F4F6F8;
-  color:#00152A;
-}
-
-.fa-color.white{
-  border:1px solid #CFD7DE;
-
-  background:#FFF;
-  color:#00152A;
-}
-
-
-/* TYPOGRAPHY */
-
-.fa-type-demo{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.fa-type-card{
-  min-height:220px;
-
-  padding:20px;
-
-  border-radius:6px;
-
-  background:#FFF;
-  color:#00152A;
-}
-
-.fa-type-card span{
-  display:block;
-
-  color:#64748B;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.52rem;
-}
-
-.fa-type-card strong{
-  display:block;
-
-  margin:20px 0 10px;
-
-  font-size:3.2rem;
-  line-height:1;
-}
-
-.fa-type-card.manrope strong,
-.fa-type-card.manrope p{
-  font-family:"Manrope","IBM Plex Sans",sans-serif;
-}
-
-.fa-type-card.dm strong,
-.fa-type-card.dm p{
-  font-family:"DM Sans","IBM Plex Sans",sans-serif;
-}
-
-.fa-type-card p{
-  font-size:.75rem;
-  line-height:1.5;
-}
-
-
-/* FILTER */
-
-.demo-filter-row{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
-.demo-filter{
-  padding:7px 11px;
-
-  border:1px solid #9DA6AF;
-
-  background:transparent;
-  color:#0D2E48;
-
-  font-size:.57rem;
-
-  cursor:pointer;
-}
-
-.demo-filter.active{
-  background:#B8860B;
-  border-color:#B8860B;
-
-  color:#FFF;
-}
-
-
-/* ARROWS */
-
-.fa-arrow-row{
-  display:flex;
-  gap:10px;
-}
-
-.demo-arrow{
-  width:44px;
-  height:44px;
-
-  display:grid;
-  place-items:center;
-
-  border:0;
-  border-radius:50%;
-
-  background:#B8860B;
-  color:#FFF;
-
-  font-size:1.25rem;
-}
-
-
-/* FORM */
-
-.fa-field-demo{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-}
-
-.fa-field{
-  min-height:44px;
-
-  display:flex;
-  align-items:center;
-
-  padding:0 12px;
-
-  border:1px solid #7185A0;
-  border-radius:7px;
-
-  background:#FFF;
-  color:#8793A4;
-
-  font-size:.6rem;
-}
-
-
-/* CARDS */
-
-.demo-quality{
-  padding:16px;
-
-  border:1px solid #CED3D7;
-
-  border-radius:7px;
-
-  background:#FFF;
-  color:#0D2E48;
-
-  transition:.2s;
-}
-
-.demo-quality strong{
-  display:block;
-
-  margin-bottom:7px;
-}
-
-.demo-quality p{
-  font-size:.65rem;
-  line-height:1.5;
-}
-
-.demo-quality:hover,
-.demo-quality.dark{
-  border-color:#00152A;
-
-  background:#00152A;
-  color:#FFF;
-}
-
-.demo-project-card{
-  overflow:hidden;
-
-  border-radius:7px;
-
-  background:#FFF;
-  color:#0D2E48;
-}
-
-.demo-project-img{
-  height:100px;
-
-  background:
-    linear-gradient(135deg,#CBD2D8,#7F8E9A);
-
-  transition:transform .5s var(--ease);
-}
-
-.demo-project-card:hover .demo-project-img{
-  transform:scale(1.04);
-}
-
-.demo-project-copy{
-  padding:11px;
-
-  font-size:.56rem;
-}
-
-.demo-project-copy strong{
-  display:block;
-
-  margin-bottom:5px;
-}
-
-
-/* TOKENS */
-
-.fa-token-list{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-}
-
-.fa-token{
-  padding:16px;
-
-  border:1px solid var(--line);
-  border-radius:6px;
-
-  background:var(--bg);
-}
-
-.fa-token strong{
-  display:block;
 
   color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.65rem;
-}
-
-.fa-token span{
-  display:block;
-
-  margin-top:8px;
-
-  color:var(--dim);
-
-  font-size:.65rem;
 }
 
 
 /* ==========================================================
-   RESPONSIVE CASE
+   RESPONSIVE SHOWCASE
 ========================================================== */
 
 .fa-responsive-showcase{
+
   display:grid;
-  grid-template-columns:minmax(0,1fr) 300px;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    300px;
+
   gap:30px;
+
   align-items:end;
 
   padding:30px;
 
   border:1px solid var(--line);
+
   border-radius:11px;
 
   background:var(--card);
 
   box-shadow:var(--shadow);
+
 }
 
+
 .fa-device-desktop{
+
+  min-width:0;
+
   overflow:hidden;
 
   border:1px solid var(--line-strong);
+
   border-radius:9px;
 
-  background:#FFF;
+  background:#fff;
 
-  box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
-.fa-device-desktop .browser-bar{
-  min-height:34px;
-}
-
-.fa-device-desktop iframe{
-  width:100%;
-  height:510px;
-
-  border:0;
-}
 
 .fa-mobile-wrap{
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   gap:15px;
+
 }
 
+
 .fa-device-mobile{
+
   width:245px;
 
   padding:8px;
@@ -1947,40 +2633,54 @@ nav.site-nav{
   background:#121212;
 
   box-shadow:0 25px 45px rgba(0,0,0,.22);
+
 }
 
+
 .fa-phone-screen{
+
   position:relative;
 
   width:100%;
 
-  aspect-ratio:390/780;
+  height:500px;
 
   overflow:hidden;
 
   border-radius:22px;
 
-  background:#00152A;
+  background:white;
+
 }
 
+
 .fa-phone-screen iframe{
+
   position:absolute;
+
   top:0;
   left:0;
 
-  width:390px;
-  height:780px;
+  width:390px !important;
+  height:1000px !important;
+
+  max-width:none !important;
 
   border:0;
 
   transform:scale(.587);
 
   transform-origin:top left;
+
 }
 
+
 .fa-responsive-notes{
+
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:1px;
 
   margin-top:18px;
@@ -1988,33 +2688,49 @@ nav.site-nav{
   border:1px solid var(--line);
 
   background:var(--line);
+
 }
 
+
 .fa-responsive-note{
+
   padding:18px;
 
   background:var(--bg);
+
 }
 
+
 .fa-responsive-note span{
+
   color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
+
   font-size:.55rem;
+
 }
 
+
 .fa-responsive-note h4{
+
   margin:8px 0;
 
   font-family:"Fraunces",serif;
+
   font-weight:400;
+
 }
 
+
 .fa-responsive-note p{
+
   color:var(--dim);
 
   font-size:.72rem;
+
   line-height:1.55;
+
 }
 
 
@@ -2023,302 +2739,346 @@ nav.site-nav{
 ========================================================== */
 
 .figma-shell{
+
   overflow:hidden;
 
-  border:1px solid var(--line-strong);
+  border:1px solid var(--line);
+
   border-radius:11px;
 
-  background:#111;
+  background:var(--surface);
 
   box-shadow:var(--shadow);
+
 }
+
 
 .figma-head{
+
+  min-height:68px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   gap:20px;
 
-  padding:14px 16px;
+  padding:13px 16px;
 
-  border-bottom:1px solid #343434;
+  border-bottom:1px solid var(--line);
 
-  background:#1B1B1B;
-  color:#FFF;
 }
+
 
 .figma-head span{
-  display:block;
 
-  margin-bottom:4px;
-
-  color:#F48A4A;
+  color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
+
+  font-size:.47rem;
+
 }
+
 
 .figma-head strong{
+
+  display:block;
+
+  margin-top:4px;
+
   font-family:"Fraunces",serif;
+
   font-size:1rem;
+
   font-weight:400;
+
 }
+
 
 .figma-head a{
-  color:#F48A4A;
+
+  color:var(--accent);
 
   font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
 
-  text-decoration:none;
+  font-size:.5rem;
+
 }
 
-.figma-frame{
-  height:min(78vh,800px);
-  min-height:600px;
-}
 
 .figma-frame iframe{
+
+  display:block;
+
   width:100%;
-  height:100%;
+  height:700px;
 
   border:0;
+
 }
 
 
 /* ==========================================================
-   VOIT
+   SECONDARY CASES — LIGHTER WEIGHT
 ========================================================== */
 
-.voit-case{
-  padding:0 var(--pad);
+.secondary-case{
+
+  padding:
+    0
+    var(--pad)
+    75px;
+
 }
 
-.voit-shell{
+
+.secondary-frame{
+
   overflow:hidden;
 
   border:1px solid var(--line);
-  border-radius:11px;
 
-  background:var(--card);
+  border-radius:10px;
 
-  box-shadow:var(--shadow);
+  background:var(--surface);
+
 }
 
-.voit-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
 
-  padding:17px;
+.case-tabs{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:6px;
+
+  padding:16px;
 
   border-bottom:1px solid var(--line);
+
 }
 
-.voit-tabs{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
 
-.voit-tab{
-  padding:6px 10px;
+.case-tab{
 
-  border:1px solid var(--line-strong);
-  border-radius:100px;
+  padding:7px 11px;
 
-  background:var(--bg);
+  border:1px solid var(--line);
+
+  border-radius:999px;
+
+  background:transparent;
+
   color:var(--dim);
 
-  font-size:.6rem;
+  font-size:.57rem;
 
   cursor:pointer;
+
 }
 
-.voit-tab.active{
-  background:var(--accent);
+
+.case-tab.active,
+.case-tab:hover{
+
   border-color:var(--accent);
 
-  color:#FFF;
+  background:var(--accent);
+
+  color:#fff;
+
 }
 
-.voit-view{
+
+.case-view{
+
   display:none;
 
-  padding:34px;
+  padding:28px;
+
 }
 
-.voit-view.active{
+
+.case-view.active{
   display:block;
 }
 
-.voit-ecosystem{
+
+/* VOIT */
+
+.voit-overview{
+
   display:grid;
-  grid-template-columns:1fr 180px 1fr;
-  grid-template-rows:1fr 1fr;
-  gap:22px;
+
+  grid-template-columns:
+    170px
+    repeat(2,1fr);
+
+  gap:18px;
+
   align-items:center;
 
-  min-height:520px;
 }
 
-.voit-core{
-  grid-column:2;
-  grid-row:1 / 3;
 
-  width:170px;
-  height:170px;
+.voit-core{
+
+  width:160px;
+  height:160px;
 
   display:grid;
+
   place-items:center;
 
   border-radius:50%;
 
   background:var(--ink);
+
   color:var(--bg);
 
   font-family:"Fraunces",serif;
-  font-size:1.5rem;
 
-  box-shadow:var(--shadow);
+  font-size:1.4rem;
+
+  text-align:center;
+
 }
+
 
 .voit-domain{
-  padding:20px;
+
+  min-height:145px;
+
+  padding:18px;
 
   border:1px solid var(--line);
-  border-radius:8px;
 
-  background:var(--bg);
+  border-radius:7px;
+
 }
+
 
 .voit-domain span{
+
   color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
+  font-size:.52rem;
+
 }
 
+
 .voit-domain h4{
+
   margin:8px 0;
 
   font-family:"Fraunces",serif;
-  font-size:1.2rem;
+
   font-weight:400;
+
 }
+
 
 .voit-domain p{
+
   color:var(--dim);
 
-  font-size:.77rem;
-  line-height:1.6;
+  font-size:.72rem;
+
+  line-height:1.55;
+
 }
 
+
 .voit-process{
+
   display:grid;
+
   grid-template-columns:repeat(5,1fr);
+
+  gap:1px;
 
   border:1px solid var(--line);
 
   background:var(--line);
 
-  gap:1px;
 }
+
 
 .voit-process article{
-  padding:20px;
+
+  padding:17px;
 
   background:var(--bg);
+
 }
+
 
 .voit-process span{
+
   color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.54rem;
+  font-size:.5rem;
+
 }
+
 
 .voit-process h4{
-  margin:7px 0;
 
-  font-family:"Fraunces",serif;
-  font-weight:400;
-}
-
-.voit-process p{
-  color:var(--dim);
-
-  font-size:.72rem;
-  line-height:1.55;
-}
-
-.voit-social{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-
-.voit-piece{
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:7px;
-
-  background:var(--bg);
-
-  cursor:zoom-in;
-
-  transition:.25s var(--ease);
-}
-
-.voit-piece:hover{
-  transform:translateY(-5px);
-}
-
-.voit-piece img{
-  width:100%;
-
-  aspect-ratio:1080/1350;
-
-  object-fit:cover;
-}
-
-.voit-professional{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.voit-professional article{
-  padding:24px;
-
-  border:1px solid var(--line);
-  border-radius:8px;
-
-  background:var(--bg);
-}
-
-.voit-professional span{
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
-}
-
-.voit-professional h4{
   margin:8px 0;
 
   font-family:"Fraunces",serif;
-  font-size:1.25rem;
+
   font-weight:400;
+
 }
 
-.voit-professional p{
+
+.voit-process p{
+
   color:var(--dim);
 
-  font-size:.8rem;
-  line-height:1.65;
+  font-size:.67rem;
+
+  line-height:1.5;
+
+}
+
+
+.voit-social{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:10px;
+
+}
+
+
+.voit-piece{
+
+  padding:0;
+
+  border:0;
+
+  background:var(--card);
+
+  cursor:zoom-in;
+
+}
+
+
+.voit-piece img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
 }
 
 
@@ -2326,170 +3086,131 @@ nav.site-nav{
    RENATA
 ========================================================== */
 
-.renata-case{
-  padding:0 var(--pad);
-}
-
 .deck-shell{
+
   overflow:hidden;
 
-  border:1px solid #343434;
-  border-radius:11px;
+  border-radius:8px;
 
-  background:#151515;
-  color:#FFF;
+  background:#171717;
 
-  box-shadow:var(--shadow);
+  color:#fff;
+
 }
 
-.deck-top{
-  min-height:44px;
+
+.deck-topbar{
+
+  min-height:48px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
-  padding:0 15px;
+  padding:0 16px;
 
   border-bottom:1px solid #333;
 
-  font-size:.6rem;
 }
+
+
+.deck-controls{
+
+  display:flex;
+
+  gap:7px;
+
+}
+
+
+.deck-controls button{
+
+  width:34px;
+  height:34px;
+
+  border:1px solid #444;
+
+  border-radius:50%;
+
+  background:transparent;
+
+  color:#fff;
+
+  cursor:pointer;
+
+}
+
 
 .deck-body{
-  display:grid;
-  grid-template-columns:1fr 255px;
 
-  min-height:540px;
+  display:grid;
+
+  grid-template-columns:1fr 165px;
+
 }
+
 
 .deck-stage{
+
+  min-height:500px;
+
   display:grid;
+
   place-items:center;
 
-  padding:38px;
+  padding:28px;
 
-  background:#181818;
 }
 
-.deck-screen{
-  width:min(850px,100%);
 
-  overflow:hidden;
+.deck-stage img{
 
-  aspect-ratio:16/9;
+  max-height:440px;
 
-  background:#000;
-
-  box-shadow:0 24px 65px rgba(0,0,0,.48);
-}
-
-.deck-screen img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
+  object-fit:contain;
 
   cursor:zoom-in;
+
 }
 
+
 .deck-side{
-  padding:22px;
+
+  max-height:500px;
+
+  overflow-y:auto;
+
+  padding:10px;
 
   border-left:1px solid #333;
 
-  background:#202020;
 }
 
-.deck-side h4{
-  margin:10px 0;
-
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
-  font-weight:400;
-}
-
-.deck-side p{
-  color:#BEBEBE;
-
-  font-size:.75rem;
-  line-height:1.65;
-}
-
-.deck-controls{
-  display:flex;
-  gap:8px;
-
-  margin-top:22px;
-}
-
-.deck-controls button{
-  width:35px;
-  height:35px;
-
-  border:1px solid #555;
-  border-radius:50%;
-
-  background:#292929;
-  color:#FFF;
-
-  cursor:pointer;
-}
-
-.deck-progress{
-  height:3px;
-
-  margin-top:18px;
-
-  background:#333;
-}
-
-.deck-progress span{
-  display:block;
-
-  height:100%;
-
-  background:var(--accent);
-
-  transition:width .3s;
-}
-
-.deck-thumbs{
-  display:flex;
-  gap:6px;
-
-  margin-top:18px;
-
-  overflow:auto;
-}
 
 .deck-thumb{
-  flex:0 0 72px;
 
-  overflow:hidden;
+  width:100%;
 
-  border:1px solid #444;
-  border-radius:4px;
+  margin-bottom:8px;
 
-  background:#111;
+  padding:0;
+
+  border:2px solid transparent;
+
+  background:none;
+
+  opacity:.5;
 
   cursor:pointer;
 
-  opacity:.55;
 }
+
 
 .deck-thumb.active{
-  opacity:1;
-
   border-color:var(--accent);
-}
-
-.deck-thumb img{
-  width:100%;
-
-  aspect-ratio:16/9;
-
-  object-fit:cover;
+  opacity:1;
 }
 
 
@@ -2497,132 +3218,129 @@ nav.site-nav{
    BRADUCA
 ========================================================== */
 
-.braduca-case{
-  padding:0 var(--pad);
+.editorial-layout{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    250px;
+
+  gap:18px;
+
 }
 
-.editorial-shell{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 330px;
-  gap:20px;
-}
 
 .editorial-ribbon{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
 
-  align-items:start;
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:8px;
+
 }
 
+
 .editorial-card{
-  position:relative;
 
-  overflow:hidden;
+  padding:0;
 
-  border:1px solid var(--line);
-  border-radius:7px;
+  border:2px solid transparent;
 
   background:var(--card);
 
+  aspect-ratio:4/5;
+
+  overflow:hidden;
+
   cursor:pointer;
 
-  transition:
-    transform .3s var(--ease),
-    box-shadow .3s,
-    border-color .3s;
 }
 
-.editorial-card:nth-child(2n){
-  transform:translateY(22px);
-}
 
-.editorial-card:hover,
 .editorial-card.active{
   border-color:var(--accent);
-
-  box-shadow:0 0 0 2px var(--accent-soft);
 }
+
 
 .editorial-card img{
-  width:100%;
 
-  aspect-ratio:1080/1350;
+  width:100%;
+  height:100%;
 
   object-fit:cover;
+
 }
 
-.editorial-number{
-  position:absolute;
-  top:7px;
-  left:7px;
 
-  padding:4px 6px;
+.editorial-preview{
 
-  border-radius:3px;
+  min-height:470px;
 
-  background:rgba(0,0,0,.75);
-  color:#FFF;
+  display:grid;
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.5rem;
+  place-items:center;
+
+  margin-top:18px;
+
+  padding:20px;
+
+  background:#111;
+
 }
+
+
+.editorial-preview img{
+
+  max-height:420px;
+
+  cursor:zoom-in;
+
+}
+
 
 .editorial-inspector{
-  position:sticky;
-  top:100px;
 
   align-self:start;
 
   padding:20px;
 
   border:1px solid var(--line);
-  border-radius:8px;
 
-  background:var(--card);
 }
 
-.editorial-preview{
-  overflow:hidden;
 
-  margin-bottom:17px;
+.editorial-inspector > span{
 
-  border-radius:5px;
+  color:var(--accent);
+
+  font-size:.5rem;
+
 }
 
-.editorial-preview img{
-  width:100%;
 
-  aspect-ratio:1080/1350;
+.editorial-inspector h4{
 
-  object-fit:cover;
+  margin:12px 0;
 
-  cursor:zoom-in;
-}
+  font-family:"Fraunces",serif;
 
-.inspector-row{
-  padding:11px 0;
+  font-size:1.3rem;
 
-  border-top:1px solid var(--line);
-}
-
-.inspector-row span{
-  display:block;
-
-  margin-bottom:3px;
-
-  color:var(--muted);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.51rem;
-
-  text-transform:uppercase;
-}
-
-.inspector-row strong{
-  font-size:.76rem;
   font-weight:400;
-  line-height:1.45;
+
+}
+
+
+.editorial-inspector p{
+
+  color:var(--dim);
+
+  font-size:.68rem;
+
+  line-height:1.55;
+
 }
 
 
@@ -2630,143 +3348,116 @@ nav.site-nav{
    AYMÉE
 ========================================================== */
 
-.aymee-case{
-  padding:0 var(--pad);
+.brand-layout{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    270px;
+
+  gap:20px;
+
 }
 
-.brand-shell{
-  overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:11px;
+.brand-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:8px;
+
+}
+
+
+.brand-card{
+
+  padding:0;
+
+  border:0;
 
   background:var(--card);
 
-  box-shadow:var(--shadow);
-}
+  aspect-ratio:1;
 
-.brand-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-
-  padding:17px;
-
-  border-bottom:1px solid var(--line);
-}
-
-.brand-filter{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
-.brand-filter button{
-  padding:6px 10px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-size:.58rem;
-
-  cursor:pointer;
-}
-
-.brand-filter button.active{
-  background:var(--accent);
-  border-color:var(--accent);
-
-  color:#FFF;
-}
-
-.brand-body{
-  display:grid;
-  grid-template-columns:1fr 300px;
-  gap:22px;
-
-  padding:30px;
-}
-
-.brand-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.brand-card{
   overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:7px;
-
-  background:var(--bg);
 
   cursor:zoom-in;
 
-  transition:.25s var(--ease);
 }
 
-.brand-card:hover{
-  transform:translateY(-4px);
-
-  border-color:var(--accent);
-}
 
 .brand-card img{
-  width:100%;
 
-  aspect-ratio:1080/1350;
+  width:100%;
+  height:100%;
 
   object-fit:cover;
+
 }
 
-.brand-rules{
-  align-self:start;
+
+.brand-notes{
 
   padding:20px;
 
   border:1px solid var(--line);
-  border-radius:8px;
 
-  background:var(--bg);
 }
 
-.brand-rules h4{
-  margin:8px 0 15px;
 
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
-  font-weight:400;
-}
+.brand-notes > span{
 
-.brand-rule{
-  padding:13px 0;
-
-  border-bottom:1px solid var(--line);
-}
-
-.brand-rule:last-child{
-  border-bottom:0;
-}
-
-.brand-rule span{
   color:var(--accent);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.52rem;
+  font-size:.5rem;
+
 }
 
+
+.brand-notes h4{
+
+  margin:12px 0 18px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:1.3rem;
+
+  font-weight:400;
+
+}
+
+
+.brand-rule{
+
+  padding:14px 0;
+
+  border-top:1px solid var(--line);
+
+}
+
+
+.brand-rule span{
+
+  color:var(--muted);
+
+  font-size:.48rem;
+
+}
+
+
 .brand-rule p{
-  margin-top:5px;
+
+  margin-top:6px;
 
   color:var(--dim);
 
-  font-size:.74rem;
-  line-height:1.55;
+  font-size:.67rem;
+
+  line-height:1.5;
+
 }
 
 
@@ -2775,35 +3466,67 @@ nav.site-nav{
 ========================================================== */
 
 .skills{
-  padding:0 var(--pad) 80px;
+
+  padding:
+    0
+    var(--pad)
+    100px;
+
 }
+
 
 .skill-grid{
+
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
 
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line);
+  gap:1px;
+
+  border:1px solid var(--line);
+
+  background:var(--line);
+
 }
+
 
 .skill-card{
-  padding:24px;
 
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+  min-height:220px;
+
+  padding:25px;
+
+  background:var(--bg);
+
 }
+
+
+.skill-card:hover{
+  background:var(--card);
+}
+
 
 .skill-card h3{
-  margin-bottom:10px;
 
-  font-size:.88rem;
+  margin-bottom:12px;
+
+  font-family:"Fraunces",serif;
+
+  font-size:1.35rem;
+
+  font-weight:400;
+
 }
 
+
 .skill-card p{
+
   color:var(--dim);
 
-  font-size:.78rem;
-  line-height:1.62;
+  font-size:.72rem;
+
+  line-height:1.65;
+
 }
 
 
@@ -2812,67 +3535,125 @@ nav.site-nav{
 ========================================================== */
 
 .contact{
-  padding:90px var(--pad);
 
-  text-align:center;
+  padding:
+    100px
+    var(--pad);
+
+  border-top:1px solid var(--line);
+
 }
+
 
 .contact h2{
-  max-width:760px;
 
-  margin:12px auto;
+  max-width:1000px;
 
   font-family:"Fraunces",serif;
-  font-size:clamp(2rem,4.6vw,3.1rem);
-  font-weight:400;
+
+  font-size:clamp(2.7rem,6.5vw,6.5rem);
+
+  font-weight:300;
+
+  line-height:.96;
+
+  letter-spacing:-.04em;
+
 }
 
-.contact p{
-  max-width:620px;
 
-  margin:0 auto 27px;
+.contact > p{
+
+  max-width:580px;
+
+  margin-top:25px;
 
   color:var(--dim);
 
-  line-height:1.6;
+  line-height:1.65;
+
 }
+
 
 .contact-actions{
+
   display:flex;
-  justify-content:center;
-  gap:11px;
+
   flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:30px;
+
 }
+
 
 .contact-actions a{
-  padding:11px 20px;
+
+  min-height:44px;
+
+  display:flex;
+
+  align-items:center;
+
+  padding:0 15px;
 
   border:1px solid var(--line-strong);
-  border-radius:4px;
 
-  font-size:.78rem;
+  border-radius:999px;
 
-  text-decoration:none;
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.53rem;
+
 }
 
-.contact-actions .primary{
+
+.contact-actions a.primary{
+
+  background:var(--ink);
+
+  color:var(--bg);
+
+}
+
+
+.contact-actions a:hover{
+
   background:var(--accent);
+
   border-color:var(--accent);
 
-  color:#FFF;
+  color:#fff;
+
 }
 
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
 footer{
+
   display:flex;
+
   justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
 
-  padding:35px var(--pad);
+  gap:20px;
 
-  color:var(--dim);
+  padding:
+    24px
+    var(--pad)
+    34px;
 
-  font-size:.74rem;
+  border-top:1px solid var(--line);
+
+  color:var(--muted);
+
+  font-family:"IBM Plex Mono",monospace;
+
+  font-size:.48rem;
+
 }
 
 
@@ -2881,47 +3662,57 @@ footer{
 ========================================================== */
 
 .lightbox{
+
   position:fixed;
+
   inset:0;
-  z-index:6000;
+
+  z-index:9998;
 
   display:none;
+
   align-items:center;
   justify-content:center;
 
-  padding:55px 25px 25px;
+  padding:35px;
 
   background:rgba(0,0,0,.92);
 
-  backdrop-filter:blur(5px);
 }
+
 
 .lightbox.open{
   display:flex;
 }
 
+
 .lightbox img{
+
   max-width:94vw;
   max-height:87vh;
 
   object-fit:contain;
 
-  border-radius:7px;
 }
 
+
 .lightbox-close{
+
   position:absolute;
+
   top:18px;
   right:25px;
 
   border:0;
 
   background:none;
-  color:#FFF;
 
-  font-size:2.1rem;
+  color:#fff;
+
+  font-size:2rem;
 
   cursor:pointer;
+
 }
 
 
@@ -2929,307 +3720,360 @@ footer{
    RESPONSIVE
 ========================================================== */
 
-@media(max-width:1000px){
+@media(max-width:1100px){
 
   :root{
-    --pad:24px;
+    --pad:28px;
   }
+
 
   .hero{
     grid-template-columns:1fr;
   }
 
-  .hero-visual{
-    order:-1;
-  }
-
-  .about{
-    grid-template-columns:1fr;
-  }
 
   .fa-story{
     grid-template-columns:1fr;
   }
 
-  .fa-live-cover iframe{
-    height:600px;
-  }
 
-  .system-layout{
-    grid-template-columns:165px 1fr;
-  }
-
-  .fa-color-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .fa-token-list{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .fa-responsive-showcase{
+  .about{
     grid-template-columns:1fr;
   }
 
-  .fa-mobile-wrap{
-    margin-top:20px;
-  }
 
-  .voit-process{
-    grid-template-columns:1fr;
-  }
-
-  .voit-social{
+  .case-grid{
     grid-template-columns:1fr 1fr;
   }
 
-  .deck-body{
-    grid-template-columns:1fr;
-  }
-
-  .deck-side{
-    border-left:0;
-    border-top:1px solid #333;
-  }
-
-  .editorial-shell{
-    grid-template-columns:1fr;
-  }
-
-  .editorial-inspector{
-    position:relative;
-    top:auto;
-
-    display:grid;
-    grid-template-columns:170px 1fr;
-    gap:17px;
-  }
-
-  .brand-body{
-    grid-template-columns:1fr;
-  }
 
   .skill-grid{
     grid-template-columns:1fr 1fr;
   }
+
 }
 
 
 @media(max-width:760px){
 
+  :root{
+    --pad:20px;
+  }
+
+
+  .intro-title{
+    font-size:clamp(2rem,10.5vw,3.6rem);
+  }
+
+
   .site-nav{
-    display:flex!important;
-    justify-content:space-between;
+
+    min-height:68px;
+
+    grid-template-columns:1fr auto;
+
   }
 
-  .site-nav ul{
-    display:none;
-  }
 
+  .site-nav ul,
   .theme-toggle{
     display:none;
   }
 
+
   .hero{
-    padding-top:48px;
+
+    min-height:auto;
+
+    padding-top:55px;
+    padding-bottom:75px;
+
   }
+
 
   .hero h1{
-    font-size:clamp(2.4rem,12vw,3.8rem);
+
+    font-size:clamp(3rem,14vw,5rem);
+
   }
 
-  .spec-floater{
+
+  .hero-visual{
     display:none;
   }
+
 
   .process-grid{
     grid-template-columns:1fr;
   }
 
+
+  .about-name{
+
+    font-size:clamp(3.5rem,18vw,5.3rem);
+
+  }
+
+
+  .projects-intro{
+
+    padding-top:80px;
+
+  }
+
+
+  .project-divider{
+
+    min-height:240px;
+
+    align-items:flex-start;
+
+    flex-direction:column;
+
+  }
+
+
+  .project-divider h2{
+
+    font-size:clamp(3rem,15vw,5rem);
+
+  }
+
+
+  .project-divider.featured{
+    min-height:290px;
+  }
+
+
+  .project-head > h3{
+
+    font-size:clamp(2.8rem,14vw,4.8rem);
+
+  }
+
+
   .case-grid{
     grid-template-columns:1fr;
   }
 
+
   .fa-tabs{
-    flex-wrap:nowrap;
 
-    margin-right:calc(var(--pad) * -1);
     margin-left:calc(var(--pad) * -1);
+    margin-right:calc(var(--pad) * -1);
 
-    padding:0 var(--pad) 6px;
+    padding-left:var(--pad);
+    padding-right:var(--pad);
 
-    overflow-x:auto;
-
-    scrollbar-width:none;
   }
 
-  .fa-tabs::-webkit-scrollbar{
-    display:none;
-  }
 
-  .fa-tab{
-    flex:0 0 auto;
+  .fa-result-strip{
 
-    white-space:nowrap;
-  }
-
-  .browser-bar{
-    grid-template-columns:50px minmax(0,1fr) auto;
-  }
-
-  .browser-shell iframe,
-  .fa-live-cover iframe{
-    height:520px;
-  }
-
-  .browser-address{
-    max-width:180px;
-  }
-
-  .browser-link{
-    font-size:.5rem;
-  }
-
-  .fa-result-strip,
-  .fa-responsive-notes{
     grid-template-columns:1fr;
+
   }
+
 
   .fa-result-item{
+
     border-right:0;
     border-bottom:1px solid var(--line);
+
   }
 
-  .fa-result-item:last-child{
-    border-bottom:0;
-  }
 
   .system-layout{
     display:block;
   }
 
+
   .system-sidebar{
+
     display:flex;
+
+    overflow-x:auto;
+
     gap:5px;
 
-    overflow:auto;
   }
+
 
   .system-sidebar > span{
     display:none;
   }
 
+
   .system-nav-btn{
+
     width:auto;
 
     flex:0 0 auto;
 
-    white-space:nowrap;
   }
 
-  .component-grid,
-  .fa-type-demo{
-    grid-template-columns:1fr;
-  }
 
   .fa-color-grid{
+
     grid-template-columns:1fr 1fr;
+
   }
 
-  .fa-color{
-    min-height:125px;
-  }
 
-  .fa-token-list{
-    grid-template-columns:1fr 1fr;
-  }
+  .fa-type-demo,
+  .component-grid{
 
-  .fa-field-demo{
     grid-template-columns:1fr;
+
   }
+
 
   .fa-responsive-showcase{
+
+    grid-template-columns:1fr;
+
     padding:16px;
+
   }
 
-  .fa-device-desktop iframe{
-    height:420px;
-  }
 
   .fa-device-mobile{
     width:245px;
   }
 
-  .figma-frame{
-    min-height:520px;
+
+  .figma-frame iframe{
+    height:520px;
   }
 
-  .voit-ecosystem{
-    display:grid;
+
+  .voit-overview{
+
     grid-template-columns:1fr;
-    grid-template-rows:auto;
 
-    min-height:0;
   }
+
 
   .voit-core{
-    grid-column:auto;
-    grid-row:auto;
 
-    width:100%;
-    height:auto;
+    margin:auto;
 
-    padding:24px;
-
-    border-radius:8px;
   }
+
+
+  .voit-process{
+
+    grid-template-columns:1fr;
+
+  }
+
 
   .voit-social{
+
     grid-template-columns:1fr 1fr;
+
   }
 
-  .voit-professional{
+
+  .deck-body{
+
     grid-template-columns:1fr;
+
   }
 
-  .deck-stage{
-    padding:18px;
+
+  .deck-side{
+
+    display:flex;
+
+    gap:7px;
+
+    overflow-x:auto;
+
+    border-left:0;
+    border-top:1px solid #333;
+
   }
+
+
+  .deck-thumb{
+
+    flex:0 0 100px;
+
+  }
+
+
+  .editorial-layout,
+  .brand-layout{
+
+    grid-template-columns:1fr;
+
+  }
+
 
   .editorial-ribbon{
+
     grid-template-columns:1fr 1fr;
+
   }
 
-  .editorial-card:nth-child(n){
-    transform:none;
-  }
-
-  .editorial-inspector{
-    grid-template-columns:110px 1fr;
-
-    padding:14px;
-  }
 
   .brand-grid{
+
     grid-template-columns:1fr 1fr;
+
   }
+
+
+  .project-navigation{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .project-nav-link + .project-nav-link{
+
+    border-left:0;
+    border-top:1px solid var(--line);
+
+    text-align:left;
+
+  }
+
 
   .skill-grid{
     grid-template-columns:1fr;
   }
+
+
+  .contact-actions{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+  }
+
+
+  footer{
+    flex-direction:column;
+  }
+
 }
 
 
 @media(max-width:520px){
 
-  .fa-color-grid,
-  .fa-token-list{
+  .fa-color-grid{
     grid-template-columns:1fr;
   }
+
 
   .fa-device-mobile{
     width:210px;
   }
+
 
   .fa-phone-screen iframe{
     transform:scale(.497);
@@ -3240,19 +4084,14 @@ footer{
 
 @media(prefers-reduced-motion:reduce){
 
-  *,
-  *::before,
-  *::after{
-    animation:none!important;
-
-    transition-duration:.01ms!important;
-
-    scroll-behavior:auto!important;
+  *{
+    scroll-behavior:auto !important;
   }
 
 }
 
 </style>
+
 </head>
 
 
@@ -3263,10 +4102,7 @@ footer{
      INTRO
 ======================================================== -->
 
-<div
-  id="intro-overlay"
-  aria-hidden="true"
->
+<div id="intro-overlay">
 
   <div class="intro-title">
 
@@ -3315,17 +4151,15 @@ footer{
     <a
       href="#top"
       class="logo"
-      id="logoHome"
     >
       Raquel Renovato
     </a>
 
 
     <button
-      type="button"
       id="themeToggle"
-      class="theme-toggle mono"
-      aria-label="Alternar tema"
+      class="theme-toggle"
+      type="button"
     >
       <span id="themeLabel">
         Sombrio
@@ -3380,7 +4214,7 @@ footer{
   <div class="hero-text">
 
     <div class="hero-eyebrow">
-      COMUNICAÇÃO VISUAL • UI • EXPERIÊNCIAS DIGITAIS
+      PORTFÓLIO • RAQUEL RENOVATO • 2026
     </div>
 
 
@@ -3405,8 +4239,8 @@ footer{
 
       <p>
         Designer de Comunicação Visual e UI, transformando
-        conteúdos, necessidades de negócio e identidades em
-        interfaces e sistemas visuais claros e consistentes.
+        conteúdos, necessidades de negócio e identidades
+        em interfaces e sistemas visuais claros e consistentes.
       </p>
 
 
@@ -3414,16 +4248,17 @@ footer{
 
         <a
           href="#projetos"
-          class="hero-cta"
+          class="hero-cta primary"
         >
           Ver projetos selecionados ↓
         </a>
 
+
         <a
-          href="#contato"
+          href="#sobre"
           class="hero-cta"
         >
-          Entrar em contato ↗
+          Conhecer Raquel
         </a>
 
       </div>
@@ -3433,357 +4268,138 @@ footer{
   </div>
 
 
-  <!-- WIREFRAME -->
-
   <div class="hero-visual">
 
     <div class="wf-wrapper">
 
-      <svg
-        class="wf-illustration pen-tool-svg"
-        viewBox="0 0 100 100"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M15,80 C35,20 65,80 85,20"
-          stroke="var(--accent)"
-          stroke-width="2"
-          stroke-dasharray="3 3"
-        />
+      <div class="wf-window">
 
-        <line
-          x1="15"
-          y1="80"
-          x2="35"
-          y2="20"
-          stroke="var(--line-strong)"
-          stroke-width="1.5"
-        />
+        <div class="wf-titlebar">
 
-        <circle
-          cx="35"
-          cy="20"
-          r="3.5"
-          fill="var(--bg)"
-          stroke="var(--accent)"
-          stroke-width="2"
-        />
+          <i></i>
+          <i></i>
+          <i></i>
 
-        <rect
-          x="11"
-          y="76"
-          width="8"
-          height="8"
-          fill="var(--accent)"
-        />
+          <span>
+            raquel-renovato.fig
+          </span>
 
-        <rect
-          x="81"
-          y="16"
-          width="8"
-          height="8"
-          fill="var(--accent)"
-        />
-      </svg>
+        </div>
 
 
-      <div class="wf-illustration badge-floater">
-        <span>❖</span>
-        auto-layout 8px
-      </div>
+        <div class="wf-toolbar">
 
+          <button type="button">
+            estrutura
+          </button>
 
-      <div class="wf-illustration spec-floater">
-        ↔ 380px × 260px
-      </div>
+          <button type="button">
+            interface
+          </button>
 
-
-      <div class="wf-illustration cursor-floater">
-
-        <svg
-          width="11"
-          height="11"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-        </svg>
-
-        <span>
-          Raquel • UI
-        </span>
-
-      </div>
-
-
-      <div
-        class="wf-window"
-        id="wfWindow"
-      >
-
-        <div class="wf-header">
-
-          <div class="wf-dots">
-            <span class="wf-dot"></span>
-            <span class="wf-dot"></span>
-            <span class="wf-dot"></span>
-          </div>
-
-          <button
-            class="wf-switch-mode mono"
-            id="wfSwitchMode"
-            type="button"
-          >
-            modo app
+          <button type="button">
+            sistema
           </button>
 
         </div>
 
 
-        <div class="wf-body">
+        <div class="wf-canvas">
 
-          <div class="wf-sidebar">
+          <aside class="wf-sidebar">
 
-            <div
-              class="wf-nav-item active wf-paintable"
-              data-tab="dashboard"
-            >
-              <span>▧</span>
-              Dashboard
+            <div class="wf-sidebar-label">
+              PROCESSO
             </div>
 
-            <div
-              class="wf-nav-item wf-paintable"
-              data-tab="interfaces"
-            >
-              <span>✦</span>
-              Interfaces
+
+            <div class="wf-task-item">
+              entender problema
             </div>
 
-            <div
-              class="wf-nav-item wf-paintable"
-              data-tab="system"
-            >
-              <span>❖</span>
-              Design System
+            <div class="wf-task-item">
+              organizar informação
             </div>
 
-          </div>
+            <div class="wf-task-item">
+              construir hierarquia
+            </div>
+
+            <div class="wf-task-item">
+              testar estados
+            </div>
+
+            <div class="wf-task-item">
+              refinar entrega
+            </div>
+
+          </aside>
 
 
           <div class="wf-main">
 
-            <div
-              class="wf-view active"
-              id="wf-dashboard"
-            >
+            <div class="wf-topline">
 
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Painel de Dashboard
-                </span>
-
-                <button
-                  type="button"
-                  class="wf-badge-btn wf-paintable"
-                  id="wfMetricBtn"
-                >
-                  +1 Entrega
-                </button>
-
-              </div>
-
-
-              <div class="wf-card-grid">
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Entregas
-                  </span>
-
-                  <span
-                    class="wf-card-val"
-                    id="wfCounter"
-                  >
-                    14
-                  </span>
-
-                </div>
-
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Status
-                  </span>
-
-                  <span
-                    class="wf-card-val"
-                    style="color:var(--accent)"
-                  >
-                    100%
-                  </span>
-
-                </div>
-
-              </div>
-
-
-              <div class="wf-task-list">
-
-                <div class="wf-task-item checked">
-
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Hierarquia visual definida
-                  </span>
-
-                </div>
-
-
-                <div class="wf-task-item">
-
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Prototipagem de interações
-                  </span>
-
-                </div>
-
-
-                <div class="wf-task-item">
-
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Design System alinhado
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="wf-view"
-              id="wf-interfaces"
-            >
-
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Wireframes
-                </span>
-
-                <span class="wf-card-label mono">
-                  12 cols
-                </span>
-
-              </div>
-
-
-              <div class="wf-card wf-paintable">
-
-                <span class="wf-card-label mono">
-                  Hero / Desktop
-                </span>
-
-                <strong style="font-size:.7rem">
-                  UI responsiva
-                </strong>
-
-              </div>
-
-
-              <div class="wf-card-grid">
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Button
-                  </span>
-
-                  <strong style="font-size:.6rem">
-                    Primary
-                  </strong>
-
-                </div>
-
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Card
-                  </span>
-
-                  <strong style="font-size:.6rem">
-                    Content
-                  </strong>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="wf-view"
-              id="wf-system"
-            >
-
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Biblioteca
-                </span>
-
-                <span class="wf-card-label mono">
-                  UI Kit
-                </span>
-
+              <div class="wf-mini-title">
+                Portfolio
               </div>
 
 
               <button
                 type="button"
-                class="wf-badge-btn wf-paintable"
+                class="wf-mini-action"
               >
-                Primary
+                UI
               </button>
 
+            </div>
 
-              <div class="wf-card wf-paintable">
 
-                <span class="wf-card-label mono">
-                  Typography
+            <div class="wf-stats">
+
+              <div class="wf-stat">
+
+                <span>
+                  cases
                 </span>
 
-                <span class="serif">
-                  Fraunces
-                </span>
-
-                <span
-                  class="mono"
-                  style="font-size:.53rem"
-                >
-                  IBM Plex Mono
-                </span>
+                <strong>
+                  05
+                </strong>
 
               </div>
+
+
+              <div class="wf-stat">
+
+                <span>
+                  foco
+                </span>
+
+                <strong>
+                  UI
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="wf-chart">
+
+              <svg
+                viewBox="0 0 300 130"
+                fill="none"
+                preserveAspectRatio="none"
+              >
+
+                <path
+                  d="M0 112 C35 90 58 100 84 74 C118 39 139 75 171 52 C202 29 229 41 300 6"
+                  stroke="var(--accent)"
+                  stroke-width="4"
+                />
+
+              </svg>
 
             </div>
 
@@ -3793,74 +4409,6 @@ footer{
 
       </div>
 
-    </div>
-
-
-    <div class="color-palette">
-
-      <button
-        type="button"
-        class="swatch active"
-        data-color="#E8590C"
-        style="background:#E8590C"
-        aria-label="Laranja"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#38483A"
-        style="background:#38483A"
-        aria-label="Verde"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#2B3A4A"
-        style="background:#2B3A4A"
-        aria-label="Azul"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#B37838"
-        style="background:#B37838"
-        aria-label="Ocre"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#1F1C18"
-        style="background:#1F1C18"
-        aria-label="Escuro"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch reset"
-        data-color=""
-        aria-label="Borracha"
-      >
-        ×
-      </button>
-
-
-      <button
-        type="button"
-        class="clear-btn mono"
-        id="wfClear"
-      >
-        limpar tudo
-      </button>
-
-    </div>
-
-
-    <div class="hero-visual-hint mono">
-      escolha uma cor e clique nos componentes
     </div>
 
   </div>
@@ -3872,28 +4420,37 @@ footer{
      PROCESS
 ======================================================== -->
 
-<section class="process-section">
+<div class="section-head">
 
   <span class="section-kicker">
-    método & execução
+    processo
   </span>
 
+
+  <h2>
+    Da informação bruta até uma solução visual clara.
+  </h2>
+
+</div>
+
+
+<section class="process">
 
   <div class="process-grid">
 
     <article class="process-card">
 
-      <span>
-        01 / DIAGNÓSTICO
+      <span class="n mono">
+        01 / ENTENDER
       </span>
 
       <h3>
-        Entendimento & Imersão
+        Contexto antes da estética.
       </h3>
 
       <p>
-        Contexto, conteúdo, necessidade e objetivo vêm
-        antes da execução visual.
+        Entendimento do negócio, público, conteúdo,
+        objetivos e do problema que realmente precisa ser resolvido.
       </p>
 
     </article>
@@ -3901,17 +4458,17 @@ footer{
 
     <article class="process-card">
 
-      <span>
-        02 / ESTRUTURAÇÃO
+      <span class="n mono">
+        02 / ESTRUTURAR
       </span>
 
       <h3>
-        Pesquisa & Direção
+        Hierarquia, direção e sistema.
       </h3>
 
       <p>
-        Hierarquia, referências e critérios sustentam
-        as decisões do projeto.
+        Organização da informação, referências,
+        arquitetura e construção das decisões visuais.
       </p>
 
     </article>
@@ -3919,17 +4476,17 @@ footer{
 
     <article class="process-card">
 
-      <span>
-        03 / EXECUÇÃO
+      <span class="n mono">
+        03 / REFINAR
       </span>
 
       <h3>
-        Design & Refinamento
+        Execução com atenção aos detalhes.
       </h3>
 
       <p>
-        Desenvolvimento, prototipagem e refinamento
-        adaptados ao contexto de cada entrega.
+        Prototipagem, responsividade, estados,
+        revisão e refinamento para chegar à entrega final.
       </p>
 
     </article>
@@ -3947,9 +4504,11 @@ footer{
   class="section-head"
   id="sobre"
 >
-  <h2>
-    Sobre mim
-  </h2>
+
+  <span class="section-kicker">
+    quem está por trás dos projetos
+  </span>
+
 </div>
 
 
@@ -3957,22 +4516,36 @@ footer{
 
   <div class="about-copy">
 
+    <h2 class="about-name">
+
+      <span>
+        RAQUEL
+      </span>
+
+      <span class="surname">
+        RENOVATO
+      </span>
+
+    </h2>
+
+
     <span class="section-kicker">
-      design como ferramenta de clareza
+      Designer de Comunicação Visual & UI
     </span>
 
 
     <p>
-      Sou Designer Gráfica formada pela Estácio, com
-      especialização em UI/UX Design em andamento e três
-      anos de atuação no mercado.
+      Sou Designer Gráfica formada pela Estácio,
+      com especialização em UI/UX Design em andamento
+      e três anos de atuação no mercado.
     </p>
 
 
     <p>
       Trabalho entre comunicação visual e interfaces digitais,
-      transformando informações, necessidades de negócio e
-      identidade de marca em soluções visuais claras e consistentes.
+      transformando informações, necessidades de negócio
+      e identidade de marca em soluções visuais claras
+      e consistentes.
     </p>
 
 
@@ -4001,11 +4574,11 @@ footer{
       </span>
 
       <span class="about-tag">
-        Canva
+        Arquitetura de Informação
       </span>
 
       <span class="about-tag">
-        Arquitetura de Informação
+        Prototipagem
       </span>
 
     </div>
@@ -4016,6 +4589,7 @@ footer{
   <div class="about-visual">
 
     <div class="about-orbit"></div>
+
 
     <div class="about-photo">
 
@@ -4034,23 +4608,64 @@ footer{
 
 
 <!-- ========================================================
-     PROJECTS
+     PROJECTS INTRO
 ======================================================== -->
 
-<div
-  class="section-head"
+<section
+  class="projects-intro"
   id="projetos"
 >
 
   <span class="section-kicker">
-    projetos selecionados
+    trabalhos selecionados por Raquel Renovato
   </span>
 
-  <h2 style="margin-top:8px">
-    Cada projeto pede uma forma diferente de contar a história.
+
+  <h2>
+    Projetos, sistemas e experiências.
   </h2>
 
-</div>
+
+  <p>
+    O primeiro projeto é apresentado como case principal
+    de UI. Os demais mostram outras frentes da minha atuação
+    em comunicação visual, apresentação e conteúdo.
+  </p>
+
+</section>
+
+
+<!-- ========================================================
+     PROJECT 01 DIVIDER
+======================================================== -->
+
+<section class="project-divider featured">
+
+  <div>
+
+    <span class="featured-pill">
+      CASE PRINCIPAL • UI DESIGN
+    </span>
+
+
+    <span class="project-divider-number">
+      PROJETO 01 / 05
+    </span>
+
+
+    <h2>
+      Fernando Amaral
+    </h2>
+
+  </div>
+
+
+  <div class="project-divider-meta">
+    Redesign de produto digital • Design System •
+    Responsividade • Prototipagem • Implementação
+  </div>
+
+</section>
 
 
 <!-- ========================================================
@@ -4065,7 +4680,7 @@ footer{
   <div class="project-head">
 
     <span class="project-number">
-      01 / 05 • UI DESIGN • LIVE PRODUCT
+      CASE DE RAQUEL RENOVATO • UI DESIGN • LIVE PRODUCT
     </span>
 
 
@@ -4076,9 +4691,9 @@ footer{
 
     <p class="project-summary">
       Redesign e implementação de uma experiência digital
-      para transformar conteúdo técnico de engenharia em
-      uma interface mais clara, consistente, responsiva
-      e orientada à conversão.
+      para transformar conteúdo técnico de engenharia
+      em uma interface mais clara, consistente,
+      responsiva e orientada à conversão.
     </p>
 
 
@@ -4091,9 +4706,9 @@ footer{
         </span>
 
         <p>
-          O projeto partiu de um site existente, com grande
-          volume de serviços e informações técnicas distribuídas
-          em uma landing page extensa.
+          O projeto partiu de um site existente,
+          com grande volume de serviços e informações
+          técnicas em uma landing page extensa.
         </p>
 
       </article>
@@ -4106,9 +4721,9 @@ footer{
         </span>
 
         <p>
-          Organizar essa complexidade sem reduzir a profundidade
-          técnica, tornando escopo, processo, autoridade,
-          projetos e contato mais fáceis de compreender.
+          Organizar essa complexidade sem reduzir
+          a profundidade técnica e facilitar
+          a compreensão do serviço.
         </p>
 
       </article>
@@ -4117,13 +4732,13 @@ footer{
       <article class="case-card">
 
         <span>
-          meu papel
+          minha participação
         </span>
 
         <p>
           Arquitetura da informação, direção visual,
-          UI Design, componentes, variantes, responsividade,
-          prototipagem e acompanhamento da implementação.
+          UI, componentes, variantes, responsividade,
+          prototipagem e implementação.
         </p>
 
       </article>
@@ -4136,9 +4751,9 @@ footer{
         </span>
 
         <p>
-          O redesign deixou de existir apenas como protótipo:
-          a experiência foi implementada, adaptada para
-          desktop e mobile e publicada como produto real.
+          O redesign foi implementado, adaptado
+          para desktop e mobile e publicado
+          como produto funcional.
         </p>
 
       </article>
@@ -4148,11 +4763,11 @@ footer{
 
     <div class="project-meta">
 
-      <span>Figma</span>
       <span>UI Design</span>
+      <span>Figma</span>
       <span>Design System</span>
       <span>Responsive</span>
-      <span>Prototyping</span>
+      <span>Prototype</span>
       <span>Front-end</span>
       <span>Live Product</span>
 
@@ -4163,57 +4778,56 @@ footer{
 
   <div class="fa-case">
 
-    <!-- TABS -->
-
-    <div
-      class="fa-tabs"
-      role="tablist"
-      aria-label="Fernando Amaral case"
-    >
+    <div class="fa-tabs">
 
       <button
-        type="button"
         class="fa-tab active"
+        type="button"
         data-fa-tab="story"
       >
         Case
       </button>
 
+
       <button
-        type="button"
         class="fa-tab"
+        type="button"
         data-fa-tab="before"
       >
         Antes
       </button>
 
+
       <button
-        type="button"
         class="fa-tab"
+        type="button"
         data-fa-tab="live"
       >
         Site publicado
       </button>
 
+
       <button
-        type="button"
         class="fa-tab"
+        type="button"
         data-fa-tab="system"
       >
         Design System
       </button>
 
+
       <button
-        type="button"
         class="fa-tab"
+        type="button"
         data-fa-tab="responsive"
       >
         Responsivo
       </button>
 
+
       <button
-        type="button"
         class="fa-tab"
+        type="button"
         data-fa-tab="prototype"
       >
         Protótipo
@@ -4222,9 +4836,7 @@ footer{
     </div>
 
 
-    <!-- ====================================================
-         CASE
-    ==================================================== -->
+    <!-- CASE -->
 
     <section
       class="fa-view active"
@@ -4235,8 +4847,8 @@ footer{
 
         <div class="fa-story-copy">
 
-          <span class="section-kicker">
-            lógica do redesign
+          <span>
+            RAQUEL RENOVATO / CASE STUDY
           </span>
 
 
@@ -4247,103 +4859,123 @@ footer{
 
           <p>
             A nova experiência preserva a profundidade
-            do conteúdo de engenharia, mas organiza a leitura
-            em uma sequência mais clara e previsível.
+            do conteúdo de engenharia, mas reorganiza
+            a leitura em uma sequência mais clara e previsível.
           </p>
 
 
-          <div class="fa-story-list">
+          <div class="fa-story-flow">
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 01
-              </strong>
+              </span>
 
-              <p>
-                Hero com proposta de valor direta,
-                vídeo e ações prioritárias.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Hero
+                </strong>
+
+                <p>
+                  Proposta de valor direta, vídeo e ações prioritárias.
+                </p>
+
+              </section>
+
+            </div>
 
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 02
-              </strong>
+              </span>
 
-              <p>
-                Oito especialidades reunidas em um componente
-                navegável em vez de uma sequência longa de blocos.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Serviços
+                </strong>
+
+                <p>
+                  Oito especialidades reunidas em um componente navegável.
+                </p>
+
+              </section>
+
+            </div>
 
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 03
-              </strong>
+              </span>
 
-              <p>
-                Processo tratado como uma jornada visual,
-                acompanhando o scroll do usuário.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Processo
+                </strong>
+
+                <p>
+                  Jornada visual acompanhando o scroll.
+                </p>
+
+              </section>
+
+            </div>
 
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 04
-              </strong>
+              </span>
 
-              <p>
-                Projetos organizados por filtros, cards,
-                área, escopo e contexto do empreendimento.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Projetos
+                </strong>
+
+                <p>
+                  Cards com filtros, escopo e contexto.
+                </p>
+
+              </section>
+
+            </div>
 
 
-            <article>
+            <div>
 
-              <strong>
+              <span>
                 05
-              </strong>
+              </span>
 
-              <p>
-                Sistema responsivo com decisões próprias
-                para mobile, em vez de apenas reduzir
-                o layout desktop.
-              </p>
+              <section>
 
-            </article>
+                <strong>
+                  Responsividade
+                </strong>
 
+                <p>
+                  Decisões específicas para telas menores.
+                </p>
 
-            <article>
+              </section>
 
-              <strong>
-                06
-              </strong>
-
-              <p>
-                Light como experiência principal e
-                Dark Mode opcional para quem quiser ativá-lo.
-              </p>
-
-            </article>
+            </div>
 
           </div>
 
         </div>
 
 
-        <!-- SITE REAL EM VEZ DA IMAGEM -->
+        <!-- DESKTOP REAL -->
 
         <div class="fa-live-cover">
 
@@ -4369,17 +5001,28 @@ footer{
                 rel="noopener noreferrer"
                 class="browser-link"
               >
-                abrir ↗
+                LIVE ↗
               </a>
 
             </div>
 
 
-            <iframe
-              src="https://fernando-amaral.vercel.app/"
-              title="Site publicado de Fernando Amaral"
-              loading="lazy"
-            ></iframe>
+            <div
+              class="fa-desktop-viewport"
+              data-desktop-height="760"
+            >
+
+              <div class="fa-desktop-canvas">
+
+                <iframe
+                  src="https://fernando-amaral.vercel.app/"
+                  title="Site Fernando Amaral em viewport desktop"
+                  loading="lazy"
+                ></iframe>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -4393,7 +5036,7 @@ footer{
         <div class="fa-result-item">
 
           <span>
-            status
+            STATUS
           </span>
 
           <strong>
@@ -4410,7 +5053,7 @@ footer{
         <div class="fa-result-item">
 
           <span>
-            experiência
+            EXPERIÊNCIA
           </span>
 
           <strong>
@@ -4418,8 +5061,7 @@ footer{
           </strong>
 
           <p>
-            Componentes e layouts adaptam comportamento
-            conforme o dispositivo.
+            O layout altera comportamento conforme o dispositivo.
           </p>
 
         </div>
@@ -4428,7 +5070,7 @@ footer{
         <div class="fa-result-item">
 
           <span>
-            sistema
+            SISTEMA
           </span>
 
           <strong>
@@ -4436,8 +5078,7 @@ footer{
           </strong>
 
           <p>
-            Light é a experiência principal;
-            Dark funciona como escolha do usuário.
+            Light como experiência principal e Dark opcional.
           </p>
 
         </div>
@@ -4447,9 +5088,7 @@ footer{
     </section>
 
 
-    <!-- ====================================================
-         BEFORE
-    ==================================================== -->
+    <!-- BEFORE -->
 
     <section
       class="fa-view"
@@ -4468,15 +5107,15 @@ footer{
 
 
           <div class="browser-address mono">
-            fernando-amaral-website-web.vercel.app
+            versão anterior
           </div>
 
 
           <a
+            class="browser-link"
             href="https://fernando-amaral-website-web.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            class="browser-link"
           >
             abrir ↗
           </a>
@@ -4484,20 +5123,29 @@ footer{
         </div>
 
 
-        <iframe
-          src="https://fernando-amaral-website-web.vercel.app/"
-          title="Site anterior de Fernando Amaral"
-          loading="lazy"
-        ></iframe>
+        <div
+          class="fa-desktop-viewport"
+          data-desktop-height="700"
+        >
+
+          <div class="fa-desktop-canvas">
+
+            <iframe
+              src="https://fernando-amaral-website-web.vercel.app/"
+              title="Site anterior de Fernando Amaral"
+              loading="lazy"
+            ></iframe>
+
+          </div>
+
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- ====================================================
-         LIVE
-    ==================================================== -->
+    <!-- LIVE -->
 
     <section
       class="fa-view"
@@ -4521,10 +5169,10 @@ footer{
 
 
           <a
+            class="browser-link"
             href="https://fernando-amaral.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            class="browser-link"
           >
             abrir site ↗
           </a>
@@ -4532,20 +5180,29 @@ footer{
         </div>
 
 
-        <iframe
-          src="https://fernando-amaral.vercel.app/"
-          title="Site final de Fernando Amaral"
-          loading="lazy"
-        ></iframe>
+        <div
+          class="fa-desktop-viewport"
+          data-desktop-height="720"
+        >
+
+          <div class="fa-desktop-canvas">
+
+            <iframe
+              src="https://fernando-amaral.vercel.app/"
+              title="Site final de Fernando Amaral"
+              loading="lazy"
+            ></iframe>
+
+          </div>
+
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- ====================================================
-         DESIGN SYSTEM
-    ==================================================== -->
+    <!-- SYSTEM -->
 
     <section
       class="fa-view"
@@ -4562,8 +5219,8 @@ footer{
 
 
           <button
-            type="button"
             class="system-nav-btn active"
+            type="button"
             data-system="foundation"
           >
             Foundations
@@ -4571,56 +5228,26 @@ footer{
 
 
           <button
-            type="button"
             class="system-nav-btn"
+            type="button"
             data-system="buttons"
           >
-            Buttons & states
+            Buttons
           </button>
 
 
           <button
-            type="button"
             class="system-nav-btn"
+            type="button"
             data-system="navigation"
           >
             Navigation
-          </button>
-
-
-          <button
-            type="button"
-            class="system-nav-btn"
-            data-system="cards"
-          >
-            Cards
-          </button>
-
-
-          <button
-            type="button"
-            class="system-nav-btn"
-            data-system="forms"
-          >
-            Forms
-          </button>
-
-
-          <button
-            type="button"
-            class="system-nav-btn"
-            data-system="tokens"
-          >
-            Tokens
           </button>
 
         </aside>
 
 
         <div class="system-canvas">
-
-
-          <!-- FOUNDATION -->
 
           <section
             class="system-panel active"
@@ -4632,574 +5259,79 @@ footer{
             </h4>
 
 
-            <div class="component-grid">
+            <div class="fa-color-grid">
 
-              <article class="component-box wide">
+              <div class="fa-color navy">
 
-                <div class="component-label">
+                <strong>Navy</strong>
 
-                  <span>
-                    Color system
-                  </span>
+                <span>#00152A</span>
 
-                  <span>
-                    05 tokens
-                  </span>
-
-                </div>
+              </div>
 
 
-                <div class="fa-color-grid">
+              <div class="fa-color gold">
 
-                  <div class="fa-color navy">
-                    <strong>Primary</strong>
-                    <span>#00152A</span>
-                  </div>
+                <strong>Gold</strong>
 
-                  <div class="fa-color gold">
-                    <strong>Accent</strong>
-                    <span>#B8860B</span>
-                  </div>
+                <span>#B8860B</span>
 
-                  <div class="fa-color slate">
-                    <strong>Slate</strong>
-                    <span>#64748B</span>
-                  </div>
-
-                  <div class="fa-color light">
-                    <strong>Background</strong>
-                    <span>#F4F6F8</span>
-                  </div>
-
-                  <div class="fa-color white">
-                    <strong>Surface</strong>
-                    <span>#FFFFFF</span>
-                  </div>
-
-                </div>
-
-              </article>
+              </div>
 
 
-              <article class="component-box wide">
+              <div class="fa-color slate">
 
-                <div class="component-label">
+                <strong>Slate</strong>
 
-                  <span>
-                    Typography
-                  </span>
+                <span>#64748B</span>
 
-                  <span>
-                    02 families
-                  </span>
-
-                </div>
+              </div>
 
 
-                <div class="fa-type-demo">
+              <div class="fa-color light">
 
-                  <div class="fa-type-card manrope">
+                <strong>Background</strong>
 
-                    <span>
-                      MANROPE / DISPLAY
-                    </span>
+                <span>#F4F6F8</span>
 
-                    <strong>
-                      Aa
-                    </strong>
-
-                    <p>
-                      Títulos, navegação, botões,
-                      números e elementos de maior hierarquia.
-                    </p>
-
-                  </div>
+              </div>
 
 
-                  <div class="fa-type-card dm">
+              <div class="fa-color white">
 
-                    <span>
-                      DM SANS / BODY
-                    </span>
+                <strong>Surface</strong>
 
-                    <strong>
-                      Aa
-                    </strong>
+                <span>#FFFFFF</span>
 
-                    <p>
-                      Textos corridos, descrições,
-                      campos, legendas e informações auxiliares.
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </article>
+              </div>
 
             </div>
 
-          </section>
 
+            <div class="fa-type-demo">
 
-          <!-- BUTTONS -->
+              <article class="fa-type-card manrope">
 
-          <section
-            class="system-panel"
-            data-system-panel="buttons"
-          >
+                <span>DISPLAY / MANROPE</span>
 
-            <h4 class="system-panel-title">
-              Botões & estados
-            </h4>
+                <strong>Aa</strong>
 
-
-            <div class="component-grid">
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Button / Primary
-                  </span>
-
-                  <span>
-                    Variable
-                  </span>
-
-                </div>
-
-
-                <div class="demo-button-row">
-
-                  <button
-                    type="button"
-                    class="fa-demo-primary"
-                    id="faDemoPrimary"
-                  >
-                    SOLICITAR ORÇAMENTO
-                  </button>
-
-                </div>
-
-
-                <div class="variant-controls">
-
-                  <button
-                    type="button"
-                    class="active"
-                    data-fa-button-state="default"
-                  >
-                    Default
-                  </button>
-
-                  <button
-                    type="button"
-                    data-fa-button-state="hover"
-                  >
-                    Hover
-                  </button>
-
-                  <button
-                    type="button"
-                    data-fa-button-state="disabled"
-                  >
-                    Disabled
-                  </button>
-
-                </div>
+                <p>
+                  Projetos elétricos para arquitetos,
+                  engenheiros e construtoras.
+                </p>
 
               </article>
 
 
-              <article class="component-box">
+              <article class="fa-type-card dm">
 
-                <div class="component-label">
+                <span>BODY / DM SANS</span>
 
-                  <span>
-                    Button / Secondary
-                  </span>
+                <strong>Aa</strong>
 
-                  <span>
-                    Outline
-                  </span>
-
-                </div>
-
-
-                <div class="demo-button-row">
-
-                  <button
-                    type="button"
-                    class="fa-demo-secondary"
-                  >
-                    VER SERVIÇOS
-                  </button>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Service arrows
-                  </span>
-
-                  <span>
-                    Circular
-                  </span>
-
-                </div>
-
-
-                <div class="fa-arrow-row">
-
-                  <button
-                    type="button"
-                    class="demo-arrow"
-                  >
-                    ‹
-                  </button>
-
-                  <button
-                    type="button"
-                    class="demo-arrow"
-                  >
-                    ›
-                  </button>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Project filters
-                  </span>
-
-                  <span>
-                    Default / Active
-                  </span>
-
-                </div>
-
-
-                <div class="demo-filter-row">
-
-                  <button class="demo-filter active">
-                    Todos
-                  </button>
-
-                  <button class="demo-filter">
-                    SPDA
-                  </button>
-
-                  <button class="demo-filter">
-                    Residencial
-                  </button>
-
-                  <button class="demo-filter">
-                    Comercial
-                  </button>
-
-                </div>
-
-              </article>
-
-            </div>
-
-          </section>
-
-
-          <!-- NAVIGATION -->
-
-          <section
-            class="system-panel"
-            data-system-panel="navigation"
-          >
-
-            <h4 class="system-panel-title">
-              Navegação & padrões
-            </h4>
-
-
-            <div class="component-grid">
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Header
-                  </span>
-
-                  <span>
-                    Desktop
-                  </span>
-
-                </div>
-
-
-                <div
-                  style="
-                    padding:14px;
-                    background:#fff;
-                    color:#00152A;
-                    border-radius:6px;
-                  "
-                >
-
-                  <div
-                    style="
-                      display:flex;
-                      align-items:center;
-                      justify-content:space-between;
-                      gap:15px;
-                    "
-                  >
-
-                    <strong
-                      style="
-                        font-family:Manrope,sans-serif;
-                        font-size:.72rem;
-                      "
-                    >
-                      FERNANDO AMARAL
-                    </strong>
-
-
-                    <div
-                      style="
-                        display:flex;
-                        gap:12px;
-                        font-size:.55rem;
-                      "
-                    >
-                      <span>Serviços</span>
-                      <span>Processo</span>
-                      <span>Portfólio</span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Theme switch
-                  </span>
-
-                  <span>
-                    Light / Dark
-                  </span>
-
-                </div>
-
-
-                <div
-                  style="
-                    display:flex;
-                    align-items:center;
-                    gap:10px;
-                  "
-                >
-
-                  <div
-                    style="
-                      width:48px;
-                      height:48px;
-                      display:grid;
-                      place-items:center;
-                      border:1px solid #CBD3DB;
-                      border-radius:8px;
-                      background:#fff;
-                      color:#00152A;
-                    "
-                  >
-                    ☾
-                  </div>
-
-                  <span
-                    style="
-                      color:var(--dim);
-                      font-size:.7rem;
-                    "
-                  >
-                    Light é o tema principal.
-                    Dark é opcional.
-                  </span>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box wide">
-
-                <div class="component-label">
-
-                  <span>
-                    Interaction architecture
-                  </span>
-
-                  <span>
-                    Main flow
-                  </span>
-
-                </div>
-
-
-                <div class="fa-token-list">
-
-                  <div class="fa-token">
-                    <strong>01</strong>
-                    <span>Hero / posicionamento</span>
-                  </div>
-
-                  <div class="fa-token">
-                    <strong>02</strong>
-                    <span>Serviços / capacidade</span>
-                  </div>
-
-                  <div class="fa-token">
-                    <strong>03</strong>
-                    <span>Processo / método</span>
-                  </div>
-
-                  <div class="fa-token">
-                    <strong>04</strong>
-                    <span>Projetos / evidência</span>
-                  </div>
-
-                </div>
-
-              </article>
-
-            </div>
-
-          </section>
-
-
-          <!-- CARDS -->
-
-          <section
-            class="system-panel"
-            data-system-panel="cards"
-          >
-
-            <h4 class="system-panel-title">
-              Cards
-            </h4>
-
-
-            <div class="component-grid">
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Quality Card
-                  </span>
-
-                  <span>
-                    Hover
-                  </span>
-
-                </div>
-
-
-                <div class="demo-quality">
-
-                  <strong>
-                    Segurança e conformidade
-                  </strong>
-
-                  <p>
-                    O componente muda para o azul
-                    profundo durante o hover.
-                  </p>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-
-                  <span>
-                    Project Card
-                  </span>
-
-                  <span>
-                    Image scale
-                  </span>
-
-                </div>
-
-
-                <div class="demo-project-card">
-
-                  <div class="demo-project-img"></div>
-
-                  <div class="demo-project-copy">
-
-                    <strong>
-                      Residência Alto Padrão
-                    </strong>
-
-                    542m² • Projeto Elétrico + VDI
-
-                  </div>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box wide">
-
-                <div class="component-label">
-
-                  <span>
-                    Service component
-                  </span>
-
-                  <span>
-                    Desktop / Mobile
-                  </span>
-
-                </div>
-
-
-                <p
-                  style="
-                    color:var(--dim);
-                    font-size:.75rem;
-                    line-height:1.6;
-                  "
-                >
-                  No desktop, a experiência mostra o serviço atual
-                  e uma prévia do próximo item. No mobile, apenas
-                  uma imagem aparece por vez para preservar foco,
-                  largura e leitura.
+                <p>
+                  Clareza e legibilidade para informações técnicas.
                 </p>
 
               </article>
@@ -5209,79 +5341,77 @@ footer{
           </section>
 
 
-          <!-- FORMS -->
-
           <section
             class="system-panel"
-            data-system-panel="forms"
+            data-system-panel="buttons"
           >
 
             <h4 class="system-panel-title">
-              Inputs & forms
+              Buttons & states
             </h4>
 
 
             <div class="component-grid">
 
-              <article class="component-box wide">
-
-                <div class="component-label">
-
-                  <span>
-                    Contact fields
-                  </span>
-
-                  <span>
-                    Responsive
-                  </span>
-
-                </div>
-
-
-                <div class="fa-field-demo">
-
-                  <div class="fa-field">
-                    Nome completo
-                  </div>
-
-                  <div class="fa-field">
-                    E-mail ou WhatsApp
-                  </div>
-
-                  <div class="fa-field">
-                    Cidade / UF
-                  </div>
-
-                  <div class="fa-field">
-                    Tipo de projeto ↓
-                  </div>
-
-                </div>
-
-              </article>
-
-
               <article class="component-box">
 
                 <div class="component-label">
 
-                  <span>
-                    CTA
-                  </span>
+                  <span>Primary</span>
 
-                  <span>
-                    Hover feedback
-                  </span>
+                  <span>Variable state</span>
 
                 </div>
 
 
-                <button
-                  type="button"
-                  class="fa-demo-primary"
-                >
-                  ENVIAR SOLICITAÇÃO
-                </button>
+                <div class="demo-button-row">
+
+                  <button
+                    id="faDemoPrimary"
+                    class="fa-demo-primary"
+                    type="button"
+                  >
+                    SOLICITAR ORÇAMENTO
+                  </button>
+
+
+                  <button
+                    class="fa-demo-secondary"
+                    type="button"
+                  >
+                    VER SERVIÇOS
+                  </button>
+
+                </div>
+
+
+                <div class="variant-controls">
+
+                  <button
+                    class="active"
+                    type="button"
+                    data-fa-button-state="default"
+                  >
+                    default
+                  </button>
+
+
+                  <button
+                    type="button"
+                    data-fa-button-state="hover"
+                  >
+                    hover
+                  </button>
+
+
+                  <button
+                    type="button"
+                    data-fa-button-state="disabled"
+                  >
+                    disabled
+                  </button>
+
+                </div>
 
               </article>
 
@@ -5290,58 +5420,76 @@ footer{
           </section>
 
 
-          <!-- TOKENS -->
-
           <section
             class="system-panel"
-            data-system-panel="tokens"
+            data-system-panel="navigation"
           >
 
             <h4 class="system-panel-title">
-              Tokens & estrutura
+              Navigation
             </h4>
 
 
-            <div class="fa-token-list">
+            <div class="component-box wide">
 
-              <div class="fa-token">
-                <strong>04</strong>
-                <span>Micro spacing</span>
+              <div class="component-label">
+
+                <span>
+                  Header / Desktop
+                </span>
+
+                <span>
+                  Responsive component
+                </span>
+
               </div>
 
-              <div class="fa-token">
-                <strong>08</strong>
-                <span>Small spacing</span>
-              </div>
 
-              <div class="fa-token">
-                <strong>12</strong>
-                <span>Compact gap</span>
-              </div>
+              <div
+                style="
+                  padding:18px;
+                  background:#fff;
+                  color:#00152A;
+                  border-radius:6px;
+                "
+              >
 
-              <div class="fa-token">
-                <strong>16</strong>
-                <span>Base spacing</span>
-              </div>
+                <div
+                  style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-between;
+                    gap:20px;
+                  "
+                >
 
-              <div class="fa-token">
-                <strong>24</strong>
-                <span>Component spacing</span>
-              </div>
+                  <strong
+                    style="
+                      font-family:Manrope,sans-serif;
+                      font-size:.75rem;
+                    "
+                  >
+                    FERNANDO AMARAL
+                  </strong>
 
-              <div class="fa-token">
-                <strong>32</strong>
-                <span>Section internal</span>
-              </div>
 
-              <div class="fa-token">
-                <strong>48</strong>
-                <span>Content rhythm</span>
-              </div>
+                  <div
+                    style="
+                      display:flex;
+                      gap:15px;
+                      font-size:.55rem;
+                    "
+                  >
 
-              <div class="fa-token">
-                <strong>64+</strong>
-                <span>Section spacing</span>
+                    <span>Serviços</span>
+                    <span>Processo</span>
+                    <span>Portfólio</span>
+                    <span>Sobre</span>
+
+                  </div>
+
+                </div>
+
               </div>
 
             </div>
@@ -5355,9 +5503,7 @@ footer{
     </section>
 
 
-    <!-- ====================================================
-         RESPONSIVE
-    ==================================================== -->
+    <!-- RESPONSIVE -->
 
     <section
       class="fa-view"
@@ -5376,9 +5522,11 @@ footer{
               <i></i>
             </div>
 
+
             <div class="browser-address mono">
-              desktop / 1440
+              DESKTOP / 1440
             </div>
+
 
             <span class="browser-link">
               LIVE
@@ -5387,11 +5535,22 @@ footer{
           </div>
 
 
-          <iframe
-            src="https://fernando-amaral.vercel.app/"
-            title="Fernando Amaral versão desktop"
-            loading="lazy"
-          ></iframe>
+          <div
+            class="fa-desktop-viewport"
+            data-desktop-height="690"
+          >
+
+            <div class="fa-desktop-canvas">
+
+              <iframe
+                src="https://fernando-amaral.vercel.app/"
+                title="Fernando Amaral desktop"
+                loading="lazy"
+              ></iframe>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -5404,7 +5563,7 @@ footer{
 
               <iframe
                 src="https://fernando-amaral.vercel.app/"
-                title="Fernando Amaral versão mobile"
+                title="Fernando Amaral mobile"
                 loading="lazy"
               ></iframe>
 
@@ -5413,7 +5572,7 @@ footer{
           </div>
 
 
-          <span class="mono" style="font-size:.58rem;color:var(--muted)">
+          <span class="mono">
             MOBILE / 390
           </span>
 
@@ -5435,8 +5594,8 @@ footer{
           </h4>
 
           <p>
-            Títulos e blocos de conteúdo reduzem
-            escala e largura sem perder hierarquia.
+            Títulos ajustam tamanho e largura
+            sem perder hierarquia.
           </p>
 
         </article>
@@ -5453,8 +5612,8 @@ footer{
           </h4>
 
           <p>
-            A pré-visualização do próximo serviço é removida
-            no mobile para aproveitar toda a largura disponível.
+            A visualização mobile prioriza
+            a imagem atual.
           </p>
 
         </article>
@@ -5471,8 +5630,8 @@ footer{
           </h4>
 
           <p>
-            Campos que funcionam lado a lado no desktop
-            passam para uma coluna em telas menores.
+            Campos passam para uma coluna
+            nas telas menores.
           </p>
 
         </article>
@@ -5482,9 +5641,7 @@ footer{
     </section>
 
 
-    <!-- ====================================================
-         PROTOTYPE
-    ==================================================== -->
+    <!-- FIGMA -->
 
     <section
       class="fa-view"
@@ -5523,9 +5680,9 @@ footer{
 
           <iframe
             src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
-            title="Protótipo interativo Fernando Amaral"
-            loading="lazy"
+            title="Protótipo Fernando Amaral"
             allowfullscreen
+            loading="lazy"
           ></iframe>
 
         </div>
@@ -5536,7 +5693,71 @@ footer{
 
   </div>
 
+
+  <nav class="project-navigation">
+
+    <a
+      class="project-nav-link"
+      href="#projetos"
+    >
+
+      <span>
+        ↑ VOLTAR
+      </span>
+
+      <strong>
+        Projetos selecionados
+      </strong>
+
+    </a>
+
+
+    <a
+      class="project-nav-link"
+      href="#voit"
+    >
+
+      <span>
+        PRÓXIMO PROJETO →
+      </span>
+
+      <strong>
+        Voit Consultoria
+      </strong>
+
+    </a>
+
+  </nav>
+
 </article>
+
+
+<!-- ========================================================
+     02 DIVIDER
+======================================================== -->
+
+<section class="project-divider">
+
+  <div>
+
+    <span class="project-divider-number">
+      PROJETO 02 / 05
+    </span>
+
+
+    <h2>
+      Voit Consultoria
+    </h2>
+
+  </div>
+
+
+  <p class="project-divider-meta">
+    Comunicação Visual • Conteúdo •
+    Social Media • Materiais comerciais
+  </p>
+
+</section>
 
 
 <!-- ========================================================
@@ -5551,7 +5772,7 @@ footer{
   <div class="project-head">
 
     <span class="project-number">
-      02 / 05 • COMUNICAÇÃO MULTICANAL
+      COMUNICAÇÃO MULTICANAL
     </span>
 
 
@@ -5561,99 +5782,69 @@ footer{
 
 
     <p class="project-summary">
-      Comunicação visual, conteúdo e materiais comerciais
-      para uma consultoria especializada, trabalhando
-      diferentes canais e necessidades de negócio.
+      Atuação em conteúdo, social media,
+      materiais técnicos, comercial e endomarketing,
+      trabalhando diferentes necessidades de comunicação.
     </p>
 
 
     <div class="project-meta">
+
       <span>Social Media</span>
       <span>Copywriting</span>
-      <span>Apresentações</span>
-      <span>Endomarketing</span>
+      <span>Canva</span>
+      <span>Adobe</span>
+      <span>Figma</span>
+
     </div>
 
   </div>
 
 
-  <div class="voit-case">
+  <div class="secondary-case">
 
-    <div class="voit-shell">
+    <div class="secondary-frame">
 
-      <div class="voit-top">
+      <div class="case-tabs">
 
-        <span
-          class="mono"
-          style="font-size:.61rem"
+        <button
+          type="button"
+          class="case-tab active"
+          data-case="voit"
+          data-view="overview"
         >
-          VOIT / COMMUNICATION SYSTEM
-        </span>
+          Visão geral
+        </button>
 
 
-        <div class="voit-tabs">
+        <button
+          type="button"
+          class="case-tab"
+          data-case="voit"
+          data-view="process"
+        >
+          Processo
+        </button>
 
-          <button
-            type="button"
-            class="voit-tab active"
-            data-voit-tab="ecosystem"
-          >
-            Ecossistema
-          </button>
 
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="process"
-          >
-            Processo
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="social"
-          >
-            Social
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="professional"
-          >
-            Profissional
-          </button>
-
-        </div>
+        <button
+          type="button"
+          class="case-tab"
+          data-case="voit"
+          data-view="social"
+        >
+          Social
+        </button>
 
       </div>
 
 
       <section
-        class="voit-view active"
-        data-voit-view="ecosystem"
+        class="case-view active"
+        data-case-view="voit-overview"
       >
 
-        <div class="voit-ecosystem">
-
-          <article class="voit-domain">
-
-            <span>
-              ESTRATÉGIA
-            </span>
-
-            <h4>
-              Planejamento
-            </h4>
-
-            <p>
-              Pautas e prioridades definidas em conjunto
-              com gestão e necessidades comerciais.
-            </p>
-
-          </article>
-
+        <div class="voit-overview">
 
           <div class="voit-core">
             VOIT
@@ -5662,17 +5853,15 @@ footer{
 
           <article class="voit-domain">
 
-            <span>
-              DIGITAL
-            </span>
+            <span>CONTEÚDO</span>
 
             <h4>
               Social Media
             </h4>
 
             <p>
-              Conteúdo visual e editorial adaptado
-              para diferentes temas e objetivos.
+              Conteúdos e peças adaptadas aos temas
+              e objetivos de comunicação.
             </p>
 
           </article>
@@ -5680,17 +5869,15 @@ footer{
 
           <article class="voit-domain">
 
-            <span>
-              COMERCIAL
-            </span>
+            <span>COMERCIAL</span>
 
             <h4>
               Apresentações
             </h4>
 
             <p>
-              Materiais estruturados para apoiar
-              conversas com leads e clientes.
+              Materiais visuais para apoiar
+              reuniões, leads e propostas.
             </p>
 
           </article>
@@ -5698,17 +5885,31 @@ footer{
 
           <article class="voit-domain">
 
-            <span>
-              INTERNO
-            </span>
+            <span>INTERNO</span>
 
             <h4>
               Endomarketing
             </h4>
 
             <p>
-              Campanhas e materiais de comunicação
-              voltados à equipe.
+              Campanhas e materiais destinados
+              à comunicação com a equipe.
+            </p>
+
+          </article>
+
+
+          <article class="voit-domain">
+
+            <span>SISTEMA</span>
+
+            <h4>
+              Consistência
+            </h4>
+
+            <p>
+              Unidade visual preservada
+              entre formatos e canais diferentes.
             </p>
 
           </article>
@@ -5719,55 +5920,84 @@ footer{
 
 
       <section
-        class="voit-view"
-        data-voit-view="process"
+        class="case-view"
+        data-case-view="voit-process"
       >
 
         <div class="voit-process">
 
           <article>
+
             <span>01</span>
-            <h4>Planejamento</h4>
+
+            <h4>
+              Planejamento
+            </h4>
+
             <p>
-              Definição de temas e necessidades
-              junto à gerência.
+              Definição de temas junto à gerência.
             </p>
+
           </article>
 
+
           <article>
+
             <span>02</span>
-            <h4>Pesquisa</h4>
+
+            <h4>
+              Pesquisa
+            </h4>
+
             <p>
-              Referências, tendências e aprofundamento
-              dos temas.
+              Referências, tendências e aprofundamento.
             </p>
+
           </article>
 
+
           <article>
+
             <span>03</span>
-            <h4>Produção</h4>
+
+            <h4>
+              Produção
+            </h4>
+
             <p>
-              Copywriting, peças, apresentações
-              e materiais.
+              Copy, peças, apresentações e materiais.
             </p>
+
           </article>
 
+
           <article>
+
             <span>04</span>
-            <h4>Validação</h4>
+
+            <h4>
+              Validação
+            </h4>
+
             <p>
-              Conteúdo técnico revisado pelos
-              especialistas responsáveis.
+              Revisão de conteúdo especializado.
             </p>
+
           </article>
 
+
           <article>
+
             <span>05</span>
-            <h4>Distribuição</h4>
+
+            <h4>
+              Distribuição
+            </h4>
+
             <p>
-              Adaptação e publicação nos canais
-              adequados.
+              Adaptação aos canais escolhidos.
             </p>
+
           </article>
 
         </div>
@@ -5776,8 +6006,8 @@ footer{
 
 
       <section
-        class="voit-view"
-        data-voit-view="social"
+        class="case-view"
+        data-case-view="voit-social"
       >
 
         <div class="voit-social">
@@ -5786,131 +6016,59 @@ footer{
             type="button"
             class="voit-piece"
           >
+
             <img
+              class="js-lightbox"
               src="img/img-voit/voit-01.jpeg"
-              alt="Voit Consultoria — Carrossel 01"
-              class="js-lightbox"
+              alt="Projeto Voit 01"
             >
+
           </button>
+
 
           <button
             type="button"
             class="voit-piece"
           >
+
             <img
+              class="js-lightbox"
               src="img/img-voit/voit-02.jpeg"
-              alt="Voit Consultoria — Carrossel 02"
-              class="js-lightbox"
+              alt="Projeto Voit 02"
               loading="lazy"
             >
+
           </button>
+
 
           <button
             type="button"
             class="voit-piece"
           >
+
             <img
+              class="js-lightbox"
               src="img/img-voit/voit-03.jpeg"
-              alt="Voit Consultoria — Carrossel 03"
-              class="js-lightbox"
+              alt="Projeto Voit 03"
               loading="lazy"
             >
+
           </button>
+
 
           <button
             type="button"
             class="voit-piece"
           >
+
             <img
-              src="img/img-voit/voit-04.jpeg"
-              alt="Voit Consultoria — Carrossel 04"
               class="js-lightbox"
+              src="img/img-voit/voit-04.jpeg"
+              alt="Projeto Voit 04"
               loading="lazy"
             >
+
           </button>
-
-        </div>
-
-      </section>
-
-
-      <section
-        class="voit-view"
-        data-voit-view="professional"
-      >
-
-        <div class="voit-professional">
-
-          <article>
-
-            <span>
-              COMERCIAL
-            </span>
-
-            <h4>
-              Apresentações para leads
-            </h4>
-
-            <p>
-              Organização visual de dados e informações
-              para apoiar propostas e conversas comerciais.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span>
-              MATERIAIS
-            </span>
-
-            <h4>
-              Projetos setoriais
-            </h4>
-
-            <p>
-              Materiais específicos desenvolvidos de acordo
-              com diferentes áreas e demandas.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span>
-              ENDOMARKETING
-            </span>
-
-            <h4>
-              Comunicação interna
-            </h4>
-
-            <p>
-              Desenvolvimento visual de campanhas
-              e comunicações destinadas à equipe.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span>
-              CONTEÚDO
-            </span>
-
-            <h4>
-              Rigor técnico
-            </h4>
-
-            <p>
-              Informações especializadas passam
-              por validação antes da publicação.
-            </p>
-
-          </article>
 
         </div>
 
@@ -5920,7 +6078,70 @@ footer{
 
   </div>
 
+
+  <nav class="project-navigation">
+
+    <a
+      class="project-nav-link"
+      href="#fernando"
+    >
+
+      <span>
+        ← PROJETO ANTERIOR
+      </span>
+
+      <strong>
+        Fernando Amaral
+      </strong>
+
+    </a>
+
+
+    <a
+      class="project-nav-link"
+      href="#renata"
+    >
+
+      <span>
+        PRÓXIMO PROJETO →
+      </span>
+
+      <strong>
+        Renata Brandão
+      </strong>
+
+    </a>
+
+  </nav>
+
 </article>
+
+
+<!-- ========================================================
+     03 DIVIDER
+======================================================== -->
+
+<section class="project-divider">
+
+  <div>
+
+    <span class="project-divider-number">
+      PROJETO 03 / 05
+    </span>
+
+
+    <h2>
+      Renata Brandão
+    </h2>
+
+  </div>
+
+
+  <p class="project-divider-meta">
+    Presentation Design • Hierarquia • Storytelling Visual
+  </p>
+
+</section>
 
 
 <!-- ========================================================
@@ -5935,7 +6156,7 @@ footer{
   <div class="project-head">
 
     <span class="project-number">
-      03 / 05 • PRESENTATION DESIGN
+      PRESENTATION DESIGN
     </span>
 
 
@@ -5945,38 +6166,43 @@ footer{
 
 
     <p class="project-summary">
-      Treinamentos, apresentações e propostas comerciais
-      construídos da organização do conteúdo à narrativa
-      visual dos slides.
+      Design de apresentação para organizar conteúdo,
+      narrativa e posicionamento em uma sequência
+      visual clara e profissional.
     </p>
-
-
-    <div class="project-meta">
-      <span>Canva</span>
-      <span>Presentation Design</span>
-      <span>Copywriting</span>
-      <span>IA Generativa</span>
-    </div>
 
   </div>
 
 
-  <div class="renata-case">
+  <div class="secondary-case">
 
     <div class="deck-shell">
 
-      <div class="deck-top">
+      <div class="deck-topbar">
 
         <span class="mono">
-          RENATA / PRESENTATION
+          APRESENTAÇÃO / RENATA BRANDÃO
         </span>
 
-        <span
-          class="mono"
-          id="deckCounter"
-        >
-          01 / 03
-        </span>
+
+        <div class="deck-controls">
+
+          <button
+            id="deckPrev"
+            type="button"
+          >
+            ←
+          </button>
+
+
+          <button
+            id="deckNext"
+            type="button"
+          >
+            →
+          </button>
+
+        </div>
 
       </div>
 
@@ -5985,86 +6211,20 @@ footer{
 
         <div class="deck-stage">
 
-          <div class="deck-screen">
-
-            <img
-              src="img/img-renata/renata-01.jpg"
-              alt="Slide de Renata Brandão"
-              id="deckImage"
-              class="js-lightbox"
-              tabindex="0"
-            >
-
-          </div>
+          <img
+            id="deckMain"
+            src="img/img-renata/renata-01.jpg"
+            alt="Apresentação Renata Brandão"
+            class="js-lightbox"
+          >
 
         </div>
 
 
-        <aside class="deck-side">
-
-          <span class="section-kicker">
-            decisão de design
-          </span>
-
-
-          <h4 id="deckTitle">
-            Entrada e posicionamento
-          </h4>
-
-
-          <p id="deckText">
-            A capa estabelece a linguagem visual da
-            apresentação e cria a primeira hierarquia
-            entre tema, especialista e contexto.
-          </p>
-
-
-          <div class="deck-controls">
-
-            <button
-              type="button"
-              id="deckPrev"
-              aria-label="Slide anterior"
-            >
-              ←
-            </button>
-
-            <button
-              type="button"
-              id="deckNext"
-              aria-label="Próximo slide"
-            >
-              →
-            </button>
-
-          </div>
-
-
-          <div class="deck-progress">
-            <span
-              id="deckProgress"
-              style="width:33.333%"
-            ></span>
-          </div>
-
-
-          <div
-            class="deck-thumbs"
-            id="deckThumbs"
-          ></div>
-
-
-          <a
-            href="https://canva.link/w874gu7mhg7053v"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hero-cta"
-            style="margin-top:23px"
-          >
-            Ver apresentação completa ↗
-          </a>
-
-        </aside>
+        <div
+          id="deckThumbs"
+          class="deck-side"
+        ></div>
 
       </div>
 
@@ -6072,7 +6232,70 @@ footer{
 
   </div>
 
+
+  <nav class="project-navigation">
+
+    <a
+      class="project-nav-link"
+      href="#voit"
+    >
+
+      <span>
+        ← PROJETO ANTERIOR
+      </span>
+
+      <strong>
+        Voit Consultoria
+      </strong>
+
+    </a>
+
+
+    <a
+      class="project-nav-link"
+      href="#braduca"
+    >
+
+      <span>
+        PRÓXIMO PROJETO →
+      </span>
+
+      <strong>
+        Somos Braduca
+      </strong>
+
+    </a>
+
+  </nav>
+
 </article>
+
+
+<!-- ========================================================
+     04 DIVIDER
+======================================================== -->
+
+<section class="project-divider">
+
+  <div>
+
+    <span class="project-divider-number">
+      PROJETO 04 / 05
+    </span>
+
+
+    <h2>
+      Somos Braduca
+    </h2>
+
+  </div>
+
+
+  <p class="project-divider-meta">
+    Social Media • Sistema editorial • Comunicação Visual
+  </p>
+
+</section>
 
 
 <!-- ========================================================
@@ -6087,7 +6310,7 @@ footer{
   <div class="project-head">
 
     <span class="project-number">
-      04 / 05 • SOCIAL MEDIA
+      SOCIAL MEDIA
     </span>
 
 
@@ -6097,225 +6320,150 @@ footer{
 
 
     <p class="project-summary">
-      Sistema visual para comunicação educacional,
-      organizando diferentes pautas com hierarquia,
-      legibilidade e consistência.
+      Conteúdo visual para redes sociais construído
+      com um sistema editorial flexível,
+      mantendo reconhecimento sem repetir
+      sempre a mesma composição.
     </p>
-
-
-    <div class="project-meta">
-      <span>Social Media</span>
-      <span>Design Gráfico</span>
-      <span>Comunicação</span>
-    </div>
 
   </div>
 
 
-  <div
-    class="braduca-case"
-    id="braducaCase"
-  >
+  <div class="secondary-case">
 
-    <div class="editorial-shell">
+    <div class="editorial-layout">
 
-      <div class="editorial-ribbon">
+      <div>
 
-        <button
-          type="button"
-          class="editorial-card active"
-          data-index="0"
-        >
-          <span class="editorial-number">
-            01
-          </span>
+        <div class="editorial-ribbon">
+
+          <button
+            class="editorial-card active"
+            type="button"
+            data-index="0"
+          >
+            <img
+              src="img/img-braduca/braduca-01.jpeg"
+              alt="Somos Braduca 01"
+            >
+          </button>
+
+
+          <button
+            class="editorial-card"
+            type="button"
+            data-index="1"
+          >
+            <img
+              src="img/img-braduca/braduca-02.jpeg"
+              alt="Somos Braduca 02"
+            >
+          </button>
+
+
+          <button
+            class="editorial-card"
+            type="button"
+            data-index="2"
+          >
+            <img
+              src="img/img-braduca/braduca-03.jpeg"
+              alt="Somos Braduca 03"
+            >
+          </button>
+
+
+          <button
+            class="editorial-card"
+            type="button"
+            data-index="3"
+          >
+            <img
+              src="img/img-braduca/braduca-04.jpeg"
+              alt="Somos Braduca 04"
+            >
+          </button>
+
+
+          <button
+            class="editorial-card"
+            type="button"
+            data-index="4"
+          >
+            <img
+              src="img/img-braduca/braduca-05.jpeg"
+              alt="Somos Braduca 05"
+            >
+          </button>
+
+
+          <button
+            class="editorial-card"
+            type="button"
+            data-index="5"
+          >
+            <img
+              src="img/img-braduca/braduca-06.jpeg"
+              alt="Somos Braduca 06"
+            >
+          </button>
+
+
+          <button
+            class="editorial-card"
+            type="button"
+            data-index="6"
+          >
+            <img
+              src="img/img-braduca/braduca-07.jpeg"
+              alt="Somos Braduca 07"
+            >
+          </button>
+
+        </div>
+
+
+        <div class="editorial-preview">
 
           <img
+            id="braducaPreview"
+            class="js-lightbox"
             src="img/img-braduca/braduca-01.jpeg"
-            alt="Somos Braduca — Peça 01"
+            alt="Somos Braduca"
           >
-        </button>
 
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="1"
-        >
-          <span class="editorial-number">
-            02
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-02.jpeg"
-            alt="Somos Braduca — Peça 02"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="2"
-        >
-          <span class="editorial-number">
-            03
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-03.jpeg"
-            alt="Somos Braduca — Peça 03"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="3"
-        >
-          <span class="editorial-number">
-            04
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-04.jpeg"
-            alt="Somos Braduca — Peça 04"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="4"
-        >
-          <span class="editorial-number">
-            05
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-05.jpeg"
-            alt="Somos Braduca — Peça 05"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="5"
-        >
-          <span class="editorial-number">
-            06
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-06.jpeg"
-            alt="Somos Braduca — Peça 06"
-            loading="lazy"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="6"
-        >
-          <span class="editorial-number">
-            07
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-07.jpeg"
-            alt="Somos Braduca — Peça 07"
-            loading="lazy"
-          >
-        </button>
+        </div>
 
       </div>
 
 
       <aside class="editorial-inspector">
 
-        <div class="editorial-preview">
-
-          <img
-            src="img/img-braduca/braduca-01.jpeg"
-            alt="Peça selecionada da Braduca"
-            id="braducaPreview"
-            class="js-lightbox"
-            tabindex="0"
-          >
-
-        </div>
+        <span>
+          EDITORIAL SYSTEM
+        </span>
 
 
-        <div>
-
-          <span class="section-kicker">
-            peça selecionada
-          </span>
+        <h4>
+          Composição com variação.
+        </h4>
 
 
-          <div class="inspector-row">
-
-            <span>
-              projeto
-            </span>
-
-            <strong>
-              Somos Braduca
-            </strong>
-
-          </div>
+        <p>
+          Diferentes pesos, enquadramentos e ritmos
+          convivem dentro da mesma linguagem visual.
+        </p>
 
 
-          <div class="inspector-row">
-
-            <span>
-              foco
-            </span>
-
-            <strong>
-              Hierarquia, legibilidade e consistência
-              em comunicação educacional.
-            </strong>
-
-          </div>
-
-
-          <div class="inspector-row">
-
-            <span>
-              intenção
-            </span>
-
-            <strong>
-              Transformar conteúdo em uma peça clara
-              sem descaracterizar a identidade da iniciativa.
-            </strong>
-
-          </div>
-
-
-          <div class="inspector-row">
-
-            <span>
-              peça
-            </span>
-
-            <strong id="braducaPosition">
-              01 / 07
-            </strong>
-
-          </div>
-
+        <div
+          id="braducaPosition"
+          style="
+            margin-top:20px;
+            font-family:Fraunces,serif;
+            font-size:2rem;
+          "
+        >
+          01 / 07
         </div>
 
       </aside>
@@ -6324,11 +6472,74 @@ footer{
 
   </div>
 
+
+  <nav class="project-navigation">
+
+    <a
+      class="project-nav-link"
+      href="#renata"
+    >
+
+      <span>
+        ← PROJETO ANTERIOR
+      </span>
+
+      <strong>
+        Renata Brandão
+      </strong>
+
+    </a>
+
+
+    <a
+      class="project-nav-link"
+      href="#aymee"
+    >
+
+      <span>
+        PRÓXIMO PROJETO →
+      </span>
+
+      <strong>
+        Aymée Ferraz
+      </strong>
+
+    </a>
+
+  </nav>
+
 </article>
 
 
 <!-- ========================================================
-     AYMÉE
+     05 DIVIDER
+======================================================== -->
+
+<section class="project-divider">
+
+  <div>
+
+    <span class="project-divider-number">
+      PROJETO 05 / 05
+    </span>
+
+
+    <h2>
+      Aymée Ferraz
+    </h2>
+
+  </div>
+
+
+  <p class="project-divider-meta">
+    Personal Brand • Social Media • Design Gráfico
+  </p>
+
+</section>
+
+
+<!-- ========================================================
+     AYMEE
 ======================================================== -->
 
 <article
@@ -6339,7 +6550,7 @@ footer{
   <div class="project-head">
 
     <span class="project-number">
-      05 / 05 • MARCA PESSOAL
+      PERSONAL BRAND
     </span>
 
 
@@ -6349,134 +6560,118 @@ footer{
 
 
     <p class="project-summary">
-      Comunicação visual para uma especialista em CS/CX,
-      Felicidade Corporativa e gestão, trabalhando a
-      consistência da marca pessoal através de diferentes
-      tipos de conteúdo.
+      Criação e diagramação de conteúdos para redes sociais,
+      mantendo consistência e identidade de marca
+      em publicações com temas diferentes.
     </p>
-
-
-    <div class="project-meta">
-      <span>Social Media</span>
-      <span>Design Gráfico</span>
-      <span>Marca Pessoal</span>
-    </div>
 
   </div>
 
 
-  <div class="aymee-case">
+  <div class="secondary-case">
 
-    <div class="brand-shell">
+    <div class="brand-layout">
 
-      <div class="brand-top">
+      <div
+        id="aymeeGrid"
+        class="brand-grid"
+      ></div>
 
-        <span
-          class="mono"
-          style="font-size:.61rem"
-        >
-          AYMÉE / CONTENT SYSTEM
+
+      <aside class="brand-notes">
+
+        <span>
+          PERSONAL BRAND SYSTEM
         </span>
 
 
-        <div class="brand-filter">
-
-          <button
-            type="button"
-            class="active"
-            data-brand-filter="all"
-          >
-            Todos
-          </button>
-
-          <button
-            type="button"
-            data-brand-filter="a"
-          >
-            Seleção A
-          </button>
-
-          <button
-            type="button"
-            data-brand-filter="b"
-          >
-            Seleção B
-          </button>
-
-        </div>
-
-      </div>
+        <h4>
+          Variação sem perder identidade.
+        </h4>
 
 
-      <div class="brand-body">
+        <article class="brand-rule">
 
-        <div
-          class="brand-grid"
-          id="aymeeGrid"
-        ></div>
-
-
-        <aside class="brand-rules">
-
-          <span class="section-kicker">
-            sistema de conteúdo
+          <span>
+            01 / CONSISTÊNCIA
           </span>
 
+          <p>
+            As publicações permanecem reconhecíveis
+            como parte da mesma marca.
+          </p>
 
-          <h4>
-            Variação sem perder identidade.
-          </h4>
-
-
-          <article class="brand-rule">
-
-            <span>
-              01 / CONSISTÊNCIA
-            </span>
-
-            <p>
-              As publicações precisam continuar
-              reconhecíveis como parte da mesma marca.
-            </p>
-
-          </article>
+        </article>
 
 
-          <article class="brand-rule">
+        <article class="brand-rule">
 
-            <span>
-              02 / HIERARQUIA
-            </span>
+          <span>
+            02 / HIERARQUIA
+          </span>
 
-            <p>
-              Conteúdo profissional precisa ser
-              lido antes de ser apenas decorado.
-            </p>
+          <p>
+            Conteúdo profissional precisa ser
+            lido antes de ser decorado.
+          </p>
 
-          </article>
+        </article>
 
 
-          <article class="brand-rule">
+        <article class="brand-rule">
 
-            <span>
-              03 / FLEXIBILIDADE
-            </span>
+          <span>
+            03 / FLEXIBILIDADE
+          </span>
 
-            <p>
-              O sistema visual permite diferentes
-              pautas sem transformar todas as peças
-              na mesma composição.
-            </p>
+          <p>
+            O sistema acomoda diferentes pautas
+            sem repetir sempre a mesma composição.
+          </p>
 
-          </article>
+        </article>
 
-        </aside>
-
-      </div>
+      </aside>
 
     </div>
 
   </div>
+
+
+  <nav class="project-navigation">
+
+    <a
+      class="project-nav-link"
+      href="#braduca"
+    >
+
+      <span>
+        ← PROJETO ANTERIOR
+      </span>
+
+      <strong>
+        Somos Braduca
+      </strong>
+
+    </a>
+
+
+    <a
+      class="project-nav-link"
+      href="#habilidades"
+    >
+
+      <span>
+        CONTINUAR →
+      </span>
+
+      <strong>
+        Habilidades
+      </strong>
+
+    </a>
+
+  </nav>
 
 </article>
 
@@ -6489,6 +6684,11 @@ footer{
   class="section-head"
   id="habilidades"
 >
+
+  <span class="section-kicker">
+    competências
+  </span>
+
 
   <h2>
     Habilidades & ferramentas
@@ -6508,9 +6708,10 @@ footer{
       </h3>
 
       <p>
-        Figma, Auto Layout, componentes, variantes,
-        protótipos, arquitetura da informação
-        e layouts responsivos.
+        Figma, Auto Layout, componentes,
+        variantes, protótipos,
+        arquitetura da informação
+        e interfaces responsivas.
       </p>
 
     </article>
@@ -6523,8 +6724,9 @@ footer{
       </h3>
 
       <p>
-        Photoshop, Illustrator, InDesign,
-        Canva e desenvolvimento de sistemas gráficos.
+        Photoshop, Illustrator,
+        InDesign, Canva e construção
+        de sistemas gráficos.
       </p>
 
     </article>
@@ -6533,12 +6735,13 @@ footer{
     <article class="skill-card">
 
       <h3>
-        Conteúdo & Comunicação
+        Comunicação
       </h3>
 
       <p>
-        Social media, copywriting, apresentações,
-        endomarketing e comunicação multicanal.
+        Social media, copywriting,
+        apresentações, endomarketing
+        e comunicação multicanal.
       </p>
 
     </article>
@@ -6551,9 +6754,9 @@ footer{
       </h3>
 
       <p>
-        Apoio em pesquisa, estruturação,
-        produtividade e refinamento com
-        revisão humana.
+        Pesquisa inicial, estruturação,
+        variações, produtividade e
+        refinamento com validação humana.
       </p>
 
     </article>
@@ -6573,18 +6776,19 @@ footer{
 >
 
   <span class="section-kicker">
-    contato
+    RAQUEL RENOVATO • CONTATO
   </span>
 
 
   <h2>
-    Tem uma vaga, um projeto ou um problema que precisa de design?
+    Vamos criar algo claro, útil e bem resolvido?
   </h2>
 
 
   <p>
-    Estou aberta a conversar sobre oportunidades em
-    Comunicação Visual, UI Design e experiências digitais.
+    Estou aberta a conversar sobre oportunidades
+    em Comunicação Visual, UI Design
+    e experiências digitais.
   </p>
 
 
@@ -6599,11 +6803,13 @@ footer{
       Falar no WhatsApp
     </a>
 
+
     <a
       href="mailto:raquel.renovato.design@gmail.com"
     >
       Enviar e-mail
     </a>
+
 
     <a
       href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
@@ -6624,8 +6830,9 @@ footer{
 <footer>
 
   <span>
-    © 2026 Raquel Renovato
+    © 2026 RAQUEL RENOVATO
   </span>
+
 
   <span>
     Comunicação Visual • UI • Design
@@ -6639,18 +6846,14 @@ footer{
 ======================================================== -->
 
 <div
-  class="lightbox"
   id="lightbox"
-  role="dialog"
-  aria-modal="true"
-  aria-hidden="true"
+  class="lightbox"
 >
 
   <button
-    type="button"
-    class="lightbox-close"
     id="lightboxClose"
-    aria-label="Fechar imagem"
+    class="lightbox-close"
+    type="button"
   >
     ×
   </button>
@@ -6666,6 +6869,7 @@ footer{
 
 
 <script>
+
 (() => {
 
 "use strict";
@@ -6675,18 +6879,26 @@ footer{
    HELPERS
 ========================================================== */
 
-const $ = (
-  selector,
-  root = document
-) => root.querySelector(selector);
+const $ =
+  (
+    selector,
+    root = document
+  ) =>
+    root.querySelector(
+      selector
+    );
 
 
-const $$ = (
-  selector,
-  root = document
-) => [
-  ...root.querySelectorAll(selector)
-];
+const $$ =
+  (
+    selector,
+    root = document
+  ) =>
+    [
+      ...root.querySelectorAll(
+        selector
+      )
+    ];
 
 
 const reduceMotion =
@@ -6703,43 +6915,96 @@ const intro =
   $("#intro-overlay");
 
 
-const introCycle =
-  $("#introWordCycle");
-
-
 const introWords =
   $$("#introWordCycle .w");
 
 
-let introTimers =
-  [];
+let introTimers = [];
+
+let introClosed =
+  false;
 
 
-function sizeIntro(){
-
-  let width =
-    0;
-
+function resetIntro(){
 
   introWords.forEach(
-    word => {
+    (
+      word,
+      index
+    ) => {
 
-      width =
-        Math.max(
-          width,
-          word.getBoundingClientRect().width
+      word.classList.remove(
+        "active",
+        "exit"
+      );
+
+
+      if(
+        index ===
+        0
+      ){
+
+        word.classList.add(
+          "active"
         );
+
+      }
 
     }
   );
 
+}
 
-  if(introCycle){
 
-    introCycle.style.width =
-      `${Math.ceil(width) + 6}px`;
+function showIntroWord(
+  index
+){
 
-  }
+  introWords.forEach(
+    (
+      word,
+      current
+    ) => {
+
+      if(
+        current <
+        index
+      ){
+
+        word.classList.remove(
+          "active"
+        );
+
+
+        word.classList.add(
+          "exit"
+        );
+
+      }else if(
+        current ===
+        index
+      ){
+
+        word.classList.remove(
+          "exit"
+        );
+
+
+        word.classList.add(
+          "active"
+        );
+
+      }else{
+
+        word.classList.remove(
+          "active",
+          "exit"
+        );
+
+      }
+
+    }
+  );
 
 }
 
@@ -6748,14 +7013,21 @@ function closeIntro(){
 
   if(
     !intro ||
-    intro.classList.contains("hide")
+    introClosed
   ){
     return;
   }
 
 
+  introClosed =
+    true;
+
+
   introTimers.forEach(
-    clearTimeout
+    timer =>
+      clearTimeout(
+        timer
+      )
   );
 
 
@@ -6764,27 +7036,21 @@ function closeIntro(){
   );
 
 
-  document.body.classList.remove(
-    "intro-active"
-  );
+  document.body
+    .classList
+    .remove(
+      "intro-active"
+    );
 
 
-  sessionStorage.setItem(
-    "portfolioIntroSeen",
-    "1"
-  );
-
-
-  window.setTimeout(
+  setTimeout(
     () => {
 
       intro.style.display =
         "none";
 
     },
-    reduceMotion.matches
-      ? 0
-      : 420
+    500
   );
 
 }
@@ -6793,18 +7059,44 @@ function closeIntro(){
 function startIntro(){
 
   if(
-    sessionStorage.getItem(
-      "portfolioIntroSeen"
-    ) === "1" ||
+    !intro
+  ){
+    return;
+  }
+
+
+  introClosed =
+    false;
+
+
+  intro.style.display =
+    "flex";
+
+
+  intro.classList.remove(
+    "hide"
+  );
+
+
+  document.body
+    .classList
+    .add(
+      "intro-active"
+    );
+
+
+  resetIntro();
+
+
+  if(
     reduceMotion.matches
   ){
 
-    intro.style.display =
-      "none";
-
-
-    document.body.classList.remove(
-      "intro-active"
+    introTimers.push(
+      setTimeout(
+        closeIntro,
+        950
+      )
     );
 
 
@@ -6813,84 +7105,48 @@ function startIntro(){
   }
 
 
-  sizeIntro();
+  const step =
+    720;
 
 
-  if(
-    introWords.length
-  ){
-
-    introWords[0]
-      .classList
-      .add("active");
-
-  }
-
-
-  introWords.forEach(
-    (
-      word,
-      index
-    ) => {
-
-      if(index === 0){
-        return;
-      }
+  introTimers.push(
+    setTimeout(
+      () =>
+        showIntroWord(
+          1
+        ),
+      step
+    )
+  );
 
 
-      introTimers.push(
-        setTimeout(
-          () => {
-
-            introWords.forEach(
-              current => {
-
-                current.classList.remove(
-                  "active",
-                  "exit"
-                );
-
-              }
-            );
-
-
-            introWords[
-              index - 1
-            ]?.classList.add(
-              "exit"
-            );
-
-
-            word.classList.add(
-              "active"
-            );
-
-          },
-          index * 650
-        )
-      );
-
-    }
+  introTimers.push(
+    setTimeout(
+      () =>
+        showIntroWord(
+          2
+        ),
+      step * 2
+    )
   );
 
 
   introTimers.push(
     setTimeout(
       closeIntro,
-      Math.max(
-        1750,
-        introWords.length * 650 + 350
-      )
+      step * 3 +
+      280
     )
   );
 
 }
 
 
-intro?.addEventListener(
-  "click",
-  closeIntro
-);
+intro
+  ?.addEventListener(
+    "click",
+    closeIntro
+  );
 
 
 document.addEventListener(
@@ -6898,18 +7154,24 @@ document.addEventListener(
   event => {
 
     if(
-      event.key === "Escape" ||
-      event.key === "Enter" ||
-      event.key === " "
+      document.body
+        .classList
+        .contains(
+          "intro-active"
+        ) &&
+      [
+        "Escape",
+        "Enter",
+        " "
+      ]
+      .includes(
+        event.key
+      )
     ){
 
-      if(
-        document.body.classList.contains(
-          "intro-active"
-        )
-      ){
-        closeIntro();
-      }
+      event.preventDefault();
+
+      closeIntro();
 
     }
 
@@ -6917,10 +7179,24 @@ document.addEventListener(
 );
 
 
-window.addEventListener(
-  "load",
-  startIntro
-);
+if(
+  document.readyState ===
+  "loading"
+){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    startIntro,
+    {
+      once:true
+    }
+  );
+
+}else{
+
+  startIntro();
+
+}
 
 
 /* ==========================================================
@@ -6935,6 +7211,12 @@ const themeLabel =
   $("#themeLabel");
 
 
+const savedTheme =
+  localStorage.getItem(
+    "raquel-theme"
+  );
+
+
 function setTheme(
   theme
 ){
@@ -6946,279 +7228,69 @@ function setTheme(
     );
 
 
-  localStorage.setItem(
-    "raquel-theme",
-    theme
-  );
-
-
   themeLabel.textContent =
-    theme === "dark"
+    theme ===
+    "dark"
       ? "Claro"
       : "Sombrio";
 
 }
 
 
-const savedTheme =
-  localStorage.getItem(
-    "raquel-theme"
-  );
-
-
 setTheme(
-  savedTheme === "dark"
+  savedTheme ===
+  "dark"
     ? "dark"
     : "light"
 );
 
 
-themeToggle?.addEventListener(
-  "click",
-  () => {
+themeToggle
+  ?.addEventListener(
+    "click",
+    () => {
 
-    const current =
-      document.documentElement
-        .getAttribute(
-          "data-theme"
-        );
-
-
-    setTheme(
-      current === "dark"
-        ? "light"
-        : "dark"
-    );
-
-  }
-);
-
-
-/* ==========================================================
-   WIREFRAME
-========================================================== */
-
-let selectedColor =
-  "#E8590C";
-
-
-function contrastColor(
-  hex
-){
-
-  const value =
-    hex.replace(
-      "#",
-      ""
-    );
-
-
-  const r =
-    parseInt(
-      value.substring(0,2),
-      16
-    );
-
-
-  const g =
-    parseInt(
-      value.substring(2,4),
-      16
-    );
-
-
-  const b =
-    parseInt(
-      value.substring(4,6),
-      16
-    );
-
-
-  const luminance =
-    (
-      r * 299 +
-      g * 587 +
-      b * 114
-    ) /
-    1000;
-
-
-  return luminance > 145
-    ? "#1F1C18"
-    : "#FFFFFF";
-
-}
-
-
-$$(".swatch")
-  .forEach(
-    swatch => {
-
-      swatch.addEventListener(
-        "click",
-        () => {
-
-          $$(".swatch")
-            .forEach(
-              item =>
-                item.classList.remove(
-                  "active"
-                )
-            );
-
-
-          swatch.classList.add(
-            "active"
+      const current =
+        document.documentElement
+          .getAttribute(
+            "data-theme"
           );
 
 
-          selectedColor =
-            swatch.dataset.color ||
-            "";
+      const next =
+        current ===
+        "dark"
+          ? "light"
+          : "dark";
 
-        }
+
+      localStorage.setItem(
+        "raquel-theme",
+        next
+      );
+
+
+      setTheme(
+        next
       );
 
     }
   );
 
 
-const wfWindow =
-  $("#wfWindow");
+/* ==========================================================
+   TASKS
+========================================================== */
 
-
-wfWindow?.addEventListener(
-  "click",
-  event => {
-
-    const target =
-      event.target.closest(
-        ".wf-paintable"
-      );
-
-
-    if(!target){
-      return;
-    }
-
-
-    if(!selectedColor){
-
-      target.style.backgroundColor =
-        "";
-
-      target.style.borderColor =
-        "";
-
-      target.style.color =
-        "";
-
-
-      return;
-
-    }
-
-
-    target.style.backgroundColor =
-      selectedColor;
-
-
-    target.style.borderColor =
-      selectedColor;
-
-
-    target.style.color =
-      contrastColor(
-        selectedColor
-      );
-
-  }
-);
-
-
-$$(".wf-nav-item")
+$$(".wf-task-item")
   .forEach(
     item => {
 
       item.addEventListener(
         "click",
-        event => {
-
-          event.stopPropagation();
-
-
-          $$(".wf-nav-item")
-            .forEach(
-              current =>
-                current.classList.remove(
-                  "active"
-                )
-            );
-
-
-          item.classList.add(
-            "active"
-          );
-
-
-          const tab =
-            item.dataset.tab;
-
-
-          $$(".wf-view")
-            .forEach(
-              view => {
-
-                view.classList.toggle(
-                  "active",
-                  view.id ===
-                    `wf-${tab}`
-                );
-
-              }
-            );
-
-        }
-      );
-
-    }
-  );
-
-
-let deliveries =
-  14;
-
-
-$("#wfMetricBtn")
-  ?.addEventListener(
-    "click",
-    event => {
-
-      event.stopPropagation();
-
-
-      deliveries +=
-        1;
-
-
-      $("#wfCounter").textContent =
-        String(
-          deliveries
-        );
-
-    }
-  );
-
-
-$$(".wf-task-item")
-  .forEach(
-    task => {
-
-      task.addEventListener(
-        "click",
         () => {
 
-          task.classList.toggle(
+          item.classList.toggle(
             "checked"
           );
 
@@ -7229,95 +7301,8 @@ $$(".wf-task-item")
   );
 
 
-let wfDark =
-  false;
-
-
-$("#wfSwitchMode")
-  ?.addEventListener(
-    "click",
-    event => {
-
-      wfDark =
-        !wfDark;
-
-
-      if(wfDark){
-
-        wfWindow.style.setProperty(
-          "--wf-bg",
-          "#12110F"
-        );
-
-
-        wfWindow.style.setProperty(
-          "--wf-card",
-          "#1C1A17"
-        );
-
-
-        wfWindow.style.setProperty(
-          "--wf-text",
-          "#F0ECE1"
-        );
-
-
-        event.currentTarget.textContent =
-          "modo clean";
-
-      }else{
-
-        wfWindow.style.removeProperty(
-          "--wf-bg"
-        );
-
-
-        wfWindow.style.removeProperty(
-          "--wf-card"
-        );
-
-
-        wfWindow.style.removeProperty(
-          "--wf-text"
-        );
-
-
-        event.currentTarget.textContent =
-          "modo app";
-
-      }
-
-    }
-  );
-
-
-$("#wfClear")
-  ?.addEventListener(
-    "click",
-    () => {
-
-      $$(".wf-paintable")
-        .forEach(
-          element => {
-
-            element.style.backgroundColor =
-              "";
-
-            element.style.borderColor =
-              "";
-
-            element.style.color =
-              "";
-
-          }
-        );
-
-    }
-  );
-
-
 /* ==========================================================
-   FERNANDO — MAIN TABS
+   FERNANDO TABS
 ========================================================== */
 
 $$(".fa-tab")
@@ -7330,19 +7315,25 @@ $$(".fa-tab")
 
           $$(".fa-tab")
             .forEach(
-              current =>
+              current => {
+
                 current.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
           $$(".fa-view")
             .forEach(
-              view =>
+              view => {
+
                 view.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
@@ -7351,14 +7342,16 @@ $$(".fa-tab")
           );
 
 
-          const target =
-            $(
-              `[data-fa-view="${tab.dataset.faTab}"]`
-            );
-
-
-          target?.classList.add(
+          $(
+            `[data-fa-view="${tab.dataset.faTab}"]`
+          )
+          ?.classList.add(
             "active"
+          );
+
+
+          requestAnimationFrame(
+            resizeAllDesktopPreviews
           );
 
         }
@@ -7369,7 +7362,7 @@ $$(".fa-tab")
 
 
 /* ==========================================================
-   FERNANDO — SYSTEM
+   SYSTEM NAV
 ========================================================== */
 
 $$(".system-nav-btn")
@@ -7382,19 +7375,25 @@ $$(".system-nav-btn")
 
           $$(".system-nav-btn")
             .forEach(
-              current =>
+              current => {
+
                 current.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
           $$(".system-panel")
             .forEach(
-              panel =>
+              panel => {
+
                 panel.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
@@ -7417,6 +7416,10 @@ $$(".system-nav-btn")
   );
 
 
+/* ==========================================================
+   BUTTON VARIANTS
+========================================================== */
+
 const demoPrimary =
   $("#faDemoPrimary");
 
@@ -7431,10 +7434,13 @@ $$("[data-fa-button-state]")
 
           $$("[data-fa-button-state]")
             .forEach(
-              current =>
+              current => {
+
                 current.classList.remove(
                   "active"
-                )
+                );
+
+              }
             );
 
 
@@ -7443,72 +7449,40 @@ $$("[data-fa-button-state]")
           );
 
 
-          demoPrimary.classList.remove(
-            "is-hover",
-            "is-disabled"
-          );
-
-
-          demoPrimary.disabled =
-            false;
-
-
-          const state =
-            button.dataset.faButtonState;
-
-
-          if(
-            state === "hover"
-          ){
-
-            demoPrimary.classList.add(
-              "is-hover"
-            );
-
-          }
-
-
-          if(
-            state === "disabled"
-          ){
-
-            demoPrimary.classList.add(
+          demoPrimary
+            ?.classList
+            .remove(
+              "is-hover",
               "is-disabled"
             );
 
 
-            demoPrimary.disabled =
-              true;
+          if(
+            button.dataset.faButtonState ===
+            "hover"
+          ){
+
+            demoPrimary
+              ?.classList
+              .add(
+                "is-hover"
+              );
 
           }
 
-        }
-      );
 
-    }
-  );
+          if(
+            button.dataset.faButtonState ===
+            "disabled"
+          ){
 
+            demoPrimary
+              ?.classList
+              .add(
+                "is-disabled"
+              );
 
-$$(".demo-filter")
-  .forEach(
-    button => {
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          $$(".demo-filter")
-            .forEach(
-              current =>
-                current.classList.remove(
-                  "active"
-                )
-            );
-
-
-          button.classList.add(
-            "active"
-          );
+          }
 
         }
       );
@@ -7518,10 +7492,148 @@ $$(".demo-filter")
 
 
 /* ==========================================================
-   VOIT
+   DESKTOP IFRAME SCALER
 ========================================================== */
 
-$$(".voit-tab")
+const DESKTOP_WIDTH =
+  1440;
+
+
+function resizeDesktopPreview(
+  viewport
+){
+
+  if(
+    !viewport
+  ){
+    return;
+  }
+
+
+  const canvas =
+    viewport.querySelector(
+      ".fa-desktop-canvas"
+    );
+
+
+  if(
+    !canvas
+  ){
+    return;
+  }
+
+
+  const available =
+    viewport.clientWidth;
+
+
+  if(
+    available <=
+    0
+  ){
+    return;
+  }
+
+
+  const scale =
+    Math.min(
+      1,
+      available /
+      DESKTOP_WIDTH
+    );
+
+
+  canvas.style.transform =
+    `scale(${scale})`;
+
+
+  const wantedHeight =
+    Number(
+      viewport.dataset.desktopHeight ||
+      700
+    );
+
+
+  viewport.style.height =
+    `${
+      wantedHeight *
+      scale
+    }px`;
+
+}
+
+
+function resizeAllDesktopPreviews(){
+
+  $$(".fa-desktop-viewport")
+    .forEach(
+      resizeDesktopPreview
+    );
+
+}
+
+
+if(
+  "ResizeObserver" in window
+){
+
+  const observer =
+    new ResizeObserver(
+      entries => {
+
+        entries.forEach(
+          entry => {
+
+            resizeDesktopPreview(
+              entry.target
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  $$(".fa-desktop-viewport")
+    .forEach(
+      viewport => {
+
+        observer.observe(
+          viewport
+        );
+
+      }
+    );
+
+}
+
+
+window.addEventListener(
+  "resize",
+  resizeAllDesktopPreviews,
+  {
+    passive:true
+  }
+);
+
+
+window.addEventListener(
+  "load",
+  resizeAllDesktopPreviews
+);
+
+
+requestAnimationFrame(
+  resizeAllDesktopPreviews
+);
+
+
+/* ==========================================================
+   GENERIC SECONDARY TABS
+========================================================== */
+
+$$(".case-tab")
   .forEach(
     button => {
 
@@ -7529,22 +7641,40 @@ $$(".voit-tab")
         "click",
         () => {
 
-          $$(".voit-tab")
-            .forEach(
-              current =>
-                current.classList.remove(
-                  "active"
-                )
-            );
+          const caseName =
+            button.dataset.case;
 
 
-          $$(".voit-view")
-            .forEach(
-              view =>
-                view.classList.remove(
-                  "active"
-                )
-            );
+          const viewName =
+            button.dataset.view;
+
+
+          $$(
+            `.case-tab[data-case="${caseName}"]`
+          )
+          .forEach(
+            current => {
+
+              current.classList.remove(
+                "active"
+              );
+
+            }
+          );
+
+
+          $$(
+            `[data-case-view^="${caseName}-"]`
+          )
+          .forEach(
+            view => {
+
+              view.classList.remove(
+                "active"
+              );
+
+            }
+          );
 
 
           button.classList.add(
@@ -7553,7 +7683,7 @@ $$(".voit-tab")
 
 
           $(
-            `[data-voit-view="${button.dataset.voitTab}"]`
+            `[data-case-view="${caseName}-${viewName}"]`
           )
           ?.classList.add(
             "active"
@@ -7576,118 +7706,63 @@ const renataSlides = [
     src:
       "img/img-renata/renata-01.jpg",
 
-    title:
-      "Entrada e posicionamento",
-
-    text:
-      "A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto."
+    alt:
+      "Renata Brandão — slide 01"
   },
 
   {
     src:
       "img/img-renata/renata-02.jpg",
 
-    title:
-      "Hierarquia de conteúdo",
-
-    text:
-      "A composição organiza as informações em blocos para preservar leitura, ritmo e entendimento durante a apresentação."
+    alt:
+      "Renata Brandão — slide 02"
   },
 
   {
     src:
       "img/img-renata/renata-03.jpg",
 
-    title:
-      "Consistência narrativa",
-
-    text:
-      "Elementos visuais recorrentes criam unidade sem obrigar todos os slides a usar exatamente a mesma composição."
+    alt:
+      "Renata Brandão — slide 03"
   }
 
 ];
 
 
-let renataIndex =
+let deckIndex =
   0;
 
 
-const deckImage =
-  $("#deckImage");
-
-
-const deckCounter =
-  $("#deckCounter");
-
-
-const deckTitle =
-  $("#deckTitle");
-
-
-const deckText =
-  $("#deckText");
-
-
-const deckProgress =
-  $("#deckProgress");
+const deckMain =
+  $("#deckMain");
 
 
 const deckThumbs =
   $("#deckThumbs");
 
 
-function renderRenata(){
+function renderDeck(){
+
+  if(
+    !deckMain ||
+    !deckThumbs
+  ){
+    return;
+  }
+
 
   const slide =
     renataSlides[
-      renataIndex
+      deckIndex
     ];
 
 
-  deckImage.src =
+  deckMain.src =
     slide.src;
 
 
-  deckImage.alt =
-    slide.title;
-
-
-  deckTitle.textContent =
-    slide.title;
-
-
-  deckText.textContent =
-    slide.text;
-
-
-  deckCounter.textContent =
-    `${
-      String(
-        renataIndex + 1
-      ).padStart(
-        2,
-        "0"
-      )
-    } / ${
-      String(
-        renataSlides.length
-      ).padStart(
-        2,
-        "0"
-      )
-    }`;
-
-
-  deckProgress.style.width =
-    `${
-      (
-        (
-          renataIndex + 1
-        ) /
-        renataSlides.length
-      ) *
-      100
-    }%`;
+  deckMain.alt =
+    slide.alt;
 
 
   deckThumbs.innerHTML =
@@ -7715,7 +7790,8 @@ function renderRenata(){
 
 
       if(
-        index === renataIndex
+        index ===
+        deckIndex
       ){
 
         button.classList.add(
@@ -7725,23 +7801,19 @@ function renderRenata(){
       }
 
 
-      button.innerHTML = `
-        <img
-          src="${item.src}"
-          alt="Miniatura ${index + 1}"
-        >
-      `;
+      button.innerHTML =
+        `<img src="${item.src}" alt="">`;
 
 
       button.addEventListener(
         "click",
         () => {
 
-          renataIndex =
+          deckIndex =
             index;
 
 
-          renderRenata();
+          renderDeck();
 
         }
       );
@@ -7762,16 +7834,16 @@ $("#deckPrev")
     "click",
     () => {
 
-      renataIndex =
+      deckIndex =
         (
-          renataIndex -
+          deckIndex -
           1 +
           renataSlides.length
         ) %
         renataSlides.length;
 
 
-      renderRenata();
+      renderDeck();
 
     }
   );
@@ -7782,30 +7854,26 @@ $("#deckNext")
     "click",
     () => {
 
-      renataIndex =
+      deckIndex =
         (
-          renataIndex +
+          deckIndex +
           1
         ) %
         renataSlides.length;
 
 
-      renderRenata();
+      renderDeck();
 
     }
   );
 
 
-renderRenata();
+renderDeck();
 
 
 /* ==========================================================
    BRADUCA
 ========================================================== */
-
-const braducaCase =
-  $("#braducaCase");
-
 
 const braducaPreview =
   $("#braducaPreview");
@@ -7815,71 +7883,79 @@ const braducaPosition =
   $("#braducaPosition");
 
 
-$$(
-  ".editorial-card",
-  braducaCase
-)
-.forEach(
-  card => {
+$$(".editorial-card")
+  .forEach(
+    card => {
 
-    card.addEventListener(
-      "click",
-      () => {
+      card.addEventListener(
+        "click",
+        () => {
 
-        $$(
-          ".editorial-card",
-          braducaCase
-        )
-        .forEach(
-          current =>
-            current.classList.remove(
-              "active"
-            )
-        );
+          $$(".editorial-card")
+            .forEach(
+              current => {
+
+                current.classList.remove(
+                  "active"
+                );
+
+              }
+            );
 
 
-        card.classList.add(
-          "active"
-        );
-
-
-        const image =
-          $("img",card);
-
-
-        braducaPreview.src =
-          image.src;
-
-
-        braducaPreview.alt =
-          image.alt;
-
-
-        const index =
-          Number(
-            card.dataset.index
+          card.classList.add(
+            "active"
           );
 
 
-        braducaPosition.textContent =
-          `${
-            String(
-              index + 1
-            ).padStart(
-              2,
-              "0"
-            )
-          } / 07`;
+          const image =
+            card.querySelector(
+              "img"
+            );
 
-      }
-    );
 
-  }
-);
+          if(
+            !image
+          ){
+            return;
+          }
+
+
+          braducaPreview.src =
+            image.src;
+
+
+          braducaPreview.alt =
+            image.alt;
+
+
+          const index =
+            Number(
+              card.dataset.index
+            );
+
+
+          braducaPosition.textContent =
+            `${
+              String(
+                index +
+                1
+              )
+              .padStart(
+                2,
+                "0"
+              )
+            } / 07`;
+
+        }
+      );
+
+    }
+  );
 
 
 /* ==========================================================
-   AYMÉE
+   AYMEE
 ========================================================== */
 
 const aymeeImages = [
@@ -7902,9 +7978,14 @@ const aymeeGrid =
   $("#aymeeGrid");
 
 
-function renderAymee(
-  filter = "all"
-){
+function renderAymee(){
+
+  if(
+    !aymeeGrid
+  ){
+    return;
+  }
+
 
   aymeeGrid.innerHTML =
     "";
@@ -7915,26 +7996,6 @@ function renderAymee(
       src,
       index
     ) => {
-
-      const number =
-        index + 1;
-
-
-      if(
-        filter === "a" &&
-        number % 2 === 0
-      ){
-        return;
-      }
-
-
-      if(
-        filter === "b" &&
-        number % 2 !== 0
-      ){
-        return;
-      }
-
 
       const button =
         document.createElement(
@@ -7950,14 +8011,24 @@ function renderAymee(
         "brand-card";
 
 
-      button.innerHTML = `
+      button.innerHTML =
+        `
         <img
-          src="${src}"
-          alt="Aymée Ferraz — Post ${String(number).padStart(2,"0")}"
-          loading="lazy"
           class="js-lightbox"
+          src="${src}"
+          alt="Aymée Ferraz — Post ${
+            String(
+              index +
+              1
+            )
+            .padStart(
+              2,
+              "0"
+            )
+          }"
+          loading="lazy"
         >
-      `;
+        `;
 
 
       aymeeGrid.appendChild(
@@ -7975,37 +8046,7 @@ function renderAymee(
 }
 
 
-$$(".brand-filter button")
-  .forEach(
-    button => {
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          $$(".brand-filter button")
-            .forEach(
-              current =>
-                current.classList.remove(
-                  "active"
-                )
-            );
-
-
-          button.classList.add(
-            "active"
-          );
-
-
-          renderAymee(
-            button.dataset.brandFilter
-          );
-
-        }
-      );
-
-    }
-  );
+renderAymee();
 
 
 /* ==========================================================
@@ -8020,22 +8061,9 @@ const lightboxImage =
   $("#lightboxImage");
 
 
-const lightboxClose =
-  $("#lightboxClose");
-
-
-let lightboxTrigger =
-  null;
-
-
 function openLightbox(
-  image,
-  trigger
+  image
 ){
-
-  lightboxTrigger =
-    trigger;
-
 
   lightboxImage.src =
     image.currentSrc ||
@@ -8043,8 +8071,7 @@ function openLightbox(
 
 
   lightboxImage.alt =
-    image.alt ||
-    "";
+    image.alt;
 
 
   lightbox.classList.add(
@@ -8052,65 +8079,27 @@ function openLightbox(
   );
 
 
-  lightbox.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-
-  document.body.classList.add(
-    "locked"
-  );
-
-
-  lightboxClose.focus();
+  document.body
+    .classList
+    .add(
+      "locked"
+    );
 
 }
 
 
 function closeLightbox(){
 
-  if(
-    !lightbox.classList.contains(
-      "open"
-    )
-  ){
-    return;
-  }
-
-
   lightbox.classList.remove(
     "open"
   );
 
 
-  lightbox.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-
-  lightboxImage.removeAttribute(
-    "src"
-  );
-
-
-  document.body.classList.remove(
-    "locked"
-  );
-
-
-  if(
-    lightboxTrigger instanceof HTMLElement
-  ){
-
-    lightboxTrigger.focus();
-
-  }
-
-
-  lightboxTrigger =
-    null;
+  document.body
+    .classList
+    .remove(
+      "locked"
+    );
 
 }
 
@@ -8127,97 +8116,26 @@ function registerLightboxImages(
     image => {
 
       if(
-        image.dataset.lightboxReady ===
-        "1"
+        image.dataset.ready
       ){
         return;
       }
 
 
-      image.dataset.lightboxReady =
+      image.dataset.ready =
         "1";
 
 
-      const button =
-        image.closest(
-          "button"
-        );
-
-
-      const trigger =
-        button ||
-        image;
-
-
-      if(!button){
-
-        image.setAttribute(
-          "role",
-          "button"
-        );
-
-
-        if(
-          !image.hasAttribute(
-            "tabindex"
-          )
-        ){
-
-          image.tabIndex =
-            0;
-
-        }
-
-      }
-
-
-      const activate =
-        event => {
-
-          if(
-            event?.type ===
-              "keydown" &&
-            event.key !==
-              "Enter" &&
-            event.key !==
-              " "
-          ){
-            return;
-          }
-
-
-          if(
-            event?.type ===
-            "keydown"
-          ){
-
-            event.preventDefault();
-
-          }
-
+      image.addEventListener(
+        "click",
+        () => {
 
           openLightbox(
-            image,
-            trigger
+            image
           );
 
-        };
-
-
-      trigger.addEventListener(
-        "click",
-        activate
+        }
       );
-
-
-      if(!button){
-
-        trigger.addEventListener(
-          "keydown",
-          activate
-        );
-
-      }
 
     }
   );
@@ -8225,15 +8143,18 @@ function registerLightboxImages(
 }
 
 
-lightboxClose
-  .addEventListener(
+registerLightboxImages();
+
+
+$("#lightboxClose")
+  ?.addEventListener(
     "click",
     closeLightbox
   );
 
 
 lightbox
-  .addEventListener(
+  ?.addEventListener(
     "click",
     event => {
 
@@ -8256,7 +8177,10 @@ document.addEventListener(
 
     if(
       event.key ===
-      "Escape"
+      "Escape" &&
+      lightbox.classList.contains(
+        "open"
+      )
     ){
 
       closeLightbox();
@@ -8267,12 +8191,10 @@ document.addEventListener(
 );
 
 
-renderAymee();
-
-registerLightboxImages();
-
 })();
+
 </script>
 
 </body>
+
 </html>
