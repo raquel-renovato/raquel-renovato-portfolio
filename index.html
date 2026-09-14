@@ -113,7 +113,9 @@
     body {
       background: var(--bg);
       color: var(--ink);
+
       font-family: "IBM Plex Sans", sans-serif;
+
       -webkit-font-smoothing: antialiased;
 
       transition:
@@ -182,6 +184,7 @@
     #intro-overlay {
       position: fixed;
       inset: 0;
+
       z-index: 200;
 
       display: flex;
@@ -199,7 +202,9 @@
 
     #intro-overlay.expand {
       opacity: 0;
+
       transform: scale(1.02);
+
       pointer-events: none;
     }
 
@@ -212,9 +217,13 @@
 
     .intro-word-cycle {
       position: relative;
+
       display: inline-block;
+
       height: 1.15em;
+
       vertical-align: bottom;
+
       overflow: hidden;
     }
 
@@ -231,6 +240,7 @@
       font-weight: 400;
 
       opacity: 0;
+
       transform: translateY(100%);
 
       transition:
@@ -240,16 +250,19 @@
 
     .intro-word-cycle .w.active {
       opacity: 1;
+
       transform: translateY(0);
     }
 
     .intro-word-cycle .w.exit {
       opacity: 0;
+
       transform: translateY(-100%);
     }
 
     #site-content {
       opacity: 0;
+
       transition: opacity 0.35s ease;
     }
 
@@ -264,6 +277,7 @@
     nav {
       position: sticky;
       top: 0;
+
       z-index: 60;
 
       display: grid;
@@ -285,6 +299,7 @@
 
       display: flex;
       align-items: center;
+
       gap: 20px;
     }
 
@@ -315,6 +330,7 @@
       border-radius: 999px;
 
       background: none;
+
       color: var(--ink);
 
       font-size: 0.72rem;
@@ -324,6 +340,7 @@
 
     .theme-toggle:hover {
       color: var(--accent);
+
       border-color: var(--accent);
     }
 
@@ -332,6 +349,7 @@
 
       display: flex;
       align-items: center;
+
       gap: 32px;
 
       list-style: none;
@@ -341,6 +359,7 @@
 
     nav ul a {
       color: var(--dim);
+
       text-decoration: none;
     }
 
@@ -361,11 +380,13 @@
       color: var(--ink);
 
       text-decoration: none;
+
       font-size: 0.78rem;
     }
 
     nav .cta:hover {
       color: var(--bg);
+
       background: var(--ink);
     }
 
@@ -376,7 +397,9 @@
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
+
       gap: 40px;
+
       align-items: center;
 
       padding: 90px var(--page-pad) 70px;
@@ -414,6 +437,7 @@
 
     .hero-sub p {
       max-width: 510px;
+
       margin-bottom: 22px;
 
       color: var(--dim);
@@ -426,12 +450,14 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+
       gap: 20px;
     }
 
     .hero-cta {
       display: inline-flex;
       align-items: center;
+
       gap: 8px;
 
       padding-bottom: 4px;
@@ -439,6 +465,7 @@
       border-bottom: 1.5px solid var(--accent);
 
       color: var(--accent);
+
       text-decoration: none;
 
       font-size: 0.85rem;
@@ -449,6 +476,7 @@
       color: var(--dim);
 
       font-size: 0.72rem;
+
       text-decoration: none;
     }
 
@@ -460,6 +488,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
       gap: 16px;
     }
 
@@ -472,6 +501,7 @@
 
     .wf-illustration {
       position: absolute;
+
       z-index: 10;
 
       pointer-events: none;
@@ -491,6 +521,7 @@
 
       display: flex;
       align-items: center;
+
       gap: 5px;
 
       padding: 3px 10px;
@@ -515,6 +546,7 @@
 
       display: flex;
       align-items: center;
+
       gap: 4px;
 
       padding: 2px 8px;
@@ -535,6 +567,7 @@
 
       display: flex;
       align-items: center;
+
       gap: 6px;
 
       padding: 4px 10px;
@@ -565,6 +598,7 @@
 
     .wf-window {
       position: relative;
+
       z-index: 1;
 
       display: flex;
@@ -592,6 +626,7 @@
       justify-content: space-between;
 
       height: 34px;
+
       padding: 0 14px;
 
       border-bottom: 1px solid var(--wf-line);
@@ -601,6 +636,7 @@
 
     .wf-dots {
       display: flex;
+
       gap: 5px;
     }
 
@@ -631,6 +667,7 @@
 
     .wf-body {
       display: flex;
+
       flex: 1;
 
       min-height: 0;
@@ -639,9 +676,11 @@
     .wf-sidebar {
       display: flex;
       flex-direction: column;
+
       gap: 6px;
 
       width: 110px;
+
       padding: 12px 8px;
 
       border-right: 1px solid var(--wf-line);
@@ -652,6 +691,7 @@
     .wf-nav-item {
       display: flex;
       align-items: center;
+
       gap: 6px;
 
       padding: 6px 8px;
@@ -688,7 +728,9 @@
 
     .wf-view {
       display: none;
+
       flex-direction: column;
+
       gap: 10px;
 
       width: 100%;
@@ -703,6 +745,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 8px;
     }
 
@@ -728,12 +771,14 @@
     .wf-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 8px;
     }
 
     .wf-card {
       display: flex;
       flex-direction: column;
+
       gap: 4px;
 
       padding: 8px;
@@ -748,6 +793,7 @@
 
     .wf-card-label {
       color: var(--muted);
+
       font-size: 0.58rem;
     }
 
@@ -759,6 +805,7 @@
     .wf-task-list {
       display: flex;
       flex-direction: column;
+
       gap: 5px;
 
       margin-top: 2px;
@@ -767,6 +814,7 @@
     .wf-task-item {
       display: flex;
       align-items: center;
+
       gap: 6px;
 
       padding: 3px 4px;
@@ -796,11 +844,13 @@
 
     .wf-task-item.checked span {
       text-decoration: line-through;
+
       opacity: 0.55;
     }
 
     .wf-task-item.checked .wf-checkbox {
       background: var(--accent);
+
       border-color: var(--accent);
     }
 
@@ -809,6 +859,7 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
+
       gap: 8px;
     }
 
@@ -848,6 +899,7 @@
       color: var(--muted);
 
       font-size: 0.68rem;
+
       text-decoration: underline;
 
       cursor: pointer;
@@ -888,6 +940,7 @@
     .process-fold-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+
       gap: 30px;
 
       margin-top: 20px;
@@ -896,6 +949,7 @@
     .process-fold-card {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
 
       padding: 24px;
@@ -947,6 +1001,7 @@
 
     .section-head.centered {
       justify-content: center;
+
       text-align: center;
     }
 
@@ -959,7 +1014,9 @@
 
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 60px;
+
       align-items: center;
 
       padding: 20px var(--page-pad) 90px;
@@ -992,6 +1049,7 @@
     .const-tags {
       display: flex;
       flex-wrap: wrap;
+
       gap: 10px;
 
       margin-top: 28px;
@@ -1065,6 +1123,7 @@
 
     .const-photo-frame {
       position: relative;
+
       z-index: 3;
 
       width: 66%;
@@ -1159,6 +1218,7 @@
 
     .project-head {
       padding: 0 var(--page-pad);
+
       margin-bottom: 30px;
     }
 
@@ -1237,6 +1297,7 @@
     .project-proof {
       display: flex;
       flex-wrap: wrap;
+
       gap: 8px;
     }
 
@@ -1267,6 +1328,7 @@
     .fernando-overview-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+
       gap: 10px;
 
       max-width: 1040px;
@@ -1302,6 +1364,7 @@
 
     .fernando-overview-card .project-block-label {
       margin-bottom: 28px;
+
       font-size: .58rem;
     }
 
@@ -1321,19 +1384,48 @@
       line-height: 1.68;
     }
 
+    /* =========================================================
+       FERNANDO CTA — PRODUTO PUBLICADO
+       ========================================================= */
+
     .fernando-delivery-status {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 18px;
+      right: 18px;
 
-      padding: 4px 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-      border: 1px solid rgba(232,89,12,.34);
+      min-height: 34px;
+
+      padding: 0 11px;
+
+      border: 1px solid var(--accent);
       border-radius: 999px;
 
-      color: var(--accent);
+      background: var(--accent);
 
-      font-size: .46rem;
+      color: #FFF;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .49rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+
+      text-decoration: none;
+
+      transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+    }
+
+    .fernando-delivery-status:hover {
+      transform: translateY(-2px);
+
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
     }
 
     .fernando-tags span {
@@ -1343,6 +1435,10 @@
 
       font-size: .65rem !important;
     }
+
+    /* =========================================================
+       FERNANDO FACTS
+       ========================================================= */
 
     .fernando-project-facts {
       display: flex;
@@ -1354,7 +1450,7 @@
       max-width: 1040px;
 
       margin: 18px 0 30px;
-      padding: 12px 0;
+      padding: 13px 0;
 
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -1368,13 +1464,13 @@
 
       font-family: "IBM Plex Mono", monospace;
       font-size: .58rem;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .fernando-project-facts span:not(:last-child)::after {
       content: "•";
 
-      margin: 0 12px;
+      margin: 0 13px;
 
       color: var(--accent);
     }
@@ -1387,13 +1483,25 @@
       padding: 0 var(--page-pad) 25px;
     }
 
+    .fernando-tabs-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 16px;
+
+      margin-bottom: 22px;
+    }
+
     .fernando-tabs {
       display: flex;
       align-items: center;
 
       gap: 8px;
 
-      margin-bottom: 22px;
+      min-width: 0;
+
+      margin-bottom: 0;
 
       overflow-x: auto;
 
@@ -1428,6 +1536,40 @@
 
       background: var(--accent);
       color: #FFF;
+    }
+
+    .fernando-product-link {
+      flex: 0 0 auto;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 38px;
+
+      padding: 0 14px;
+
+      border-bottom: 1px solid var(--accent);
+
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .58rem;
+      font-weight: 600;
+
+      text-decoration: none;
+
+      white-space: nowrap;
+
+      transition:
+        color .2s ease,
+        border-color .2s ease;
+    }
+
+    .fernando-product-link:hover {
+      color: var(--ink);
+
+      border-color: var(--ink);
     }
 
     .fernando-view {
@@ -1526,6 +1668,7 @@
       width: fit-content;
 
       margin-top: auto;
+
       padding-top: 28px;
       padding-bottom: 3px;
 
@@ -2076,54 +2219,6 @@
     }
 
     /* =========================================================
-       SITE PUBLICADO
-       ========================================================= */
-
-    .fernando-live-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-
-      gap: 30px;
-
-      margin-bottom: 22px;
-    }
-
-    .fernando-live-head span {
-      color: var(--accent);
-
-      font-size: .51rem;
-    }
-
-    .fernando-live-head h4 {
-      margin: 7px 0;
-
-      font-family: "Fraunces", serif;
-      font-size: 2rem;
-      font-weight: 400;
-    }
-
-    .fernando-live-head p {
-      color: var(--dim);
-
-      font-size: .76rem;
-    }
-
-    .fernando-live-button {
-      padding: 10px 15px;
-
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-
-      color: var(--accent);
-
-      font-family: "IBM Plex Mono", monospace;
-      font-size: .57rem;
-
-      text-decoration: none;
-    }
-
-    /* =========================================================
        DESIGN SYSTEM
        ========================================================= */
 
@@ -2170,6 +2265,7 @@
       border-radius: 4px;
 
       background: transparent;
+
       color: var(--dim);
 
       font-size: .65rem;
@@ -2186,6 +2282,7 @@
 
     [data-theme="dark"] .fa-system-btn.active {
       background: rgba(242,109,29,.16);
+
       color: var(--accent);
     }
 
@@ -2303,6 +2400,7 @@
     .fa-type-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 12px;
 
       margin-top: 12px;
@@ -2515,11 +2613,13 @@
 
     .fa-form-system-demo {
       display: grid;
+
       gap: 13px;
     }
 
     .fa-form-system-row {
       display: grid;
+
       gap: 11px;
     }
 
@@ -2533,6 +2633,7 @@
 
     .fa-form-system-demo label {
       display: grid;
+
       gap: 6px;
     }
 
@@ -2614,7 +2715,9 @@
     .fa-responsive-showcase {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 340px;
+
       gap: 24px;
+
       align-items: stretch;
 
       padding: 24px;
@@ -2746,6 +2849,7 @@
     .fa-responsive-device-caption {
       display: flex;
       justify-content: space-between;
+
       gap: 18px;
 
       padding: 11px 13px;
@@ -2951,6 +3055,7 @@
       overflow-x: auto;
 
       scrollbar-width: none;
+
       scroll-behavior: smooth;
     }
 
@@ -3168,6 +3273,7 @@
 
     footer a {
       color: var(--dim);
+
       text-decoration: none;
     }
 
@@ -3272,6 +3378,7 @@
 
     .drawer-header {
       margin-bottom: 36px;
+
       padding-bottom: 20px;
 
       border-bottom: 1px solid var(--line);
@@ -3379,6 +3486,26 @@
       }
     }
 
+    @media (max-width: 880px) {
+      .fernando-tabs-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .fernando-tabs {
+        width: 100%;
+      }
+
+      .fernando-product-link {
+        min-height: auto;
+
+        padding:
+          3px
+          0
+          5px;
+      }
+    }
+
     @media (max-width: 780px) {
       :root {
         --page-pad: 22px;
@@ -3413,6 +3540,25 @@
         grid-template-columns: 1fr;
       }
 
+      .fernando-delivery-status {
+        position: static;
+
+        width: fit-content;
+
+        margin-top: 16px;
+      }
+
+      .fernando-project-facts {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 7px;
+      }
+
+      .fernando-project-facts span:not(:last-child)::after {
+        display: none;
+      }
+
       .fernando-case-editorial-list {
         grid-template-columns: 1fr;
       }
@@ -3443,17 +3589,6 @@
 
       .fernando-compare-browsers {
         grid-template-columns: 1fr !important;
-      }
-
-      .fernando-project-facts {
-        align-items: flex-start;
-        flex-direction: column;
-
-        gap: 7px;
-      }
-
-      .fernando-project-facts span:not(:last-child)::after {
-        display: none;
       }
 
       .fa-responsive-showcase {
@@ -3624,9 +3759,23 @@
       </div>
 
       <ul>
-        <li><a href="#sobre">sobre</a></li>
-        <li><a href="#projetos">projetos</a></li>
-        <li><a href="#habilidades">habilidades</a></li>
+        <li>
+          <a href="#sobre">
+            sobre
+          </a>
+        </li>
+
+        <li>
+          <a href="#projetos">
+            projetos
+          </a>
+        </li>
+
+        <li>
+          <a href="#habilidades">
+            habilidades
+          </a>
+        </li>
       </ul>
 
       <a
@@ -3866,7 +4015,9 @@
                     <div class="wf-task-list">
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">✓</div>
+                        <div class="wf-checkbox">
+                          ✓
+                        </div>
 
                         <span>
                           Hierarquia visual definida
@@ -3874,7 +4025,9 @@
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">✓</div>
+                        <div class="wf-checkbox">
+                          ✓
+                        </div>
 
                         <span>
                           Prototipagem de interações
@@ -3882,7 +4035,9 @@
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">✓</div>
+                        <div class="wf-checkbox">
+                          ✓
+                        </div>
 
                         <span>
                           Design System alinhado
@@ -3899,6 +4054,7 @@
                   >
 
                     <div class="wf-top-bar">
+
                       <span class="wf-title">
                         Prototipagem de Wireframes
                       </span>
@@ -3906,6 +4062,7 @@
                       <span class="wf-card-label mono">
                         12 cols
                       </span>
+
                     </div>
 
                     <div
@@ -4158,7 +4315,9 @@
         class="section-head"
         id="sobre"
       >
-        <h2>Sobre mim</h2>
+        <h2>
+          Sobre mim
+        </h2>
       </div>
 
       <section class="constructivist-about">
@@ -4258,7 +4417,9 @@
         class="section-head"
         id="projetos"
       >
-        <h2>Projetos selecionados</h2>
+        <h2>
+          Projetos selecionados
+        </h2>
       </div>
 
       <div id="projects-container">
@@ -4357,9 +4518,14 @@
                   e escuro e componentes reutilizáveis.
                 </p>
 
-                <span class="fernando-delivery-status mono">
-                  SITE PUBLICADO
-                </span>
+                <a
+                  class="fernando-delivery-status"
+                  href="https://fernando-amaral.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  VER SITE PUBLICADO ↗
+                </a>
 
               </article>
 
@@ -4379,23 +4545,15 @@
             <div class="fernando-project-facts">
 
               <span>
-                Escopo: UI Design + Front-end
+                Escopo: Arquitetura da Informação, UI Design e Front-end
               </span>
 
               <span>
-                Figma, HTML, CSS e JavaScript
+                Tecnologias: Figma, HTML, CSS e JavaScript
               </span>
 
               <span>
-                Desktop + Mobile
-              </span>
-
-              <span>
-                Light + Dark
-              </span>
-
-              <span>
-                Status: produto publicado
+                Entrega: Site responsivo publicado
               </span>
 
             </div>
@@ -4404,49 +4562,55 @@
 
           <div class="fernando-case-shell">
 
-            <div class="fernando-tabs">
+            <div class="fernando-tabs-row">
 
-              <button
-                class="fernando-tab active"
-                data-fernando-tab="case"
-              >
-                Case
-              </button>
+              <div class="fernando-tabs">
 
-              <button
-                class="fernando-tab"
-                data-fernando-tab="compare"
-              >
-                Antes × depois
-              </button>
+                <button
+                  class="fernando-tab active"
+                  data-fernando-tab="case"
+                >
+                  Case
+                </button>
 
-              <button
-                class="fernando-tab"
-                data-fernando-tab="live"
-              >
-                Site publicado
-              </button>
+                <button
+                  class="fernando-tab"
+                  data-fernando-tab="compare"
+                >
+                  Antes × depois
+                </button>
 
-              <button
-                class="fernando-tab"
-                data-fernando-tab="system"
-              >
-                Sistema visual
-              </button>
+                <button
+                  class="fernando-tab"
+                  data-fernando-tab="system"
+                >
+                  Sistema visual
+                </button>
 
-              <button
-                class="fernando-tab"
-                data-fernando-tab="responsive"
-              >
-                Responsivo
-              </button>
+                <button
+                  class="fernando-tab"
+                  data-fernando-tab="responsive"
+                >
+                  Responsivo
+                </button>
 
-              <button
-                class="fernando-tab"
-                data-fernando-tab="prototype"
+                <button
+                  class="fernando-tab"
+                  data-fernando-tab="prototype"
+                >
+                  Protótipo
+                </button>
+
+              </div>
+
+              <a
+                class="fernando-product-link"
+                href="https://fernando-amaral.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Protótipo
-              </button>
+                Ver produto publicado ↗
+              </a>
 
             </div>
 
@@ -4594,8 +4758,6 @@
 
               <div class="fernando-decisions">
 
-                <!-- DECISÃO 01 -->
-
                 <article class="fernando-decision">
 
                   <div class="fernando-decision-number mono">
@@ -4662,8 +4824,6 @@
                   </div>
 
                 </article>
-
-                <!-- DECISÃO 02 -->
 
                 <article class="fernando-decision fernando-decision-reverse">
 
@@ -4732,8 +4892,6 @@
                   </div>
 
                 </article>
-
-                <!-- DECISÃO 03 -->
 
                 <article class="fernando-decision">
 
@@ -4927,6 +5085,7 @@
                         <a
                           href="https://fernando-amaral-website-web.vercel.app/"
                           target="_blank"
+                          rel="noopener noreferrer"
                           class="fa-browser-link"
                         >
                           ABRIR ↗
@@ -4978,6 +5137,7 @@
                         <a
                           href="https://fernando-amaral.vercel.app/"
                           target="_blank"
+                          rel="noopener noreferrer"
                           class="fa-browser-link"
                         >
                           LIVE ↗
@@ -5059,87 +5219,6 @@
                   </p>
 
                 </article>
-
-              </div>
-
-            </section>
-
-            <!-- =================================================
-                 SITE PUBLICADO
-                 ================================================= -->
-
-            <section
-              class="fernando-view"
-              data-fernando-view="live"
-            >
-
-              <div class="fernando-live-head">
-
-                <div>
-
-                  <span class="mono">
-                    PRODUTO PUBLICADO
-                  </span>
-
-                  <h4>
-                    Explore a implementação final.
-                  </h4>
-
-                  <p>
-                    O preview abaixo carrega o site real em produção.
-                  </p>
-
-                </div>
-
-                <a
-                  href="https://fernando-amaral.vercel.app/"
-                  target="_blank"
-                  class="fernando-live-button"
-                >
-                  abrir em nova aba ↗
-                </a>
-
-              </div>
-
-              <div class="fa-browser">
-
-                <div class="fa-browser-bar">
-
-                  <div class="fa-browser-dots">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                  </div>
-
-                  <div class="fa-browser-address">
-                    fernando-amaral.vercel.app
-                  </div>
-
-                  <a
-                    href="https://fernando-amaral.vercel.app/"
-                    target="_blank"
-                    class="fa-browser-link"
-                  >
-                    LIVE ↗
-                  </a>
-
-                </div>
-
-                <div
-                  class="fa-desktop-viewport"
-                  data-fa-desktop-height="850"
-                >
-
-                  <div class="fa-desktop-canvas">
-
-                    <iframe
-                      src="https://fernando-amaral.vercel.app/"
-                      title="Fernando Amaral site publicado"
-                    ></iframe>
-
-                  </div>
-
-                </div>
 
               </div>
 
@@ -5659,8 +5738,6 @@
 
               <div class="fa-responsive-showcase">
 
-                <!-- DESKTOP -->
-
                 <div class="fa-device-desktop">
 
                   <div class="fa-browser-bar">
@@ -5711,8 +5788,6 @@
                   </div>
 
                 </div>
-
-                <!-- MOBILE -->
 
                 <div class="fa-device-mobile-artboard">
 
@@ -5830,12 +5905,16 @@
 
                   <div>
                     <span>PROTOTYPE</span>
-                    <strong>Fernando Amaral</strong>
+
+                    <strong>
+                      Fernando Amaral
+                    </strong>
                   </div>
 
                   <a
                     href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     abrir no Figma ↗
                   </a>
@@ -5856,7 +5935,9 @@
 
             </section>
 
-            <!-- FECHAMENTO -->
+            <!-- =================================================
+                 FECHAMENTO FERNANDO
+                 ================================================= -->
 
             <div class="fernando-closing">
 
@@ -6015,43 +6096,35 @@
           <div class="strip voit-strip">
 
             <div class="strip-item voit-card">
-
               <img
                 src="img/img-voit/voit-01.jpeg"
                 alt="Voit 01"
                 class="js-lightbox-image"
               >
-
             </div>
 
             <div class="strip-item voit-card">
-
               <img
                 src="img/img-voit/voit-02.jpeg"
                 alt="Voit 02"
                 class="js-lightbox-image"
               >
-
             </div>
 
             <div class="strip-item voit-card">
-
               <img
                 src="img/img-voit/voit-03.jpeg"
                 alt="Voit 03"
                 class="js-lightbox-image"
               >
-
             </div>
 
             <div class="strip-item voit-card">
-
               <img
                 src="img/img-voit/voit-04.jpeg"
                 alt="Voit 04"
                 class="js-lightbox-image"
               >
-
             </div>
 
           </div>
@@ -6099,6 +6172,7 @@
             <div class="case-grid">
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   01 / contexto
                 </span>
@@ -6107,9 +6181,11 @@
                   Materiais para vendas de alta performance, gestão comercial e
                   consultoria.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
@@ -6117,9 +6193,11 @@
                 <p>
                   Organização do conteúdo, narrativa e design final.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   03 / foco
                 </span>
@@ -6127,9 +6205,11 @@
                 <p>
                   Hierarquia, legibilidade e ritmo visual.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   04 / entrega
                 </span>
@@ -6137,6 +6217,7 @@
                 <p>
                   Materiais editáveis e reutilizáveis no Canva.
                 </p>
+
               </div>
 
             </div>
@@ -6187,14 +6268,22 @@
           <div class="strip-nav">
 
             <div class="strip-nav-arrows">
-              <button class="strip-btn prev">←</button>
-              <button class="strip-btn next">→</button>
+
+              <button class="strip-btn prev">
+                ←
+              </button>
+
+              <button class="strip-btn next">
+                →
+              </button>
+
             </div>
 
             <a
               class="strip-full-link"
               href="https://canva.link/w874gu7mhg7053v"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Ver conteúdo completo ↗
             </a>
@@ -6228,6 +6317,7 @@
             <div class="case-grid">
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   01 / contexto
                 </span>
@@ -6235,9 +6325,11 @@
                 <p>
                   Comunicação educacional nas redes sociais.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
@@ -6245,9 +6337,11 @@
                 <p>
                   Criação e diagramação das peças.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   03 / foco
                 </span>
@@ -6255,9 +6349,11 @@
                 <p>
                   Legibilidade e consistência visual.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   04 / entrega
                 </span>
@@ -6265,6 +6361,7 @@
                 <p>
                   Sistema de peças para social media.
                 </p>
+
               </div>
 
             </div>
@@ -6340,8 +6437,15 @@
           <div class="strip-nav">
 
             <div class="strip-nav-arrows">
-              <button class="strip-btn prev">←</button>
-              <button class="strip-btn next">→</button>
+
+              <button class="strip-btn prev">
+                ←
+              </button>
+
+              <button class="strip-btn next">
+                →
+              </button>
+
             </div>
 
           </div>
@@ -6372,6 +6476,7 @@
             <div class="case-grid">
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   01 / contexto
                 </span>
@@ -6379,9 +6484,11 @@
                 <p>
                   Conteúdo profissional para uma marca pessoal.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
@@ -6389,9 +6496,11 @@
                 <p>
                   Criação e diagramação de posts.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   03 / foco
                 </span>
@@ -6399,9 +6508,11 @@
                 <p>
                   Hierarquia, ritmo e identidade.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   04 / entrega
                 </span>
@@ -6409,6 +6520,7 @@
                 <p>
                   Sistema visual para social media.
                 </p>
+
               </div>
 
             </div>
@@ -6424,43 +6536,83 @@
           <div class="strip">
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-01.jpeg" alt="Aymée 01" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-01.jpeg"
+                alt="Aymée 01"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-02.jpeg" alt="Aymée 02" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-02.jpeg"
+                alt="Aymée 02"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-03.jpeg" alt="Aymée 03" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-03.jpeg"
+                alt="Aymée 03"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-04.jpeg" alt="Aymée 04" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-04.jpeg"
+                alt="Aymée 04"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-05.jpeg" alt="Aymée 05" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-05.jpeg"
+                alt="Aymée 05"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-06.jpeg" alt="Aymée 06" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-06.jpeg"
+                alt="Aymée 06"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-07.jpeg" alt="Aymée 07" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-07.jpeg"
+                alt="Aymée 07"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-08.jpeg" alt="Aymée 08" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-08.jpeg"
+                alt="Aymée 08"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-09.jpeg" alt="Aymée 09" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-09.jpeg"
+                alt="Aymée 09"
+                class="js-lightbox-image"
+              >
             </div>
 
             <div class="strip-item ig-ratio">
-              <img src="img/Aymee-img/img-10.jpeg" alt="Aymée 10" class="js-lightbox-image">
+              <img
+                src="img/Aymee-img/img-10.jpeg"
+                alt="Aymée 10"
+                class="js-lightbox-image"
+              >
             </div>
 
           </div>
@@ -6468,8 +6620,15 @@
           <div class="strip-nav">
 
             <div class="strip-nav-arrows">
-              <button class="strip-btn prev">←</button>
-              <button class="strip-btn next">→</button>
+
+              <button class="strip-btn prev">
+                ←
+              </button>
+
+              <button class="strip-btn next">
+                →
+              </button>
+
             </div>
 
           </div>
@@ -6579,6 +6738,7 @@
             class="primary"
             href="https://wa.me/5562985666229"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Falar no WhatsApp
           </a>
@@ -6592,6 +6752,7 @@
           <a
             href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn ↗
           </a>
@@ -6619,6 +6780,7 @@
         <a
           href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           LinkedIn
         </a>
