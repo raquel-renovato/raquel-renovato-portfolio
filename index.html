@@ -59,9 +59,7 @@
       --wf-line: rgba(31, 28, 24, 0.12);
 
       --page-pad: 40px;
-
       --radius: 8px;
-
       --transition: 0.25s ease;
 
       --fa-navy: #00152A;
@@ -115,9 +113,7 @@
     body {
       background: var(--bg);
       color: var(--ink);
-
       font-family: "IBM Plex Sans", sans-serif;
-
       -webkit-font-smoothing: antialiased;
 
       transition:
@@ -157,19 +153,13 @@
 
     .sr-only {
       position: absolute !important;
-
       width: 1px !important;
       height: 1px !important;
-
       padding: 0 !important;
       margin: -1px !important;
-
       overflow: hidden !important;
-
       clip: rect(0, 0, 0, 0) !important;
-
       white-space: nowrap !important;
-
       border: 0 !important;
     }
 
@@ -192,7 +182,6 @@
     #intro-overlay {
       position: fixed;
       inset: 0;
-
       z-index: 200;
 
       display: flex;
@@ -211,7 +200,6 @@
     #intro-overlay.expand {
       opacity: 0;
       transform: scale(1.02);
-
       pointer-events: none;
     }
 
@@ -224,13 +212,9 @@
 
     .intro-word-cycle {
       position: relative;
-
       display: inline-block;
-
       height: 1.15em;
-
       vertical-align: bottom;
-
       overflow: hidden;
     }
 
@@ -247,7 +231,6 @@
       font-weight: 400;
 
       opacity: 0;
-
       transform: translateY(100%);
 
       transition:
@@ -267,7 +250,6 @@
 
     #site-content {
       opacity: 0;
-
       transition: opacity 0.35s ease;
     }
 
@@ -282,12 +264,10 @@
     nav {
       position: sticky;
       top: 0;
-
       z-index: 60;
 
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-
       align-items: center;
 
       padding: 20px var(--page-pad);
@@ -335,16 +315,11 @@
       border-radius: 999px;
 
       background: none;
-
       color: var(--ink);
 
       font-size: 0.72rem;
 
       cursor: pointer;
-
-      transition:
-        color var(--transition),
-        border-color var(--transition);
     }
 
     .theme-toggle:hover {
@@ -366,10 +341,7 @@
 
     nav ul a {
       color: var(--dim);
-
       text-decoration: none;
-
-      transition: color var(--transition);
     }
 
     nav ul a:hover {
@@ -389,12 +361,7 @@
       color: var(--ink);
 
       text-decoration: none;
-
       font-size: 0.78rem;
-
-      transition:
-        color var(--transition),
-        background var(--transition);
     }
 
     nav .cta:hover {
@@ -409,9 +376,7 @@
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-
       gap: 40px;
-
       align-items: center;
 
       padding: 90px var(--page-pad) 70px;
@@ -449,7 +414,6 @@
 
     .hero-sub p {
       max-width: 510px;
-
       margin-bottom: 22px;
 
       color: var(--dim);
@@ -462,7 +426,6 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-
       gap: 20px;
     }
 
@@ -476,7 +439,6 @@
       border-bottom: 1.5px solid var(--accent);
 
       color: var(--accent);
-
       text-decoration: none;
 
       font-size: 0.85rem;
@@ -487,7 +449,6 @@
       color: var(--dim);
 
       font-size: 0.72rem;
-
       text-decoration: none;
     }
 
@@ -499,7 +460,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
       gap: 16px;
     }
 
@@ -512,7 +472,6 @@
 
     .wf-illustration {
       position: absolute;
-
       z-index: 10;
 
       pointer-events: none;
@@ -568,8 +527,6 @@
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.58rem;
-
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
     }
 
     .cursor-floater {
@@ -608,7 +565,6 @@
 
     .wf-window {
       position: relative;
-
       z-index: 1;
 
       display: flex;
@@ -623,7 +579,6 @@
       border-radius: 10px;
 
       background: var(--wf-bg);
-
       color: var(--wf-text);
 
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
@@ -637,7 +592,6 @@
       justify-content: space-between;
 
       height: 34px;
-
       padding: 0 14px;
 
       border-bottom: 1px solid var(--wf-line);
@@ -677,7 +631,6 @@
 
     .wf-body {
       display: flex;
-
       flex: 1;
 
       min-height: 0;
@@ -686,11 +639,9 @@
     .wf-sidebar {
       display: flex;
       flex-direction: column;
-
       gap: 6px;
 
       width: 110px;
-
       padding: 12px 8px;
 
       border-right: 1px solid var(--wf-line);
@@ -737,9 +688,7 @@
 
     .wf-view {
       display: none;
-
       flex-direction: column;
-
       gap: 10px;
 
       width: 100%;
@@ -754,7 +703,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 8px;
     }
 
@@ -780,14 +728,12 @@
     .wf-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 8px;
     }
 
     .wf-card {
       display: flex;
       flex-direction: column;
-
       gap: 4px;
 
       padding: 8px;
@@ -802,7 +748,6 @@
 
     .wf-card-label {
       color: var(--muted);
-
       font-size: 0.58rem;
     }
 
@@ -814,7 +759,6 @@
     .wf-task-list {
       display: flex;
       flex-direction: column;
-
       gap: 5px;
 
       margin-top: 2px;
@@ -823,7 +767,6 @@
     .wf-task-item {
       display: flex;
       align-items: center;
-
       gap: 6px;
 
       padding: 3px 4px;
@@ -853,7 +796,6 @@
 
     .wf-task-item.checked span {
       text-decoration: line-through;
-
       opacity: 0.55;
     }
 
@@ -867,7 +809,6 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-
       gap: 8px;
     }
 
@@ -907,7 +848,6 @@
       color: var(--muted);
 
       font-size: 0.68rem;
-
       text-decoration: underline;
 
       cursor: pointer;
@@ -948,7 +888,6 @@
     .process-fold-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-
       gap: 30px;
 
       margin-top: 20px;
@@ -957,7 +896,6 @@
     .process-fold-card {
       display: flex;
       flex-direction: column;
-
       gap: 10px;
 
       padding: 24px;
@@ -1009,7 +947,6 @@
 
     .section-head.centered {
       justify-content: center;
-
       text-align: center;
     }
 
@@ -1022,9 +959,7 @@
 
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-
       gap: 60px;
-
       align-items: center;
 
       padding: 20px var(--page-pad) 90px;
@@ -1057,7 +992,6 @@
     .const-tags {
       display: flex;
       flex-wrap: wrap;
-
       gap: 10px;
 
       margin-top: 28px;
@@ -1131,7 +1065,6 @@
 
     .const-photo-frame {
       position: relative;
-
       z-index: 3;
 
       width: 66%;
@@ -1226,7 +1159,6 @@
 
     .project-head {
       padding: 0 var(--page-pad);
-
       margin-bottom: 30px;
     }
 
@@ -1305,7 +1237,6 @@
     .project-proof {
       display: flex;
       flex-wrap: wrap;
-
       gap: 8px;
     }
 
@@ -1336,7 +1267,6 @@
     .fernando-overview-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-
       gap: 10px;
 
       max-width: 1040px;
@@ -1372,7 +1302,6 @@
 
     .fernando-overview-card .project-block-label {
       margin-bottom: 28px;
-
       font-size: .58rem;
     }
 
@@ -1413,6 +1342,41 @@
       background: transparent !important;
 
       font-size: .65rem !important;
+    }
+
+    .fernando-project-facts {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 8px 0;
+
+      max-width: 1040px;
+
+      margin: 18px 0 30px;
+      padding: 12px 0;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fernando-project-facts span {
+      display: inline-flex;
+      align-items: center;
+
+      color: var(--dim);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .58rem;
+      line-height: 1.4;
+    }
+
+    .fernando-project-facts span:not(:last-child)::after {
+      content: "•";
+
+      margin: 0 12px;
+
+      color: var(--accent);
     }
 
     /* =========================================================
@@ -1731,7 +1695,7 @@
 
     .fernando-rationale {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0,1fr));
 
       gap: 8px;
 
@@ -1739,27 +1703,34 @@
     }
 
     .fernando-rationale > div {
-      padding: 13px;
+      min-height: 118px;
+
+      padding: 15px;
 
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 7px;
 
       background: var(--card);
     }
 
     .fernando-rationale span {
+      display: block;
+
       color: var(--accent);
 
-      font-size: .46rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .48rem;
+      font-weight: 600;
+      letter-spacing: .06em;
     }
 
     .fernando-rationale p {
-      margin-top: 7px;
+      margin-top: 8px;
 
       color: var(--dim);
 
-      font-size: .65rem;
-      line-height: 1.55;
+      font-size: .69rem;
+      line-height: 1.62;
     }
 
     .fernando-decision-media {
@@ -1833,81 +1804,6 @@
 
       transform: scale(.387);
       transform-origin: top left;
-    }
-
-    /* =========================================================
-       FERNANDO ESCOPO
-       ========================================================= */
-
-    .fernando-scope {
-      margin-top: 68px;
-
-      padding-top: 30px;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .fernando-scope-head {
-      margin-bottom: 22px;
-    }
-
-    .fernando-scope-head > span {
-      color: var(--accent);
-
-      font-size: .52rem;
-    }
-
-    .fernando-scope-head h4 {
-      margin-top: 8px;
-
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-      font-weight: 400;
-    }
-
-    .fernando-scope-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 1px;
-
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-      border-radius: 9px;
-
-      background: var(--line);
-    }
-
-    .fernando-scope-grid article {
-      min-height: 145px;
-
-      padding: 19px;
-
-      background: var(--bg);
-    }
-
-    .fernando-scope-grid article > span {
-      display: block;
-
-      margin-bottom: 20px;
-
-      color: var(--accent);
-
-      font-size: .49rem;
-    }
-
-    .fernando-scope-grid strong {
-      font-size: .78rem;
-    }
-
-    .fernando-scope-grid p {
-      margin-top: 7px;
-
-      color: var(--dim);
-
-      font-size: .67rem;
-      line-height: 1.55;
     }
 
     /* =========================================================
@@ -2016,7 +1912,7 @@
     }
 
     /* =========================================================
-       FERNANDO COMPARAÇÃO
+       COMPARAÇÃO
        ========================================================= */
 
     .fernando-compare-intro,
@@ -2140,10 +2036,6 @@
 
     .fernando-compare-browsers .fa-browser {
       flex: 1;
-    }
-
-    .fernando-compare-browsers .fa-desktop-viewport {
-      min-height: 265px;
     }
 
     .fernando-compare-points {
@@ -2278,7 +2170,6 @@
       border-radius: 4px;
 
       background: transparent;
-
       color: var(--dim);
 
       font-size: .65rem;
@@ -2295,7 +2186,6 @@
 
     [data-theme="dark"] .fa-system-btn.active {
       background: rgba(242,109,29,.16);
-
       color: var(--accent);
     }
 
@@ -2413,7 +2303,6 @@
     .fa-type-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       gap: 12px;
 
       margin-top: 12px;
@@ -2626,13 +2515,11 @@
 
     .fa-form-system-demo {
       display: grid;
-
       gap: 13px;
     }
 
     .fa-form-system-row {
       display: grid;
-
       gap: 11px;
     }
 
@@ -2646,7 +2533,6 @@
 
     .fa-form-system-demo label {
       display: grid;
-
       gap: 6px;
     }
 
@@ -2727,108 +2613,171 @@
 
     .fa-responsive-showcase {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 24px;
+      align-items: stretch;
 
-      gap: 34px;
-
-      align-items: start;
-
-      padding: 30px;
+      padding: 24px;
 
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
 
       background: var(--card);
     }
 
-    .fa-device-desktop {
+    .fa-device-desktop,
+    .fa-device-mobile-artboard {
+      min-width: 0;
+
       overflow: hidden;
 
       border: 1px solid var(--line-strong);
-      border-radius: 9px;
+      border-radius: 10px;
 
       background: #FFF;
 
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .09);
+    }
+
+    .fa-device-desktop {
+      display: flex;
+      flex-direction: column;
     }
 
     .fa-device-desktop .fa-browser-bar {
-      min-height: 34px;
+      min-height: 38px;
     }
 
     .fa-device-desktop .fa-desktop-viewport {
-      min-height: 380px;
+      min-height: 410px;
     }
 
-    .fa-mobile-wrap {
+    .fa-device-mobile-artboard {
       display: flex;
       flex-direction: column;
+    }
 
+    .fa-mobile-artboard-bar {
+      min-height: 38px;
+
+      display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
 
-      gap: 14px;
+      gap: 12px;
 
-      padding-top: 0;
+      padding: 0 13px;
+
+      border-bottom: 1px solid rgba(31, 28, 24, .12);
+
+      background: #EEE9E1;
     }
 
-    .fa-device-mobile {
-      width: 270px;
+    .fa-mobile-artboard-bar span {
+      color: #746D65;
 
-      padding: 8px;
-
-      border: 1px solid var(--line-strong);
-      border-radius: 32px;
-
-      background: #111;
-
-      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .52rem;
     }
 
-    .fa-mobile-notch {
-      width: 78px;
-      height: 17px;
+    .fa-mobile-artboard-bar strong {
+      color: #1F1C18;
 
-      margin: 0 auto 7px;
-
-      border-radius: 0 0 13px 13px;
-
-      background: #111;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .5rem;
+      font-weight: 400;
     }
 
-    .fa-mobile-screen {
-      position: relative;
+    .fa-mobile-artboard-stage {
+      flex: 1;
 
-      height: 540px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      min-height: 410px;
+
+      padding: 18px;
 
       overflow: hidden;
 
-      border-radius: 22px;
-
-      background: #FFF;
+      background:
+        linear-gradient(
+          180deg,
+          #F8F8F7 0%,
+          #EFEDE9 100%
+        );
     }
 
-    .fa-mobile-screen iframe {
+    .fa-mobile-artboard-viewport {
+      position: relative;
+
+      width: 240px;
+      height: 480px;
+
+      overflow: hidden;
+
+      border: 1px solid #D1D5D8;
+      border-radius: 13px;
+
+      background: #FFF;
+
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .11);
+    }
+
+    .fa-mobile-artboard-viewport iframe {
       position: absolute;
       top: 0;
       left: 0;
 
       width: 390px;
-      height: 1100px;
+      height: 780px;
+
+      max-width: none;
 
       border: 0;
 
-      transform: scale(.638);
+      background: #FFF;
+
+      transform: scale(.6153846);
       transform-origin: top left;
+    }
+
+    .fa-responsive-device-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+
+      padding: 11px 13px;
+
+      border-top: 1px solid rgba(31, 28, 24, .12);
+
+      background: #FFF;
+    }
+
+    .fa-responsive-device-caption strong {
+      color: #1F1C18;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .53rem;
+    }
+
+    .fa-responsive-device-caption span {
+      color: #77706A;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: .49rem;
     }
 
     .fa-responsive-notes {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3,minmax(0,1fr));
 
       gap: 1px;
 
       margin-top: 18px;
+
+      border: 1px solid var(--line);
 
       background: var(--line);
     }
@@ -2843,22 +2792,22 @@
       color: var(--accent);
 
       font-family: "IBM Plex Mono", monospace;
-      font-size: .49rem;
+      font-size: .5rem;
     }
 
     .fa-responsive-note h4 {
-      margin: 10px 0 6px;
+      margin: 10px 0 7px;
 
       font-family: "Fraunces", serif;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 400;
     }
 
     .fa-responsive-note p {
       color: var(--dim);
 
-      font-size: .67rem;
-      line-height: 1.55;
+      font-size: .7rem;
+      line-height: 1.6;
     }
 
     /* =========================================================
@@ -3002,7 +2951,6 @@
       overflow-x: auto;
 
       scrollbar-width: none;
-
       scroll-behavior: smooth;
     }
 
@@ -3220,7 +3168,6 @@
 
     footer a {
       color: var(--dim);
-
       text-decoration: none;
     }
 
@@ -3413,6 +3360,25 @@
       }
     }
 
+    @media (max-width: 980px) {
+      .fa-responsive-showcase {
+        grid-template-columns: minmax(0, 1fr) 290px;
+      }
+
+      .fa-mobile-artboard-stage {
+        padding-inline: 14px;
+      }
+
+      .fa-mobile-artboard-viewport {
+        width: 220px;
+        height: 440px;
+      }
+
+      .fa-mobile-artboard-viewport iframe {
+        transform: scale(.5641025);
+      }
+    }
+
     @media (max-width: 780px) {
       :root {
         --page-pad: 22px;
@@ -3467,10 +3433,11 @@
         grid-column: auto;
       }
 
-      .fernando-rationale,
-      .fernando-scope-grid,
-      .fernando-compare-points,
-      .fa-responsive-notes {
+      .fernando-rationale {
+        grid-template-columns: 1fr;
+      }
+
+      .fernando-compare-points {
         grid-template-columns: 1fr;
       }
 
@@ -3478,12 +3445,38 @@
         grid-template-columns: 1fr !important;
       }
 
-      .fa-responsive-showcase {
-        grid-template-columns: 1fr;
+      .fernando-project-facts {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 7px;
       }
 
-      .fa-mobile-wrap {
-        margin-top: 10px;
+      .fernando-project-facts span:not(:last-child)::after {
+        display: none;
+      }
+
+      .fa-responsive-showcase {
+        grid-template-columns: 1fr;
+
+        padding: 16px;
+      }
+
+      .fa-mobile-artboard-stage {
+        min-height: 500px;
+      }
+
+      .fa-mobile-artboard-viewport {
+        width: 240px;
+        height: 480px;
+      }
+
+      .fa-mobile-artboard-viewport iframe {
+        transform: scale(.6153846);
+      }
+
+      .fa-responsive-notes {
+        grid-template-columns: 1fr;
       }
 
       .fa-system-canvas {
@@ -3631,25 +3624,9 @@
       </div>
 
       <ul>
-
-        <li>
-          <a href="#sobre">
-            sobre
-          </a>
-        </li>
-
-        <li>
-          <a href="#projetos">
-            projetos
-          </a>
-        </li>
-
-        <li>
-          <a href="#habilidades">
-            habilidades
-          </a>
-        </li>
-
+        <li><a href="#sobre">sobre</a></li>
+        <li><a href="#projetos">projetos</a></li>
+        <li><a href="#habilidades">habilidades</a></li>
       </ul>
 
       <a
@@ -3889,27 +3866,24 @@
                     <div class="wf-task-list">
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">
-                          ✓
-                        </div>
+                        <div class="wf-checkbox">✓</div>
+
                         <span>
                           Hierarquia visual definida
                         </span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">
-                          ✓
-                        </div>
+                        <div class="wf-checkbox">✓</div>
+
                         <span>
                           Prototipagem de interações
                         </span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">
-                          ✓
-                        </div>
+                        <div class="wf-checkbox">✓</div>
+
                         <span>
                           Design System alinhado
                         </span>
@@ -3925,7 +3899,6 @@
                   >
 
                     <div class="wf-top-bar">
-
                       <span class="wf-title">
                         Prototipagem de Wireframes
                       </span>
@@ -3933,7 +3906,6 @@
                       <span class="wf-card-label mono">
                         12 cols
                       </span>
-
                     </div>
 
                     <div
@@ -4186,9 +4158,7 @@
         class="section-head"
         id="sobre"
       >
-        <h2>
-          Sobre mim
-        </h2>
+        <h2>Sobre mim</h2>
       </div>
 
       <section class="constructivist-about">
@@ -4288,9 +4258,7 @@
         class="section-head"
         id="projetos"
       >
-        <h2>
-          Projetos selecionados
-        </h2>
+        <h2>Projetos selecionados</h2>
       </div>
 
       <div id="projects-container">
@@ -4408,6 +4376,30 @@
               <span>Produto publicado</span>
             </div>
 
+            <div class="fernando-project-facts">
+
+              <span>
+                Escopo: UI Design + Front-end
+              </span>
+
+              <span>
+                Figma, HTML, CSS e JavaScript
+              </span>
+
+              <span>
+                Desktop + Mobile
+              </span>
+
+              <span>
+                Light + Dark
+              </span>
+
+              <span>
+                Status: produto publicado
+              </span>
+
+            </div>
+
           </div>
 
           <div class="fernando-case-shell">
@@ -4458,7 +4450,9 @@
 
             </div>
 
-            <!-- CASE -->
+            <!-- =================================================
+                 CASE
+                 ================================================= -->
 
             <section
               class="fernando-view active"
@@ -4600,6 +4594,8 @@
 
               <div class="fernando-decisions">
 
+                <!-- DECISÃO 01 -->
+
                 <article class="fernando-decision">
 
                   <div class="fernando-decision-number mono">
@@ -4617,30 +4613,38 @@
                     </h5>
 
                     <p>
-                      Os diferentes serviços deixaram de competir pela atenção
-                      simultaneamente.
+                      A seção precisava apresentar diferentes frentes de atuação
+                      sem transformar a página em uma sequência extensa de
+                      descrições técnicas.
                     </p>
 
                     <div class="fernando-rationale">
 
                       <div>
-                        <span class="mono">
-                          PROBLEMA IDENTIFICADO
+
+                        <span>
+                          PROBLEMA
                         </span>
 
                         <p>
-                          Muitas especialidades precisavam ser apresentadas.
+                          Apresentar várias especialidades sem exibir todas as
+                          informações simultaneamente e aumentar ainda mais a
+                          extensão da página.
                         </p>
+
                       </div>
 
                       <div>
-                        <span class="mono">
+
+                        <span>
                           DECISÃO
                         </span>
 
                         <p>
-                          Agrupar os serviços em uma área navegável.
+                          Reunir os serviços em uma área navegável, exibindo os
+                          detalhes de cada especialidade conforme a seleção.
                         </p>
+
                       </div>
 
                     </div>
@@ -4651,13 +4655,15 @@
 
                     <img
                       src="img/img-fernando/Layout%20-%20Web-1.png"
-                      alt="Serviços Fernando Amaral"
+                      alt="Seção de serviços do redesign de Fernando Amaral"
                       class="js-lightbox-image"
                     >
 
                   </div>
 
                 </article>
+
+                <!-- DECISÃO 02 -->
 
                 <article class="fernando-decision fernando-decision-reverse">
 
@@ -4676,9 +4682,42 @@
                     </h5>
 
                     <p>
-                      O processo passou a ser apresentado como uma sequência
-                      progressiva.
+                      O processo técnico precisava continuar completo, mas com
+                      uma relação mais clara entre as etapas e uma leitura menos
+                      fragmentada.
                     </p>
+
+                    <div class="fernando-rationale">
+
+                      <div>
+
+                        <span>
+                          PROBLEMA
+                        </span>
+
+                        <p>
+                          Explicar várias etapas técnicas em blocos independentes
+                          dificultava perceber sequência, progressão e relação
+                          entre as fases do trabalho.
+                        </p>
+
+                      </div>
+
+                      <div>
+
+                        <span>
+                          DECISÃO
+                        </span>
+
+                        <p>
+                          Organizar as etapas como uma jornada numerada e
+                          contínua, criando progressão visual enquanto o usuário
+                          percorre o processo.
+                        </p>
+
+                      </div>
+
+                    </div>
 
                   </div>
 
@@ -4686,13 +4725,15 @@
 
                     <img
                       src="img/img-fernando/Layout%20-%20Web-2.png"
-                      alt="Processo Fernando Amaral"
+                      alt="Jornada visual do processo do projeto Fernando Amaral"
                       class="js-lightbox-image"
                     >
 
                   </div>
 
                 </article>
+
+                <!-- DECISÃO 03 -->
 
                 <article class="fernando-decision">
 
@@ -4707,13 +4748,45 @@
                     </span>
 
                     <h5>
-                      O mobile recebeu decisões próprias.
+                      O mobile recebeu decisões próprias de composição.
                     </h5>
 
                     <p>
-                      Navegação, galerias, tipografia e componentes foram
-                      adaptados para telas menores.
+                      A versão para telas menores não poderia ser apenas uma
+                      redução proporcional do layout desktop.
                     </p>
+
+                    <div class="fernando-rationale">
+
+                      <div>
+
+                        <span>
+                          PROBLEMA
+                        </span>
+
+                        <p>
+                          Navegação, galerias, títulos e componentes que funcionam
+                          lado a lado no desktop perdem espaço e legibilidade em
+                          telas estreitas.
+                        </p>
+
+                      </div>
+
+                      <div>
+
+                        <span>
+                          DECISÃO
+                        </span>
+
+                        <p>
+                          Adaptar menu, escala tipográfica, disposição dos botões
+                          e comportamento das galerias para preservar hierarquia
+                          e leitura no mobile.
+                        </p>
+
+                      </div>
+
+                    </div>
 
                   </div>
 
@@ -4723,7 +4796,7 @@
 
                       <img
                         src="img/img-fernando/Layout%20-%20Web.png"
-                        alt="Fernando desktop"
+                        alt="Versão desktop do site Fernando Amaral"
                       >
 
                     </div>
@@ -4732,7 +4805,8 @@
 
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
-                        title="Fernando mobile"
+                        title="Versão mobile do site Fernando Amaral"
+                        loading="lazy"
                       ></iframe>
 
                     </div>
@@ -4743,66 +4817,10 @@
 
               </div>
 
-              <div class="fernando-scope">
-
-                <div class="fernando-scope-head">
-
-                  <span class="mono">
-                    ESCOPO IMPLEMENTADO
-                  </span>
-
-                  <h4>
-                    Do conteúdo ao produto publicado.
-                  </h4>
-
-                </div>
-
-                <div class="fernando-scope-grid">
-
-                  <article>
-                    <span>01</span>
-                    <strong>Arquitetura</strong>
-                    <p>Reorganização de seções e conteúdo.</p>
-                  </article>
-
-                  <article>
-                    <span>02</span>
-                    <strong>UI Design</strong>
-                    <p>Direção visual das interfaces.</p>
-                  </article>
-
-                  <article>
-                    <span>03</span>
-                    <strong>Componentes</strong>
-                    <p>Botões, cards e formulários.</p>
-                  </article>
-
-                  <article>
-                    <span>04</span>
-                    <strong>Responsivo</strong>
-                    <p>Desktop e mobile.</p>
-                  </article>
-
-                  <article>
-                    <span>05</span>
-                    <strong>Temas</strong>
-                    <p>Light e Dark Mode.</p>
-                  </article>
-
-                  <article>
-                    <span>06</span>
-                    <strong>Front-end</strong>
-                    <p>Implementação e publicação.</p>
-                  </article>
-
-                </div>
-
-              </div>
-
             </section>
 
             <!-- =================================================
-                 ANTES X DEPOIS
+                 ANTES × DEPOIS
                  ================================================= -->
 
             <section
@@ -4846,8 +4864,9 @@
                     </strong>
 
                     <p>
-                      A abertura precisava explicar rapidamente o serviço e
-                      direcionar para as principais ações.
+                      A abertura precisava explicar rapidamente a atuação do
+                      profissional e deixar claras as ações disponíveis logo no
+                      primeiro contato com a página.
                     </p>
 
                   </div>
@@ -4859,8 +4878,9 @@
                     </strong>
 
                     <p>
-                      O novo hero prioriza proposta de valor, especialidades e
-                      dois caminhos principais.
+                      O novo hero prioriza a apresentação do serviço e duas
+                      ações principais: solicitar orçamento e explorar os
+                      serviços.
                     </p>
 
                   </div>
@@ -4872,8 +4892,9 @@
                     </strong>
 
                     <p>
-                      A estrutura cria uma entrada mais direta para um conteúdo
-                      técnico e extenso.
+                      A hierarquia cria uma entrada mais direta para um conteúdo
+                      técnico extenso e aproxima proposta de valor e ação no
+                      mesmo campo visual.
                     </p>
 
                   </div>
@@ -5496,6 +5517,7 @@
 
                           <label>
                             <span>Nome completo</span>
+
                             <input
                               type="text"
                               placeholder="Nome completo"
@@ -5504,6 +5526,7 @@
 
                           <label>
                             <span>E-mail ou WhatsApp</span>
+
                             <input
                               type="text"
                               placeholder="E-mail ou WhatsApp"
@@ -5516,6 +5539,7 @@
 
                           <label>
                             <span>Cidade / UF</span>
+
                             <input
                               type="text"
                               placeholder="Cidade / UF"
@@ -5532,10 +5556,12 @@
                               <option>Subestação</option>
                               <option>BIM</option>
                             </select>
+
                           </label>
 
                           <label>
                             <span>Área aproximada</span>
+
                             <input
                               type="text"
                               placeholder="Área aproximada"
@@ -5620,17 +5646,20 @@
                 </span>
 
                 <h4>
-                  O mesmo conteúdo, com outra composição.
+                  O mesmo conteúdo, com decisões próprias para cada tela.
                 </h4>
 
                 <p>
-                  A responsividade foi tratada como adaptação de componentes,
-                  não como simples redução do desktop.
+                  A versão mobile não replica simplesmente o desktop em escala
+                  menor. Navegação, galerias, tipografia e componentes mudam de
+                  composição quando o espaço disponível exige outra solução.
                 </p>
 
               </div>
 
               <div class="fa-responsive-showcase">
+
+                <!-- DESKTOP -->
 
                 <div class="fa-device-desktop">
 
@@ -5643,8 +5672,12 @@
                     </div>
 
                     <div class="fa-browser-address">
-                      DESKTOP / 1440
+                      fernando-amaral.vercel.app
                     </div>
+
+                    <span class="fa-browser-link">
+                      DESKTOP / 1440
+                    </span>
 
                   </div>
 
@@ -5657,35 +5690,69 @@
 
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
-                        title="Fernando desktop"
+                        title="Fernando Amaral — versão desktop"
+                        loading="lazy"
                       ></iframe>
 
                     </div>
+
+                  </div>
+
+                  <div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Desktop
+                    </strong>
+
+                    <span>
+                      1440px • navegação completa
+                    </span>
 
                   </div>
 
                 </div>
 
-                <div class="fa-mobile-wrap">
+                <!-- MOBILE -->
 
-                  <div class="fa-device-mobile">
+                <div class="fa-device-mobile-artboard">
 
-                    <div class="fa-mobile-notch"></div>
+                  <div class="fa-mobile-artboard-bar">
 
-                    <div class="fa-mobile-screen">
+                    <span>
+                      MOBILE VIEWPORT
+                    </span>
+
+                    <strong>
+                      390px
+                    </strong>
+
+                  </div>
+
+                  <div class="fa-mobile-artboard-stage">
+
+                    <div class="fa-mobile-artboard-viewport">
 
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
-                        title="Fernando mobile"
+                        title="Fernando Amaral — versão mobile"
+                        loading="lazy"
                       ></iframe>
 
                     </div>
 
                   </div>
 
-                  <span class="mono">
-                    MOBILE / 390
-                  </span>
+                  <div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Mobile
+                    </strong>
+
+                    <span>
+                      390px • composição adaptada
+                    </span>
+
+                  </div>
 
                 </div>
 
@@ -5704,8 +5771,8 @@
                   </h4>
 
                   <p>
-                    Os links do desktop são substituídos por um menu dedicado no
-                    mobile.
+                    A navegação horizontal do desktop é substituída por um
+                    controle dedicado, preservando espaço para o conteúdo.
                   </p>
 
                 </article>
@@ -5721,7 +5788,8 @@
                   </h4>
 
                   <p>
-                    Galerias priorizam apenas o conteúdo ativo em telas menores.
+                    No mobile, a galeria prioriza o conteúdo ativo sem manter a
+                    pré-visualização da próxima imagem ocupando a tela.
                   </p>
 
                 </article>
@@ -5737,7 +5805,8 @@
                   </h4>
 
                   <p>
-                    Títulos e textos recebem tamanhos próprios para o mobile.
+                    Títulos, textos e espaçamentos recebem escalas próprias para
+                    manter legibilidade e evitar quebras desconfortáveis.
                   </p>
 
                 </article>
@@ -5786,6 +5855,8 @@
               </div>
 
             </section>
+
+            <!-- FECHAMENTO -->
 
             <div class="fernando-closing">
 
@@ -5867,6 +5938,7 @@
             <div class="case-grid">
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   01 / desafio
                 </span>
@@ -5875,9 +5947,11 @@
                   Manter consistência de marca e qualidade de comunicação em
                   diferentes formatos.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
@@ -5886,9 +5960,11 @@
                   Social media, copywriting, apresentações, materiais técnicos
                   e endomarketing.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   03 / processo
                 </span>
@@ -5896,9 +5972,11 @@
                 <p>
                   Planejamento, pesquisa, produção e validação técnica.
                 </p>
+
               </div>
 
               <div class="case-item">
+
                 <span class="project-block-label">
                   04 / escopo
                 </span>
@@ -5907,6 +5985,7 @@
                   Produção multicanal para redes sociais, artigos, apresentações
                   e comunicação interna.
                 </p>
+
               </div>
 
             </div>
@@ -5936,35 +6015,43 @@
           <div class="strip voit-strip">
 
             <div class="strip-item voit-card">
+
               <img
                 src="img/img-voit/voit-01.jpeg"
                 alt="Voit 01"
                 class="js-lightbox-image"
               >
+
             </div>
 
             <div class="strip-item voit-card">
+
               <img
                 src="img/img-voit/voit-02.jpeg"
                 alt="Voit 02"
                 class="js-lightbox-image"
               >
+
             </div>
 
             <div class="strip-item voit-card">
+
               <img
                 src="img/img-voit/voit-03.jpeg"
                 alt="Voit 03"
                 class="js-lightbox-image"
               >
+
             </div>
 
             <div class="strip-item voit-card">
+
               <img
                 src="img/img-voit/voit-04.jpeg"
                 alt="Voit 04"
                 class="js-lightbox-image"
               >
+
             </div>
 
           </div>
@@ -6066,27 +6153,33 @@
           <div class="strip">
 
             <div class="strip-item widescreen">
+
               <img
                 src="img/img-renata/renata-01.jpg"
                 alt="Renata 01"
                 class="js-lightbox-image"
               >
+
             </div>
 
             <div class="strip-item widescreen">
+
               <img
                 src="img/img-renata/renata-02.jpg"
                 alt="Renata 02"
                 class="js-lightbox-image"
               >
+
             </div>
 
             <div class="strip-item widescreen">
+
               <img
                 src="img/img-renata/renata-03.jpg"
                 alt="Renata 03"
                 class="js-lightbox-image"
               >
+
             </div>
 
           </div>
@@ -6094,15 +6187,8 @@
           <div class="strip-nav">
 
             <div class="strip-nav-arrows">
-
-              <button class="strip-btn prev">
-                ←
-              </button>
-
-              <button class="strip-btn next">
-                →
-              </button>
-
+              <button class="strip-btn prev">←</button>
+              <button class="strip-btn next">→</button>
             </div>
 
             <a
@@ -6145,28 +6231,40 @@
                 <span class="project-block-label">
                   01 / contexto
                 </span>
-                <p>Comunicação educacional nas redes sociais.</p>
+
+                <p>
+                  Comunicação educacional nas redes sociais.
+                </p>
               </div>
 
               <div class="case-item">
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
-                <p>Criação e diagramação das peças.</p>
+
+                <p>
+                  Criação e diagramação das peças.
+                </p>
               </div>
 
               <div class="case-item">
                 <span class="project-block-label">
                   03 / foco
                 </span>
-                <p>Legibilidade e consistência visual.</p>
+
+                <p>
+                  Legibilidade e consistência visual.
+                </p>
               </div>
 
               <div class="case-item">
                 <span class="project-block-label">
                   04 / entrega
                 </span>
-                <p>Sistema de peças para social media.</p>
+
+                <p>
+                  Sistema de peças para social media.
+                </p>
               </div>
 
             </div>
@@ -6240,16 +6338,18 @@
           </div>
 
           <div class="strip-nav">
+
             <div class="strip-nav-arrows">
               <button class="strip-btn prev">←</button>
               <button class="strip-btn next">→</button>
             </div>
+
           </div>
 
         </article>
 
         <!-- =================================================
-             AYMEE
+             AYMÉE
              ================================================= -->
 
         <article class="project-block">
@@ -6275,28 +6375,40 @@
                 <span class="project-block-label">
                   01 / contexto
                 </span>
-                <p>Conteúdo profissional para uma marca pessoal.</p>
+
+                <p>
+                  Conteúdo profissional para uma marca pessoal.
+                </p>
               </div>
 
               <div class="case-item">
                 <span class="project-block-label">
                   02 / meu papel
                 </span>
-                <p>Criação e diagramação de posts.</p>
+
+                <p>
+                  Criação e diagramação de posts.
+                </p>
               </div>
 
               <div class="case-item">
                 <span class="project-block-label">
                   03 / foco
                 </span>
-                <p>Hierarquia, ritmo e identidade.</p>
+
+                <p>
+                  Hierarquia, ritmo e identidade.
+                </p>
               </div>
 
               <div class="case-item">
                 <span class="project-block-label">
                   04 / entrega
                 </span>
-                <p>Sistema visual para social media.</p>
+
+                <p>
+                  Sistema visual para social media.
+                </p>
               </div>
 
             </div>
@@ -6312,92 +6424,54 @@
           <div class="strip">
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-01.jpeg"
-                alt="Aymée 01"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-01.jpeg" alt="Aymée 01" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-02.jpeg"
-                alt="Aymée 02"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-02.jpeg" alt="Aymée 02" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-03.jpeg"
-                alt="Aymée 03"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-03.jpeg" alt="Aymée 03" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-04.jpeg"
-                alt="Aymée 04"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-04.jpeg" alt="Aymée 04" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-05.jpeg"
-                alt="Aymée 05"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-05.jpeg" alt="Aymée 05" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-06.jpeg"
-                alt="Aymée 06"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-06.jpeg" alt="Aymée 06" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-07.jpeg"
-                alt="Aymée 07"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-07.jpeg" alt="Aymée 07" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-08.jpeg"
-                alt="Aymée 08"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-08.jpeg" alt="Aymée 08" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-09.jpeg"
-                alt="Aymée 09"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-09.jpeg" alt="Aymée 09" class="js-lightbox-image">
             </div>
 
             <div class="strip-item ig-ratio">
-              <img
-                src="img/Aymee-img/img-10.jpeg"
-                alt="Aymée 10"
-                class="js-lightbox-image"
-              >
+              <img src="img/Aymee-img/img-10.jpeg" alt="Aymée 10" class="js-lightbox-image">
             </div>
 
           </div>
 
           <div class="strip-nav">
+
             <div class="strip-nav-arrows">
               <button class="strip-btn prev">←</button>
               <button class="strip-btn next">→</button>
             </div>
+
           </div>
 
         </article>
@@ -6422,39 +6496,55 @@
         <div class="skill-grid">
 
           <article class="skill-item">
-            <h3>UI Design</h3>
+
+            <h3>
+              UI Design
+            </h3>
 
             <p>
               Figma, prototipagem interativa, arquitetura de informação,
               componentes e layouts responsivos.
             </p>
+
           </article>
 
           <article class="skill-item">
-            <h3>Gráfico & Editorial</h3>
+
+            <h3>
+              Gráfico & Editorial
+            </h3>
 
             <p>
               Photoshop, Illustrator, InDesign, After Effects, Canva e
               diagramação.
             </p>
+
           </article>
 
           <article class="skill-item">
-            <h3>Conteúdo & Comunicação</h3>
+
+            <h3>
+              Conteúdo & Comunicação
+            </h3>
 
             <p>
               Social media, copywriting, apresentações e comunicação
               multicanal.
             </p>
+
           </article>
 
           <article class="skill-item">
-            <h3>IA & Produtividade</h3>
+
+            <h3>
+              IA & Produtividade
+            </h3>
 
             <p>
               IA generativa aplicada ao workflow, exploração, produtividade e
               refinamento.
             </p>
+
           </article>
 
         </div>
@@ -6519,6 +6609,7 @@
       </span>
 
       <span>
+
         <a href="mailto:raquel.renovato.design@gmail.com">
           raquel.renovato.design@gmail.com
         </a>
@@ -6531,6 +6622,7 @@
         >
           LinkedIn
         </a>
+
       </span>
 
     </footer>
@@ -6818,6 +6910,7 @@
 
             window.scrollTo({
               top: 0,
+
               behavior:
                 reducedMotion.matches
                   ? "auto"
@@ -6891,6 +6984,7 @@
         $$(".wf-view");
 
       wfNavItems.forEach(item => {
+
         item.addEventListener(
           "click",
           event => {
@@ -6915,6 +7009,7 @@
             });
           }
         );
+
       });
 
       /* =====================================================
@@ -6928,6 +7023,7 @@
         $$(".swatch");
 
       swatches.forEach(swatch => {
+
         swatch.addEventListener(
           "click",
           () => {
@@ -6945,6 +7041,7 @@
               swatch.dataset.color || "";
           }
         );
+
       });
 
       function contrastColor(hex) {
@@ -7112,6 +7209,7 @@
 
       $$(".wf-task-item")
         .forEach(task => {
+
           task.addEventListener(
             "click",
             () => {
@@ -7120,6 +7218,7 @@
               );
             }
           );
+
         });
 
       /* =====================================================
@@ -7193,19 +7292,23 @@
         name
       ) {
         fernandoTabs.forEach(tab => {
+
           tab.classList.toggle(
             "active",
             tab.dataset
               .fernandoTab === name
           );
+
         });
 
         fernandoViews.forEach(view => {
+
           view.classList.toggle(
             "active",
             view.dataset
               .fernandoView === name
           );
+
         });
 
         requestAnimationFrame(
@@ -7214,6 +7317,7 @@
       }
 
       fernandoTabs.forEach(tab => {
+
         tab.addEventListener(
           "click",
           () => {
@@ -7223,6 +7327,7 @@
             );
           }
         );
+
       });
 
       /* =====================================================
@@ -7318,7 +7423,7 @@
       resizeFernandoFrames();
 
       /* =====================================================
-         DESIGN SYSTEM NAV
+         DESIGN SYSTEM
          ===================================================== */
 
       const systemButtons =
@@ -7328,6 +7433,7 @@
         $$(".fa-system-panel");
 
       systemButtons.forEach(button => {
+
         button.addEventListener(
           "click",
           () => {
@@ -7348,15 +7454,18 @@
 
             systemPanels
               .forEach(panel => {
+
                 panel.classList.toggle(
                   "active",
                   panel.dataset
                     .faSystemPanel ===
                     target
                 );
+
               });
           }
         );
+
       });
 
       /* =====================================================
@@ -7368,9 +7477,11 @@
 
       $$("[data-fa-button-state]")
         .forEach(button => {
+
           button.addEventListener(
             "click",
             () => {
+
               $$(
                 "[data-fa-button-state]"
               )
@@ -7416,6 +7527,7 @@
               }
             }
           );
+
         });
 
       /* =====================================================
@@ -7424,6 +7536,7 @@
 
       $$(".project-block")
         .forEach(block => {
+
           const strip =
             $(".strip", block);
 
@@ -7461,6 +7574,7 @@
             "click",
             () => move(1)
           );
+
         });
 
       /* =====================================================
@@ -7511,10 +7625,12 @@
 
       $$(".js-lightbox-image")
         .forEach(image => {
+
           image.addEventListener(
             "click",
             () => openImage(image)
           );
+
         });
 
       $("#imgModalClose")
@@ -7526,12 +7642,14 @@
       imgModal?.addEventListener(
         "click",
         event => {
+
           if (
             event.target ===
             imgModal
           ) {
             closeImage();
           }
+
         }
       );
 
@@ -7581,10 +7699,12 @@
 
       $$(".js-close-drawer")
         .forEach(button => {
+
           button.addEventListener(
             "click",
             closeDrawer
           );
+
         });
 
       drawerOverlay
@@ -7596,6 +7716,7 @@
       document.addEventListener(
         "keydown",
         event => {
+
           if (
             event.key !== "Escape"
           ) {
@@ -7604,6 +7725,7 @@
 
           closeImage();
           closeDrawer();
+
         }
       );
 
