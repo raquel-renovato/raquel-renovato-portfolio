@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -15,14 +14,9 @@
     content="Portfólio de Raquel Renovato — Comunicação Visual, UI Design e experiências digitais."
   >
 
-  <title>
-    Raquel Renovato — Portfólio
-  </title>
+  <title>Raquel Renovato — Portfólio</title>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
     rel="preconnect"
@@ -41,37 +35,25 @@
        VARIABLES
     ========================================================= */
 
-    :root{
-
+    :root {
       --bg:#F3EFEA;
-
       --ink:#1F1C18;
-
       --dim:#5F5850;
-
       --muted:#8A837A;
 
-      --line:
-        rgba(31,28,24,.14);
-
-      --line-strong:
-        rgba(31,28,24,.31);
+      --line:rgba(31,28,24,.14);
+      --line-strong:rgba(31,28,24,.31);
 
       --card:#E5DFD5;
-
       --card-2:#ECE7DF;
-
       --surface:#FAF7F2;
 
       --accent:#E8590C;
-
-      --accent-soft:
-        rgba(232,89,12,.09);
+      --accent-soft:rgba(232,89,12,.09);
 
       --green:#40594A;
 
-      --nav-bg:
-        rgba(243,239,234,.92);
+      --nav-bg:rgba(243,239,234,.92);
 
       --shadow:
         0 24px 65px
@@ -79,66 +61,43 @@
 
       --pad:40px;
 
-      --ease:
-        cubic-bezier(.16,1,.3,1);
+      --ease:cubic-bezier(.16,1,.3,1);
 
       --wf-bg:#F7F3ED;
-
       --wf-card:#E9E2D7;
-
       --wf-text:#1F1C18;
-
-      --wf-line:
-        rgba(31,28,24,.13);
-
+      --wf-line:rgba(31,28,24,.13);
     }
 
 
-    html[data-theme="dark"]{
-
+    html[data-theme="dark"] {
       --bg:#181614;
-
       --ink:#F1ECE3;
-
       --dim:#AAA299;
-
       --muted:#7D766D;
 
-      --line:
-        rgba(241,236,227,.13);
-
-      --line-strong:
-        rgba(241,236,227,.29);
+      --line:rgba(241,236,227,.13);
+      --line-strong:rgba(241,236,227,.29);
 
       --card:#24211E;
-
       --card-2:#2B2723;
-
       --surface:#1E1B18;
 
       --accent:#F26D1D;
-
-      --accent-soft:
-        rgba(242,109,29,.12);
+      --accent-soft:rgba(242,109,29,.12);
 
       --green:#829789;
 
-      --nav-bg:
-        rgba(24,22,20,.92);
+      --nav-bg:rgba(24,22,20,.92);
 
       --shadow:
         0 24px 70px
         rgba(0,0,0,.30);
 
       --wf-bg:#201D1A;
-
       --wf-card:#292520;
-
       --wf-text:#F1ECE3;
-
-      --wf-line:
-        rgba(241,236,227,.12);
-
+      --wf-line:rgba(241,236,227,.12);
     }
 
 
@@ -147,32 +106,29 @@
        RESET
     ========================================================= */
 
-    *{
+    * {
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
 
-    html{
+    html {
       scroll-behavior:smooth;
       scrollbar-gutter:stable;
       scroll-padding-top:90px;
     }
 
 
-    body{
+    body {
       overflow-x:hidden;
 
       background:var(--bg);
       color:var(--ink);
 
-      font-family:
-        "IBM Plex Sans",
-        sans-serif;
+      font-family:"IBM Plex Sans",sans-serif;
 
-      -webkit-font-smoothing:
-        antialiased;
+      -webkit-font-smoothing:antialiased;
 
       transition:
         background-color .35s ease,
@@ -181,12 +137,12 @@
 
 
     body.intro-active,
-    body.locked{
+    body.locked {
       overflow:hidden;
     }
 
 
-    img{
+    img {
       display:block;
       max-width:100%;
     }
@@ -195,49 +151,42 @@
     button,
     input,
     textarea,
-    select{
+    select {
       font:inherit;
     }
 
 
-    button{
+    button {
       color:inherit;
     }
 
 
-    a{
+    a {
       color:inherit;
       text-decoration:none;
     }
 
 
-    ul{
+    ul {
       padding:0;
       margin:0;
     }
 
 
-    .mono{
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+    .mono {
+      font-family:"IBM Plex Mono",monospace;
     }
 
 
-    .serif{
-      font-family:
-        "Fraunces",
-        serif;
+    .serif {
+      font-family:"Fraunces",serif;
     }
 
 
     a:focus-visible,
     button:focus-visible,
-    [tabindex]:focus-visible{
-      outline:
-        2px solid
-        var(--accent);
-
+    [tabindex]:focus-visible {
+      outline:2px solid var(--accent);
       outline-offset:4px;
     }
 
@@ -247,7 +196,7 @@
        INTRO
     ========================================================= */
 
-    #intro-overlay{
+    #intro-overlay {
       position:fixed;
       inset:0;
 
@@ -256,11 +205,9 @@
       display:grid;
       place-items:center;
 
-      padding:
-        0 24px;
+      padding:24px;
 
-      background:
-        var(--bg);
+      background:var(--bg);
 
       cursor:pointer;
 
@@ -268,42 +215,55 @@
       visibility:visible;
 
       transition:
-        opacity .5s ease,
-        transform .5s var(--ease),
-        visibility .5s ease;
+        opacity .48s ease,
+        transform .48s var(--ease),
+        visibility .48s ease;
     }
 
 
-    #intro-overlay.hide{
+    #intro-overlay.hide {
       opacity:0;
-
       visibility:hidden;
 
-      transform:
-        scale(1.012);
+      transform:scale(1.012);
 
       pointer-events:none;
     }
 
 
-    .intro-title{
-      width:100%;
+    /*
+      IMPORTANTE:
+      Agora a frase usa GRID.
 
-      display:flex;
+      "Design com" ocupa a primeira coluna.
+      A palavra animada ocupa SEMPRE a segunda coluna.
+
+      Assim clareza / estrutura / detalhes
+      não alteram a posição horizontal da frase.
+    */
+
+    .intro-title {
+      display:grid;
+
+      grid-template-columns:
+        max-content
+        5.3em;
 
       align-items:baseline;
-      justify-content:center;
 
-      gap:.2em;
+      column-gap:.18em;
 
-      font-family:
-        "Fraunces",
-        serif;
+      width:max-content;
+      max-width:100%;
+
+      margin:auto;
+
+      font-family:"Fraunces",serif;
 
       font-size:
         clamp(
           3rem,
-          6.5vw,
+          6.4vw,
           5.8rem
         );
 
@@ -311,85 +271,93 @@
 
       line-height:1;
 
-      letter-spacing:
-        -.045em;
-
-      text-align:center;
+      letter-spacing:-.045em;
 
       white-space:nowrap;
     }
 
 
-    .intro-fixed{
-      flex:0 0 auto;
+    .intro-fixed {
+      display:block;
+
+      line-height:1;
     }
 
 
-    .intro-word-cycle{
+    .intro-word-cycle {
       position:relative;
 
-      display:inline-block;
+      display:block;
 
-      width:5.25em;
-      height:1.08em;
-
-      flex:
-        0 0 5.25em;
+      width:5.3em;
+      height:1em;
 
       overflow:hidden;
 
-      color:
-        var(--accent);
+      color:var(--accent);
 
       font-style:italic;
 
-      text-align:left;
+      line-height:1;
     }
 
 
-    .intro-word-cycle .w{
+    .intro-word-cycle .w {
       position:absolute;
 
       top:0;
       left:0;
 
-      display:block;
-
       width:max-content;
 
-      opacity:0;
+      display:block;
 
-      color:
-        var(--accent);
+      color:var(--accent);
+
+      line-height:1;
 
       white-space:nowrap;
 
-      transform:
-        translateY(105%);
-
-      transition:
-        opacity .38s ease,
-        transform .55s var(--ease);
-    }
-
-
-    .intro-word-cycle .w.active{
-      opacity:1;
-
-      transform:
-        translateY(0);
-    }
-
-
-    .intro-word-cycle .w.exit{
       opacity:0;
 
       transform:
-        translateY(-105%);
+        translate3d(
+          0,
+          110%,
+          0
+        );
+
+      transition:
+        opacity .32s ease,
+        transform .56s var(--ease);
     }
 
 
-    .intro-help{
+    .intro-word-cycle .w.active {
+      opacity:1;
+
+      transform:
+        translate3d(
+          0,
+          0,
+          0
+        );
+    }
+
+
+    .intro-word-cycle .w.exit {
+      opacity:0;
+
+      transform:
+        translate3d(
+          0,
+          -110%,
+          0
+        );
+    }
+
+
+    .intro-help {
       position:absolute;
 
       left:50%;
@@ -398,8 +366,7 @@
       transform:
         translateX(-50%);
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.56rem;
 
@@ -412,7 +379,7 @@
        NAV
     ========================================================= */
 
-    .site-nav{
+    .site-nav {
       position:sticky;
       top:0;
 
@@ -433,32 +400,24 @@
         0 var(--pad);
 
       border-bottom:
-        1px solid
-        var(--line);
+        1px solid var(--line);
 
-      background:
-        var(--nav-bg);
+      background:var(--nav-bg);
 
-      backdrop-filter:
-        blur(14px);
-
-      -webkit-backdrop-filter:
-        blur(14px);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
 
-    .nav-left{
+    .nav-left {
       display:flex;
       align-items:center;
-
       gap:18px;
     }
 
 
-    .logo{
-      font-family:
-        "Fraunces",
-        serif;
+    .logo {
+      font-family:"Fraunces",serif;
 
       font-size:1.03rem;
 
@@ -468,17 +427,15 @@
     }
 
 
-    .logo:hover{
-      color:
-        var(--accent);
+    .logo:hover {
+      color:var(--accent);
     }
 
 
-    .theme-toggle{
+    .theme-toggle {
       min-height:30px;
 
-      padding:
-        0 11px;
+      padding:0 11px;
 
       border:
         1px solid
@@ -486,11 +443,9 @@
 
       border-radius:999px;
 
-      background:
-        transparent;
+      background:transparent;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.56rem;
 
@@ -498,39 +453,31 @@
     }
 
 
-    .theme-toggle:hover{
-      border-color:
-        var(--accent);
-
-      color:
-        var(--accent);
+    .theme-toggle:hover {
+      border-color:var(--accent);
+      color:var(--accent);
     }
 
 
-    .site-nav ul{
+    .site-nav ul {
       display:flex;
-
       gap:30px;
-
       list-style:none;
     }
 
 
-    .site-nav ul a{
-      color:
-        var(--dim);
-
+    .site-nav ul a {
+      color:var(--dim);
       font-size:.72rem;
     }
 
 
-    .site-nav ul a:hover{
-      color:
-        var(--accent);
+    .site-nav ul a:hover {
+      color:var(--accent);
     }
 
 
-    .nav-cta{
+    .nav-cta {
       justify-self:end;
 
       display:flex;
@@ -538,8 +485,7 @@
 
       min-height:37px;
 
-      padding:
-        0 18px;
+      padding:0 18px;
 
       border:
         1px solid
@@ -547,23 +493,16 @@
 
       border-radius:999px;
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.55rem;
     }
 
 
-    .nav-cta:hover{
-      border-color:
-        var(--ink);
-
-      background:
-        var(--ink);
-
-      color:
-        var(--bg);
+    .nav-cta:hover {
+      border-color:var(--ink);
+      background:var(--ink);
+      color:var(--bg);
     }
 
 
@@ -572,7 +511,7 @@
        HERO
     ========================================================= */
 
-    .hero{
+    .hero {
       min-height:
         calc(
           100svh -
@@ -601,35 +540,29 @@
     }
 
 
-    .hero-text{
+    .hero-text {
       max-width:720px;
     }
 
 
-    .hero-eyebrow{
+    .hero-eyebrow {
       margin-bottom:25px;
 
-      color:
-        var(--ink);
+      color:var(--ink);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.58rem;
-
       font-weight:500;
 
       letter-spacing:.045em;
     }
 
 
-    .hero h1{
+    .hero h1 {
       max-width:720px;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:
         clamp(
@@ -642,32 +575,29 @@
 
       line-height:.94;
 
-      letter-spacing:
-        -.047em;
+      letter-spacing:-.047em;
     }
 
 
-    .hero h1 em{
-      color:
-        var(--accent);
+    .hero h1 em {
+      color:var(--accent);
 
       font-weight:300;
       font-style:italic;
     }
 
 
-    .hero-sub{
+    .hero-sub {
       max-width:690px;
 
       margin-top:37px;
     }
 
 
-    .hero-sub p{
+    .hero-sub p {
       max-width:660px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:
         clamp(
@@ -680,8 +610,9 @@
     }
 
 
-    .hero-actions{
+    .hero-actions {
       display:flex;
+
       align-items:center;
       flex-wrap:wrap;
 
@@ -691,17 +622,16 @@
     }
 
 
-    .hero-project-link{
+    .hero-project-link {
       position:relative;
 
-      color:
-        var(--accent);
+      color:var(--accent);
 
       font-size:.74rem;
     }
 
 
-    .hero-project-link::after{
+    .hero-project-link::after {
       content:"";
 
       position:absolute;
@@ -712,52 +642,48 @@
       width:100%;
       height:1px;
 
-      background:
-        var(--accent);
+      background:var(--accent);
     }
 
 
-    .hero-contact-link{
-      color:
-        var(--dim);
+    .hero-contact-link {
+      color:var(--dim);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.56rem;
     }
 
 
-    .hero-contact-link:hover{
-      color:
-        var(--accent);
+    .hero-contact-link:hover {
+      color:var(--accent);
     }
 
 
 
     /* =========================================================
-       HERO WIREFRAME
+       HERO / WIREFRAME
     ========================================================= */
 
-    .hero-visual{
+    .hero-visual {
       min-width:0;
 
       display:flex;
+
       justify-content:center;
     }
 
 
-    .wf-wrapper{
+    .wf-wrapper {
       position:relative;
 
       width:
         min(
           100%,
-          480px
+          500px
         );
 
-      min-height:410px;
+      min-height:430px;
 
       display:flex;
 
@@ -767,7 +693,7 @@
     }
 
 
-    .wf-illustration{
+    .wf-illustration {
       position:absolute;
 
       z-index:4;
@@ -776,18 +702,18 @@
     }
 
 
-    .pen-tool-svg{
-      top:20px;
-      left:-25px;
+    .pen-tool-svg {
+      top:25px;
+      left:-22px;
 
-      width:80px;
-      height:80px;
+      width:78px;
+      height:78px;
     }
 
 
-    .badge-floater{
-      top:22px;
-      right:18px;
+    .badge-floater {
+      top:23px;
+      right:13px;
 
       display:flex;
 
@@ -804,15 +730,11 @@
 
       border-radius:999px;
 
-      background:
-        var(--bg);
+      background:var(--bg);
 
-      color:
-        var(--green);
+      color:var(--green);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.54rem;
 
@@ -828,10 +750,9 @@
     }
 
 
-    .spec-floater{
-      left:-30px;
-
-      bottom:95px;
+    .spec-floater {
+      left:-34px;
+      bottom:100px;
 
       padding:
         4px 9px;
@@ -842,24 +763,19 @@
 
       border-radius:5px;
 
-      background:
-        var(--bg);
+      background:var(--bg);
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.5rem;
     }
 
 
-    .cursor-floater{
-      right:-14px;
-
-      bottom:74px;
+    .cursor-floater {
+      right:-12px;
+      bottom:79px;
 
       display:flex;
 
@@ -871,19 +787,13 @@
         5px 11px;
 
       border-radius:
-        5px
-        16px
-        16px
-        16px;
+        5px 16px 16px 16px;
 
-      background:
-        var(--accent);
+      background:var(--accent);
 
       color:#fff;
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.54rem;
 
@@ -899,31 +809,22 @@
     }
 
 
-    @keyframes floatAnim{
-
+    @keyframes floatAnim {
       0%,
-      100%{
-        transform:
-          translateY(0);
+      100% {
+        transform:translateY(0);
       }
 
-      50%{
-        transform:
-          translateY(-5px);
+      50% {
+        transform:translateY(-5px);
       }
-
     }
 
 
-    .wf-window{
-      --wf-bg-local:
-        var(--wf-bg);
-
-      --wf-card-local:
-        var(--wf-card);
-
-      --wf-text-local:
-        var(--wf-text);
+    .wf-window {
+      --wf-bg-local:var(--wf-bg);
+      --wf-card-local:var(--wf-card);
+      --wf-text-local:var(--wf-text);
 
       position:relative;
 
@@ -946,11 +847,9 @@
 
       border-radius:10px;
 
-      background:
-        var(--wf-bg-local);
+      background:var(--wf-bg-local);
 
-      color:
-        var(--wf-text-local);
+      color:var(--wf-text-local);
 
       box-shadow:
         0 18px 42px
@@ -960,7 +859,7 @@
     }
 
 
-    .wf-header{
+    .wf-header {
       height:34px;
 
       display:flex;
@@ -971,39 +870,35 @@
 
       flex:0 0 auto;
 
-      padding:
-        0 14px;
+      padding:0 14px;
 
       border-bottom:
         1px solid
         var(--wf-line);
 
-      background:
-        var(--wf-card-local);
+      background:var(--wf-card-local);
     }
 
 
-    .wf-dots{
+    .wf-dots {
       display:flex;
-
       gap:5px;
     }
 
 
-    .wf-dot{
+    .wf-dot {
       width:7px;
       height:7px;
 
       border-radius:50%;
 
-      background:
-        var(--muted);
+      background:var(--muted);
 
       opacity:.57;
     }
 
 
-    .wf-switch-mode{
+    .wf-switch-mode {
       padding:
         2px 8px;
 
@@ -1013,11 +908,9 @@
 
       border-radius:10px;
 
-      background:
-        transparent;
+      background:transparent;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.52rem;
 
@@ -1025,7 +918,7 @@
     }
 
 
-    .wf-body{
+    .wf-body {
       flex:1;
 
       display:flex;
@@ -1034,16 +927,16 @@
     }
 
 
-    .wf-sidebar{
+    .wf-sidebar {
       width:110px;
+
+      flex:0 0 110px;
 
       display:flex;
 
       flex-direction:column;
 
       gap:6px;
-
-      flex:0 0 110px;
 
       padding:
         12px 8px;
@@ -1061,7 +954,7 @@
     }
 
 
-    .wf-nav-item{
+    .wf-nav-item {
       display:flex;
 
       align-items:center;
@@ -1073,8 +966,7 @@
 
       border-radius:4px;
 
-      color:
-        var(--wf-text-local);
+      color:var(--wf-text-local);
 
       font-size:.52rem;
 
@@ -1087,21 +979,18 @@
     }
 
 
-    .wf-nav-item:hover{
-      transform:
-        translateX(2px);
+    .wf-nav-item:hover {
+      transform:translateX(2px);
     }
 
 
-    .wf-nav-item.active{
-      background:
-        var(--accent);
-
+    .wf-nav-item.active {
+      background:var(--accent);
       color:#fff;
     }
 
 
-    .wf-main{
+    .wf-main {
       flex:1;
 
       min-width:0;
@@ -1110,14 +999,13 @@
     }
 
 
-    .wf-view{
+    .wf-view {
       display:none;
-
       height:100%;
     }
 
 
-    .wf-view.active{
+    .wf-view.active {
       display:block;
 
       animation:
@@ -1126,25 +1014,20 @@
     }
 
 
-    @keyframes wfViewIn{
-
-      from{
+    @keyframes wfViewIn {
+      from {
         opacity:0;
-
-        transform:
-          translateY(3px);
+        transform:translateY(3px);
       }
 
-      to{
+      to {
         opacity:1;
-
         transform:none;
       }
-
     }
 
 
-    .wf-top-bar{
+    .wf-top-bar {
       display:flex;
 
       align-items:center;
@@ -1157,17 +1040,24 @@
     }
 
 
-    .wf-title{
-      color:
-        var(--wf-text-local);
+    .wf-title {
+      color:var(--wf-text-local);
 
       font-size:.7rem;
-
       font-weight:500;
     }
 
 
-    .wf-badge-btn{
+    .wf-version {
+      color:var(--muted);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.42rem;
+    }
+
+
+    .wf-badge-btn {
       padding:
         6px 8px;
 
@@ -1177,14 +1067,11 @@
 
       border-radius:4px;
 
-      background:
-        var(--accent);
+      background:var(--accent);
 
       color:#fff;
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.46rem;
 
@@ -1192,7 +1079,7 @@
     }
 
 
-    .wf-card-grid{
+    .wf-card-grid {
       display:grid;
 
       grid-template-columns:
@@ -1204,7 +1091,7 @@
     }
 
 
-    .wf-card{
+    .wf-card {
       min-height:55px;
 
       padding:9px;
@@ -1215,41 +1102,34 @@
 
       border-radius:5px;
 
-      background:
-        var(--wf-card-local);
+      background:var(--wf-card-local);
 
-      color:
-        var(--wf-text-local);
+      color:var(--wf-text-local);
     }
 
 
-    .wf-card-label{
+    .wf-card-label {
       display:block;
 
       margin-bottom:6px;
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.42rem;
     }
 
 
-    .wf-card-val{
-      color:
-        var(--wf-text-local);
+    .wf-card-val {
+      color:var(--wf-text-local);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.82rem;
-
       font-weight:600;
     }
 
 
-    .wf-task-list{
+    .wf-task-list {
       display:flex;
 
       flex-direction:column;
@@ -1260,15 +1140,14 @@
     }
 
 
-    .wf-task-item{
+    .wf-task-item {
       display:flex;
 
       align-items:center;
 
       gap:7px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.49rem;
 
@@ -1276,46 +1155,45 @@
     }
 
 
-    .wf-checkbox{
+    .wf-checkbox {
       width:11px;
       height:11px;
+
+      flex:0 0 11px;
 
       display:grid;
 
       place-items:center;
 
-      flex:0 0 11px;
-
       border:
         1px solid
         var(--line-strong);
 
-      color:
-        transparent;
+      color:transparent;
 
       font-size:.4rem;
     }
 
 
-    .wf-task-item.checked
-    .wf-checkbox{
-      border-color:
-        var(--accent);
-
-      background:
-        var(--accent);
-
+    .wf-task-item.checked .wf-checkbox {
+      border-color:var(--accent);
+      background:var(--accent);
       color:#fff;
     }
 
 
-    .wf-task-item.checked{
-      color:
-        var(--wf-text-local);
+    .wf-task-item.checked {
+      color:var(--wf-text-local);
     }
 
 
-    .wf-paintable{
+
+    /* =========================================================
+       IMPORTANTE:
+       CONTRASTE AUTOMÁTICO DA PINTURA
+    ========================================================= */
+
+    .wf-paintable {
       transition:
         background-color .18s ease,
         border-color .18s ease,
@@ -1323,16 +1201,225 @@
     }
 
 
-    .wf-system-type{
-      display:flex;
+    /*
+      Quando JavaScript adiciona .is-painted,
+      TODAS as letras internas passam a utilizar
+      --paint-foreground.
 
-      flex-direction:column;
+      Isso resolve cards verdes, azuis, pretos etc.
+    */
 
-      gap:4px;
+    .wf-paintable.is-painted,
+    .wf-paintable.is-painted *,
+    .wf-paintable.is-painted .wf-card-label,
+    .wf-paintable.is-painted .wf-card-val {
+      color:
+        var(
+          --paint-foreground,
+          #fff
+        ) !important;
     }
 
 
-    .wf-palette{
+
+    /* =========================================================
+       INTERFACES SCREEN
+    ========================================================= */
+
+    .wf-wireframe-main {
+      min-height:95px;
+
+      padding:13px;
+
+      border:
+        1px solid
+        var(--wf-line);
+
+      border-radius:5px;
+
+      background:var(--wf-card-local);
+    }
+
+
+    .wf-wireframe-header {
+      margin-bottom:16px;
+
+      color:var(--wf-text-local);
+
+      font-size:.47rem;
+    }
+
+
+    .wf-wireframe-row {
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap:12px;
+
+      font-size:.47rem;
+    }
+
+
+    .wf-wireframe-row strong {
+      font-size:.52rem;
+    }
+
+
+    .wf-interface-grid {
+      display:grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:8px;
+
+      margin-top:9px;
+    }
+
+
+    .wf-interface-component {
+      min-height:49px;
+
+      padding:8px;
+
+      border:
+        1px solid
+        var(--wf-line);
+
+      border-radius:5px;
+
+      background:var(--wf-card-local);
+    }
+
+
+    .wf-interface-component span {
+      display:block;
+
+      margin-bottom:4px;
+
+      color:var(--muted);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.4rem;
+    }
+
+
+    .wf-interface-component strong {
+      font-size:.46rem;
+      font-weight:400;
+    }
+
+
+
+    /* =========================================================
+       DESIGN SYSTEM SCREEN
+    ========================================================= */
+
+    .wf-system-label {
+      margin:
+        8px 0 6px;
+
+      color:var(--muted);
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.42rem;
+    }
+
+
+    .wf-system-buttons {
+      display:flex;
+
+      align-items:center;
+
+      gap:6px;
+    }
+
+
+    .wf-token-btn {
+      padding:
+        5px 9px;
+
+      border:
+        1px solid
+        var(--accent);
+
+      border-radius:4px;
+
+      background:var(--accent);
+
+      color:#fff;
+
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.42rem;
+
+      cursor:pointer;
+    }
+
+
+    .wf-token-link {
+      border:0;
+
+      border-bottom:
+        1px solid
+        currentColor;
+
+      background:transparent;
+
+      color:var(--wf-text-local);
+
+      font-size:.43rem;
+
+      cursor:pointer;
+    }
+
+
+    .wf-type-token {
+      margin-top:6px;
+
+      padding:
+        9px;
+
+      border:
+        1px solid
+        var(--wf-line);
+
+      border-radius:5px;
+
+      background:var(--wf-card-local);
+    }
+
+
+    .wf-type-token strong {
+      display:block;
+
+      margin-bottom:3px;
+
+      font-family:"Fraunces",serif;
+
+      font-size:.75rem;
+      font-weight:400;
+    }
+
+
+    .wf-type-token span {
+      font-family:"IBM Plex Mono",monospace;
+
+      font-size:.4rem;
+    }
+
+
+
+    /* =========================================================
+       PALETTE
+    ========================================================= */
+
+    .wf-palette {
       display:flex;
 
       align-items:center;
@@ -1345,7 +1432,7 @@
     }
 
 
-    .swatch{
+    .swatch {
       width:24px;
       height:24px;
 
@@ -1365,35 +1452,31 @@
     }
 
 
-    .swatch:hover{
-      transform:
-        scale(1.08);
+    .swatch:hover {
+      transform:scale(1.08);
     }
 
 
-    .swatch.active{
+    .swatch.active {
       box-shadow:
         0 0 0 3px var(--bg),
         0 0 0 4px var(--ink);
     }
 
 
-    .swatch.reset{
+    .swatch.reset {
       display:grid;
-
       place-items:center;
 
-      background:
-        transparent !important;
+      background:transparent !important;
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.83rem;
     }
 
 
-    .clear-btn{
+    .clear-btn {
       padding:
         4px 7px;
 
@@ -1401,11 +1484,9 @@
         1px solid
         var(--accent);
 
-      background:
-        transparent;
+      background:transparent;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.49rem;
 
@@ -1415,11 +1496,10 @@
     }
 
 
-    .hero-visual-hint{
+    .hero-visual-hint {
       margin-top:14px;
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.49rem;
 
@@ -1431,20 +1511,18 @@
 
 
     /* =========================================================
-       SHARED
+       RESTANTE DO PORTFÓLIO
+       A PARTIR DAQUI MANTIDO
     ========================================================= */
 
-    .section-kicker{
+    .section-kicker {
       display:block;
 
       margin-bottom:10px;
 
-      color:
-        var(--accent);
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.54rem;
 
@@ -1454,7 +1532,7 @@
     }
 
 
-    .section-head{
+    .section-head {
       padding:
         85px
         var(--pad)
@@ -1466,12 +1544,10 @@
     }
 
 
-    .section-head h2{
+    .section-head h2 {
       max-width:950px;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:
         clamp(
@@ -1484,17 +1560,14 @@
 
       line-height:1.04;
 
-      letter-spacing:
-        -.03em;
+      letter-spacing:-.03em;
     }
 
 
 
-    /* =========================================================
-       PROCESS
-    ========================================================= */
+    /* PROCESS */
 
-    .process-section{
+    .process-section {
       padding:
         80px
         var(--pad)
@@ -1506,7 +1579,7 @@
     }
 
 
-    .process-grid{
+    .process-grid {
       display:grid;
 
       grid-template-columns:
@@ -1527,7 +1600,7 @@
     }
 
 
-    .process-card{
+    .process-card {
       min-height:270px;
 
       display:flex;
@@ -1550,42 +1623,34 @@
     }
 
 
-    .process-card:hover{
-      background:
-        var(--card);
+    .process-card:hover {
+      background:var(--card);
     }
 
 
-    .process-card > span{
+    .process-card > span {
       margin-bottom:auto;
 
-      color:
-        var(--accent);
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.52rem;
     }
 
 
-    .process-card h3{
+    .process-card h3 {
       margin-bottom:10px;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:1.55rem;
-
       font-weight:400;
     }
 
 
-    .process-card p{
-      color:
-        var(--dim);
+    .process-card p {
+      color:var(--dim);
 
       font-size:.78rem;
 
@@ -1594,11 +1659,9 @@
 
 
 
-    /* =========================================================
-       ABOUT
-    ========================================================= */
+    /* ABOUT */
 
-    .about{
+    .about {
       display:grid;
 
       grid-template-columns:
@@ -1621,22 +1684,19 @@
     }
 
 
-    .about-owner{
+    .about-owner {
       margin-bottom:28px;
     }
 
 
-    .about-owner small{
+    .about-owner small {
       display:block;
 
       margin-bottom:8px;
 
-      color:
-        var(--accent);
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.52rem;
 
@@ -1644,10 +1704,8 @@
     }
 
 
-    .about-owner h3{
-      font-family:
-        "Fraunces",
-        serif;
+    .about-owner h3 {
+      font-family:"Fraunces",serif;
 
       font-size:
         clamp(
@@ -1660,26 +1718,22 @@
 
       line-height:.91;
 
-      letter-spacing:
-        -.045em;
+      letter-spacing:-.045em;
     }
 
 
-    .about-owner h3 em{
-      color:
-        var(--accent);
-
+    .about-owner h3 em {
+      color:var(--accent);
       font-weight:300;
     }
 
 
-    .about-copy > p{
+    .about-copy > p {
       max-width:680px;
 
       margin-bottom:17px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:
         clamp(
@@ -1692,9 +1746,8 @@
     }
 
 
-    .about-tags{
+    .about-tags {
       display:flex;
-
       flex-wrap:wrap;
 
       gap:7px;
@@ -1703,7 +1756,7 @@
     }
 
 
-    .about-tag{
+    .about-tag {
       padding:
         7px 10px;
 
@@ -1713,36 +1766,28 @@
 
       border-radius:999px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.5rem;
     }
 
 
-    .about-visual{
+    .about-visual {
       position:relative;
 
       min-height:420px;
 
       display:grid;
-
       place-items:center;
     }
 
 
-    .about-orbit{
+    .about-orbit {
       position:absolute;
 
-      width:
-        min(
-          90%,
-          370px
-        );
+      width:min(90%,370px);
 
       aspect-ratio:1;
 
@@ -1754,7 +1799,7 @@
     }
 
 
-    .about-orbit::after{
+    .about-orbit::after {
       content:"";
 
       position:absolute;
@@ -1767,39 +1812,31 @@
 
       border-radius:50%;
 
-      background:
-        var(--accent);
+      background:var(--accent);
     }
 
 
-    .about-photo{
+    .about-photo {
       position:relative;
 
       z-index:2;
 
-      width:
-        min(
-          76%,
-          310px
-        );
+      width:min(76%,310px);
 
-      aspect-ratio:
-        4 / 5;
+      aspect-ratio:4 / 5;
 
       overflow:hidden;
 
       border-radius:
         48% 48% 8px 8px;
 
-      background:
-        var(--card);
+      background:var(--card);
 
-      box-shadow:
-        var(--shadow);
+      box-shadow:var(--shadow);
     }
 
 
-    .about-photo img{
+    .about-photo img {
       width:100%;
       height:100%;
 
@@ -1810,18 +1847,16 @@
 
 
 
-    /* =========================================================
-       PROJECT HEAD
-    ========================================================= */
+    /* PROJECT */
 
-    .project{
+    .project {
       border-top:
         1px solid
         var(--line);
     }
 
 
-    .project-head{
+    .project-head {
       padding:
         70px
         var(--pad)
@@ -1829,7 +1864,7 @@
     }
 
 
-    .project-identity{
+    .project-identity {
       display:flex;
 
       flex-wrap:wrap;
@@ -1842,27 +1877,23 @@
     }
 
 
-    .project-number{
-      color:
-        var(--accent);
+    .project-number {
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.54rem;
     }
 
 
-    .case-badge{
+    .case-badge {
       display:inline-flex;
 
       align-items:center;
 
       min-height:24px;
 
-      padding:
-        0 8px;
+      padding:0 8px;
 
       border:
         1px solid
@@ -1870,12 +1901,9 @@
 
       border-radius:999px;
 
-      color:
-        var(--accent);
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.45rem;
 
@@ -1883,10 +1911,8 @@
     }
 
 
-    .project-head > h3{
-      font-family:
-        "Fraunces",
-        serif;
+    .project-head > h3 {
+      font-family:"Fraunces",serif;
 
       font-size:
         clamp(
@@ -1899,18 +1925,16 @@
 
       line-height:.95;
 
-      letter-spacing:
-        -.04em;
+      letter-spacing:-.04em;
     }
 
 
-    .project-summary{
+    .project-summary {
       max-width:780px;
 
       margin-top:22px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:
         clamp(
@@ -1923,7 +1947,7 @@
     }
 
 
-    .project-meta{
+    .project-meta {
       display:flex;
 
       flex-wrap:wrap;
@@ -1934,7 +1958,7 @@
     }
 
 
-    .project-meta span{
+    .project-meta span {
       padding:
         6px 9px;
 
@@ -1944,18 +1968,15 @@
 
       border-radius:999px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.48rem;
     }
 
 
-    .case-grid{
+    .case-grid {
       display:grid;
 
       grid-template-columns:
@@ -1972,28 +1993,23 @@
         1px solid
         var(--line);
 
-      background:
-        var(--line);
+      background:var(--line);
     }
 
 
-    .case-card{
+    .case-card {
       min-height:180px;
 
       padding:19px;
 
-      background:
-        var(--bg);
+      background:var(--bg);
     }
 
 
-    .case-card > span{
-      color:
-        var(--accent);
+    .case-card > span {
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.48rem;
 
@@ -2001,11 +2017,10 @@
     }
 
 
-    .case-card p{
+    .case-card p {
       margin-top:14px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.7rem;
 
@@ -2014,11 +2029,9 @@
 
 
 
-    /* =========================================================
-       FERNANDO CASE
-    ========================================================= */
+    /* FERNANDO CASE */
 
-    .fa-case{
+    .fa-case {
       padding:
         0
         var(--pad)
@@ -2026,7 +2039,7 @@
     }
 
 
-    .fa-tabs{
+    .fa-tabs {
       display:flex;
 
       gap:6px;
@@ -2039,12 +2052,12 @@
     }
 
 
-    .fa-tabs::-webkit-scrollbar{
+    .fa-tabs::-webkit-scrollbar {
       display:none;
     }
 
 
-    .fa-tab{
+    .fa-tab {
       flex:0 0 auto;
 
       padding:
@@ -2056,15 +2069,11 @@
 
       border-radius:999px;
 
-      background:
-        transparent;
+      background:transparent;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.5rem;
 
@@ -2075,23 +2084,19 @@
 
 
     .fa-tab:hover,
-    .fa-tab.active{
-      border-color:
-        var(--accent);
-
-      background:
-        var(--accent);
-
+    .fa-tab.active {
+      border-color:var(--accent);
+      background:var(--accent);
       color:white;
     }
 
 
-    .fa-view{
+    .fa-view {
       display:none;
     }
 
 
-    .fa-view.active{
+    .fa-view.active {
       display:block;
 
       animation:
@@ -2100,30 +2105,23 @@
     }
 
 
-    @keyframes faViewIn{
-
-      from{
+    @keyframes faViewIn {
+      from {
         opacity:0;
-
-        transform:
-          translateY(7px);
+        transform:translateY(7px);
       }
 
-      to{
+      to {
         opacity:1;
-
         transform:none;
       }
-
     }
 
 
 
-    /* =========================================================
-       STORY
-    ========================================================= */
+    /* STORY */
 
-    .fa-story{
+    .fa-story {
       display:grid;
 
       grid-template-columns:
@@ -2134,7 +2132,7 @@
     }
 
 
-    .fa-story-copy{
+    .fa-story-copy {
       padding:27px;
 
       border:
@@ -2143,30 +2141,23 @@
 
       border-radius:10px;
 
-      background:
-        var(--card);
+      background:var(--card);
     }
 
 
-    .fa-story-copy > span{
-      color:
-        var(--accent);
+    .fa-story-copy > span {
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.48rem;
     }
 
 
-    .fa-story-copy h4{
-      margin:
-        17px 0;
+    .fa-story-copy h4 {
+      margin:17px 0;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:
         clamp(
@@ -2181,9 +2172,8 @@
     }
 
 
-    .fa-story-copy > p{
-      color:
-        var(--dim);
+    .fa-story-copy > p {
+      color:var(--dim);
 
       font-size:.77rem;
 
@@ -2191,12 +2181,12 @@
     }
 
 
-    .fa-story-flow{
+    .fa-story-flow {
       margin-top:22px;
     }
 
 
-    .fa-story-flow > div{
+    .fa-story-flow > div {
       display:grid;
 
       grid-template-columns:
@@ -2214,30 +2204,25 @@
     }
 
 
-    .fa-story-flow span{
-      color:
-        var(--accent);
+    .fa-story-flow span {
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.48rem;
     }
 
 
-    .fa-story-flow strong{
+    .fa-story-flow strong {
       display:block;
-
       font-size:.7rem;
     }
 
 
-    .fa-story-flow p{
+    .fa-story-flow p {
       margin-top:4px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.64rem;
 
@@ -2246,11 +2231,9 @@
 
 
 
-    /* =========================================================
-       BROWSER
-    ========================================================= */
+    /* BROWSER */
 
-    .browser-shell{
+    .browser-shell {
       overflow:hidden;
 
       border:
@@ -2259,15 +2242,13 @@
 
       border-radius:10px;
 
-      background:
-        var(--surface);
+      background:var(--surface);
 
-      box-shadow:
-        var(--shadow);
+      box-shadow:var(--shadow);
     }
 
 
-    .browser-bar{
+    .browser-bar {
       min-height:44px;
 
       display:grid;
@@ -2288,36 +2269,32 @@
         1px solid
         var(--line);
 
-      background:
-        var(--card);
+      background:var(--card);
     }
 
 
-    .browser-dots{
+    .browser-dots {
       display:flex;
-
       gap:5px;
     }
 
 
-    .browser-dots i{
+    .browser-dots i {
       width:7px;
       height:7px;
 
       border-radius:50%;
 
-      background:
-        var(--muted);
+      background:var(--muted);
 
       opacity:.48;
     }
 
 
-    .browser-address{
+    .browser-address {
       overflow:hidden;
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.47rem;
 
@@ -2327,24 +2304,19 @@
     }
 
 
-    .browser-link{
-      color:
-        var(--accent);
+    .browser-link {
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.47rem;
     }
 
 
 
-    /* =========================================================
-       REAL DESKTOP PREVIEW
-    ========================================================= */
+    /* DESKTOP PREVIEW */
 
-    .fa-desktop-viewport{
+    .fa-desktop-viewport {
       position:relative;
 
       width:100%;
@@ -2355,7 +2327,7 @@
     }
 
 
-    .fa-desktop-canvas{
+    .fa-desktop-canvas {
       position:absolute;
 
       top:0;
@@ -2363,22 +2335,17 @@
 
       width:1440px;
 
-      transform-origin:
-        top left;
+      transform-origin:top left;
     }
 
 
-    .fa-desktop-canvas iframe{
+    .fa-desktop-canvas iframe {
       display:block;
 
-      width:
-        1440px !important;
+      width:1440px !important;
+      height:900px !important;
 
-      height:
-        900px !important;
-
-      max-width:
-        none !important;
+      max-width:none !important;
 
       border:0;
 
@@ -2386,7 +2353,7 @@
     }
 
 
-    .fa-result-strip{
+    .fa-result-strip {
       display:grid;
 
       grid-template-columns:
@@ -2407,7 +2374,7 @@
     }
 
 
-    .fa-result-item{
+    .fa-result-item {
       min-height:135px;
 
       padding:18px;
@@ -2418,31 +2385,26 @@
     }
 
 
-    .fa-result-item:last-child{
+    .fa-result-item:last-child {
       border-right:0;
     }
 
 
-    .fa-result-item span{
+    .fa-result-item span {
       display:block;
 
       margin-bottom:12px;
 
-      color:
-        var(--accent);
+      color:var(--accent);
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.47rem;
     }
 
 
-    .fa-result-item strong{
-      font-family:
-        "Fraunces",
-        serif;
+    .fa-result-item strong {
+      font-family:"Fraunces",serif;
 
       font-size:1rem;
 
@@ -2450,11 +2412,10 @@
     }
 
 
-    .fa-result-item p{
+    .fa-result-item p {
       margin-top:6px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.65rem;
 
@@ -2463,11 +2424,9 @@
 
 
 
-    /* =========================================================
-       DESIGN SYSTEM
-    ========================================================= */
+    /* DESIGN SYSTEM */
 
-    .system-layout{
+    .system-layout {
       display:grid;
 
       grid-template-columns:
@@ -2484,32 +2443,29 @@
 
       border-radius:10px;
 
-      background:
-        var(--line);
+      background:var(--line);
     }
 
 
-    .system-sidebar{
+    .system-sidebar {
       padding:17px;
 
-      background:
-        var(--card);
+      background:var(--card);
     }
 
 
-    .system-sidebar > span{
+    .system-sidebar > span {
       display:block;
 
       margin-bottom:12px;
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.5rem;
     }
 
 
-    .system-nav-btn{
+    .system-nav-btn {
       width:100%;
 
       padding:8px;
@@ -2518,11 +2474,9 @@
 
       border-radius:4px;
 
-      background:
-        transparent;
+      background:transparent;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.62rem;
 
@@ -2533,39 +2487,33 @@
 
 
     .system-nav-btn:hover,
-    .system-nav-btn.active{
-      background:
-        var(--accent-soft);
-
-      color:
-        var(--accent);
+    .system-nav-btn.active {
+      background:var(--accent-soft);
+      color:var(--accent);
     }
 
 
-    .system-canvas{
+    .system-canvas {
       padding:28px;
 
-      background:
-        var(--surface);
+      background:var(--surface);
     }
 
 
-    .system-panel{
+    .system-panel {
       display:none;
     }
 
 
-    .system-panel.active{
+    .system-panel.active {
       display:block;
     }
 
 
-    .system-panel-title{
+    .system-panel-title {
       margin-bottom:20px;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:1.5rem;
 
@@ -2573,7 +2521,7 @@
     }
 
 
-    .fa-color-grid{
+    .fa-color-grid {
       display:grid;
 
       grid-template-columns:
@@ -2586,56 +2534,51 @@
     }
 
 
-    .fa-color{
+    .fa-color {
       min-height:130px;
 
       display:flex;
 
       flex-direction:column;
 
-      justify-content:
-        space-between;
+      justify-content:space-between;
 
       padding:13px;
 
       border-radius:6px;
 
-      font-family:
-        "IBM Plex Mono",
-        monospace;
+      font-family:"IBM Plex Mono",monospace;
 
       font-size:.49rem;
     }
 
 
-    .fa-color.navy{
+    .fa-color.navy {
       background:#00152A;
       color:white;
     }
 
 
-    .fa-color.gold{
+    .fa-color.gold {
       background:#B8860B;
       color:white;
     }
 
 
-    .fa-color.slate{
+    .fa-color.slate {
       background:#64748B;
       color:white;
     }
 
 
-    .fa-color.light{
+    .fa-color.light {
       background:#F4F6F8;
       color:#00152A;
     }
 
 
-    .fa-color.white{
-      border:
-        1px solid
-        #CED5DC;
+    .fa-color.white {
+      border:1px solid #CED5DC;
 
       background:white;
 
@@ -2643,7 +2586,7 @@
     }
 
 
-    .fa-type-demo{
+    .fa-type-demo {
       display:grid;
 
       grid-template-columns:
@@ -2655,14 +2598,12 @@
     }
 
 
-    .fa-type-card{
+    .fa-type-card {
       min-height:200px;
 
       padding:18px;
 
-      border:
-        1px solid
-        #D8DEE4;
+      border:1px solid #D8DEE4;
 
       border-radius:6px;
 
@@ -2672,38 +2613,32 @@
     }
 
 
-    .fa-type-card span{
+    .fa-type-card span {
       color:#64748B;
-
       font-size:.49rem;
     }
 
 
-    .fa-type-card strong{
+    .fa-type-card strong {
       display:block;
 
-      margin:
-        17px 0 10px;
+      margin:17px 0 10px;
 
       font-size:2.8rem;
     }
 
 
-    .fa-type-card.manrope{
-      font-family:
-        "Manrope",
-        sans-serif;
+    .fa-type-card.manrope {
+      font-family:"Manrope",sans-serif;
     }
 
 
-    .fa-type-card.dm{
-      font-family:
-        "DM Sans",
-        sans-serif;
+    .fa-type-card.dm {
+      font-family:"DM Sans",sans-serif;
     }
 
 
-    .component-grid{
+    .component-grid {
       display:grid;
 
       grid-template-columns:
@@ -2716,7 +2651,7 @@
     }
 
 
-    .component-box{
+    .component-box {
       min-height:180px;
 
       padding:18px;
@@ -2727,45 +2662,39 @@
 
       border-radius:7px;
 
-      background:
-        var(--card);
+      background:var(--card);
     }
 
 
-    .component-box.wide{
-      grid-column:
-        1 / -1;
+    .component-box.wide {
+      grid-column:1 / -1;
     }
 
 
-    .component-label{
+    .component-label {
       display:flex;
 
-      justify-content:
-        space-between;
+      justify-content:space-between;
 
       gap:12px;
 
       margin-bottom:22px;
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.5rem;
     }
 
 
-    .demo-button-row{
+    .demo-button-row {
       display:flex;
-
       flex-wrap:wrap;
-
       gap:8px;
     }
 
 
     .fa-demo-primary,
-    .fa-demo-secondary{
+    .fa-demo-secondary {
       padding:
         10px 15px;
 
@@ -2777,55 +2706,41 @@
     }
 
 
-    .fa-demo-primary{
-      border:
-        1px solid
-        #B8860B;
-
+    .fa-demo-primary {
+      border:1px solid #B8860B;
       background:#B8860B;
-
       color:white;
     }
 
 
-    .fa-demo-secondary{
-      border:
-        1px solid
-        #00152A;
-
-      background:
-        transparent;
-
+    .fa-demo-secondary {
+      border:1px solid #00152A;
+      background:transparent;
       color:#00152A;
     }
 
 
-    .fa-demo-primary.is-hover{
-      filter:
-        brightness(.83);
-
-      transform:
-        translateY(-1px);
+    .fa-demo-primary.is-hover {
+      filter:brightness(.83);
+      transform:translateY(-1px);
     }
 
 
-    .fa-demo-primary.is-disabled{
+    .fa-demo-primary.is-disabled {
       opacity:.32;
     }
 
 
-    .variant-controls{
+    .variant-controls {
       display:flex;
-
       flex-wrap:wrap;
-
       gap:5px;
 
       margin-top:18px;
     }
 
 
-    .variant-controls button{
+    .variant-controls button {
       padding:
         5px 8px;
 
@@ -2835,8 +2750,7 @@
 
       border-radius:4px;
 
-      background:
-        var(--bg);
+      background:var(--bg);
 
       font-size:.5rem;
 
@@ -2844,21 +2758,16 @@
     }
 
 
-    .variant-controls button.active{
-      border-color:
-        var(--accent);
-
-      color:
-        var(--accent);
+    .variant-controls button.active {
+      border-color:var(--accent);
+      color:var(--accent);
     }
 
 
 
-    /* =========================================================
-       RESPONSIVE CASE
-    ========================================================= */
+    /* RESPONSIVE CASE */
 
-    .fa-responsive-showcase{
+    .fa-responsive-showcase {
       display:grid;
 
       grid-template-columns:
@@ -2877,12 +2786,11 @@
 
       border-radius:10px;
 
-      background:
-        var(--card);
+      background:var(--card);
     }
 
 
-    .fa-device-desktop{
+    .fa-device-desktop {
       min-width:0;
 
       overflow:hidden;
@@ -2901,7 +2809,7 @@
     }
 
 
-    .fa-mobile-wrap{
+    .fa-mobile-wrap {
       display:flex;
 
       flex-direction:column;
@@ -2912,7 +2820,7 @@
     }
 
 
-    .fa-device-mobile{
+    .fa-device-mobile {
       width:245px;
 
       padding:8px;
@@ -2927,7 +2835,7 @@
     }
 
 
-    .fa-phone-screen{
+    .fa-phone-screen {
       position:relative;
 
       height:490px;
@@ -2940,32 +2848,26 @@
     }
 
 
-    .fa-phone-screen iframe{
+    .fa-phone-screen iframe {
       position:absolute;
 
       top:0;
       left:0;
 
-      width:
-        390px !important;
+      width:390px !important;
+      height:1000px !important;
 
-      height:
-        1000px !important;
-
-      max-width:
-        none !important;
+      max-width:none !important;
 
       border:0;
 
-      transform:
-        scale(.587);
+      transform:scale(.587);
 
-      transform-origin:
-        top left;
+      transform-origin:top left;
     }
 
 
-    .fa-responsive-notes{
+    .fa-responsive-notes {
       display:grid;
 
       grid-template-columns:
@@ -2982,42 +2884,35 @@
         1px solid
         var(--line);
 
-      background:
-        var(--line);
+      background:var(--line);
     }
 
 
-    .fa-responsive-note{
+    .fa-responsive-note {
       padding:17px;
 
-      background:
-        var(--bg);
+      background:var(--bg);
     }
 
 
-    .fa-responsive-note span{
-      color:
-        var(--accent);
+    .fa-responsive-note span {
+      color:var(--accent);
 
       font-size:.5rem;
     }
 
 
-    .fa-responsive-note h4{
-      margin:
-        7px 0;
+    .fa-responsive-note h4 {
+      margin:7px 0;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-weight:400;
     }
 
 
-    .fa-responsive-note p{
-      color:
-        var(--dim);
+    .fa-responsive-note p {
+      color:var(--dim);
 
       font-size:.69rem;
 
@@ -3026,11 +2921,9 @@
 
 
 
-    /* =========================================================
-       FIGMA
-    ========================================================= */
+    /* FIGMA */
 
-    .figma-shell{
+    .figma-shell {
       overflow:hidden;
 
       border:
@@ -3041,16 +2934,14 @@
 
       background:#111;
 
-      box-shadow:
-        var(--shadow);
+      box-shadow:var(--shadow);
     }
 
 
-    .figma-head{
+    .figma-head {
       display:flex;
 
-      justify-content:
-        space-between;
+      justify-content:space-between;
 
       align-items:center;
 
@@ -3058,12 +2949,9 @@
 
       min-height:64px;
 
-      padding:
-        12px 15px;
+      padding:12px 15px;
 
-      border-bottom:
-        1px solid
-        #333;
+      border-bottom:1px solid #333;
 
       background:#1B1B1B;
 
@@ -3071,7 +2959,7 @@
     }
 
 
-    .figma-head span{
+    .figma-head span {
       display:block;
 
       margin-bottom:4px;
@@ -3082,10 +2970,8 @@
     }
 
 
-    .figma-head strong{
-      font-family:
-        "Fraunces",
-        serif;
+    .figma-head strong {
+      font-family:"Fraunces",serif;
 
       font-size:.98rem;
 
@@ -3093,38 +2979,30 @@
     }
 
 
-    .figma-head a{
+    .figma-head a {
       color:#F48A4A;
 
       font-size:.5rem;
     }
 
 
-    .figma-frame{
-      height:
-        min(
-          78vh,
-          780px
-        );
-
+    .figma-frame {
+      height:min(78vh,780px);
       min-height:600px;
     }
 
 
-    .figma-frame iframe{
+    .figma-frame iframe {
       width:100%;
       height:100%;
-
       border:0;
     }
 
 
 
-    /* =========================================================
-       SECONDARY PROJECTS
-    ========================================================= */
+    /* SECONDARY PROJECTS */
 
-    .secondary-case{
+    .secondary-case {
       padding:
         0
         var(--pad)
@@ -3132,7 +3010,7 @@
     }
 
 
-    .secondary-shell{
+    .secondary-shell {
       overflow:hidden;
 
       border:
@@ -3141,17 +3019,14 @@
 
       border-radius:10px;
 
-      background:
-        var(--surface);
+      background:var(--surface);
 
-      box-shadow:
-        var(--shadow);
+      box-shadow:var(--shadow);
     }
 
 
-    .case-tabs{
+    .case-tabs {
       display:flex;
-
       flex-wrap:wrap;
 
       gap:6px;
@@ -3164,7 +3039,7 @@
     }
 
 
-    .case-tab{
+    .case-tab {
       padding:
         7px 10px;
 
@@ -3174,11 +3049,9 @@
 
       border-radius:999px;
 
-      background:
-        transparent;
+      background:transparent;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.55rem;
 
@@ -3187,35 +3060,28 @@
 
 
     .case-tab.active,
-    .case-tab:hover{
-      border-color:
-        var(--accent);
-
-      background:
-        var(--accent);
-
+    .case-tab:hover {
+      border-color:var(--accent);
+      background:var(--accent);
       color:white;
     }
 
 
-    .case-view{
+    .case-view {
       display:none;
-
       padding:26px;
     }
 
 
-    .case-view.active{
+    .case-view.active {
       display:block;
     }
 
 
 
-    /* =========================================================
-       VOIT
-    ========================================================= */
+    /* VOIT */
 
-    .voit-overview{
+    .voit-overview {
       display:grid;
 
       grid-template-columns:
@@ -3231,31 +3097,26 @@
     }
 
 
-    .voit-core{
+    .voit-core {
       width:155px;
       height:155px;
 
       display:grid;
-
       place-items:center;
 
       border-radius:50%;
 
-      background:
-        var(--ink);
+      background:var(--ink);
 
-      color:
-        var(--bg);
+      color:var(--bg);
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:1.35rem;
     }
 
 
-    .voit-domain{
+    .voit-domain {
       min-height:135px;
 
       padding:17px;
@@ -3268,29 +3129,23 @@
     }
 
 
-    .voit-domain span{
-      color:
-        var(--accent);
-
+    .voit-domain span {
+      color:var(--accent);
       font-size:.48rem;
     }
 
 
-    .voit-domain h4{
-      margin:
-        7px 0;
+    .voit-domain h4 {
+      margin:7px 0;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-weight:400;
     }
 
 
-    .voit-domain p{
-      color:
-        var(--dim);
+    .voit-domain p {
+      color:var(--dim);
 
       font-size:.69rem;
 
@@ -3298,7 +3153,7 @@
     }
 
 
-    .voit-social{
+    .voit-social {
       display:grid;
 
       grid-template-columns:
@@ -3311,21 +3166,20 @@
     }
 
 
-    .voit-piece{
+    .voit-piece {
       overflow:hidden;
 
       border:0;
 
       border-radius:5px;
 
-      background:
-        var(--card);
+      background:var(--card);
 
       cursor:zoom-in;
     }
 
 
-    .voit-piece img{
+    .voit-piece img {
       width:100%;
 
       aspect-ratio:1;
@@ -3335,11 +3189,9 @@
 
 
 
-    /* =========================================================
-       RENATA
-    ========================================================= */
+    /* RENATA */
 
-    .deck-shell{
+    .deck-shell {
       overflow:hidden;
 
       border-radius:8px;
@@ -3350,44 +3202,36 @@
     }
 
 
-    .deck-topbar{
+    .deck-topbar {
       min-height:46px;
 
       display:flex;
 
       align-items:center;
 
-      justify-content:
-        space-between;
+      justify-content:space-between;
 
-      padding:
-        0 15px;
+      padding:0 15px;
 
-      border-bottom:
-        1px solid
-        #333;
+      border-bottom:1px solid #333;
     }
 
 
-    .deck-controls{
+    .deck-controls {
       display:flex;
-
       gap:6px;
     }
 
 
-    .deck-controls button{
+    .deck-controls button {
       width:32px;
       height:32px;
 
-      border:
-        1px solid
-        #444;
+      border:1px solid #444;
 
       border-radius:50%;
 
-      background:
-        transparent;
+      background:transparent;
 
       color:white;
 
@@ -3395,7 +3239,7 @@
     }
 
 
-    .deck-body{
+    .deck-body {
       display:grid;
 
       grid-template-columns:
@@ -3404,18 +3248,17 @@
     }
 
 
-    .deck-stage{
+    .deck-stage {
       min-height:480px;
 
       display:grid;
-
       place-items:center;
 
       padding:27px;
     }
 
 
-    .deck-stage img{
+    .deck-stage img {
       max-height:425px;
 
       object-fit:contain;
@@ -3424,20 +3267,18 @@
     }
 
 
-    .deck-side{
+    .deck-side {
       max-height:480px;
 
       overflow-y:auto;
 
       padding:10px;
 
-      border-left:
-        1px solid
-        #333;
+      border-left:1px solid #333;
     }
 
 
-    .deck-thumb{
+    .deck-thumb {
       width:100%;
 
       margin-bottom:7px;
@@ -3456,20 +3297,16 @@
     }
 
 
-    .deck-thumb.active{
-      border-color:
-        var(--accent);
-
+    .deck-thumb.active {
+      border-color:var(--accent);
       opacity:1;
     }
 
 
 
-    /* =========================================================
-       BRADUCA
-    ========================================================= */
+    /* BRADUCA */
 
-    .editorial-layout{
+    .editorial-layout {
       display:grid;
 
       grid-template-columns:
@@ -3480,7 +3317,7 @@
     }
 
 
-    .editorial-ribbon{
+    .editorial-ribbon {
       display:grid;
 
       grid-template-columns:
@@ -3493,9 +3330,8 @@
     }
 
 
-    .editorial-card{
-      aspect-ratio:
-        4 / 5;
+    .editorial-card {
+      aspect-ratio:4 / 5;
 
       overflow:hidden;
 
@@ -3505,20 +3341,18 @@
         2px solid
         transparent;
 
-      background:
-        var(--card);
+      background:var(--card);
 
       cursor:pointer;
     }
 
 
-    .editorial-card.active{
-      border-color:
-        var(--accent);
+    .editorial-card.active {
+      border-color:var(--accent);
     }
 
 
-    .editorial-card img{
+    .editorial-card img {
       width:100%;
       height:100%;
 
@@ -3526,11 +3360,10 @@
     }
 
 
-    .editorial-preview{
+    .editorial-preview {
       min-height:440px;
 
       display:grid;
-
       place-items:center;
 
       margin-top:15px;
@@ -3541,14 +3374,13 @@
     }
 
 
-    .editorial-preview img{
+    .editorial-preview img {
       max-height:405px;
-
       cursor:zoom-in;
     }
 
 
-    .editorial-inspector{
+    .editorial-inspector {
       align-self:start;
 
       padding:19px;
@@ -3559,21 +3391,16 @@
     }
 
 
-    .editorial-inspector > span{
-      color:
-        var(--accent);
-
+    .editorial-inspector > span {
+      color:var(--accent);
       font-size:.48rem;
     }
 
 
-    .editorial-inspector h4{
-      margin:
-        11px 0;
+    .editorial-inspector h4 {
+      margin:11px 0;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:1.26rem;
 
@@ -3581,9 +3408,8 @@
     }
 
 
-    .editorial-inspector p{
-      color:
-        var(--dim);
+    .editorial-inspector p {
+      color:var(--dim);
 
       font-size:.66rem;
 
@@ -3592,11 +3418,9 @@
 
 
 
-    /* =========================================================
-       AYMEE
-    ========================================================= */
+    /* AYMEE */
 
-    .brand-layout{
+    .brand-layout {
       display:grid;
 
       grid-template-columns:
@@ -3607,7 +3431,7 @@
     }
 
 
-    .brand-grid{
+    .brand-grid {
       display:grid;
 
       grid-template-columns:
@@ -3620,7 +3444,7 @@
     }
 
 
-    .brand-card{
+    .brand-card {
       aspect-ratio:1;
 
       overflow:hidden;
@@ -3629,14 +3453,13 @@
 
       border:0;
 
-      background:
-        var(--card);
+      background:var(--card);
 
       cursor:zoom-in;
     }
 
 
-    .brand-card img{
+    .brand-card img {
       width:100%;
       height:100%;
 
@@ -3644,7 +3467,7 @@
     }
 
 
-    .brand-notes{
+    .brand-notes {
       padding:19px;
 
       border:
@@ -3653,21 +3476,16 @@
     }
 
 
-    .brand-notes > span{
-      color:
-        var(--accent);
-
+    .brand-notes > span {
+      color:var(--accent);
       font-size:.48rem;
     }
 
 
-    .brand-notes h4{
-      margin:
-        11px 0 17px;
+    .brand-notes h4 {
+      margin:11px 0 17px;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:1.26rem;
 
@@ -3675,9 +3493,8 @@
     }
 
 
-    .brand-rule{
-      padding:
-        13px 0;
+    .brand-rule {
+      padding:13px 0;
 
       border-top:
         1px solid
@@ -3685,19 +3502,16 @@
     }
 
 
-    .brand-rule span{
-      color:
-        var(--muted);
-
+    .brand-rule span {
+      color:var(--muted);
       font-size:.46rem;
     }
 
 
-    .brand-rule p{
+    .brand-rule p {
       margin-top:5px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       font-size:.65rem;
 
@@ -3706,11 +3520,9 @@
 
 
 
-    /* =========================================================
-       SKILLS
-    ========================================================= */
+    /* SKILLS */
 
-    .skills{
+    .skills {
       padding:
         0
         var(--pad)
@@ -3718,7 +3530,7 @@
     }
 
 
-    .skill-grid{
+    .skill-grid {
       display:grid;
 
       grid-template-columns:
@@ -3733,33 +3545,28 @@
         1px solid
         var(--line);
 
-      background:
-        var(--line);
+      background:var(--line);
     }
 
 
-    .skill-card{
+    .skill-card {
       min-height:210px;
 
       padding:23px;
 
-      background:
-        var(--bg);
+      background:var(--bg);
     }
 
 
-    .skill-card:hover{
-      background:
-        var(--card);
+    .skill-card:hover {
+      background:var(--card);
     }
 
 
-    .skill-card h3{
+    .skill-card h3 {
       margin-bottom:11px;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:1.3rem;
 
@@ -3767,9 +3574,8 @@
     }
 
 
-    .skill-card p{
-      color:
-        var(--dim);
+    .skill-card p {
+      color:var(--dim);
 
       font-size:.7rem;
 
@@ -3778,11 +3584,9 @@
 
 
 
-    /* =========================================================
-       CONTACT
-    ========================================================= */
+    /* CONTACT */
 
-    .contact{
+    .contact {
       padding:
         95px
         var(--pad);
@@ -3793,12 +3597,10 @@
     }
 
 
-    .contact h2{
+    .contact h2 {
       max-width:980px;
 
-      font-family:
-        "Fraunces",
-        serif;
+      font-family:"Fraunces",serif;
 
       font-size:
         clamp(
@@ -3811,26 +3613,23 @@
 
       line-height:.97;
 
-      letter-spacing:
-        -.04em;
+      letter-spacing:-.04em;
     }
 
 
-    .contact > p{
+    .contact > p {
       max-width:580px;
 
       margin-top:23px;
 
-      color:
-        var(--dim);
+      color:var(--dim);
 
       line-height:1.65;
     }
 
 
-    .contact-actions{
+    .contact-actions {
       display:flex;
-
       flex-wrap:wrap;
 
       gap:8px;
@@ -3839,15 +3638,14 @@
     }
 
 
-    .contact-actions a{
+    .contact-actions a {
       min-height:42px;
 
       display:flex;
 
       align-items:center;
 
-      padding:
-        0 15px;
+      padding:0 15px;
 
       border:
         1px solid
@@ -3859,38 +3657,26 @@
     }
 
 
-    .contact-actions
-    a.primary{
-      background:
-        var(--ink);
-
-      color:
-        var(--bg);
+    .contact-actions a.primary {
+      background:var(--ink);
+      color:var(--bg);
     }
 
 
-    .contact-actions
-    a:hover{
-      border-color:
-        var(--accent);
-
-      background:
-        var(--accent);
-
+    .contact-actions a:hover {
+      border-color:var(--accent);
+      background:var(--accent);
       color:white;
     }
 
 
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+    /* FOOTER */
 
-    footer{
+    footer {
       display:flex;
 
-      justify-content:
-        space-between;
+      justify-content:space-between;
 
       gap:20px;
 
@@ -3903,19 +3689,16 @@
         1px solid
         var(--line);
 
-      color:
-        var(--muted);
+      color:var(--muted);
 
       font-size:.46rem;
     }
 
 
 
-    /* =========================================================
-       LIGHTBOX
-    ========================================================= */
+    /* LIGHTBOX */
 
-    .lightbox{
+    .lightbox {
       position:fixed;
 
       inset:0;
@@ -3925,36 +3708,28 @@
       display:none;
 
       align-items:center;
-
       justify-content:center;
 
       padding:34px;
 
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          .92
-        );
+      background:rgba(0,0,0,.92);
     }
 
 
-    .lightbox.open{
+    .lightbox.open {
       display:flex;
     }
 
 
-    .lightbox img{
+    .lightbox img {
       max-width:94vw;
-
       max-height:87vh;
 
       object-fit:contain;
     }
 
 
-    .lightbox-close{
+    .lightbox-close {
       position:absolute;
 
       top:17px;
@@ -3977,16 +3752,15 @@
        RESPONSIVE
     ========================================================= */
 
-    @media(max-width:1050px){
+    @media(max-width:1050px) {
 
-      :root{
+      :root {
         --pad:28px;
       }
 
 
-      .hero{
-        grid-template-columns:
-          1fr;
+      .hero {
+        grid-template-columns:1fr;
 
         min-height:auto;
 
@@ -3994,95 +3768,127 @@
       }
 
 
-      .hero-text{
+      .hero-text {
         max-width:780px;
       }
 
 
-      .hero-visual{
+      .hero-visual {
         width:100%;
-
         max-width:590px;
 
-        margin:
-          20px auto 0;
+        margin:20px auto 0;
       }
 
 
-      .about{
-        grid-template-columns:
-          1fr;
+      .about {
+        grid-template-columns:1fr;
       }
 
 
-      .case-grid{
-        grid-template-columns:
-          1fr 1fr;
+      .case-grid {
+        grid-template-columns:1fr 1fr;
       }
 
 
-      .fa-story{
-        grid-template-columns:
-          1fr;
+      .fa-story {
+        grid-template-columns:1fr;
       }
 
 
-      .skill-grid{
-        grid-template-columns:
-          1fr 1fr;
+      .skill-grid {
+        grid-template-columns:1fr 1fr;
       }
-
     }
 
 
 
-    @media(max-width:760px){
+    @media(max-width:760px) {
 
-      :root{
+      :root {
         --pad:20px;
       }
 
 
-      .intro-title{
+      .intro-title {
+        grid-template-columns:1fr;
+
+        justify-items:center;
+
+        row-gap:.08em;
+
+        width:100%;
+
         font-size:
           clamp(
-            2.3rem,
-            10vw,
-            3.8rem
+            2.7rem,
+            12vw,
+            4.4rem
           );
 
-        gap:.15em;
+        text-align:center;
+
+        white-space:normal;
       }
 
 
-      .intro-word-cycle{
-        width:5.2em;
-
-        flex-basis:5.2em;
+      .intro-word-cycle {
+        width:5.3em;
       }
 
 
-      .site-nav{
+      .intro-word-cycle .w {
+        left:50%;
+
+        transform:
+          translate3d(
+            -50%,
+            110%,
+            0
+          );
+      }
+
+
+      .intro-word-cycle .w.active {
+        transform:
+          translate3d(
+            -50%,
+            0,
+            0
+          );
+      }
+
+
+      .intro-word-cycle .w.exit {
+        transform:
+          translate3d(
+            -50%,
+            -110%,
+            0
+          );
+      }
+
+
+      .site-nav {
         display:flex;
 
-        justify-content:
-          space-between;
+        justify-content:space-between;
 
         min-height:66px;
       }
 
 
-      .site-nav ul{
+      .site-nav ul {
         display:none;
       }
 
 
-      .theme-toggle{
+      .theme-toggle {
         display:none;
       }
 
 
-      .hero{
+      .hero {
         min-height:auto;
 
         padding-top:48px;
@@ -4090,7 +3896,7 @@
       }
 
 
-      .hero h1{
+      .hero h1 {
         font-size:
           clamp(
             3rem,
@@ -4100,14 +3906,13 @@
       }
 
 
-      .hero-eyebrow{
+      .hero-eyebrow {
         max-width:330px;
-
         line-height:1.55;
       }
 
 
-      .hero-actions{
+      .hero-actions {
         align-items:flex-start;
 
         flex-direction:column;
@@ -4116,52 +3921,51 @@
       }
 
 
-      .hero-visual{
+      .hero-visual {
         order:2;
 
         margin-top:20px;
       }
 
 
-      .wf-wrapper{
+      .wf-wrapper {
         width:100%;
 
         min-height:400px;
       }
 
 
-      .wf-window{
+      .wf-window {
         width:100%;
       }
 
 
-      .pen-tool-svg{
+      .pen-tool-svg {
         left:-3px;
       }
 
 
-      .badge-floater{
+      .badge-floater {
         right:3px;
       }
 
 
-      .cursor-floater{
+      .cursor-floater {
         right:0;
       }
 
 
-      .spec-floater{
+      .spec-floater {
         display:none;
       }
 
 
-      .process-grid{
-        grid-template-columns:
-          1fr;
+      .process-grid {
+        grid-template-columns:1fr;
       }
 
 
-      .about-owner h3{
+      .about-owner h3 {
         font-size:
           clamp(
             3.4rem,
@@ -4171,23 +3975,22 @@
       }
 
 
-      .about-visual{
+      .about-visual {
         min-height:370px;
       }
 
 
-      .case-grid{
-        grid-template-columns:
-          1fr;
+      .case-grid {
+        grid-template-columns:1fr;
       }
 
 
-      .project-head{
+      .project-head {
         padding-top:58px;
       }
 
 
-      .project-head > h3{
+      .project-head > h3 {
         font-size:
           clamp(
             2.9rem,
@@ -4197,7 +4000,7 @@
       }
 
 
-      .fa-tabs{
+      .fa-tabs {
         margin-left:
           calc(
             var(--pad) *
@@ -4218,13 +4021,12 @@
 
 
       .fa-result-strip,
-      .fa-responsive-notes{
-        grid-template-columns:
-          1fr;
+      .fa-responsive-notes {
+        grid-template-columns:1fr;
       }
 
 
-      .fa-result-item{
+      .fa-result-item {
         border-right:0;
 
         border-bottom:
@@ -4233,12 +4035,12 @@
       }
 
 
-      .system-layout{
+      .system-layout {
         display:block;
       }
 
 
-      .system-sidebar{
+      .system-sidebar {
         display:flex;
 
         gap:4px;
@@ -4247,12 +4049,12 @@
       }
 
 
-      .system-sidebar > span{
+      .system-sidebar > span {
         display:none;
       }
 
 
-      .system-nav-btn{
+      .system-nav-btn {
         width:auto;
 
         flex:0 0 auto;
@@ -4261,63 +4063,56 @@
       }
 
 
-      .fa-color-grid{
-        grid-template-columns:
-          1fr 1fr;
+      .fa-color-grid {
+        grid-template-columns:1fr 1fr;
       }
 
 
       .fa-type-demo,
-      .component-grid{
-        grid-template-columns:
-          1fr;
+      .component-grid {
+        grid-template-columns:1fr;
       }
 
 
-      .fa-responsive-showcase{
-        grid-template-columns:
-          1fr;
+      .fa-responsive-showcase {
+        grid-template-columns:1fr;
 
         padding:15px;
       }
 
 
-      .fa-device-mobile{
+      .fa-device-mobile {
         width:245px;
       }
 
 
-      .figma-frame{
+      .figma-frame {
         min-height:500px;
-
         height:65vh;
       }
 
 
-      .voit-overview{
-        grid-template-columns:
-          1fr;
+      .voit-overview {
+        grid-template-columns:1fr;
       }
 
 
-      .voit-core{
+      .voit-core {
         margin:auto;
       }
 
 
-      .voit-social{
-        grid-template-columns:
-          1fr 1fr;
+      .voit-social {
+        grid-template-columns:1fr 1fr;
       }
 
 
-      .deck-body{
-        grid-template-columns:
-          1fr;
+      .deck-body {
+        grid-template-columns:1fr;
       }
 
 
-      .deck-side{
+      .deck-side {
         display:flex;
 
         gap:6px;
@@ -4326,81 +4121,52 @@
 
         border-left:0;
 
-        border-top:
-          1px solid
-          #333;
+        border-top:1px solid #333;
       }
 
 
-      .deck-thumb{
-        flex:
-          0 0 100px;
+      .deck-thumb {
+        flex:0 0 100px;
       }
 
 
       .editorial-layout,
-      .brand-layout{
-        grid-template-columns:
-          1fr;
+      .brand-layout {
+        grid-template-columns:1fr;
       }
 
 
-      .editorial-ribbon{
-        grid-template-columns:
-          1fr 1fr;
+      .editorial-ribbon {
+        grid-template-columns:1fr 1fr;
       }
 
 
-      .brand-grid{
-        grid-template-columns:
-          1fr 1fr;
+      .brand-grid {
+        grid-template-columns:1fr 1fr;
       }
 
 
-      .skill-grid{
-        grid-template-columns:
-          1fr;
+      .skill-grid {
+        grid-template-columns:1fr;
       }
 
 
-      footer{
+      footer {
         flex-direction:column;
       }
-
     }
 
 
 
-    @media(max-width:520px){
+    @media(max-width:520px) {
 
-      .intro-title{
-        flex-wrap:wrap;
-
-        line-height:1.05;
-      }
-
-
-      .intro-fixed{
-        flex-basis:auto;
-      }
-
-
-      .intro-word-cycle{
-        width:5.2em;
-
-        flex:
-          0 0 5.2em;
-      }
-
-
-      .wf-wrapper{
+      .wf-wrapper {
         min-height:380px;
       }
 
 
-      .wf-sidebar{
+      .wf-sidebar {
         width:91px;
-
         flex-basis:91px;
 
         padding:
@@ -4408,7 +4174,7 @@
       }
 
 
-      .wf-nav-item{
+      .wf-nav-item {
         gap:5px;
 
         padding:
@@ -4418,17 +4184,17 @@
       }
 
 
-      .wf-main{
+      .wf-main {
         padding:10px;
       }
 
 
-      .wf-title{
+      .wf-title {
         font-size:.58rem;
       }
 
 
-      .wf-badge-btn{
+      .wf-badge-btn {
         padding:
           5px 6px;
 
@@ -4436,78 +4202,68 @@
       }
 
 
-      .wf-card{
+      .wf-card {
         padding:7px;
       }
 
 
-      .wf-task-item{
+      .wf-task-item {
         font-size:.42rem;
       }
 
 
-      .wf-palette{
+      .wf-palette {
         gap:5px;
       }
 
 
-      .swatch{
+      .swatch {
         width:22px;
         height:22px;
       }
 
 
-      .clear-btn{
+      .clear-btn {
         font-size:.42rem;
       }
 
 
-      .hero-visual-hint{
+      .hero-visual-hint {
         font-size:.43rem;
       }
 
 
-      .fa-color-grid{
-        grid-template-columns:
-          1fr;
+      .fa-color-grid {
+        grid-template-columns:1fr;
       }
 
 
-      .fa-device-mobile{
+      .fa-device-mobile {
         width:210px;
       }
 
 
-      .fa-phone-screen iframe{
-        transform:
-          scale(.497);
+      .fa-phone-screen iframe {
+        transform:scale(.497);
       }
-
     }
 
 
 
-    @media(
-      prefers-reduced-motion:
-      reduce
-    ){
+    @media(prefers-reduced-motion:reduce) {
 
       *,
       *::before,
-      *::after{
+      *::after {
         animation:none !important;
 
-        transition-duration:
-          .01ms !important;
+        transition-duration:.01ms !important;
 
-        scroll-behavior:
-          auto !important;
+        scroll-behavior:auto !important;
       }
-
     }
 
   </style>
-
 </head>
 
 
@@ -4530,6 +4286,7 @@
         Design com
       </span>
 
+
       <span
         class="intro-word-cycle"
         id="introWordCycle"
@@ -4539,9 +4296,11 @@
           clareza.
         </span>
 
+
         <span class="w">
           estrutura.
         </span>
+
 
         <span class="w">
           detalhes.
@@ -4586,9 +4345,11 @@
         class="theme-toggle mono"
         aria-label="Alternar tema"
       >
+
         <span id="themeLabel">
           Sombrio
         </span>
+
       </button>
 
     </div>
@@ -4637,8 +4398,6 @@
 
     <section class="hero">
 
-
-      <!-- TEXTO -->
 
       <div class="hero-text">
 
@@ -4704,15 +4463,13 @@
 
 
       <!-- ===================================================
-           WIREFRAME INTERATIVO
+           WIREFRAME
       ==================================================== -->
 
       <div class="hero-visual">
 
         <div class="wf-wrapper">
 
-
-          <!-- PEN TOOL -->
 
           <svg
             class="wf-illustration pen-tool-svg"
@@ -4768,9 +4525,7 @@
 
           <div class="wf-illustration badge-floater">
 
-            <span>
-              ❖
-            </span>
+            <span>❖</span>
 
             auto-layout 8px
 
@@ -4779,13 +4534,7 @@
 
 
           <div class="wf-illustration spec-floater">
-
-            <span>
-              ↔
-            </span>
-
-            380px × 260px
-
+            ↔ 380px × 260px
           </div>
 
 
@@ -4798,9 +4547,7 @@
               viewBox="0 0 24 24"
               fill="currentColor"
             >
-              <path
-                d="M3 3l7 18 3-7 7-3L3 3z"
-              />
+              <path d="M3 3l7 18 3-7 7-3L3 3z"/>
             </svg>
 
             <span>
@@ -4811,23 +4558,17 @@
 
 
 
-          <!-- APP -->
-
           <div
             class="wf-window"
             id="wfWindow"
           >
 
-
             <div class="wf-header">
-
 
               <div class="wf-dots">
 
                 <div class="wf-dot"></div>
-
                 <div class="wf-dot"></div>
-
                 <div class="wf-dot"></div>
 
               </div>
@@ -4852,18 +4593,11 @@
 
               <div class="wf-sidebar">
 
-
                 <div
                   class="wf-nav-item active wf-paintable"
                   data-tab="dashboard"
                 >
-
-                  <span>
-                    ▧
-                  </span>
-
-                  Dashboard
-
+                  ▧ Dashboard
                 </div>
 
 
@@ -4871,13 +4605,7 @@
                   class="wf-nav-item wf-paintable"
                   data-tab="interfaces"
                 >
-
-                  <span>
-                    ✦
-                  </span>
-
-                  Interfaces
-
+                  ✦ Interfaces
                 </div>
 
 
@@ -4885,13 +4613,7 @@
                   class="wf-nav-item wf-paintable"
                   data-tab="system"
                 >
-
-                  <span>
-                    ❖
-                  </span>
-
-                  Design System
-
+                  ❖ Design System
                 </div>
 
               </div>
@@ -4909,7 +4631,6 @@
                   class="wf-view active"
                   id="wf-dashboard"
                 >
-
 
                   <div class="wf-top-bar">
 
@@ -4932,12 +4653,12 @@
 
                   <div class="wf-card-grid">
 
-
                     <div class="wf-card wf-paintable">
 
                       <span class="wf-card-label mono">
                         Entregas
                       </span>
+
 
                       <span
                         class="wf-card-val"
@@ -4949,12 +4670,12 @@
                     </div>
 
 
-
                     <div class="wf-card wf-paintable">
 
                       <span class="wf-card-label mono">
                         Status
                       </span>
+
 
                       <span
                         class="wf-card-val"
@@ -4970,7 +4691,6 @@
 
 
                   <div class="wf-task-list">
-
 
                     <div class="wf-task-item checked">
 
@@ -5023,15 +4743,14 @@
                   id="wf-interfaces"
                 >
 
-
                   <div class="wf-top-bar">
 
                     <span class="wf-title">
-                      Wireframes
+                      Prototipagem de Wireframes
                     </span>
 
 
-                    <span class="wf-card-label mono">
+                    <span class="wf-version">
                       12 cols
                     </span>
 
@@ -5039,47 +4758,52 @@
 
 
 
-                  <div class="wf-card wf-paintable">
+                  <div class="wf-wireframe-main wf-paintable">
 
-                    <span class="wf-card-label mono">
-                      Hero / Desktop
-                    </span>
+                    <div class="wf-wireframe-header">
+                      Header Bar Navigation
+                    </div>
 
-                    <strong style="font-size:.7rem">
-                      UI responsiva
-                    </strong>
+
+                    <div class="wf-wireframe-row">
+
+                      <strong>
+                        Hero Card
+                      </strong>
+
+                      <span>
+                        Widget
+                      </span>
+
+                    </div>
 
                   </div>
 
 
 
-                  <div
-                    class="wf-card-grid"
-                    style="margin-top:8px"
-                  >
+                  <div class="wf-interface-grid">
 
+                    <div class="wf-interface-component wf-paintable">
 
-                    <div class="wf-card wf-paintable">
-
-                      <span class="wf-card-label mono">
-                        Button
+                      <span>
+                        Componente A
                       </span>
 
-                      <strong style="font-size:.6rem">
-                        Primary
+                      <strong>
+                        Layout Responsivo
                       </strong>
 
                     </div>
 
 
-                    <div class="wf-card wf-paintable">
+                    <div class="wf-interface-component wf-paintable">
 
-                      <span class="wf-card-label mono">
-                        Card
+                      <span>
+                        Componente B
                       </span>
 
-                      <strong style="font-size:.6rem">
-                        Content
+                      <strong>
+                        Auto-layout Figma
                       </strong>
 
                     </div>
@@ -5090,62 +4814,75 @@
 
 
 
-                <!-- SYSTEM -->
+                <!-- DESIGN SYSTEM -->
 
                 <div
                   class="wf-view"
                   id="wf-system"
                 >
 
-
                   <div class="wf-top-bar">
 
                     <span class="wf-title">
-                      Biblioteca
+                      Biblioteca de Tokens
                     </span>
 
 
-                    <span class="wf-card-label mono">
-                      UI Kit
+                    <span class="wf-version">
+                      v2.4
                     </span>
 
                   </div>
 
 
-
-                  <button
-                    type="button"
-                    class="wf-badge-btn wf-paintable"
-                  >
-                    Primary
-                  </button>
+                  <div class="wf-system-label">
+                    Estados de Botão
+                  </div>
 
 
+                  <div class="wf-system-buttons">
 
-                  <div
-                    class="wf-card wf-paintable"
-                    style="margin-top:9px"
-                  >
+                    <button
+                      type="button"
+                      class="wf-token-btn wf-paintable"
+                    >
+                      Primary
+                    </button>
 
-                    <span class="wf-card-label mono">
-                      Typography
+
+                    <button
+                      type="button"
+                      class="wf-token-btn wf-paintable"
+                    >
+                      Secondary
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="wf-token-link"
+                    >
+                      Hover
+                    </button>
+
+                  </div>
+
+
+                  <div class="wf-system-label">
+                    Tipografia & Escala
+                  </div>
+
+
+                  <div class="wf-type-token wf-paintable">
+
+                    <strong>
+                      Fraunces Serif 400
+                    </strong>
+
+
+                    <span>
+                      IBM Plex Mono 12px / 1.4
                     </span>
-
-
-                    <div class="wf-system-type">
-
-                      <span class="serif">
-                        Fraunces
-                      </span>
-
-                      <span
-                        class="mono"
-                        style="font-size:.52rem"
-                      >
-                        IBM Plex Mono
-                      </span>
-
-                    </div>
 
                   </div>
 
@@ -5154,9 +4891,7 @@
 
               </div>
 
-
             </div>
-
 
           </div>
 
@@ -5165,7 +4900,6 @@
           <!-- PALETA -->
 
           <div class="wf-palette">
-
 
             <button
               type="button"
@@ -5208,7 +4942,7 @@
               class="swatch"
               data-color="#1F1C18"
               style="background:#1F1C18"
-              aria-label="Escuro"
+              aria-label="Preto"
             ></button>
 
 
@@ -5216,7 +4950,7 @@
               type="button"
               class="swatch reset"
               data-color=""
-              aria-label="Borracha"
+              aria-label="Apagar cor"
             >
               ×
             </button>
@@ -5236,7 +4970,6 @@
           <div class="hero-visual-hint mono">
             escolha uma cor e clique nos componentes para explorar a interface
           </div>
-
 
         </div>
 
@@ -5444,7 +5177,7 @@
 
 
     <!-- =====================================================
-         PROJECTS
+         PROJETOS
     ====================================================== -->
 
     <div
@@ -5575,15 +5308,10 @@
         <div class="project-meta">
 
           <span>Figma</span>
-
           <span>UI Design</span>
-
           <span>Design System</span>
-
           <span>Responsive</span>
-
           <span>Prototype</span>
-
           <span>Front-end</span>
 
         </div>
@@ -5653,8 +5381,6 @@
 
 
 
-        <!-- CASE -->
-
         <section
           class="fa-view active"
           data-fa-view="story"
@@ -5686,15 +5412,11 @@
 
                 <div>
 
-                  <span>
-                    01
-                  </span>
+                  <span>01</span>
 
                   <section>
 
-                    <strong>
-                      Hero
-                    </strong>
+                    <strong>Hero</strong>
 
                     <p>
                       Proposta de valor direta, vídeo
@@ -5708,15 +5430,11 @@
 
                 <div>
 
-                  <span>
-                    02
-                  </span>
+                  <span>02</span>
 
                   <section>
 
-                    <strong>
-                      Serviços
-                    </strong>
+                    <strong>Serviços</strong>
 
                     <p>
                       Oito especialidades organizadas
@@ -5730,15 +5448,11 @@
 
                 <div>
 
-                  <span>
-                    03
-                  </span>
+                  <span>03</span>
 
                   <section>
 
-                    <strong>
-                      Processo
-                    </strong>
+                    <strong>Processo</strong>
 
                     <p>
                       Jornada visual acompanhando
@@ -5752,15 +5466,11 @@
 
                 <div>
 
-                  <span>
-                    04
-                  </span>
+                  <span>04</span>
 
                   <section>
 
-                    <strong>
-                      Projetos
-                    </strong>
+                    <strong>Projetos</strong>
 
                     <p>
                       Cards organizados por filtros,
@@ -5774,15 +5484,11 @@
 
                 <div>
 
-                  <span>
-                    05
-                  </span>
+                  <span>05</span>
 
                   <section>
 
-                    <strong>
-                      Mobile
-                    </strong>
+                    <strong>Mobile</strong>
 
                     <p>
                       Decisões próprias para
@@ -5804,11 +5510,9 @@
               <div class="browser-bar">
 
                 <div class="browser-dots">
-
                   <i></i>
                   <i></i>
                   <i></i>
-
                 </div>
 
 
@@ -5856,9 +5560,7 @@
 
             <article class="fa-result-item">
 
-              <span>
-                STATUS
-              </span>
+              <span>STATUS</span>
 
               <strong>
                 Produto publicado
@@ -5874,9 +5576,7 @@
 
             <article class="fa-result-item">
 
-              <span>
-                EXPERIÊNCIA
-              </span>
+              <span>EXPERIÊNCIA</span>
 
               <strong>
                 Desktop + Mobile
@@ -5892,9 +5592,7 @@
 
             <article class="fa-result-item">
 
-              <span>
-                SISTEMA
-              </span>
+              <span>SISTEMA</span>
 
               <strong>
                 Light + Dark
@@ -5913,8 +5611,6 @@
 
 
 
-        <!-- BEFORE -->
-
         <section
           class="fa-view"
           data-fa-view="before"
@@ -5925,11 +5621,9 @@
             <div class="browser-bar">
 
               <div class="browser-dots">
-
                 <i></i>
                 <i></i>
                 <i></i>
-
               </div>
 
 
@@ -5973,8 +5667,6 @@
 
 
 
-        <!-- LIVE -->
-
         <section
           class="fa-view"
           data-fa-view="live"
@@ -5985,11 +5677,9 @@
             <div class="browser-bar">
 
               <div class="browser-dots">
-
                 <i></i>
                 <i></i>
                 <i></i>
-
               </div>
 
 
@@ -6032,8 +5722,6 @@
         </section>
 
 
-
-        <!-- DESIGN SYSTEM -->
 
         <section
           class="fa-view"
@@ -6094,67 +5782,32 @@
                 <div class="fa-color-grid">
 
                   <div class="fa-color navy">
-
-                    <strong>
-                      Primary
-                    </strong>
-
-                    <span>
-                      #00152A
-                    </span>
-
+                    <strong>Primary</strong>
+                    <span>#00152A</span>
                   </div>
 
 
                   <div class="fa-color gold">
-
-                    <strong>
-                      Secondary
-                    </strong>
-
-                    <span>
-                      #B8860B
-                    </span>
-
+                    <strong>Secondary</strong>
+                    <span>#B8860B</span>
                   </div>
 
 
                   <div class="fa-color slate">
-
-                    <strong>
-                      Slate
-                    </strong>
-
-                    <span>
-                      #64748B
-                    </span>
-
+                    <strong>Slate</strong>
+                    <span>#64748B</span>
                   </div>
 
 
                   <div class="fa-color light">
-
-                    <strong>
-                      Background
-                    </strong>
-
-                    <span>
-                      #F4F6F8
-                    </span>
-
+                    <strong>Background</strong>
+                    <span>#F4F6F8</span>
                   </div>
 
 
                   <div class="fa-color white">
-
-                    <strong>
-                      Surface
-                    </strong>
-
-                    <span>
-                      #FFFFFF
-                    </span>
-
+                    <strong>Surface</strong>
+                    <span>#FFFFFF</span>
                   </div>
 
                 </div>
@@ -6169,9 +5822,7 @@
                       DISPLAY / MANROPE
                     </span>
 
-                    <strong>
-                      Aa
-                    </strong>
+                    <strong>Aa</strong>
 
                     <p>
                       Projetos elétricos para
@@ -6187,9 +5838,7 @@
                       BODY / DM SANS
                     </span>
 
-                    <strong>
-                      Aa
-                    </strong>
+                    <strong>Aa</strong>
 
                     <p>
                       Legibilidade para informações
@@ -6220,13 +5869,8 @@
 
                     <div class="component-label mono">
 
-                      <span>
-                        Button
-                      </span>
-
-                      <span>
-                        Variable
-                      </span>
+                      <span>Button</span>
+                      <span>Variable</span>
 
                     </div>
 
@@ -6288,13 +5932,8 @@
 
                     <div class="component-label mono">
 
-                      <span>
-                        Theme
-                      </span>
-
-                      <span>
-                        Light / Dark
-                      </span>
+                      <span>Theme</span>
+                      <span>Light / Dark</span>
 
                     </div>
 
@@ -6405,21 +6044,10 @@
                         "
                       >
 
-                        <span>
-                          Serviços
-                        </span>
-
-                        <span>
-                          Processo
-                        </span>
-
-                        <span>
-                          Portfólio
-                        </span>
-
-                        <span>
-                          Sobre
-                        </span>
+                        <span>Serviços</span>
+                        <span>Processo</span>
+                        <span>Portfólio</span>
+                        <span>Sobre</span>
 
                       </div>
 
@@ -6439,8 +6067,6 @@
 
 
 
-        <!-- RESPONSIVE -->
-
         <section
           class="fa-view"
           data-fa-view="responsive"
@@ -6453,11 +6079,9 @@
               <div class="browser-bar">
 
                 <div class="browser-dots">
-
                   <i></i>
                   <i></i>
                   <i></i>
-
                 </div>
 
 
@@ -6582,8 +6206,6 @@
 
 
 
-        <!-- FIGMA -->
-
         <section
           class="fa-view"
           data-fa-view="prototype"
@@ -6676,21 +6298,10 @@
 
         <div class="project-meta">
 
-          <span>
-            Social Media
-          </span>
-
-          <span>
-            Copywriting
-          </span>
-
-          <span>
-            Adobe
-          </span>
-
-          <span>
-            Canva
-          </span>
+          <span>Social Media</span>
+          <span>Copywriting</span>
+          <span>Adobe</span>
+          <span>Canva</span>
 
         </div>
 
@@ -6741,13 +6352,9 @@
 
               <article class="voit-domain">
 
-                <span>
-                  CONTEÚDO
-                </span>
+                <span>CONTEÚDO</span>
 
-                <h4>
-                  Social Media
-                </h4>
+                <h4>Social Media</h4>
 
                 <p>
                   Conteúdos e peças adaptados
@@ -6759,13 +6366,9 @@
 
               <article class="voit-domain">
 
-                <span>
-                  COMERCIAL
-                </span>
+                <span>COMERCIAL</span>
 
-                <h4>
-                  Apresentações
-                </h4>
+                <h4>Apresentações</h4>
 
                 <p>
                   Materiais de apoio a reuniões,
@@ -6777,13 +6380,9 @@
 
               <article class="voit-domain">
 
-                <span>
-                  INTERNO
-                </span>
+                <span>INTERNO</span>
 
-                <h4>
-                  Endomarketing
-                </h4>
+                <h4>Endomarketing</h4>
 
                 <p>
                   Campanhas e materiais
@@ -6795,13 +6394,9 @@
 
               <article class="voit-domain">
 
-                <span>
-                  SISTEMA
-                </span>
+                <span>SISTEMA</span>
 
-                <h4>
-                  Consistência
-                </h4>
+                <h4>Consistência</h4>
 
                 <p>
                   Unidade visual entre
@@ -6823,10 +6418,7 @@
 
             <div class="voit-social">
 
-              <button
-                class="voit-piece"
-                type="button"
-              >
+              <button class="voit-piece" type="button">
 
                 <img
                   class="js-lightbox"
@@ -6838,10 +6430,7 @@
               </button>
 
 
-              <button
-                class="voit-piece"
-                type="button"
-              >
+              <button class="voit-piece" type="button">
 
                 <img
                   class="js-lightbox"
@@ -6853,10 +6442,7 @@
               </button>
 
 
-              <button
-                class="voit-piece"
-                type="button"
-              >
+              <button class="voit-piece" type="button">
 
                 <img
                   class="js-lightbox"
@@ -6868,10 +6454,7 @@
               </button>
 
 
-              <button
-                class="voit-piece"
-                type="button"
-              >
+              <button class="voit-piece" type="button">
 
                 <img
                   class="js-lightbox"
@@ -7052,12 +6635,10 @@
                 type="button"
                 data-index="0"
               >
-
                 <img
                   src="img/img-braduca/braduca-01.jpeg"
                   alt="Somos Braduca 01"
                 >
-
               </button>
 
 
@@ -7066,12 +6647,10 @@
                 type="button"
                 data-index="1"
               >
-
                 <img
                   src="img/img-braduca/braduca-02.jpeg"
                   alt="Somos Braduca 02"
                 >
-
               </button>
 
 
@@ -7080,12 +6659,10 @@
                 type="button"
                 data-index="2"
               >
-
                 <img
                   src="img/img-braduca/braduca-03.jpeg"
                   alt="Somos Braduca 03"
                 >
-
               </button>
 
 
@@ -7094,12 +6671,10 @@
                 type="button"
                 data-index="3"
               >
-
                 <img
                   src="img/img-braduca/braduca-04.jpeg"
                   alt="Somos Braduca 04"
                 >
-
               </button>
 
 
@@ -7108,12 +6683,10 @@
                 type="button"
                 data-index="4"
               >
-
                 <img
                   src="img/img-braduca/braduca-05.jpeg"
                   alt="Somos Braduca 05"
                 >
-
               </button>
 
 
@@ -7122,12 +6695,10 @@
                 type="button"
                 data-index="5"
               >
-
                 <img
                   src="img/img-braduca/braduca-06.jpeg"
                   alt="Somos Braduca 06"
                 >
-
               </button>
 
 
@@ -7136,12 +6707,10 @@
                 type="button"
                 data-index="6"
               >
-
                 <img
                   src="img/img-braduca/braduca-07.jpeg"
                   alt="Somos Braduca 07"
                 >
-
               </button>
 
             </div>
@@ -7485,9 +7054,7 @@
 
 
 
-  <!-- =======================================================
-       LIGHTBOX
-  ======================================================== -->
+  <!-- LIGHTBOX -->
 
   <div
     class="lightbox"
@@ -7522,7 +7089,6 @@
     (() => {
 
       "use strict";
-
 
 
       /* =====================================================
@@ -7572,7 +7138,7 @@
 
       function showIntroWord(
         index
-      ){
+      ) {
 
         introWords.forEach(
           (
@@ -7588,23 +7154,19 @@
 
             if(
               current < index
-            ){
-
+            ) {
               word.classList.add(
                 "exit"
               );
-
             }
 
 
             if(
               current === index
-            ){
-
+            ) {
               word.classList.add(
                 "active"
               );
-
             }
 
           }
@@ -7613,12 +7175,12 @@
       }
 
 
-      function closeIntro(){
+      function closeIntro() {
 
         if(
           !intro ||
           introClosed
-        ){
+        ) {
           return;
         }
 
@@ -7664,9 +7226,9 @@
       }
 
 
-      function startIntro(){
+      function startIntro() {
 
-        if(!intro){
+        if(!intro) {
           return;
         }
 
@@ -7675,17 +7237,6 @@
           0
         );
 
-
-        /*
-          Clareza aparece primeiro.
-          Depois estrutura.
-          Depois detalhes.
-          Em seguida a hero entra.
-
-          O espaço da palavra permanece
-          fixo durante a animação,
-          então a frase não "anda".
-        */
 
         introTimers.push(
           setTimeout(
@@ -7712,7 +7263,7 @@
         introTimers.push(
           setTimeout(
             closeIntro,
-            2260
+            2350
           )
         );
 
@@ -7730,20 +7281,15 @@
         event => {
 
           if(
-            document.body
-              .classList
-              .contains(
-                "intro-active"
-              ) &&
+            document.body.classList.contains(
+              "intro-active"
+            ) &&
             (
-              event.key ===
-                "Escape" ||
-              event.key ===
-                "Enter" ||
-              event.key ===
-                " "
+              event.key === "Escape" ||
+              event.key === "Enter" ||
+              event.key === " "
             )
-          ){
+          ) {
 
             event.preventDefault();
 
@@ -7779,18 +7325,17 @@
 
       function applyTheme(
         theme
-      ){
+      ) {
 
         if(
           theme ===
           "dark"
-        ){
+        ) {
 
-          document.documentElement
-            .setAttribute(
-              "data-theme",
-              "dark"
-            );
+          document.documentElement.setAttribute(
+            "data-theme",
+            "dark"
+          );
 
 
           themeLabel.textContent =
@@ -7798,10 +7343,9 @@
 
         } else {
 
-          document.documentElement
-            .removeAttribute(
-              "data-theme"
-            );
+          document.documentElement.removeAttribute(
+            "data-theme"
+          );
 
 
           themeLabel.textContent =
@@ -7820,64 +7364,61 @@
       );
 
 
-      themeToggle
-        ?.addEventListener(
-          "click",
-          () => {
+      themeToggle?.addEventListener(
+        "click",
+        () => {
 
-            const current =
-              document.documentElement
-                .getAttribute(
-                  "data-theme"
-                );
-
-
-            const next =
-              current ===
-                "dark"
-                ? "light"
-                : "dark";
-
-
-            localStorage.setItem(
-              "raquel-theme",
-              next
+          const current =
+            document.documentElement.getAttribute(
+              "data-theme"
             );
 
 
-            applyTheme(
-              next
-            );
+          const next =
+            current ===
+              "dark"
+              ? "light"
+              : "dark";
 
-          }
-        );
+
+          localStorage.setItem(
+            "raquel-theme",
+            next
+          );
+
+
+          applyTheme(
+            next
+          );
+
+        }
+      );
 
 
 
       /* =====================================================
-         LOGO → TOP
+         LOGO
       ====================================================== */
 
-      $("#logoHome")
-        ?.addEventListener(
-          "click",
-          event => {
+      $("#logoHome")?.addEventListener(
+        "click",
+        event => {
 
-            event.preventDefault();
+          event.preventDefault();
 
 
-            window.scrollTo({
-              top:0,
-              behavior:"smooth"
-            });
+          window.scrollTo({
+            top:0,
+            behavior:"smooth"
+          });
 
-          }
-        );
+        }
+      );
 
 
 
       /* =====================================================
-         WIREFRAME INTERATIVO
+         WIREFRAME
       ====================================================== */
 
       let selectedColor =
@@ -7888,603 +7429,580 @@
         $("#wfWindow");
 
 
-      function contrastColor(
+
+      /*
+        WCAG-like luminance.
+
+        Diferente da versão anterior,
+        agora convertemos sRGB em luminância linear.
+
+        Isso dá contraste muito mais confiável.
+      */
+
+      function getReadableTextColor(
         hex
-      ){
+      ) {
 
         if(
           !hex ||
-          !hex.startsWith("#") ||
-          hex.length !== 7
-        ){
+          !/^#[0-9A-F]{6}$/i.test(
+            hex
+          )
+        ) {
           return "#FFFFFF";
         }
 
 
-        const value =
-          hex.replace(
-            "#",
-            ""
-          );
-
-
         const r =
           parseInt(
-            value.substring(
-              0,
-              2
+            hex.slice(
+              1,
+              3
             ),
             16
-          );
+          ) /
+          255;
 
 
         const g =
           parseInt(
-            value.substring(
-              2,
-              4
+            hex.slice(
+              3,
+              5
             ),
             16
-          );
+          ) /
+          255;
 
 
         const b =
           parseInt(
-            value.substring(
-              4,
-              6
+            hex.slice(
+              5,
+              7
             ),
             16
-          );
+          ) /
+          255;
+
+
+        const linearize =
+          channel =>
+            channel <=
+              .03928
+              ? channel /
+                12.92
+              : Math.pow(
+                  (
+                    channel +
+                    .055
+                  ) /
+                  1.055,
+                  2.4
+                );
 
 
         const luminance =
-          (
-            r * 299 +
-            g * 587 +
-            b * 114
-          ) /
-          1000;
+          .2126 *
+            linearize(
+              r
+            ) +
+          .7152 *
+            linearize(
+              g
+            ) +
+          .0722 *
+            linearize(
+              b
+            );
 
 
-        return luminance >
-          145
-            ? "#1F1C18"
-            : "#FFFFFF";
+        /*
+          Cores abaixo deste ponto
+          recebem texto branco.
+        */
+
+        return luminance <
+          .48
+            ? "#FFFFFF"
+            : "#1F1C18";
 
       }
 
 
 
-      /* -----------------------------------------------------
-         PALETA
-      ----------------------------------------------------- */
+      function resetPaint(
+        element
+      ) {
 
-      $$(".swatch")
-        .forEach(
-          swatch => {
-
-            swatch.addEventListener(
-              "click",
-              event => {
-
-                event.stopPropagation();
-
-
-                $$(".swatch")
-                  .forEach(
-                    current =>
-                      current
-                        .classList
-                        .remove(
-                          "active"
-                        )
-                  );
-
-
-                swatch
-                  .classList
-                  .add(
-                    "active"
-                  );
-
-
-                selectedColor =
-                  swatch.dataset
-                    .color ||
-                  "";
-
-              }
-            );
-
-          }
+        element.classList.remove(
+          "is-painted"
         );
 
 
-
-      /* -----------------------------------------------------
-         PINTAR COMPONENTES
-      ----------------------------------------------------- */
-
-      wfWindow
-        ?.addEventListener(
-          "click",
-          event => {
-
-            const target =
-              event.target
-                .closest(
-                  ".wf-paintable"
-                );
+        element.style.removeProperty(
+          "background-color"
+        );
 
 
-            if(!target){
-              return;
-            }
+        element.style.removeProperty(
+          "border-color"
+        );
 
 
-            /*
-              Os itens de navegação continuam
-              podendo trocar de tela normalmente.
-              A pintura é aplicada também.
-            */
-
-            if(!selectedColor){
-
-              target.style
-                .backgroundColor =
-                "";
-
-              target.style
-                .borderColor =
-                "";
-
-              target.style
-                .color =
-                "";
+        element.style.removeProperty(
+          "color"
+        );
 
 
-              return;
+        element.style.removeProperty(
+          "--paint-foreground"
+        );
 
-            }
-
-
-            target.style
-              .backgroundColor =
-              selectedColor;
+      }
 
 
-            target.style
-              .borderColor =
-              selectedColor;
+
+      function paintElement(
+        element,
+        color
+      ) {
+
+        if(!color) {
+
+          resetPaint(
+            element
+          );
+
+          return;
+        }
 
 
-            target.style.color =
-              contrastColor(
-                selectedColor
+        const foreground =
+          getReadableTextColor(
+            color
+          );
+
+
+        element.classList.add(
+          "is-painted"
+        );
+
+
+        element.style.backgroundColor =
+          color;
+
+
+        element.style.borderColor =
+          color;
+
+
+        element.style.color =
+          foreground;
+
+
+        element.style.setProperty(
+          "--paint-foreground",
+          foreground
+        );
+
+      }
+
+
+
+      /* PALETA */
+
+      $$(".swatch").forEach(
+        swatch => {
+
+          swatch.addEventListener(
+            "click",
+            event => {
+
+              event.stopPropagation();
+
+
+              $$(".swatch").forEach(
+                current =>
+                  current.classList.remove(
+                    "active"
+                  )
               );
 
-          }
-        );
+
+              swatch.classList.add(
+                "active"
+              );
+
+
+              selectedColor =
+                swatch.dataset.color ||
+                "";
+
+            }
+          );
+
+        }
+      );
 
 
 
-      /* -----------------------------------------------------
-         ABAS DO WIREFRAME
-      ----------------------------------------------------- */
+      /* PINTAR */
 
-      $$(".wf-nav-item")
-        .forEach(
-          item => {
+      wfWindow?.addEventListener(
+        "click",
+        event => {
 
-            item.addEventListener(
-              "click",
-              event => {
-
-                event.stopPropagation();
-
-
-                $$(".wf-nav-item")
-                  .forEach(
-                    current =>
-                      current
-                        .classList
-                        .remove(
-                          "active"
-                        )
-                  );
-
-
-                item
-                  .classList
-                  .add(
-                    "active"
-                  );
-
-
-                const tab =
-                  item.dataset.tab;
-
-
-                $$(".wf-view")
-                  .forEach(
-                    view => {
-
-                      view
-                        .classList
-                        .toggle(
-                          "active",
-                          view.id ===
-                            `wf-${tab}`
-                        );
-
-                    }
-                  );
-
-
-                /*
-                  Mantém a cor escolhida
-                  também no item ativo.
-                */
-
-                if(
-                  selectedColor
-                ){
-
-                  item.style
-                    .backgroundColor =
-                    selectedColor;
-
-
-                  item.style
-                    .borderColor =
-                    selectedColor;
-
-
-                  item.style.color =
-                    contrastColor(
-                      selectedColor
-                    );
-
-                }
-
-              }
+          const target =
+            event.target.closest(
+              ".wf-paintable"
             );
 
+
+          if(!target) {
+            return;
           }
-        );
+
+
+          paintElement(
+            target,
+            selectedColor
+          );
+
+        }
+      );
 
 
 
-      /* -----------------------------------------------------
-         +1 ENTREGA
-      ----------------------------------------------------- */
+      /* ABAS */
+
+      $$(".wf-nav-item").forEach(
+        item => {
+
+          item.addEventListener(
+            "click",
+            event => {
+
+              event.stopPropagation();
+
+
+              $$(".wf-nav-item").forEach(
+                current =>
+                  current.classList.remove(
+                    "active"
+                  )
+              );
+
+
+              item.classList.add(
+                "active"
+              );
+
+
+              const tab =
+                item.dataset.tab;
+
+
+              $$(".wf-view").forEach(
+                view => {
+
+                  view.classList.toggle(
+                    "active",
+                    view.id ===
+                      `wf-${tab}`
+                  );
+
+                }
+              );
+
+
+              /*
+                Não pinta automaticamente
+                só porque clicou na aba.
+
+                Se já houver uma cor selecionada,
+                um segundo clique no item ainda
+                pode pintá-lo através da interação normal.
+              */
+
+            }
+          );
+
+        }
+      );
+
+
+
+      /* +1 ENTREGA */
 
       let deliveries =
         14;
 
 
-      $("#wfMetricBtn")
-        ?.addEventListener(
-          "click",
-          event => {
+      $("#wfMetricBtn")?.addEventListener(
+        "click",
+        event => {
 
-            event.stopPropagation();
-
-
-            deliveries +=
-              1;
+          event.stopPropagation();
 
 
-            const counter =
-              $("#wfCounter");
+          deliveries +=
+            1;
 
 
-            if(counter){
+          const counter =
+            $("#wfCounter");
 
-              counter.textContent =
-                String(
-                  deliveries
-                );
 
+          if(counter) {
+            counter.textContent =
+              String(
+                deliveries
+              );
+          }
+
+
+          event.currentTarget.animate(
+            [
+              {
+                transform:"scale(1)"
+              },
+
+              {
+                transform:"scale(1.08)"
+              },
+
+              {
+                transform:"scale(1)"
+              }
+            ],
+            {
+              duration:220,
+              easing:"ease-out"
             }
+          );
+
+        }
+      );
 
 
-            event.currentTarget
-              .animate(
-                [
-                  {
-                    transform:
-                      "scale(1)"
-                  },
 
-                  {
-                    transform:
-                      "scale(1.08)"
-                  },
+      /* CHECKLIST */
 
-                  {
-                    transform:
-                      "scale(1)"
-                  }
-                ],
-                {
-                  duration:220,
-                  easing:"ease-out"
-                }
+      $$(".wf-task-item").forEach(
+        task => {
+
+          task.addEventListener(
+            "click",
+            event => {
+
+              event.stopPropagation();
+
+
+              task.classList.toggle(
+                "checked"
               );
 
-          }
-        );
+            }
+          );
+
+        }
+      );
 
 
 
-      /* -----------------------------------------------------
-         CHECKLIST
-      ----------------------------------------------------- */
-
-      $$(".wf-task-item")
-        .forEach(
-          task => {
-
-            task.addEventListener(
-              "click",
-              event => {
-
-                event.stopPropagation();
-
-
-                task
-                  .classList
-                  .toggle(
-                    "checked"
-                  );
-
-              }
-            );
-
-          }
-        );
-
-
-
-      /* -----------------------------------------------------
-         MODO APP / CLEAN
-      ----------------------------------------------------- */
+      /* MODO APP */
 
       let wfDark =
         false;
 
 
-      $("#wfSwitchMode")
-        ?.addEventListener(
-          "click",
-          event => {
+      $("#wfSwitchMode")?.addEventListener(
+        "click",
+        event => {
 
-            event.stopPropagation();
-
-
-            wfDark =
-              !wfDark;
+          event.stopPropagation();
 
 
-            if(wfDark){
-
-              wfWindow.style
-                .setProperty(
-                  "--wf-bg-local",
-                  "#151412"
-                );
+          wfDark =
+            !wfDark;
 
 
-              wfWindow.style
-                .setProperty(
-                  "--wf-card-local",
-                  "#211F1B"
-                );
+          if(wfDark) {
+
+            wfWindow.style.setProperty(
+              "--wf-bg-local",
+              "#151412"
+            );
 
 
-              wfWindow.style
-                .setProperty(
-                  "--wf-text-local",
-                  "#F0ECE1"
-                );
+            wfWindow.style.setProperty(
+              "--wf-card-local",
+              "#211F1B"
+            );
 
 
-              event.currentTarget
-                .textContent =
-                "modo clean";
-
-            } else {
-
-              wfWindow.style
-                .removeProperty(
-                  "--wf-bg-local"
-                );
+            wfWindow.style.setProperty(
+              "--wf-text-local",
+              "#F0ECE1"
+            );
 
 
-              wfWindow.style
-                .removeProperty(
-                  "--wf-card-local"
-                );
+            event.currentTarget.textContent =
+              "modo clean";
+
+          } else {
+
+            wfWindow.style.removeProperty(
+              "--wf-bg-local"
+            );
 
 
-              wfWindow.style
-                .removeProperty(
-                  "--wf-text-local"
-                );
+            wfWindow.style.removeProperty(
+              "--wf-card-local"
+            );
 
 
-              event.currentTarget
-                .textContent =
-                "modo app";
+            wfWindow.style.removeProperty(
+              "--wf-text-local"
+            );
 
-            }
+
+            event.currentTarget.textContent =
+              "modo app";
 
           }
-        );
+
+        }
+      );
 
 
 
-      /* -----------------------------------------------------
-         LIMPAR TUDO
-      ----------------------------------------------------- */
+      /* LIMPAR */
 
-      $("#wfClear")
-        ?.addEventListener(
-          "click",
-          () => {
+      $("#wfClear")?.addEventListener(
+        "click",
+        () => {
 
-            selectedColor =
-              "#E8590C";
+          selectedColor =
+            "#E8590C";
 
 
-            $$(".swatch")
-              .forEach(
-                swatch => {
+          $$(".swatch").forEach(
+            swatch => {
 
-                  swatch
-                    .classList
-                    .toggle(
-                      "active",
-                      swatch.dataset
-                        .color ===
-                        "#E8590C"
-                    );
-
-                }
+              swatch.classList.toggle(
+                "active",
+                swatch.dataset.color ===
+                  "#E8590C"
               );
 
+            }
+          );
 
-            $$(".wf-paintable")
-              .forEach(
-                element => {
 
-                  element.style
-                    .backgroundColor =
-                    "";
+          $$(".wf-paintable").forEach(
+            element => {
 
-                  element.style
-                    .borderColor =
-                    "";
-
-                  element.style
-                    .color =
-                    "";
-
-                }
+              resetPaint(
+                element
               );
 
-
-            $$(".wf-nav-item")
-              .forEach(
-                item =>
-                  item.classList
-                    .remove(
-                      "active"
-                    )
-              );
+            }
+          );
 
 
-            const dashboardTab =
-              $(
-                '.wf-nav-item[data-tab="dashboard"]'
-              );
-
-
-            dashboardTab
-              ?.classList
-              .add(
+          $$(".wf-nav-item").forEach(
+            item =>
+              item.classList.remove(
                 "active"
+              )
+          );
+
+
+          const dashboardTab =
+            $(
+              '.wf-nav-item[data-tab="dashboard"]'
+            );
+
+
+          dashboardTab?.classList.add(
+            "active"
+          );
+
+
+          $$(".wf-view").forEach(
+            view => {
+
+              view.classList.toggle(
+                "active",
+                view.id ===
+                  "wf-dashboard"
               );
-
-
-            $$(".wf-view")
-              .forEach(
-                view => {
-
-                  view
-                    .classList
-                    .toggle(
-                      "active",
-                      view.id ===
-                        "wf-dashboard"
-                    );
-
-                }
-              );
-
-
-            deliveries =
-              14;
-
-
-            const counter =
-              $("#wfCounter");
-
-
-            if(counter){
-
-              counter.textContent =
-                "14";
 
             }
+          );
 
 
-            $$(".wf-task-item")
-              .forEach(
-                (
-                  task,
-                  index
-                ) => {
-
-                  task.classList.toggle(
-                    "checked",
-                    index === 0
-                  );
-
-                }
-              );
+          deliveries =
+            14;
 
 
-            wfDark =
-              false;
+          const counter =
+            $("#wfCounter");
 
 
-            wfWindow
-              ?.style
-              .removeProperty(
-                "--wf-bg-local"
-              );
-
-
-            wfWindow
-              ?.style
-              .removeProperty(
-                "--wf-card-local"
-              );
-
-
-            wfWindow
-              ?.style
-              .removeProperty(
-                "--wf-text-local"
-              );
-
-
-            const modeButton =
-              $("#wfSwitchMode");
-
-
-            if(modeButton){
-
-              modeButton.textContent =
-                "modo app";
-
-            }
-
+          if(counter) {
+            counter.textContent =
+              "14";
           }
-        );
+
+
+          $$(".wf-task-item").forEach(
+            (
+              task,
+              index
+            ) => {
+
+              task.classList.toggle(
+                "checked",
+                index === 0
+              );
+
+            }
+          );
+
+
+          wfDark =
+            false;
+
+
+          wfWindow?.style.removeProperty(
+            "--wf-bg-local"
+          );
+
+
+          wfWindow?.style.removeProperty(
+            "--wf-card-local"
+          );
+
+
+          wfWindow?.style.removeProperty(
+            "--wf-text-local"
+          );
+
+
+          const modeButton =
+            $("#wfSwitchMode");
+
+
+          if(modeButton) {
+            modeButton.textContent =
+              "modo app";
+          }
+
+        }
+      );
 
 
 
@@ -8492,120 +8010,104 @@
          FERNANDO TABS
       ====================================================== */
 
-      $$(".fa-tab")
-        .forEach(
-          tab => {
+      $$(".fa-tab").forEach(
+        tab => {
 
-            tab.addEventListener(
-              "click",
-              () => {
+          tab.addEventListener(
+            "click",
+            () => {
 
-                $$(".fa-tab")
-                  .forEach(
-                    item =>
-                      item.classList
-                        .remove(
-                          "active"
-                        )
-                  );
-
-
-                $$(".fa-view")
-                  .forEach(
-                    view =>
-                      view.classList
-                        .remove(
-                          "active"
-                        )
-                  );
-
-
-                tab.classList.add(
-                  "active"
-                );
-
-
-                const target =
-                  $(
-                    `[data-fa-view="${tab.dataset.faTab}"]`
-                  );
-
-
-                target
-                  ?.classList
-                  .add(
+              $$(".fa-tab").forEach(
+                item =>
+                  item.classList.remove(
                     "active"
-                  );
+                  )
+              );
 
 
-                requestAnimationFrame(
-                  resizeAllDesktopPreviews
-                );
-
-              }
-            );
-
-          }
-        );
+              $$(".fa-view").forEach(
+                view =>
+                  view.classList.remove(
+                    "active"
+                  )
+              );
 
 
-
-      /* =====================================================
-         DESIGN SYSTEM
-      ====================================================== */
-
-      $$(".system-nav-btn")
-        .forEach(
-          button => {
-
-            button.addEventListener(
-              "click",
-              () => {
-
-                $$(".system-nav-btn")
-                  .forEach(
-                    item =>
-                      item.classList
-                        .remove(
-                          "active"
-                        )
-                  );
+              tab.classList.add(
+                "active"
+              );
 
 
-                $$(".system-panel")
-                  .forEach(
-                    panel =>
-                      panel.classList
-                        .remove(
-                          "active"
-                        )
-                  );
-
-
-                button.classList.add(
-                  "active"
-                );
-
-
+              const target =
                 $(
-                  `[data-system-panel="${button.dataset.system}"]`
-                )
-                  ?.classList
-                  .add(
-                    "active"
-                  );
+                  `[data-fa-view="${tab.dataset.faTab}"]`
+                );
 
-              }
-            );
 
-          }
-        );
+              target?.classList.add(
+                "active"
+              );
+
+
+              requestAnimationFrame(
+                resizeAllDesktopPreviews
+              );
+
+            }
+          );
+
+        }
+      );
 
 
 
       /* =====================================================
-         COMPONENT STATES
+         DESIGN SYSTEM CASE
       ====================================================== */
+
+      $$(".system-nav-btn").forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              $$(".system-nav-btn").forEach(
+                item =>
+                  item.classList.remove(
+                    "active"
+                  )
+              );
+
+
+              $$(".system-panel").forEach(
+                panel =>
+                  panel.classList.remove(
+                    "active"
+                  )
+              );
+
+
+              button.classList.add(
+                "active"
+              );
+
+
+              $(
+                `[data-system-panel="${button.dataset.system}"]`
+              )?.classList.add(
+                "active"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+
+      /* COMPONENT STATES */
 
       const demoPrimary =
         $("#faDemoPrimary");
@@ -8613,78 +8115,63 @@
 
       $$(
         "[data-fa-button-state]"
-      )
-        .forEach(
-          button => {
+      ).forEach(
+        button => {
 
-            button.addEventListener(
-              "click",
-              () => {
+          button.addEventListener(
+            "click",
+            () => {
 
-                $$(
-                  "[data-fa-button-state]"
-                )
-                  .forEach(
-                    item =>
-                      item.classList
-                        .remove(
-                          "active"
-                        )
-                  );
+              $$(
+                "[data-fa-button-state]"
+              ).forEach(
+                item =>
+                  item.classList.remove(
+                    "active"
+                  )
+              );
 
 
-                button.classList.add(
-                  "active"
+              button.classList.add(
+                "active"
+              );
+
+
+              demoPrimary?.classList.remove(
+                "is-hover",
+                "is-disabled"
+              );
+
+
+              if(
+                button.dataset.faButtonState ===
+                "hover"
+              ) {
+                demoPrimary?.classList.add(
+                  "is-hover"
                 );
-
-
-                demoPrimary
-                  ?.classList
-                  .remove(
-                    "is-hover",
-                    "is-disabled"
-                  );
-
-
-                if(
-                  button.dataset
-                    .faButtonState ===
-                    "hover"
-                ){
-
-                  demoPrimary
-                    ?.classList
-                    .add(
-                      "is-hover"
-                    );
-
-                }
-
-
-                if(
-                  button.dataset
-                    .faButtonState ===
-                    "disabled"
-                ){
-
-                  demoPrimary
-                    ?.classList
-                    .add(
-                      "is-disabled"
-                    );
-
-                }
-
               }
-            );
 
-          }
-        );
+
+              if(
+                button.dataset.faButtonState ===
+                "disabled"
+              ) {
+                demoPrimary?.classList.add(
+                  "is-disabled"
+                );
+              }
+
+            }
+          );
+
+        }
+      );
 
 
 
       /* =====================================================
-         DESKTOP PREVIEW SCALER
+         DESKTOP PREVIEW
       ====================================================== */
 
       const DESKTOP_WIDTH =
@@ -8693,9 +8180,9 @@
 
       function resizeDesktopPreview(
         viewport
-      ){
+      ) {
 
-        if(!viewport){
+        if(!viewport) {
           return;
         }
 
@@ -8706,7 +8193,7 @@
           );
 
 
-        if(!canvas){
+        if(!canvas) {
           return;
         }
 
@@ -8717,7 +8204,7 @@
 
         if(
           availableWidth <= 0
-        ){
+        ) {
           return;
         }
 
@@ -8736,8 +8223,7 @@
 
         const desiredHeight =
           Number(
-            viewport.dataset
-              .desktopHeight ||
+            viewport.dataset.desktopHeight ||
             700
           );
 
@@ -8751,20 +8237,18 @@
       }
 
 
-      function resizeAllDesktopPreviews(){
+      function resizeAllDesktopPreviews() {
 
-        $$(".fa-desktop-viewport")
-          .forEach(
-            resizeDesktopPreview
-          );
+        $$(".fa-desktop-viewport").forEach(
+          resizeDesktopPreview
+        );
 
       }
 
 
       if(
-        "ResizeObserver" in
-        window
-      ){
+        "ResizeObserver" in window
+      ) {
 
         const desktopObserver =
           new ResizeObserver(
@@ -8781,16 +8265,15 @@
           );
 
 
-        $$(".fa-desktop-viewport")
-          .forEach(
-            viewport => {
+        $$(".fa-desktop-viewport").forEach(
+          viewport => {
 
-              desktopObserver.observe(
-                viewport
-              );
+            desktopObserver.observe(
+              viewport
+            );
 
-            }
-          );
+          }
+        );
 
       }
 
@@ -8820,64 +8303,57 @@
          GENERIC CASE TABS
       ====================================================== */
 
-      $$(".case-tab")
-        .forEach(
-          button => {
+      $$(".case-tab").forEach(
+        button => {
 
-            button.addEventListener(
-              "click",
-              () => {
+          button.addEventListener(
+            "click",
+            () => {
 
-                const caseName =
-                  button.dataset.case;
-
-
-                const viewName =
-                  button.dataset.view;
+              const caseName =
+                button.dataset.case;
 
 
-                $$(
-                  `.case-tab[data-case="${caseName}"]`
-                )
-                  .forEach(
-                    item =>
-                      item.classList
-                        .remove(
-                          "active"
-                        )
-                  );
+              const viewName =
+                button.dataset.view;
 
 
-                $$(
-                  `[data-case-view^="${caseName}-"]`
-                )
-                  .forEach(
-                    view =>
-                      view.classList
-                        .remove(
-                          "active"
-                        )
-                  );
-
-
-                button.classList.add(
-                  "active"
-                );
-
-
-                $(
-                  `[data-case-view="${caseName}-${viewName}"]`
-                )
-                  ?.classList
-                  .add(
+              $$(
+                `.case-tab[data-case="${caseName}"]`
+              ).forEach(
+                item =>
+                  item.classList.remove(
                     "active"
-                  );
+                  )
+              );
 
-              }
-            );
 
-          }
-        );
+              $$(
+                `[data-case-view^="${caseName}-"]`
+              ).forEach(
+                view =>
+                  view.classList.remove(
+                    "active"
+                  )
+              );
+
+
+              button.classList.add(
+                "active"
+              );
+
+
+              $(
+                `[data-case-view="${caseName}-${viewName}"]`
+              )?.classList.add(
+                "active"
+              );
+
+            }
+          );
+
+        }
+      );
 
 
 
@@ -8926,12 +8402,12 @@
         $("#deckThumbs");
 
 
-      function renderRenata(){
+      function renderRenata() {
 
         if(
           !deckMain ||
           !deckThumbs
-        ){
+        ) {
           return;
         }
 
@@ -8977,12 +8453,10 @@
             if(
               index ===
               renataIndex
-            ){
-
+            ) {
               button.classList.add(
                 "active"
               );
-
             }
 
 
@@ -9019,43 +8493,41 @@
       }
 
 
-      $("#deckPrev")
-        ?.addEventListener(
-          "click",
-          () => {
+      $("#deckPrev")?.addEventListener(
+        "click",
+        () => {
 
-            renataIndex =
-              (
-                renataIndex -
-                1 +
-                renataSlides.length
-              ) %
-              renataSlides.length;
-
-
-            renderRenata();
-
-          }
-        );
+          renataIndex =
+            (
+              renataIndex -
+              1 +
+              renataSlides.length
+            ) %
+            renataSlides.length;
 
 
-      $("#deckNext")
-        ?.addEventListener(
-          "click",
-          () => {
+          renderRenata();
 
-            renataIndex =
-              (
-                renataIndex +
-                1
-              ) %
-              renataSlides.length;
+        }
+      );
 
 
-            renderRenata();
+      $("#deckNext")?.addEventListener(
+        "click",
+        () => {
 
-          }
-        );
+          renataIndex =
+            (
+              renataIndex +
+              1
+            ) %
+            renataSlides.length;
+
+
+          renderRenata();
+
+        }
+      );
 
 
       renderRenata();
@@ -9081,71 +8553,68 @@
       $$(
         ".editorial-card",
         braducaCase
-      )
-        .forEach(
-          card => {
+      ).forEach(
+        card => {
 
-            card.addEventListener(
-              "click",
-              () => {
+          card.addEventListener(
+            "click",
+            () => {
 
-                $$(
-                  ".editorial-card",
-                  braducaCase
-                )
-                  .forEach(
-                    item =>
-                      item.classList
-                        .remove(
-                          "active"
-                        )
-                  );
+              $$(
+                ".editorial-card",
+                braducaCase
+              ).forEach(
+                item =>
+                  item.classList.remove(
+                    "active"
+                  )
+              );
 
 
-                card.classList.add(
-                  "active"
+              card.classList.add(
+                "active"
+              );
+
+
+              const image =
+                $("img",card);
+
+
+              if(!image) {
+                return;
+              }
+
+
+              braducaPreview.src =
+                image.src;
+
+
+              braducaPreview.alt =
+                image.alt;
+
+
+              const index =
+                Number(
+                  card.dataset.index
                 );
 
 
-                const image =
-                  $("img",card);
+              braducaPosition.textContent =
+                `${
+                  String(
+                    index +
+                    1
+                  ).padStart(
+                    2,
+                    "0"
+                  )
+                } / 07`;
 
+            }
+          );
 
-                if(!image){
-                  return;
-                }
-
-
-                braducaPreview.src =
-                  image.src;
-
-
-                braducaPreview.alt =
-                  image.alt;
-
-
-                const index =
-                  Number(
-                    card.dataset.index
-                  );
-
-
-                braducaPosition.textContent =
-                  `${
-                    String(
-                      index +
-                      1
-                    ).padStart(
-                      2,
-                      "0"
-                    )
-                  } / 07`;
-
-              }
-            );
-
-          }
-        );
+        }
+      );
 
 
 
@@ -9156,23 +8625,14 @@
       const aymeeImages = [
 
         "img/Aymee-img/img-01.jpeg",
-
         "img/Aymee-img/img-02.jpeg",
-
         "img/Aymee-img/img-03.jpeg",
-
         "img/Aymee-img/img-04.jpeg",
-
         "img/Aymee-img/img-05.jpeg",
-
         "img/Aymee-img/img-06.jpeg",
-
         "img/Aymee-img/img-07.jpeg",
-
         "img/Aymee-img/img-08.jpeg",
-
         "img/Aymee-img/img-09.jpeg",
-
         "img/Aymee-img/img-10.jpeg"
 
       ];
@@ -9182,9 +8642,9 @@
         $("#aymeeGrid");
 
 
-      function renderAymee(){
+      function renderAymee() {
 
-        if(!aymeeGrid){
+        if(!aymeeGrid) {
           return;
         }
 
@@ -9271,7 +8731,7 @@
       function openLightbox(
         image,
         trigger
-      ){
+      ) {
 
         lightboxTrigger =
           trigger;
@@ -9307,14 +8767,13 @@
       }
 
 
-      function closeLightbox(){
+      function closeLightbox() {
 
         if(
-          !lightbox.classList
-            .contains(
-              "open"
-            )
-        ){
+          !lightbox.classList.contains(
+            "open"
+          )
+        ) {
           return;
         }
 
@@ -9343,10 +8802,8 @@
         if(
           lightboxTrigger instanceof
           HTMLElement
-        ){
-
+        ) {
           lightboxTrigger.focus();
-
         }
 
 
@@ -9358,111 +8815,103 @@
 
       function registerLightboxImages(
         root = document
-      ){
+      ) {
 
         $$(
           ".js-lightbox",
           root
-        )
-          .forEach(
-            image => {
+        ).forEach(
+          image => {
 
-              if(
-                image.dataset
-                  .lightboxReady ===
-                  "1"
-              ){
-                return;
-              }
+            if(
+              image.dataset.lightboxReady ===
+              "1"
+            ) {
+              return;
+            }
 
 
-              image.dataset
-                .lightboxReady =
-                "1";
+            image.dataset.lightboxReady =
+              "1";
 
 
-              const trigger =
-                image.closest(
-                  "button"
-                ) ||
-                image;
+            const trigger =
+              image.closest(
+                "button"
+              ) ||
+              image;
 
 
-              if(
-                !image.closest(
-                  "button"
-                )
-              ){
+            if(
+              !image.closest(
+                "button"
+              )
+            ) {
 
-                image.setAttribute(
-                  "role",
-                  "button"
-                );
-
-
-                image.tabIndex =
-                  image.tabIndex >=
-                    0
-                    ? image.tabIndex
-                    : 0;
-
-              }
-
-
-              const activate =
-                event => {
-
-                  if(
-                    event.type ===
-                      "keydown" &&
-                    event.key !==
-                      "Enter" &&
-                    event.key !==
-                      " "
-                  ){
-                    return;
-                  }
-
-
-                  if(
-                    event.type ===
-                    "keydown"
-                  ){
-
-                    event.preventDefault();
-
-                  }
-
-
-                  openLightbox(
-                    image,
-                    trigger
-                  );
-
-                };
-
-
-              trigger.addEventListener(
-                "click",
-                activate
+              image.setAttribute(
+                "role",
+                "button"
               );
 
 
-              if(
-                !image.closest(
-                  "button"
-                )
-              ){
-
-                trigger.addEventListener(
-                  "keydown",
-                  activate
-                );
-
-              }
+              image.tabIndex =
+                image.tabIndex >= 0
+                  ? image.tabIndex
+                  : 0;
 
             }
-          );
+
+
+            const activate =
+              event => {
+
+                if(
+                  event.type ===
+                    "keydown" &&
+                  event.key !==
+                    "Enter" &&
+                  event.key !==
+                    " "
+                ) {
+                  return;
+                }
+
+
+                if(
+                  event.type ===
+                  "keydown"
+                ) {
+                  event.preventDefault();
+                }
+
+
+                openLightbox(
+                  image,
+                  trigger
+                );
+
+              };
+
+
+            trigger.addEventListener(
+              "click",
+              activate
+            );
+
+
+            if(
+              !image.closest(
+                "button"
+              )
+            ) {
+              trigger.addEventListener(
+                "keydown",
+                activate
+              );
+            }
+
+          }
+        );
 
       }
 
@@ -9479,11 +8928,9 @@
 
           if(
             event.target ===
-              lightbox
-          ){
-
+            lightbox
+          ) {
             closeLightbox();
-
           }
 
         }
@@ -9496,11 +8943,9 @@
 
           if(
             event.key ===
-              "Escape"
-          ){
-
+            "Escape"
+          ) {
             closeLightbox();
-
           }
 
         }
@@ -9517,5 +8962,4 @@
   </script>
 
 </body>
-
 </html>
