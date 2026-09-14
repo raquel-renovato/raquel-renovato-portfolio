@@ -5,5516 +5,4576 @@
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
 >
+
+<title>Portfolio — Fernando Amaral Case</title>
 
 <meta
   name="description"
-  content="Portfólio de Raquel Renovato — Designer de Comunicação Visual e UI, criando interfaces, sistemas visuais, apresentações e experiências digitais."
+  content="Case de UI/UX, Design System e desenvolvimento web para Fernando Amaral."
 >
-
-<title>Raquel Renovato — Comunicação Visual & UI</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
   rel="stylesheet"
 >
 
 <style>
-/* ==========================================================
-   TOKENS
-   ========================================================== */
 
-:root {
-  --bg:#F3EFEA;
-  --ink:#1F1C18;
-  --dim:#59534C;
-  --muted:#8A8379;
+/* =========================================================
+   VARIABLES
+========================================================= */
 
-  --line:rgba(31,28,24,.15);
-  --line-strong:rgba(31,28,24,.34);
+:root{
+  --black:#111111;
+  --black-soft:#1B1B1B;
 
-  --card:#E5DFD5;
-  --card-hover:#DCD5C9;
+  --white:#FFFFFF;
 
-  --accent:#E8590C;
-  --accent-hover:#C24A08;
-  --accent-soft:rgba(232,89,12,.10);
+  --cream:#F5F4F0;
+  --cream-2:#ECEAE4;
 
-  --green:#38483A;
+  --gray:#777777;
+  --gray-light:#B6B6B0;
 
-  --nav-bg:rgba(243,239,234,.92);
+  --line:rgba(17,17,17,.14);
 
-  --wf-bg:#FAF7F2;
-  --wf-card:#EAE4D9;
-  --wf-text:#1F1C18;
-  --wf-line:rgba(31,28,24,.12);
+  --fa-navy:#00152A;
+  --fa-gold:#B8860B;
+  --fa-slate:#64748B;
+  --fa-light:#F4F6F8;
 
-  --surface:#FAF7F2;
+  --page:clamp(22px,5.2vw,84px);
 
-  --pad:40px;
-
-  --shadow:
-    0 22px 60px rgba(31,28,24,.11);
-
-  --ease:
-    cubic-bezier(.16,1,.3,1);
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 
 
-[data-theme="dark"] {
-  --bg:#181614;
-  --ink:#F0ECE1;
-  --dim:#A6A095;
-  --muted:#6E685E;
-
-  --line:rgba(240,236,225,.15);
-  --line-strong:rgba(240,236,225,.30);
-
-  --card:#23201C;
-  --card-hover:#2C2823;
-
-  --accent:#F26D1D;
-  --accent-hover:#F98A46;
-  --accent-soft:rgba(242,109,29,.14);
-
-  --green:#6E8B73;
-
-  --nav-bg:rgba(24,22,20,.90);
-
-  --wf-bg:#12110F;
-  --wf-card:#1C1A17;
-  --wf-text:#F0ECE1;
-  --wf-line:rgba(240,236,225,.12);
-
-  --surface:#1D1A17;
-
-  --shadow:
-    0 22px 70px rgba(0,0,0,.32);
-}
-
-
-/* ==========================================================
+/* =========================================================
    RESET
-   ========================================================== */
+========================================================= */
 
-* {
-  margin:0;
-  padding:0;
+*,
+*::before,
+*::after{
   box-sizing:border-box;
 }
 
-html {
+html{
   scroll-behavior:smooth;
-  scrollbar-gutter:stable;
 }
 
-body {
-  background:var(--bg);
-  color:var(--ink);
+body{
+  margin:0;
 
-  font-family:"IBM Plex Sans",sans-serif;
+  overflow-x:hidden;
+
+  background:var(--cream);
+
+  color:var(--black);
+
+  font-family:"DM Sans",sans-serif;
+
   -webkit-font-smoothing:antialiased;
 
-  transition:
-    background-color .4s ease,
-    color .4s ease;
+  text-rendering:optimizeLegibility;
 }
 
-body.locked,
-body.intro-active {
+body.menu-open{
   overflow:hidden;
 }
 
-img {
+img,
+video,
+iframe{
   display:block;
-  max-width:100%;
 }
 
 button,
-input {
+a{
   font:inherit;
 }
 
-button {
+button{
+  border:0;
+}
+
+a{
   color:inherit;
-}
-
-a {
-  color:inherit;
-}
-
-.mono {
-  font-family:"IBM Plex Mono",monospace;
-}
-
-.serif {
-  font-family:"Fraunces",serif;
-}
-
-.sr-only {
-  position:absolute!important;
-
-  width:1px!important;
-  height:1px!important;
-
-  overflow:hidden!important;
-
-  clip:rect(0,0,0,0)!important;
-
-  white-space:nowrap!important;
-}
-
-a:focus-visible,
-button:focus-visible,
-[tabindex]:focus-visible {
-  outline:2px solid var(--accent);
-  outline-offset:4px;
-}
-
-
-/* ==========================================================
-   INTRO
-   ========================================================== */
-
-#intro-overlay {
-  position:fixed;
-  inset:0;
-  z-index:9999;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:24px;
-
-  background:var(--bg);
-
-  cursor:pointer;
-
-  transition:
-    opacity .4s ease,
-    transform .4s var(--ease);
-}
-
-#intro-overlay.hide {
-  opacity:0;
-
-  transform:scale(1.02);
-
-  pointer-events:none;
-}
-
-.intro-title {
-  font-family:"Fraunces",serif;
-  font-size:clamp(2.3rem,6.8vw,4.9rem);
-  font-weight:300;
-
-  text-align:center;
-}
-
-.intro-word-cycle {
-  position:relative;
-
-  display:inline-block;
-
-  height:1.15em;
-
-  overflow:hidden;
-
-  vertical-align:bottom;
-}
-
-.intro-word-cycle .w {
-  position:absolute;
-  top:0;
-  left:0;
-
-  opacity:0;
-
-  color:var(--accent);
-
-  white-space:nowrap;
-
-  font-style:italic;
-
-  transform:translateY(100%);
-
-  transition:
-    opacity .25s ease,
-    transform .25s var(--ease);
-}
-
-.intro-word-cycle .w.active {
-  opacity:1;
-
-  transform:translateY(0);
-}
-
-.intro-word-cycle .w.exit {
-  opacity:0;
-
-  transform:translateY(-100%);
-}
-
-.intro-help {
-  position:absolute;
-
-  bottom:28px;
-
-  color:var(--muted);
-
-  font-size:.58rem;
-}
-
-
-/* ==========================================================
-   NAV
-   ========================================================== */
-
-nav.site-nav {
-  position:sticky;
-  top:0;
-
-  z-index:100;
-
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-
-  padding:20px var(--pad);
-
-  background:var(--nav-bg);
-
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-}
-
-.nav-left {
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-
-.logo {
-  color:var(--ink);
-
-  font-family:"Fraunces",serif;
-  font-size:1.05rem;
-  font-weight:500;
 
   text-decoration:none;
 }
 
-.logo:hover {
-  opacity:.7;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.display,
+.nav-label{
+  margin:0;
+
+  font-family:"Manrope",sans-serif;
 }
 
-.theme-toggle {
-  padding:6px 14px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:transparent;
-  color:var(--ink);
-
-  font-size:.7rem;
-
-  cursor:pointer;
+p{
+  margin:0;
 }
 
-.theme-toggle:hover {
-  border-color:var(--accent);
-  color:var(--accent);
-}
+::selection{
+  background:var(--fa-gold);
 
-.site-nav ul {
-  display:flex;
-  gap:32px;
-
-  list-style:none;
-
-  font-size:.77rem;
-}
-
-.site-nav ul a {
-  color:var(--dim);
-
-  text-decoration:none;
-}
-
-.site-nav ul a:hover {
-  color:var(--accent);
-}
-
-.nav-cta {
-  justify-self:end;
-
-  padding:8px 16px;
-
-  border:1px solid var(--ink);
-
-  color:var(--ink);
-
-  font-size:.77rem;
-
-  text-decoration:none;
-
-  transition:.22s;
-}
-
-.nav-cta:hover {
-  background:var(--ink);
-  color:var(--bg);
+  color:#fff;
 }
 
 
-/* ==========================================================
-   HERO
-   ========================================================== */
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-.hero {
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:50px;
-  align-items:center;
+.container{
+  width:calc(100% - (var(--page) * 2));
 
-  min-height:76vh;
+  max-width:1500px;
 
-  padding:90px var(--pad) 75px;
+  margin-inline:auto;
 }
 
-.hero-eyebrow {
-  margin-bottom:20px;
-
-  color:var(--green);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.7rem;
-  font-weight:600;
-  letter-spacing:.06em;
-}
-
-.hero h1 {
-  max-width:760px;
-
-  font-family:"Fraunces",serif;
-  font-size:clamp(2.4rem,5vw,4rem);
-  font-weight:300;
-  line-height:1.05;
-}
-
-.hero h1 em {
-  color:var(--accent);
-
-  font-style:italic;
-  font-weight:400;
-}
-
-.hero-sub {
-  margin-top:30px;
-}
-
-.hero-sub p {
-  max-width:540px;
-
-  color:var(--dim);
-
-  line-height:1.7;
-}
-
-.hero-actions {
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-
-  margin-top:24px;
-}
-
-.hero-cta {
-  display:inline-flex;
-
-  padding-bottom:4px;
-
-  border-bottom:1.5px solid var(--accent);
-
-  color:var(--accent);
-
-  font-size:.83rem;
-  font-weight:500;
-
-  text-decoration:none;
-}
-
-.hero-cta:hover {
-  color:var(--ink);
-  border-color:var(--ink);
-}
-
-
-/* ==========================================================
-   HERO WIREFRAME ORIGINAL
-   ========================================================== */
-
-.hero-visual {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
-}
-
-.wf-wrapper {
+.section{
   position:relative;
 
-  width:100%;
-  max-width:380px;
+  padding:clamp(90px,10vw,170px) 0;
 }
 
-.wf-illustration {
-  position:absolute;
-
-  z-index:10;
-
-  pointer-events:none;
+.section-small{
+  padding:clamp(70px,7vw,110px) 0;
 }
 
-.pen-tool-svg {
-  top:-28px;
-  left:-28px;
-
-  width:76px;
-  height:76px;
-}
-
-.cursor-floater {
-  right:-16px;
-  bottom:-14px;
-
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  padding:4px 10px;
-
-  border-radius:4px 14px 14px 14px;
-
-  background:var(--accent);
-  color:#FFF;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.65rem;
-
-  box-shadow:
-    0 8px 18px rgba(0,0,0,.12);
-
-  animation:
-    floatAnim 4s ease-in-out infinite;
-}
-
-.badge-floater {
-  top:-16px;
-  right:-14px;
-
-  display:flex;
-  align-items:center;
-  gap:5px;
-
-  padding:3px 10px;
-
-  border:1px solid var(--green);
-  border-radius:20px;
-
-  background:var(--bg);
-  color:var(--green);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.62rem;
-
-  box-shadow:
-    0 4px 12px rgba(0,0,0,.06);
-
-  animation:
-    floatAnim 5s ease-in-out infinite .5s;
-}
-
-.spec-floater {
-  bottom:30px;
-  left:-32px;
-
-  padding:2px 8px;
-
-  border:1px solid var(--line-strong);
-  border-radius:4px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
-}
-
-@keyframes floatAnim {
-  0%,
-  100% {
-    transform:translateY(0);
-  }
-
-  50% {
-    transform:translateY(-5px);
-  }
-}
-
-.wf-window {
-  position:relative;
-  z-index:1;
-
-  width:100%;
-  height:260px;
-
-  display:flex;
-  flex-direction:column;
-
-  overflow:hidden;
-
-  border:1.5px solid var(--line-strong);
-  border-radius:10px;
-
-  background:var(--wf-bg);
-  color:var(--wf-text);
-
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.06);
-
-  user-select:none;
-}
-
-.wf-header {
-  height:34px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  padding:0 14px;
-
-  border-bottom:1px solid var(--wf-line);
-
-  background:var(--wf-card);
-}
-
-.wf-dots {
-  display:flex;
-  gap:5px;
-}
-
-.wf-dot {
-  width:7px;
-  height:7px;
-
-  border-radius:50%;
-
-  background:var(--muted);
-
-  opacity:.6;
-}
-
-.wf-switch-mode {
-  padding:2px 8px;
-
-  border:1px solid var(--line-strong);
-  border-radius:10px;
-
-  background:transparent;
-  color:var(--dim);
-
-  font-size:.62rem;
-
-  cursor:pointer;
-}
-
-.wf-body {
-  flex:1;
-
+.eyebrow{
   display:flex;
 
-  min-height:0;
-}
-
-.wf-sidebar {
-  width:110px;
-
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-
-  padding:12px 8px;
-
-  border-right:1px solid var(--wf-line);
-
-  background:var(--wf-card);
-}
-
-.wf-nav-item {
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  padding:6px 8px;
-
-  border-radius:4px;
-
-  color:var(--dim);
-
-  font-size:.62rem;
-
-  white-space:nowrap;
-
-  cursor:pointer;
-}
-
-.wf-nav-item:hover {
-  outline:1px dashed var(--line-strong);
-}
-
-.wf-nav-item.active {
-  background:var(--accent);
-  color:#FFF;
-}
-
-.wf-main {
-  flex:1;
-
-  min-width:0;
-
-  padding:12px;
-
-  overflow:auto;
-}
-
-.wf-view {
-  display:none;
-  flex-direction:column;
-  gap:10px;
-}
-
-.wf-view.active {
-  display:flex;
-}
-
-.wf-top-bar {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.wf-title {
-  font-size:.76rem;
-}
-
-.wf-badge-btn {
-  padding:4px 10px;
-
-  border:0;
-  border-radius:4px;
-
-  background:var(--accent);
-  color:#FFF;
-
-  font-size:.6rem;
-
-  cursor:pointer;
-}
-
-.wf-card-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-}
-
-.wf-card {
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-
-  padding:8px;
-
-  border:1px solid var(--wf-line);
-  border-radius:6px;
-
-  background:var(--wf-card);
-
-  cursor:pointer;
-}
-
-.wf-card:hover {
-  outline:1px dashed var(--line-strong);
-}
-
-.wf-card-label {
-  color:var(--muted);
-
-  font-size:.56rem;
-}
-
-.wf-card-val {
-  font-size:.94rem;
-  font-weight:600;
-}
-
-.wf-task-list {
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-}
-
-.wf-task-item {
-  display:flex;
-  align-items:center;
-  gap:6px;
-
-  color:var(--dim);
-
-  font-size:.6rem;
-
-  cursor:pointer;
-}
-
-.wf-checkbox {
-  width:11px;
-  height:11px;
-
-  display:grid;
-  place-items:center;
-
-  border:1px solid var(--line-strong);
-  border-radius:2px;
-
-  color:#FFF;
-
-  font-size:.48rem;
-}
-
-.wf-task-item.checked span {
-  opacity:.55;
-
-  text-decoration:line-through;
-}
-
-.wf-task-item.checked .wf-checkbox {
-  background:var(--accent);
-  border-color:var(--accent);
-}
-
-.color-palette {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
-.swatch {
-  width:22px;
-  height:22px;
-
-  border:1.5px solid var(--line-strong);
-  border-radius:50%;
-
-  cursor:pointer;
-
-  transition:transform .15s;
-}
-
-.swatch:hover {
-  transform:scale(1.12);
-}
-
-.swatch.active {
-  transform:scale(1.18);
-
-  border-color:var(--ink);
-
-  box-shadow:
-    0 0 0 2px var(--line);
-}
-
-.swatch.reset {
-  display:grid;
-  place-items:center;
-
-  background:var(--bg);
-  color:var(--muted);
-
-  font-size:.67rem;
-}
-
-.clear-btn {
-  border:0;
-
-  background:none;
-  color:var(--muted);
-
-  font-size:.65rem;
-  text-decoration:underline;
-
-  cursor:pointer;
-}
-
-.hero-visual-hint {
-  color:var(--muted);
-
-  font-size:.65rem;
-  text-align:center;
-}
-
-
-/* ==========================================================
-   PROCESS
-   ========================================================== */
-
-.process-section {
-  padding:46px var(--pad) 60px;
-
-  border-block:1px solid var(--line);
-
-  background:var(--card);
-}
-
-.section-kicker {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.63rem;
-  font-weight:600;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-
-.process-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-
-  margin-top:20px;
-
-  border:1px solid var(--line);
-
-  background:var(--line);
-}
-
-.process-card {
-  padding:25px;
-
-  background:var(--bg);
-}
-
-.process-card span {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.65rem;
-}
-
-.process-card h3 {
-  margin:10px 0;
-
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
-  font-weight:400;
-}
-
-.process-card p {
-  color:var(--dim);
-
-  font-size:.84rem;
-  line-height:1.65;
-}
-
-
-/* ==========================================================
-   SECTION HEADING
-   ========================================================== */
-
-.section-head {
-  padding:75px var(--pad) 30px;
-}
-
-.section-head h2 {
-  font-family:"Fraunces",serif;
-  font-size:clamp(1.9rem,3.8vw,2.8rem);
-  font-weight:400;
-}
-
-
-/* ==========================================================
-   SOBRE
-   ========================================================== */
-
-.about {
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:60px;
   align-items:center;
 
-  padding:10px var(--pad) 95px;
-}
-
-.about-copy p {
-  margin-top:18px;
-
-  color:var(--dim);
-
-  line-height:1.75;
-}
-
-.about-tags {
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-
-  margin-top:25px;
-}
-
-.about-tag {
-  padding:6px 11px;
-
-  border:1px solid var(--line-strong);
-
-  background:var(--accent-soft);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.64rem;
-}
-
-.about-visual {
-  position:relative;
-
-  width:100%;
-  max-width:380px;
-
-  display:grid;
-  place-items:center;
-
-  margin:auto;
-
-  aspect-ratio:1;
-}
-
-.about-orbit {
-  position:absolute;
-  inset:6%;
-
-  border:1.5px dashed var(--line-strong);
-  border-radius:50%;
-}
-
-.about-photo {
-  position:relative;
-  z-index:3;
-
-  width:66%;
-  height:66%;
-
-  overflow:hidden;
-
-  border:4px solid var(--bg);
-  border-radius:50%;
-
-  outline:3px solid var(--accent);
-}
-
-.about-photo img {
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  cursor:zoom-in;
-}
-
-
-/* ==========================================================
-   PROJECT BASE
-   ========================================================== */
-
-.project {
-  padding:70px 0 105px;
-
-  border-top:1px solid var(--line);
-}
-
-.project-head {
-  max-width:1040px;
-
-  padding:0 var(--pad);
-
-  margin-bottom:32px;
-}
-
-.project-number {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.68rem;
-  font-weight:600;
-}
-
-.project-head h3 {
-  margin:12px 0 15px;
-
-  font-family:"Fraunces",serif;
-  font-size:clamp(2.1rem,4.7vw,3.6rem);
-  font-weight:400;
-}
-
-.project-summary {
-  max-width:740px;
-
-  color:var(--dim);
-
-  font-size:1rem;
-  line-height:1.7;
-}
-
-.project-meta {
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-
-  margin-top:20px;
-}
-
-.project-meta span {
-  padding:5px 10px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:var(--accent-soft);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.6rem;
-}
-
-.case-grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-
-  max-width:920px;
-
-  margin-top:26px;
-
-  border:1px solid var(--line);
-
-  background:var(--line);
-
-  gap:1px;
-}
-
-.case-card {
-  padding:20px;
-
-  background:var(--bg);
-}
-
-.case-card span {
-  display:block;
-
-  margin-bottom:7px;
-
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.6rem;
-  font-weight:600;
-  text-transform:uppercase;
-}
-
-.case-card p {
-  color:var(--dim);
-
-  font-size:.82rem;
-  line-height:1.65;
-}
-
-
-/* ==========================================================
-   FERNANDO
-   ========================================================== */
-
-.fa-case {
-  padding:0 var(--pad);
-}
-
-.fa-tabs {
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-
-  margin-bottom:16px;
-}
-
-.fa-tab {
-  padding:7px 12px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:transparent;
-  color:var(--dim);
-
-  font-size:.62rem;
-
-  cursor:pointer;
-}
-
-.fa-tab:hover {
-  color:var(--accent);
-  border-color:var(--accent);
-}
-
-.fa-tab.active {
-  background:var(--accent);
-  border-color:var(--accent);
-  color:#FFF;
-}
-
-.fa-view {
-  display:none;
-}
-
-.fa-view.active {
-  display:block;
-
-  animation:
-    viewIn .32s ease;
-}
-
-@keyframes viewIn {
-  from {
-    opacity:0;
-
-    transform:translateY(7px);
-  }
-
-  to {
-    opacity:1;
-
-    transform:none;
-  }
-}
-
-
-/* FERNANDO INTRO */
-
-.fa-story {
-  display:grid;
-  grid-template-columns:.75fr 1.25fr;
-  gap:18px;
-}
-
-.fa-story-copy {
-  padding:28px;
-
-  border:1px solid var(--line);
-  border-radius:10px;
-
-  background:var(--card);
-}
-
-.fa-story-copy h4 {
-  margin:10px 0;
-
-  font-family:"Fraunces",serif;
-  font-size:1.55rem;
-  font-weight:400;
-}
-
-.fa-story-copy p {
-  color:var(--dim);
-
-  font-size:.85rem;
-  line-height:1.7;
-}
-
-.fa-story-list {
-  margin-top:24px;
-}
-
-.fa-story-list article {
-  display:grid;
-  grid-template-columns:36px 1fr;
-  gap:10px;
-
-  padding:14px 0;
-
-  border-top:1px solid var(--line);
-}
-
-.fa-story-list strong {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
-}
-
-.fa-story-list p {
-  font-size:.75rem;
-}
-
-.fa-design-cover {
-  position:relative;
-
-  min-height:560px;
-
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:10px;
-
-  background:var(--surface);
-
-  box-shadow:var(--shadow);
-}
-
-.fa-design-cover img {
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-  object-position:top;
-
-  cursor:zoom-in;
-}
-
-
-/* BEFORE */
-
-.browser-shell {
-  overflow:hidden;
-
-  border:1px solid var(--line-strong);
-  border-radius:11px;
-
-  background:var(--card);
-
-  box-shadow:var(--shadow);
-}
-
-.browser-bar {
-  display:grid;
-  grid-template-columns:70px 1fr auto;
-  gap:12px;
-  align-items:center;
-
-  min-height:44px;
-
-  padding:8px 12px;
-
-  border-bottom:1px solid var(--line);
-
-  background:var(--card);
-}
-
-.browser-dots {
-  display:flex;
-  gap:5px;
-}
-
-.browser-dots i {
-  width:7px;
-  height:7px;
-
-  border-radius:50%;
-
-  background:var(--muted);
-}
-
-.browser-address {
-  max-width:580px;
-
-  justify-self:center;
-
-  padding:6px 13px;
-
-  border:1px solid var(--line);
-  border-radius:100px;
-
-  background:var(--bg);
-  color:var(--muted);
-
-  font-size:.52rem;
-
-  text-align:center;
-}
-
-.browser-link {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.56rem;
-
-  text-decoration:none;
-}
-
-.browser-shell iframe {
-  display:block;
-
-  width:100%;
-  height:650px;
-
-  border:0;
-
-  background:#FFF;
-}
-
-
-/* PROTOTYPE */
-
-.figma-shell {
-  overflow:hidden;
-
-  border:1px solid var(--line-strong);
-  border-radius:11px;
-
-  background:#111;
-
-  box-shadow:var(--shadow);
-}
-
-.figma-head {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-
-  padding:14px 16px;
-
-  border-bottom:1px solid #343434;
-
-  background:#1B1B1B;
-  color:#FFF;
-}
-
-.figma-head span {
-  display:block;
-
-  margin-bottom:4px;
-
-  color:#F48A4A;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
-}
-
-.figma-head strong {
-  font-family:"Fraunces",serif;
-  font-size:1rem;
-  font-weight:400;
-}
-
-.figma-head a {
-  color:#F48A4A;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.58rem;
-
-  text-decoration:none;
-}
-
-.figma-frame {
-  height:min(78vh,800px);
-  min-height:600px;
-}
-
-.figma-frame iframe {
-  width:100%;
-  height:100%;
-
-  border:0;
-}
-
-
-/* FERNANDO SCREENS */
-
-.fa-screens {
-  display:grid;
-  grid-template-columns:1fr 180px;
-  gap:16px;
-}
-
-.fa-screen-main {
-  overflow:hidden;
-
-  height:650px;
-
-  border:1px solid var(--line);
-  border-radius:10px;
-
-  background:var(--surface);
-
-  box-shadow:var(--shadow);
-}
-
-.fa-screen-main img {
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-  object-position:top;
-
-  cursor:zoom-in;
-}
-
-.fa-screen-thumbs {
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-
-  max-height:650px;
-
-  overflow:auto;
-}
-
-.fa-screen-thumb {
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:5px;
-
-  background:var(--card);
-
-  cursor:pointer;
-
-  opacity:.62;
-
-  transition:
-    opacity .2s,
-    border-color .2s;
-}
-
-.fa-screen-thumb.active,
-.fa-screen-thumb:hover {
-  opacity:1;
-
-  border-color:var(--accent);
-}
-
-.fa-screen-thumb img {
-  width:100%;
-  height:105px;
-
-  object-fit:cover;
-  object-position:top;
-}
-
-
-/* DESIGN SYSTEM */
-
-.system-layout {
-  display:grid;
-  grid-template-columns:210px 1fr;
-  gap:1px;
-
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:11px;
-
-  background:var(--line);
-
-  box-shadow:var(--shadow);
-}
-
-.system-sidebar {
-  padding:18px;
-
-  background:var(--card);
-}
-
-.system-sidebar span {
-  display:block;
-
-  margin-bottom:10px;
-
-  color:var(--muted);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.53rem;
-  text-transform:uppercase;
-}
-
-.system-nav-btn {
-  width:100%;
-
-  padding:8px;
-
-  border:0;
-  border-radius:4px;
-
-  background:transparent;
-  color:var(--dim);
-
-  font-size:.64rem;
-  text-align:left;
-
-  cursor:pointer;
-}
-
-.system-nav-btn:hover,
-.system-nav-btn.active {
-  background:var(--accent-soft);
-  color:var(--accent);
-}
-
-.system-canvas {
-  padding:30px;
-
-  background:var(--surface);
-}
-
-.system-panel {
-  display:none;
-}
-
-.system-panel.active {
-  display:block;
-}
-
-.system-panel-title {
-  margin-bottom:22px;
-
-  font-family:"Fraunces",serif;
-  font-size:1.55rem;
-  font-weight:400;
-}
-
-.component-grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.component-box {
-  min-height:190px;
-
-  padding:18px;
-
-  border:1px solid var(--line);
-  border-radius:7px;
-
-  background:var(--card);
-}
-
-.component-label {
-  display:flex;
-  justify-content:space-between;
+  gap:11px;
 
   margin-bottom:25px;
 
-  color:var(--muted);
+  color:var(--gray);
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.53rem;
+  font-family:"Manrope",sans-serif;
+
+  font-size:11px;
+
+  font-weight:600;
+
+  letter-spacing:.15em;
+
+  text-transform:uppercase;
 }
 
-.demo-button-row {
-  display:flex;
-  align-items:center;
-  gap:9px;
-  flex-wrap:wrap;
+.eyebrow::before{
+  content:"";
+
+  width:24px;
+
+  height:1px;
+
+  background:currentColor;
 }
 
-.fa-demo-primary,
-.fa-demo-secondary {
-  padding:10px 16px;
+.section-title{
+  max-width:1000px;
 
-  border-radius:4px;
+  font-size:clamp(42px,6vw,92px);
 
-  font-size:.66rem;
+  font-weight:500;
 
-  cursor:pointer;
+  line-height:.99;
+
+  letter-spacing:-.065em;
 }
 
-.fa-demo-primary {
-  border:1px solid #B9891D;
+.section-copy{
+  max-width:720px;
 
-  background:#B9891D;
-  color:white;
-}
+  margin-top:30px;
 
-.fa-demo-secondary {
-  border:1px solid #0D2E48;
+  color:#555;
 
-  background:transparent;
-  color:#0D2E48;
-}
+  font-size:clamp(17px,1.45vw,22px);
 
-.fa-demo-primary.is-hover {
-  filter:brightness(.86);
-}
-
-.fa-demo-primary.is-disabled {
-  opacity:.32;
-}
-
-.variant-controls {
-  display:flex;
-  gap:5px;
-  flex-wrap:wrap;
-
-  margin-top:20px;
-}
-
-.variant-controls button {
-  padding:5px 8px;
-
-  border:1px solid var(--line);
-  border-radius:4px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-size:.52rem;
-
-  cursor:pointer;
-}
-
-.variant-controls button.active {
-  border-color:var(--accent);
-  color:var(--accent);
-}
-
-.demo-filter-row {
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
-.demo-filter {
-  padding:7px 11px;
-
-  border:1px solid #9DA6AF;
-
-  background:transparent;
-  color:#0D2E48;
-
-  font-size:.57rem;
-}
-
-.demo-filter.active {
-  background:#B9891D;
-  border-color:#B9891D;
-
-  color:#FFF;
-}
-
-.demo-arrow {
-  width:44px;
-  height:44px;
-
-  display:grid;
-  place-items:center;
-
-  border:0;
-  border-radius:50%;
-
-  background:#B9891D;
-  color:#FFF;
-
-  font-size:1.25rem;
-}
-
-.demo-quality {
-  padding:16px;
-
-  border:1px solid #CED3D7;
-
-  background:#FFF;
-  color:#0D2E48;
-}
-
-.demo-quality.dark {
-  border-color:#0D2E48;
-
-  background:#0D2E48;
-  color:#FFF;
-}
-
-.demo-project-card {
-  overflow:hidden;
-
-  background:#FFF;
-
-  color:#0D2E48;
-}
-
-.demo-project-img {
-  height:90px;
-
-  background:
-    linear-gradient(135deg,#CBD2D8,#7F8E9A);
-}
-
-.demo-project-copy {
-  padding:10px;
-
-  font-size:.56rem;
-}
-
-.demo-project-copy strong {
-  display:block;
-
-  margin-bottom:5px;
-}
-
-
-/* ==========================================================
-   VOIT
-   ========================================================== */
-
-.voit-case {
-  padding:0 var(--pad);
-}
-
-.voit-shell {
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:11px;
-
-  background:var(--card);
-
-  box-shadow:var(--shadow);
-}
-
-.voit-top {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-
-  padding:17px;
-
-  border-bottom:1px solid var(--line);
-}
-
-.voit-tabs {
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
-.voit-tab {
-  padding:6px 10px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-size:.6rem;
-
-  cursor:pointer;
-}
-
-.voit-tab.active {
-  background:var(--accent);
-  border-color:var(--accent);
-
-  color:#FFF;
-}
-
-.voit-view {
-  display:none;
-
-  padding:34px;
-}
-
-.voit-view.active {
-  display:block;
-}
-
-
-/* ECOSYSTEM */
-
-.voit-ecosystem {
-  display:grid;
-  grid-template-columns:1fr 180px 1fr;
-  grid-template-rows:1fr 1fr;
-  gap:22px;
-  align-items:center;
-
-  min-height:520px;
-}
-
-.voit-core {
-  grid-column:2;
-  grid-row:1 / 3;
-
-  width:170px;
-  height:170px;
-
-  display:grid;
-  place-items:center;
-
-  border-radius:50%;
-
-  background:var(--ink);
-  color:var(--bg);
-
-  font-family:"Fraunces",serif;
-  font-size:1.5rem;
-
-  box-shadow:var(--shadow);
-}
-
-.voit-domain {
-  padding:20px;
-
-  border:1px solid var(--line);
-  border-radius:8px;
-
-  background:var(--bg);
-}
-
-.voit-domain span {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
-}
-
-.voit-domain h4 {
-  margin:8px 0;
-
-  font-family:"Fraunces",serif;
-  font-size:1.2rem;
-  font-weight:400;
-}
-
-.voit-domain p {
-  color:var(--dim);
-
-  font-size:.77rem;
-  line-height:1.6;
-}
-
-
-/* PROCESS */
-
-.voit-process {
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-
-  border:1px solid var(--line);
-
-  background:var(--line);
-
-  gap:1px;
-}
-
-.voit-process article {
-  padding:20px;
-
-  background:var(--bg);
-}
-
-.voit-process span {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.54rem;
-}
-
-.voit-process h4 {
-  margin:7px 0;
-
-  font-family:"Fraunces",serif;
-  font-weight:400;
-}
-
-.voit-process p {
-  color:var(--dim);
-
-  font-size:.72rem;
   line-height:1.55;
 }
 
+.reveal{
+  opacity:0;
 
-/* SOCIAL */
-
-.voit-social {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-
-.voit-piece {
-  overflow:hidden;
-
-  border:1px solid var(--line);
-  border-radius:7px;
-
-  background:var(--bg);
-
-  cursor:zoom-in;
+  transform:translateY(48px);
 
   transition:
-    transform .28s var(--ease),
-    box-shadow .28s;
+    opacity .8s ease,
+    transform 1s var(--ease);
 }
 
-.voit-piece:hover {
-  transform:translateY(-5px) rotate(-1deg);
+.reveal.visible{
+  opacity:1;
 
-  box-shadow:var(--shadow);
+  transform:none;
 }
 
-.voit-piece img {
-  width:100%;
-
-  aspect-ratio:1080/1350;
-
-  object-fit:cover;
+.reveal-delay{
+  transition-delay:.12s;
 }
 
 
-/* PROFESSIONAL */
+/* =========================================================
+   HEADER
+========================================================= */
 
-.voit-professional {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+.header{
+  position:fixed;
+
+  top:0;
+  right:0;
+  left:0;
+
+  z-index:1000;
+
+  height:76px;
+
+  color:#fff;
+
+  transition:
+    color .35s ease,
+    background-color .35s ease,
+    backdrop-filter .35s ease;
 }
 
-.voit-professional article {
-  padding:24px;
+.header.scrolled{
+  background:rgba(17,17,17,.88);
 
-  border:1px solid var(--line);
-  border-radius:8px;
+  backdrop-filter:blur(18px);
 
-  background:var(--bg);
+  -webkit-backdrop-filter:blur(18px);
 }
 
-.voit-professional span {
-  color:var(--accent);
+.header-inner{
+  width:calc(100% - (var(--page) * 2));
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.55rem;
-}
+  max-width:1500px;
 
-.voit-professional h4 {
-  margin:8px 0;
-
-  font-family:"Fraunces",serif;
-  font-size:1.25rem;
-  font-weight:400;
-}
-
-.voit-professional p {
-  color:var(--dim);
-
-  font-size:.8rem;
-  line-height:1.65;
-}
-
-
-/* ==========================================================
-   RENATA
-   ========================================================== */
-
-.renata-case {
-  padding:0 var(--pad);
-}
-
-.deck-shell {
-  overflow:hidden;
-
-  border:1px solid #343434;
-  border-radius:11px;
-
-  background:#151515;
-  color:#FFF;
-
-  box-shadow:var(--shadow);
-}
-
-.deck-top {
-  min-height:44px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  padding:0 15px;
-
-  border-bottom:1px solid #333;
-
-  font-size:.6rem;
-}
-
-.deck-body {
-  display:grid;
-  grid-template-columns:1fr 255px;
-
-  min-height:540px;
-}
-
-.deck-stage {
-  display:grid;
-  place-items:center;
-
-  padding:38px;
-
-  background:#181818;
-}
-
-.deck-screen {
-  width:min(850px,100%);
-
-  overflow:hidden;
-
-  aspect-ratio:16/9;
-
-  background:#000;
-
-  box-shadow:
-    0 24px 65px rgba(0,0,0,.48);
-}
-
-.deck-screen img {
-  width:100%;
   height:100%;
 
-  object-fit:cover;
+  margin:auto;
 
-  cursor:zoom-in;
-}
-
-.deck-side {
-  padding:22px;
-
-  border-left:1px solid #333;
-
-  background:#202020;
-}
-
-.deck-side h4 {
-  margin:10px 0;
-
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
-  font-weight:400;
-}
-
-.deck-side p {
-  color:#BEBEBE;
-
-  font-size:.75rem;
-  line-height:1.65;
-}
-
-.deck-controls {
   display:flex;
-  gap:8px;
 
-  margin-top:22px;
+  align-items:center;
 }
 
-.deck-controls button {
-  width:35px;
-  height:35px;
+.logo{
+  margin-right:auto;
 
-  border:1px solid #555;
+  font-size:16px;
+
+  font-weight:600;
+
+  letter-spacing:-.03em;
+}
+
+.main-nav{
+  display:flex;
+
+  align-items:center;
+
+  gap:30px;
+}
+
+.main-nav a{
+  position:relative;
+
+  font-size:13px;
+}
+
+.main-nav a::after{
+  content:"";
+
+  position:absolute;
+
+  right:0;
+  bottom:-6px;
+  left:0;
+
+  height:1px;
+
+  background:#fff;
+
+  transform:scaleX(0);
+
+  transform-origin:right;
+
+  transition:transform .3s var(--ease);
+}
+
+.main-nav a:hover::after{
+  transform:scaleX(1);
+
+  transform-origin:left;
+}
+
+.menu-button{
+  display:none;
+
+  width:42px;
+  height:42px;
+
+  border:1px solid rgba(255,255,255,.3);
+
   border-radius:50%;
 
-  background:#292929;
-  color:#FFF;
+  background:transparent;
+
+  color:#fff;
 
   cursor:pointer;
 }
 
-.deck-progress {
-  height:3px;
 
-  margin-top:18px;
+/* =========================================================
+   HERO
+========================================================= */
 
-  background:#333;
-}
+.hero{
+  position:relative;
 
-.deck-progress span {
-  display:block;
+  min-height:100svh;
 
-  height:100%;
-
-  background:var(--accent);
-
-  transition:width .3s;
-}
-
-.deck-thumbs {
   display:flex;
-  gap:6px;
 
-  margin-top:18px;
-
-  overflow:auto;
-}
-
-.deck-thumb {
-  flex:0 0 72px;
+  align-items:flex-end;
 
   overflow:hidden;
 
-  border:1px solid #444;
-  border-radius:4px;
+  padding:160px 0 70px;
 
   background:#111;
 
-  cursor:pointer;
-
-  opacity:.55;
+  color:#fff;
 }
 
-.deck-thumb.active {
-  opacity:1;
+.hero-bg{
+  position:absolute;
 
-  border-color:var(--accent);
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(184,134,11,.16),
+      transparent 33%
+    ),
+    radial-gradient(
+      circle at 10% 100%,
+      rgba(0,21,42,.9),
+      transparent 45%
+    ),
+    #111;
 }
 
-.deck-thumb img {
+.hero-grid{
+  position:absolute;
+
+  inset:0;
+
+  opacity:.09;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.6) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.6) 1px,
+      transparent 1px
+    );
+
+  background-size:76px 76px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #000 15%,
+      #000 80%,
+      transparent
+    );
+}
+
+.hero-content{
+  position:relative;
+
+  z-index:2;
+
   width:100%;
+}
+
+.hero-meta{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:30px;
+
+  margin-bottom:62px;
+
+  color:rgba(255,255,255,.55);
+
+  font-size:11px;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+}
+
+.hero-title{
+  max-width:1250px;
+
+  font-size:clamp(64px,10vw,158px);
+
+  font-weight:500;
+
+  line-height:.82;
+
+  letter-spacing:-.085em;
+}
+
+.hero-title span{
+  display:block;
+}
+
+.hero-title .outline{
+  color:transparent;
+
+  -webkit-text-stroke:
+    1px
+    rgba(255,255,255,.55);
+}
+
+.hero-bottom{
+  display:grid;
+
+  grid-template-columns:
+    1.3fr
+    .7fr;
+
+  gap:80px;
+
+  align-items:end;
+
+  margin-top:65px;
+}
+
+.hero-description{
+  max-width:590px;
+
+  color:rgba(255,255,255,.67);
+
+  font-size:18px;
+
+  line-height:1.55;
+}
+
+.hero-link{
+  justify-self:end;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:20px;
+
+  padding-bottom:8px;
+
+  border-bottom:1px solid rgba(255,255,255,.45);
+
+  font-size:14px;
+}
+
+.hero-link-arrow{
+  font-size:20px;
+
+  transition:transform .3s var(--ease);
+}
+
+.hero-link:hover .hero-link-arrow{
+  transform:
+    translate(5px,-5px);
+}
+
+
+/* =========================================================
+   LIVE HERO PROJECT
+========================================================= */
+
+.live-intro{
+  padding-top:0;
+
+  background:#111;
+}
+
+.browser-wrap{
+  position:relative;
+
+  width:calc(100% - (var(--page) * 1.15));
+
+  max-width:1540px;
+
+  margin:auto;
+
+  padding-bottom:clamp(80px,10vw,150px);
+}
+
+.browser{
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.16);
+
+  border-radius:14px;
+
+  background:#fff;
+
+  box-shadow:
+    0 45px 100px rgba(0,0,0,.35);
+}
+
+.browser-bar{
+  height:48px;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    2fr
+    1fr;
+
+  align-items:center;
+
+  padding:0 17px;
+
+  background:#E9E9E9;
+
+  color:#777;
+}
+
+.browser-dots{
+  display:flex;
+
+  gap:7px;
+}
+
+.browser-dot{
+  width:9px;
+  height:9px;
+
+  border-radius:50%;
+
+  background:#C1C1C1;
+}
+
+.browser-url{
+  justify-self:center;
+
+  width:min(440px,100%);
+
+  padding:8px 20px;
+
+  border-radius:7px;
+
+  background:#F6F6F6;
+
+  font-size:10px;
+
+  text-align:center;
+}
+
+.browser-open{
+  justify-self:end;
+
+  font-size:10px;
+
+  text-transform:uppercase;
+}
+
+.browser-screen{
+  position:relative;
 
   aspect-ratio:16/9;
 
-  object-fit:cover;
+  overflow:hidden;
+
+  background:#00152A;
 }
 
+.browser-screen iframe{
+  width:100%;
+  height:100%;
 
-/* ==========================================================
-   BRADUCA
-   ========================================================== */
-
-.braduca-case {
-  padding:0 var(--pad);
+  border:0;
 }
 
-.editorial-shell {
+.iframe-loader{
+  position:absolute;
+
+  inset:0;
+
+  z-index:4;
+
   display:grid;
-  grid-template-columns:minmax(0,1fr) 330px;
-  gap:20px;
+
+  place-items:center;
+
+  background:#00152A;
+
+  color:#fff;
+
+  font-size:13px;
+
+  letter-spacing:.08em;
+
+  transition:
+    opacity .5s ease,
+    visibility .5s ease;
 }
 
-.editorial-ribbon {
+.iframe-loader.hidden{
+  opacity:0;
+
+  visibility:hidden;
+}
+
+
+/* =========================================================
+   CASE NAV
+========================================================= */
+
+.case-nav{
+  position:fixed;
+
+  top:50%;
+
+  left:24px;
+
+  z-index:100;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:13px;
+
+  transform:translateY(-50%);
+
+  mix-blend-mode:difference;
+}
+
+.case-nav a{
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  color:#fff;
+
+  font-size:9px;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+  opacity:.38;
+
+  transition:opacity .25s ease;
+}
+
+.case-nav a::before{
+  content:"";
+
+  width:8px;
+
+  height:1px;
+
+  background:#fff;
+
+  transition:width .25s ease;
+}
+
+.case-nav a.active{
+  opacity:1;
+}
+
+.case-nav a.active::before{
+  width:25px;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.overview{
+  background:var(--cream);
+}
+
+.overview-layout{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+
+  grid-template-columns:
+    1.25fr
+    .75fr;
+
+  gap:clamp(70px,12vw,190px);
 
   align-items:start;
 }
 
-.editorial-card {
-  position:relative;
+.overview-statement{
+  max-width:850px;
 
-  overflow:hidden;
+  font-family:"Manrope",sans-serif;
 
-  border:1px solid var(--line);
-  border-radius:7px;
+  font-size:clamp(38px,4.5vw,70px);
 
-  background:var(--card);
+  font-weight:500;
 
-  cursor:pointer;
+  line-height:1.08;
 
-  transition:
-    transform .3s var(--ease),
-    box-shadow .3s,
-    border-color .3s;
+  letter-spacing:-.055em;
 }
 
-.editorial-card:nth-child(2n) {
-  transform:translateY(22px);
+.overview-statement em{
+  color:var(--fa-gold);
+
+  font-style:normal;
 }
 
-.editorial-card:hover,
-.editorial-card.active {
-  border-color:var(--accent);
-
-  box-shadow:
-    0 0 0 2px var(--accent-soft);
-}
-
-.editorial-card:hover {
-  transform:translateY(-4px);
-}
-
-.editorial-card img {
-  width:100%;
-
-  aspect-ratio:1080/1350;
-
-  object-fit:cover;
-}
-
-.editorial-number {
-  position:absolute;
-  top:7px;
-  left:7px;
-
-  padding:4px 6px;
-
-  border-radius:3px;
-
-  background:rgba(0,0,0,.75);
-  color:#FFF;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.5rem;
-}
-
-.editorial-inspector {
-  position:sticky;
-  top:100px;
-
-  align-self:start;
-
-  padding:20px;
-
-  border:1px solid var(--line);
-  border-radius:8px;
-
-  background:var(--card);
-}
-
-.editorial-preview {
-  overflow:hidden;
-
-  margin-bottom:17px;
-
-  border-radius:5px;
-}
-
-.editorial-preview img {
-  width:100%;
-
-  aspect-ratio:1080/1350;
-
-  object-fit:cover;
-
-  cursor:zoom-in;
-}
-
-.inspector-row {
-  padding:11px 0;
-
+.project-facts{
   border-top:1px solid var(--line);
 }
 
-.inspector-row span {
-  display:block;
+.fact{
+  display:grid;
 
-  margin-bottom:3px;
+  grid-template-columns:110px 1fr;
 
-  color:var(--muted);
+  gap:20px;
 
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.51rem;
+  padding:22px 0;
+
+  border-bottom:1px solid var(--line);
+}
+
+.fact-label{
+  color:var(--gray);
+
+  font-size:10px;
+
+  letter-spacing:.12em;
+
   text-transform:uppercase;
 }
 
-.inspector-row strong {
-  font-size:.76rem;
-  font-weight:400;
-  line-height:1.45;
+.fact-value{
+  font-size:14px;
+
+  line-height:1.5;
 }
 
 
-/* ==========================================================
-   AYMÉE
-   ========================================================== */
+/* =========================================================
+   CHALLENGE
+========================================================= */
 
-.aymee-case {
-  padding:0 var(--pad);
-}
-
-.brand-shell {
+.challenge{
   overflow:hidden;
 
-  border:1px solid var(--line);
-  border-radius:11px;
-
-  background:var(--card);
-
-  box-shadow:var(--shadow);
+  background:#DCDAD3;
 }
 
-.brand-top {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+.challenge-number{
+  margin-bottom:25px;
 
-  padding:17px;
+  color:rgba(17,17,17,.22);
 
-  border-bottom:1px solid var(--line);
+  font-family:"Manrope",sans-serif;
+
+  font-size:11px;
+
+  letter-spacing:.14em;
 }
 
-.brand-filter {
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
+.challenge-title{
+  max-width:1250px;
+
+  font-size:clamp(55px,8vw,126px);
+
+  font-weight:500;
+
+  line-height:.89;
+
+  letter-spacing:-.075em;
 }
 
-.brand-filter button {
-  padding:6px 10px;
-
-  border:1px solid var(--line-strong);
-  border-radius:100px;
-
-  background:var(--bg);
-  color:var(--dim);
-
-  font-size:.58rem;
-
-  cursor:pointer;
-}
-
-.brand-filter button.active {
-  background:var(--accent);
-  border-color:var(--accent);
-
-  color:#FFF;
-}
-
-.brand-body {
+.challenge-grid{
   display:grid;
-  grid-template-columns:1fr 300px;
-  gap:22px;
 
-  padding:30px;
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:90px;
+
+  margin-top:80px;
 }
 
-.brand-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
+.challenge-copy{
+  max-width:600px;
 
-.brand-card {
-  overflow:hidden;
+  color:#555;
 
-  border:1px solid var(--line);
-  border-radius:7px;
-
-  background:var(--bg);
-
-  cursor:zoom-in;
-
-  transition:
-    transform .25s var(--ease),
-    border-color .25s;
-}
-
-.brand-card:hover {
-  transform:translateY(-4px);
-
-  border-color:var(--accent);
-}
-
-.brand-card img {
-  width:100%;
-
-  aspect-ratio:1080/1350;
-
-  object-fit:cover;
-}
-
-.brand-rules {
-  align-self:start;
-
-  padding:20px;
-
-  border:1px solid var(--line);
-  border-radius:8px;
-
-  background:var(--bg);
-}
-
-.brand-rules h4 {
-  margin:8px 0 15px;
-
-  font-family:"Fraunces",serif;
-  font-size:1.3rem;
-  font-weight:400;
-}
-
-.brand-rule {
-  padding:13px 0;
-
-  border-bottom:1px solid var(--line);
-}
-
-.brand-rule:last-child {
-  border-bottom:0;
-}
-
-.brand-rule span {
-  color:var(--accent);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:.52rem;
-}
-
-.brand-rule p {
-  margin-top:5px;
-
-  color:var(--dim);
-
-  font-size:.74rem;
-  line-height:1.55;
-}
-
-
-/* ==========================================================
-   SKILLS
-   ========================================================== */
-
-.skills {
-  padding:0 var(--pad) 80px;
-}
-
-.skill-grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line);
-}
-
-.skill-card {
-  padding:24px;
-
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.skill-card h3 {
-  margin-bottom:10px;
-
-  font-size:.88rem;
-}
-
-.skill-card p {
-  color:var(--dim);
-
-  font-size:.78rem;
-  line-height:1.62;
-}
-
-
-/* ==========================================================
-   CONTACT
-   ========================================================== */
-
-.contact {
-  padding:90px var(--pad);
-
-  text-align:center;
-}
-
-.contact h2 {
-  max-width:760px;
-
-  margin:12px auto;
-
-  font-family:"Fraunces",serif;
-  font-size:clamp(2rem,4.6vw,3.1rem);
-  font-weight:400;
-}
-
-.contact p {
-  max-width:620px;
-
-  margin:0 auto 27px;
-
-  color:var(--dim);
+  font-size:18px;
 
   line-height:1.6;
 }
 
-.contact-actions {
-  display:flex;
-  justify-content:center;
-  gap:11px;
-  flex-wrap:wrap;
-}
+.challenge-quote{
+  align-self:end;
 
-.contact-actions a {
-  padding:11px 20px;
+  font-family:"Manrope",sans-serif;
 
-  border:1px solid var(--line-strong);
-  border-radius:4px;
+  font-size:clamp(28px,3vw,46px);
 
-  font-size:.78rem;
+  line-height:1.2;
 
-  text-decoration:none;
-}
-
-.contact-actions .primary {
-  background:var(--accent);
-  border-color:var(--accent);
-
-  color:#FFF;
-}
-
-footer {
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-
-  padding:35px var(--pad);
-
-  color:var(--dim);
-
-  font-size:.74rem;
+  letter-spacing:-.04em;
 }
 
 
-/* ==========================================================
-   MODAL
-   ========================================================== */
+/* =========================================================
+   VISUAL DIRECTION
+========================================================= */
 
-.lightbox {
-  position:fixed;
-  inset:0;
-  z-index:6000;
-
-  display:none;
-  align-items:center;
-  justify-content:center;
-
-  padding:55px 25px 25px;
-
-  background:rgba(0,0,0,.92);
-
-  backdrop-filter:blur(5px);
+.visual-direction{
+  background:#fff;
 }
 
-.lightbox.open {
-  display:flex;
+.visual-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(12,1fr);
+
+  gap:18px;
+
+  margin-top:80px;
 }
 
-.lightbox img {
-  max-width:94vw;
-  max-height:87vh;
+.visual-card{
+  position:relative;
 
-  object-fit:contain;
+  overflow:hidden;
 
-  border-radius:7px;
+  min-height:360px;
+
+  padding:32px;
+
+  border-radius:5px;
 }
 
-.lightbox-close {
+.visual-card.navy{
+  grid-column:span 6;
+
+  background:var(--fa-navy);
+
+  color:#fff;
+}
+
+.visual-card.gold{
+  grid-column:span 3;
+
+  background:var(--fa-gold);
+
+  color:#fff;
+}
+
+.visual-card.light{
+  grid-column:span 3;
+
+  border:1px solid #DDD;
+
+  background:var(--fa-light);
+}
+
+.visual-card.slate{
+  grid-column:span 4;
+
+  background:var(--fa-slate);
+
+  color:#fff;
+}
+
+.visual-card.type-card{
+  grid-column:span 8;
+
+  background:#141414;
+
+  color:#fff;
+}
+
+.color-code{
   position:absolute;
-  top:18px;
-  right:25px;
+
+  right:28px;
+  bottom:25px;
+
+  color:currentColor;
+
+  font-family:"Manrope",sans-serif;
+
+  font-size:11px;
+
+  opacity:.7;
+}
+
+.color-name{
+  font-family:"Manrope",sans-serif;
+
+  font-size:21px;
+
+  font-weight:500;
+}
+
+.type-display{
+  position:absolute;
+
+  right:30px;
+  bottom:8px;
+  left:30px;
+
+  font-family:"Manrope",sans-serif;
+
+  font-size:clamp(84px,11vw,178px);
+
+  font-weight:500;
+
+  line-height:.8;
+
+  letter-spacing:-.09em;
+}
+
+
+/* =========================================================
+   DESIGN SYSTEM
+========================================================= */
+
+.design-system{
+  background:#111;
+
+  color:#fff;
+}
+
+.design-system .eyebrow{
+  color:#888;
+}
+
+.design-system .section-copy{
+  color:#929292;
+}
+
+.system-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(12,1fr);
+
+  gap:18px;
+
+  margin-top:85px;
+}
+
+.system-panel{
+  min-height:360px;
+
+  padding:35px;
+
+  border:1px solid rgba(255,255,255,.13);
+
+  border-radius:5px;
+
+  background:#171717;
+}
+
+.system-panel.colors{
+  grid-column:span 5;
+}
+
+.system-panel.spacing{
+  grid-column:span 3;
+}
+
+.system-panel.type{
+  grid-column:span 4;
+}
+
+.system-label{
+  margin-bottom:45px;
+
+  color:#777;
+
+  font-size:10px;
+
+  letter-spacing:.13em;
+
+  text-transform:uppercase;
+}
+
+.token-row{
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  padding:12px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+
+  font-size:12px;
+}
+
+.token-dot{
+  width:18px;
+  height:18px;
+
+  flex:none;
+
+  border-radius:50%;
+}
+
+.space-list{
+  display:flex;
+
+  align-items:flex-end;
+
+  gap:10px;
+
+  height:190px;
+}
+
+.space{
+  width:24px;
+
+  background:var(--fa-gold);
+}
+
+.space:nth-child(1){
+  height:8px;
+}
+
+.space:nth-child(2){
+  height:16px;
+}
+
+.space:nth-child(3){
+  height:24px;
+}
+
+.space:nth-child(4){
+  height:40px;
+}
+
+.space:nth-child(5){
+  height:64px;
+}
+
+.space:nth-child(6){
+  height:96px;
+}
+
+.space:nth-child(7){
+  height:128px;
+}
+
+.space-labels{
+  display:flex;
+
+  gap:10px;
+
+  margin-top:15px;
+
+  color:#777;
+
+  font-size:8px;
+}
+
+.space-labels span{
+  width:24px;
+
+  text-align:center;
+}
+
+.type-samples{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+}
+
+.type-line{
+  display:grid;
+
+  grid-template-columns:75px 1fr;
+
+  gap:15px;
+
+  align-items:baseline;
+}
+
+.type-name{
+  color:#777;
+
+  font-size:9px;
+
+  text-transform:uppercase;
+}
+
+.type-example.display-lg{
+  font-family:"Manrope";
+
+  font-size:42px;
+
+  letter-spacing:-.05em;
+}
+
+.type-example.heading{
+  font-family:"Manrope";
+
+  font-size:25px;
+}
+
+.type-example.body{
+  font-size:15px;
+}
+
+.type-example.caption{
+  font-size:11px;
+}
+
+
+/* =========================================================
+   COMPONENTS
+========================================================= */
+
+.components{
+  overflow:hidden;
+
+  background:var(--cream);
+}
+
+.component-stage{
+  position:relative;
+
+  min-height:720px;
+
+  margin-top:75px;
+
+  border:1px solid var(--line);
+
+  background:#E9E8E3;
+}
+
+.component-card{
+  position:absolute;
+
+  padding:24px;
+
+  border:1px solid rgba(0,21,42,.15);
+
+  border-radius:8px;
+
+  background:#fff;
+
+  box-shadow:
+    0 18px 45px rgba(0,21,42,.08);
+}
+
+.component-card.buttons{
+  top:70px;
+  left:6%;
+
+  width:390px;
+}
+
+.component-card.filters{
+  top:75px;
+  right:5%;
+
+  width:450px;
+}
+
+.component-card.inputs{
+  right:13%;
+  bottom:70px;
+
+  width:390px;
+}
+
+.component-card.tags{
+  bottom:85px;
+  left:13%;
+
+  width:330px;
+}
+
+.component-title{
+  margin-bottom:25px;
+
+  color:#777;
+
+  font-size:10px;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+}
+
+.demo-buttons{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.demo-button{
+  min-height:44px;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:0 17px;
+
+  border-radius:6px;
+
+  font-family:"Manrope";
+
+  font-size:10px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+}
+
+.demo-button.primary{
+  background:var(--fa-navy);
+
+  color:#fff;
+}
+
+.demo-button.gold{
+  background:var(--fa-gold);
+
+  color:#fff;
+}
+
+.demo-button.outline{
+  border:1px solid var(--fa-navy);
+
+  background:#fff;
+
+  color:var(--fa-navy);
+}
+
+.demo-button:hover{
+  transform:translateY(-2px);
+}
+
+.demo-filter-row{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+}
+
+.demo-filter{
+  padding:9px 14px;
+
+  border:1px solid #BBC4CD;
+
+  background:#fff;
+
+  color:var(--fa-navy);
+
+  font-size:10px;
+}
+
+.demo-filter.active{
+  border-color:var(--fa-gold);
+
+  background:var(--fa-gold);
+
+  color:#fff;
+}
+
+.demo-field{
+  height:44px;
+
+  margin-bottom:10px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:0 13px;
+
+  border:1px solid #70869A;
+
+  border-radius:6px;
+
+  color:#8B98A5;
+
+  font-size:11px;
+}
+
+.demo-tags{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+}
+
+.demo-tag{
+  padding:7px 10px;
+
+  border:1px solid var(--fa-gold);
+
+  color:var(--fa-gold);
+
+  font-size:9px;
+}
+
+.demo-tag.solid{
+  border-color:var(--fa-slate);
+
+  background:var(--fa-slate);
+
+  color:#fff;
+}
+
+
+/* =========================================================
+   VARIANTS
+========================================================= */
+
+.variants{
+  background:#fff;
+}
+
+.variant-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:20px;
+
+  margin-top:75px;
+}
+
+.variant-card{
+  padding:35px;
+
+  border:1px solid var(--line);
+
+  border-radius:6px;
+}
+
+.variant-index{
+  margin-bottom:60px;
+
+  color:#999;
+
+  font-size:10px;
+}
+
+.variant-card h3{
+  margin-bottom:30px;
+
+  font-size:23px;
+
+  font-weight:500;
+
+  letter-spacing:-.03em;
+}
+
+.variant-row{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  padding:14px 0;
+
+  border-top:1px solid var(--line);
+
+  font-size:11px;
+}
+
+.variant-row span:first-child{
+  color:#888;
+}
+
+
+/* =========================================================
+   LIGHT DARK
+========================================================= */
+
+.themes{
+  padding:0;
+
+  background:#111;
+}
+
+.theme-comparison{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  min-height:740px;
+}
+
+.theme-side{
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+    clamp(70px,7vw,100px)
+    clamp(25px,6vw,90px);
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+}
+
+.theme-light{
+  background:#F4F6F8;
+
+  color:#00152A;
+}
+
+.theme-dark{
+  background:#071421;
+
+  color:#fff;
+}
+
+.theme-label{
+  font-size:10px;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+}
+
+.theme-message{
+  max-width:500px;
+
+  font-family:"Manrope";
+
+  font-size:clamp(45px,5vw,80px);
+
+  font-weight:500;
+
+  line-height:.95;
+
+  letter-spacing:-.065em;
+}
+
+.theme-ui{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:11px;
+
+  width:min(390px,100%);
+
+  margin-top:60px;
+}
+
+.theme-ui-bar{
+  height:48px;
+
+  border-radius:6px;
+}
+
+.theme-light .theme-ui-bar{
+  border:1px solid #CBD3DB;
+
+  background:#fff;
+}
+
+.theme-dark .theme-ui-bar{
+  border:1px solid #294055;
+
+  background:#0C1B2A;
+}
+
+.theme-ui-buttons{
+  display:flex;
+
+  gap:10px;
+}
+
+.theme-mini-button{
+  width:130px;
+
+  height:44px;
+
+  border-radius:6px;
+
+  background:var(--fa-gold);
+}
+
+
+/* =========================================================
+   INTERACTIONS
+========================================================= */
+
+.interactions{
+  background:var(--cream);
+}
+
+.interaction-list{
+  margin-top:80px;
+
+  border-top:1px solid var(--line);
+}
+
+.interaction-item{
+  display:grid;
+
+  grid-template-columns:
+    80px
+    minmax(190px,.75fr)
+    1.25fr;
+
+  gap:45px;
+
+  align-items:center;
+
+  min-height:145px;
+
+  padding:25px 0;
+
+  border-bottom:1px solid var(--line);
+
+  transition:
+    padding .35s var(--ease),
+    color .25s ease;
+}
+
+.interaction-item:hover{
+  padding-left:15px;
+}
+
+.interaction-number{
+  color:#999;
+
+  font-size:11px;
+}
+
+.interaction-name{
+  font-family:"Manrope";
+
+  font-size:clamp(22px,2.4vw,34px);
+
+  letter-spacing:-.04em;
+}
+
+.interaction-description{
+  max-width:570px;
+
+  color:#666;
+
+  font-size:15px;
+
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE SHOWCASE
+========================================================= */
+
+.responsive{
+  overflow:hidden;
+
+  background:#CBC9C3;
+}
+
+.device-stage{
+  position:relative;
+
+  min-height:820px;
+
+  margin-top:80px;
+}
+
+.desktop-device{
+  position:absolute;
+
+  top:0;
+  left:50%;
+
+  width:min(1050px,76vw);
+
+  transform:translateX(-50%);
+}
+
+.device-browser{
+  overflow:hidden;
+
+  border:1px solid rgba(0,0,0,.15);
+
+  border-radius:10px;
+
+  background:#fff;
+
+  box-shadow:
+    0 40px 90px rgba(0,0,0,.14);
+}
+
+.device-browser-bar{
+  height:32px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:5px;
+
+  padding-left:12px;
+
+  background:#E8E8E8;
+}
+
+.device-browser-dot{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:#BFBFBF;
+}
+
+.device-viewport{
+  position:relative;
+
+  aspect-ratio:16/9;
+
+  overflow:hidden;
+
+  background:#00152A;
+}
+
+.device-viewport iframe{
+  width:100%;
+  height:100%;
+
+  border:0;
+}
+
+.mobile-device{
+  position:absolute;
+
+  right:4%;
+  bottom:0;
+
+  z-index:3;
+
+  width:245px;
+
+  padding:9px;
+
+  border-radius:30px;
+
+  background:#111;
+
+  box-shadow:
+    0 35px 70px rgba(0,0,0,.27);
+}
+
+.mobile-device-screen{
+  position:relative;
+
+  aspect-ratio:390/780;
+
+  overflow:hidden;
+
+  border-radius:22px;
+
+  background:#00152A;
+}
+
+.mobile-device-screen iframe{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:390px;
+  height:780px;
 
   border:0;
 
-  background:none;
-  color:#FFF;
+  transform:
+    scale(
+      calc(
+        227 / 390
+      )
+    );
 
-  font-size:2.1rem;
+  transform-origin:top left;
+}
 
-  cursor:pointer;
+.tablet-device{
+  position:absolute;
+
+  bottom:20px;
+  left:3%;
+
+  z-index:2;
+
+  width:360px;
+
+  padding:8px;
+
+  border-radius:18px;
+
+  background:#222;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.22);
+}
+
+.tablet-device-screen{
+  position:relative;
+
+  aspect-ratio:3/4;
+
+  overflow:hidden;
+
+  border-radius:11px;
+
+  background:#00152A;
+}
+
+.tablet-placeholder{
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  padding:35px 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #00152A,
+      #092E4B
+    );
+
+  color:#fff;
+}
+
+.tablet-placeholder h4{
+  margin-top:auto;
+
+  font-size:32px;
+
+  line-height:1;
+
+  letter-spacing:-.05em;
+}
+
+.tablet-placeholder p{
+  margin-top:18px;
+
+  color:rgba(255,255,255,.65);
+
+  font-size:11px;
+
+  line-height:1.5;
 }
 
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+/* =========================================================
+   INFORMATION ARCHITECTURE
+========================================================= */
 
-@media (max-width:1000px) {
-  :root {
-    --pad:24px;
+.architecture{
+  background:#111;
+
+  color:#fff;
+}
+
+.architecture .section-copy{
+  color:#888;
+}
+
+.flow{
+  max-width:900px;
+
+  margin:80px auto 0;
+}
+
+.flow-item{
+  position:relative;
+
+  min-height:92px;
+
+  display:grid;
+
+  grid-template-columns:
+    90px
+    1fr
+    150px;
+
+  gap:30px;
+
+  align-items:center;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.13);
+}
+
+.flow-item:last-child{
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.13);
+}
+
+.flow-number{
+  color:#666;
+
+  font-size:10px;
+}
+
+.flow-name{
+  font-family:"Manrope";
+
+  font-size:24px;
+}
+
+.flow-purpose{
+  color:#777;
+
+  font-size:11px;
+
+  text-align:right;
+}
+
+
+/* =========================================================
+   FINAL LIVE EXPERIENCE
+========================================================= */
+
+.live-experience{
+  overflow:hidden;
+
+  background:#fff;
+}
+
+.live-experience-head{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:50px;
+
+  align-items:flex-end;
+
+  margin-bottom:60px;
+}
+
+.live-experience-title{
+  max-width:850px;
+
+  font-size:clamp(48px,7vw,104px);
+
+  font-weight:500;
+
+  line-height:.95;
+
+  letter-spacing:-.07em;
+}
+
+.visit-button{
+  flex:none;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  padding-bottom:8px;
+
+  border-bottom:1px solid #111;
+
+  font-size:12px;
+
+  text-transform:uppercase;
+}
+
+.final-browser{
+  width:calc(100% + (var(--page) * .6));
+
+  margin-left:calc(var(--page) * -.3);
+
+  box-shadow:
+    0 50px 120px rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result{
+  background:var(--fa-navy);
+
+  color:#fff;
+}
+
+.result-layout{
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    .65fr;
+
+  gap:100px;
+
+  align-items:end;
+}
+
+.result-title{
+  max-width:900px;
+
+  font-size:clamp(55px,8vw,125px);
+
+  font-weight:500;
+
+  line-height:.88;
+
+  letter-spacing:-.075em;
+}
+
+.result-title span{
+  color:var(--fa-gold);
+}
+
+.result-copy{
+  max-width:480px;
+
+  color:rgba(255,255,255,.64);
+
+  font-size:17px;
+
+  line-height:1.6;
+}
+
+.result-link{
+  display:inline-flex;
+
+  margin-top:40px;
+
+  padding-bottom:7px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.5);
+
+  color:#fff;
+
+  font-size:12px;
+
+  letter-spacing:.05em;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   NEXT PROJECT
+========================================================= */
+
+.next-project{
+  background:#111;
+
+  color:#fff;
+}
+
+.next-project-link{
+  display:block;
+
+  padding:80px 0;
+}
+
+.next-label{
+  margin-bottom:28px;
+
+  color:#666;
+
+  font-size:10px;
+
+  letter-spacing:.15em;
+
+  text-transform:uppercase;
+}
+
+.next-row{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+.next-title{
+  font-size:clamp(45px,7vw,105px);
+
+  font-weight:500;
+
+  line-height:1;
+
+  letter-spacing:-.07em;
+}
+
+.next-arrow{
+  width:75px;
+  height:75px;
+
+  display:grid;
+
+  place-items:center;
+
+  border:1px solid #444;
+
+  border-radius:50%;
+
+  font-size:29px;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s var(--ease);
+}
+
+.next-project-link:hover
+.next-arrow{
+  background:#fff;
+
+  color:#111;
+
+  transform:rotate(-45deg);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+  padding:35px 0;
+
+  background:#111;
+
+  color:#5E5E5E;
+
+  font-size:10px;
+}
+
+.footer-row{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:25px;
+
+  padding-top:30px;
+
+  border-top:1px solid #272727;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1050px){
+
+  .case-nav{
+    display:none;
   }
 
-  .hero {
+  .overview-layout,
+  .challenge-grid,
+  .result-layout{
     grid-template-columns:1fr;
   }
 
-  .hero-visual {
-    order:-1;
+  .overview-layout,
+  .challenge-grid{
+    gap:55px;
   }
 
-  .about {
-    grid-template-columns:1fr;
+  .system-panel.colors{
+    grid-column:span 6;
   }
 
-  .fa-story {
-    grid-template-columns:1fr;
+  .system-panel.spacing{
+    grid-column:span 6;
   }
 
-  .system-layout {
-    grid-template-columns:160px 1fr;
+  .system-panel.type{
+    grid-column:span 12;
   }
 
-  .voit-process {
-    grid-template-columns:1fr;
+  .visual-card.navy{
+    grid-column:span 7;
   }
 
-  .voit-social {
+  .visual-card.gold{
+    grid-column:span 5;
+  }
+
+  .visual-card.light{
+    grid-column:span 5;
+  }
+
+  .visual-card.slate{
+    grid-column:span 7;
+  }
+
+  .visual-card.type-card{
+    grid-column:span 12;
+  }
+
+  .component-stage{
+    min-height:auto;
+
+    display:grid;
+
     grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+    padding:20px;
   }
 
-  .deck-body {
-    grid-template-columns:1fr;
-  }
-
-  .deck-side {
-    border-left:0;
-    border-top:1px solid #333;
-  }
-
-  .editorial-shell {
-    grid-template-columns:1fr;
-  }
-
-  .editorial-inspector {
+  .component-card{
     position:relative;
-    top:auto;
 
-    display:grid;
-    grid-template-columns:170px 1fr;
-    gap:17px;
+    inset:auto !important;
+
+    width:auto !important;
   }
 
-  .brand-body {
+  .variant-grid{
     grid-template-columns:1fr;
   }
 
-  .skill-grid {
-    grid-template-columns:1fr 1fr;
+  .device-stage{
+    min-height:650px;
   }
+
+  .tablet-device{
+    width:270px;
+  }
+
+  .mobile-device{
+    width:185px;
+  }
+
+  .mobile-device-screen iframe{
+    transform:
+      scale(
+        calc(
+          167 / 390
+        )
+      );
+  }
+
 }
 
 
-@media (max-width:760px) {
-  .site-nav {
-    display:flex!important;
-    justify-content:space-between;
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+  :root{
+    --page:20px;
   }
 
-  .site-nav ul {
+
+  /* HEADER */
+
+  .header{
+    height:66px;
+  }
+
+  .main-nav{
     display:none;
   }
 
-  .theme-toggle {
-    display:none;
-  }
-
-  .hero {
-    padding-top:48px;
-  }
-
-  .hero h1 {
-    font-size:clamp(2.4rem,12vw,3.8rem);
-  }
-
-  .spec-floater {
-    display:none;
-  }
-
-  .process-grid {
-    grid-template-columns:1fr;
-  }
-
-  .case-grid {
-    grid-template-columns:1fr;
-  }
-
-  .browser-shell iframe {
-    height:520px;
-  }
-
-  .browser-address {
-    overflow:hidden;
-
-    max-width:180px;
-
-    text-overflow:ellipsis;
-    white-space:nowrap;
-  }
-
-  .figma-frame {
-    min-height:520px;
-  }
-
-  .fa-screens {
-    grid-template-columns:1fr;
-  }
-
-  .fa-screen-main {
-    height:520px;
-  }
-
-  .fa-screen-thumbs {
-    flex-direction:row;
-
-    max-height:none;
-  }
-
-  .fa-screen-thumb {
-    flex:0 0 115px;
-  }
-
-  .system-layout {
-    display:block;
-  }
-
-  .system-sidebar {
-    display:flex;
-    gap:5px;
-
-    overflow:auto;
-  }
-
-  .system-sidebar > span {
-    display:none;
-  }
-
-  .system-nav-btn {
-    width:auto;
-
-    white-space:nowrap;
-  }
-
-  .component-grid {
-    grid-template-columns:1fr;
-  }
-
-  .voit-ecosystem {
+  .menu-button{
     display:grid;
-    grid-template-columns:1fr;
-    grid-template-rows:auto;
 
-    min-height:0;
+    place-items:center;
   }
 
-  .voit-core {
-    grid-column:auto;
-    grid-row:auto;
+  .mobile-nav{
+    position:fixed;
 
-    width:100%;
-    height:auto;
+    top:66px;
+    right:0;
+    bottom:0;
+    left:0;
 
-    padding:24px;
+    z-index:999;
 
-    border-radius:8px;
+    display:flex;
+
+    flex-direction:column;
+
+    padding:25px var(--page);
+
+    background:#111;
+
+    color:#fff;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(-10px);
+
+    transition:.3s ease;
   }
 
-  .voit-social {
-    grid-template-columns:1fr 1fr;
-  }
+  .mobile-nav.active{
+    opacity:1;
 
-  .voit-professional {
-    grid-template-columns:1fr;
-  }
+    visibility:visible;
 
-  .deck-stage {
-    padding:18px;
-  }
-
-  .editorial-ribbon {
-    grid-template-columns:1fr 1fr;
-  }
-
-  .editorial-card:nth-child(n) {
     transform:none;
   }
 
-  .editorial-inspector {
-    grid-template-columns:110px 1fr;
+  .mobile-nav a{
+    padding:19px 0;
 
-    padding:14px;
+    border-bottom:1px solid #333;
+
+    font-family:"Manrope";
+
+    font-size:23px;
   }
 
-  .brand-grid {
-    grid-template-columns:1fr 1fr;
+
+  /* HERO */
+
+  .hero{
+    min-height:760px;
+
+    padding:130px 0 50px;
   }
 
-  .skill-grid {
+  .hero-meta{
+    margin-bottom:45px;
+
+    font-size:9px;
+  }
+
+  .hero-title{
+    font-size:clamp(58px,19vw,84px);
+
+    line-height:.88;
+  }
+
+  .hero-bottom{
     grid-template-columns:1fr;
+
+    gap:30px;
+
+    margin-top:45px;
   }
+
+  .hero-description{
+    font-size:15px;
+  }
+
+  .hero-link{
+    justify-self:start;
+  }
+
+
+  /* LIVE BROWSER */
+
+  .live-intro{
+    padding-top:0;
+  }
+
+  .browser-wrap{
+    width:calc(100% - 20px);
+
+    padding-bottom:65px;
+  }
+
+  .browser{
+    border-radius:7px;
+  }
+
+  .browser-bar{
+    height:34px;
+
+    grid-template-columns:auto 1fr auto;
+
+    gap:8px;
+
+    padding:0 9px;
+  }
+
+  .browser-dot{
+    width:6px;
+    height:6px;
+  }
+
+  .browser-url{
+    width:auto;
+
+    padding:5px 9px;
+
+    font-size:7px;
+  }
+
+  .browser-open{
+    display:none;
+  }
+
+  .browser-screen{
+    aspect-ratio:9/12;
+  }
+
+  /*
+     O site continua desktop no iframe grande,
+     mas recebe uma viewport menor automaticamente
+     porque o iframe acompanha o container.
+  */
+
+
+  /* GLOBAL */
+
+  .section{
+    padding:80px 0;
+  }
+
+  .section-small{
+    padding:65px 0;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+
+  .section-copy{
+    margin-top:22px;
+
+    font-size:16px;
+  }
+
+
+  /* OVERVIEW */
+
+  .overview-layout{
+    gap:60px;
+  }
+
+  .overview-statement{
+    font-size:38px;
+  }
+
+  .fact{
+    grid-template-columns:85px 1fr;
+  }
+
+
+  /* CHALLENGE */
+
+  .challenge-title{
+    font-size:56px;
+
+    line-height:.94;
+  }
+
+  .challenge-grid{
+    margin-top:50px;
+  }
+
+  .challenge-copy{
+    font-size:16px;
+  }
+
+  .challenge-quote{
+    font-size:29px;
+  }
+
+
+  /* VISUAL */
+
+  .visual-grid{
+    grid-template-columns:1fr;
+
+    gap:12px;
+
+    margin-top:50px;
+  }
+
+  .visual-card,
+  .visual-card.navy,
+  .visual-card.gold,
+  .visual-card.light,
+  .visual-card.slate,
+  .visual-card.type-card{
+    grid-column:auto;
+
+    min-height:250px;
+  }
+
+  .visual-card.type-card{
+    min-height:330px;
+  }
+
+  .type-display{
+    font-size:100px;
+  }
+
+
+  /* SYSTEM */
+
+  .system-grid{
+    grid-template-columns:1fr;
+
+    margin-top:50px;
+  }
+
+  .system-panel,
+  .system-panel.colors,
+  .system-panel.spacing,
+  .system-panel.type{
+    grid-column:auto;
+  }
+
+
+  /* COMPONENTS */
+
+  .component-stage{
+    grid-template-columns:1fr;
+
+    margin-top:50px;
+  }
+
+
+  /* THEMES */
+
+  .theme-comparison{
+    grid-template-columns:1fr;
+
+    min-height:auto;
+  }
+
+  .theme-side{
+    min-height:560px;
+
+    padding:60px 25px;
+  }
+
+  .theme-message{
+    font-size:48px;
+  }
+
+
+  /* INTERACTIONS */
+
+  .interaction-list{
+    margin-top:50px;
+  }
+
+  .interaction-item{
+    grid-template-columns:
+      35px
+      1fr;
+
+    gap:15px;
+
+    min-height:auto;
+
+    padding:25px 0;
+  }
+
+  .interaction-description{
+    grid-column:2;
+
+    font-size:13px;
+  }
+
+  .interaction-name{
+    font-size:21px;
+  }
+
+
+  /* RESPONSIVE */
+
+  .device-stage{
+    min-height:660px;
+
+    margin-top:50px;
+  }
+
+  .desktop-device{
+    width:94vw;
+  }
+
+  .tablet-device{
+    bottom:35px;
+    left:0;
+
+    width:210px;
+  }
+
+  .mobile-device{
+    right:0;
+    bottom:0;
+
+    width:145px;
+  }
+
+  .mobile-device-screen iframe{
+    transform:
+      scale(
+        calc(
+          127 / 390
+        )
+      );
+  }
+
+  .tablet-placeholder{
+    padding:22px 17px;
+  }
+
+  .tablet-placeholder h4{
+    font-size:23px;
+  }
+
+
+  /* ARCHITECTURE */
+
+  .flow{
+    margin-top:50px;
+  }
+
+  .flow-item{
+    grid-template-columns:
+      45px
+      1fr;
+
+    min-height:80px;
+  }
+
+  .flow-purpose{
+    display:none;
+  }
+
+  .flow-name{
+    font-size:18px;
+  }
+
+
+  /* LIVE */
+
+  .live-experience-head{
+    display:block;
+
+    margin-bottom:40px;
+  }
+
+  .live-experience-title{
+    font-size:48px;
+  }
+
+  .visit-button{
+    margin-top:30px;
+  }
+
+  .final-browser{
+    width:100%;
+
+    margin:0;
+  }
+
+
+  /* RESULT */
+
+  .result-layout{
+    gap:50px;
+  }
+
+  .result-title{
+    font-size:58px;
+  }
+
+  .result-copy{
+    font-size:15px;
+  }
+
+
+  /* NEXT */
+
+  .next-project-link{
+    padding:60px 0;
+  }
+
+  .next-title{
+    font-size:47px;
+  }
+
+  .next-arrow{
+    width:54px;
+    height:54px;
+
+    font-size:22px;
+  }
+
+
+  /* FOOTER */
+
+  .footer-row{
+    flex-direction:column;
+  }
+
 }
 
 
-@media (prefers-reduced-motion:reduce) {
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
   *,
   *::before,
-  *::after {
-    animation:none!important;
+  *::after{
+    scroll-behavior:auto !important;
 
-    transition-duration:.01ms!important;
+    animation-duration:.01ms !important;
 
-    scroll-behavior:auto!important;
+    animation-iteration-count:1 !important;
+
+    transition-duration:.01ms !important;
   }
+
 }
+
 </style>
 </head>
 
 
-<body class="intro-active">
+<body>
 
 
-<!-- ========================================================
-     INTRO
-     ======================================================== -->
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
-<div
-  id="intro-overlay"
-  aria-hidden="true"
+<header
+  id="header"
+  class="header"
 >
-  <div class="intro-title">
 
-    Design com
-
-    <span
-      class="intro-word-cycle"
-      id="introWordCycle"
-    >
-      <span class="w">
-        clareza.
-      </span>
-
-      <span class="w">
-        estrutura.
-      </span>
-
-      <span class="w">
-        detalhes.
-      </span>
-    </span>
-
-  </div>
-
-  <span class="intro-help mono">
-    clique para continuar
-  </span>
-</div>
-
-
-<!-- ========================================================
-     NAV
-     ======================================================== -->
-
-<nav
-  class="site-nav"
-  id="top"
->
-  <div class="nav-left">
+  <div class="header-inner">
 
     <a
       href="#top"
       class="logo"
-      id="logoHome"
     >
-      Raquel Renovato
+      PORTFOLIO
     </a>
 
+
+    <nav class="main-nav">
+
+      <a href="#overview">
+        Overview
+      </a>
+
+      <a href="#system">
+        Design System
+      </a>
+
+      <a href="#components">
+        Components
+      </a>
+
+      <a href="#responsive">
+        Responsive
+      </a>
+
+      <a
+        href="https://fernando-amaral.vercel.app/"
+        target="_blank"
+        rel="noopener"
+      >
+        Live ↗
+      </a>
+
+    </nav>
+
+
     <button
+      id="menuButton"
+      class="menu-button"
       type="button"
-      id="themeToggle"
-      class="theme-toggle mono"
-      aria-label="Alternar tema"
+      aria-label="Abrir menu"
     >
-      <span id="themeLabel">
-        Sombrio
-      </span>
+      ☰
     </button>
 
   </div>
 
+</header>
 
-  <ul>
-    <li>
-      <a href="#sobre">
-        sobre
-      </a>
-    </li>
 
-    <li>
-      <a href="#projetos">
-        projetos
-      </a>
-    </li>
+<nav
+  id="mobileNav"
+  class="mobile-nav"
+>
 
-    <li>
-      <a href="#habilidades">
-        habilidades
-      </a>
-    </li>
-  </ul>
+  <a href="#overview">
+    Overview
+  </a>
 
+  <a href="#direction">
+    Visual Direction
+  </a>
+
+  <a href="#system">
+    Design System
+  </a>
+
+  <a href="#components">
+    Components
+  </a>
+
+  <a href="#responsive">
+    Responsive
+  </a>
 
   <a
-    href="#contato"
-    class="nav-cta"
+    href="https://fernando-amaral.vercel.app/"
+    target="_blank"
+    rel="noopener"
   >
-    contato
+    Ver site ↗
   </a>
+
 </nav>
+
+
+<!-- ======================================================
+     CASE NAV
+====================================================== -->
+
+<aside
+  id="caseNav"
+  class="case-nav"
+>
+
+  <a
+    href="#overview"
+    data-section="overview"
+  >
+    01
+  </a>
+
+  <a
+    href="#direction"
+    data-section="direction"
+  >
+    02
+  </a>
+
+  <a
+    href="#system"
+    data-section="system"
+  >
+    03
+  </a>
+
+  <a
+    href="#components"
+    data-section="components"
+  >
+    04
+  </a>
+
+  <a
+    href="#interactions"
+    data-section="interactions"
+  >
+    05
+  </a>
+
+  <a
+    href="#responsive"
+    data-section="responsive"
+  >
+    06
+  </a>
+
+  <a
+    href="#result"
+    data-section="result"
+  >
+    07
+  </a>
+
+</aside>
 
 
 <main>
 
 
-<!-- ========================================================
+<!-- ======================================================
      HERO
-     ======================================================== -->
+====================================================== -->
 
-<section class="hero">
+<section
+  id="top"
+  class="hero"
+>
 
-  <div class="hero-text">
+  <div class="hero-bg"></div>
 
-    <div class="hero-eyebrow">
-      COMUNICAÇÃO VISUAL • UI • EXPERIÊNCIAS DIGITAIS
+  <div class="hero-grid"></div>
+
+
+  <div class="container hero-content">
+
+    <div class="hero-meta">
+
+      <span>
+        CASE STUDY / 2026
+      </span>
+
+      <span>
+        UI/UX · DESIGN SYSTEM · WEB
+      </span>
+
     </div>
 
 
-    <h1>
-      Design com
-      <em>clareza, estrutura</em>
-      e
-      <em>detalhes.</em>
+    <h1 class="hero-title">
+
+      <span>
+        Fernando
+      </span>
+
+      <span class="outline">
+        Amaral
+      </span>
+
     </h1>
 
 
-    <div class="hero-sub">
+    <div class="hero-bottom">
 
-      <p>
-        Designer de Comunicação Visual e UI, transformando
-        conteúdos, necessidades de negócio e identidades em
-        interfaces e sistemas visuais claros e consistentes.
+      <p class="hero-description">
+        Uma experiência digital construída para traduzir precisão técnica,
+        organização e confiança em uma presença digital contemporânea.
       </p>
 
 
-      <div class="hero-actions">
+      <a
+        href="https://fernando-amaral.vercel.app/"
+        target="_blank"
+        rel="noopener"
+        class="hero-link"
+      >
+
+        VISITAR SITE
+
+        <span class="hero-link-arrow">
+          ↗
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     LIVE HERO
+====================================================== -->
+
+<section class="live-intro">
+
+  <div class="browser-wrap">
+
+    <div class="browser reveal">
+
+      <div class="browser-bar">
+
+        <div class="browser-dots">
+
+          <span class="browser-dot"></span>
+
+          <span class="browser-dot"></span>
+
+          <span class="browser-dot"></span>
+
+        </div>
+
+
+        <div class="browser-url">
+          fernando-amaral.vercel.app
+        </div>
+
 
         <a
-          href="#projetos"
-          class="hero-cta"
+          href="https://fernando-amaral.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          class="browser-open"
         >
-          Ver projetos selecionados ↓
-        </a>
-
-        <a
-          href="#contato"
-          class="hero-cta"
-        >
-          Entrar em contato ↗
+          OPEN ↗
         </a>
 
       </div>
-    </div>
-
-  </div>
 
 
-  <!-- WIREFRAME INTERATIVO -->
+      <div class="browser-screen">
 
-  <div class="hero-visual">
-
-    <div class="wf-wrapper">
-
-      <svg
-        class="wf-illustration pen-tool-svg"
-        viewBox="0 0 100 100"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M15,80 C35,20 65,80 85,20"
-          stroke="var(--accent)"
-          stroke-width="2"
-          stroke-dasharray="3 3"
-        />
-
-        <line
-          x1="15"
-          y1="80"
-          x2="35"
-          y2="20"
-          stroke="var(--line-strong)"
-          stroke-width="1.5"
-        />
-
-        <circle
-          cx="35"
-          cy="20"
-          r="3.5"
-          fill="var(--bg)"
-          stroke="var(--accent)"
-          stroke-width="2"
-        />
-
-        <rect
-          x="11"
-          y="76"
-          width="8"
-          height="8"
-          fill="var(--accent)"
-        />
-
-        <rect
-          x="81"
-          y="16"
-          width="8"
-          height="8"
-          fill="var(--accent)"
-        />
-      </svg>
-
-
-      <div class="wf-illustration badge-floater">
-        <span>❖</span>
-        auto-layout 8px
-      </div>
-
-
-      <div class="wf-illustration spec-floater">
-        ↔ 380px × 260px
-      </div>
-
-
-      <div class="wf-illustration cursor-floater">
-
-        <svg
-          width="11"
-          height="11"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path d="M3 3l7 18 3-7 7-3L3 3z"/>
-        </svg>
-
-        <span>
-          Raquel • UI
-        </span>
-
-      </div>
-
-
-      <div
-        class="wf-window"
-        id="wfWindow"
-      >
-
-        <div class="wf-header">
-
-          <div class="wf-dots">
-            <span class="wf-dot"></span>
-            <span class="wf-dot"></span>
-            <span class="wf-dot"></span>
-          </div>
-
-
-          <button
-            class="wf-switch-mode mono"
-            id="wfSwitchMode"
-            type="button"
-          >
-            modo app
-          </button>
-
+        <div class="iframe-loader">
+          CARREGANDO EXPERIÊNCIA
         </div>
-
-
-        <div class="wf-body">
-
-
-          <div class="wf-sidebar">
-
-            <div
-              class="wf-nav-item active wf-paintable"
-              data-tab="dashboard"
-            >
-              <span>▧</span>
-              Dashboard
-            </div>
-
-            <div
-              class="wf-nav-item wf-paintable"
-              data-tab="interfaces"
-            >
-              <span>✦</span>
-              Interfaces
-            </div>
-
-            <div
-              class="wf-nav-item wf-paintable"
-              data-tab="system"
-            >
-              <span>❖</span>
-              Design System
-            </div>
-
-          </div>
-
-
-          <div class="wf-main">
-
-
-            <div
-              class="wf-view active"
-              id="wf-dashboard"
-            >
-
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Painel de Dashboard
-                </span>
-
-                <button
-                  type="button"
-                  class="wf-badge-btn wf-paintable"
-                  id="wfMetricBtn"
-                >
-                  +1 Entrega
-                </button>
-
-              </div>
-
-
-              <div class="wf-card-grid">
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Entregas
-                  </span>
-
-                  <span
-                    class="wf-card-val"
-                    id="wfCounter"
-                  >
-                    14
-                  </span>
-
-                </div>
-
-
-                <div class="wf-card wf-paintable">
-
-                  <span class="wf-card-label mono">
-                    Status
-                  </span>
-
-                  <span
-                    class="wf-card-val"
-                    style="color:var(--accent)"
-                  >
-                    100%
-                  </span>
-
-                </div>
-
-              </div>
-
-
-              <div class="wf-task-list">
-
-                <div class="wf-task-item checked">
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Hierarquia visual definida
-                  </span>
-                </div>
-
-
-                <div class="wf-task-item">
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Prototipagem de interações
-                  </span>
-                </div>
-
-
-                <div class="wf-task-item">
-                  <span class="wf-checkbox wf-paintable">
-                    ✓
-                  </span>
-
-                  <span>
-                    Design System alinhado
-                  </span>
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="wf-view"
-              id="wf-interfaces"
-            >
-
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Wireframes
-                </span>
-
-                <span class="wf-card-label mono">
-                  12 cols
-                </span>
-
-              </div>
-
-
-              <div class="wf-card wf-paintable">
-
-                <span class="wf-card-label mono">
-                  Hero / Desktop
-                </span>
-
-                <strong style="font-size:.7rem">
-                  UI responsiva
-                </strong>
-
-              </div>
-
-
-              <div class="wf-card-grid">
-
-                <div class="wf-card wf-paintable">
-                  <span class="wf-card-label mono">
-                    Button
-                  </span>
-
-                  <strong style="font-size:.6rem">
-                    Primary
-                  </strong>
-                </div>
-
-
-                <div class="wf-card wf-paintable">
-                  <span class="wf-card-label mono">
-                    Card
-                  </span>
-
-                  <strong style="font-size:.6rem">
-                    Content
-                  </strong>
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="wf-view"
-              id="wf-system"
-            >
-
-              <div class="wf-top-bar">
-
-                <span class="wf-title">
-                  Biblioteca
-                </span>
-
-                <span class="wf-card-label mono">
-                  UI Kit
-                </span>
-
-              </div>
-
-
-              <button
-                type="button"
-                class="wf-badge-btn wf-paintable"
-              >
-                Primary
-              </button>
-
-
-              <div class="wf-card wf-paintable">
-
-                <span class="wf-card-label mono">
-                  Typography
-                </span>
-
-                <span class="serif">
-                  Fraunces
-                </span>
-
-                <span
-                  class="mono"
-                  style="font-size:.53rem"
-                >
-                  IBM Plex Mono
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="color-palette">
-
-      <button
-        type="button"
-        class="swatch active"
-        data-color="#E8590C"
-        style="background:#E8590C"
-        aria-label="Laranja"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#38483A"
-        style="background:#38483A"
-        aria-label="Verde"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#2B3A4A"
-        style="background:#2B3A4A"
-        aria-label="Azul"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#B37838"
-        style="background:#B37838"
-        aria-label="Ocre"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch"
-        data-color="#1F1C18"
-        style="background:#1F1C18"
-        aria-label="Escuro"
-      ></button>
-
-      <button
-        type="button"
-        class="swatch reset"
-        data-color=""
-        aria-label="Borracha"
-      >
-        ×
-      </button>
-
-
-      <button
-        type="button"
-        class="clear-btn mono"
-        id="wfClear"
-      >
-        limpar tudo
-      </button>
-
-    </div>
-
-
-    <div class="hero-visual-hint mono">
-      escolha uma cor e clique nos componentes
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ========================================================
-     PROCESS
-     ======================================================== -->
-
-<section class="process-section">
-
-  <span class="section-kicker">
-    método & execução
-  </span>
-
-
-  <div class="process-grid">
-
-    <article class="process-card">
-
-      <span>
-        01 / DIAGNÓSTICO
-      </span>
-
-      <h3>
-        Entendimento & Imersão
-      </h3>
-
-      <p>
-        Contexto, conteúdo, necessidade e objetivo vêm
-        antes da execução visual.
-      </p>
-
-    </article>
-
-
-    <article class="process-card">
-
-      <span>
-        02 / ESTRUTURAÇÃO
-      </span>
-
-      <h3>
-        Pesquisa & Direção
-      </h3>
-
-      <p>
-        Hierarquia, referências e critérios sustentam
-        as decisões do projeto.
-      </p>
-
-    </article>
-
-
-    <article class="process-card">
-
-      <span>
-        03 / EXECUÇÃO
-      </span>
-
-      <h3>
-        Design & Refinamento
-      </h3>
-
-      <p>
-        Desenvolvimento, prototipagem e refinamento
-        adaptados ao contexto de cada entrega.
-      </p>
-
-    </article>
-
-  </div>
-</section>
-
-
-<!-- ========================================================
-     ABOUT
-     ======================================================== -->
-
-<div
-  class="section-head"
-  id="sobre"
->
-  <h2>
-    Sobre mim
-  </h2>
-</div>
-
-
-<section class="about">
-
-  <div class="about-copy">
-
-    <span class="section-kicker">
-      design como ferramenta de clareza
-    </span>
-
-
-    <p>
-      Sou Designer Gráfica formada pela Estácio, com
-      especialização em UI/UX Design em andamento e três
-      anos de atuação no mercado.
-    </p>
-
-
-    <p>
-      Trabalho entre comunicação visual e interfaces digitais,
-      transformando informações, necessidades de negócio e
-      identidade de marca em soluções visuais claras e consistentes.
-    </p>
-
-
-    <p>
-      Minha atuação passa por Figma, Pacote Adobe e Canva,
-      da organização da informação à entrega final.
-    </p>
-
-
-    <div class="about-tags">
-      <span class="about-tag">
-        UI Design
-      </span>
-
-      <span class="about-tag">
-        Comunicação Visual
-      </span>
-
-      <span class="about-tag">
-        Figma
-      </span>
-
-      <span class="about-tag">
-        Adobe
-      </span>
-
-      <span class="about-tag">
-        Canva
-      </span>
-
-      <span class="about-tag">
-        Arquitetura de Informação
-      </span>
-    </div>
-
-  </div>
-
-
-  <div class="about-visual">
-
-    <div class="about-orbit"></div>
-
-    <div class="about-photo">
-      <img
-        src="img/img-perfil/foto-perfil.jpeg"
-        alt="Retrato de Raquel Renovato"
-        class="js-lightbox"
-        tabindex="0"
-      >
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================================
-     PROJECTS
-     ======================================================== -->
-
-<div
-  class="section-head"
-  id="projetos"
->
-  <span class="section-kicker">
-    projetos selecionados
-  </span>
-
-  <h2 style="margin-top:8px">
-    Cada projeto pede uma forma diferente de contar a história.
-  </h2>
-</div>
-
-
-<!-- ========================================================
-     FERNANDO
-     ======================================================== -->
-
-<article
-  class="project"
-  id="fernando"
->
-
-  <div class="project-head">
-
-    <span class="project-number">
-      01 / 05 • UI REDESIGN
-    </span>
-
-
-    <h3>
-      Fernando Amaral
-    </h3>
-
-
-    <p class="project-summary">
-      Redesign de uma landing page técnica para projetos
-      elétricos, SPDA e infraestrutura, trabalhando
-      arquitetura da informação, direção visual,
-      componentes e prototipagem.
-    </p>
-
-
-    <div class="case-grid">
-
-      <article class="case-card">
-        <span>
-          contexto
-        </span>
-
-        <p>
-          O projeto partiu de um site já existente,
-          com grande volume de serviços e informações
-          técnicas distribuídas em uma landing page extensa.
-        </p>
-      </article>
-
-
-      <article class="case-card">
-        <span>
-          desafio
-        </span>
-
-        <p>
-          Reorganizar essa complexidade para tornar
-          escopo, processo, autoridade e contato mais
-          fáceis de compreender.
-        </p>
-      </article>
-
-
-      <article class="case-card">
-        <span>
-          meu papel
-        </span>
-
-        <p>
-          Redesign da interface, estrutura visual,
-          componentes, estados e protótipo interativo
-          no Figma.
-        </p>
-      </article>
-
-
-      <article class="case-card">
-        <span>
-          solução
-        </span>
-
-        <p>
-          Uma linguagem técnica e editorial com
-          azul-marinho, dourado, componentes reutilizáveis
-          e maior organização visual do conteúdo.
-        </p>
-      </article>
-
-    </div>
-
-
-    <div class="project-meta">
-      <span>Figma</span>
-      <span>UI Design</span>
-      <span>Redesign</span>
-      <span>Components</span>
-      <span>Prototype</span>
-    </div>
-
-  </div>
-
-
-  <div class="fa-case">
-
-    <div class="fa-tabs">
-
-      <button
-        type="button"
-        class="fa-tab active"
-        data-fa-tab="story"
-      >
-        Case
-      </button>
-
-      <button
-        type="button"
-        class="fa-tab"
-        data-fa-tab="before"
-      >
-        Site anterior
-      </button>
-
-      <button
-        type="button"
-        class="fa-tab"
-        data-fa-tab="screens"
-      >
-        Redesign
-      </button>
-
-      <button
-        type="button"
-        class="fa-tab"
-        data-fa-tab="prototype"
-      >
-        Protótipo real
-      </button>
-
-      <button
-        type="button"
-        class="fa-tab"
-        data-fa-tab="system"
-      >
-        Sistema UI
-      </button>
-
-    </div>
-
-
-    <!-- STORY -->
-
-    <section
-      class="fa-view active"
-      data-fa-view="story"
-    >
-
-      <div class="fa-story">
-
-        <div class="fa-story-copy">
-
-          <span class="section-kicker">
-            lógica do redesign
-          </span>
-
-          <h4>
-            Complexidade técnica sem parecer complexa.
-          </h4>
-
-          <p>
-            O redesign preserva a profundidade do conteúdo
-            técnico, mas cria uma leitura mais guiada.
-          </p>
-
-
-          <div class="fa-story-list">
-
-            <article>
-              <strong>
-                01
-              </strong>
-
-              <p>
-                Hero com proposta de valor e ações mais claras.
-              </p>
-            </article>
-
-
-            <article>
-              <strong>
-                02
-              </strong>
-
-              <p>
-                Oito serviços concentrados em um componente
-                navegável em vez de uma sequência extensa.
-              </p>
-            </article>
-
-
-            <article>
-              <strong>
-                03
-              </strong>
-
-              <p>
-                Processo tratado como jornada visual de seis etapas.
-              </p>
-            </article>
-
-
-            <article>
-              <strong>
-                04
-              </strong>
-
-              <p>
-                Portfólio estruturado por filtros,
-                cards e informações técnicas.
-              </p>
-            </article>
-
-          </div>
-
-        </div>
-
-
-        <div class="fa-design-cover">
-
-          <img
-            src="img/img-fernando/Layout%20-%20Web.png"
-            alt="Redesign Fernando Amaral"
-            class="js-lightbox"
-            tabindex="0"
-          >
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- BEFORE -->
-
-    <section
-      class="fa-view"
-      data-fa-view="before"
-    >
-
-      <div class="browser-shell">
-
-        <div class="browser-bar">
-
-          <div class="browser-dots">
-            <i></i>
-            <i></i>
-            <i></i>
-          </div>
-
-
-          <div class="browser-address mono">
-            fernando-amaral-website-web.vercel.app
-          </div>
-
-
-          <a
-            href="https://fernando-amaral-website-web.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="browser-link"
-          >
-            abrir ↗
-          </a>
-
-        </div>
-
 
         <iframe
-          src="https://fernando-amaral-website-web.vercel.app/"
-          title="Site anterior de Fernando Amaral"
+          class="lazy-site"
+          data-src="https://fernando-amaral.vercel.app/"
+          title="Site Fernando Amaral"
           loading="lazy"
         ></iframe>
 
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+</section>
 
 
-    <!-- SCREENS -->
+<!-- ======================================================
+     OVERVIEW
+====================================================== -->
 
-    <section
-      class="fa-view"
-      data-fa-view="screens"
-    >
+<section
+  id="overview"
+  class="section overview case-section"
+>
 
-      <div class="fa-screens">
+  <div class="container">
 
-        <div class="fa-screen-main">
+    <div class="eyebrow reveal">
+      01 / Overview
+    </div>
 
-          <img
-            src="img/img-fernando/Layout%20-%20Web.png"
-            alt="Tela selecionada do redesign Fernando Amaral"
-            id="faScreenMain"
-            class="js-lightbox"
-            tabindex="0"
-          >
+
+    <div class="overview-layout">
+
+
+      <div>
+
+        <p class="overview-statement reveal">
+
+          Transformar uma atuação altamente técnica em uma experiência
+
+          <em>
+            clara, confiável e contemporânea.
+          </em>
+
+        </p>
+
+      </div>
+
+
+      <div class="project-facts reveal reveal-delay">
+
+        <div class="fact">
+
+          <div class="fact-label">
+            Cliente
+          </div>
+
+          <div class="fact-value">
+            Fernando Amaral
+          </div>
 
         </div>
 
 
-        <div
-          class="fa-screen-thumbs"
-          id="faScreenThumbs"
-        ></div>
+        <div class="fact">
+
+          <div class="fact-label">
+            Escopo
+          </div>
+
+          <div class="fact-value">
+            UI/UX Design<br>
+            Design System<br>
+            Responsive Design<br>
+            Front-end Development
+          </div>
+
+        </div>
+
+
+        <div class="fact">
+
+          <div class="fact-label">
+            Foco
+          </div>
+
+          <div class="fact-value">
+            Engenharia elétrica<br>
+            Serviços especializados
+          </div>
+
+        </div>
+
+
+        <div class="fact">
+
+          <div class="fact-label">
+            Ano
+          </div>
+
+          <div class="fact-value">
+            2026
+          </div>
+
+        </div>
+
+
+        <div class="fact">
+
+          <div class="fact-label">
+            Status
+          </div>
+
+          <div class="fact-value">
+            Live
+          </div>
+
+        </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+</section>
 
 
-    <!-- PROTOTYPE -->
+<!-- ======================================================
+     CHALLENGE
+====================================================== -->
 
-    <section
-      class="fa-view"
-      data-fa-view="prototype"
-    >
+<section class="section challenge">
 
-      <div class="figma-shell">
+  <div class="container">
 
-        <div class="figma-head">
+    <div class="challenge-number reveal">
+      01.1 / THE CHALLENGE
+    </div>
 
-          <div>
 
-            <span>
-              PROTOTYPE / FERNANDO AMARAL
-            </span>
+    <h2 class="challenge-title reveal">
 
-            <strong>
-              Explore o protótipo real
-            </strong>
+      Traduzir precisão técnica em confiança visual.
+
+    </h2>
+
+
+    <div class="challenge-grid">
+
+      <p class="challenge-copy reveal">
+
+        O projeto precisava comunicar uma atuação especializada sem recorrer
+        à linguagem visual genérica normalmente associada ao segmento.
+        Engenharia, segurança, organização documental e experiência precisavam
+        coexistir dentro de uma interface simples de compreender.
+
+      </p>
+
+
+      <p class="challenge-quote reveal reveal-delay">
+
+        Não era apenas sobre apresentar serviços. Era sobre construir
+        percepção de confiança antes do primeiro contato.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     VISUAL DIRECTION
+====================================================== -->
+
+<section
+  id="direction"
+  class="section visual-direction case-section"
+>
+
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      02 / Visual Direction
+    </div>
+
+
+    <h2 class="section-title reveal">
+
+      Technical precision.<br>
+      Visual confidence.
+
+    </h2>
+
+
+    <p class="section-copy reveal">
+
+      O sistema visual combina uma base institucional profunda com um
+      acento dourado que introduz sofisticação sem retirar a percepção
+      técnica do projeto.
+
+    </p>
+
+
+    <div class="visual-grid">
+
+      <article class="visual-card navy reveal">
+
+        <div class="color-name">
+          Deep Navy
+        </div>
+
+        <div class="color-code">
+          #00152A
+        </div>
+
+      </article>
+
+
+      <article class="visual-card gold reveal">
+
+        <div class="color-name">
+          Gold
+        </div>
+
+        <div class="color-code">
+          #B8860B
+        </div>
+
+      </article>
+
+
+      <article class="visual-card light reveal">
+
+        <div class="color-name">
+          Off White
+        </div>
+
+        <div class="color-code">
+          #F4F6F8
+        </div>
+
+      </article>
+
+
+      <article class="visual-card slate reveal">
+
+        <div class="color-name">
+          Slate
+        </div>
+
+        <div class="color-code">
+          #64748B
+        </div>
+
+      </article>
+
+
+      <article class="visual-card type-card reveal">
+
+        <div class="color-name">
+          Manrope
+        </div>
+
+        <div class="type-display">
+          Aa
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     DESIGN SYSTEM
+====================================================== -->
+
+<section
+  id="system"
+  class="section design-system case-section"
+>
+
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      03 / Design System
+    </div>
+
+
+    <h2 class="section-title reveal">
+
+      Um sistema criado para manter consistência em toda a experiência.
+
+    </h2>
+
+
+    <p class="section-copy reveal">
+
+      Cores, tipografia, espaçamentos e comportamentos foram organizados
+      como um sistema reutilizável, permitindo que diferentes seções
+      mantenham a mesma linguagem.
+
+    </p>
+
+
+    <div class="system-grid">
+
+
+      <article class="system-panel colors reveal">
+
+        <div class="system-label">
+          Color Tokens
+        </div>
+
+
+        <div class="token-row">
+
+          <span
+            class="token-dot"
+            style="background:#00152A"
+          ></span>
+
+          Primary / Navy
+
+          <span style="margin-left:auto;color:#666">
+            #00152A
+          </span>
+
+        </div>
+
+
+        <div class="token-row">
+
+          <span
+            class="token-dot"
+            style="background:#B8860B"
+          ></span>
+
+          Accent / Gold
+
+          <span style="margin-left:auto;color:#666">
+            #B8860B
+          </span>
+
+        </div>
+
+
+        <div class="token-row">
+
+          <span
+            class="token-dot"
+            style="background:#64748B"
+          ></span>
+
+          Slate
+
+          <span style="margin-left:auto;color:#666">
+            #64748B
+          </span>
+
+        </div>
+
+
+        <div class="token-row">
+
+          <span
+            class="token-dot"
+            style="background:#F4F6F8;border:1px solid #555"
+          ></span>
+
+          Background
+
+          <span style="margin-left:auto;color:#666">
+            #F4F6F8
+          </span>
+
+        </div>
+
+
+        <div class="token-row">
+
+          <span
+            class="token-dot"
+            style="background:#FFFFFF"
+          ></span>
+
+          Surface
+
+          <span style="margin-left:auto;color:#666">
+            #FFFFFF
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="system-panel spacing reveal">
+
+        <div class="system-label">
+          Spacing
+        </div>
+
+
+        <div class="space-list">
+
+          <div class="space"></div>
+
+          <div class="space"></div>
+
+          <div class="space"></div>
+
+          <div class="space"></div>
+
+          <div class="space"></div>
+
+          <div class="space"></div>
+
+          <div class="space"></div>
+
+        </div>
+
+
+        <div class="space-labels">
+
+          <span>4</span>
+
+          <span>8</span>
+
+          <span>12</span>
+
+          <span>24</span>
+
+          <span>32</span>
+
+          <span>48</span>
+
+          <span>64</span>
+
+        </div>
+
+      </article>
+
+
+      <article class="system-panel type reveal">
+
+        <div class="system-label">
+          Typography
+        </div>
+
+
+        <div class="type-samples">
+
+          <div class="type-line">
+
+            <div class="type-name">
+              Display
+            </div>
+
+            <div class="type-example display-lg">
+              Aa
+            </div>
 
           </div>
 
 
-          <a
-            href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=cmT70GzhWQ224vG1-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            abrir no Figma ↗
-          </a>
+          <div class="type-line">
+
+            <div class="type-name">
+              H2
+            </div>
+
+            <div class="type-example heading">
+              Engineering
+            </div>
+
+          </div>
+
+
+          <div class="type-line">
+
+            <div class="type-name">
+              Body
+            </div>
+
+            <div class="type-example body">
+              DM Sans Regular
+            </div>
+
+          </div>
+
+
+          <div class="type-line">
+
+            <div class="type-name">
+              Caption
+            </div>
+
+            <div class="type-example caption">
+              TECHNICAL INFORMATION
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     COMPONENTS
+====================================================== -->
+
+<section
+  id="components"
+  class="section components case-section"
+>
+
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      04 / Components
+    </div>
+
+
+    <h2 class="section-title reveal">
+
+      Componentes construídos como linguagem.
+
+    </h2>
+
+
+    <p class="section-copy reveal">
+
+      Botões, filtros, campos e tags compartilham a mesma lógica visual,
+      permitindo consistência entre navegação, conteúdo e conversão.
+
+    </p>
+
+
+    <div class="component-stage reveal">
+
+
+      <article class="component-card buttons">
+
+        <div class="component-title">
+          Buttons
+        </div>
+
+
+        <div class="demo-buttons">
+
+          <button class="demo-button primary">
+            SOLICITAR ORÇAMENTO
+          </button>
+
+          <button class="demo-button gold">
+            VER SERVIÇOS
+          </button>
+
+          <button class="demo-button outline">
+            ENVIAR DETALHES
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <article class="component-card filters">
+
+        <div class="component-title">
+          Project Filters
+        </div>
+
+
+        <div class="demo-filter-row">
+
+          <span class="demo-filter active">
+            Todos
+          </span>
+
+          <span class="demo-filter">
+            SPDA
+          </span>
+
+          <span class="demo-filter">
+            Residencial
+          </span>
+
+          <span class="demo-filter">
+            Comercial
+          </span>
+
+          <span class="demo-filter">
+            SE
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="component-card inputs">
+
+        <div class="component-title">
+          Inputs
+        </div>
+
+
+        <div class="demo-field">
+          Nome completo
+        </div>
+
+
+        <div class="demo-field">
+
+          Tipo de projeto
+
+          <span>
+            ↓
+          </span>
 
         </div>
 
 
-        <div class="figma-frame">
+        <div class="demo-field">
+          Área aproximada (m²)
+        </div>
+
+      </article>
+
+
+      <article class="component-card tags">
+
+        <div class="component-title">
+          Tags
+        </div>
+
+
+        <div class="demo-tags">
+
+          <span class="demo-tag solid">
+            363,55m²
+          </span>
+
+          <span class="demo-tag">
+            Elétrico
+          </span>
+
+          <span class="demo-tag">
+            VDI
+          </span>
+
+          <span class="demo-tag">
+            SPDA
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     VARIANTS
+====================================================== -->
+
+<section class="section variants">
+
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      Component Variants
+    </div>
+
+
+    <h2 class="section-title reveal">
+
+      Estados que respondem à interação.
+
+    </h2>
+
+
+    <div class="variant-grid">
+
+
+      <article class="variant-card reveal">
+
+        <div class="variant-index">
+          01
+        </div>
+
+        <h3>
+          Button
+        </h3>
+
+
+        <div class="variant-row">
+
+          <span>
+            Variant
+          </span>
+
+          <span>
+            Primary / Accent / Outline
+          </span>
+
+        </div>
+
+
+        <div class="variant-row">
+
+          <span>
+            State
+          </span>
+
+          <span>
+            Default / Hover / Active
+          </span>
+
+        </div>
+
+
+        <div class="variant-row">
+
+          <span>
+            Theme
+          </span>
+
+          <span>
+            Light / Dark
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="variant-card reveal">
+
+        <div class="variant-index">
+          02
+        </div>
+
+        <h3>
+          Service
+        </h3>
+
+
+        <div class="variant-row">
+
+          <span>
+            Media
+          </span>
+
+          <span>
+            Current / Preview
+          </span>
+
+        </div>
+
+
+        <div class="variant-row">
+
+          <span>
+            Device
+          </span>
+
+          <span>
+            Desktop / Mobile
+          </span>
+
+        </div>
+
+
+        <div class="variant-row">
+
+          <span>
+            Motion
+          </span>
+
+          <span>
+            Previous / Next
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="variant-card reveal">
+
+        <div class="variant-index">
+          03
+        </div>
+
+        <h3>
+          Filter
+        </h3>
+
+
+        <div class="variant-row">
+
+          <span>
+            Default
+          </span>
+
+          <span>
+            Outline
+          </span>
+
+        </div>
+
+
+        <div class="variant-row">
+
+          <span>
+            Hover
+          </span>
+
+          <span>
+            Gold
+          </span>
+
+        </div>
+
+
+        <div class="variant-row">
+
+          <span>
+            Selected
+          </span>
+
+          <span>
+            Gold / White
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     LIGHT / DARK
+====================================================== -->
+
+<section class="themes">
+
+  <div class="theme-comparison">
+
+
+    <article class="theme-side theme-light">
+
+      <div class="theme-label">
+        LIGHT / 01
+      </div>
+
+
+      <div>
+
+        <h2 class="theme-message">
+          Light
+          context.
+        </h2>
+
+
+        <div class="theme-ui">
+
+          <div class="theme-ui-bar"></div>
+
+          <div class="theme-ui-bar"></div>
+
+          <div class="theme-ui-buttons">
+
+            <div class="theme-mini-button"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <article class="theme-side theme-dark">
+
+      <div class="theme-label">
+        DARK / 02
+      </div>
+
+
+      <div>
+
+        <h2 class="theme-message">
+          Same
+          system.
+        </h2>
+
+
+        <div class="theme-ui">
+
+          <div class="theme-ui-bar"></div>
+
+          <div class="theme-ui-bar"></div>
+
+          <div class="theme-ui-buttons">
+
+            <div class="theme-mini-button"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     INTERACTIONS
+====================================================== -->
+
+<section
+  id="interactions"
+  class="section interactions case-section"
+>
+
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      05 / Interaction System
+    </div>
+
+
+    <h2 class="section-title reveal">
+
+      Movimento como parte da experiência.
+
+    </h2>
+
+
+    <div class="interaction-list">
+
+
+      <article class="interaction-item">
+
+        <div class="interaction-number">
+          01
+        </div>
+
+        <div class="interaction-name">
+          Hero
+        </div>
+
+        <p class="interaction-description">
+          Background em vídeo e entrada progressiva dos conteúdos na abertura.
+        </p>
+
+      </article>
+
+
+      <article class="interaction-item">
+
+        <div class="interaction-number">
+          02
+        </div>
+
+        <div class="interaction-name">
+          Services
+        </div>
+
+        <p class="interaction-description">
+          Navegação entre especialidades com imagem atual, preview no desktop
+          e experiência simplificada no mobile.
+        </p>
+
+      </article>
+
+
+      <article class="interaction-item">
+
+        <div class="interaction-number">
+          03
+        </div>
+
+        <div class="interaction-name">
+          Process
+        </div>
+
+        <p class="interaction-description">
+          Timeline progressiva que acompanha a posição do usuário durante o scroll.
+        </p>
+
+      </article>
+
+
+      <article class="interaction-item">
+
+        <div class="interaction-number">
+          04
+        </div>
+
+        <div class="interaction-name">
+          Projects
+        </div>
+
+        <p class="interaction-description">
+          Filtros por especialidade e zoom sutil das imagens no hover.
+        </p>
+
+      </article>
+
+
+      <article class="interaction-item">
+
+        <div class="interaction-number">
+          05
+        </div>
+
+        <div class="interaction-name">
+          Brands
+        </div>
+
+        <p class="interaction-description">
+          Esteira contínua de marcas com movimento infinito.
+        </p>
+
+      </article>
+
+
+      <article class="interaction-item">
+
+        <div class="interaction-number">
+          06
+        </div>
+
+        <div class="interaction-name">
+          Theme
+        </div>
+
+        <p class="interaction-description">
+          Alternância entre contextos light e dark com preferência persistida.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     RESPONSIVE
+====================================================== -->
+
+<section
+  id="responsive"
+  class="section responsive case-section"
+>
+
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      06 / Responsive Design
+    </div>
+
+
+    <h2 class="section-title reveal">
+
+      Designed across screens.
+
+    </h2>
+
+
+    <p class="section-copy reveal">
+
+      A experiência foi reorganizada para diferentes contextos,
+      e não apenas reduzida de tamanho.
+
+    </p>
+
+
+    <div class="device-stage">
+
+
+      <div class="desktop-device reveal">
+
+        <div class="device-browser">
+
+          <div class="device-browser-bar">
+
+            <span class="device-browser-dot"></span>
+
+            <span class="device-browser-dot"></span>
+
+            <span class="device-browser-dot"></span>
+
+          </div>
+
+
+          <div class="device-viewport">
+
+            <iframe
+              class="lazy-site"
+              data-src="https://fernando-amaral.vercel.app/"
+              title="Fernando Amaral Desktop"
+              loading="lazy"
+            ></iframe>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="tablet-device reveal">
+
+        <div class="tablet-device-screen">
+
+          <div class="tablet-placeholder">
+
+            <small>
+              TABLET / 768
+            </small>
+
+            <h4>
+              Responsive
+              by design.
+            </h4>
+
+            <p>
+              Layout reorganizado para preservar hierarquia,
+              leitura e interação.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="mobile-device reveal">
+
+        <div class="mobile-device-screen">
 
           <iframe
-            src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
-            title="Protótipo interativo Fernando Amaral"
+            class="lazy-site"
+            data-src="https://fernando-amaral.vercel.app/"
+            title="Fernando Amaral Mobile"
             loading="lazy"
-            allowfullscreen
           ></iframe>
 
         </div>
 
       </div>
 
-    </section>
-
-
-    <!-- SYSTEM -->
-
-    <section
-      class="fa-view"
-      data-fa-view="system"
-    >
-
-      <div class="system-layout">
-
-        <aside class="system-sidebar">
-
-          <span>
-            Components
-          </span>
-
-          <button
-            type="button"
-            class="system-nav-btn active"
-            data-system="buttons"
-          >
-            Buttons & states
-          </button>
-
-          <button
-            type="button"
-            class="system-nav-btn"
-            data-system="navigation"
-          >
-            Navigation
-          </button>
-
-          <button
-            type="button"
-            class="system-nav-btn"
-            data-system="cards"
-          >
-            Cards
-          </button>
-
-          <button
-            type="button"
-            class="system-nav-btn"
-            data-system="patterns"
-          >
-            Patterns
-          </button>
-
-        </aside>
-
-
-        <div class="system-canvas">
-
-
-          <section
-            class="system-panel active"
-            data-system-panel="buttons"
-          >
-
-            <h4 class="system-panel-title">
-              Botões & estados
-            </h4>
-
-
-            <div class="component-grid">
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Button / Primary
-                  </span>
-
-                  <span>
-                    Interactive
-                  </span>
-                </div>
-
-
-                <div class="demo-button-row">
-
-                  <button
-                    type="button"
-                    class="fa-demo-primary"
-                    id="faDemoPrimary"
-                  >
-                    SOLICITAR ORÇAMENTO
-                  </button>
-
-                </div>
-
-
-                <div class="variant-controls">
-
-                  <button
-                    type="button"
-                    class="active"
-                    data-fa-button-state="default"
-                  >
-                    Default
-                  </button>
-
-                  <button
-                    type="button"
-                    data-fa-button-state="hover"
-                  >
-                    Hover
-                  </button>
-
-                  <button
-                    type="button"
-                    data-fa-button-state="disabled"
-                  >
-                    Disabled
-                  </button>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Button / Secondary
-                  </span>
-
-                  <span>
-                    Outline
-                  </span>
-                </div>
-
-
-                <div class="demo-button-row">
-
-                  <button
-                    type="button"
-                    class="fa-demo-secondary"
-                  >
-                    VER SERVIÇOS
-                  </button>
-
-                </div>
-
-              </article>
-
-            </div>
-
-          </section>
-
-
-          <section
-            class="system-panel"
-            data-system-panel="navigation"
-          >
-
-            <h4 class="system-panel-title">
-              Navegação & filtros
-            </h4>
-
-
-            <div class="component-grid">
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Portfolio Filter
-                  </span>
-
-                  <span>
-                    States
-                  </span>
-                </div>
-
-
-                <div class="demo-filter-row">
-
-                  <button
-                    type="button"
-                    class="demo-filter active"
-                  >
-                    TODOS
-                  </button>
-
-                  <button
-                    type="button"
-                    class="demo-filter"
-                  >
-                    RESIDENCIAL
-                  </button>
-
-                  <button
-                    type="button"
-                    class="demo-filter"
-                  >
-                    COMERCIAL
-                  </button>
-
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Service Navigation
-                  </span>
-
-                  <span>
-                    Previous / Next
-                  </span>
-                </div>
-
-
-                <div class="demo-button-row">
-
-                  <button
-                    type="button"
-                    class="demo-arrow"
-                  >
-                    ←
-                  </button>
-
-                  <button
-                    type="button"
-                    class="demo-arrow"
-                  >
-                    →
-                  </button>
-
-                </div>
-
-              </article>
-
-            </div>
-
-          </section>
-
-
-          <section
-            class="system-panel"
-            data-system-panel="cards"
-          >
-
-            <h4 class="system-panel-title">
-              Cards reutilizáveis
-            </h4>
-
-
-            <div class="component-grid">
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Quality / Light
-                  </span>
-
-                  <span>
-                    Default
-                  </span>
-                </div>
-
-
-                <div class="demo-quality">
-                  <strong>
-                    Segurança e conformidade
-                  </strong>
-
-                  <p style="font-size:.58rem;margin-top:7px">
-                    Informações organizadas em uma unidade consistente.
-                  </p>
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Quality / Dark
-                  </span>
-
-                  <span>
-                    Variant
-                  </span>
-                </div>
-
-
-                <div class="demo-quality dark">
-                  <strong>
-                    Clareza para execução
-                  </strong>
-
-                  <p style="font-size:.58rem;margin-top:7px">
-                    Mesmo componente aplicado em outro contexto visual.
-                  </p>
-                </div>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Project Card
-                  </span>
-
-                  <span>
-                    Portfolio
-                  </span>
-                </div>
-
-
-                <div class="demo-project-card">
-
-                  <div class="demo-project-img"></div>
-
-                  <div class="demo-project-copy">
-                    <strong>
-                      Residência Alto Padrão
-                    </strong>
-
-                    542m² • Projeto Elétrico + VDI
-                  </div>
-
-                </div>
-
-              </article>
-
-            </div>
-
-          </section>
-
-
-          <section
-            class="system-panel"
-            data-system-panel="patterns"
-          >
-
-            <h4 class="system-panel-title">
-              Padrões de interface
-            </h4>
-
-
-            <div class="component-grid">
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Service Slider
-                  </span>
-
-                  <span>
-                    08 services
-                  </span>
-                </div>
-
-                <p
-                  style="
-                    color:var(--dim);
-                    font-size:.75rem;
-                    line-height:1.6;
-                  "
-                >
-                  Um único componente recebe os diferentes
-                  serviços e evita uma sequência excessivamente
-                  longa de conteúdo.
-                </p>
-
-              </article>
-
-
-              <article class="component-box">
-
-                <div class="component-label">
-                  <span>
-                    Trusted By
-                  </span>
-
-                  <span>
-                    Social Proof
-                  </span>
-                </div>
-
-                <p
-                  style="
-                    color:var(--dim);
-                    font-size:.75rem;
-                    line-height:1.6;
-                  "
-                >
-                  Logos e sinais de confiança são tratados
-                  como um sistema visual próprio dentro
-                  da landing page.
-                </p>
-
-              </article>
-
-            </div>
-
-          </section>
-
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-</article>
-
-
-<!-- ========================================================
-     VOIT
-     ======================================================== -->
-
-<article
-  class="project"
-  id="voit"
->
-
-  <div class="project-head">
-
-    <span class="project-number">
-      02 / 05 • COMUNICAÇÃO MULTICANAL
-    </span>
-
-
-    <h3>
-      Voit Consultoria
-    </h3>
-
-
-    <p class="project-summary">
-      Atuação contínua em conteúdo, social media,
-      materiais técnicos, comercial e endomarketing.
-      Mais do que produzir peças, o trabalho participa
-      de uma operação de comunicação.
-    </p>
-
-
-    <div class="project-meta">
-      <span>Social Media</span>
-      <span>Copywriting</span>
-      <span>Canva</span>
-      <span>Adobe</span>
-      <span>Figma</span>
-      <span>Planejamento</span>
-    </div>
-
-  </div>
-
-
-  <div class="voit-case">
-
-    <div class="voit-shell">
-
-
-      <div class="voit-top">
-
-        <span
-          class="mono"
-          style="font-size:.62rem"
-        >
-          VOIT / COMMUNICATION ECOSYSTEM
-        </span>
-
-
-        <div class="voit-tabs">
-
-          <button
-            type="button"
-            class="voit-tab active"
-            data-voit-tab="ecosystem"
-          >
-            Ecossistema
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="process"
-          >
-            Processo
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="social"
-          >
-            Social
-          </button>
-
-          <button
-            type="button"
-            class="voit-tab"
-            data-voit-tab="professional"
-          >
-            Outras frentes
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <section
-        class="voit-view active"
-        data-voit-view="ecosystem"
-      >
-
-        <div class="voit-ecosystem">
-
-
-          <article class="voit-domain">
-
-            <span>
-              SOCIAL
-            </span>
-
-            <h4>
-              Redes sociais
-            </h4>
-
-            <p>
-              Planejamento de pauta, copy, desenvolvimento visual
-              e adaptação de conteúdos para diferentes canais.
-            </p>
-
-          </article>
-
-
-          <div class="voit-core">
-            VOIT
-          </div>
-
-
-          <article class="voit-domain">
-
-            <span>
-              CONTEÚDO
-            </span>
-
-            <h4>
-              Artigos técnicos
-            </h4>
-
-            <p>
-              Pesquisa e conteúdos aprofundados, incluindo
-              materiais de até aproximadamente 2.500 palavras.
-            </p>
-
-          </article>
-
-
-          <article class="voit-domain">
-
-            <span>
-              COMERCIAL
-            </span>
-
-            <h4>
-              Apresentações
-            </h4>
-
-            <p>
-              Transformação de dados, rascunhos e informações
-              em materiais para leads e apresentações.
-            </p>
-
-          </article>
-
-
-          <article class="voit-domain">
-
-            <span>
-              INTERNO
-            </span>
-
-            <h4>
-              Endomarketing
-            </h4>
-
-            <p>
-              Desenvolvimento de ações e materiais
-              voltados à comunicação interna.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <section
-        class="voit-view"
-        data-voit-view="process"
-      >
-
-        <div class="voit-process">
-
-          <article>
-            <span>
-              01
-            </span>
-
-            <h4>
-              Planejamento
-            </h4>
-
-            <p>
-              Alinhamento com a gerência sobre pautas,
-              objetivos e editoriais.
-            </p>
-          </article>
-
-
-          <article>
-            <span>
-              02
-            </span>
-
-            <h4>
-              Pesquisa
-            </h4>
-
-            <p>
-              Tendências, referências e aprofundamento
-              dos temas antes da produção.
-            </p>
-          </article>
-
-
-          <article>
-            <span>
-              03
-            </span>
-
-            <h4>
-              Produção
-            </h4>
-
-            <p>
-              Copywriting, artigos, peças,
-              apresentações e materiais técnicos.
-            </p>
-          </article>
-
-
-          <article>
-            <span>
-              04
-            </span>
-
-            <h4>
-              Validação
-            </h4>
-
-            <p>
-              Conteúdos técnicos revisados pelos
-              especialistas responsáveis.
-            </p>
-          </article>
-
-
-          <article>
-            <span>
-              05
-            </span>
-
-            <h4>
-              Distribuição
-            </h4>
-
-            <p>
-              Adaptação e publicação nos canais
-              adequados à estratégia.
-            </p>
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <section
-        class="voit-view"
-        data-voit-view="social"
-      >
-
-        <div class="voit-social">
-
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-01.jpeg"
-              alt="Voit Consultoria — Carrossel 01"
-              class="js-lightbox"
-            >
-          </button>
-
-
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-02.jpeg"
-              alt="Voit Consultoria — Carrossel 02"
-              class="js-lightbox"
-              loading="lazy"
-            >
-          </button>
-
-
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-03.jpeg"
-              alt="Voit Consultoria — Carrossel 03"
-              class="js-lightbox"
-              loading="lazy"
-            >
-          </button>
-
-
-          <button
-            type="button"
-            class="voit-piece"
-          >
-            <img
-              src="img/img-voit/voit-04.jpeg"
-              alt="Voit Consultoria — Carrossel 04"
-              class="js-lightbox"
-              loading="lazy"
-            >
-          </button>
-
-        </div>
-
-      </section>
-
-
-      <section
-        class="voit-view"
-        data-voit-view="professional"
-      >
-
-        <div class="voit-professional">
-
-          <article>
-
-            <span>
-              COMERCIAL
-            </span>
-
-            <h4>
-              Apresentações para leads
-            </h4>
-
-            <p>
-              Organização visual de dados e informações
-              para apoiar propostas e conversas comerciais.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span>
-              MATERIAIS
-            </span>
-
-            <h4>
-              Projetos setoriais
-            </h4>
-
-            <p>
-              Materiais específicos desenvolvidos
-              de acordo com diferentes áreas e demandas.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span>
-              ENDOMARKETING
-            </span>
-
-            <h4>
-              Comunicação interna
-            </h4>
-
-            <p>
-              Desenvolvimento visual de campanhas
-              e comunicações destinadas à equipe.
-            </p>
-
-          </article>
-
-
-          <article>
-
-            <span>
-              CONTEÚDO
-            </span>
-
-            <h4>
-              Rigor técnico
-            </h4>
-
-            <p>
-              Informações especializadas passam
-              por validação antes da publicação.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
 
     </div>
-
-  </div>
-
-</article>
-
-
-<!-- ========================================================
-     RENATA
-     ======================================================== -->
-
-<article
-  class="project"
-  id="renata"
->
-
-  <div class="project-head">
-
-    <span class="project-number">
-      03 / 05 • PRESENTATION DESIGN
-    </span>
-
-
-    <h3>
-      Renata Brandão
-    </h3>
-
-
-    <p class="project-summary">
-      Treinamentos, apresentações e propostas comerciais
-      construídos da organização do conteúdo à narrativa
-      visual dos slides.
-    </p>
-
-
-    <div class="project-meta">
-      <span>Canva</span>
-      <span>Presentation Design</span>
-      <span>Copywriting</span>
-      <span>IA Generativa</span>
-    </div>
-
-  </div>
-
-
-  <div class="renata-case">
-
-    <div class="deck-shell">
-
-      <div class="deck-top">
-
-        <span class="mono">
-          RENATA / PRESENTATION
-        </span>
-
-        <span
-          class="mono"
-          id="deckCounter"
-        >
-          01 / 03
-        </span>
-
-      </div>
-
-
-      <div class="deck-body">
-
-
-        <div class="deck-stage">
-
-          <div class="deck-screen">
-
-            <img
-              src="img/img-renata/renata-01.jpg"
-              alt="Slide de Renata Brandão"
-              id="deckImage"
-              class="js-lightbox"
-              tabindex="0"
-            >
-
-          </div>
-
-        </div>
-
-
-        <aside class="deck-side">
-
-          <span class="section-kicker">
-            decisão de design
-          </span>
-
-          <h4 id="deckTitle">
-            Entrada e posicionamento
-          </h4>
-
-          <p id="deckText">
-            A capa estabelece a linguagem visual da
-            apresentação e cria a primeira hierarquia
-            entre tema, especialista e contexto.
-          </p>
-
-
-          <div class="deck-controls">
-
-            <button
-              type="button"
-              id="deckPrev"
-              aria-label="Slide anterior"
-            >
-              ←
-            </button>
-
-            <button
-              type="button"
-              id="deckNext"
-              aria-label="Próximo slide"
-            >
-              →
-            </button>
-
-          </div>
-
-
-          <div class="deck-progress">
-            <span
-              id="deckProgress"
-              style="width:33.333%"
-            ></span>
-          </div>
-
-
-          <div
-            class="deck-thumbs"
-            id="deckThumbs"
-          ></div>
-
-
-          <a
-            href="https://canva.link/w874gu7mhg7053v"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hero-cta"
-            style="margin-top:23px"
-          >
-            Ver apresentação completa ↗
-          </a>
-
-        </aside>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</article>
-
-
-<!-- ========================================================
-     BRADUCA
-     ======================================================== -->
-
-<article
-  class="project"
-  id="braduca"
->
-
-  <div class="project-head">
-
-    <span class="project-number">
-      04 / 05 • SOCIAL / EDUCAÇÃO
-    </span>
-
-
-    <h3>
-      Somos Braduca
-    </h3>
-
-
-    <p class="project-summary">
-      Comunicação visual para uma iniciativa educacional
-      que oferece mentorias de inglês e testes de
-      proficiência para estudantes da rede pública.
-    </p>
-
-
-    <div class="project-meta">
-      <span>Social Media</span>
-      <span>Design Gráfico</span>
-      <span>Comunicação Visual</span>
-    </div>
-
-  </div>
-
-
-  <div
-    class="braduca-case"
-    id="braducaCase"
-  >
-
-    <div class="editorial-shell">
-
-
-      <div class="editorial-ribbon">
-
-
-        <button
-          type="button"
-          class="editorial-card active"
-          data-index="0"
-        >
-          <span class="editorial-number">
-            01
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-01.jpeg"
-            alt="Somos Braduca — Post 01"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="1"
-        >
-          <span class="editorial-number">
-            02
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-02.jpeg"
-            alt="Somos Braduca — Post 02"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="2"
-        >
-          <span class="editorial-number">
-            03
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-03.jpeg"
-            alt="Somos Braduca — Post 03"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="3"
-        >
-          <span class="editorial-number">
-            04
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-04.jpeg"
-            alt="Somos Braduca — Post 04"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="4"
-        >
-          <span class="editorial-number">
-            05
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-05.jpeg"
-            alt="Somos Braduca — Post 05"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="5"
-        >
-          <span class="editorial-number">
-            06
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-06.jpeg"
-            alt="Somos Braduca — Post 06"
-          >
-        </button>
-
-
-        <button
-          type="button"
-          class="editorial-card"
-          data-index="6"
-        >
-          <span class="editorial-number">
-            07
-          </span>
-
-          <img
-            src="img/img-braduca/braduca-07.jpeg"
-            alt="Somos Braduca — Post 07"
-          >
-        </button>
-
-      </div>
-
-
-      <aside class="editorial-inspector">
-
-        <div class="editorial-preview">
-
-          <img
-            src="img/img-braduca/braduca-01.jpeg"
-            alt="Peça selecionada da Braduca"
-            id="braducaPreview"
-            class="js-lightbox"
-            tabindex="0"
-          >
-
-        </div>
-
-
-        <div>
-
-          <span class="section-kicker">
-            peça selecionada
-          </span>
-
-
-          <div class="inspector-row">
-            <span>
-              projeto
-            </span>
-
-            <strong>
-              Somos Braduca
-            </strong>
-          </div>
-
-
-          <div class="inspector-row">
-            <span>
-              foco
-            </span>
-
-            <strong>
-              Hierarquia, legibilidade e consistência
-              em comunicação educacional.
-            </strong>
-          </div>
-
-
-          <div class="inspector-row">
-            <span>
-              intenção
-            </span>
-
-            <strong>
-              Transformar conteúdo em uma peça clara
-              sem descaracterizar a identidade da iniciativa.
-            </strong>
-          </div>
-
-
-          <div class="inspector-row">
-            <span>
-              peça
-            </span>
-
-            <strong id="braducaPosition">
-              01 / 07
-            </strong>
-          </div>
-
-        </div>
-
-      </aside>
-
-    </div>
-
-  </div>
-
-</article>
-
-
-<!-- ========================================================
-     AYMÉE
-     ======================================================== -->
-
-<article
-  class="project"
-  id="aymee"
->
-
-  <div class="project-head">
-
-    <span class="project-number">
-      05 / 05 • MARCA PESSOAL
-    </span>
-
-
-    <h3>
-      Aymée Ferraz
-    </h3>
-
-
-    <p class="project-summary">
-      Comunicação visual para uma especialista em CS/CX,
-      Felicidade Corporativa e gestão, trabalhando a
-      consistência da marca pessoal através de diferentes
-      tipos de conteúdo.
-    </p>
-
-
-    <div class="project-meta">
-      <span>Social Media</span>
-      <span>Design Gráfico</span>
-      <span>Marca Pessoal</span>
-    </div>
-
-  </div>
-
-
-  <div class="aymee-case">
-
-    <div class="brand-shell">
-
-
-      <div class="brand-top">
-
-        <span
-          class="mono"
-          style="font-size:.61rem"
-        >
-          AYMÉE / CONTENT SYSTEM
-        </span>
-
-
-        <div class="brand-filter">
-
-          <button
-            type="button"
-            class="active"
-            data-brand-filter="all"
-          >
-            Todos
-          </button>
-
-          <button
-            type="button"
-            data-brand-filter="a"
-          >
-            Seleção A
-          </button>
-
-          <button
-            type="button"
-            data-brand-filter="b"
-          >
-            Seleção B
-          </button>
-
-        </div>
-
-      </div>
-
-
-      <div class="brand-body">
-
-        <div
-          class="brand-grid"
-          id="aymeeGrid"
-        ></div>
-
-
-        <aside class="brand-rules">
-
-          <span class="section-kicker">
-            sistema de conteúdo
-          </span>
-
-
-          <h4>
-            Variação sem perder identidade.
-          </h4>
-
-
-          <article class="brand-rule">
-
-            <span>
-              01 / CONSISTÊNCIA
-            </span>
-
-            <p>
-              As publicações precisam continuar
-              reconhecíveis como parte da mesma marca.
-            </p>
-
-          </article>
-
-
-          <article class="brand-rule">
-
-            <span>
-              02 / HIERARQUIA
-            </span>
-
-            <p>
-              Conteúdo profissional precisa ser
-              lido antes de ser apenas decorado.
-            </p>
-
-          </article>
-
-
-          <article class="brand-rule">
-
-            <span>
-              03 / FLEXIBILIDADE
-            </span>
-
-            <p>
-              O sistema visual permite diferentes
-              pautas sem transformar todas as peças
-              na mesma composição.
-            </p>
-
-          </article>
-
-        </aside>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</article>
-
-
-<!-- ========================================================
-     SKILLS
-     ======================================================== -->
-
-<div
-  class="section-head"
-  id="habilidades"
->
-  <h2>
-    Habilidades & ferramentas
-  </h2>
-</div>
-
-
-<section class="skills">
-
-  <div class="skill-grid">
-
-    <article class="skill-card">
-
-      <h3>
-        UI Design
-      </h3>
-
-      <p>
-        Figma, Auto Layout, componentes, variantes,
-        protótipos, arquitetura da informação
-        e layouts responsivos.
-      </p>
-
-    </article>
-
-
-    <article class="skill-card">
-
-      <h3>
-        Gráfico & Editorial
-      </h3>
-
-      <p>
-        Photoshop, Illustrator, InDesign,
-        Canva e desenvolvimento de sistemas gráficos.
-      </p>
-
-    </article>
-
-
-    <article class="skill-card">
-
-      <h3>
-        Conteúdo & Comunicação
-      </h3>
-
-      <p>
-        Social media, copywriting, apresentações,
-        endomarketing e comunicação multicanal.
-      </p>
-
-    </article>
-
-
-    <article class="skill-card">
-
-      <h3>
-        IA & Workflow
-      </h3>
-
-      <p>
-        Apoio em pesquisa, estruturação,
-        produtividade e refinamento com
-        revisão humana.
-      </p>
-
-    </article>
 
   </div>
 
 </section>
 
 
-<!-- ========================================================
-     CONTACT
-     ======================================================== -->
+<!-- ======================================================
+     INFORMATION ARCHITECTURE
+====================================================== -->
+
+<section class="section architecture">
+
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      Experience Architecture
+    </div>
+
+
+    <h2 class="section-title reveal">
+
+      Informação organizada como narrativa.
+
+    </h2>
+
+
+    <p class="section-copy reveal">
+
+      A ordem das seções leva o usuário da proposta de valor até
+      a prova de competência e, por fim, à conversão.
+
+    </p>
+
+
+    <div class="flow">
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          01
+        </div>
+
+        <div class="flow-name">
+          Hero
+        </div>
+
+        <div class="flow-purpose">
+          Positioning
+        </div>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          02
+        </div>
+
+        <div class="flow-name">
+          Serviços
+        </div>
+
+        <div class="flow-purpose">
+          Capability
+        </div>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          03
+        </div>
+
+        <div class="flow-name">
+          Qualidade
+        </div>
+
+        <div class="flow-purpose">
+          Value
+        </div>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          04
+        </div>
+
+        <div class="flow-name">
+          Processo
+        </div>
+
+        <div class="flow-purpose">
+          Method
+        </div>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          05
+        </div>
+
+        <div class="flow-name">
+          Projetos
+        </div>
+
+        <div class="flow-purpose">
+          Evidence
+        </div>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          06
+        </div>
+
+        <div class="flow-name">
+          Confiança
+        </div>
+
+        <div class="flow-purpose">
+          Validation
+        </div>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          07
+        </div>
+
+        <div class="flow-name">
+          Especialista
+        </div>
+
+        <div class="flow-purpose">
+          Authority
+        </div>
+
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          08
+        </div>
+
+        <div class="flow-name">
+          Contato
+        </div>
+
+        <div class="flow-purpose">
+          Conversion
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     LIVE EXPERIENCE
+====================================================== -->
+
+<section class="section live-experience">
+
+  <div class="container">
+
+    <div class="live-experience-head">
+
+      <h2 class="live-experience-title reveal">
+
+        From system
+        to real experience.
+
+      </h2>
+
+
+      <a
+        href="https://fernando-amaral.vercel.app/"
+        target="_blank"
+        rel="noopener"
+        class="visit-button reveal"
+      >
+
+        VISITAR SITE
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="browser final-browser reveal">
+
+      <div class="browser-bar">
+
+        <div class="browser-dots">
+
+          <span class="browser-dot"></span>
+
+          <span class="browser-dot"></span>
+
+          <span class="browser-dot"></span>
+
+        </div>
+
+
+        <div class="browser-url">
+          fernando-amaral.vercel.app
+        </div>
+
+
+        <a
+          href="https://fernando-amaral.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          class="browser-open"
+        >
+          OPEN ↗
+        </a>
+
+      </div>
+
+
+      <div class="browser-screen">
+
+        <div class="iframe-loader">
+          CARREGANDO EXPERIÊNCIA
+        </div>
+
+
+        <iframe
+          class="lazy-site"
+          data-src="https://fernando-amaral.vercel.app/"
+          title="Fernando Amaral Live Experience"
+          loading="lazy"
+        ></iframe>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     RESULT
+====================================================== -->
 
 <section
-  class="contact"
-  id="contato"
+  id="result"
+  class="section result case-section"
 >
 
-  <span class="section-kicker">
-    contato
-  </span>
+  <div class="container">
+
+    <div class="eyebrow reveal">
+      07 / Result
+    </div>
 
 
-  <h2>
-    Tem uma vaga, um projeto ou um problema que precisa de design?
-  </h2>
+    <div class="result-layout">
+
+      <h2 class="result-title reveal">
+
+        Engenharia complexa.
+
+        <span>
+          Uma experiência simples.
+        </span>
+
+      </h2>
 
 
-  <p>
-    Estou aberta a conversar sobre oportunidades em
-    Comunicação Visual, UI Design e experiências digitais.
-  </p>
+      <div class="reveal reveal-delay">
+
+        <p class="result-copy">
+
+          O resultado é uma experiência que organiza conteúdo técnico,
+          apresenta capacidade profissional e conduz o usuário de forma
+          clara até o contato, apoiada por um sistema visual reutilizável,
+          responsivo e implementado em produto real.
+
+        </p>
 
 
-  <div class="contact-actions">
+        <a
+          href="https://fernando-amaral.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          class="result-link"
+        >
+          VER PROJETO AO VIVO ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     NEXT PROJECT
+====================================================== -->
+
+<section class="next-project">
+
+  <div class="container">
 
     <a
-      class="primary"
-      href="https://wa.me/5562985666229"
-      target="_blank"
-      rel="noopener noreferrer"
+      href="#"
+      class="next-project-link"
     >
-      Falar no WhatsApp
-    </a>
 
-    <a href="mailto:raquel.renovato.design@gmail.com">
-      Enviar e-mail
-    </a>
+      <div class="next-label">
+        NEXT PROJECT
+      </div>
 
-    <a
-      href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      LinkedIn ↗
+
+      <div class="next-row">
+
+        <h2 class="next-title">
+          Próximo projeto
+        </h2>
+
+
+        <div class="next-arrow">
+          →
+        </div>
+
+      </div>
+
     </a>
 
   </div>
@@ -5525,1508 +4585,455 @@ footer {
 </main>
 
 
-<footer>
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
-  <span>
-    © 2026 Raquel Renovato
-  </span>
+<footer class="footer">
 
-  <span>
-    Comunicação Visual • UI • Design
-  </span>
+  <div class="container">
+
+    <div class="footer-row">
+
+      <span>
+        PORTFOLIO © 2026
+      </span>
+
+      <span>
+        UI/UX · DESIGN SYSTEM · DIGITAL EXPERIENCES
+      </span>
+
+    </div>
+
+  </div>
 
 </footer>
 
 
-<!-- ========================================================
-     LIGHTBOX
-     ======================================================== -->
-
-<div
-  class="lightbox"
-  id="lightbox"
-  role="dialog"
-  aria-modal="true"
-  aria-hidden="true"
->
-
-  <button
-    type="button"
-    class="lightbox-close"
-    id="lightboxClose"
-    aria-label="Fechar imagem"
-  >
-    ×
-  </button>
-
-
-  <img
-    id="lightboxImage"
-    src=""
-    alt=""
-  >
-
-</div>
-
-
 <script>
+
 (() => {
-  "use strict";
+
+"use strict";
 
 
-  /* ========================================================
-     HELPERS
-     ======================================================== */
+/* =========================================================
+   HELPERS
+========================================================= */
 
-  const $ = (
-    selector,
-    root = document
-  ) => root.querySelector(selector);
-
-
-  const $$ = (
-    selector,
-    root = document
-  ) => [
-    ...root.querySelectorAll(selector)
-  ];
+const $ = (
+  selector,
+  root = document
+) => root.querySelector(selector);
 
 
-  const reduceMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
+const $$ = (
+  selector,
+  root = document
+) => [...root.querySelectorAll(selector)];
 
 
-  /* ========================================================
-     INTRO
-     ======================================================== */
+/* =========================================================
+   HEADER
+========================================================= */
 
-  const intro =
-    $("#intro-overlay");
-
-  const introCycle =
-    $("#introWordCycle");
-
-  const introWords =
-    $$("#introWordCycle .w");
-
-  let introTimers = [];
+const header =
+  $("#header");
 
 
-  function sizeIntro() {
-    let width = 0;
+function updateHeader(){
 
-    introWords.forEach(
-      word => {
-        width = Math.max(
-          width,
-          word.getBoundingClientRect().width
-        );
-      }
-    );
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 30
+  );
 
-    if (introCycle) {
-      introCycle.style.width =
-        `${Math.ceil(width) + 6}px`;
-    }
+}
+
+
+window.addEventListener(
+  "scroll",
+  updateHeader,
+  {
+    passive:true
   }
+);
 
 
-  function closeIntro() {
-    if (
-      !intro ||
-      intro.classList.contains("hide")
-    ) {
-      return;
-    }
-
-    introTimers.forEach(
-      clearTimeout
-    );
-
-    intro.classList.add("hide");
-
-    document.body
-      .classList
-      .remove("intro-active");
-
-    sessionStorage.setItem(
-      "portfolioIntroSeen",
-      "1"
-    );
-
-    window.setTimeout(
-      () => {
-        intro.style.display =
-          "none";
-      },
-      reduceMotion.matches
-        ? 0
-        : 420
-    );
-  }
+updateHeader();
 
 
-  function startIntro() {
-    if (
-      sessionStorage.getItem(
-        "portfolioIntroSeen"
-      ) === "1" ||
-      reduceMotion.matches
-    ) {
-      intro.style.display =
-        "none";
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-      document.body
-        .classList
-        .remove("intro-active");
-
-      return;
-    }
+const menuButton =
+  $("#menuButton");
 
 
-    sizeIntro();
-
-    introWords[0]
-      ?.classList
-      .add("active");
+const mobileNav =
+  $("#mobileNav");
 
 
-    introTimers.push(
-      setTimeout(
-        () => {
-          introWords[0]
-            ?.classList
-            .remove("active");
+function closeMenu(){
 
-          introWords[0]
-            ?.classList
-            .add("exit");
-
-          introWords[1]
-            ?.classList
-            .add("active");
-        },
-        400
-      )
-    );
+  mobileNav.classList.remove(
+    "active"
+  );
 
 
-    introTimers.push(
-      setTimeout(
-        () => {
-          introWords[1]
-            ?.classList
-            .remove("active");
-
-          introWords[1]
-            ?.classList
-            .add("exit");
-
-          introWords[2]
-            ?.classList
-            .add("active");
-        },
-        800
-      )
-    );
+  document.body.classList.remove(
+    "menu-open"
+  );
 
 
-    introTimers.push(
-      setTimeout(
-        closeIntro,
-        1450
-      )
-    );
+  menuButton.textContent =
+    "☰";
+
+}
 
 
-    intro.addEventListener(
-      "click",
-      closeIntro
-    );
+menuButton.addEventListener(
+  "click",
+  () => {
 
-
-    document.addEventListener(
-      "keydown",
-      closeIntro,
-      {
-        once:true
-      }
-    );
-  }
-
-
-  document.fonts
-    ?.ready
-    ?.then(sizeIntro)
-    .catch(() => {});
-
-
-  startIntro();
-
-
-  /* ========================================================
-     HOME
-     ======================================================== */
-
-  $("#logoHome")
-    ?.addEventListener(
-      "click",
-      event => {
-        event.preventDefault();
-
-        window.scrollTo({
-          top:0,
-          behavior:
-            reduceMotion.matches
-              ? "auto"
-              : "smooth"
-        });
-      }
-    );
-
-
-  /* ========================================================
-     THEME
-     ======================================================== */
-
-  const themeButton =
-    $("#themeToggle");
-
-  const themeLabel =
-    $("#themeLabel");
-
-
-  themeButton
-    ?.addEventListener(
-      "click",
-      () => {
-
-        const dark =
-          document.documentElement
-            .getAttribute(
-              "data-theme"
-            ) === "dark";
-
-
-        if (dark) {
-          document.documentElement
-            .removeAttribute(
-              "data-theme"
-            );
-
-          themeLabel.textContent =
-            "Sombrio";
-        } else {
-          document.documentElement
-            .setAttribute(
-              "data-theme",
-              "dark"
-            );
-
-          themeLabel.textContent =
-            "Acolhedor";
-        }
-      }
-    );
-
-
-  /* ========================================================
-     HERO UI
-     ======================================================== */
-
-  const wfWindow =
-    $("#wfWindow");
-
-  let selectedColor =
-    "#E8590C";
-
-
-  function contrastColor(hex) {
-    if (!hex) {
-      return "";
-    }
-
-    const value =
-      hex.replace("#","");
-
-    const r =
-      parseInt(
-        value.slice(0,2),
-        16
+    const open =
+      mobileNav.classList.toggle(
+        "active"
       );
 
-    const g =
-      parseInt(
-        value.slice(2,4),
-        16
+
+    document.body.classList.toggle(
+      "menu-open",
+      open
+    );
+
+
+    menuButton.textContent =
+      open
+        ? "×"
+        : "☰";
+
+  }
+);
+
+
+$$(
+  "#mobileNav a"
+)
+.forEach(
+  link => {
+
+    link.addEventListener(
+      "click",
+      closeMenu
+    );
+
+  }
+);
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+const revealObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if(
+            entry.isIntersecting
+          ){
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        }
       );
 
-    const b =
-      parseInt(
-        value.slice(4,6),
-        16
-      );
-
-    return (
-      (
-        r * 299 +
-        g * 587 +
-        b * 114
-      ) / 1000
-    ) > 150
-      ? "#1F1C18"
-      : "#FFFFFF";
-  }
-
-
-  $$(".swatch")
-    .forEach(
-      swatch => {
-
-        swatch.addEventListener(
-          "click",
-          () => {
-
-            $$(".swatch")
-              .forEach(
-                item =>
-                  item.classList
-                    .remove("active")
-              );
-
-            swatch.classList
-              .add("active");
-
-            selectedColor =
-              swatch.dataset.color || "";
-          }
-        );
-      }
-    );
-
-
-  wfWindow
-    ?.addEventListener(
-      "click",
-      event => {
-
-        const target =
-          event.target.closest(
-            ".wf-paintable"
-          );
-
-        if (!target) {
-          return;
-        }
-
-
-        if (!selectedColor) {
-          target.style
-            .backgroundColor = "";
-
-          target.style
-            .borderColor = "";
-
-          target.style
-            .color = "";
-
-          return;
-        }
-
-
-        target.style
-          .backgroundColor =
-          selectedColor;
-
-        target.style
-          .borderColor =
-          selectedColor;
-
-        target.style.color =
-          contrastColor(
-            selectedColor
-          );
-      }
-    );
-
-
-  $$(".wf-nav-item")
-    .forEach(
-      item => {
-
-        item.addEventListener(
-          "click",
-          event => {
-
-            event.stopPropagation();
-
-
-            $$(".wf-nav-item")
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            item.classList
-              .add("active");
-
-
-            const tab =
-              item.dataset.tab;
-
-
-            $$(".wf-view")
-              .forEach(
-                view => {
-
-                  view.classList.toggle(
-                    "active",
-                    view.id ===
-                      `wf-${tab}`
-                  );
-
-                }
-              );
-          }
-        );
-      }
-    );
-
-
-  let deliveries = 14;
-
-
-  $("#wfMetricBtn")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        deliveries += 1;
-
-        $("#wfCounter")
-          .textContent =
-          String(deliveries);
-      }
-    );
-
-
-  $$(".wf-task-item")
-    .forEach(
-      task => {
-
-        task.addEventListener(
-          "click",
-          () => {
-            task.classList
-              .toggle("checked");
-          }
-        );
-      }
-    );
-
-
-  let wfDark = false;
-
-
-  $("#wfSwitchMode")
-    ?.addEventListener(
-      "click",
-      event => {
-
-        wfDark = !wfDark;
-
-
-        if (wfDark) {
-          wfWindow.style
-            .setProperty(
-              "--wf-bg",
-              "#12110F"
-            );
-
-          wfWindow.style
-            .setProperty(
-              "--wf-card",
-              "#1C1A17"
-            );
-
-          wfWindow.style
-            .setProperty(
-              "--wf-text",
-              "#F0ECE1"
-            );
-
-          event.currentTarget
-            .textContent =
-            "modo clean";
-        } else {
-          wfWindow.style
-            .removeProperty(
-              "--wf-bg"
-            );
-
-          wfWindow.style
-            .removeProperty(
-              "--wf-card"
-            );
-
-          wfWindow.style
-            .removeProperty(
-              "--wf-text"
-            );
-
-          event.currentTarget
-            .textContent =
-            "modo app";
-        }
-      }
-    );
-
-
-  $("#wfClear")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        $$(".wf-paintable")
-          .forEach(
-            element => {
-
-              element.style
-                .backgroundColor = "";
-
-              element.style
-                .borderColor = "";
-
-              element.style
-                .color = "";
-            }
-          );
-      }
-    );
-
-
-  /* ========================================================
-     FERNANDO — MAIN TABS
-     ======================================================== */
-
-  $$(".fa-tab")
-    .forEach(
-      tab => {
-
-        tab.addEventListener(
-          "click",
-          () => {
-
-            $$(".fa-tab")
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            $$(".fa-view")
-              .forEach(
-                view =>
-                  view.classList
-                    .remove("active")
-              );
-
-
-            tab.classList
-              .add("active");
-
-
-            const name =
-              tab.dataset.faTab;
-
-
-            $(
-              `[data-fa-view="${name}"]`
-            )
-              ?.classList
-              .add("active");
-          }
-        );
-      }
-    );
-
-
-  /* ========================================================
-     FERNANDO — SCREENS
-     ======================================================== */
-
-  const fernandoScreens = [
-    "img/img-fernando/Layout%20-%20Web.png",
-    "img/img-fernando/Layout%20-%20Web-1.png",
-    "img/img-fernando/Layout%20-%20Web-2.png",
-    "img/img-fernando/Layout%20-%20Web-4.png",
-    "img/img-fernando/Layout%20-%20Web-5.png",
-    "img/img-fernando/Layout%20-%20Web-6.png",
-    "img/img-fernando/Layout%20-%20Web-7.png"
-  ];
-
-
-  const faMain =
-    $("#faScreenMain");
-
-  const faThumbs =
-    $("#faScreenThumbs");
-
-
-  function renderFernandoThumbs() {
-    faThumbs.innerHTML = "";
-
-
-    fernandoScreens.forEach(
-      (
-        src,
-        index
-      ) => {
-
-        const button =
-          document.createElement(
-            "button"
-          );
-
-        button.type =
-          "button";
-
-        button.className =
-          "fa-screen-thumb";
-
-
-        if (
-          index === 0
-        ) {
-          button.classList
-            .add("active");
-        }
-
-
-        button.innerHTML = `
-          <img
-            src="${src}"
-            alt="Tela ${index + 1} do redesign"
-          >
-        `;
-
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            faMain.src = src;
-
-
-            $$(".fa-screen-thumb")
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            button.classList
-              .add("active");
-          }
-        );
-
-
-        faThumbs
-          .appendChild(
-            button
-          );
-      }
-    );
-  }
-
-
-  renderFernandoThumbs();
-
-
-  /* ========================================================
-     FERNANDO — SYSTEM
-     ======================================================== */
-
-  $$(".system-nav-btn")
-    .forEach(
-      button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            $$(".system-nav-btn")
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            $$(".system-panel")
-              .forEach(
-                panel =>
-                  panel.classList
-                    .remove("active")
-              );
-
-
-            button.classList
-              .add("active");
-
-
-            $(
-              `[data-system-panel="${button.dataset.system}"]`
-            )
-              ?.classList
-              .add("active");
-          }
-        );
-      }
-    );
-
-
-  const demoPrimary =
-    $("#faDemoPrimary");
-
-
-  $$("[data-fa-button-state]")
-    .forEach(
-      button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            $$("[data-fa-button-state]")
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            button.classList
-              .add("active");
-
-
-            demoPrimary.classList
-              .remove(
-                "is-hover",
-                "is-disabled"
-              );
-
-
-            demoPrimary.disabled =
-              false;
-
-
-            const state =
-              button.dataset
-                .faButtonState;
-
-
-            if (
-              state === "hover"
-            ) {
-              demoPrimary.classList
-                .add("is-hover");
-            }
-
-
-            if (
-              state === "disabled"
-            ) {
-              demoPrimary.classList
-                .add("is-disabled");
-
-              demoPrimary.disabled =
-                true;
-            }
-          }
-        );
-      }
-    );
-
-
-  /* ========================================================
-     VOIT
-     ======================================================== */
-
-  $$(".voit-tab")
-    .forEach(
-      button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            $$(".voit-tab")
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            $$(".voit-view")
-              .forEach(
-                view =>
-                  view.classList
-                    .remove("active")
-              );
-
-
-            button.classList
-              .add("active");
-
-
-            $(
-              `[data-voit-view="${button.dataset.voitTab}"]`
-            )
-              ?.classList
-              .add("active");
-          }
-        );
-      }
-    );
-
-
-  /* ========================================================
-     RENATA
-     Para adicionar mais slides:
-     acrescente objetos neste array.
-     ======================================================== */
-
-  const renataSlides = [
-
-    {
-      src:
-        "img/img-renata/renata-01.jpg",
-
-      title:
-        "Entrada e posicionamento",
-
-      text:
-        "A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto."
     },
-
     {
-      src:
-        "img/img-renata/renata-02.jpg",
+      threshold:.12,
 
-      title:
-        "Hierarquia de conteúdo",
-
-      text:
-        "A composição organiza as informações em blocos para preservar leitura, ritmo e entendimento durante a apresentação."
-    },
-
-    {
-      src:
-        "img/img-renata/renata-03.jpg",
-
-      title:
-        "Consistência narrativa",
-
-      text:
-        "Elementos visuais recorrentes criam unidade sem obrigar todos os slides a usar exatamente a mesma composição."
-    }
-
-  ];
-
-
-  let renataIndex = 0;
-
-
-  const deckImage =
-    $("#deckImage");
-
-  const deckCounter =
-    $("#deckCounter");
-
-  const deckTitle =
-    $("#deckTitle");
-
-  const deckText =
-    $("#deckText");
-
-  const deckProgress =
-    $("#deckProgress");
-
-  const deckThumbs =
-    $("#deckThumbs");
-
-
-  function renderRenata() {
-    const slide =
-      renataSlides[
-        renataIndex
-      ];
-
-
-    deckImage.src =
-      slide.src;
-
-    deckImage.alt =
-      slide.title;
-
-    deckTitle.textContent =
-      slide.title;
-
-    deckText.textContent =
-      slide.text;
-
-
-    deckCounter.textContent =
-      `${
-        String(
-          renataIndex + 1
-        ).padStart(
-          2,
-          "0"
-        )
-      } / ${
-        String(
-          renataSlides.length
-        ).padStart(
-          2,
-          "0"
-        )
-      }`;
-
-
-    deckProgress.style.width =
-      `${
-        (
-          (
-            renataIndex + 1
-          ) /
-          renataSlides.length
-        ) * 100
-      }%`;
-
-
-    deckThumbs.innerHTML =
-      "";
-
-
-    renataSlides.forEach(
-      (
-        item,
-        index
-      ) => {
-
-        const button =
-          document.createElement(
-            "button"
-          );
-
-
-        button.type =
-          "button";
-
-        button.className =
-          "deck-thumb";
-
-
-        if (
-          index === renataIndex
-        ) {
-          button.classList
-            .add("active");
-        }
-
-
-        button.innerHTML = `
-          <img
-            src="${item.src}"
-            alt="Miniatura ${index + 1}"
-          >
-        `;
-
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            renataIndex =
-              index;
-
-            renderRenata();
-          }
-        );
-
-
-        deckThumbs
-          .appendChild(
-            button
-          );
-      }
-    );
-  }
-
-
-  $("#deckPrev")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        renataIndex =
-          (
-            renataIndex -
-            1 +
-            renataSlides.length
-          ) %
-          renataSlides.length;
-
-
-        renderRenata();
-      }
-    );
-
-
-  $("#deckNext")
-    ?.addEventListener(
-      "click",
-      () => {
-
-        renataIndex =
-          (
-            renataIndex +
-            1
-          ) %
-          renataSlides.length;
-
-
-        renderRenata();
-      }
-    );
-
-
-  renderRenata();
-
-
-  /* ========================================================
-     BRADUCA
-     ======================================================== */
-
-  const braducaCase =
-    $("#braducaCase");
-
-  const braducaPreview =
-    $("#braducaPreview");
-
-  const braducaPosition =
-    $("#braducaPosition");
-
-
-  $$(".editorial-card",braducaCase)
-    .forEach(
-      card => {
-
-        card.addEventListener(
-          "click",
-          () => {
-
-            $$(".editorial-card",braducaCase)
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            card.classList
-              .add("active");
-
-
-            const image =
-              $("img",card);
-
-
-            braducaPreview.src =
-              image.src;
-
-            braducaPreview.alt =
-              image.alt;
-
-
-            const index =
-              Number(
-                card.dataset.index
-              );
-
-
-            braducaPosition
-              .textContent =
-              `${
-                String(
-                  index + 1
-                ).padStart(
-                  2,
-                  "0"
-                )
-              } / 07`;
-          }
-        );
-      }
-    );
-
-
-  /* ========================================================
-     AYMÉE
-     ======================================================== */
-
-  const aymeeImages = [
-    "img/Aymee-img/img-01.jpeg",
-    "img/Aymee-img/img-02.jpeg",
-    "img/Aymee-img/img-03.jpeg",
-    "img/Aymee-img/img-04.jpeg",
-    "img/Aymee-img/img-05.jpeg",
-    "img/Aymee-img/img-06.jpeg",
-    "img/Aymee-img/img-07.jpeg",
-    "img/Aymee-img/img-08.jpeg",
-    "img/Aymee-img/img-09.jpeg",
-    "img/Aymee-img/img-10.jpeg"
-  ];
-
-
-  const aymeeGrid =
-    $("#aymeeGrid");
-
-
-  function renderAymee(
-    filter = "all"
-  ) {
-
-    aymeeGrid.innerHTML =
-      "";
-
-
-    aymeeImages.forEach(
-      (
-        src,
-        index
-      ) => {
-
-        const number =
-          index + 1;
-
-
-        if (
-          filter === "a" &&
-          number % 2 === 0
-        ) {
-          return;
-        }
-
-
-        if (
-          filter === "b" &&
-          number % 2 !== 0
-        ) {
-          return;
-        }
-
-
-        const button =
-          document.createElement(
-            "button"
-          );
-
-
-        button.type =
-          "button";
-
-        button.className =
-          "brand-card";
-
-
-        button.innerHTML = `
-          <img
-            src="${src}"
-            alt="Aymée Ferraz — Post ${String(number).padStart(2,"0")}"
-            loading="lazy"
-            class="js-lightbox"
-          >
-        `;
-
-
-        aymeeGrid
-          .appendChild(
-            button
-          );
-      }
-    );
-
-
-    registerLightboxImages(
-      aymeeGrid
-    );
-  }
-
-
-  $$(".brand-filter button")
-    .forEach(
-      button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            $$(".brand-filter button")
-              .forEach(
-                current =>
-                  current.classList
-                    .remove("active")
-              );
-
-
-            button.classList
-              .add("active");
-
-
-            renderAymee(
-              button.dataset
-                .brandFilter
-            );
-          }
-        );
-      }
-    );
-
-
-  /* ========================================================
-     LIGHTBOX
-     ======================================================== */
-
-  const lightbox =
-    $("#lightbox");
-
-  const lightboxImage =
-    $("#lightboxImage");
-
-  const lightboxClose =
-    $("#lightboxClose");
-
-  let lightboxTrigger = null;
-
-
-  function openLightbox(
-    image,
-    trigger
-  ) {
-
-    lightboxTrigger =
-      trigger;
-
-
-    lightboxImage.src =
-      image.currentSrc ||
-      image.src;
-
-    lightboxImage.alt =
-      image.alt || "";
-
-
-    lightbox.classList
-      .add("open");
-
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-    document.body
-      .classList
-      .add("locked");
-
-
-    lightboxClose.focus();
-  }
-
-
-  function closeLightbox() {
-    if (
-      !lightbox.classList
-        .contains("open")
-    ) {
-      return;
-    }
-
-
-    lightbox.classList
-      .remove("open");
-
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-    lightboxImage
-      .removeAttribute("src");
-
-
-    document.body
-      .classList
-      .remove("locked");
-
-
-    if (
-      lightboxTrigger instanceof
-      HTMLElement
-    ) {
-      lightboxTrigger.focus();
-    }
-
-
-    lightboxTrigger = null;
-  }
-
-
-  function registerLightboxImages(
-    root = document
-  ) {
-
-    $$(".js-lightbox",root)
-      .forEach(
-        image => {
-
-          if (
-            image.dataset
-              .lightboxReady === "1"
-          ) {
-            return;
-          }
-
-
-          image.dataset
-            .lightboxReady =
-            "1";
-
-
-          const button =
-            image.closest("button");
-
-          const trigger =
-            button || image;
-
-
-          if (!button) {
-            image.setAttribute(
-              "role",
-              "button"
-            );
-
-            if (
-              !image.hasAttribute(
-                "tabindex"
-              )
-            ) {
-              image.tabIndex = 0;
-            }
-          }
-
-
-          const activate =
-            event => {
-
-              if (
-                event?.type ===
-                  "keydown" &&
-                event.key !==
-                  "Enter" &&
-                event.key !==
-                  " "
-              ) {
-                return;
-              }
-
-
-              if (
-                event?.type ===
-                "keydown"
-              ) {
-                event.preventDefault();
-              }
-
-
-              openLightbox(
-                image,
-                trigger
-              );
-            };
-
-
-          trigger.addEventListener(
-            "click",
-            activate
-          );
-
-
-          if (!button) {
-            trigger.addEventListener(
-              "keydown",
-              activate
-            );
-          }
-        }
-      );
-  }
-
-
-  lightboxClose
-    .addEventListener(
-      "click",
-      closeLightbox
-    );
-
-
-  lightbox
-    .addEventListener(
-      "click",
-      event => {
-
-        if (
-          event.target ===
-          lightbox
-        ) {
-          closeLightbox();
-        }
-      }
-    );
-
-
-  document.addEventListener(
-    "keydown",
-    event => {
-
-      if (
-        event.key ===
-        "Escape"
-      ) {
-        closeLightbox();
-      }
+      rootMargin:
+        "0px 0px -5% 0px"
     }
   );
 
 
-  renderAymee();
+$$(".reveal")
+.forEach(
+  element => {
 
-  registerLightboxImages();
+    revealObserver.observe(
+      element
+    );
+
+  }
+);
+
+
+/* =========================================================
+   LAZY LOAD LIVE SITE
+========================================================= */
+
+const siteObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if(
+            !entry.isIntersecting
+          ){
+            return;
+          }
+
+
+          const iframe =
+            entry.target;
+
+
+          if(
+            iframe.dataset.loaded ===
+            "true"
+          ){
+            return;
+          }
+
+
+          iframe.dataset.loaded =
+            "true";
+
+
+          iframe.src =
+            iframe.dataset.src;
+
+
+          iframe.addEventListener(
+            "load",
+            () => {
+
+              const parent =
+                iframe.parentElement;
+
+
+              const loader =
+                parent.querySelector(
+                  ".iframe-loader"
+                );
+
+
+              if(loader){
+
+                window.setTimeout(
+                  () => {
+
+                    loader.classList.add(
+                      "hidden"
+                    );
+
+                  },
+                  350
+                );
+
+              }
+
+            },
+            {
+              once:true
+            }
+          );
+
+
+          siteObserver.unobserve(
+            iframe
+          );
+
+        }
+      );
+
+    },
+    {
+      rootMargin:
+        "500px 0px"
+    }
+  );
+
+
+$$(".lazy-site")
+.forEach(
+  iframe => {
+
+    siteObserver.observe(
+      iframe
+    );
+
+  }
+);
+
+
+/* =========================================================
+   CASE NAV
+========================================================= */
+
+const caseLinks =
+  $$("#caseNav a");
+
+
+const caseSections =
+  $$(".case-section");
+
+
+const sectionObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if(
+            !entry.isIntersecting
+          ){
+            return;
+          }
+
+
+          const id =
+            entry.target.id;
+
+
+          caseLinks.forEach(
+            link => {
+
+              link.classList.toggle(
+                "active",
+                link.dataset.section ===
+                id
+              );
+
+            }
+          );
+
+        }
+      );
+
+    },
+    {
+      rootMargin:
+        "-35% 0px -55% 0px",
+
+      threshold:0
+    }
+  );
+
+
+caseSections.forEach(
+  section => {
+
+    sectionObserver.observe(
+      section
+    );
+
+  }
+);
+
+
+/* =========================================================
+   PARALLAX HERO GRID
+========================================================= */
+
+const heroGrid =
+  $(".hero-grid");
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    const y =
+      Math.min(
+        window.scrollY,
+        window.innerHeight
+      );
+
+
+    heroGrid.style.transform =
+      `translateY(${y * .12}px)`;
+
+  },
+  {
+    passive:true
+  }
+);
+
+
+/* =========================================================
+   DEMO FILTERS
+========================================================= */
+
+$$(".demo-filter")
+.forEach(
+  filter => {
+
+    filter.addEventListener(
+      "click",
+      () => {
+
+        $$(".demo-filter")
+        .forEach(
+          item => {
+
+            item.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+
+        filter.classList.add(
+          "active"
+        );
+
+      }
+    );
+
+  }
+);
+
+
+/* =========================================================
+   SAFE EXTERNAL LINKS
+========================================================= */
+
+$$(
+  'a[target="_blank"]'
+)
+.forEach(
+  link => {
+
+    link.rel =
+      "noopener noreferrer";
+
+  }
+);
+
 
 })();
+
 </script>
 
 </body>
