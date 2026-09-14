@@ -16,6 +16,7 @@
   <title>Raquel Renovato — Comunicação Visual & UI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
@@ -1528,7 +1529,7 @@
     }
 
     /* =========================================================
-       FERNANDO — CASE COMPLETO
+       FERNANDO — CASE
        ========================================================= */
 
     .fernando-case-shell {
@@ -1606,8 +1607,6 @@
       }
     }
 
-    /* CASE */
-
     .fernando-story {
       display: grid;
       grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
@@ -1682,7 +1681,9 @@
       line-height: 1.5;
     }
 
-    /* BROWSER */
+    /* =========================================================
+       BROWSER PREVIEW
+       ========================================================= */
 
     .fa-browser {
       overflow: hidden;
@@ -1747,8 +1748,6 @@
       text-decoration: none;
     }
 
-    /* mantém iframe em breakpoint desktop */
-
     .fa-desktop-viewport {
       position: relative;
 
@@ -1783,7 +1782,9 @@
       background: #FFF;
     }
 
-    /* RESULTADOS */
+    /* =========================================================
+       RESULTADOS
+       ========================================================= */
 
     .fernando-results {
       display: grid;
@@ -1837,7 +1838,9 @@
       line-height: 1.5;
     }
 
-    /* BEFORE / AFTER */
+    /* =========================================================
+       BEFORE / AFTER
+       ========================================================= */
 
     .fa-compare-grid {
       display: grid;
@@ -1871,7 +1874,9 @@
       font-size: 0.5rem;
     }
 
-    /* DESIGN SYSTEM */
+    /* =========================================================
+       DESIGN SYSTEM — FERNANDO
+       ========================================================= */
 
     .fa-system {
       display: grid;
@@ -1897,17 +1902,19 @@
 
       margin-bottom: 10px;
 
-      color: var(--muted);
+      color: #9A7669;
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.53rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .fa-system-btn {
       width: 100%;
+      min-height: 36px;
 
-      padding: 9px;
+      padding: 9px 10px;
 
       border: 0;
       border-radius: 4px;
@@ -1919,11 +1926,24 @@
       text-align: left;
 
       cursor: pointer;
+
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
     }
 
-    .fa-system-btn:hover,
+    .fa-system-btn:hover {
+      background: rgba(232, 89, 12, 0.07);
+      color: var(--accent);
+    }
+
     .fa-system-btn.active {
-      background: var(--accent-soft);
+      background: #EAD0BE;
+      color: #E8590C;
+    }
+
+    [data-theme="dark"] .fa-system-btn.active {
+      background: rgba(242, 109, 29, 0.16);
       color: var(--accent);
     }
 
@@ -2136,8 +2156,6 @@
 
     .fa-primary-demo.is-disabled {
       opacity: 0.35;
-
-      pointer-events: none;
     }
 
     .fa-state-controls {
@@ -2247,36 +2265,429 @@
       line-height: 1.5;
     }
 
-    .fa-project-demo {
-      overflow: hidden;
+    /* THEMES */
 
+    .fa-theme-card {
+      min-height: 175px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding: 18px;
+
+      border-radius: 7px;
+    }
+
+    .fa-theme-card-light {
+      border: 1px solid #C5CED8;
+
+      background: #F4F6F8;
+      color: #00152A;
+    }
+
+    .fa-theme-card-dark {
+      border: 1px solid #294055;
+
+      background: #071421;
+      color: #F5F7FA;
+    }
+
+    .fa-theme-mini-label {
+      margin-bottom: auto;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.48rem;
+
+      opacity: 0.65;
+    }
+
+    .fa-theme-card strong {
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-family: "Manrope", sans-serif;
+      font-size: 0.8rem;
+    }
+
+    .fa-theme-card p {
+      font-size: 0.64rem;
+      line-height: 1.55;
+
+      opacity: 0.75;
+    }
+
+    /* VARIANTS */
+
+    .fa-system-variant-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .fa-system-variant-list span {
+      padding: 7px 10px;
+
+      border: 1px solid var(--line);
+      border-radius: 999px;
+
+      background: var(--bg);
+      color: var(--dim);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    /* NAV */
+
+    .fa-nav-preview {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 22px;
+
+      padding: 18px;
+
+      border: 1px solid #D1D8DF;
       border-radius: 7px;
 
       background: #FFF;
-      color: #0D2E48;
+      color: #00152A;
     }
 
-    .fa-project-demo-image {
-      height: 100px;
+    .fa-nav-preview > strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.69rem;
 
-      background:
-        linear-gradient(
-          135deg,
-          #D9DEE3,
-          #70808C
-        );
+      white-space: nowrap;
     }
 
-    .fa-project-demo-copy {
-      padding: 11px;
+    .fa-nav-preview-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.54rem;
+    }
+
+    .fa-nav-preview > button {
+      padding: 8px 10px;
+
+      border: 1px solid #00152A;
+      border-radius: 5px;
+
+      background: transparent;
+      color: #00152A;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.51rem;
+      font-weight: 600;
+    }
+
+    .fa-mobile-nav-preview {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+
+      padding: 16px;
+
+      border: 1px solid #D1D8DF;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-mobile-nav-preview strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.65rem;
+    }
+
+    .fa-mobile-nav-preview button {
+      width: 37px;
+      height: 37px;
+
+      border: 1px solid #C5CED8;
+      border-radius: 6px;
+
+      background: #FFF;
+      color: #00152A;
+
+      cursor: pointer;
+    }
+
+    /* PROJECT CARD */
+
+    .fa-project-card-system {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.8fr) minmax(0, 1.2fr);
+
+      overflow: hidden;
+
+      border: 1px solid #D1D8DF;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-project-card-system-media {
+      min-height: 210px;
+
+      overflow: hidden;
+
+      background: #E7ECF0;
+    }
+
+    .fa-project-card-system-media img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .fa-project-card-system-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 22px;
+    }
+
+    .fa-project-card-system-copy > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+
+      margin-bottom: 14px;
+    }
+
+    .fa-project-card-system-copy > div span {
+      padding: 4px 7px;
+
+      border: 1px solid #C5CED8;
+
+      color: #64748B;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.47rem;
+    }
+
+    .fa-project-card-system-copy strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.96rem;
+    }
+
+    .fa-project-card-system-copy small {
+      margin-top: 6px;
+
+      color: #00152A;
 
       font-size: 0.56rem;
     }
 
-    .fa-project-demo-copy strong {
-      display: block;
+    .fa-project-card-system-copy p {
+      margin-top: 13px;
 
-      margin-bottom: 5px;
+      color: #64748B;
+
+      font-size: 0.64rem;
+      line-height: 1.55;
+    }
+
+    /* FORMS */
+
+    .fa-form-system-demo {
+      display: grid;
+      gap: 13px;
+    }
+
+    .fa-form-system-row {
+      display: grid;
+      gap: 11px;
+    }
+
+    .fa-form-system-row.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fa-form-system-row.three {
+      grid-template-columns: 0.8fr 1.1fr 1fr;
+    }
+
+    .fa-form-system-demo label {
+      min-width: 0;
+
+      display: grid;
+      gap: 6px;
+    }
+
+    .fa-form-system-demo label > span {
+      color: #64748B;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.47rem;
+    }
+
+    .fa-form-system-demo input,
+    .fa-form-system-demo select,
+    .fa-form-system-demo textarea {
+      width: 100%;
+
+      outline: none;
+
+      border: 1px solid #8297AD;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.65rem;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .fa-form-system-demo input,
+    .fa-form-system-demo select {
+      min-height: 43px;
+
+      padding: 0 11px;
+    }
+
+    .fa-form-system-demo textarea {
+      min-height: 95px;
+
+      padding: 11px;
+
+      resize: vertical;
+    }
+
+    .fa-form-system-demo input:focus,
+    .fa-form-system-demo select:focus,
+    .fa-form-system-demo textarea:focus {
+      border-color: #B8860B;
+
+      box-shadow:
+        0 0 0 3px rgba(184, 134, 11, 0.12);
+    }
+
+    .fa-input-state-demo {
+      display: grid;
+      gap: 8px;
+    }
+
+    .fa-input-state-demo input {
+      min-height: 43px;
+      width: 100%;
+
+      padding: 0 11px;
+
+      outline: none;
+
+      border: 1px solid #8297AD;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.65rem;
+    }
+
+    .fa-input-state-demo.focus input {
+      border-color: #B8860B;
+
+      box-shadow:
+        0 0 0 3px rgba(184, 134, 11, 0.12);
+    }
+
+    .fa-input-state-demo small {
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.49rem;
+    }
+
+    /* TOKENS */
+
+    .fa-system-token-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .fa-system-token-grid > div {
+      min-height: 103px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding: 14px;
+
+      border: 1px solid var(--line);
+      border-radius: 6px;
+
+      background: var(--bg);
+    }
+
+    .fa-system-token-grid strong {
+      color: var(--accent);
+
+      font-family: "Fraunces", serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .fa-system-token-grid span {
+      margin-top: 6px;
+
+      color: var(--dim);
+
+      font-size: 0.61rem;
+    }
+
+    .fa-system-code-list {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .fa-system-code-list > div {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+
+      padding: 12px 14px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fa-system-code-list > div:last-child {
+      border-bottom: 0;
+    }
+
+    .fa-system-code-list code {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.56rem;
+    }
+
+    .fa-system-code-list span {
+      color: var(--dim);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.56rem;
     }
 
     .fa-pattern-grid {
@@ -2313,7 +2724,9 @@
       font-size: 0.65rem;
     }
 
-    /* RESPONSIVO DO CASE */
+    /* =========================================================
+       RESPONSIVO DO CASE
+       ========================================================= */
 
     .fa-responsive-showcase {
       display: grid;
@@ -2440,7 +2853,9 @@
       line-height: 1.55;
     }
 
-    /* FIGMA */
+    /* =========================================================
+       FIGMA
+       ========================================================= */
 
     .fa-figma-shell {
       overflow: hidden;
@@ -3107,6 +3522,18 @@
 
         white-space: nowrap;
       }
+
+      .fa-nav-preview {
+        grid-template-columns: 1fr auto;
+      }
+
+      .fa-nav-preview-links {
+        grid-column: 1 / -1;
+
+        order: 3;
+
+        justify-content: flex-start;
+      }
     }
 
     @media (max-width: 780px) {
@@ -3258,6 +3685,20 @@
       .fa-figma-frame iframe {
         height: 520px;
       }
+
+      .fa-project-card-system,
+      .fa-form-system-row.two,
+      .fa-form-system-row.three {
+        grid-template-columns: 1fr;
+      }
+
+      .fa-system-token-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .fa-project-card-system-media {
+        min-height: 180px;
+      }
     }
 
     @media (max-width: 520px) {
@@ -3298,6 +3739,19 @@
 
       .fa-mobile-screen iframe {
         transform: scale(0.497);
+      }
+
+      .fa-system-token-grid,
+      .fa-nav-preview {
+        grid-template-columns: 1fr;
+      }
+
+      .fa-nav-preview-links {
+        grid-column: auto;
+      }
+
+      .fa-nav-preview > button {
+        width: max-content;
       }
     }
 
@@ -3397,7 +3851,7 @@
     <main>
 
       <!-- ===================================================
-           HERO — PRESERVADA
+           HERO
            =================================================== -->
 
       <section
@@ -3711,10 +4165,10 @@
                         class="wf-paintable"
                         data-paint-type="bg"
                         style="
-                          min-height: 18px;
-                          padding: 4px 6px;
-                          border-radius: 3px;
-                          background: rgba(0,0,0,.06);
+                          min-height:18px;
+                          padding:4px 6px;
+                          border-radius:3px;
+                          background:rgba(0,0,0,.06);
                         "
                       >
                         <span style="font-size:.55rem">
@@ -3722,12 +4176,7 @@
                         </span>
                       </div>
 
-                      <div
-                        style="
-                          display:flex;
-                          gap:6px;
-                        "
-                      >
+                      <div style="display:flex;gap:6px;">
                         <div
                           class="wf-paintable"
                           data-paint-type="bg"
@@ -3762,12 +4211,7 @@
                       </div>
                     </div>
 
-                    <div
-                      style="
-                        display:flex;
-                        gap:6px;
-                      "
-                    >
+                    <div style="display:flex;gap:6px;">
                       <div
                         class="wf-card wf-paintable"
                         data-paint-type="card-bg"
@@ -4046,7 +4490,7 @@
       </section>
 
       <!-- ===================================================
-           SOBRE — PRESERVADO
+           SOBRE
            =================================================== -->
 
       <div
@@ -4207,13 +4651,15 @@
       <div id="projects-container">
 
         <!-- =================================================
-             PROJETO 01 — FERNANDO — NOVA ESTRUTURA
+             PROJETO 01 — FERNANDO
              ================================================= -->
 
-        <article class="project-block from-left" id="fernando-project">
+        <article
+          class="project-block from-left"
+          id="fernando-project"
+        >
 
           <div class="project-head">
-
             <span class="n mono">
               01 / 05 • UI / REDESIGN • PRODUTO PUBLICADO
             </span>
@@ -4223,7 +4669,9 @@
             </h3>
 
             <p class="project-summary">
-              Redesign e implementação de uma experiência digital para transformar conteúdo técnico de engenharia em uma interface mais clara, consistente, responsiva e orientada à conversão.
+              Redesign e implementação de uma experiência digital para
+              transformar conteúdo técnico de engenharia em uma interface mais
+              clara, consistente, responsiva e orientada à conversão.
             </p>
 
             <div class="case-grid">
@@ -4234,7 +4682,9 @@
                 </span>
 
                 <p>
-                  O projeto partiu de um site existente, com grande volume de serviços e informações técnicas distribuídas em uma landing page extensa.
+                  O projeto partiu de um site existente, com grande volume de
+                  serviços e informações técnicas distribuídas em uma landing
+                  page extensa.
                 </p>
               </div>
 
@@ -4244,7 +4694,9 @@
                 </span>
 
                 <p>
-                  Organizar essa complexidade sem reduzir a profundidade técnica, tornando escopo, processo, autoridade, projetos e contato mais fáceis de compreender.
+                  Organizar essa complexidade sem reduzir a profundidade
+                  técnica, tornando escopo, processo, autoridade, projetos e
+                  contato mais fáceis de compreender.
                 </p>
               </div>
 
@@ -4254,7 +4706,9 @@
                 </span>
 
                 <p>
-                  Arquitetura da informação, direção visual, UI Design, componentes, variantes, responsividade, prototipagem e acompanhamento da implementação.
+                  Arquitetura da informação, direção visual, UI Design,
+                  componentes, variantes, responsividade, prototipagem e
+                  acompanhamento da implementação.
                 </p>
               </div>
 
@@ -4264,7 +4718,9 @@
                 </span>
 
                 <p>
-                  O redesign deixou de existir apenas como protótipo: a experiência foi implementada, adaptada para desktop e mobile e publicada como produto real.
+                  O redesign deixou de existir apenas como protótipo: a
+                  experiência foi implementada, adaptada para desktop e mobile e
+                  publicada como produto real.
                 </p>
               </div>
 
@@ -4278,7 +4734,6 @@
               <span>Prototipagem</span>
               <span>Produto publicado</span>
             </div>
-
           </div>
 
           <div class="fernando-case-shell">
@@ -4341,7 +4796,9 @@
 
             </div>
 
-            <!-- CASE -->
+            <!-- =================================================
+                 CASE
+                 ================================================= -->
 
             <section
               class="fernando-view active"
@@ -4351,7 +4808,6 @@
               <div class="fernando-story">
 
                 <div class="fernando-story-copy">
-
                   <span>
                     CASE STUDY / UI DESIGN
                   </span>
@@ -4361,7 +4817,9 @@
                   </h4>
 
                   <p>
-                    A nova experiência preserva a profundidade do conteúdo de engenharia, mas organiza a leitura em uma sequência mais clara e previsível.
+                    A nova experiência preserva a profundidade do conteúdo de
+                    engenharia, mas organiza a leitura em uma sequência mais
+                    clara e previsível.
                   </p>
 
                   <div class="fernando-flow">
@@ -4385,7 +4843,8 @@
                         <strong>Serviços</strong>
 
                         <p>
-                          Especialidades reunidas em uma navegação horizontal mais objetiva.
+                          Especialidades reunidas em uma navegação horizontal
+                          mais objetiva.
                         </p>
                       </div>
                     </div>
@@ -4397,7 +4856,8 @@
                         <strong>Processo</strong>
 
                         <p>
-                          Etapas organizadas como uma jornada de leitura progressiva.
+                          Etapas organizadas como uma jornada de leitura
+                          progressiva.
                         </p>
                       </div>
                     </div>
@@ -4451,7 +4911,6 @@
                     >
                       LIVE ↗
                     </a>
-
                   </div>
 
                   <div
@@ -4460,17 +4919,13 @@
                   >
 
                     <div class="fa-desktop-canvas">
-
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
                         title="Site publicado de Fernando Amaral"
                         loading="lazy"
                       ></iframe>
-
                     </div>
-
                   </div>
-
                 </div>
 
               </div>
@@ -4497,7 +4952,8 @@
                   </strong>
 
                   <p>
-                    Componentes adaptam composição e comportamento conforme o dispositivo.
+                    Componentes adaptam composição e comportamento conforme o
+                    dispositivo.
                   </p>
                 </article>
 
@@ -4509,7 +4965,8 @@
                   </strong>
 
                   <p>
-                    Light é a experiência principal e Dark funciona como preferência do usuário.
+                    Light é a experiência principal e Dark funciona como
+                    preferência do usuário.
                   </p>
                 </article>
 
@@ -4517,7 +4974,9 @@
 
             </section>
 
-            <!-- BEFORE / AFTER -->
+            <!-- =================================================
+                 ANTES / DEPOIS
+                 ================================================= -->
 
             <section
               class="fernando-view"
@@ -4536,7 +4995,6 @@
                   <div class="fa-browser">
 
                     <div class="fa-browser-bar">
-
                       <div class="fa-browser-dots">
                         <i></i>
                         <i></i>
@@ -4555,7 +5013,6 @@
                       >
                         ABRIR ↗
                       </a>
-
                     </div>
 
                     <div
@@ -4563,18 +5020,15 @@
                       data-fa-desktop-height="780"
                     >
                       <div class="fa-desktop-canvas">
-
                         <iframe
                           src="https://fernando-amaral-website-web.vercel.app/"
                           title="Versão anterior do site Fernando Amaral"
                           loading="lazy"
                         ></iframe>
-
                       </div>
                     </div>
 
                   </div>
-
                 </article>
 
                 <article class="fa-compare-card">
@@ -4587,7 +5041,6 @@
                   <div class="fa-browser">
 
                     <div class="fa-browser-bar">
-
                       <div class="fa-browser-dots">
                         <i></i>
                         <i></i>
@@ -4606,35 +5059,31 @@
                       >
                         LIVE ↗
                       </a>
-
                     </div>
 
                     <div
                       class="fa-desktop-viewport"
                       data-fa-desktop-height="780"
                     >
-
                       <div class="fa-desktop-canvas">
-
                         <iframe
                           src="https://fernando-amaral.vercel.app/"
                           title="Versão publicada do site Fernando Amaral"
                           loading="lazy"
                         ></iframe>
-
                       </div>
-
                     </div>
 
                   </div>
-
                 </article>
 
               </div>
 
             </section>
 
-            <!-- LIVE -->
+            <!-- =================================================
+                 SITE PUBLICADO
+                 ================================================= -->
 
             <section
               class="fernando-view"
@@ -4644,7 +5093,6 @@
               <div class="fa-browser">
 
                 <div class="fa-browser-bar">
-
                   <div class="fa-browser-dots">
                     <i></i>
                     <i></i>
@@ -4663,31 +5111,28 @@
                   >
                     ABRIR SITE ↗
                   </a>
-
                 </div>
 
                 <div
                   class="fa-desktop-viewport"
                   data-fa-desktop-height="960"
                 >
-
                   <div class="fa-desktop-canvas">
-
                     <iframe
                       src="https://fernando-amaral.vercel.app/"
                       title="Site publicado Fernando Amaral"
                       loading="lazy"
                     ></iframe>
-
                   </div>
-
                 </div>
 
               </div>
 
             </section>
 
-            <!-- DESIGN SYSTEM -->
+            <!-- =================================================
+                 DESIGN SYSTEM
+                 ================================================= -->
 
             <section
               class="fernando-view"
@@ -4699,7 +5144,7 @@
                 <aside class="fa-system-sidebar">
 
                   <span>
-                    Design System
+                    FERNANDO UI
                   </span>
 
                   <button
@@ -4707,7 +5152,7 @@
                     class="fa-system-btn active"
                     data-fa-system="foundation"
                   >
-                    Foundation
+                    Foundations
                   </button>
 
                   <button
@@ -4715,7 +5160,7 @@
                     class="fa-system-btn"
                     data-fa-system="buttons"
                   >
-                    Buttons
+                    Buttons &amp; states
                   </button>
 
                   <button
@@ -4737,16 +5182,24 @@
                   <button
                     type="button"
                     class="fa-system-btn"
-                    data-fa-system="patterns"
+                    data-fa-system="forms"
                   >
-                    Patterns
+                    Forms
+                  </button>
+
+                  <button
+                    type="button"
+                    class="fa-system-btn"
+                    data-fa-system="tokens"
+                  >
+                    Tokens
                   </button>
 
                 </aside>
 
                 <div class="fa-system-canvas">
 
-                  <!-- FOUNDATION -->
+                  <!-- FOUNDATIONS -->
 
                   <section
                     class="fa-system-panel active"
@@ -4754,58 +5207,137 @@
                   >
 
                     <h4 class="fa-system-title">
-                      Foundation
+                      Foundations
                     </h4>
 
-                    <div class="fa-color-grid">
+                    <div class="fa-component-grid">
 
-                      <div class="fa-color-token navy">
-                        <strong>Primary</strong>
-                        <span>#00152A</span>
-                      </div>
+                      <article class="fa-component-box wide">
 
-                      <div class="fa-color-token gold">
-                        <strong>Secondary</strong>
-                        <span>#B8860B</span>
-                      </div>
+                        <div class="fa-component-label">
+                          <span>Color system</span>
+                          <span>05 tokens</span>
+                        </div>
 
-                      <div class="fa-color-token slate">
-                        <strong>Slate</strong>
-                        <span>#64748B</span>
-                      </div>
+                        <div class="fa-color-grid">
 
-                      <div class="fa-color-token light">
-                        <strong>Background</strong>
-                        <span>#F4F6F8</span>
-                      </div>
+                          <div class="fa-color-token navy">
+                            <strong>Primary</strong>
+                            <span>#00152A</span>
+                          </div>
 
-                      <div class="fa-color-token white">
-                        <strong>Surface</strong>
-                        <span>#FFFFFF</span>
-                      </div>
+                          <div class="fa-color-token gold">
+                            <strong>Accent</strong>
+                            <span>#B8860B</span>
+                          </div>
 
-                    </div>
+                          <div class="fa-color-token slate">
+                            <strong>Slate</strong>
+                            <span>#64748B</span>
+                          </div>
 
-                    <div class="fa-type-grid">
+                          <div class="fa-color-token light">
+                            <strong>Background</strong>
+                            <span>#F4F6F8</span>
+                          </div>
 
-                      <article class="fa-type-card manrope">
-                        <span>DISPLAY / MANROPE</span>
+                          <div class="fa-color-token white">
+                            <strong>Surface</strong>
+                            <span>#FFFFFF</span>
+                          </div>
 
-                        <strong>Aa</strong>
+                        </div>
 
-                        <p>
-                          Projetos elétricos para arquitetos, engenheiros, construtoras e incorporadoras.
-                        </p>
                       </article>
 
-                      <article class="fa-type-card dm">
-                        <span>BODY / DM SANS</span>
+                      <article class="fa-component-box wide">
 
-                        <strong>Aa</strong>
+                        <div class="fa-component-label">
+                          <span>Typography</span>
+                          <span>Display + Body</span>
+                        </div>
 
-                        <p>
-                          Clareza, legibilidade e consistência para informações técnicas.
-                        </p>
+                        <div class="fa-type-grid">
+
+                          <article class="fa-type-card manrope">
+                            <span>
+                              DISPLAY / MANROPE
+                            </span>
+
+                            <strong>
+                              Aa
+                            </strong>
+
+                            <p>
+                              Projetos elétricos para arquitetos,
+                              engenheiros, construtoras e incorporadoras.
+                            </p>
+                          </article>
+
+                          <article class="fa-type-card dm">
+                            <span>
+                              BODY / DM SANS
+                            </span>
+
+                            <strong>
+                              Aa
+                            </strong>
+
+                            <p>
+                              Clareza, legibilidade e consistência para
+                              informações técnicas em diferentes dispositivos.
+                            </p>
+                          </article>
+
+                        </div>
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Theme / Light</span>
+                          <span>Principal</span>
+                        </div>
+
+                        <div class="fa-theme-card fa-theme-card-light">
+                          <span class="fa-theme-mini-label">
+                            LIGHT MODE
+                          </span>
+
+                          <strong>
+                            Experiência padrão
+                          </strong>
+
+                          <p>
+                            Fundo claro, superfícies brancas, azul-marinho
+                            estrutural e dourado nas ações de destaque.
+                          </p>
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Theme / Dark</span>
+                          <span>Optional</span>
+                        </div>
+
+                        <div class="fa-theme-card fa-theme-card-dark">
+                          <span class="fa-theme-mini-label">
+                            DARK MODE
+                          </span>
+
+                          <strong>
+                            Preferência do usuário
+                          </strong>
+
+                          <p>
+                            Mantém os componentes e a hierarquia, sendo ativado
+                            apenas quando escolhido pelo usuário ou pelo sistema.
+                          </p>
+                        </div>
+
                       </article>
 
                     </div>
@@ -4820,7 +5352,7 @@
                   >
 
                     <h4 class="fa-system-title">
-                      Buttons & Variants
+                      Buttons &amp; states
                     </h4>
 
                     <div class="fa-component-grid">
@@ -4828,8 +5360,8 @@
                       <article class="fa-component-box">
 
                         <div class="fa-component-label">
-                          <span>Primary</span>
-                          <span>Interactive state</span>
+                          <span>Primary CTA</span>
+                          <span>Interactive</span>
                         </div>
 
                         <div class="fa-button-demo-row">
@@ -4875,52 +5407,63 @@
                       <article class="fa-component-box">
 
                         <div class="fa-component-label">
-                          <span>Secondary</span>
+                          <span>Secondary CTA</span>
                           <span>Outline</span>
                         </div>
 
                         <div class="fa-button-demo-row">
-
                           <button
                             type="button"
                             class="fa-secondary-demo"
                           >
                             VER SERVIÇOS
                           </button>
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Arrows</span>
+                          <span>Navigation</span>
+                        </div>
+
+                        <div class="fa-arrow-demo-row">
+
+                          <button
+                            type="button"
+                            class="fa-arrow-demo"
+                            aria-label="Anterior"
+                          >
+                            ←
+                          </button>
+
+                          <button
+                            type="button"
+                            class="fa-arrow-demo"
+                            aria-label="Próximo"
+                          >
+                            →
+                          </button>
 
                         </div>
 
                       </article>
 
-                      <article class="fa-component-box wide">
+                      <article class="fa-component-box">
 
                         <div class="fa-component-label">
                           <span>Variants</span>
                           <span>Component architecture</span>
                         </div>
 
-                        <div class="fa-pattern-grid">
-
-                          <div class="fa-pattern-item">
-                            <strong>Button</strong>
-                            <span>Default / Hover / Disabled</span>
-                          </div>
-
-                          <div class="fa-pattern-item">
-                            <strong>Theme</strong>
-                            <span>Light / Dark</span>
-                          </div>
-
-                          <div class="fa-pattern-item">
-                            <strong>Filter</strong>
-                            <span>Active / Inactive</span>
-                          </div>
-
-                          <div class="fa-pattern-item">
-                            <strong>Cards</strong>
-                            <span>Light / Dark / Project</span>
-                          </div>
-
+                        <div class="fa-system-variant-list">
+                          <span>Default</span>
+                          <span>Hover</span>
+                          <span>Disabled</span>
+                          <span>Light</span>
+                          <span>Dark</span>
                         </div>
 
                       </article>
@@ -4937,16 +5480,69 @@
                   >
 
                     <h4 class="fa-system-title">
-                      Navigation & Controls
+                      Navigation
                     </h4>
 
                     <div class="fa-component-grid">
 
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Header / Desktop</span>
+                          <span>Responsive</span>
+                        </div>
+
+                        <div class="fa-nav-preview">
+
+                          <strong>
+                            FERNANDO AMARAL
+                          </strong>
+
+                          <div class="fa-nav-preview-links">
+                            <span>Serviços</span>
+                            <span>Processo</span>
+                            <span>Portfólio</span>
+                            <span>Sobre</span>
+                            <span>Contato</span>
+                          </div>
+
+                          <button type="button">
+                            SOLICITAR ORÇAMENTO
+                          </button>
+
+                        </div>
+
+                      </article>
+
                       <article class="fa-component-box">
 
                         <div class="fa-component-label">
-                          <span>Project filter</span>
-                          <span>Active state</span>
+                          <span>Header / Mobile</span>
+                          <span>Compact</span>
+                        </div>
+
+                        <div class="fa-mobile-nav-preview">
+
+                          <strong>
+                            FERNANDO AMARAL
+                          </strong>
+
+                          <button
+                            type="button"
+                            aria-label="Menu"
+                          >
+                            ☰
+                          </button>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Project filters</span>
+                          <span>Selected state</span>
                         </div>
 
                         <div class="fa-filter-row">
@@ -4956,13 +5552,6 @@
                             class="fa-filter-demo active"
                           >
                             Todos
-                          </button>
-
-                          <button
-                            type="button"
-                            class="fa-filter-demo"
-                          >
-                            SPDA
                           </button>
 
                           <button
@@ -4979,31 +5568,11 @@
                             Comercial
                           </button>
 
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Service navigation</span>
-                          <span>Previous / Next</span>
-                        </div>
-
-                        <div class="fa-arrow-demo-row">
-
                           <button
                             type="button"
-                            class="fa-arrow-demo"
+                            class="fa-filter-demo"
                           >
-                            ‹
-                          </button>
-
-                          <button
-                            type="button"
-                            class="fa-arrow-demo"
-                          >
-                            ›
+                            Educação
                           </button>
 
                         </div>
@@ -5022,7 +5591,7 @@
                   >
 
                     <h4 class="fa-system-title">
-                      Reusable Cards
+                      Cards
                     </h4>
 
                     <div class="fa-component-grid">
@@ -5035,13 +5604,17 @@
                         </div>
 
                         <div class="fa-quality-card">
+
                           <strong>
                             Segurança e conformidade
                           </strong>
 
                           <p>
-                            Informações organizadas em uma unidade consistente.
+                            Projetos alinhados às normas técnicas,
+                            concessionárias e particularidades do
+                            empreendimento.
                           </p>
+
                         </div>
 
                       </article>
@@ -5054,34 +5627,57 @@
                         </div>
 
                         <div class="fa-quality-card dark">
+
                           <strong>
                             Clareza para execução
                           </strong>
 
                           <p>
-                            Mesmo componente aplicado em outro contexto visual.
+                            Documentação organizada para orientar a equipe e
+                            reduzir interpretações durante a obra.
                           </p>
+
                         </div>
 
                       </article>
 
-                      <article class="fa-component-box">
+                      <article class="fa-component-box wide">
 
                         <div class="fa-component-label">
-                          <span>Project</span>
+                          <span>Project Card</span>
                           <span>Portfolio</span>
                         </div>
 
-                        <div class="fa-project-demo">
+                        <div class="fa-project-card-system">
 
-                          <div class="fa-project-demo-image"></div>
+                          <div class="fa-project-card-system-media">
+                            <img
+                              src="img/img-fernando/Layout%20-%20Web.png"
+                              alt="Preview do projeto Fernando Amaral"
+                              loading="lazy"
+                            >
+                          </div>
 
-                          <div class="fa-project-demo-copy">
+                          <div class="fa-project-card-system-copy">
+
+                            <div>
+                              <span>542,45m²</span>
+                              <span>Elétrico + VDI</span>
+                            </div>
+
                             <strong>
-                              Residência Alto Padrão
+                              Residência Riviera de São Lourenço
                             </strong>
 
-                            542m² • Projeto Elétrico + VDI
+                            <small>
+                              Empreendimento Residencial • Bertioga, SP
+                            </small>
+
+                            <p>
+                              Planejamento e elaboração de infraestrutura
+                              elétrica e VDI para residência de alto padrão.
+                            </p>
+
                           </div>
 
                         </div>
@@ -5092,15 +5688,15 @@
 
                   </section>
 
-                  <!-- PATTERNS -->
+                  <!-- FORMS -->
 
                   <section
                     class="fa-system-panel"
-                    data-fa-system-panel="patterns"
+                    data-fa-system-panel="forms"
                   >
 
                     <h4 class="fa-system-title">
-                      Interaction patterns
+                      Forms
                     </h4>
 
                     <div class="fa-component-grid">
@@ -5108,8 +5704,249 @@
                       <article class="fa-component-box wide">
 
                         <div class="fa-component-label">
-                          <span>Information architecture</span>
-                          <span>Main journey</span>
+                          <span>Quote form</span>
+                          <span>Responsive fields</span>
+                        </div>
+
+                        <div class="fa-form-system-demo">
+
+                          <div class="fa-form-system-row two">
+
+                            <label>
+                              <span>
+                                Nome completo
+                              </span>
+
+                              <input
+                                type="text"
+                                placeholder="Nome completo"
+                              >
+                            </label>
+
+                            <label>
+                              <span>
+                                E-mail ou WhatsApp
+                              </span>
+
+                              <input
+                                type="text"
+                                placeholder="E-mail ou WhatsApp"
+                              >
+                            </label>
+
+                          </div>
+
+                          <div class="fa-form-system-row three">
+
+                            <label>
+                              <span>
+                                Cidade / UF
+                              </span>
+
+                              <input
+                                type="text"
+                                placeholder="Cidade / UF"
+                              >
+                            </label>
+
+                            <label>
+                              <span>
+                                Tipo de projeto
+                              </span>
+
+                              <select>
+                                <option>Tipo de projeto</option>
+                                <option>Projeto Elétrico</option>
+                                <option>SPDA</option>
+                                <option>Subestação</option>
+                                <option>BIM</option>
+                              </select>
+                            </label>
+
+                            <label>
+                              <span>
+                                Área aproximada
+                              </span>
+
+                              <input
+                                type="text"
+                                placeholder="Área aproximada (m²)"
+                              >
+                            </label>
+
+                          </div>
+
+                          <label class="fa-form-system-message">
+                            <span>
+                              Necessidade técnica
+                            </span>
+
+                            <textarea
+                              placeholder="Descreva brevemente sua necessidade técnica..."
+                            ></textarea>
+                          </label>
+
+                          <div>
+                            <button
+                              type="button"
+                              class="fa-primary-demo"
+                            >
+                              ENVIAR SOLICITAÇÃO
+                            </button>
+                          </div>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Input / Default</span>
+                          <span>State</span>
+                        </div>
+
+                        <div class="fa-input-state-demo">
+
+                          <input
+                            type="text"
+                            placeholder="Nome completo"
+                          >
+
+                          <small>
+                            Default
+                          </small>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Input / Focus</span>
+                          <span>State</span>
+                        </div>
+
+                        <div class="fa-input-state-demo focus">
+
+                          <input
+                            type="text"
+                            value="450m²"
+                            aria-label="Exemplo de input em foco"
+                          >
+
+                          <small>
+                            Focus / Accent
+                          </small>
+
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <!-- TOKENS -->
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="tokens"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Tokens
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Spacing &amp; sizing</span>
+                          <span>Foundation</span>
+                        </div>
+
+                        <div class="fa-system-token-grid">
+
+                          <div>
+                            <strong>8px</strong>
+                            <span>Radius base</span>
+                          </div>
+
+                          <div>
+                            <strong>100px</strong>
+                            <span>Desktop gutter</span>
+                          </div>
+
+                          <div>
+                            <strong>22px</strong>
+                            <span>Mobile gutter</span>
+                          </div>
+
+                          <div>
+                            <strong>78px</strong>
+                            <span>Header height</span>
+                          </div>
+
+                          <div>
+                            <strong>1440px</strong>
+                            <span>Desktop reference</span>
+                          </div>
+
+                          <div>
+                            <strong>390px</strong>
+                            <span>Mobile reference</span>
+                          </div>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Semantic colors</span>
+                          <span>CSS tokens</span>
+                        </div>
+
+                        <div class="fa-system-code-list">
+
+                          <div>
+                            <code>--primary</code>
+                            <span>#00152A</span>
+                          </div>
+
+                          <div>
+                            <code>--secondary</code>
+                            <span>#B8860B</span>
+                          </div>
+
+                          <div>
+                            <code>--slate</code>
+                            <span>#64748B</span>
+                          </div>
+
+                          <div>
+                            <code>--background</code>
+                            <span>#F4F6F8</span>
+                          </div>
+
+                          <div>
+                            <code>--surface</code>
+                            <span>#FFFFFF</span>
+                          </div>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Architecture</span>
+                          <span>Content hierarchy</span>
                         </div>
 
                         <div class="fa-pattern-grid">
@@ -5148,7 +5985,9 @@
 
             </section>
 
-            <!-- RESPONSIVO -->
+            <!-- =================================================
+                 RESPONSIVO
+                 ================================================= -->
 
             <section
               class="fernando-view"
@@ -5181,17 +6020,13 @@
                     class="fa-desktop-viewport"
                     data-fa-desktop-height="760"
                   >
-
                     <div class="fa-desktop-canvas">
-
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
                         title="Fernando Amaral desktop"
                         loading="lazy"
                       ></iframe>
-
                     </div>
-
                   </div>
 
                 </div>
@@ -5203,13 +6038,11 @@
                     <div class="fa-mobile-notch"></div>
 
                     <div class="fa-mobile-screen">
-
                       <iframe
                         src="https://fernando-amaral.vercel.app/"
                         title="Fernando Amaral mobile"
                         loading="lazy"
                       ></iframe>
-
                     </div>
 
                   </div>
@@ -5225,38 +6058,47 @@
               <div class="fa-responsive-notes">
 
                 <article class="fa-responsive-note">
-                  <span>01 / TYPOGRAPHY</span>
+                  <span>
+                    01 / TYPOGRAPHY
+                  </span>
 
                   <h4>
                     Escala adaptativa
                   </h4>
 
                   <p>
-                    Tipografia responde ao tamanho do dispositivo sem comprometer hierarquia.
+                    Tipografia responde ao tamanho do dispositivo sem
+                    comprometer hierarquia.
                   </p>
                 </article>
 
                 <article class="fa-responsive-note">
-                  <span>02 / CONTENT</span>
+                  <span>
+                    02 / CONTENT
+                  </span>
 
                   <h4>
                     Hierarquia preservada
                   </h4>
 
                   <p>
-                    Desktop e mobile mantêm a mesma ordem de importância das informações.
+                    Desktop e mobile mantêm a mesma ordem de importância das
+                    informações.
                   </p>
                 </article>
 
                 <article class="fa-responsive-note">
-                  <span>03 / COMPONENTS</span>
+                  <span>
+                    03 / COMPONENTS
+                  </span>
 
                   <h4>
                     Comportamento próprio
                   </h4>
 
                   <p>
-                    Alguns componentes mudam composição quando a tela deixa de comportar a estrutura desktop.
+                    Alguns componentes mudam composição quando a tela deixa de
+                    comportar a estrutura desktop.
                   </p>
                 </article>
 
@@ -5264,7 +6106,9 @@
 
             </section>
 
-            <!-- FIGMA -->
+            <!-- =================================================
+                 FIGMA
+                 ================================================= -->
 
             <section
               class="fernando-view"
@@ -5276,7 +6120,9 @@
                 <div class="fa-figma-head">
 
                   <div>
-                    <span>PROTOTYPE</span>
+                    <span>
+                      PROTOTYPE
+                    </span>
 
                     <strong>
                       Fernando Amaral
@@ -5314,16 +6160,19 @@
 
         <!-- =================================================
              PROJETO 02 — VOIT
-             PRESERVADO
              ================================================= -->
 
         <article class="project-block from-right">
+
           <div class="project-head">
+
             <span class="n mono">
               02 / 05 • COMUNICAÇÃO / CONTEÚDO
             </span>
 
-            <h3>Voit Consultoria</h3>
+            <h3>
+              Voit Consultoria
+            </h3>
 
             <p class="project-summary">
               Comunicação contínua para uma consultoria com mais de 15 anos de
@@ -5390,9 +6239,11 @@
               <span>Copywriting</span>
               <span>Comunicação multicanal</span>
             </div>
+
           </div>
 
           <div class="project-full-link-row">
+
             <button
               type="button"
               class="strip-full-link"
@@ -5402,18 +6253,21 @@
             >
               Ver método e processo completo ↗
             </button>
+
           </div>
 
           <div
             class="voit-panel active"
             id="voit-panel-social"
           >
+
             <div
               class="strip voit-strip"
               aria-label="Galeria da Voit Consultoria"
             >
 
               <div class="strip-item voit-card">
+
                 <img
                   src="img/img-voit/voit-01.jpeg"
                   alt="Voit Consultoria — carrossel 01"
@@ -5426,9 +6280,11 @@
                 <div class="voit-caption">
                   Carrossel 01 — Visualização completa
                 </div>
+
               </div>
 
               <div class="strip-item voit-card">
+
                 <img
                   src="img/img-voit/voit-02.jpeg"
                   alt="Voit Consultoria — carrossel 02"
@@ -5442,9 +6298,11 @@
                 <div class="voit-caption">
                   Carrossel 02 — Visualização completa
                 </div>
+
               </div>
 
               <div class="strip-item voit-card">
+
                 <img
                   src="img/img-voit/voit-03.jpeg"
                   alt="Voit Consultoria — carrossel 03"
@@ -5458,9 +6316,11 @@
                 <div class="voit-caption">
                   Carrossel 03 — Visualização completa
                 </div>
+
               </div>
 
               <div class="strip-item voit-card">
+
                 <img
                   src="img/img-voit/voit-04.jpeg"
                   alt="Voit Consultoria — carrossel 04"
@@ -5474,13 +6334,17 @@
                 <div class="voit-caption">
                   Carrossel 04 — Visualização completa
                 </div>
+
               </div>
 
             </div>
+
           </div>
 
           <div class="strip-nav">
+
             <div class="strip-nav-arrows">
+
               <button
                 type="button"
                 class="strip-btn prev"
@@ -5496,22 +6360,28 @@
               >
                 →
               </button>
+
             </div>
+
           </div>
+
         </article>
 
         <!-- =================================================
              PROJETO 03 — RENATA
-             PRESERVADO
              ================================================= -->
 
         <article class="project-block from-left">
+
           <div class="project-head">
+
             <span class="n mono">
               03 / 05 • APRESENTAÇÕES / CONTEÚDO
             </span>
 
-            <h3>Renata Brandão</h3>
+            <h3>
+              Renata Brandão
+            </h3>
 
             <p class="project-summary">
               Desenvolvimento de materiais de treinamento e apresentações
@@ -5575,6 +6445,7 @@
               <span>Copywriting</span>
               <span>IA Generativa</span>
             </div>
+
           </div>
 
           <div
@@ -5620,7 +6491,9 @@
           </div>
 
           <div class="strip-nav">
+
             <div class="strip-nav-arrows">
+
               <button
                 type="button"
                 class="strip-btn prev"
@@ -5636,6 +6509,7 @@
               >
                 →
               </button>
+
             </div>
 
             <a
@@ -5646,21 +6520,26 @@
             >
               Ver conteúdo completo ↗
             </a>
+
           </div>
+
         </article>
 
         <!-- =================================================
              PROJETO 04 — BRADUCA
-             PRESERVADO
              ================================================= -->
 
         <article class="project-block from-right">
+
           <div class="project-head">
+
             <span class="n mono">
               04 / 05 • SOCIAL MEDIA
             </span>
 
-            <h3>Somos Braduca</h3>
+            <h3>
+              Somos Braduca
+            </h3>
 
             <p class="project-summary">
               Comunicação visual para uma iniciativa educacional que oferece
@@ -5722,6 +6601,7 @@
               <span>Design Gráfico</span>
               <span>Comunicação Visual</span>
             </div>
+
           </div>
 
           <div
@@ -5815,7 +6695,9 @@
           </div>
 
           <div class="strip-nav">
+
             <div class="strip-nav-arrows">
+
               <button
                 type="button"
                 class="strip-btn prev"
@@ -5831,22 +6713,28 @@
               >
                 →
               </button>
+
             </div>
+
           </div>
+
         </article>
 
         <!-- =================================================
              PROJETO 05 — AYMÉE
-             PRESERVADO
              ================================================= -->
 
         <article class="project-block from-left">
+
           <div class="project-head">
+
             <span class="n mono">
               05 / 05 • SOCIAL MEDIA / MARCA PESSOAL
             </span>
 
-            <h3>Aymée Ferraz</h3>
+            <h3>
+              Aymée Ferraz
+            </h3>
 
             <p class="project-summary">
               Desenvolvimento de comunicação visual para redes sociais de uma
@@ -5908,6 +6796,7 @@
               <span>Design Gráfico</span>
               <span>Marca Pessoal</span>
             </div>
+
           </div>
 
           <div
@@ -6037,7 +6926,9 @@
           </div>
 
           <div class="strip-nav">
+
             <div class="strip-nav-arrows">
+
               <button
                 type="button"
                 class="strip-btn prev"
@@ -6053,8 +6944,11 @@
               >
                 →
               </button>
+
             </div>
+
           </div>
+
         </article>
 
       </div>
@@ -6067,49 +6961,69 @@
         class="section-head centered"
         id="habilidades"
       >
-        <h2>Habilidades & ferramentas</h2>
+        <h2>
+          Habilidades & ferramentas
+        </h2>
       </div>
 
       <section class="skills">
+
         <div class="skill-grid">
 
           <article class="skill-item">
-            <h3>UI Design</h3>
+
+            <h3>
+              UI Design
+            </h3>
 
             <p>
               Figma, prototipagem interativa, arquitetura de informação,
               componentes e layouts responsivos.
             </p>
+
           </article>
 
           <article class="skill-item">
-            <h3>Gráfico & Editorial</h3>
+
+            <h3>
+              Gráfico & Editorial
+            </h3>
 
             <p>
               Photoshop, Illustrator, InDesign, After Effects, Canva e
               diagramação de materiais visuais.
             </p>
+
           </article>
 
           <article class="skill-item">
-            <h3>Conteúdo & Comunicação</h3>
+
+            <h3>
+              Conteúdo & Comunicação
+            </h3>
 
             <p>
               Social media, copywriting, Meta Business, apresentações,
               endomarketing e comunicação multicanal.
             </p>
+
           </article>
 
           <article class="skill-item">
-            <h3>IA & Produtividade</h3>
+
+            <h3>
+              IA & Produtividade
+            </h3>
 
             <p>
               Uso de IA generativa no workflow para exploração, produtividade,
               estruturação e refinamento de conteúdo.
             </p>
+
           </article>
 
         </div>
+
       </section>
 
       <!-- ===================================================
@@ -6120,6 +7034,7 @@
         class="cta-band"
         id="contato"
       >
+
         <span class="project-block-label">
           contato
         </span>
@@ -6134,6 +7049,7 @@
         </p>
 
         <div class="cta-buttons">
+
           <a
             class="primary"
             href="https://wa.me/5562985666229"
@@ -6158,12 +7074,15 @@
           >
             LinkedIn ↗
           </a>
+
         </div>
+
       </section>
 
     </main>
 
     <footer>
+
       <span>
         © 2026 Raquel Renovato
       </span>
@@ -6172,7 +7091,9 @@
         <a href="mailto:raquel.renovato.design@gmail.com">
           raquel.renovato.design@gmail.com
         </a>
+
         ·
+
         <a
           href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
           target="_blank"
@@ -6181,6 +7102,7 @@
           LinkedIn
         </a>
       </span>
+
     </footer>
 
   </div>
@@ -6203,6 +7125,7 @@
     aria-labelledby="voitDrawerTitle"
     aria-hidden="true"
   >
+
     <button
       type="button"
       class="drawer-close-btn js-close-drawer"
@@ -6211,6 +7134,7 @@
     </button>
 
     <div class="drawer-header">
+
       <span class="mono">
         Método e Processo • 02 / Voit Consultoria
       </span>
@@ -6223,9 +7147,11 @@
         O passo a passo aplicado no dia a dia para garantir coesão de marca,
         rigor técnico e agilidade em múltiplos setores.
       </p>
+
     </div>
 
     <section class="drawer-section">
+
       <h3>
         01. Alinhamento Estratégico Mensal
       </h3>
@@ -6235,9 +7161,11 @@
         etapa, são definidos macrotemas, editoriais e objetivos estratégicos que
         guiam a comunicação do período.
       </p>
+
     </section>
 
     <section class="drawer-section">
+
       <h3>
         02. Pesquisa de Tendências & Produção Multicanal
       </h3>
@@ -6250,6 +7178,7 @@
       <div class="drawer-grid-2">
 
         <div class="drawer-card-info">
+
           <strong>
             Redes Sociais & Carrosséis
           </strong>
@@ -6257,9 +7186,11 @@
           <span>
             Artes visuais e copys/legendas para Instagram e LinkedIn.
           </span>
+
         </div>
 
         <div class="drawer-card-info">
+
           <strong>
             Artigos de Blog
           </strong>
@@ -6267,12 +7198,15 @@
           <span>
             Conteúdos aprofundados e técnicos de até 2.500 palavras.
           </span>
+
         </div>
 
       </div>
+
     </section>
 
     <section class="drawer-section">
+
       <h3>
         03. Validação Técnica & Flexibilidade de Pauta
       </h3>
@@ -6282,9 +7216,11 @@
         áreas para garantir precisão conceitual. Quando necessário, as pautas
         são ajustadas antes do agendamento no Meta Business Suite e LinkedIn.
       </p>
+
     </section>
 
     <section class="drawer-section">
+
       <h3>
         04. Comercial, Projetos Setoriais & Endomarketing
       </h3>
@@ -6298,6 +7234,7 @@
       <div class="drawer-grid-2">
 
         <div class="drawer-card-info">
+
           <strong>
             Apoio Comercial
           </strong>
@@ -6306,9 +7243,11 @@
             Organização visual de dados, anotações e materiais para
             apresentações destinadas a leads.
           </span>
+
         </div>
 
         <div class="drawer-card-info">
+
           <strong>
             Materiais Setoriais
           </strong>
@@ -6317,9 +7256,11 @@
             Desenvolvimento e diagramação de materiais personalizados em
             Illustrator ou Canva.
           </span>
+
         </div>
 
       </div>
+
     </section>
 
     <button
@@ -6328,6 +7269,7 @@
     >
       ← Fechar janela
     </button>
+
   </aside>
 
   <!-- =======================================================
@@ -6342,6 +7284,7 @@
     aria-labelledby="imgModalTitle"
     aria-hidden="true"
   >
+
     <h2
       id="imgModalTitle"
       class="sr-only"
@@ -6363,7 +7306,12 @@
       id="imgModalTarget"
       alt=""
     >
+
   </div>
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
 
   <script>
     (() => {
@@ -6406,8 +7354,7 @@
 
         document.body.classList.toggle(
           "locked",
-          modalOpen ||
-          drawerOpen
+          modalOpen || drawerOpen
         );
       }
 
@@ -6430,7 +7377,8 @@
       let introFinished =
         false;
 
-      const introTimers = [];
+      const introTimers =
+        [];
 
       function sizeIntroWords() {
         if (
@@ -6440,7 +7388,8 @@
           return;
         }
 
-        let maxWidth = 0;
+        let maxWidth =
+          0;
 
         introWords.forEach(
           word => {
@@ -6892,7 +7841,9 @@
           );
 
         imageModalTarget
-          ?.removeAttribute("src");
+          ?.removeAttribute(
+            "src"
+          );
 
         syncBodyLock();
 
@@ -7317,7 +8268,7 @@
         );
 
       /* =====================================================
-         WIREFRAME TABS
+         WIREFRAME — TABS
          ===================================================== */
 
       const wfNavItems =
@@ -7400,7 +8351,7 @@
       );
 
       /* =====================================================
-         WIREFRAME CONTADOR
+         WIREFRAME — CONTADOR
          ===================================================== */
 
       const metricButton =
@@ -7431,7 +8382,7 @@
         );
 
       /* =====================================================
-         WIREFRAME TAREFAS
+         WIREFRAME — TAREFAS
          ===================================================== */
 
       $$(".wf-task-item")
@@ -7451,7 +8402,7 @@
         );
 
       /* =====================================================
-         WIREFRAME MODE
+         WIREFRAME — MODE
          ===================================================== */
 
       const wfSwitchMode =
@@ -7515,7 +8466,7 @@
         );
 
       /* =====================================================
-         WIREFRAME LIMPAR
+         WIREFRAME — LIMPAR
          ===================================================== */
 
       $("#clearBtn")
@@ -7743,50 +8694,62 @@
          FERNANDO — DESIGN SYSTEM NAV
          ===================================================== */
 
-      const faSystemButtons =
-        $$(".fa-system-btn");
+      const fernandoSystem =
+        $("#fernando-project .fa-system");
 
-      const faSystemPanels =
-        $$(".fa-system-panel");
+      if (fernandoSystem) {
 
-      faSystemButtons.forEach(
-        button => {
-          button.addEventListener(
-            "click",
-            () => {
-              const target =
-                button.dataset
-                  .faSystem;
-
-              faSystemButtons.forEach(
-                current => {
-                  current
-                    .classList
-                    .toggle(
-                      "active",
-                      current ===
-                        button
-                    );
-                }
-              );
-
-              faSystemPanels.forEach(
-                panel => {
-                  panel.classList.toggle(
-                    "active",
-                    panel.dataset
-                      .faSystemPanel ===
-                      target
-                  );
-                }
-              );
-            }
+        const faSystemButtons =
+          $$(
+            ".fa-system-btn",
+            fernandoSystem
           );
-        }
-      );
+
+        const faSystemPanels =
+          $$(
+            ".fa-system-panel",
+            fernandoSystem
+          );
+
+        faSystemButtons.forEach(
+          button => {
+            button.addEventListener(
+              "click",
+              () => {
+                const target =
+                  button.dataset
+                    .faSystem;
+
+                faSystemButtons.forEach(
+                  current => {
+                    current
+                      .classList
+                      .toggle(
+                        "active",
+                        current ===
+                          button
+                      );
+                  }
+                );
+
+                faSystemPanels.forEach(
+                  panel => {
+                    panel.classList.toggle(
+                      "active",
+                      panel.dataset
+                        .faSystemPanel ===
+                        target
+                    );
+                  }
+                );
+              }
+            );
+          }
+        );
+      }
 
       /* =====================================================
-         FERNANDO — BUTTON VARIANTS
+         FERNANDO — BUTTON STATES
          ===================================================== */
 
       const faPrimaryDemo =
@@ -7794,7 +8757,7 @@
 
       const faButtonStateButtons =
         $$(
-          "[data-fa-button-state]"
+          "#fernando-project [data-fa-button-state]"
         );
 
       faButtonStateButtons.forEach(
@@ -7815,12 +8778,19 @@
                   }
                 );
 
+              if (!faPrimaryDemo) {
+                return;
+              }
+
               faPrimaryDemo
-                ?.classList
+                .classList
                 .remove(
                   "is-hover",
                   "is-disabled"
                 );
+
+              faPrimaryDemo.disabled =
+                false;
 
               const state =
                 button.dataset
@@ -7831,7 +8801,7 @@
                 "hover"
               ) {
                 faPrimaryDemo
-                  ?.classList
+                  .classList
                   .add(
                     "is-hover"
                   );
@@ -7842,10 +8812,13 @@
                 "disabled"
               ) {
                 faPrimaryDemo
-                  ?.classList
+                  .classList
                   .add(
                     "is-disabled"
                   );
+
+                faPrimaryDemo.disabled =
+                  true;
               }
             }
           );
@@ -7856,13 +8829,17 @@
          FERNANDO — FILTER DEMO
          ===================================================== */
 
-      $$(".fa-filter-demo")
+      $$(
+        "#fernando-project .fa-filter-demo"
+      )
         .forEach(
           button => {
             button.addEventListener(
               "click",
               () => {
-                $$(".fa-filter-demo")
+                $$(
+                  "#fernando-project .fa-filter-demo"
+                )
                   .forEach(
                     current => {
                       current
@@ -7875,7 +8852,9 @@
 
                 button
                   .classList
-                  .add("active");
+                  .add(
+                    "active"
+                  );
               }
             );
           }
