@@ -30,140 +30,136 @@
 
   <style>
     :root {
-      --bg:#F3EFEA;
-      --ink:#1F1C18;
-      --dim:#62584E;
-      --muted:#8E857B;
+      --bg: #f3efe9;
+      --surface: #faf7f2;
+      --card: #e8e1d6;
 
-      --line:rgba(31,28,24,.15);
-      --line-strong:rgba(31,28,24,.32);
+      --ink: #1f1c18;
+      --dim: #665b51;
+      --muted: #8e857b;
 
-      --card:#E7E0D6;
-      --card-2:#ECE7DF;
-      --surface:#FAF7F2;
+      --line: rgba(31, 28, 24, 0.14);
+      --line-strong: rgba(31, 28, 24, 0.34);
 
-      --accent:#E8590C;
-      --accent-soft:rgba(232,89,12,.08);
+      --accent: #ed5706;
+      --accent-soft: rgba(237, 87, 6, 0.1);
 
-      --green:#40594A;
+      --green: #425b4c;
 
-      --nav-bg:rgba(243,239,234,.95);
+      --nav-bg: rgba(243, 239, 233, 0.94);
 
       --shadow:
-        0 26px 65px
-        rgba(31,28,24,.10);
+        0 24px 54px
+        rgba(31, 28, 24, 0.09);
 
-      --pad:40px;
+      --pad: 40px;
 
-      --ease:cubic-bezier(.16,1,.3,1);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
-      --wf-bg:#F7F3ED;
-      --wf-card:#E9E2D7;
-      --wf-text:#1F1C18;
-      --wf-line:rgba(31,28,24,.13);
+      --wf-bg: #fbf8f3;
+      --wf-side: #e9e2d7;
+      --wf-card: #e8e1d6;
+      --wf-text: #201d19;
+      --wf-muted: #776c61;
     }
 
     html[data-theme="dark"] {
-      --bg:#181614;
-      --ink:#F1ECE3;
-      --dim:#AAA299;
-      --muted:#817A72;
+      --bg: #181614;
+      --surface: #1f1c19;
+      --card: #28241f;
 
-      --line:rgba(241,236,227,.13);
-      --line-strong:rgba(241,236,227,.29);
+      --ink: #f3eee6;
+      --dim: #aaa198;
+      --muted: #817970;
 
-      --card:#24211E;
-      --card-2:#2B2723;
-      --surface:#1E1B18;
+      --line: rgba(243, 238, 230, 0.13);
+      --line-strong: rgba(243, 238, 230, 0.3);
 
-      --accent:#F26D1D;
-      --accent-soft:rgba(242,109,29,.12);
+      --accent: #f16b1c;
+      --accent-soft: rgba(241, 107, 28, 0.12);
 
-      --green:#829789;
+      --green: #889c8f;
 
-      --nav-bg:rgba(24,22,20,.95);
+      --nav-bg: rgba(24, 22, 20, 0.94);
 
       --shadow:
-        0 26px 65px
-        rgba(0,0,0,.32);
+        0 24px 54px
+        rgba(0, 0, 0, 0.3);
 
-      --wf-bg:#201D1A;
-      --wf-card:#292520;
-      --wf-text:#F1ECE3;
-      --wf-line:rgba(241,236,227,.12);
+      --wf-bg: #f9f6f0;
+      --wf-side: #e7dfd3;
+      --wf-card: #e8e1d6;
+      --wf-text: #201d19;
+      --wf-muted: #776c61;
     }
 
     * {
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     html {
-      scroll-behavior:smooth;
-      scrollbar-gutter:stable;
-      scroll-padding-top:80px;
+      scroll-behavior: smooth;
+      scrollbar-gutter: stable;
+      scroll-padding-top: 70px;
     }
 
     body {
-      overflow-x:hidden;
+      overflow-x: hidden;
 
-      background:var(--bg);
-      color:var(--ink);
+      background: var(--bg);
+      color: var(--ink);
 
-      font-family:"IBM Plex Sans",sans-serif;
+      font-family: "IBM Plex Sans", sans-serif;
 
-      -webkit-font-smoothing:antialiased;
+      -webkit-font-smoothing: antialiased;
 
       transition:
-        background-color .35s ease,
-        color .35s ease;
+        background-color 0.35s ease,
+        color 0.35s ease;
     }
 
     body.intro-active,
     body.locked {
-      overflow:hidden;
+      overflow: hidden;
     }
 
     img {
-      display:block;
-      max-width:100%;
+      display: block;
+      max-width: 100%;
     }
 
     button,
     input,
     select,
     textarea {
-      font:inherit;
+      font: inherit;
     }
 
     button {
-      color:inherit;
+      color: inherit;
     }
 
     a {
-      color:inherit;
-      text-decoration:none;
+      color: inherit;
+      text-decoration: none;
     }
 
     ul {
-      margin:0;
-      padding:0;
+      margin: 0;
+      padding: 0;
     }
 
     .mono {
-      font-family:"IBM Plex Mono",monospace;
-    }
-
-    .serif {
-      font-family:"Fraunces",serif;
+      font-family: "IBM Plex Mono", monospace;
     }
 
     a:focus-visible,
     button:focus-visible,
     [tabindex]:focus-visible {
-      outline:2px solid var(--accent);
-      outline-offset:4px;
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
 
     /* =========================================================
@@ -171,153 +167,111 @@
     ========================================================= */
 
     #intro-overlay {
-      position:fixed;
-      inset:0;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
 
-      z-index:9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      background: var(--bg);
 
-      background:var(--bg);
-
-      cursor:pointer;
-
-      opacity:1;
-      visibility:visible;
+      cursor: pointer;
 
       transition:
-        opacity .48s ease,
-        transform .48s var(--ease),
-        visibility .48s ease;
+        opacity 0.48s ease,
+        visibility 0.48s ease,
+        transform 0.48s var(--ease);
     }
 
     #intro-overlay.hide {
-      opacity:0;
-      visibility:hidden;
-      transform:scale(1.015);
-      pointer-events:none;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.015);
+      pointer-events: none;
     }
 
-    /*
-      O conjunto inteiro possui largura previsível.
-      Assim "clareza", "estrutura" e "detalhes" sempre começam
-      exatamente na mesma coordenada.
-    */
-
     .intro-title {
-      display:flex;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
 
-      align-items:baseline;
-      justify-content:center;
+      gap: 0.16em;
 
-      gap:.18em;
+      width: max-content;
+      max-width: 94vw;
 
-      width:max-content;
-      max-width:94vw;
+      font-family: "Fraunces", serif;
 
-      margin:auto;
+      font-size: clamp(4.8rem, 7.4vw, 8rem);
+      font-weight: 300;
 
-      font-family:"Fraunces",serif;
+      line-height: 0.92;
+      letter-spacing: -0.055em;
 
-      font-size:
-        clamp(
-          4.5rem,
-          7.3vw,
-          8rem
-        );
-
-      font-weight:300;
-
-      line-height:.9;
-
-      letter-spacing:-.055em;
-
-      white-space:nowrap;
+      white-space: nowrap;
     }
 
     .intro-fixed {
-      display:block;
-      line-height:.9;
+      display: block;
     }
 
     .intro-word-cycle {
-      position:relative;
+      position: relative;
 
-      display:block;
+      display: inline-block;
 
-      width:5.15em;
-      height:1.06em;
+      width: 5.35em;
+      height: 1em;
 
-      overflow:hidden;
+      overflow: hidden;
 
-      color:var(--accent);
-
-      font-style:italic;
-
-      line-height:.92;
+      color: var(--accent);
+      font-style: italic;
     }
 
     .intro-word-cycle .w {
-      position:absolute;
+      position: absolute;
 
-      left:0;
-      bottom:0;
+      left: 0;
+      bottom: 0;
 
-      display:block;
+      display: block;
 
-      width:max-content;
+      white-space: nowrap;
 
-      opacity:0;
+      opacity: 0;
 
-      transform:
-        translate3d(
-          0,
-          115%,
-          0
-        );
+      transform: translate3d(0, 110%, 0);
 
       transition:
-        opacity .3s ease,
-        transform .65s var(--ease);
+        opacity 0.28s ease,
+        transform 0.66s var(--ease);
     }
 
     .intro-word-cycle .w.active {
-      opacity:1;
-
-      transform:
-        translate3d(
-          0,
-          0,
-          0
-        );
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
 
     .intro-word-cycle .w.exit {
-      opacity:0;
-
-      transform:
-        translate3d(
-          0,
-          -115%,
-          0
-        );
+      opacity: 0;
+      transform: translate3d(0, -110%, 0);
     }
 
     .intro-help {
-      position:absolute;
+      position: absolute;
 
-      left:50%;
-      bottom:28px;
+      left: 50%;
+      bottom: 28px;
 
-      transform:translateX(-50%);
+      transform: translateX(-50%);
 
-      color:var(--muted);
+      color: var(--muted);
 
-      font-size:.56rem;
-
-      white-space:nowrap;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.56rem;
     }
 
     /* =========================================================
@@ -325,53 +279,52 @@
     ========================================================= */
 
     .site-nav {
-      position:sticky;
-      top:0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
 
-      z-index:1000;
+      min-height: 62px;
 
-      min-height:62px;
-
-      display:grid;
+      display: grid;
 
       grid-template-columns:
         1fr
         auto
         1fr;
 
-      align-items:center;
+      align-items: center;
 
       padding:
         0
         var(--pad);
 
-      background:var(--nav-bg);
+      background: var(--nav-bg);
 
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
     .nav-left {
-      display:flex;
-      align-items:center;
-      gap:18px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
 
     .logo {
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:1.17rem;
-      font-weight:500;
+      font-size: 1.16rem;
+      font-weight: 500;
 
-      white-space:nowrap;
+      white-space: nowrap;
     }
 
     .logo:hover {
-      color:var(--accent);
+      color: var(--accent);
     }
 
     .theme-toggle {
-      min-height:32px;
+      min-height: 32px;
 
       padding:
         0
@@ -381,53 +334,49 @@
         1px solid
         var(--line-strong);
 
-      border-radius:999px;
+      border-radius: 999px;
 
-      background:transparent;
+      background: transparent;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.65rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
 
-      cursor:pointer;
+      cursor: pointer;
     }
 
     .theme-toggle:hover {
-      border-color:var(--accent);
-      color:var(--accent);
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
     .site-nav ul {
-      display:flex;
+      display: flex;
+      align-items: center;
 
-      align-items:center;
+      gap: 34px;
 
-      gap:34px;
-
-      list-style:none;
+      list-style: none;
     }
 
     .site-nav ul a {
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:.82rem;
-
-      transition:
-        color .2s ease;
+      font-size: 0.82rem;
     }
 
     .site-nav ul a:hover {
-      color:var(--accent);
+      color: var(--accent);
     }
 
     .nav-cta {
-      justify-self:end;
+      justify-self: end;
 
-      min-height:38px;
+      min-height: 38px;
 
-      display:flex;
-      align-items:center;
+      display: flex;
+      align-items: center;
 
       padding:
         0
@@ -437,15 +386,15 @@
         1px solid
         var(--line-strong);
 
-      font-family:"IBM Plex Mono",monospace;
-      font-size:.62rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
     }
 
     .nav-cta:hover {
-      border-color:var(--ink);
+      background: var(--ink);
+      color: var(--bg);
 
-      background:var(--ink);
-      color:var(--bg);
+      border-color: var(--ink);
     }
 
     /* =========================================================
@@ -453,347 +402,201 @@
     ========================================================= */
 
     .hero {
-      min-height:
-        calc(
-          100svh -
-          62px
-        );
+      min-height: calc(100svh - 62px);
 
-      display:grid;
+      display: grid;
 
       grid-template-columns:
-        minmax(0,1.08fr)
-        minmax(390px,.92fr);
+        minmax(0, 1.05fr)
+        minmax(430px, 0.95fr);
 
-      align-items:center;
+      align-items: center;
 
-      gap:
-        clamp(
-          55px,
-          7vw,
-          110px
-        );
+      gap: clamp(60px, 7vw, 110px);
 
       padding:
         70px
         var(--pad)
-        80px;
+        86px;
     }
 
     .hero-text {
-      max-width:710px;
+      max-width: 720px;
     }
 
     .hero-eyebrow {
-      margin-bottom:27px;
+      margin-bottom: 28px;
 
-      color:var(--ink);
+      color: var(--ink);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.64rem;
-      font-weight:500;
+      font-size: 0.64rem;
+      font-weight: 500;
 
-      line-height:1.5;
+      line-height: 1.5;
 
-      letter-spacing:.045em;
+      letter-spacing: 0.045em;
     }
 
     .hero h1 {
-      max-width:740px;
+      max-width: 740px;
 
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:
-        clamp(
-          3.9rem,
-          5.8vw,
-          6.1rem
-        );
+      font-size: clamp(3.9rem, 5.8vw, 6.2rem);
+      font-weight: 300;
 
-      font-weight:300;
+      line-height: 0.95;
 
-      line-height:.95;
-
-      letter-spacing:-.047em;
+      letter-spacing: -0.047em;
     }
 
     .hero h1 em {
-      color:var(--accent);
+      color: var(--accent);
 
-      font-weight:300;
-      font-style:italic;
+      font-style: italic;
+      font-weight: 300;
     }
 
     .hero-sub {
-      max-width:690px;
+      max-width: 690px;
 
-      margin-top:35px;
+      margin-top: 34px;
     }
 
     .hero-sub p {
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:
-        clamp(
-          1rem,
-          1.22vw,
-          1.1rem
-        );
+      font-size: clamp(1rem, 1.2vw, 1.1rem);
 
-      line-height:1.75;
+      line-height: 1.75;
     }
 
     .hero-actions {
-      display:flex;
+      display: flex;
+      flex-wrap: wrap;
 
-      flex-wrap:wrap;
+      align-items: center;
 
-      align-items:center;
+      gap: 28px;
 
-      gap:28px;
-
-      margin-top:25px;
+      margin-top: 25px;
     }
 
     .hero-project-link {
-      position:relative;
+      position: relative;
 
-      color:var(--accent);
+      color: var(--accent);
 
-      font-size:.8rem;
+      font-size: 0.8rem;
     }
 
     .hero-project-link::after {
-      content:"";
+      content: "";
 
-      position:absolute;
+      position: absolute;
 
-      left:0;
-      bottom:-7px;
+      left: 0;
+      bottom: -7px;
 
-      width:100%;
-      height:1px;
+      width: 100%;
+      height: 1px;
 
-      background:var(--accent);
+      background: var(--accent);
     }
 
     .hero-contact-link {
-      color:var(--dim);
+      color: var(--dim);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.62rem;
+      font-size: 0.62rem;
     }
 
     .hero-contact-link:hover {
-      color:var(--accent);
+      color: var(--accent);
     }
 
     /* =========================================================
-       HERO WIREFRAME
-       FORMATO 380 × 260 DA REFERÊNCIA
+       WIREFRAME HERO
+       REFERÊNCIA EXATA: JANELA 380 × 260
     ========================================================= */
 
     .hero-visual {
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      min-width: 0;
 
-      min-width:0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .wf-wrapper {
-      position:relative;
+      width: 500px;
+      max-width: 100%;
 
-      width:430px;
-      max-width:100%;
-
-      min-height:365px;
-
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .wf-stage {
-      position:relative;
+      position: relative;
 
-      width:380px;
-      max-width:100%;
-    }
+      width: 430px;
+      max-width: 100%;
 
-    .wf-illustration {
-      position:absolute;
+      min-height: 310px;
 
-      z-index:5;
-
-      pointer-events:none;
-    }
-
-    .pen-tool-svg {
-      top:-43px;
-      left:-36px;
-
-      width:74px;
-      height:74px;
-    }
-
-    .badge-floater {
-      top:-31px;
-      right:-10px;
-
-      display:flex;
-
-      align-items:center;
-
-      gap:5px;
-
-      padding:
-        4px
-        11px;
-
-      border:
-        1px solid
-        var(--green);
-
-      border-radius:999px;
-
-      background:var(--bg);
-
-      color:var(--green);
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.52rem;
-
-      box-shadow:
-        0 4px 12px
-        rgba(0,0,0,.05);
-
-      animation:
-        floatAnim
-        5s
-        ease-in-out
-        infinite;
-    }
-
-    .spec-floater {
-      left:-34px;
-      bottom:28px;
-
-      padding:
-        4px
-        9px;
-
-      border:
-        1px solid
-        var(--line-strong);
-
-      border-radius:5px;
-
-      background:var(--bg);
-
-      color:var(--dim);
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.48rem;
-    }
-
-    .cursor-floater {
-      right:-17px;
-      bottom:-17px;
-
-      display:flex;
-
-      align-items:center;
-
-      gap:6px;
-
-      padding:
-        5px
-        11px;
-
-      border-radius:
-        5px
-        16px
-        16px
-        16px;
-
-      background:var(--accent);
-
-      color:white;
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.51rem;
-
-      box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.12);
-
-      animation:
-        floatAnim
-        4s
-        ease-in-out
-        infinite;
-    }
-
-    @keyframes floatAnim {
-      0%,
-      100% {
-        transform:translateY(0);
-      }
-
-      50% {
-        transform:translateY(-5px);
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .wf-window {
-      --wf-bg-local:var(--wf-bg);
-      --wf-card-local:var(--wf-card);
-      --wf-text-local:var(--wf-text);
+      --wf-local-bg: var(--wf-bg);
+      --wf-local-side: var(--wf-side);
+      --wf-local-card: var(--wf-card);
+      --wf-local-text: var(--wf-text);
 
-      width:380px;
-      max-width:100%;
+      position: relative;
 
-      height:260px;
+      width: 380px;
+      height: 260px;
 
-      display:flex;
-      flex-direction:column;
+      max-width: 100%;
 
-      overflow:hidden;
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
 
       border:
-        1.5px solid
-        var(--line-strong);
+        1px solid
+        rgba(70, 64, 57, 0.55);
 
-      border-radius:10px;
+      border-radius: 9px;
 
-      background:var(--wf-bg-local);
-
-      color:var(--wf-text-local);
+      background: var(--wf-local-bg);
+      color: var(--wf-local-text);
 
       box-shadow:
-        0 18px 42px
-        rgba(31,28,24,.08);
+        0 16px 35px
+        rgba(31, 28, 24, 0.08);
 
-      user-select:none;
+      user-select: none;
     }
 
-    .wf-header {
-      height:34px;
+    .wf-top {
+      height: 34px;
 
-      display:flex;
+      flex:
+        0 0
+        34px;
 
-      align-items:center;
-
-      justify-content:space-between;
-
-      flex:0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       padding:
         0
@@ -801,521 +604,749 @@
 
       border-bottom:
         1px solid
-        var(--wf-line);
+        rgba(66, 58, 51, 0.17);
 
-      background:var(--wf-card-local);
+      background:
+        #e8e1d6;
     }
 
     .wf-dots {
-      display:flex;
-      gap:5px;
+      display: flex;
+
+      align-items: center;
+
+      gap: 5px;
     }
 
     .wf-dot {
-      width:7px;
-      height:7px;
+      width: 7px;
+      height: 7px;
 
-      border-radius:50%;
+      border-radius: 50%;
 
-      background:var(--muted);
-
-      opacity:.57;
+      background: #aaa39b;
     }
 
-    .wf-switch-mode {
+    .wf-mode {
+      min-width: 58px;
+      height: 19px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       padding:
-        2px
+        0
         8px;
 
       border:
         1px solid
-        var(--line-strong);
+        #aaa29a;
 
-      border-radius:10px;
+      border-radius: 999px;
 
-      background:transparent;
+      background:
+        #f5f1eb;
 
-      color:var(--dim);
+      color: #665e55;
 
-      font-size:.49rem;
+      font-family: "IBM Plex Mono", monospace;
 
-      cursor:pointer;
+      font-size: 0.46rem;
+
+      cursor: pointer;
     }
 
-    .wf-body {
-      flex:1;
+    .wf-content {
+      flex: 1;
 
-      display:flex;
+      min-height: 0;
 
-      min-height:0;
+      display: flex;
     }
 
     .wf-sidebar {
-      width:110px;
+      width: 110px;
 
       flex:
         0 0
         110px;
 
-      display:flex;
-
-      flex-direction:column;
-
-      gap:5px;
-
       padding:
-        11px
-        8px;
+        12px
+        9px;
 
       border-right:
         1px solid
-        var(--wf-line);
+        rgba(66, 58, 51, 0.18);
 
       background:
-        color-mix(
-          in srgb,
-          var(--wf-card-local) 74%,
-          var(--wf-bg-local)
-        );
+        var(--wf-local-side);
+    }
+
+    .wf-nav {
+      display: flex;
+      flex-direction: column;
+
+      gap: 6px;
     }
 
     .wf-nav-item {
-      display:flex;
+      min-height: 29px;
 
-      align-items:center;
+      display: flex;
+      align-items: center;
 
-      gap:7px;
+      gap: 7px;
+
+      padding:
+        0
+        9px;
+
+      border-radius: 4px;
+
+      color:
+        var(--wf-local-text);
+
+      font-size: 0.47rem;
+
+      cursor: pointer;
+
+      transition:
+        background-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .wf-nav-item:hover {
+      transform: translateX(2px);
+    }
+
+    .wf-nav-item.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .wf-nav-icon {
+      width: 8px;
+
+      flex:
+        0 0
+        8px;
+
+      text-align: center;
+
+      font-size: 0.48rem;
+    }
+
+    .wf-main {
+      flex: 1;
+
+      min-width: 0;
+
+      padding:
+        12px
+        13px
+        10px;
+    }
+
+    .wf-view {
+      display: none;
+
+      height: 100%;
+    }
+
+    .wf-view.active {
+      display: block;
+
+      animation:
+        wfFade
+        0.25s ease;
+    }
+
+    @keyframes wfFade {
+      from {
+        opacity: 0;
+        transform: translateY(3px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .wf-dashboard-header {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 9px;
+
+      margin-bottom: 11px;
+    }
+
+    .wf-dashboard-header h3 {
+      color:
+        var(--wf-local-text);
+
+      font-size: 0.64rem;
+      font-weight: 500;
+
+      line-height: 1.1;
+    }
+
+    .wf-add {
+      min-height: 24px;
+
+      padding:
+        0
+        10px;
+
+      border:
+        1px solid
+        var(--accent);
+
+      border-radius: 4px;
+
+      background: var(--accent);
+
+      color: #fff;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.43rem;
+
+      cursor: pointer;
+    }
+
+    .wf-metrics {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 8px;
+
+      margin-bottom: 12px;
+    }
+
+    .wf-metric {
+      min-height: 55px;
 
       padding:
         8px
         9px;
 
-      border-radius:4px;
-
-      color:var(--wf-text-local);
-
-      font-size:.49rem;
-
-      cursor:pointer;
-
-      transition:
-        background-color .18s ease,
-        color .18s ease,
-        transform .18s ease;
-    }
-
-    .wf-nav-item:hover {
-      transform:translateX(2px);
-    }
-
-    .wf-nav-item.active {
-      background:var(--accent);
-      color:white;
-    }
-
-    .wf-main {
-      flex:1;
-
-      min-width:0;
-
-      padding:12px;
-    }
-
-    .wf-view {
-      display:none;
-
-      height:100%;
-    }
-
-    .wf-view.active {
-      display:block;
-
-      animation:
-        wfViewIn
-        .25s ease;
-    }
-
-    @keyframes wfViewIn {
-      from {
-        opacity:0;
-        transform:translateY(3px);
-      }
-
-      to {
-        opacity:1;
-        transform:none;
-      }
-    }
-
-    .wf-top-bar {
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      gap:8px;
-
-      margin-bottom:10px;
-    }
-
-    .wf-title {
-      color:var(--wf-text-local);
-
-      font-size:.66rem;
-      font-weight:500;
-    }
-
-    .wf-version {
-      color:var(--muted);
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.4rem;
-    }
-
-    .wf-badge-btn {
-      padding:
-        6px
-        8px;
-
       border:
         1px solid
-        var(--accent);
+        rgba(71, 63, 56, 0.18);
 
-      border-radius:4px;
+      border-radius: 6px;
 
-      background:var(--accent);
+      background:
+        var(--wf-local-card);
 
-      color:white;
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.43rem;
-
-      cursor:pointer;
+      color:
+        var(--wf-local-text);
     }
 
-    .wf-card-grid {
-      display:grid;
+    .wf-metric small {
+      display: block;
 
-      grid-template-columns:
-        1fr
-        1fr;
+      margin-bottom: 5px;
 
-      gap:8px;
+      color: #7b7167;
 
-      margin-bottom:9px;
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.39rem;
     }
 
-    .wf-card {
-      min-height:52px;
+    .wf-metric strong {
+      display: block;
 
-      padding:8px;
+      font-family: "IBM Plex Mono", monospace;
 
-      border:
-        1px solid
-        var(--wf-line);
+      font-size: 0.76rem;
+      font-weight: 600;
 
-      border-radius:5px;
-
-      background:var(--wf-card-local);
-
-      color:var(--wf-text-local);
+      line-height: 1;
     }
 
-    .wf-card-label {
-      display:block;
+    .wf-checklist {
+      display: flex;
+      flex-direction: column;
 
-      margin-bottom:5px;
-
-      color:var(--muted);
-
-      font-size:.4rem;
+      gap: 8px;
     }
 
-    .wf-card-val {
-      color:var(--wf-text-local);
+    .wf-check {
+      display: flex;
 
-      font-family:"IBM Plex Mono",monospace;
+      align-items: center;
 
-      font-size:.78rem;
-      font-weight:600;
+      gap: 7px;
+
+      color:
+        #685f56;
+
+      font-size: 0.43rem;
+
+      line-height: 1.2;
+
+      cursor: pointer;
     }
 
-    .wf-task-list {
-      display:flex;
-
-      flex-direction:column;
-
-      gap:6px;
-
-      margin-top:5px;
-    }
-
-    .wf-task-item {
-      display:flex;
-
-      align-items:center;
-
-      gap:7px;
-
-      color:var(--dim);
-
-      font-size:.45rem;
-
-      cursor:pointer;
-    }
-
-    .wf-checkbox {
-      width:10px;
-      height:10px;
+    .wf-check-box {
+      width: 10px;
+      height: 10px;
 
       flex:
         0 0
         10px;
 
-      display:grid;
-
-      place-items:center;
+      display: grid;
+      place-items: center;
 
       border:
         1px solid
-        var(--line-strong);
+        #afa79e;
 
-      color:transparent;
+      background:
+        #faf8f4;
 
-      font-size:.37rem;
+      color: transparent;
+
+      font-size: 0.37rem;
     }
 
-    .wf-task-item.checked .wf-checkbox {
-      border-color:var(--accent);
-      background:var(--accent);
-      color:white;
+    .wf-check.checked .wf-check-box {
+      border-color: var(--accent);
+
+      background: var(--accent);
+
+      color: #fff;
     }
 
-    .wf-task-item.checked {
-      color:var(--wf-text-local);
+    .wf-check.checked {
+      color:
+        var(--wf-local-text);
     }
 
     .wf-paintable {
       transition:
-        background-color .18s ease,
-        border-color .18s ease,
-        color .18s ease;
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
     }
 
     .wf-paintable.is-painted,
     .wf-paintable.is-painted *,
-    .wf-paintable.is-painted .wf-card-label,
-    .wf-paintable.is-painted .wf-card-val {
+    .wf-paintable.is-painted small,
+    .wf-paintable.is-painted strong {
       color:
         var(
-          --paint-foreground,
-          white
+          --paint-text,
+          #fff
         ) !important;
     }
 
-    .wf-wireframe-main {
-      min-height:91px;
+    /* INTERFACES */
 
-      padding:12px;
+    .wf-interface-title {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 11px;
+    }
+
+    .wf-interface-title h3 {
+      font-size: 0.63rem;
+      font-weight: 500;
+    }
+
+    .wf-interface-title span {
+      color: #82786f;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.39rem;
+    }
+
+    .wf-interface-hero {
+      min-height: 89px;
+
+      padding:
+        12px;
 
       border:
         1px solid
-        var(--wf-line);
+        rgba(71, 63, 56, 0.18);
 
-      border-radius:5px;
+      border-radius: 5px;
 
-      background:var(--wf-card-local);
+      background:
+        var(--wf-local-card);
     }
 
-    .wf-wireframe-header {
-      margin-bottom:15px;
+    .wf-interface-hero span {
+      display: block;
 
-      color:var(--wf-text-local);
+      margin-bottom: 17px;
 
-      font-size:.44rem;
+      font-size: 0.39rem;
     }
 
-    .wf-wireframe-row {
-      display:flex;
+    .wf-interface-hero div {
+      display: flex;
 
-      align-items:center;
+      justify-content: space-between;
 
-      justify-content:space-between;
+      gap: 8px;
 
-      gap:10px;
-
-      font-size:.44rem;
+      font-size: 0.43rem;
     }
 
     .wf-interface-grid {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
         1fr
         1fr;
 
-      gap:7px;
+      gap: 7px;
 
-      margin-top:8px;
+      margin-top: 8px;
     }
 
-    .wf-interface-component {
-      min-height:46px;
+    .wf-component {
+      min-height: 48px;
 
-      padding:7px;
+      padding: 7px;
 
       border:
         1px solid
-        var(--wf-line);
+        rgba(71, 63, 56, 0.18);
 
-      border-radius:5px;
+      border-radius: 5px;
 
-      background:var(--wf-card-local);
+      background:
+        var(--wf-local-card);
     }
 
-    .wf-interface-component span {
-      display:block;
+    .wf-component small {
+      display: block;
 
-      margin-bottom:4px;
+      margin-bottom: 4px;
 
-      color:var(--muted);
+      color: #82786f;
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.38rem;
+      font-size: 0.35rem;
     }
 
-    .wf-interface-component strong {
-      font-size:.43rem;
-      font-weight:400;
+    .wf-component strong {
+      font-size: 0.42rem;
+      font-weight: 400;
+    }
+
+    /* DESIGN SYSTEM */
+
+    .wf-system-heading {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 10px;
+    }
+
+    .wf-system-heading h3 {
+      font-size: 0.63rem;
+      font-weight: 500;
+    }
+
+    .wf-system-heading span {
+      color: #81776d;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.38rem;
     }
 
     .wf-system-label {
       margin:
-        7px
+        8px
         0
         5px;
 
-      color:var(--muted);
+      color: #81776d;
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.4rem;
+      font-size: 0.37rem;
     }
 
-    .wf-system-buttons {
-      display:flex;
+    .wf-token-actions {
+      display: flex;
 
-      align-items:center;
+      align-items: center;
 
-      gap:6px;
+      gap: 6px;
     }
 
     .wf-token-btn {
+      min-height: 22px;
+
       padding:
-        5px
+        0
         8px;
 
       border:
         1px solid
         var(--accent);
 
-      border-radius:4px;
+      border-radius: 4px;
 
-      background:var(--accent);
+      background:
+        var(--accent);
 
-      color:white;
+      color: #fff;
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.4rem;
+      font-size: 0.38rem;
 
-      cursor:pointer;
+      cursor: pointer;
     }
 
     .wf-token-link {
-      border:0;
-
+      border: 0;
       border-bottom:
         1px solid
         currentColor;
 
-      background:transparent;
+      background: transparent;
 
-      color:var(--wf-text-local);
+      color:
+        var(--wf-local-text);
 
-      font-size:.4rem;
+      font-size: 0.38rem;
 
-      cursor:pointer;
+      cursor: pointer;
     }
 
-    .wf-type-token {
-      margin-top:5px;
+    .wf-type {
+      margin-top: 6px;
 
-      padding:8px;
+      padding:
+        8px
+        9px;
 
       border:
         1px solid
-        var(--wf-line);
+        rgba(71, 63, 56, 0.18);
 
-      border-radius:5px;
+      border-radius: 5px;
 
-      background:var(--wf-card-local);
+      background:
+        var(--wf-local-card);
     }
 
-    .wf-type-token strong {
-      display:block;
+    .wf-type strong {
+      display: block;
 
-      margin-bottom:3px;
+      margin-bottom: 2px;
 
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:.7rem;
-      font-weight:400;
+      font-size: 0.68rem;
+      font-weight: 400;
     }
 
-    .wf-type-token span {
-      font-family:"IBM Plex Mono",monospace;
+    .wf-type small {
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.37rem;
+      font-size: 0.34rem;
     }
+
+    /* OBJETOS FLUTUANTES */
+
+    .wf-pen {
+      position: absolute;
+
+      z-index: 5;
+
+      top: -10px;
+      left: 0;
+
+      width: 72px;
+      height: 72px;
+
+      pointer-events: none;
+    }
+
+    .wf-auto {
+      position: absolute;
+
+      z-index: 6;
+
+      top: -8px;
+      right: 0;
+
+      min-height: 23px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+      padding:
+        0
+        11px;
+
+      border:
+        1px solid
+        #425b4c;
+
+      border-radius: 999px;
+
+      background:
+        #f6f3ee;
+
+      color:
+        #536b5e;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.46rem;
+
+      box-shadow:
+        0 3px 8px
+        rgba(31, 28, 24, 0.06);
+    }
+
+    .wf-size-label {
+      position: absolute;
+
+      z-index: 5;
+
+      left: -8px;
+      bottom: 15px;
+
+      padding:
+        5px
+        9px;
+
+      border:
+        1px solid
+        #b6aea5;
+
+      border-radius: 4px;
+
+      background:
+        #f6f3ee;
+
+      color:
+        #71685f;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.42rem;
+
+      box-shadow:
+        0 3px 8px
+        rgba(31, 28, 24, 0.04);
+    }
+
+    .wf-cursor-label {
+      position: absolute;
+
+      z-index: 7;
+
+      right: 0;
+      bottom: 4px;
+
+      min-height: 24px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      padding:
+        0
+        11px;
+
+      border-radius:
+        5px
+        15px
+        15px
+        15px;
+
+      background:
+        var(--accent);
+
+      color: #fff;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.43rem;
+
+      box-shadow:
+        0 8px 18px
+        rgba(31, 28, 24, 0.12);
+    }
+
+    /* PALETA */
 
     .wf-palette {
-      display:flex;
+      display: flex;
 
-      align-items:center;
+      align-items: center;
+      justify-content: center;
 
-      justify-content:center;
+      gap: 7px;
 
-      gap:7px;
-
-      margin-top:17px;
+      margin-top: 2px;
     }
 
     .swatch {
-      width:24px;
-      height:24px;
+      width: 24px;
+      height: 24px;
 
-      padding:0;
+      flex:
+        0 0
+        24px;
+
+      padding: 0;
 
       border:
         1px solid
-        var(--line-strong);
+        rgba(31, 28, 24, 0.55);
 
-      border-radius:50%;
+      border-radius: 50%;
 
-      cursor:pointer;
+      cursor: pointer;
 
       transition:
-        transform .18s ease,
-        box-shadow .18s ease;
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
     }
 
     .swatch:hover {
-      transform:scale(1.08);
+      transform: scale(1.08);
     }
 
     .swatch.active {
@@ -1325,52 +1356,59 @@
     }
 
     .swatch.reset {
-      display:grid;
+      display: grid;
+      place-items: center;
 
-      place-items:center;
+      background:
+        #f7f3ed !important;
 
-      background:transparent !important;
+      color:
+        #9a9187;
 
-      color:var(--muted);
-
-      font-size:.83rem;
+      font-size: 0.8rem;
     }
 
-    .clear-btn {
-      padding:
-        4px
-        7px;
+    .wf-clear {
+      margin-left: 6px;
 
-      border:
+      padding:
+        2px
+        1px;
+
+      border: 0;
+      border-bottom:
         1px solid
         var(--accent);
 
-      background:transparent;
+      background: transparent;
 
-      color:var(--dim);
+      color: #766b61;
 
-      font-size:.48rem;
+      font-family: "IBM Plex Mono", monospace;
 
-      text-decoration:underline;
+      font-size: 0.46rem;
 
-      cursor:pointer;
+      cursor: pointer;
     }
 
-    .hero-visual-hint {
-      margin-top:13px;
+    .wf-helper {
+      margin-top: 20px;
 
-      color:var(--muted);
+      color: #8b7568;
 
-      font-size:.48rem;
+      font-family: "IBM Plex Mono", monospace;
 
-      text-align:center;
+      font-size: 0.46rem;
 
-      letter-spacing:.02em;
+      line-height: 1.4;
+
+      text-align: center;
+
+      white-space: nowrap;
     }
 
     /* =========================================================
-       PROCESSO
-       MAIS COMPACTO
+       MÉTODO
     ========================================================= */
 
     .process-section {
@@ -1381,31 +1419,28 @@
     }
 
     .section-kicker {
-      display:block;
+      display: block;
 
-      margin-bottom:10px;
+      margin-bottom: 10px;
 
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.59rem;
+      font-size: 0.59rem;
 
-      letter-spacing:.06em;
+      letter-spacing: 0.06em;
 
-      text-transform:uppercase;
+      text-transform: uppercase;
     }
 
     .process-grid {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
+        repeat(3, 1fr);
 
-      margin-top:30px;
+      margin-top: 30px;
 
       border-left:
         1px solid
@@ -1413,7 +1448,7 @@
     }
 
     .process-card {
-      min-height:220px;
+      min-height: 220px;
 
       padding:
         28px
@@ -1425,50 +1460,44 @@
         var(--line);
 
       transition:
-        background-color .2s ease;
+        background-color 0.2s ease;
     }
 
     .process-card:hover {
-      background:var(--card);
+      background: var(--card);
     }
 
     .process-card > span {
-      display:block;
+      display: block;
 
-      margin-bottom:72px;
+      margin-bottom: 72px;
 
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.55rem;
+      font-size: 0.55rem;
     }
 
     .process-card h3 {
-      margin-bottom:11px;
+      margin-bottom: 11px;
 
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:
-        clamp(
-          1.55rem,
-          2vw,
-          1.85rem
-        );
+      font-size: clamp(1.55rem, 2vw, 1.85rem);
+      font-weight: 400;
 
-      font-weight:400;
-
-      line-height:1.12;
+      line-height: 1.12;
     }
 
     .process-card p {
-      max-width:390px;
+      max-width: 390px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:.82rem;
+      font-size: 0.82rem;
 
-      line-height:1.62;
+      line-height: 1.62;
     }
 
     /* =========================================================
@@ -1476,20 +1505,15 @@
     ========================================================= */
 
     .about {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
-        minmax(380px,.88fr)
-        minmax(0,1.12fr);
+        minmax(380px, 0.88fr)
+        minmax(0, 1.12fr);
 
-      gap:
-        clamp(
-          60px,
-          8vw,
-          120px
-        );
+      gap: clamp(60px, 8vw, 120px);
 
-      align-items:center;
+      align-items: center;
 
       padding:
         100px
@@ -1498,54 +1522,45 @@
     }
 
     .about-visual {
-      display:grid;
-      place-items:center;
+      display: grid;
+      place-items: center;
 
-      min-height:490px;
+      min-height: 490px;
     }
 
     .profile-system {
-      position:relative;
+      position: relative;
 
-      width:
-        min(
-          100%,
-          470px
-        );
+      width: min(100%, 470px);
 
-      aspect-ratio:1;
+      aspect-ratio: 1;
 
-      display:grid;
-
-      place-items:center;
+      display: grid;
+      place-items: center;
     }
 
-    /*
-      Texto realmente circulando ao redor da foto.
-    */
-
     .profile-orbit {
-      position:absolute;
+      position: absolute;
 
-      inset:0;
+      inset: 0;
 
-      z-index:3;
+      z-index: 3;
 
-      width:100%;
-      height:100%;
+      width: 100%;
+      height: 100%;
 
-      overflow:visible;
+      overflow: visible;
 
-      pointer-events:none;
+      pointer-events: none;
     }
 
     .profile-orbit-path {
-      fill:none;
+      fill: none;
 
       stroke:
         var(--line-strong);
 
-      stroke-width:1;
+      stroke-width: 1;
 
       stroke-dasharray:
         4
@@ -1553,84 +1568,84 @@
     }
 
     .profile-orbit text {
-      fill:var(--accent);
+      fill: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:14px;
-      font-weight:600;
+      font-size: 14px;
+      font-weight: 600;
 
-      letter-spacing:3.4px;
+      letter-spacing: 3.4px;
     }
 
     .profile-image-ring {
-      position:relative;
+      position: relative;
 
-      z-index:2;
+      z-index: 2;
 
-      width:64%;
-      aspect-ratio:1;
+      width: 64%;
 
-      display:grid;
+      aspect-ratio: 1;
 
-      place-items:center;
+      display: grid;
+      place-items: center;
 
       border:
         2px solid
         var(--accent);
 
-      border-radius:50%;
+      border-radius: 50%;
 
-      padding:7px;
+      padding: 7px;
 
-      background:var(--bg);
+      background: var(--bg);
 
       box-shadow:
         0 25px 60px
-        rgba(31,28,24,.10);
+        rgba(31, 28, 24, 0.1);
     }
 
     .profile-image-circle {
-      width:100%;
-      height:100%;
+      width: 100%;
+      height: 100%;
 
-      overflow:hidden;
+      overflow: hidden;
 
-      border-radius:50%;
+      border-radius: 50%;
 
-      background:var(--card);
+      background: var(--card);
     }
 
     .profile-image-circle img {
-      width:100%;
-      height:100%;
+      width: 100%;
+      height: 100%;
 
-      object-fit:cover;
+      object-fit: cover;
 
-      cursor:zoom-in;
+      cursor: zoom-in;
     }
 
     .profile-pen {
-      position:absolute;
+      position: absolute;
 
-      z-index:4;
+      z-index: 4;
 
-      top:5%;
-      left:4%;
+      top: 5%;
+      left: 4%;
 
-      width:60px;
-      height:60px;
+      width: 60px;
+      height: 60px;
 
-      pointer-events:none;
+      pointer-events: none;
     }
 
     .profile-badge {
-      position:absolute;
+      position: absolute;
 
-      z-index:4;
+      z-index: 4;
 
-      top:2%;
-      right:1%;
+      top: 2%;
+      right: 1%;
 
       padding:
         7px
@@ -1640,27 +1655,27 @@
         1px solid
         var(--accent);
 
-      border-radius:999px;
+      border-radius: 999px;
 
-      background:var(--bg);
+      background: var(--bg);
 
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.5rem;
-      font-weight:600;
+      font-size: 0.5rem;
+      font-weight: 600;
 
-      box-shadow:var(--shadow);
+      box-shadow: var(--shadow);
     }
 
     .profile-spec {
-      position:absolute;
+      position: absolute;
 
-      z-index:4;
+      z-index: 4;
 
-      left:1%;
-      bottom:1%;
+      left: 1%;
+      bottom: 1%;
 
       padding:
         6px
@@ -1670,24 +1685,24 @@
         1px solid
         var(--line-strong);
 
-      border-radius:5px;
+      border-radius: 5px;
 
-      background:var(--bg);
+      background: var(--bg);
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.48rem;
+      font-size: 0.48rem;
     }
 
     .profile-pointer {
-      position:absolute;
+      position: absolute;
 
-      z-index:4;
+      z-index: 4;
 
-      right:0;
-      bottom:0;
+      right: 0;
+      bottom: 0;
 
       padding:
         7px
@@ -1699,88 +1714,75 @@
         15px
         15px;
 
-      background:var(--ink);
+      background: var(--ink);
+      color: var(--bg);
 
-      color:var(--bg);
+      font-family: "IBM Plex Mono", monospace;
 
-      font-family:"IBM Plex Mono",monospace;
+      font-size: 0.49rem;
 
-      font-size:.49rem;
-
-      box-shadow:var(--shadow);
+      box-shadow: var(--shadow);
     }
 
     .about-copy {
-      max-width:760px;
+      max-width: 760px;
     }
 
     .about-owner {
-      margin-bottom:27px;
+      margin-bottom: 27px;
     }
 
     .about-owner small {
-      display:block;
+      display: block;
 
-      margin-bottom:9px;
+      margin-bottom: 9px;
 
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.58rem;
+      font-size: 0.58rem;
 
-      letter-spacing:.08em;
+      letter-spacing: 0.08em;
     }
 
     .about-owner h3 {
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:
-        clamp(
-          4.2rem,
-          6.3vw,
-          6.8rem
-        );
+      font-size: clamp(4.2rem, 6.3vw, 6.8rem);
+      font-weight: 300;
 
-      font-weight:300;
+      line-height: 0.9;
 
-      line-height:.9;
-
-      letter-spacing:-.05em;
+      letter-spacing: -0.05em;
     }
 
     .about-owner h3 em {
-      color:var(--accent);
+      color: var(--accent);
 
-      font-weight:300;
-      font-style:italic;
+      font-style: italic;
+      font-weight: 300;
     }
 
     .about-copy > p {
-      max-width:760px;
+      max-width: 760px;
 
-      margin-bottom:23px;
+      margin-bottom: 23px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:
-        clamp(
-          1rem,
-          1.25vw,
-          1.08rem
-        );
+      font-size: clamp(1rem, 1.25vw, 1.08rem);
 
-      line-height:1.8;
+      line-height: 1.8;
     }
 
     .about-tags {
-      display:flex;
+      display: flex;
+      flex-wrap: wrap;
 
-      flex-wrap:wrap;
+      gap: 7px;
 
-      gap:7px;
-
-      margin-top:28px;
+      margin-top: 28px;
     }
 
     .about-tag {
@@ -1792,13 +1794,13 @@
         1px solid
         var(--line);
 
-      border-radius:999px;
+      border-radius: 999px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.53rem;
+      font-size: 0.53rem;
     }
 
     /* =========================================================
@@ -1806,11 +1808,7 @@
     ========================================================= */
 
     .project {
-      padding-top:55px;
-    }
-
-    .project:first-of-type {
-      padding-top:35px;
+      padding-top: 55px;
     }
 
     .project-head {
@@ -1821,31 +1819,29 @@
     }
 
     .project-identity {
-      display:flex;
+      display: flex;
+      flex-wrap: wrap;
 
-      flex-wrap:wrap;
+      align-items: center;
 
-      align-items:center;
+      gap: 7px;
 
-      gap:7px;
-
-      margin-bottom:15px;
+      margin-bottom: 15px;
     }
 
     .project-number {
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.58rem;
+      font-size: 0.58rem;
     }
 
     .case-badge {
-      display:inline-flex;
+      display: inline-flex;
+      align-items: center;
 
-      align-items:center;
-
-      min-height:25px;
+      min-height: 25px;
 
       padding:
         0
@@ -1855,59 +1851,47 @@
         1px solid
         var(--accent);
 
-      border-radius:999px;
+      border-radius: 999px;
 
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.48rem;
+      font-size: 0.48rem;
 
-      letter-spacing:.04em;
+      letter-spacing: 0.04em;
     }
 
     .project-head > h3 {
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:
-        clamp(
-          3rem,
-          5.9vw,
-          5.8rem
-        );
+      font-size: clamp(3rem, 5.9vw, 5.8rem);
+      font-weight: 300;
 
-      font-weight:300;
+      line-height: 0.95;
 
-      line-height:.95;
-
-      letter-spacing:-.04em;
+      letter-spacing: -0.04em;
     }
 
     .project-summary {
-      max-width:790px;
+      max-width: 790px;
 
-      margin-top:23px;
+      margin-top: 23px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:
-        clamp(
-          .98rem,
-          1.22vw,
-          1.08rem
-        );
+      font-size: clamp(0.98rem, 1.22vw, 1.08rem);
 
-      line-height:1.72;
+      line-height: 1.72;
     }
 
     .project-meta {
-      display:flex;
+      display: flex;
+      flex-wrap: wrap;
 
-      flex-wrap:wrap;
+      gap: 6px;
 
-      gap:6px;
-
-      margin-top:23px;
+      margin-top: 23px;
     }
 
     .project-meta span {
@@ -1919,57 +1903,54 @@
         1px solid
         var(--line);
 
-      border-radius:999px;
+      border-radius: 999px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.51rem;
+      font-size: 0.51rem;
     }
 
     .case-grid {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(
-          4,
-          1fr
-        );
+        repeat(4, 1fr);
 
-      gap:1px;
+      gap: 1px;
 
-      margin-top:34px;
+      margin-top: 34px;
 
-      background:var(--line);
+      background: var(--line);
     }
 
     .case-card {
-      min-height:185px;
+      min-height: 185px;
 
-      padding:20px;
+      padding: 20px;
 
-      background:var(--bg);
+      background: var(--bg);
     }
 
     .case-card > span {
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.52rem;
+      font-size: 0.52rem;
 
-      text-transform:uppercase;
+      text-transform: uppercase;
     }
 
     .case-card p {
-      margin-top:14px;
+      margin-top: 14px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:.75rem;
+      font-size: 0.75rem;
 
-      line-height:1.64;
+      line-height: 1.64;
     }
 
     /* =========================================================
@@ -1984,23 +1965,25 @@
     }
 
     .fa-tabs {
-      display:flex;
+      display: flex;
 
-      gap:6px;
+      gap: 6px;
 
-      margin-bottom:22px;
+      margin-bottom: 22px;
 
-      overflow-x:auto;
+      overflow-x: auto;
 
-      scrollbar-width:none;
+      scrollbar-width: none;
     }
 
     .fa-tabs::-webkit-scrollbar {
-      display:none;
+      display: none;
     }
 
     .fa-tab {
-      flex:0 0 auto;
+      flex:
+        0 0
+        auto;
 
       padding:
         8px
@@ -2010,82 +1993,81 @@
         1px solid
         var(--line);
 
-      border-radius:999px;
+      border-radius: 999px;
 
-      background:transparent;
+      background: transparent;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.53rem;
+      font-size: 0.53rem;
 
-      white-space:nowrap;
+      white-space: nowrap;
 
-      cursor:pointer;
+      cursor: pointer;
     }
 
     .fa-tab:hover,
     .fa-tab.active {
-      border-color:var(--accent);
+      border-color: var(--accent);
 
-      background:var(--accent);
-
-      color:white;
+      background: var(--accent);
+      color: white;
     }
 
     .fa-view {
-      display:none;
+      display: none;
     }
 
     .fa-view.active {
-      display:block;
+      display: block;
 
       animation:
         fadeUp
-        .35s ease;
+        0.35s ease;
     }
 
     @keyframes fadeUp {
       from {
-        opacity:0;
-        transform:translateY(7px);
+        opacity: 0;
+        transform: translateY(7px);
       }
 
       to {
-        opacity:1;
-        transform:none;
+        opacity: 1;
+        transform: none;
       }
     }
 
     .fa-story {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
-        minmax(320px,.74fr)
-        minmax(0,1.26fr);
+        minmax(320px, 0.74fr)
+        minmax(0, 1.26fr);
 
-      gap:20px;
+      gap: 20px;
     }
 
     .fa-story-copy {
-      padding:27px;
+      padding: 27px;
 
       border:
         1px solid
         var(--line);
 
-      border-radius:10px;
+      border-radius: 10px;
 
-      background:var(--card);
+      background: var(--card);
     }
 
     .fa-story-copy > span {
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.5rem;
+      font-size: 0.5rem;
     }
 
     .fa-story-copy h4 {
@@ -2093,40 +2075,34 @@
         17px
         0;
 
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:
-        clamp(
-          1.9rem,
-          2.9vw,
-          2.9rem
-        );
+      font-size: clamp(1.9rem, 2.9vw, 2.9rem);
+      font-weight: 300;
 
-      font-weight:300;
-
-      line-height:1.08;
+      line-height: 1.08;
     }
 
     .fa-story-copy > p {
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:.81rem;
+      font-size: 0.81rem;
 
-      line-height:1.72;
+      line-height: 1.72;
     }
 
     .fa-story-flow {
-      margin-top:22px;
+      margin-top: 22px;
     }
 
     .fa-story-flow > div {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
         34px
         1fr;
 
-      gap:10px;
+      gap: 10px;
 
       padding:
         12px
@@ -2138,158 +2114,155 @@
     }
 
     .fa-story-flow span {
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.5rem;
+      font-size: 0.5rem;
     }
 
     .fa-story-flow strong {
-      display:block;
+      display: block;
 
-      font-size:.74rem;
+      font-size: 0.74rem;
     }
 
     .fa-story-flow p {
-      margin-top:4px;
+      margin-top: 4px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:.67rem;
+      font-size: 0.67rem;
 
-      line-height:1.5;
+      line-height: 1.5;
     }
 
     .browser-shell {
-      overflow:hidden;
+      overflow: hidden;
 
       border:
         1px solid
         var(--line-strong);
 
-      border-radius:10px;
+      border-radius: 10px;
 
-      background:var(--surface);
+      background: var(--surface);
 
-      box-shadow:var(--shadow);
+      box-shadow: var(--shadow);
     }
 
     .browser-bar {
-      min-height:44px;
+      min-height: 44px;
 
-      display:grid;
+      display: grid;
 
       grid-template-columns:
         65px
-        minmax(0,1fr)
+        minmax(0, 1fr)
         auto;
 
-      align-items:center;
+      align-items: center;
 
-      gap:10px;
+      gap: 10px;
 
       padding:
         0
         12px;
 
-      background:var(--card);
+      background: var(--card);
     }
 
     .browser-dots {
-      display:flex;
-      gap:5px;
+      display: flex;
+      gap: 5px;
     }
 
     .browser-dots i {
-      width:7px;
-      height:7px;
+      width: 7px;
+      height: 7px;
 
-      border-radius:50%;
+      border-radius: 50%;
 
-      background:var(--muted);
+      background: var(--muted);
 
-      opacity:.48;
+      opacity: 0.48;
     }
 
     .browser-address {
-      overflow:hidden;
+      overflow: hidden;
 
-      color:var(--muted);
+      color: var(--muted);
 
-      font-size:.5rem;
+      font-size: 0.5rem;
 
-      white-space:nowrap;
+      white-space: nowrap;
 
-      text-overflow:ellipsis;
+      text-overflow: ellipsis;
     }
 
     .browser-link {
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.5rem;
+      font-size: 0.5rem;
     }
 
     .fa-desktop-viewport {
-      position:relative;
+      position: relative;
 
-      width:100%;
+      width: 100%;
 
-      overflow:hidden;
+      overflow: hidden;
 
-      background:white;
+      background: white;
     }
 
     .fa-desktop-canvas {
-      position:absolute;
+      position: absolute;
 
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
 
-      width:1440px;
+      width: 1440px;
 
-      transform-origin:top left;
+      transform-origin: top left;
     }
 
     .fa-desktop-canvas iframe {
-      display:block;
+      display: block;
 
-      width:1440px !important;
-      height:900px !important;
+      width: 1440px !important;
+      height: 900px !important;
 
-      max-width:none !important;
+      max-width: none !important;
 
-      border:0;
+      border: 0;
 
-      background:white;
+      background: white;
     }
 
     .fa-result-strip {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
+        repeat(3, 1fr);
 
-      margin-top:17px;
+      margin-top: 17px;
 
-      overflow:hidden;
+      overflow: hidden;
 
       border:
         1px solid
         var(--line);
 
-      border-radius:9px;
+      border-radius: 9px;
     }
 
     .fa-result-item {
-      min-height:140px;
+      min-height: 140px;
 
-      padding:19px;
+      padding: 19px;
 
       border-right:
         1px solid
@@ -2297,1235 +2270,36 @@
     }
 
     .fa-result-item:last-child {
-      border-right:0;
+      border-right: 0;
     }
 
     .fa-result-item span {
-      display:block;
+      display: block;
 
-      margin-bottom:12px;
+      margin-bottom: 12px;
 
-      color:var(--accent);
+      color: var(--accent);
 
-      font-family:"IBM Plex Mono",monospace;
+      font-family: "IBM Plex Mono", monospace;
 
-      font-size:.5rem;
+      font-size: 0.5rem;
     }
 
     .fa-result-item strong {
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:1.08rem;
-
-      font-weight:400;
+      font-size: 1.08rem;
+      font-weight: 400;
     }
 
     .fa-result-item p {
-      margin-top:7px;
+      margin-top: 7px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:.7rem;
+      font-size: 0.7rem;
 
-      line-height:1.5;
-    }
-
-    /* DESIGN SYSTEM */
-
-    .system-layout {
-      display:grid;
-
-      grid-template-columns:
-        200px
-        minmax(0,1fr);
-
-      gap:1px;
-
-      overflow:hidden;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:10px;
-
-      background:var(--line);
-    }
-
-    .system-sidebar {
-      padding:17px;
-
-      background:var(--card);
-    }
-
-    .system-sidebar > span {
-      display:block;
-
-      margin-bottom:12px;
-
-      color:var(--muted);
-
-      font-size:.52rem;
-    }
-
-    .system-nav-btn {
-      width:100%;
-
-      padding:8px;
-
-      border:0;
-
-      border-radius:4px;
-
-      background:transparent;
-
-      color:var(--dim);
-
-      font-size:.65rem;
-
-      text-align:left;
-
-      cursor:pointer;
-    }
-
-    .system-nav-btn:hover,
-    .system-nav-btn.active {
-      background:var(--accent-soft);
-      color:var(--accent);
-    }
-
-    .system-canvas {
-      padding:28px;
-
-      background:var(--surface);
-    }
-
-    .system-panel {
-      display:none;
-    }
-
-    .system-panel.active {
-      display:block;
-    }
-
-    .system-panel-title {
-      margin-bottom:20px;
-
-      font-family:"Fraunces",serif;
-
-      font-size:1.55rem;
-
-      font-weight:400;
-    }
-
-    .fa-color-grid {
-      display:grid;
-
-      grid-template-columns:
-        repeat(
-          5,
-          1fr
-        );
-
-      gap:8px;
-    }
-
-    .fa-color {
-      min-height:130px;
-
-      display:flex;
-
-      flex-direction:column;
-
-      justify-content:space-between;
-
-      padding:13px;
-
-      border-radius:6px;
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.5rem;
-    }
-
-    .fa-color.navy {
-      background:#00152A;
-      color:white;
-    }
-
-    .fa-color.gold {
-      background:#B8860B;
-      color:white;
-    }
-
-    .fa-color.slate {
-      background:#64748B;
-      color:white;
-    }
-
-    .fa-color.light {
-      background:#F4F6F8;
-      color:#00152A;
-    }
-
-    .fa-color.white {
-      border:1px solid #CED5DC;
-
-      background:white;
-
-      color:#00152A;
-    }
-
-    .fa-type-demo {
-      display:grid;
-
-      grid-template-columns:
-        1fr
-        1fr;
-
-      gap:10px;
-
-      margin-top:12px;
-    }
-
-    .fa-type-card {
-      min-height:200px;
-
-      padding:18px;
-
-      border:
-        1px solid
-        #D8DEE4;
-
-      border-radius:6px;
-
-      background:white;
-
-      color:#00152A;
-    }
-
-    .fa-type-card span {
-      color:#64748B;
-      font-size:.51rem;
-    }
-
-    .fa-type-card strong {
-      display:block;
-
-      margin:
-        17px
-        0
-        10px;
-
-      font-size:2.8rem;
-    }
-
-    .fa-type-card.manrope {
-      font-family:"Manrope",sans-serif;
-    }
-
-    .fa-type-card.dm {
-      font-family:"DM Sans",sans-serif;
-    }
-
-    .component-grid {
-      display:grid;
-
-      grid-template-columns:
-        repeat(
-          2,
-          1fr
-        );
-
-      gap:12px;
-    }
-
-    .component-box {
-      min-height:180px;
-
-      padding:18px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:7px;
-
-      background:var(--card);
-    }
-
-    .component-box.wide {
-      grid-column:
-        1 /
-        -1;
-    }
-
-    .component-label {
-      display:flex;
-
-      justify-content:space-between;
-
-      gap:12px;
-
-      margin-bottom:22px;
-
-      color:var(--muted);
-
-      font-size:.52rem;
-    }
-
-    .demo-button-row {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .fa-demo-primary,
-    .fa-demo-secondary {
-      padding:
-        10px
-        15px;
-
-      border-radius:5px;
-
-      font-size:.66rem;
-
-      cursor:pointer;
-    }
-
-    .fa-demo-primary {
-      border:
-        1px solid
-        #B8860B;
-
-      background:#B8860B;
-
-      color:white;
-    }
-
-    .fa-demo-secondary {
-      border:
-        1px solid
-        #00152A;
-
-      background:transparent;
-
-      color:#00152A;
-    }
-
-    .fa-demo-primary.is-hover {
-      filter:brightness(.83);
-      transform:translateY(-1px);
-    }
-
-    .fa-demo-primary.is-disabled {
-      opacity:.32;
-    }
-
-    .variant-controls {
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:5px;
-
-      margin-top:18px;
-    }
-
-    .variant-controls button {
-      padding:
-        5px
-        8px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:4px;
-
-      background:var(--bg);
-
-      font-size:.52rem;
-
-      cursor:pointer;
-    }
-
-    .variant-controls button.active {
-      border-color:var(--accent);
-      color:var(--accent);
-    }
-
-    /* RESPONSIVO FERNANDO */
-
-    .fa-responsive-showcase {
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1fr)
-        290px;
-
-      gap:28px;
-
-      align-items:end;
-
-      padding:28px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:10px;
-
-      background:var(--card);
-    }
-
-    .fa-device-desktop {
-      min-width:0;
-
-      overflow:hidden;
-
-      border:
-        1px solid
-        var(--line-strong);
-
-      border-radius:8px;
-
-      background:white;
-
-      box-shadow:
-        0 18px 40px
-        rgba(0,0,0,.12);
-    }
-
-    .fa-mobile-wrap {
-      display:flex;
-
-      flex-direction:column;
-
-      align-items:center;
-
-      gap:13px;
-    }
-
-    .fa-device-mobile {
-      width:245px;
-
-      padding:8px;
-
-      border-radius:29px;
-
-      background:#121212;
-
-      box-shadow:
-        0 22px 42px
-        rgba(0,0,0,.22);
-    }
-
-    .fa-phone-screen {
-      position:relative;
-
-      height:490px;
-
-      overflow:hidden;
-
-      border-radius:22px;
-
-      background:white;
-    }
-
-    .fa-phone-screen iframe {
-      position:absolute;
-
-      top:0;
-      left:0;
-
-      width:390px !important;
-      height:1000px !important;
-
-      max-width:none !important;
-
-      border:0;
-
-      transform:scale(.587);
-
-      transform-origin:top left;
-    }
-
-    .fa-responsive-notes {
-      display:grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
-      gap:1px;
-
-      margin-top:17px;
-
-      border:
-        1px solid
-        var(--line);
-
-      background:var(--line);
-    }
-
-    .fa-responsive-note {
-      padding:17px;
-
-      background:var(--bg);
-    }
-
-    .fa-responsive-note span {
-      color:var(--accent);
-      font-size:.52rem;
-    }
-
-    .fa-responsive-note h4 {
-      margin:
-        7px
-        0;
-
-      font-family:"Fraunces",serif;
-
-      font-weight:400;
-    }
-
-    .fa-responsive-note p {
-      color:var(--dim);
-
-      font-size:.72rem;
-
-      line-height:1.55;
-    }
-
-    /* FIGMA */
-
-    .figma-shell {
-      overflow:hidden;
-
-      border:
-        1px solid
-        var(--line-strong);
-
-      border-radius:10px;
-
-      background:#111;
-
-      box-shadow:var(--shadow);
-    }
-
-    .figma-head {
-      display:flex;
-
-      justify-content:space-between;
-
-      align-items:center;
-
-      gap:20px;
-
-      min-height:64px;
-
-      padding:
-        12px
-        15px;
-
-      border-bottom:
-        1px solid
-        #333;
-
-      background:#1B1B1B;
-
-      color:white;
-    }
-
-    .figma-head span {
-      display:block;
-
-      margin-bottom:4px;
-
-      color:#F48A4A;
-
-      font-size:.52rem;
-    }
-
-    .figma-head strong {
-      font-family:"Fraunces",serif;
-
-      font-size:1rem;
-      font-weight:400;
-    }
-
-    .figma-head a {
-      color:#F48A4A;
-
-      font-size:.52rem;
-    }
-
-    .figma-frame {
-      height:
-        min(
-          78vh,
-          780px
-        );
-
-      min-height:600px;
-    }
-
-    .figma-frame iframe {
-      width:100%;
-      height:100%;
-
-      border:0;
-    }
-
-    /* =========================================================
-       SECONDARY PROJECTS
-    ========================================================= */
-
-    .secondary-case {
-      padding:
-        0
-        var(--pad)
-        95px;
-    }
-
-    .secondary-shell {
-      overflow:hidden;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:10px;
-
-      background:var(--surface);
-
-      box-shadow:var(--shadow);
-    }
-
-    .case-tabs {
-      display:flex;
-
-      flex-wrap:wrap;
-
-      gap:6px;
-
-      padding:15px;
-
-      border-bottom:
-        1px solid
-        var(--line);
-    }
-
-    .case-tab {
-      padding:
-        7px
-        10px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:999px;
-
-      background:transparent;
-
-      color:var(--dim);
-
-      font-size:.58rem;
-
-      cursor:pointer;
-    }
-
-    .case-tab.active,
-    .case-tab:hover {
-      border-color:var(--accent);
-
-      background:var(--accent);
-
-      color:white;
-    }
-
-    .case-view {
-      display:none;
-
-      padding:26px;
-    }
-
-    .case-view.active {
-      display:block;
-    }
-
-    /* VOIT */
-
-    .voit-overview {
-      display:grid;
-
-      grid-template-columns:
-        170px
-        repeat(
-          2,
-          1fr
-        );
-
-      gap:15px;
-
-      align-items:center;
-    }
-
-    .voit-core {
-      width:155px;
-      height:155px;
-
-      display:grid;
-
-      place-items:center;
-
-      border-radius:50%;
-
-      background:var(--ink);
-
-      color:var(--bg);
-
-      font-family:"Fraunces",serif;
-
-      font-size:1.35rem;
-    }
-
-    .voit-domain {
-      min-height:135px;
-
-      padding:17px;
-
-      border:
-        1px solid
-        var(--line);
-
-      border-radius:7px;
-    }
-
-    .voit-domain span {
-      color:var(--accent);
-
-      font-size:.5rem;
-    }
-
-    .voit-domain h4 {
-      margin:
-        7px
-        0;
-
-      font-family:"Fraunces",serif;
-
-      font-weight:400;
-    }
-
-    .voit-domain p {
-      color:var(--dim);
-
-      font-size:.72rem;
-
-      line-height:1.55;
-    }
-
-    .voit-social {
-      display:grid;
-
-      grid-template-columns:
-        repeat(
-          4,
-          1fr
-        );
-
-      gap:10px;
-    }
-
-    .voit-piece {
-      overflow:hidden;
-
-      border:0;
-
-      border-radius:5px;
-
-      background:var(--card);
-
-      cursor:zoom-in;
-    }
-
-    .voit-piece img {
-      width:100%;
-
-      aspect-ratio:1;
-
-      object-fit:cover;
-    }
-
-    /* =========================================================
-       RENATA
-       SEM SCROLLBAR VISÍVEL
-    ========================================================= */
-
-    .renata-viewer {
-      overflow:hidden;
-
-      border-radius:10px;
-
-      background:#171717;
-
-      color:white;
-
-      box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.13);
-    }
-
-    .renata-topbar {
-      min-height:46px;
-
-      display:flex;
-
-      align-items:center;
-
-      justify-content:space-between;
-
-      padding:
-        0
-        16px;
-
-      border-bottom:
-        1px solid
-        #333;
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.54rem;
-    }
-
-    .renata-layout {
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1fr)
-        255px;
-    }
-
-    .renata-main {
-      min-height:520px;
-
-      display:grid;
-
-      place-items:center;
-
-      padding:
-        38px
-        28px;
-
-      background:#191919;
-    }
-
-    .renata-main img {
-      width:100%;
-
-      max-height:455px;
-
-      object-fit:contain;
-
-      cursor:zoom-in;
-    }
-
-    .renata-inspector {
-      padding:
-        28px
-        22px;
-
-      border-left:
-        1px solid
-        #343434;
-
-      background:#242424;
-    }
-
-    .renata-kicker {
-      display:block;
-
-      margin-bottom:12px;
-
-      color:var(--accent);
-
-      font-family:"IBM Plex Mono",monospace;
-
-      font-size:.52rem;
-
-      letter-spacing:.12em;
-    }
-
-    .renata-inspector h4 {
-      margin-bottom:14px;
-
-      font-family:"Fraunces",serif;
-
-      font-size:1.55rem;
-
-      font-weight:400;
-
-      line-height:1.05;
-    }
-
-    .renata-inspector p {
-      color:#C6C6C6;
-
-      font-size:.76rem;
-
-      line-height:1.65;
-    }
-
-    .renata-arrows {
-      display:flex;
-
-      gap:8px;
-
-      margin-top:24px;
-    }
-
-    .renata-arrows button {
-      width:38px;
-      height:38px;
-
-      display:grid;
-
-      place-items:center;
-
-      border:
-        1px solid
-        #555;
-
-      border-radius:50%;
-
-      background:transparent;
-
-      color:white;
-
-      cursor:pointer;
-    }
-
-    .renata-arrows button:hover {
-      border-color:var(--accent);
-
-      background:var(--accent);
-    }
-
-    .renata-progress {
-      position:relative;
-
-      height:2px;
-
-      margin:
-        20px
-        0;
-
-      overflow:hidden;
-
-      background:#555;
-    }
-
-    .renata-progress::before {
-      content:"";
-
-      position:absolute;
-
-      top:0;
-      left:0;
-
-      width:
-        var(
-          --renata-progress,
-          33.333%
-        );
-
-      height:100%;
-
-      background:var(--accent);
-
-      transition:
-        width .3s ease;
-    }
-
-    .renata-thumbs {
-      display:flex;
-
-      gap:7px;
-
-      overflow-x:auto;
-
-      padding-bottom:0;
-
-      /*
-        remove a barra visual sem remover
-        a possibilidade de navegar pelas miniaturas.
-      */
-
-      scrollbar-width:none;
-      -ms-overflow-style:none;
-    }
-
-    .renata-thumbs::-webkit-scrollbar {
-      display:none;
-      width:0;
-      height:0;
-    }
-
-    .renata-thumb {
-      flex:
-        0 0
-        73px;
-
-      padding:0;
-
-      border:
-        2px solid
-        transparent;
-
-      background:none;
-
-      cursor:pointer;
-
-      opacity:.55;
-    }
-
-    .renata-thumb.active {
-      border-color:var(--accent);
-      opacity:1;
-    }
-
-    .renata-thumb img {
-      width:100%;
-
-      aspect-ratio:16 / 9;
-
-      object-fit:cover;
-    }
-
-    .renata-full-link {
-      display:inline-block;
-
-      margin-top:23px;
-
-      padding-bottom:5px;
-
-      border-bottom:
-        1px solid
-        var(--accent);
-
-      color:var(--accent);
-
-      font-size:.73rem;
-    }
-
-    /* BRADUCA */
-
-    .editorial-layout {
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1fr)
-        250px;
-
-      gap:18px;
-    }
-
-    .editorial-ribbon {
-      display:grid;
-
-      grid-template-columns:
-        repeat(
-          4,
-          1fr
-        );
-
-      gap:8px;
-    }
-
-    .editorial-card {
-      aspect-ratio:4 / 5;
-
-      overflow:hidden;
-
-      padding:0;
-
-      border:
-        2px solid
-        transparent;
-
-      background:var(--card);
-
-      cursor:pointer;
-    }
-
-    .editorial-card.active {
-      border-color:var(--accent);
-    }
-
-    .editorial-card img {
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-    }
-
-    .editorial-preview {
-      min-height:440px;
-
-      display:grid;
-
-      place-items:center;
-
-      margin-top:15px;
-
-      padding:20px;
-
-      background:#111;
-    }
-
-    .editorial-preview img {
-      max-height:405px;
-
-      cursor:zoom-in;
-    }
-
-    .editorial-inspector {
-      align-self:start;
-
-      padding:19px;
-
-      border:
-        1px solid
-        var(--line);
-    }
-
-    .editorial-inspector > span {
-      color:var(--accent);
-
-      font-size:.5rem;
-    }
-
-    .editorial-inspector h4 {
-      margin:
-        11px
-        0;
-
-      font-family:"Fraunces",serif;
-
-      font-size:1.3rem;
-
-      font-weight:400;
-    }
-
-    .editorial-inspector p {
-      color:var(--dim);
-
-      font-size:.7rem;
-
-      line-height:1.55;
-    }
-
-    /* AYMÉE */
-
-    .brand-layout {
-      display:grid;
-
-      grid-template-columns:
-        minmax(0,1fr)
-        270px;
-
-      gap:18px;
-    }
-
-    .brand-grid {
-      display:grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
-      gap:8px;
-    }
-
-    .brand-card {
-      aspect-ratio:1;
-
-      overflow:hidden;
-
-      padding:0;
-
-      border:0;
-
-      background:var(--card);
-
-      cursor:zoom-in;
-    }
-
-    .brand-card img {
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-    }
-
-    .brand-notes {
-      padding:19px;
-
-      border:
-        1px solid
-        var(--line);
-    }
-
-    .brand-notes > span {
-      color:var(--accent);
-
-      font-size:.5rem;
-    }
-
-    .brand-notes h4 {
-      margin:
-        11px
-        0
-        17px;
-
-      font-family:"Fraunces",serif;
-
-      font-size:1.3rem;
-
-      font-weight:400;
-    }
-
-    .brand-rule {
-      padding:
-        13px
-        0;
-
-      border-top:
-        1px solid
-        var(--line);
-    }
-
-    .brand-rule span {
-      color:var(--muted);
-
-      font-size:.48rem;
-    }
-
-    .brand-rule p {
-      margin-top:5px;
-
-      color:var(--dim);
-
-      font-size:.69rem;
-
-      line-height:1.5;
+      line-height: 1.5;
     }
 
     /* =========================================================
@@ -3540,68 +2314,58 @@
     }
 
     .skills-title {
-      margin-bottom:38px;
+      margin-bottom: 38px;
     }
 
     .skills-title h2 {
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:
-        clamp(
-          2.8rem,
-          4.8vw,
-          4.8rem
-        );
+      font-size: clamp(2.8rem, 4.8vw, 4.8rem);
+      font-weight: 300;
 
-      font-weight:300;
+      line-height: 1;
 
-      line-height:1;
-
-      letter-spacing:-.035em;
+      letter-spacing: -0.035em;
     }
 
     .skill-grid {
-      display:grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(
-          4,
-          1fr
-        );
+        repeat(4, 1fr);
 
-      gap:1px;
+      gap: 1px;
 
-      background:var(--line);
+      background: var(--line);
     }
 
     .skill-card {
-      min-height:215px;
+      min-height: 215px;
 
-      padding:24px;
+      padding: 24px;
 
-      background:var(--bg);
+      background: var(--bg);
     }
 
     .skill-card:hover {
-      background:var(--card);
+      background: var(--card);
     }
 
     .skill-card h3 {
-      margin-bottom:12px;
+      margin-bottom: 12px;
 
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:1.38rem;
-
-      font-weight:400;
+      font-size: 1.38rem;
+      font-weight: 400;
     }
 
     .skill-card p {
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:.75rem;
+      font-size: 0.75rem;
 
-      line-height:1.65;
+      line-height: 1.65;
     }
 
     /* =========================================================
@@ -3609,72 +2373,62 @@
     ========================================================= */
 
     .contact {
-      min-height:420px;
+      min-height: 420px;
 
-      display:flex;
+      display: flex;
+      flex-direction: column;
 
-      flex-direction:column;
-
-      align-items:center;
-
-      justify-content:center;
+      align-items: center;
+      justify-content: center;
 
       padding:
         95px
         var(--pad);
 
-      text-align:center;
+      text-align: center;
     }
 
     .contact h2 {
-      max-width:900px;
+      max-width: 900px;
 
-      font-family:"Fraunces",serif;
+      font-family: "Fraunces", serif;
 
-      font-size:
-        clamp(
-          2.8rem,
-          4.8vw,
-          4.9rem
-        );
+      font-size: clamp(2.8rem, 4.8vw, 4.9rem);
+      font-weight: 400;
 
-      font-weight:400;
+      line-height: 1;
 
-      line-height:1;
-
-      letter-spacing:-.035em;
+      letter-spacing: -0.035em;
     }
 
     .contact > p {
-      max-width:620px;
+      max-width: 620px;
 
-      margin-top:18px;
+      margin-top: 18px;
 
-      color:var(--dim);
+      color: var(--dim);
 
-      font-size:1rem;
+      font-size: 1rem;
 
-      line-height:1.6;
+      line-height: 1.6;
     }
 
     .contact-actions {
-      display:flex;
+      display: flex;
+      flex-wrap: wrap;
 
-      flex-wrap:wrap;
+      justify-content: center;
 
-      justify-content:center;
+      gap: 12px;
 
-      gap:12px;
-
-      margin-top:27px;
+      margin-top: 27px;
     }
 
     .contact-actions a {
-      min-height:45px;
+      min-height: 45px;
 
-      display:flex;
-
-      align-items:center;
+      display: flex;
+      align-items: center;
 
       padding:
         0
@@ -3684,141 +2438,70 @@
         1px solid
         var(--line-strong);
 
-      font-size:.78rem;
+      font-size: 0.78rem;
     }
 
     .contact-actions a.primary {
-      border-color:var(--accent);
+      border-color: var(--accent);
 
-      background:var(--accent);
-
-      color:white;
+      background: var(--accent);
+      color: white;
     }
 
     .contact-actions a:hover {
-      border-color:var(--ink);
+      border-color: var(--ink);
 
-      background:var(--ink);
-
-      color:var(--bg);
+      background: var(--ink);
+      color: var(--bg);
     }
 
     footer {
-      display:flex;
+      display: flex;
 
-      justify-content:space-between;
+      justify-content: space-between;
 
-      gap:20px;
+      gap: 20px;
 
       padding:
         23px
         var(--pad)
         34px;
 
-      color:var(--muted);
+      color: var(--muted);
 
-      font-size:.5rem;
+      font-size: 0.5rem;
     }
 
     /* =========================================================
-       LIGHTBOX
+       RESPONSIVO
     ========================================================= */
 
-    .lightbox {
-      position:fixed;
-
-      inset:0;
-
-      z-index:9998;
-
-      display:none;
-
-      align-items:center;
-      justify-content:center;
-
-      padding:34px;
-
-      background:
-        rgba(
-          0,
-          0,
-          0,
-          .92
-        );
-    }
-
-    .lightbox.open {
-      display:flex;
-    }
-
-    .lightbox img {
-      max-width:94vw;
-      max-height:87vh;
-
-      object-fit:contain;
-    }
-
-    .lightbox-close {
-      position:absolute;
-
-      top:17px;
-      right:24px;
-
-      border:0;
-
-      background:none;
-
-      color:white;
-
-      font-size:2rem;
-
-      cursor:pointer;
-    }
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media(max-width:1050px) {
+    @media(max-width: 1050px) {
       :root {
-        --pad:28px;
+        --pad: 28px;
       }
 
       .hero {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        min-height:auto;
+        min-height: auto;
 
-        padding-top:70px;
-      }
-
-      .hero-text {
-        max-width:780px;
+        padding-top: 70px;
       }
 
       .hero-visual {
-        width:100%;
-
-        max-width:560px;
+        max-width: 560px;
 
         margin:
-          45px
+          40px
           auto
           0;
       }
 
       .about {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        gap:45px;
-      }
-
-      .about-visual {
-        min-height:auto;
-      }
-
-      .about-copy {
-        max-width:800px;
+        gap: 45px;
       }
 
       .case-grid {
@@ -3828,7 +2511,7 @@
       }
 
       .fa-story {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
       }
 
       .skill-grid {
@@ -3838,43 +2521,38 @@
       }
     }
 
-    @media(max-width:760px) {
+    @media(max-width: 760px) {
       :root {
-        --pad:20px;
+        --pad: 20px;
       }
 
       .intro-title {
-        flex-direction:column;
+        flex-direction: column;
 
-        align-items:center;
+        align-items: center;
 
-        gap:.08em;
+        gap: 0.08em;
 
-        width:100%;
+        width: 100%;
 
-        font-size:
-          clamp(
-            3.3rem,
-            14vw,
-            5rem
-          );
+        font-size: clamp(3.3rem, 14vw, 5rem);
 
-        text-align:center;
+        text-align: center;
 
-        white-space:normal;
+        white-space: normal;
       }
 
       .intro-word-cycle {
-        width:5.2em;
+        width: 5.4em;
       }
 
       .intro-word-cycle .w {
-        left:50%;
+        left: 50%;
 
         transform:
           translate3d(
             -50%,
-            115%,
+            110%,
             0
           );
       }
@@ -3892,120 +2570,85 @@
         transform:
           translate3d(
             -50%,
-            -115%,
+            -110%,
             0
           );
       }
 
       .site-nav {
-        display:flex;
+        display: flex;
 
-        justify-content:space-between;
+        justify-content: space-between;
 
-        min-height:68px;
+        min-height: 68px;
       }
 
-      .logo {
-        font-size:1.25rem;
-      }
-
-      .site-nav ul {
-        display:none;
-      }
-
+      .site-nav ul,
       .theme-toggle {
-        display:none;
-      }
-
-      .nav-cta {
-        min-height:38px;
+        display: none;
       }
 
       .hero {
-        padding-top:48px;
-        padding-bottom:70px;
+        padding-top: 48px;
+        padding-bottom: 72px;
       }
 
       .hero h1 {
-        font-size:
-          clamp(
-            3rem,
-            13vw,
-            5rem
-          );
-      }
-
-      .hero-eyebrow {
-        max-width:330px;
-
-        font-size:.61rem;
-      }
-
-      .hero-sub p {
-        font-size:1rem;
+        font-size: clamp(3rem, 13vw, 5rem);
       }
 
       .hero-actions {
-        flex-direction:column;
+        flex-direction: column;
 
-        align-items:flex-start;
+        align-items: flex-start;
 
-        gap:20px;
+        gap: 20px;
       }
 
       .wf-wrapper {
-        width:100%;
-
-        min-height:360px;
+        width: 100%;
       }
 
       .wf-stage {
-        width:
-          min(
-            100%,
-            380px
-          );
+        width: 100%;
+
+        min-height: 310px;
       }
 
       .wf-window {
-        width:100%;
+        width: min(380px, calc(100vw - 40px));
       }
 
-      .pen-tool-svg {
-        left:-2px;
+      .wf-auto {
+        right: 0;
       }
 
-      .badge-floater {
-        right:2px;
+      .wf-size-label {
+        display: none;
       }
 
-      .cursor-floater {
-        right:0;
-      }
+      .wf-helper {
+        max-width: 330px;
 
-      .spec-floater {
-        display:none;
-      }
+        white-space: normal;
 
-      .process-section {
-        padding-top:65px;
-        padding-bottom:65px;
+        line-height: 1.6;
       }
 
       .process-grid {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
-        border-left:0;
+        border-left: 0;
       }
 
       .process-card {
-        min-height:auto;
+        min-height: auto;
 
         padding:
           28px
           4px;
 
-        border-right:0;
+        border-right: 0;
 
         border-bottom:
           1px solid
@@ -4013,299 +2656,110 @@
       }
 
       .process-card > span {
-        margin-bottom:33px;
-      }
-
-      .process-card h3 {
-        font-size:1.8rem;
+        margin-bottom: 33px;
       }
 
       .about {
-        padding-top:75px;
-      }
-
-      .profile-system {
-        width:
-          min(
-            100%,
-            430px
-          );
+        padding-top: 75px;
       }
 
       .about-owner h3 {
-        font-size:
-          clamp(
-            3.6rem,
-            17vw,
-            5.2rem
-          );
-      }
-
-      .about-copy > p {
-        font-size:1rem;
+        font-size: clamp(3.6rem, 17vw, 5.2rem);
       }
 
       .case-grid {
-        grid-template-columns:1fr;
-      }
-
-      .project-head {
-        padding-top:48px;
+        grid-template-columns: 1fr;
       }
 
       .project-head > h3 {
-        font-size:
-          clamp(
-            2.9rem,
-            14vw,
-            4.9rem
-          );
-      }
-
-      .fa-tabs {
-        margin-left:
-          calc(
-            var(--pad) * -1
-          );
-
-        margin-right:
-          calc(
-            var(--pad) * -1
-          );
-
-        padding:
-          0
-          var(--pad)
-          5px;
-      }
-
-      .fa-result-strip,
-      .fa-responsive-notes {
-        grid-template-columns:1fr;
-      }
-
-      .fa-result-item {
-        border-right:0;
-
-        border-bottom:
-          1px solid
-          var(--line);
-      }
-
-      .system-layout {
-        display:block;
-      }
-
-      .system-sidebar {
-        display:flex;
-
-        gap:4px;
-
-        overflow-x:auto;
-
-        scrollbar-width:none;
-      }
-
-      .system-sidebar::-webkit-scrollbar {
-        display:none;
-      }
-
-      .system-sidebar > span {
-        display:none;
-      }
-
-      .system-nav-btn {
-        width:auto;
-
-        flex:
-          0 0
-          auto;
-
-        white-space:nowrap;
-      }
-
-      .fa-color-grid {
-        grid-template-columns:
-          1fr
-          1fr;
-      }
-
-      .fa-type-demo,
-      .component-grid {
-        grid-template-columns:1fr;
-      }
-
-      .fa-responsive-showcase {
-        grid-template-columns:1fr;
-
-        padding:15px;
-      }
-
-      .figma-frame {
-        min-height:500px;
-
-        height:65vh;
-      }
-
-      .voit-overview {
-        grid-template-columns:1fr;
-      }
-
-      .voit-core {
-        margin:auto;
-      }
-
-      .voit-social {
-        grid-template-columns:
-          1fr
-          1fr;
-      }
-
-      .renata-layout {
-        grid-template-columns:1fr;
-      }
-
-      .renata-main {
-        min-height:300px;
-
-        padding:20px;
-      }
-
-      .renata-inspector {
-        border-left:0;
-
-        border-top:
-          1px solid
-          #343434;
-      }
-
-      .editorial-layout,
-      .brand-layout {
-        grid-template-columns:1fr;
-      }
-
-      .editorial-ribbon {
-        grid-template-columns:
-          1fr
-          1fr;
-      }
-
-      .brand-grid {
-        grid-template-columns:
-          1fr
-          1fr;
+        font-size: clamp(2.9rem, 14vw, 4.9rem);
       }
 
       .skill-grid {
-        grid-template-columns:1fr;
-      }
-
-      .contact h2 {
-        font-size:
-          clamp(
-            2.7rem,
-            12vw,
-            4rem
-          );
+        grid-template-columns: 1fr;
       }
 
       footer {
-        flex-direction:column;
+        flex-direction: column;
       }
     }
 
-    @media(max-width:520px) {
-      .wf-wrapper {
-        min-height:345px;
+    @media(max-width: 520px) {
+      .wf-stage {
+        transform-origin: top center;
+      }
+
+      .wf-window {
+        height: 255px;
       }
 
       .wf-sidebar {
-        width:90px;
+        width: 96px;
 
-        flex-basis:90px;
+        flex-basis: 96px;
 
         padding:
-          10px
+          11px
           6px;
       }
 
       .wf-nav-item {
-        gap:5px;
-
         padding:
-          7px
-          5px;
+          0
+          6px;
 
-        font-size:.43rem;
+        font-size: 0.41rem;
       }
 
       .wf-main {
-        padding:10px;
-      }
-
-      .wf-title {
-        font-size:.56rem;
-      }
-
-      .wf-badge-btn {
         padding:
-          5px
+          11px
+          9px;
+      }
+
+      .wf-dashboard-header h3,
+      .wf-interface-title h3,
+      .wf-system-heading h3 {
+        font-size: 0.55rem;
+      }
+
+      .wf-add {
+        padding:
+          0
           6px;
 
-        font-size:.38rem;
+        font-size: 0.36rem;
       }
 
-      .wf-card {
-        padding:7px;
+      .wf-metric {
+        padding:
+          7px;
       }
 
-      .wf-task-item {
-        font-size:.41rem;
+      .wf-check {
+        font-size: 0.38rem;
       }
 
-      .wf-palette {
-        gap:5px;
-      }
-
-      .swatch {
-        width:22px;
-        height:22px;
-      }
-
-      .clear-btn {
-        font-size:.41rem;
-      }
-
-      .hero-visual-hint {
-        font-size:.42rem;
+      .wf-cursor-label {
+        right: 2px;
       }
 
       .profile-orbit text {
-        font-size:12px;
+        font-size: 12px;
 
-        letter-spacing:2.7px;
-      }
-
-      .fa-color-grid {
-        grid-template-columns:1fr;
-      }
-
-      .fa-device-mobile {
-        width:210px;
-      }
-
-      .fa-phone-screen iframe {
-        transform:scale(.497);
+        letter-spacing: 2.7px;
       }
     }
 
-    @media(prefers-reduced-motion:reduce) {
+    @media(prefers-reduced-motion: reduce) {
       *,
       *::before,
       *::after {
-        animation:none !important;
-        transition-duration:.01ms !important;
-        scroll-behavior:auto !important;
+        animation: none !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -4349,7 +2803,7 @@
 
     </div>
 
-    <span class="intro-help mono">
+    <span class="intro-help">
       clique para continuar
     </span>
 
@@ -4369,7 +2823,6 @@
       <a
         href="#top"
         class="logo"
-        id="logoHome"
       >
         Raquel Renovato
       </a>
@@ -4378,7 +2831,6 @@
         type="button"
         id="themeToggle"
         class="theme-toggle"
-        aria-label="Alternar tema"
       >
         <span id="themeLabel">
           Sombrio
@@ -4481,7 +2933,9 @@
 
       </div>
 
-      <!-- WIREFRAME EXATAMENTE NO FORMATO 380 × 260 -->
+      <!-- ===================================================
+           WIREFRAME INTERATIVO
+      ==================================================== -->
 
       <div class="hero-visual">
 
@@ -4489,49 +2943,51 @@
 
           <div class="wf-stage">
 
+            <!-- PEN TOOL -->
+
             <svg
-              class="wf-illustration pen-tool-svg"
+              class="wf-pen"
               viewBox="0 0 100 100"
               fill="none"
               aria-hidden="true"
             >
 
               <path
-                d="M15 80 C35 20 65 80 85 20"
+                d="M18 83 C34 24 59 79 83 21"
                 stroke="var(--accent)"
                 stroke-width="2"
                 stroke-dasharray="3 3"
               />
 
               <line
-                x1="15"
-                y1="80"
-                x2="35"
-                y2="20"
-                stroke="var(--line-strong)"
-                stroke-width="1.5"
+                x1="18"
+                y1="83"
+                x2="34"
+                y2="24"
+                stroke="#9B9187"
+                stroke-width="1"
               />
 
               <circle
-                cx="35"
-                cy="20"
+                cx="34"
+                cy="24"
                 r="3.5"
-                fill="var(--bg)"
+                fill="#F3EFE9"
                 stroke="var(--accent)"
                 stroke-width="2"
               />
 
               <rect
-                x="11"
-                y="76"
+                x="14"
+                y="79"
                 width="8"
                 height="8"
                 fill="var(--accent)"
               />
 
               <rect
-                x="81"
-                y="16"
+                x="79"
+                y="17"
                 width="8"
                 height="8"
                 fill="var(--accent)"
@@ -4539,144 +2995,179 @@
 
             </svg>
 
-            <div class="wf-illustration badge-floater">
-              <span>❖</span>
-              auto-layout 8px
+            <!-- FLOATING AUTO LAYOUT -->
+
+            <div class="wf-auto">
+              ❖ auto-layout 8px
             </div>
 
-            <div class="wf-illustration spec-floater">
+            <!-- 380 × 260 -->
+
+            <div class="wf-size-label">
               ↔ 380px × 260px
             </div>
 
-            <div class="wf-illustration cursor-floater">
+            <!-- CURSOR -->
+
+            <div class="wf-cursor-label">
 
               <svg
-                width="11"
-                height="11"
+                width="9"
+                height="9"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
                 <path d="M3 3l7 18 3-7 7-3L3 3z"/>
               </svg>
 
-              <span>
-                Raquel • UI/UX
-              </span>
+              Raquel • UI/UX
 
             </div>
+
+            <!-- WINDOW -->
 
             <div
               class="wf-window"
               id="wfWindow"
             >
 
-              <div class="wf-header">
+              <div class="wf-top">
 
                 <div class="wf-dots">
-                  <div class="wf-dot"></div>
-                  <div class="wf-dot"></div>
-                  <div class="wf-dot"></div>
+
+                  <span class="wf-dot"></span>
+                  <span class="wf-dot"></span>
+                  <span class="wf-dot"></span>
+
                 </div>
 
                 <button
-                  class="wf-switch-mode mono"
-                  id="wfSwitchMode"
                   type="button"
+                  class="wf-mode"
+                  id="wfMode"
                 >
                   modo app
                 </button>
 
               </div>
 
-              <div class="wf-body">
+              <div class="wf-content">
 
-                <div class="wf-sidebar">
+                <!-- SIDEBAR -->
 
-                  <div
-                    class="wf-nav-item active wf-paintable"
-                    data-tab="dashboard"
-                  >
-                    ▧ Dashboard
+                <aside class="wf-sidebar">
+
+                  <div class="wf-nav">
+
+                    <div
+                      class="wf-nav-item active wf-paintable"
+                      data-wf-tab="dashboard"
+                    >
+
+                      <span class="wf-nav-icon">
+                        ▧
+                      </span>
+
+                      <span>
+                        Dashboard
+                      </span>
+
+                    </div>
+
+                    <div
+                      class="wf-nav-item wf-paintable"
+                      data-wf-tab="interfaces"
+                    >
+
+                      <span class="wf-nav-icon">
+                        ✦
+                      </span>
+
+                      <span>
+                        Interfaces
+                      </span>
+
+                    </div>
+
+                    <div
+                      class="wf-nav-item wf-paintable"
+                      data-wf-tab="system"
+                    >
+
+                      <span class="wf-nav-icon">
+                        ❖
+                      </span>
+
+                      <span>
+                        Design System
+                      </span>
+
+                    </div>
+
                   </div>
 
-                  <div
-                    class="wf-nav-item wf-paintable"
-                    data-tab="interfaces"
-                  >
-                    ✦ Interfaces
-                  </div>
+                </aside>
 
-                  <div
-                    class="wf-nav-item wf-paintable"
-                    data-tab="system"
-                  >
-                    ❖ Design System
-                  </div>
-
-                </div>
+                <!-- MAIN -->
 
                 <div class="wf-main">
+
+                  <!-- DASHBOARD -->
 
                   <div
                     class="wf-view active"
                     id="wf-dashboard"
                   >
 
-                    <div class="wf-top-bar">
+                    <div class="wf-dashboard-header">
 
-                      <span class="wf-title">
+                      <h3>
                         Painel de Dashboard
-                      </span>
+                      </h3>
 
                       <button
                         type="button"
-                        class="wf-badge-btn wf-paintable"
-                        id="wfMetricBtn"
+                        class="wf-add wf-paintable"
+                        id="wfAdd"
                       >
                         +1 Entrega
                       </button>
 
                     </div>
 
-                    <div class="wf-card-grid">
+                    <div class="wf-metrics">
 
-                      <div class="wf-card wf-paintable">
+                      <div class="wf-metric wf-paintable">
 
-                        <span class="wf-card-label mono">
+                        <small>
                           Entregas
-                        </span>
+                        </small>
 
-                        <span
-                          class="wf-card-val"
-                          id="wfCounter"
-                        >
+                        <strong id="wfDeliveries">
                           14
-                        </span>
+                        </strong>
 
                       </div>
 
-                      <div class="wf-card wf-paintable">
+                      <div class="wf-metric wf-paintable">
 
-                        <span class="wf-card-label mono">
+                        <small>
                           Status
-                        </span>
+                        </small>
 
-                        <span
-                          class="wf-card-val"
-                          style="color:var(--accent)"
-                        >
+                        <strong>
                           100%
-                        </span>
+                        </strong>
 
                       </div>
 
                     </div>
 
-                    <div class="wf-task-list">
+                    <div class="wf-checklist">
 
-                      <div class="wf-task-item checked">
+                      <div class="wf-check">
 
-                        <span class="wf-checkbox wf-paintable">
+                        <span class="wf-check-box wf-paintable">
                           ✓
                         </span>
 
@@ -4686,9 +3177,9 @@
 
                       </div>
 
-                      <div class="wf-task-item">
+                      <div class="wf-check">
 
-                        <span class="wf-checkbox wf-paintable">
+                        <span class="wf-check-box wf-paintable">
                           ✓
                         </span>
 
@@ -4698,9 +3189,9 @@
 
                       </div>
 
-                      <div class="wf-task-item">
+                      <div class="wf-check">
 
-                        <span class="wf-checkbox wf-paintable">
+                        <span class="wf-check-box wf-paintable">
                           ✓
                         </span>
 
@@ -4714,38 +3205,40 @@
 
                   </div>
 
+                  <!-- INTERFACES -->
+
                   <div
                     class="wf-view"
                     id="wf-interfaces"
                   >
 
-                    <div class="wf-top-bar">
+                    <div class="wf-interface-title">
 
-                      <span class="wf-title">
+                      <h3>
                         Prototipagem de Wireframes
-                      </span>
+                      </h3>
 
-                      <span class="wf-version">
+                      <span>
                         12 cols
                       </span>
 
                     </div>
 
-                    <div class="wf-wireframe-main wf-paintable">
+                    <div class="wf-interface-hero wf-paintable">
 
-                      <div class="wf-wireframe-header">
+                      <span>
                         Header Bar Navigation
-                      </div>
+                      </span>
 
-                      <div class="wf-wireframe-row">
+                      <div>
 
                         <strong>
                           Hero Card
                         </strong>
 
-                        <span>
+                        <small>
                           Widget
-                        </span>
+                        </small>
 
                       </div>
 
@@ -4753,11 +3246,11 @@
 
                     <div class="wf-interface-grid">
 
-                      <div class="wf-interface-component wf-paintable">
+                      <div class="wf-component wf-paintable">
 
-                        <span>
+                        <small>
                           Componente A
-                        </span>
+                        </small>
 
                         <strong>
                           Layout Responsivo
@@ -4765,11 +3258,11 @@
 
                       </div>
 
-                      <div class="wf-interface-component wf-paintable">
+                      <div class="wf-component wf-paintable">
 
-                        <span>
+                        <small>
                           Componente B
-                        </span>
+                        </small>
 
                         <strong>
                           Auto-layout Figma
@@ -4781,18 +3274,20 @@
 
                   </div>
 
+                  <!-- SYSTEM -->
+
                   <div
                     class="wf-view"
                     id="wf-system"
                   >
 
-                    <div class="wf-top-bar">
+                    <div class="wf-system-heading">
 
-                      <span class="wf-title">
+                      <h3>
                         Biblioteca de Tokens
-                      </span>
+                      </h3>
 
-                      <span class="wf-version">
+                      <span>
                         v2.4
                       </span>
 
@@ -4802,7 +3297,7 @@
                       Estados de Botão
                     </div>
 
-                    <div class="wf-system-buttons">
+                    <div class="wf-token-actions">
 
                       <button
                         type="button"
@@ -4831,15 +3326,15 @@
                       Tipografia & Escala
                     </div>
 
-                    <div class="wf-type-token wf-paintable">
+                    <div class="wf-type wf-paintable">
 
                       <strong>
                         Fraunces Serif 400
                       </strong>
 
-                      <span>
+                      <small>
                         IBM Plex Mono 12px / 1.4
-                      </span>
+                      </small>
 
                     </div>
 
@@ -4853,13 +3348,15 @@
 
           </div>
 
+          <!-- PALETA -->
+
           <div class="wf-palette">
 
             <button
               type="button"
               class="swatch active"
-              data-color="#E8590C"
-              style="background:#E8590C"
+              data-color="#ED5706"
+              style="background:#ED5706"
               aria-label="Laranja"
             ></button>
 
@@ -4874,24 +3371,24 @@
             <button
               type="button"
               class="swatch"
-              data-color="#2B3A4A"
-              style="background:#2B3A4A"
+              data-color="#2C3B4B"
+              style="background:#2C3B4B"
               aria-label="Azul"
             ></button>
 
             <button
               type="button"
               class="swatch"
-              data-color="#B37838"
-              style="background:#B37838"
+              data-color="#B97E39"
+              style="background:#B97E39"
               aria-label="Ocre"
             ></button>
 
             <button
               type="button"
               class="swatch"
-              data-color="#1F1C18"
-              style="background:#1F1C18"
+              data-color="#201D19"
+              style="background:#201D19"
               aria-label="Preto"
             ></button>
 
@@ -4899,14 +3396,14 @@
               type="button"
               class="swatch reset"
               data-color=""
-              aria-label="Apagar cor"
+              aria-label="Remover pintura"
             >
               ×
             </button>
 
             <button
               type="button"
-              class="clear-btn mono"
+              class="wf-clear"
               id="wfClear"
             >
               limpar tudo
@@ -4914,9 +3411,9 @@
 
           </div>
 
-          <div class="hero-visual-hint mono">
+          <p class="wf-helper">
             escolha uma cor na paleta e clique nos elementos para pintar individualmente
-          </div>
+          </p>
 
         </div>
 
@@ -5089,8 +3586,6 @@
               <img
                 src="img/img-perfil/foto-perfil.jpeg"
                 alt="Retrato de Raquel Renovato"
-                class="js-lightbox"
-                tabindex="0"
               >
 
             </div>
@@ -5179,10 +3674,6 @@
     ====================================================== -->
 
     <div id="projetos"></div>
-
-    <!-- =====================================================
-         FERNANDO
-    ====================================================== -->
 
     <article
       class="project"
@@ -5287,7 +3778,6 @@
           <button
             type="button"
             class="fa-tab active"
-            data-fa-tab="story"
           >
             Case
           </button>
@@ -5295,7 +3785,6 @@
           <button
             type="button"
             class="fa-tab"
-            data-fa-tab="before"
           >
             Site anterior
           </button>
@@ -5303,7 +3792,6 @@
           <button
             type="button"
             class="fa-tab"
-            data-fa-tab="live"
           >
             Site publicado
           </button>
@@ -5311,7 +3799,6 @@
           <button
             type="button"
             class="fa-tab"
-            data-fa-tab="system"
           >
             Design System
           </button>
@@ -5319,7 +3806,6 @@
           <button
             type="button"
             class="fa-tab"
-            data-fa-tab="responsive"
           >
             Responsivo
           </button>
@@ -5327,19 +3813,13 @@
           <button
             type="button"
             class="fa-tab"
-            data-fa-tab="prototype"
           >
             Protótipo
           </button>
 
         </div>
 
-        <!-- CASE -->
-
-        <section
-          class="fa-view active"
-          data-fa-view="story"
-        >
+        <section class="fa-view active">
 
           <div class="fa-story">
 
@@ -5365,7 +3845,9 @@
 
                   <section>
 
-                    <strong>Hero</strong>
+                    <strong>
+                      Hero
+                    </strong>
 
                     <p>
                       Proposta de valor direta, vídeo e ações prioritárias.
@@ -5381,10 +3863,12 @@
 
                   <section>
 
-                    <strong>Serviços</strong>
+                    <strong>
+                      Serviços
+                    </strong>
 
                     <p>
-                      Oito especialidades organizadas em um componente navegável.
+                      Oito especialidades reunidas em um componente navegável.
                     </p>
 
                   </section>
@@ -5397,7 +3881,9 @@
 
                   <section>
 
-                    <strong>Processo</strong>
+                    <strong>
+                      Processo
+                    </strong>
 
                     <p>
                       Jornada visual acompanhando o scroll do usuário.
@@ -5413,26 +3899,12 @@
 
                   <section>
 
-                    <strong>Projetos</strong>
+                    <strong>
+                      Projetos
+                    </strong>
 
                     <p>
                       Cards organizados por filtros, área, escopo e contexto.
-                    </p>
-
-                  </section>
-
-                </div>
-
-                <div>
-
-                  <span>05</span>
-
-                  <section>
-
-                    <strong>Mobile</strong>
-
-                    <p>
-                      Decisões próprias para telas menores.
                     </p>
 
                   </section>
@@ -5542,1161 +4014,6 @@
           </div>
 
         </section>
-
-        <!-- ANTERIOR -->
-
-        <section
-          class="fa-view"
-          data-fa-view="before"
-        >
-
-          <div class="browser-shell">
-
-            <div class="browser-bar">
-
-              <div class="browser-dots">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-
-              <div class="browser-address mono">
-                versão anterior
-              </div>
-
-              <a
-                class="browser-link"
-                href="https://fernando-amaral-website-web.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                abrir ↗
-              </a>
-
-            </div>
-
-            <div
-              class="fa-desktop-viewport"
-              data-desktop-height="680"
-            >
-
-              <div class="fa-desktop-canvas">
-
-                <iframe
-                  src="https://fernando-amaral-website-web.vercel.app/"
-                  title="Site anterior de Fernando Amaral"
-                  loading="lazy"
-                ></iframe>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        <!-- LIVE -->
-
-        <section
-          class="fa-view"
-          data-fa-view="live"
-        >
-
-          <div class="browser-shell">
-
-            <div class="browser-bar">
-
-              <div class="browser-dots">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-
-              <div class="browser-address mono">
-                fernando-amaral.vercel.app
-              </div>
-
-              <a
-                class="browser-link"
-                href="https://fernando-amaral.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                abrir site ↗
-              </a>
-
-            </div>
-
-            <div
-              class="fa-desktop-viewport"
-              data-desktop-height="720"
-            >
-
-              <div class="fa-desktop-canvas">
-
-                <iframe
-                  src="https://fernando-amaral.vercel.app/"
-                  title="Site final Fernando Amaral"
-                  loading="lazy"
-                ></iframe>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        <!-- DESIGN SYSTEM -->
-
-        <section
-          class="fa-view"
-          data-fa-view="system"
-        >
-
-          <div class="system-layout">
-
-            <aside class="system-sidebar">
-
-              <span class="mono">
-                Fernando UI
-              </span>
-
-              <button
-                class="system-nav-btn active"
-                type="button"
-                data-system="foundation"
-              >
-                Foundations
-              </button>
-
-              <button
-                class="system-nav-btn"
-                type="button"
-                data-system="buttons"
-              >
-                Components
-              </button>
-
-              <button
-                class="system-nav-btn"
-                type="button"
-                data-system="navigation"
-              >
-                Navigation
-              </button>
-
-            </aside>
-
-            <div class="system-canvas">
-
-              <section
-                class="system-panel active"
-                data-system-panel="foundation"
-              >
-
-                <h4 class="system-panel-title">
-                  Foundations
-                </h4>
-
-                <div class="fa-color-grid">
-
-                  <div class="fa-color navy">
-                    <strong>Primary</strong>
-                    <span>#00152A</span>
-                  </div>
-
-                  <div class="fa-color gold">
-                    <strong>Secondary</strong>
-                    <span>#B8860B</span>
-                  </div>
-
-                  <div class="fa-color slate">
-                    <strong>Slate</strong>
-                    <span>#64748B</span>
-                  </div>
-
-                  <div class="fa-color light">
-                    <strong>Background</strong>
-                    <span>#F4F6F8</span>
-                  </div>
-
-                  <div class="fa-color white">
-                    <strong>Surface</strong>
-                    <span>#FFFFFF</span>
-                  </div>
-
-                </div>
-
-                <div class="fa-type-demo">
-
-                  <article class="fa-type-card manrope">
-
-                    <span>
-                      DISPLAY / MANROPE
-                    </span>
-
-                    <strong>Aa</strong>
-
-                    <p>
-                      Projetos elétricos para arquitetos e engenheiros.
-                    </p>
-
-                  </article>
-
-                  <article class="fa-type-card dm">
-
-                    <span>
-                      BODY / DM SANS
-                    </span>
-
-                    <strong>Aa</strong>
-
-                    <p>
-                      Legibilidade para informações técnicas e conteúdos longos.
-                    </p>
-
-                  </article>
-
-                </div>
-
-              </section>
-
-              <section
-                class="system-panel"
-                data-system-panel="buttons"
-              >
-
-                <h4 class="system-panel-title">
-                  Componentes & estados
-                </h4>
-
-                <div class="component-grid">
-
-                  <article class="component-box">
-
-                    <div class="component-label mono">
-
-                      <span>
-                        Button
-                      </span>
-
-                      <span>
-                        Variable
-                      </span>
-
-                    </div>
-
-                    <div class="demo-button-row">
-
-                      <button
-                        id="faDemoPrimary"
-                        class="fa-demo-primary"
-                        type="button"
-                      >
-                        SOLICITAR ORÇAMENTO
-                      </button>
-
-                      <button
-                        class="fa-demo-secondary"
-                        type="button"
-                      >
-                        VER SERVIÇOS
-                      </button>
-
-                    </div>
-
-                    <div class="variant-controls">
-
-                      <button
-                        type="button"
-                        class="active"
-                        data-fa-button-state="default"
-                      >
-                        default
-                      </button>
-
-                      <button
-                        type="button"
-                        data-fa-button-state="hover"
-                      >
-                        hover
-                      </button>
-
-                      <button
-                        type="button"
-                        data-fa-button-state="disabled"
-                      >
-                        disabled
-                      </button>
-
-                    </div>
-
-                  </article>
-
-                  <article class="component-box">
-
-                    <div class="component-label mono">
-
-                      <span>
-                        Theme
-                      </span>
-
-                      <span>
-                        Light / Dark
-                      </span>
-
-                    </div>
-
-                    <div
-                      style="
-                        display:flex;
-                        align-items:center;
-                        gap:12px;
-                      "
-                    >
-
-                      <div
-                        style="
-                          width:48px;
-                          height:48px;
-                          display:grid;
-                          place-items:center;
-                          border:1px solid #CBD3DB;
-                          border-radius:8px;
-                          background:white;
-                          color:#00152A;
-                        "
-                      >
-                        ☾
-                      </div>
-
-                      <p
-                        style="
-                          color:var(--dim);
-                          font-size:.72rem;
-                          line-height:1.55;
-                        "
-                      >
-                        Light como experiência principal. Dark como opção.
-                      </p>
-
-                    </div>
-
-                  </article>
-
-                </div>
-
-              </section>
-
-              <section
-                class="system-panel"
-                data-system-panel="navigation"
-              >
-
-                <h4 class="system-panel-title">
-                  Navegação
-                </h4>
-
-                <article class="component-box wide">
-
-                  <div class="component-label mono">
-
-                    <span>
-                      Header / Desktop
-                    </span>
-
-                    <span>
-                      Responsive
-                    </span>
-
-                  </div>
-
-                  <div
-                    style="
-                      padding:16px;
-                      background:white;
-                      color:#00152A;
-                      border-radius:6px;
-                    "
-                  >
-
-                    <div
-                      style="
-                        display:flex;
-                        align-items:center;
-                        justify-content:space-between;
-                        gap:20px;
-                      "
-                    >
-
-                      <strong
-                        style="
-                          font-family:Manrope,sans-serif;
-                          font-size:.76rem;
-                        "
-                      >
-                        FERNANDO AMARAL
-                      </strong>
-
-                      <div
-                        style="
-                          display:flex;
-                          gap:15px;
-                          font-size:.58rem;
-                        "
-                      >
-
-                        <span>Serviços</span>
-                        <span>Processo</span>
-                        <span>Portfólio</span>
-                        <span>Sobre</span>
-
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </article>
-
-              </section>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        <!-- RESPONSIVO -->
-
-        <section
-          class="fa-view"
-          data-fa-view="responsive"
-        >
-
-          <div class="fa-responsive-showcase">
-
-            <div class="fa-device-desktop">
-
-              <div class="browser-bar">
-
-                <div class="browser-dots">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
-
-                <div class="browser-address mono">
-                  DESKTOP / 1440
-                </div>
-
-                <span class="browser-link">
-                  LIVE
-                </span>
-
-              </div>
-
-              <div
-                class="fa-desktop-viewport"
-                data-desktop-height="660"
-              >
-
-                <div class="fa-desktop-canvas">
-
-                  <iframe
-                    src="https://fernando-amaral.vercel.app/"
-                    title="Fernando Amaral desktop"
-                    loading="lazy"
-                  ></iframe>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="fa-mobile-wrap">
-
-              <div class="fa-device-mobile">
-
-                <div class="fa-phone-screen">
-
-                  <iframe
-                    src="https://fernando-amaral.vercel.app/"
-                    title="Fernando Amaral mobile"
-                    loading="lazy"
-                  ></iframe>
-
-                </div>
-
-              </div>
-
-              <span class="mono">
-                MOBILE / 390
-              </span>
-
-            </div>
-
-          </div>
-
-          <div class="fa-responsive-notes">
-
-            <article class="fa-responsive-note">
-
-              <span class="mono">
-                01 / TYPOGRAPHY
-              </span>
-
-              <h4>
-                Escala adaptativa
-              </h4>
-
-              <p>
-                Tipografia responde ao tamanho do dispositivo.
-              </p>
-
-            </article>
-
-            <article class="fa-responsive-note">
-
-              <span class="mono">
-                02 / CONTENT
-              </span>
-
-              <h4>
-                Hierarquia preservada
-              </h4>
-
-              <p>
-                Desktop e mobile mantêm a mesma ordem de importância.
-              </p>
-
-            </article>
-
-            <article class="fa-responsive-note">
-
-              <span class="mono">
-                03 / COMPONENTS
-              </span>
-
-              <h4>
-                Comportamento próprio
-              </h4>
-
-              <p>
-                Elementos mudam composição quando necessário.
-              </p>
-
-            </article>
-
-          </div>
-
-        </section>
-
-        <!-- PROTÓTIPO -->
-
-        <section
-          class="fa-view"
-          data-fa-view="prototype"
-        >
-
-          <div class="figma-shell">
-
-            <div class="figma-head">
-
-              <div>
-
-                <span>
-                  PROTOTYPE
-                </span>
-
-                <strong>
-                  Fernando Amaral
-                </strong>
-
-              </div>
-
-              <a
-                href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=GvyvZBX7e4nj5iXq-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                abrir no Figma ↗
-              </a>
-
-            </div>
-
-            <div class="figma-frame">
-
-              <iframe
-                src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
-                title="Protótipo de Fernando Amaral"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-
-            </div>
-
-          </div>
-
-        </section>
-
-      </div>
-
-    </article>
-
-    <!-- =====================================================
-         VOIT
-    ====================================================== -->
-
-    <article
-      class="project"
-      id="voit"
-    >
-
-      <div class="project-head">
-
-        <div class="project-identity">
-
-          <span class="project-number">
-            02 / 05
-          </span>
-
-          <span class="case-badge">
-            COMUNICAÇÃO MULTICANAL
-          </span>
-
-        </div>
-
-        <h3>
-          Voit Consultoria
-        </h3>
-
-        <p class="project-summary">
-          Atuação em conteúdo, social media, materiais técnicos, apresentações, comunicação comercial e endomarketing.
-        </p>
-
-        <div class="project-meta">
-
-          <span>Social Media</span>
-          <span>Copywriting</span>
-          <span>Adobe</span>
-          <span>Canva</span>
-
-        </div>
-
-      </div>
-
-      <div class="secondary-case">
-
-        <div class="secondary-shell">
-
-          <div class="case-tabs">
-
-            <button
-              type="button"
-              class="case-tab active"
-              data-case="voit"
-              data-view="overview"
-            >
-              Visão geral
-            </button>
-
-            <button
-              type="button"
-              class="case-tab"
-              data-case="voit"
-              data-view="social"
-            >
-              Social
-            </button>
-
-          </div>
-
-          <section
-            class="case-view active"
-            data-case-view="voit-overview"
-          >
-
-            <div class="voit-overview">
-
-              <div class="voit-core">
-                VOIT
-              </div>
-
-              <article class="voit-domain">
-
-                <span>
-                  CONTEÚDO
-                </span>
-
-                <h4>
-                  Social Media
-                </h4>
-
-                <p>
-                  Conteúdos e peças adaptados aos temas e objetivos de comunicação.
-                </p>
-
-              </article>
-
-              <article class="voit-domain">
-
-                <span>
-                  COMERCIAL
-                </span>
-
-                <h4>
-                  Apresentações
-                </h4>
-
-                <p>
-                  Materiais de apoio a reuniões, propostas e processos comerciais.
-                </p>
-
-              </article>
-
-              <article class="voit-domain">
-
-                <span>
-                  INTERNO
-                </span>
-
-                <h4>
-                  Endomarketing
-                </h4>
-
-                <p>
-                  Campanhas e materiais voltados à equipe.
-                </p>
-
-              </article>
-
-              <article class="voit-domain">
-
-                <span>
-                  SISTEMA
-                </span>
-
-                <h4>
-                  Consistência
-                </h4>
-
-                <p>
-                  Unidade visual entre formatos e canais diferentes.
-                </p>
-
-              </article>
-
-            </div>
-
-          </section>
-
-          <section
-            class="case-view"
-            data-case-view="voit-social"
-          >
-
-            <div class="voit-social">
-
-              <button
-                class="voit-piece"
-                type="button"
-              >
-                <img
-                  class="js-lightbox"
-                  src="img/img-voit/voit-01.jpeg"
-                  alt="Projeto Voit 01"
-                  loading="lazy"
-                >
-              </button>
-
-              <button
-                class="voit-piece"
-                type="button"
-              >
-                <img
-                  class="js-lightbox"
-                  src="img/img-voit/voit-02.jpeg"
-                  alt="Projeto Voit 02"
-                  loading="lazy"
-                >
-              </button>
-
-              <button
-                class="voit-piece"
-                type="button"
-              >
-                <img
-                  class="js-lightbox"
-                  src="img/img-voit/voit-03.jpeg"
-                  alt="Projeto Voit 03"
-                  loading="lazy"
-                >
-              </button>
-
-              <button
-                class="voit-piece"
-                type="button"
-              >
-                <img
-                  class="js-lightbox"
-                  src="img/img-voit/voit-04.jpeg"
-                  alt="Projeto Voit 04"
-                  loading="lazy"
-                >
-              </button>
-
-            </div>
-
-          </section>
-
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- =====================================================
-         RENATA
-    ====================================================== -->
-
-    <article
-      class="project"
-      id="renata"
-    >
-
-      <div class="project-head">
-
-        <div class="project-identity">
-
-          <span class="project-number">
-            03 / 05
-          </span>
-
-          <span class="case-badge">
-            PRESENTATION DESIGN
-          </span>
-
-        </div>
-
-        <h3>
-          Renata Brandão
-        </h3>
-
-        <p class="project-summary">
-          Design de apresentação trabalhando estrutura de informação, narrativa, hierarquia e leitura profissional.
-        </p>
-
-      </div>
-
-      <div class="secondary-case">
-
-        <div
-          class="renata-viewer"
-          id="renataViewer"
-        >
-
-          <div class="renata-topbar">
-
-            <span>
-              RENATA / PRESENTATION
-            </span>
-
-            <span id="renataCounter">
-              01 / 03
-            </span>
-
-          </div>
-
-          <div class="renata-layout">
-
-            <div class="renata-main">
-
-              <img
-                id="renataMain"
-                src="img/img-renata/renata-01.jpg"
-                alt="Apresentação Renata Brandão"
-                class="js-lightbox"
-              >
-
-            </div>
-
-            <aside class="renata-inspector">
-
-              <span class="renata-kicker">
-                DECISÃO DE DESIGN
-              </span>
-
-              <h4 id="renataTitle">
-                Entrada e posicionamento
-              </h4>
-
-              <p id="renataDescription">
-                A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto.
-              </p>
-
-              <div class="renata-arrows">
-
-                <button
-                  type="button"
-                  id="renataPrev"
-                  aria-label="Slide anterior"
-                >
-                  ←
-                </button>
-
-                <button
-                  type="button"
-                  id="renataNext"
-                  aria-label="Próximo slide"
-                >
-                  →
-                </button>
-
-              </div>
-
-              <div
-                class="renata-progress"
-                id="renataProgress"
-              ></div>
-
-              <div
-                class="renata-thumbs"
-                id="renataThumbs"
-              ></div>
-
-              <a
-                href="#"
-                class="renata-full-link"
-              >
-                Ver apresentação completa ↗
-              </a>
-
-            </aside>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- =====================================================
-         BRADUCA
-    ====================================================== -->
-
-    <article
-      class="project"
-      id="braduca"
-    >
-
-      <div class="project-head">
-
-        <div class="project-identity">
-
-          <span class="project-number">
-            04 / 05
-          </span>
-
-          <span class="case-badge">
-            SOCIAL MEDIA
-          </span>
-
-        </div>
-
-        <h3>
-          Somos Braduca
-        </h3>
-
-        <p class="project-summary">
-          Sistema editorial para redes sociais, preservando identidade de marca sem repetir sempre a mesma composição.
-        </p>
-
-      </div>
-
-      <div class="secondary-case">
-
-        <div class="editorial-layout">
-
-          <div>
-
-            <div
-              class="editorial-ribbon"
-              id="braducaCase"
-            >
-
-              <button class="editorial-card active" type="button" data-index="0">
-                <img src="img/img-braduca/braduca-01.jpeg" alt="Somos Braduca 01">
-              </button>
-
-              <button class="editorial-card" type="button" data-index="1">
-                <img src="img/img-braduca/braduca-02.jpeg" alt="Somos Braduca 02">
-              </button>
-
-              <button class="editorial-card" type="button" data-index="2">
-                <img src="img/img-braduca/braduca-03.jpeg" alt="Somos Braduca 03">
-              </button>
-
-              <button class="editorial-card" type="button" data-index="3">
-                <img src="img/img-braduca/braduca-04.jpeg" alt="Somos Braduca 04">
-              </button>
-
-              <button class="editorial-card" type="button" data-index="4">
-                <img src="img/img-braduca/braduca-05.jpeg" alt="Somos Braduca 05">
-              </button>
-
-              <button class="editorial-card" type="button" data-index="5">
-                <img src="img/img-braduca/braduca-06.jpeg" alt="Somos Braduca 06">
-              </button>
-
-              <button class="editorial-card" type="button" data-index="6">
-                <img src="img/img-braduca/braduca-07.jpeg" alt="Somos Braduca 07">
-              </button>
-
-            </div>
-
-            <div class="editorial-preview">
-
-              <img
-                id="braducaPreview"
-                class="js-lightbox"
-                src="img/img-braduca/braduca-01.jpeg"
-                alt="Somos Braduca"
-              >
-
-            </div>
-
-          </div>
-
-          <aside class="editorial-inspector">
-
-            <span>
-              EDITORIAL SYSTEM
-            </span>
-
-            <h4>
-              Variação sem perder unidade.
-            </h4>
-
-            <p>
-              Diferentes composições, pesos e enquadramentos convivem dentro da mesma linguagem visual.
-            </p>
-
-            <div
-              id="braducaPosition"
-              style="
-                margin-top:20px;
-                font-family:Fraunces,serif;
-                font-size:2rem;
-              "
-            >
-              01 / 07
-            </div>
-
-          </aside>
-
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- =====================================================
-         AYMÉE
-    ====================================================== -->
-
-    <article
-      class="project"
-      id="aymee"
-    >
-
-      <div class="project-head">
-
-        <div class="project-identity">
-
-          <span class="project-number">
-            05 / 05
-          </span>
-
-          <span class="case-badge">
-            PERSONAL BRAND
-          </span>
-
-        </div>
-
-        <h3>
-          Aymée Ferraz
-        </h3>
-
-        <p class="project-summary">
-          Criação e diagramação de conteúdos para redes sociais, mantendo consistência e identidade visual entre diferentes pautas.
-        </p>
-
-      </div>
-
-      <div class="secondary-case">
-
-        <div class="brand-layout">
-
-          <div
-            class="brand-grid"
-            id="aymeeGrid"
-          ></div>
-
-          <aside class="brand-notes">
-
-            <span>
-              PERSONAL BRAND SYSTEM
-            </span>
-
-            <h4>
-              Variação sem perder identidade.
-            </h4>
-
-            <article class="brand-rule">
-
-              <span>
-                01 / CONSISTÊNCIA
-              </span>
-
-              <p>
-                As publicações permanecem reconhecíveis como parte da mesma marca.
-              </p>
-
-            </article>
-
-            <article class="brand-rule">
-
-              <span>
-                02 / HIERARQUIA
-              </span>
-
-              <p>
-                O conteúdo precisa ser lido antes de ser apenas decorado.
-              </p>
-
-            </article>
-
-            <article class="brand-rule">
-
-              <span>
-                03 / FLEXIBILIDADE
-              </span>
-
-              <p>
-                O sistema acomoda diferentes pautas sem transformar todas as peças na mesma composição.
-              </p>
-
-            </article>
-
-          </aside>
-
-        </div>
 
       </div>
 
@@ -6829,35 +4146,6 @@
 
   </footer>
 
-  <!-- =======================================================
-       LIGHTBOX
-  ======================================================== -->
-
-  <div
-    class="lightbox"
-    id="lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-hidden="true"
-  >
-
-    <button
-      type="button"
-      class="lightbox-close"
-      id="lightboxClose"
-      aria-label="Fechar imagem"
-    >
-      ×
-    </button>
-
-    <img
-      id="lightboxImage"
-      src=""
-      alt=""
-    >
-
-  </div>
-
   <script>
     (() => {
       "use strict";
@@ -6909,7 +4197,7 @@
               "exit"
             );
 
-            if(
+            if (
               index < nextIndex
             ) {
               word.classList.add(
@@ -6917,7 +4205,7 @@
               );
             }
 
-            if(
+            if (
               index === nextIndex
             ) {
               word.classList.add(
@@ -6929,7 +4217,7 @@
       }
 
       function closeIntro() {
-        if(
+        if (
           !intro ||
           introClosed
         ) {
@@ -6940,10 +4228,7 @@
           true;
 
         introTimers.forEach(
-          timer =>
-            clearTimeout(
-              timer
-            )
+          clearTimeout
         );
 
         intro.classList.add(
@@ -6968,71 +4253,41 @@
         );
       }
 
-      function runIntro() {
-        if(!intro) {
-          return;
-        }
+      setIntroWord(
+        0
+      );
 
-        setIntroWord(
-          0
-        );
+      introTimers.push(
+        setTimeout(
+          () =>
+            setIntroWord(
+              1
+            ),
+          760
+        )
+      );
 
-        introTimers.push(
-          setTimeout(
-            () =>
-              setIntroWord(
-                1
-              ),
-            780
-          )
-        );
+      introTimers.push(
+        setTimeout(
+          () =>
+            setIntroWord(
+              2
+            ),
+          1520
+        )
+      );
 
-        introTimers.push(
-          setTimeout(
-            () =>
-              setIntroWord(
-                2
-              ),
-            1560
-          )
-        );
-
-        introTimers.push(
-          setTimeout(
-            closeIntro,
-            2600
-          )
-        );
-      }
+      introTimers.push(
+        setTimeout(
+          closeIntro,
+          2500
+        )
+      );
 
       intro?.addEventListener(
         "click",
         closeIntro
       );
-
-      document.addEventListener(
-        "keydown",
-        event => {
-          if(
-            !document.body.classList.contains(
-              "intro-active"
-            )
-          ) {
-            return;
-          }
-
-          if(
-            event.key === "Escape" ||
-            event.key === "Enter" ||
-            event.key === " "
-          ) {
-            event.preventDefault();
-            closeIntro();
-          }
-        }
-      );
-
-      runIntro();
 
       /* =====================================================
          TEMA
@@ -7049,10 +4304,10 @@
           "raquel-theme"
         );
 
-      function applyTheme(
+      function setTheme(
         theme
       ) {
-        if(
+        if (
           theme === "dark"
         ) {
           document.documentElement.setAttribute(
@@ -7072,7 +4327,7 @@
         }
       }
 
-      applyTheme(
+      setTheme(
         storedTheme === "dark"
           ? "dark"
           : "light"
@@ -7081,13 +4336,14 @@
       themeToggle?.addEventListener(
         "click",
         () => {
-          const current =
+          const dark =
             document.documentElement.getAttribute(
               "data-theme"
-            );
+            ) ===
+            "dark";
 
           const next =
-            current === "dark"
+            dark
               ? "light"
               : "dark";
 
@@ -7096,21 +4352,9 @@
             next
           );
 
-          applyTheme(
+          setTheme(
             next
           );
-        }
-      );
-
-      $("#logoHome")?.addEventListener(
-        "click",
-        event => {
-          event.preventDefault();
-
-          window.scrollTo({
-            top:0,
-            behavior:"smooth"
-          });
         }
       );
 
@@ -7118,69 +4362,98 @@
          WIREFRAME
       ====================================================== */
 
-      let selectedColor =
-        "#E8590C";
-
       const wfWindow =
         $("#wfWindow");
 
-      function readableColor(
+      let selectedColor =
+        "#ED5706";
+
+      let deliveries =
+        14;
+
+      let wfAppMode =
+        true;
+
+      function hexToRgb(
         hex
       ) {
-        if(
-          !hex ||
-          !/^#[0-9A-F]{6}$/i.test(
-            hex
-          )
+        const clean =
+          hex.replace(
+            "#",
+            ""
+          );
+
+        if (
+          clean.length !==
+          6
         ) {
+          return null;
+        }
+
+        return {
+          r:
+            parseInt(
+              clean.slice(
+                0,
+                2
+              ),
+              16
+            ),
+
+          g:
+            parseInt(
+              clean.slice(
+                2,
+                4
+              ),
+              16
+            ),
+
+          b:
+            parseInt(
+              clean.slice(
+                4,
+                6
+              ),
+              16
+            )
+        };
+      }
+
+      function readableText(
+        color
+      ) {
+        if (!color) {
+          return "#201D19";
+        }
+
+        const rgb =
+          hexToRgb(
+            color
+          );
+
+        if (!rgb) {
           return "#FFFFFF";
         }
 
-        const r =
-          parseInt(
-            hex.slice(1,3),
-            16
-          ) / 255;
+        const brightness =
+          (
+            rgb.r *
+              299 +
+            rgb.g *
+              587 +
+            rgb.b *
+              114
+          ) /
+          1000;
 
-        const g =
-          parseInt(
-            hex.slice(3,5),
-            16
-          ) / 255;
-
-        const b =
-          parseInt(
-            hex.slice(5,7),
-            16
-          ) / 255;
-
-        const linearize =
-          value =>
-            value <= .03928
-              ? value / 12.92
-              : Math.pow(
-                  (
-                    value +
-                    .055
-                  ) /
-                  1.055,
-                  2.4
-                );
-
-        const luminance =
-          .2126 *
-            linearize(r) +
-          .7152 *
-            linearize(g) +
-          .0722 *
-            linearize(b);
-
-        return luminance < .48
+        return brightness <
+          150
           ? "#FFFFFF"
-          : "#1F1C18";
+          : "#201D19";
       }
 
-      function resetPaint(
+      function removePaint(
         element
       ) {
         element.classList.remove(
@@ -7200,16 +4473,15 @@
         );
 
         element.style.removeProperty(
-          "--paint-foreground"
+          "--paint-text"
         );
       }
 
-      function paintElement(
-        element,
-        color
+      function paint(
+        element
       ) {
-        if(!color) {
-          resetPaint(
+        if (!selectedColor) {
+          removePaint(
             element
           );
 
@@ -7217,8 +4489,8 @@
         }
 
         const foreground =
-          readableColor(
-            color
+          readableText(
+            selectedColor
           );
 
         element.classList.add(
@@ -7226,16 +4498,16 @@
         );
 
         element.style.backgroundColor =
-          color;
+          selectedColor;
 
         element.style.borderColor =
-          color;
+          selectedColor;
 
         element.style.color =
           foreground;
 
         element.style.setProperty(
-          "--paint-foreground",
+          "--paint-text",
           foreground
         );
       }
@@ -7269,21 +4541,22 @@
       wfWindow?.addEventListener(
         "click",
         event => {
-          const target =
+          const element =
             event.target.closest(
               ".wf-paintable"
             );
 
-          if(!target) {
+          if (!element) {
             return;
           }
 
-          paintElement(
-            target,
-            selectedColor
+          paint(
+            element
           );
         }
       );
+
+      /* NAVEGAÇÃO DO WIREFRAME */
 
       $$(".wf-nav-item").forEach(
         item => {
@@ -7303,15 +4576,15 @@
                 "active"
               );
 
-              const tab =
-                item.dataset.tab;
+              const target =
+                item.dataset.wfTab;
 
               $$(".wf-view").forEach(
                 view => {
                   view.classList.toggle(
                     "active",
                     view.id ===
-                      `wf-${tab}`
+                      `wf-${target}`
                   );
                 }
               );
@@ -7320,31 +4593,30 @@
         }
       );
 
-      let deliveries =
-        14;
+      /* MÉTRICA */
 
-      $("#wfMetricBtn")?.addEventListener(
+      $("#wfAdd")?.addEventListener(
         "click",
         event => {
           event.stopPropagation();
 
           deliveries++;
 
-          $("#wfCounter").textContent =
-            String(
-              deliveries
-            );
+          $("#wfDeliveries").textContent =
+            deliveries;
         }
       );
 
-      $$(".wf-task-item").forEach(
-        task => {
-          task.addEventListener(
+      /* CHECKLIST */
+
+      $$(".wf-check").forEach(
+        item => {
+          item.addEventListener(
             "click",
             event => {
               event.stopPropagation();
 
-              task.classList.toggle(
+              item.classList.toggle(
                 "checked"
               );
             }
@@ -7352,975 +4624,242 @@
         }
       );
 
-      let wfDark =
-        false;
+      /* MODO */
 
-      $("#wfSwitchMode")?.addEventListener(
+      $("#wfMode")?.addEventListener(
         "click",
         event => {
           event.stopPropagation();
 
-          wfDark =
-            !wfDark;
+          wfAppMode =
+            !wfAppMode;
 
-          if(wfDark) {
+          if (
+            wfAppMode
+          ) {
             wfWindow.style.setProperty(
-              "--wf-bg-local",
-              "#151412"
-            );
-
-            wfWindow.style.setProperty(
-              "--wf-card-local",
-              "#211F1B"
+              "--wf-local-bg",
+              "#FBF8F3"
             );
 
             wfWindow.style.setProperty(
-              "--wf-text-local",
-              "#F0ECE1"
+              "--wf-local-side",
+              "#E9E2D7"
             );
 
-            event.currentTarget.textContent =
-              "modo clean";
-          } else {
-            wfWindow.style.removeProperty(
-              "--wf-bg-local"
+            wfWindow.style.setProperty(
+              "--wf-local-card",
+              "#E8E1D6"
             );
 
-            wfWindow.style.removeProperty(
-              "--wf-card-local"
-            );
-
-            wfWindow.style.removeProperty(
-              "--wf-text-local"
+            wfWindow.style.setProperty(
+              "--wf-local-text",
+              "#201D19"
             );
 
             event.currentTarget.textContent =
               "modo app";
+          } else {
+            wfWindow.style.setProperty(
+              "--wf-local-bg",
+              "#201D1A"
+            );
+
+            wfWindow.style.setProperty(
+              "--wf-local-side",
+              "#2A2621"
+            );
+
+            wfWindow.style.setProperty(
+              "--wf-local-card",
+              "#312C27"
+            );
+
+            wfWindow.style.setProperty(
+              "--wf-local-text",
+              "#F7F2EA"
+            );
+
+            event.currentTarget.textContent =
+              "modo dark";
           }
         }
       );
+
+      /* LIMPAR */
 
       $("#wfClear")?.addEventListener(
         "click",
         () => {
           selectedColor =
-            "#E8590C";
+            "#ED5706";
 
           $$(".swatch").forEach(
             swatch => {
               swatch.classList.toggle(
                 "active",
                 swatch.dataset.color ===
-                  "#E8590C"
+                  "#ED5706"
               );
             }
           );
 
           $$(".wf-paintable").forEach(
-            element =>
-              resetPaint(
-                element
-              )
+            removePaint
           );
 
-          $$(".wf-nav-item").forEach(
+          $$(".wf-check").forEach(
             item =>
               item.classList.remove(
-                "active"
+                "checked"
               )
-          );
-
-          $(
-            '.wf-nav-item[data-tab="dashboard"]'
-          )?.classList.add(
-            "active"
-          );
-
-          $$(".wf-view").forEach(
-            view => {
-              view.classList.toggle(
-                "active",
-                view.id ===
-                  "wf-dashboard"
-              );
-            }
           );
 
           deliveries =
             14;
 
-          $("#wfCounter").textContent =
+          $("#wfDeliveries").textContent =
             "14";
 
-          $$(".wf-task-item").forEach(
-            (
-              task,
-              index
-            ) => {
-              task.classList.toggle(
-                "checked",
-                index === 0
-              );
-            }
-          );
-
-          wfDark =
-            false;
+          wfAppMode =
+            true;
 
           wfWindow.style.removeProperty(
-            "--wf-bg-local"
+            "--wf-local-bg"
           );
 
           wfWindow.style.removeProperty(
-            "--wf-card-local"
+            "--wf-local-side"
           );
 
           wfWindow.style.removeProperty(
-            "--wf-text-local"
+            "--wf-local-card"
           );
 
-          $("#wfSwitchMode").textContent =
+          wfWindow.style.removeProperty(
+            "--wf-local-text"
+          );
+
+          $("#wfMode").textContent =
             "modo app";
-        }
-      );
 
-      /* =====================================================
-         FERNANDO TABS
-      ====================================================== */
-
-      $$(".fa-tab").forEach(
-        tab => {
-          tab.addEventListener(
-            "click",
-            () => {
-              $$(".fa-tab").forEach(
-                current =>
-                  current.classList.remove(
-                    "active"
-                  )
-              );
-
-              $$(".fa-view").forEach(
-                view =>
-                  view.classList.remove(
-                    "active"
-                  )
-              );
-
-              tab.classList.add(
+          $$(".wf-nav-item").forEach(
+            current =>
+              current.classList.remove(
                 "active"
-              );
+              )
+          );
 
-              $(
-                `[data-fa-view="${tab.dataset.faTab}"]`
-              )?.classList.add(
-                "active"
-              );
+          $(
+            '.wf-nav-item[data-wf-tab="dashboard"]'
+          )?.classList.add(
+            "active"
+          );
 
-              requestAnimationFrame(
-                resizeAllDesktopPreviews
-              );
-            }
+          $$(".wf-view").forEach(
+            view =>
+              view.classList.toggle(
+                "active",
+                view.id ===
+                  "wf-dashboard"
+              )
           );
         }
       );
 
       /* =====================================================
-         DESIGN SYSTEM
+         DESKTOP EMBED
       ====================================================== */
 
-      $$(".system-nav-btn").forEach(
-        button => {
-          button.addEventListener(
-            "click",
-            () => {
-              $$(".system-nav-btn").forEach(
-                current =>
-                  current.classList.remove(
-                    "active"
-                  )
-              );
-
-              $$(".system-panel").forEach(
-                panel =>
-                  panel.classList.remove(
-                    "active"
-                  )
-              );
-
-              button.classList.add(
-                "active"
-              );
-
-              $(
-                `[data-system-panel="${button.dataset.system}"]`
-              )?.classList.add(
-                "active"
-              );
-            }
-          );
-        }
-      );
-
-      const demoPrimary =
-        $("#faDemoPrimary");
-
-      $$(
-        "[data-fa-button-state]"
-      ).forEach(
-        button => {
-          button.addEventListener(
-            "click",
-            () => {
-              $$(
-                "[data-fa-button-state]"
-              ).forEach(
-                current =>
-                  current.classList.remove(
-                    "active"
-                  )
-              );
-
-              button.classList.add(
-                "active"
-              );
-
-              demoPrimary?.classList.remove(
-                "is-hover",
-                "is-disabled"
-              );
-
-              if(
-                button.dataset.faButtonState ===
-                "hover"
-              ) {
-                demoPrimary?.classList.add(
-                  "is-hover"
-                );
-              }
-
-              if(
-                button.dataset.faButtonState ===
-                "disabled"
-              ) {
-                demoPrimary?.classList.add(
-                  "is-disabled"
-                );
-              }
-            }
-          );
-        }
-      );
-
-      /* =====================================================
-         DESKTOP PREVIEWS
-      ====================================================== */
-
-      const DESKTOP_WIDTH =
+      const BASE_DESKTOP_WIDTH =
         1440;
 
-      function resizeDesktopPreview(
+      function resizeDesktopEmbed(
         viewport
       ) {
-        if(!viewport) {
-          return;
-        }
-
         const canvas =
           viewport.querySelector(
             ".fa-desktop-canvas"
           );
 
-        if(!canvas) {
+        if (!canvas) {
           return;
         }
 
-        const availableWidth =
+        const width =
           viewport.clientWidth;
 
-        if(
-          availableWidth <= 0
-        ) {
+        if (!width) {
           return;
         }
 
         const scale =
           Math.min(
             1,
-            availableWidth /
-              DESKTOP_WIDTH
+            width /
+              BASE_DESKTOP_WIDTH
           );
 
         canvas.style.transform =
           `scale(${scale})`;
 
-        const desiredHeight =
+        const baseHeight =
           Number(
             viewport.dataset.desktopHeight ||
-            700
+            740
           );
 
         viewport.style.height =
-          `${
-            desiredHeight *
-            scale
-          }px`;
+          `${baseHeight * scale}px`;
       }
 
-      function resizeAllDesktopPreviews() {
+      function resizeAllEmbeds() {
         $$(".fa-desktop-viewport").forEach(
-          resizeDesktopPreview
+          resizeDesktopEmbed
         );
       }
 
-      if(
-        "ResizeObserver" in window
+      window.addEventListener(
+        "load",
+        resizeAllEmbeds
+      );
+
+      window.addEventListener(
+        "resize",
+        resizeAllEmbeds,
+        {
+          passive: true
+        }
+      );
+
+      if (
+        "ResizeObserver" in
+        window
       ) {
         const observer =
           new ResizeObserver(
             entries => {
               entries.forEach(
-                entry =>
-                  resizeDesktopPreview(
+                entry => {
+                  resizeDesktopEmbed(
                     entry.target
-                  )
+                  );
+                }
               );
             }
           );
 
         $$(".fa-desktop-viewport").forEach(
-          viewport =>
+          element =>
             observer.observe(
-              viewport
+              element
             )
         );
       }
-
-      window.addEventListener(
-        "resize",
-        resizeAllDesktopPreviews,
-        {
-          passive:true
-        }
-      );
-
-      window.addEventListener(
-        "load",
-        resizeAllDesktopPreviews
-      );
 
       requestAnimationFrame(
-        resizeAllDesktopPreviews
+        resizeAllEmbeds
       );
-
-      /* =====================================================
-         TABS GENÉRICAS
-      ====================================================== */
-
-      $$(".case-tab").forEach(
-        button => {
-          button.addEventListener(
-            "click",
-            () => {
-              const caseName =
-                button.dataset.case;
-
-              const viewName =
-                button.dataset.view;
-
-              $$(
-                `.case-tab[data-case="${caseName}"]`
-              ).forEach(
-                current =>
-                  current.classList.remove(
-                    "active"
-                  )
-              );
-
-              $$(
-                `[data-case-view^="${caseName}-"]`
-              ).forEach(
-                view =>
-                  view.classList.remove(
-                    "active"
-                  )
-              );
-
-              button.classList.add(
-                "active"
-              );
-
-              $(
-                `[data-case-view="${caseName}-${viewName}"]`
-              )?.classList.add(
-                "active"
-              );
-            }
-          );
-        }
-      );
-
-      /* =====================================================
-         RENATA
-      ====================================================== */
-
-      const renataSlides = [
-        {
-          src:
-            "img/img-renata/renata-01.jpg",
-
-          alt:
-            "Renata Brandão — apresentação 01",
-
-          title:
-            "Entrada e posicionamento",
-
-          description:
-            "A capa estabelece a linguagem da apresentação e cria a primeira hierarquia entre tema, especialista e contexto."
-        },
-        {
-          src:
-            "img/img-renata/renata-02.jpg",
-
-          alt:
-            "Renata Brandão — apresentação 02",
-
-          title:
-            "Informação com direção",
-
-          description:
-            "A estrutura combina conteúdo estratégico, hierarquia tipográfica e apoio visual para reduzir densidade e orientar a leitura."
-        },
-        {
-          src:
-            "img/img-renata/renata-03.jpg",
-
-          alt:
-            "Renata Brandão — apresentação 03",
-
-          title:
-            "Consistência entre slides",
-
-          description:
-            "Elementos, escalas e grid permanecem coerentes para criar ritmo e unidade durante toda a apresentação."
-        }
-      ];
-
-      let renataIndex =
-        0;
-
-      const renataMain =
-        $("#renataMain");
-
-      const renataTitle =
-        $("#renataTitle");
-
-      const renataDescription =
-        $("#renataDescription");
-
-      const renataCounter =
-        $("#renataCounter");
-
-      const renataThumbs =
-        $("#renataThumbs");
-
-      const renataProgress =
-        $("#renataProgress");
-
-      function renderRenata() {
-        if(
-          !renataMain ||
-          !renataThumbs
-        ) {
-          return;
-        }
-
-        const current =
-          renataSlides[
-            renataIndex
-          ];
-
-        renataMain.src =
-          current.src;
-
-        renataMain.alt =
-          current.alt;
-
-        renataTitle.textContent =
-          current.title;
-
-        renataDescription.textContent =
-          current.description;
-
-        renataCounter.textContent =
-          `${
-            String(
-              renataIndex +
-              1
-            ).padStart(
-              2,
-              "0"
-            )
-          } / ${
-            String(
-              renataSlides.length
-            ).padStart(
-              2,
-              "0"
-            )
-          }`;
-
-        const progress =
-          (
-            (
-              renataIndex +
-              1
-            ) /
-            renataSlides.length
-          ) *
-          100;
-
-        renataProgress.style.setProperty(
-          "--renata-progress",
-          `${progress}%`
-        );
-
-        renataThumbs.innerHTML =
-          "";
-
-        renataSlides.forEach(
-          (
-            item,
-            index
-          ) => {
-            const button =
-              document.createElement(
-                "button"
-              );
-
-            button.type =
-              "button";
-
-            button.className =
-              "renata-thumb";
-
-            if(
-              index ===
-              renataIndex
-            ) {
-              button.classList.add(
-                "active"
-              );
-            }
-
-            button.innerHTML =
-              `
-                <img
-                  src="${item.src}"
-                  alt="Miniatura ${
-                    index + 1
-                  }"
-                >
-              `;
-
-            button.addEventListener(
-              "click",
-              () => {
-                renataIndex =
-                  index;
-
-                renderRenata();
-              }
-            );
-
-            renataThumbs.appendChild(
-              button
-            );
-          }
-        );
-
-        const activeThumb =
-          renataThumbs.children[
-            renataIndex
-          ];
-
-        activeThumb?.scrollIntoView({
-          behavior:"smooth",
-          inline:"center",
-          block:"nearest"
-        });
-      }
-
-      $("#renataPrev")?.addEventListener(
-        "click",
-        () => {
-          renataIndex =
-            (
-              renataIndex -
-              1 +
-              renataSlides.length
-            ) %
-            renataSlides.length;
-
-          renderRenata();
-        }
-      );
-
-      $("#renataNext")?.addEventListener(
-        "click",
-        () => {
-          renataIndex =
-            (
-              renataIndex +
-              1
-            ) %
-            renataSlides.length;
-
-          renderRenata();
-        }
-      );
-
-      renderRenata();
-
-      /* =====================================================
-         BRADUCA
-      ====================================================== */
-
-      const braducaCase =
-        $("#braducaCase");
-
-      const braducaPreview =
-        $("#braducaPreview");
-
-      const braducaPosition =
-        $("#braducaPosition");
-
-      $$(
-        ".editorial-card",
-        braducaCase
-      ).forEach(
-        card => {
-          card.addEventListener(
-            "click",
-            () => {
-              $$(
-                ".editorial-card",
-                braducaCase
-              ).forEach(
-                current =>
-                  current.classList.remove(
-                    "active"
-                  )
-              );
-
-              card.classList.add(
-                "active"
-              );
-
-              const image =
-                $("img",card);
-
-              if(!image) {
-                return;
-              }
-
-              braducaPreview.src =
-                image.src;
-
-              braducaPreview.alt =
-                image.alt;
-
-              const index =
-                Number(
-                  card.dataset.index
-                );
-
-              braducaPosition.textContent =
-                `${
-                  String(
-                    index + 1
-                  ).padStart(
-                    2,
-                    "0"
-                  )
-                } / 07`;
-            }
-          );
-        }
-      );
-
-      /* =====================================================
-         AYMÉE
-      ====================================================== */
-
-      const aymeeImages = [
-        "img/Aymee-img/img-01.jpeg",
-        "img/Aymee-img/img-02.jpeg",
-        "img/Aymee-img/img-03.jpeg",
-        "img/Aymee-img/img-04.jpeg",
-        "img/Aymee-img/img-05.jpeg",
-        "img/Aymee-img/img-06.jpeg",
-        "img/Aymee-img/img-07.jpeg",
-        "img/Aymee-img/img-08.jpeg",
-        "img/Aymee-img/img-09.jpeg",
-        "img/Aymee-img/img-10.jpeg"
-      ];
-
-      const aymeeGrid =
-        $("#aymeeGrid");
-
-      function renderAymee() {
-        if(!aymeeGrid) {
-          return;
-        }
-
-        aymeeGrid.innerHTML =
-          "";
-
-        aymeeImages.forEach(
-          (
-            src,
-            index
-          ) => {
-            const button =
-              document.createElement(
-                "button"
-              );
-
-            button.type =
-              "button";
-
-            button.className =
-              "brand-card";
-
-            button.innerHTML =
-              `
-                <img
-                  class="js-lightbox"
-                  src="${src}"
-                  alt="Aymée Ferraz — Post ${
-                    String(
-                      index + 1
-                    ).padStart(
-                      2,
-                      "0"
-                    )
-                  }"
-                  loading="lazy"
-                >
-              `;
-
-            aymeeGrid.appendChild(
-              button
-            );
-          }
-        );
-
-        registerLightboxImages(
-          aymeeGrid
-        );
-      }
-
-      /* =====================================================
-         LIGHTBOX
-      ====================================================== */
-
-      const lightbox =
-        $("#lightbox");
-
-      const lightboxImage =
-        $("#lightboxImage");
-
-      const lightboxClose =
-        $("#lightboxClose");
-
-      let lightboxTrigger =
-        null;
-
-      function openLightbox(
-        image,
-        trigger
-      ) {
-        lightboxTrigger =
-          trigger;
-
-        lightboxImage.src =
-          image.currentSrc ||
-          image.src;
-
-        lightboxImage.alt =
-          image.alt;
-
-        lightbox.classList.add(
-          "open"
-        );
-
-        lightbox.setAttribute(
-          "aria-hidden",
-          "false"
-        );
-
-        document.body.classList.add(
-          "locked"
-        );
-
-        lightboxClose.focus();
-      }
-
-      function closeLightbox() {
-        if(
-          !lightbox.classList.contains(
-            "open"
-          )
-        ) {
-          return;
-        }
-
-        lightbox.classList.remove(
-          "open"
-        );
-
-        lightbox.setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-        document.body.classList.remove(
-          "locked"
-        );
-
-        lightboxImage.removeAttribute(
-          "src"
-        );
-
-        if(
-          lightboxTrigger instanceof
-          HTMLElement
-        ) {
-          lightboxTrigger.focus();
-        }
-
-        lightboxTrigger =
-          null;
-      }
-
-      function registerLightboxImages(
-        root = document
-      ) {
-        $$(
-          ".js-lightbox",
-          root
-        ).forEach(
-          image => {
-            if(
-              image.dataset.lightboxReady ===
-              "1"
-            ) {
-              return;
-            }
-
-            image.dataset.lightboxReady =
-              "1";
-
-            const trigger =
-              image.closest(
-                "button"
-              ) ||
-              image;
-
-            if(
-              !image.closest(
-                "button"
-              )
-            ) {
-              image.setAttribute(
-                "role",
-                "button"
-              );
-
-              image.tabIndex =
-                image.tabIndex >= 0
-                  ? image.tabIndex
-                  : 0;
-            }
-
-            const activate =
-              event => {
-                if(
-                  event.type ===
-                    "keydown" &&
-                  event.key !==
-                    "Enter" &&
-                  event.key !==
-                    " "
-                ) {
-                  return;
-                }
-
-                if(
-                  event.type ===
-                  "keydown"
-                ) {
-                  event.preventDefault();
-                }
-
-                openLightbox(
-                  image,
-                  trigger
-                );
-              };
-
-            trigger.addEventListener(
-              "click",
-              activate
-            );
-
-            if(
-              !image.closest(
-                "button"
-              )
-            ) {
-              trigger.addEventListener(
-                "keydown",
-                activate
-              );
-            }
-          }
-        );
-      }
-
-      lightboxClose.addEventListener(
-        "click",
-        closeLightbox
-      );
-
-      lightbox.addEventListener(
-        "click",
-        event => {
-          if(
-            event.target ===
-            lightbox
-          ) {
-            closeLightbox();
-          }
-        }
-      );
-
-      document.addEventListener(
-        "keydown",
-        event => {
-          if(
-            event.key ===
-            "Escape"
-          ) {
-            closeLightbox();
-          }
-        }
-      );
-
-      renderAymee();
-
-      registerLightboxImages();
 
     })();
   </script>
