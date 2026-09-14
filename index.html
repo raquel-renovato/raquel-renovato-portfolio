@@ -162,6 +162,10 @@
       outline-offset: 4px;
     }
 
+    /* =========================================================
+       INTRO
+       ========================================================= */
+
     body.intro-active {
       overflow: hidden;
       height: 100vh;
@@ -201,7 +205,9 @@
     .intro-word-cycle {
       position: relative;
       display: inline-block;
+
       height: 1.15em;
+
       vertical-align: bottom;
       overflow: hidden;
     }
@@ -214,6 +220,7 @@
       white-space: nowrap;
 
       color: var(--accent);
+
       font-style: italic;
       font-weight: 400;
 
@@ -244,6 +251,10 @@
       opacity: 1;
     }
 
+    /* =========================================================
+       NAV
+       ========================================================= */
+
     nav {
       position: sticky;
       top: 0;
@@ -264,6 +275,7 @@
 
     .nav-left {
       justify-self: start;
+
       display: flex;
       align-items: center;
       gap: 20px;
@@ -271,9 +283,11 @@
 
     .logo {
       color: var(--ink);
+
       font-family: "Fraunces", serif;
       font-size: 1.05rem;
       font-weight: 500;
+
       text-decoration: none;
     }
 
@@ -291,6 +305,7 @@
       color: var(--ink);
 
       font-size: 0.72rem;
+
       cursor: pointer;
     }
 
@@ -299,9 +314,11 @@
 
       display: flex;
       align-items: center;
+
       gap: 32px;
 
       list-style: none;
+
       font-size: 0.78rem;
     }
 
@@ -325,6 +342,7 @@
       border: 1px solid var(--ink);
 
       color: var(--ink);
+
       font-size: 0.78rem;
       text-decoration: none;
     }
@@ -334,10 +352,16 @@
       background: var(--ink);
     }
 
+    /* =========================================================
+       HERO
+       ========================================================= */
+
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
+
       gap: 40px;
+
       align-items: center;
 
       padding: 90px var(--page-pad) 70px;
@@ -364,6 +388,7 @@
 
     .hero h1 em {
       color: var(--accent);
+
       font-style: italic;
       font-weight: 400;
     }
@@ -387,12 +412,14 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+
       gap: 20px;
     }
 
     .hero-cta {
       display: inline-flex;
       align-items: center;
+
       gap: 8px;
 
       padding-bottom: 4px;
@@ -400,26 +427,35 @@
       border-bottom: 1.5px solid var(--accent);
 
       color: var(--accent);
+
       font-size: 0.85rem;
       font-weight: 500;
+
       text-decoration: none;
     }
 
     .hero-secondary-link {
       color: var(--dim);
+
       font-size: 0.72rem;
       text-decoration: none;
     }
+
+    /* =========================================================
+       HERO WIREFRAME
+       ========================================================= */
 
     .hero-visual {
       display: flex;
       flex-direction: column;
       align-items: center;
+
       gap: 16px;
     }
 
     .wf-wrapper {
       position: relative;
+
       width: 100%;
       max-width: 380px;
     }
@@ -427,12 +463,14 @@
     .wf-illustration {
       position: absolute;
       z-index: 10;
+
       pointer-events: none;
     }
 
     .pen-tool-svg {
       top: -28px;
       left: -28px;
+
       width: 76px;
       height: 76px;
     }
@@ -443,6 +481,7 @@
 
       display: flex;
       align-items: center;
+
       gap: 5px;
 
       padding: 3px 10px;
@@ -536,6 +575,7 @@
       justify-content: space-between;
 
       height: 34px;
+
       padding: 0 14px;
 
       border-bottom: 1px solid var(--wf-line);
@@ -569,18 +609,21 @@
       color: var(--dim);
 
       font-size: 0.62rem;
+
       cursor: pointer;
     }
 
     .wf-body {
       display: flex;
       flex: 1;
+
       min-height: 0;
     }
 
     .wf-sidebar {
       display: flex;
       flex-direction: column;
+
       gap: 6px;
 
       width: 110px;
@@ -595,6 +638,7 @@
     .wf-nav-item {
       display: flex;
       align-items: center;
+
       gap: 6px;
 
       padding: 6px 8px;
@@ -613,11 +657,13 @@
     .wf-nav-item.active {
       background: var(--accent);
       color: #FFF;
+
       font-weight: 500;
     }
 
     .wf-main {
       flex: 1;
+
       min-width: 0;
 
       padding: 12px;
@@ -630,6 +676,7 @@
     .wf-view {
       display: none;
       flex-direction: column;
+
       gap: 10px;
 
       width: 100%;
@@ -644,6 +691,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 8px;
     }
 
@@ -662,18 +710,21 @@
       color: #FFF;
 
       font-size: 0.62rem;
+
       cursor: pointer;
     }
 
     .wf-card-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 8px;
     }
 
     .wf-card {
       display: flex;
       flex-direction: column;
+
       gap: 4px;
 
       padding: 8px;
@@ -688,6 +739,7 @@
 
     .wf-card-label {
       color: var(--muted);
+
       font-size: 0.58rem;
     }
 
@@ -699,6 +751,7 @@
     .wf-task-list {
       display: flex;
       flex-direction: column;
+
       gap: 5px;
 
       margin-top: 2px;
@@ -707,6 +760,7 @@
     .wf-task-item {
       display: flex;
       align-items: center;
+
       gap: 6px;
 
       padding: 3px 4px;
@@ -801,6 +855,10 @@
       text-align: center;
     }
 
+    /* =========================================================
+       PROCESSO
+       ========================================================= */
+
     .process-fold-section {
       margin: 20px 0 40px;
 
@@ -833,6 +891,7 @@
     .process-fold-card {
       display: flex;
       flex-direction: column;
+
       gap: 10px;
 
       padding: 24px;
@@ -864,6 +923,10 @@
       line-height: 1.6;
     }
 
+    /* =========================================================
+       SECTION HEAD
+       ========================================================= */
+
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -880,15 +943,22 @@
 
     .section-head.centered {
       justify-content: center;
+
       text-align: center;
     }
+
+    /* =========================================================
+       SOBRE
+       ========================================================= */
 
     .constructivist-about {
       position: relative;
 
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 60px;
+
       align-items: center;
 
       padding: 20px var(--page-pad) 90px;
@@ -994,7 +1064,6 @@
 
     .const-photo-frame {
       position: relative;
-
       z-index: 3;
 
       width: 66%;
@@ -1015,12 +1084,15 @@
     .const-photo-frame img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
     }
 
     .const-floater {
       position: absolute;
+
       z-index: 5;
+
       pointer-events: none;
     }
 
@@ -1072,6 +1144,10 @@
       font-size: 0.62rem;
     }
 
+    /* =========================================================
+       PROJETOS — GERAL
+       ========================================================= */
+
     .project-block {
       padding: 56px 0 10px;
     }
@@ -1082,6 +1158,7 @@
 
     .project-head {
       padding: 0 var(--page-pad);
+
       margin-bottom: 30px;
     }
 
@@ -1176,6 +1253,10 @@
       font-size: 0.67rem;
     }
 
+    /* =========================================================
+       FERNANDO
+       ========================================================= */
+
     .fernando-summary {
       max-width: 810px !important;
 
@@ -1222,6 +1303,7 @@
 
     .fernando-overview-card .project-block-label {
       margin-bottom: 28px;
+
       font-size: 0.58rem;
     }
 
@@ -1387,7 +1469,6 @@
       font-weight: 600;
 
       text-decoration: none;
-
       white-space: nowrap;
     }
 
@@ -1572,6 +1653,7 @@
 
     .fernando-decision-heading > span {
       color: var(--accent);
+
       font-size: 0.55rem;
     }
 
@@ -1585,11 +1667,13 @@
 
     .fernando-decision-heading p {
       color: var(--dim);
+
       font-size: 0.86rem;
     }
 
     .fernando-decisions {
       display: grid;
+
       gap: 18px;
     }
 
@@ -1677,15 +1761,21 @@
     }
 
     .fernando-decision-media {
+      width: 100%;
+      min-width: 0;
       height: 390px;
 
       overflow: hidden;
 
       border: 1px solid var(--line);
       border-radius: 8px;
+
+      background: #FFF;
     }
 
     .fernando-decision-media img {
+      display: block;
+
       width: 100%;
       height: 100%;
 
@@ -1749,6 +1839,10 @@
       transform-origin: top left;
     }
 
+    /* =========================================================
+       FERNANDO — BROWSER / COMPARE / SYSTEM
+       ========================================================= */
+
     .fa-browser {
       position: relative;
 
@@ -1781,6 +1875,7 @@
 
     .fa-browser-dots {
       display: flex;
+
       gap: 5px;
     }
 
@@ -1890,6 +1985,7 @@
 
     .fernando-compare-copy > span {
       color: var(--accent);
+
       font-size: 0.52rem;
     }
 
@@ -1957,6 +2053,7 @@
 
     .fernando-compare-browsers {
       grid-template-columns: 1fr 1fr !important;
+
       align-items: stretch;
     }
 
@@ -1987,6 +2084,7 @@
 
     .fernando-compare-points span {
       color: var(--accent);
+
       font-size: 0.49rem;
     }
 
@@ -2050,6 +2148,7 @@
       color: var(--dim);
 
       font-size: 0.65rem;
+
       text-align: left;
 
       cursor: pointer;
@@ -2249,15 +2348,6 @@
       color: var(--fa-navy);
     }
 
-    .fa-primary-demo.is-hover {
-      transform: translateY(-2px);
-      filter: brightness(0.86);
-    }
-
-    .fa-primary-demo.is-disabled {
-      opacity: 0.35;
-    }
-
     .fa-state-controls {
       display: flex;
       flex-wrap: wrap;
@@ -2285,198 +2375,6 @@
     .fa-state-controls button.active {
       border-color: var(--accent);
       color: var(--accent);
-    }
-
-    .fa-quality-card {
-      padding: 16px;
-
-      border: 1px solid #CED3D7;
-      border-radius: 7px;
-
-      background: #FFF;
-      color: #0D2E48;
-    }
-
-    .fa-quality-card.dark {
-      border-color: #00152A;
-
-      background: #00152A;
-      color: #FFF;
-    }
-
-    .fa-quality-card p {
-      margin-top: 7px;
-
-      font-size: 0.66rem;
-      line-height: 1.5;
-    }
-
-    .fa-nav-preview {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-
-      align-items: center;
-
-      gap: 22px;
-
-      padding: 18px;
-
-      border: 1px solid #D1D8DF;
-      border-radius: 7px;
-
-      background: #FFF;
-      color: #00152A;
-    }
-
-    .fa-nav-preview > strong {
-      font-family: "Manrope", sans-serif;
-      font-size: 0.69rem;
-    }
-
-    .fa-nav-preview-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
-      gap: 15px;
-
-      font-size: 0.54rem;
-    }
-
-    .fa-nav-preview > button {
-      padding: 8px 10px;
-
-      border: 1px solid #00152A;
-      border-radius: 5px;
-
-      background: transparent;
-      color: #00152A;
-
-      font-size: 0.51rem;
-    }
-
-    .fa-mobile-nav-preview {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      gap: 15px;
-
-      padding: 16px;
-
-      border: 1px solid #D1D8DF;
-      border-radius: 7px;
-
-      background: #FFF;
-      color: #00152A;
-    }
-
-    .fa-mobile-nav-preview strong {
-      font-family: "Manrope", sans-serif;
-      font-size: 0.65rem;
-    }
-
-    .fa-mobile-nav-preview button {
-      width: 37px;
-      height: 37px;
-
-      border: 1px solid #C5CED8;
-      border-radius: 6px;
-
-      background: #FFF;
-      color: #00152A;
-    }
-
-    .fa-form-system-demo {
-      display: grid;
-      gap: 13px;
-    }
-
-    .fa-form-system-row {
-      display: grid;
-      gap: 11px;
-    }
-
-    .fa-form-system-row.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .fa-form-system-row.three {
-      grid-template-columns: 0.8fr 1.1fr 1fr;
-    }
-
-    .fa-form-system-demo label {
-      display: grid;
-      gap: 6px;
-    }
-
-    .fa-form-system-demo label > span {
-      color: #64748B;
-
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.47rem;
-    }
-
-    .fa-form-system-demo input,
-    .fa-form-system-demo select,
-    .fa-form-system-demo textarea {
-      width: 100%;
-
-      border: 1px solid #8297AD;
-      border-radius: 7px;
-
-      background: #FFF;
-      color: #00152A;
-
-      font-family: "DM Sans", sans-serif;
-      font-size: 0.65rem;
-    }
-
-    .fa-form-system-demo input,
-    .fa-form-system-demo select {
-      min-height: 43px;
-      padding: 0 11px;
-    }
-
-    .fa-form-system-demo textarea {
-      min-height: 95px;
-      padding: 11px;
-    }
-
-    .fa-system-token-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-
-      gap: 8px;
-    }
-
-    .fa-system-token-grid > div {
-      min-height: 103px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-
-      padding: 14px;
-
-      border: 1px solid var(--line);
-      border-radius: 6px;
-    }
-
-    .fa-system-token-grid strong {
-      color: var(--accent);
-
-      font-family: "Fraunces", serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-    }
-
-    .fa-system-token-grid span {
-      margin-top: 6px;
-
-      color: var(--dim);
-
-      font-size: 0.61rem;
     }
 
     .fa-responsive-showcase {
@@ -2509,12 +2407,6 @@
       box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
     }
 
-    .fa-device-desktop,
-    .fa-device-mobile-artboard {
-      display: flex;
-      flex-direction: column;
-    }
-
     .fa-mobile-artboard-bar {
       min-height: 38px;
 
@@ -2538,8 +2430,6 @@
     }
 
     .fa-mobile-artboard-stage {
-      flex: 1;
-
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -2550,11 +2440,12 @@
 
       overflow: hidden;
 
-      background: linear-gradient(
-        180deg,
-        #F8F8F7 0%,
-        #EFEDE9 100%
-      );
+      background:
+        linear-gradient(
+          180deg,
+          #F8F8F7 0%,
+          #EFEDE9 100%
+        );
     }
 
     .fa-mobile-artboard-viewport {
@@ -2647,60 +2538,6 @@
       line-height: 1.6;
     }
 
-    .fa-figma-shell {
-      overflow: hidden;
-
-      border: 1px solid var(--line);
-      border-radius: 10px;
-    }
-
-    .fa-figma-head {
-      min-height: 66px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      padding: 13px 16px;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .fa-figma-head span {
-      color: var(--accent);
-
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.48rem;
-    }
-
-    .fa-figma-head strong {
-      display: block;
-
-      margin-top: 4px;
-
-      font-family: "Fraunces", serif;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    .fa-figma-head a {
-      color: var(--accent);
-
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.5rem;
-
-      text-decoration: none;
-    }
-
-    .fa-figma-frame iframe {
-      width: 100%;
-      height: 700px;
-
-      border: 0;
-    }
-
     .fernando-closing {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
@@ -2729,6 +2566,7 @@
     .fernando-closing-main span,
     .fernando-closing-grid span {
       color: var(--accent);
+
       font-size: 0.49rem;
     }
 
@@ -2761,9 +2599,9 @@
       padding: 27px;
     }
 
-    .fernando-closing-grid p {
-      margin-top: 17px;
-    }
+    /* =========================================================
+       GALERIAS
+       ========================================================= */
 
     .strip {
       display: flex;
@@ -2811,12 +2649,6 @@
       aspect-ratio: 1080 / 1350;
     }
 
-    .strip-item.widescreen {
-      width: min(56vw, 460px);
-
-      aspect-ratio: 1920 / 1080;
-    }
-
     .voit-strip .voit-card {
       flex: 0 0 auto;
 
@@ -2835,12 +2667,6 @@
       object-fit: cover;
     }
 
-    .project-full-link-row {
-      padding: 0 var(--page-pad);
-
-      margin: -6px 0 26px;
-    }
-
     .strip-nav {
       display: flex;
       align-items: center;
@@ -2854,6 +2680,7 @@
 
     .strip-nav-arrows {
       display: flex;
+
       gap: 8px;
     }
 
@@ -2882,6 +2709,386 @@
 
       text-decoration: none;
     }
+
+    /* =========================================================
+       VOIT — NOVA ESTRUTURA
+       ========================================================= */
+
+    .voit-case-shell {
+      padding: 0 var(--page-pad) 30px;
+    }
+
+    .voit-intro-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+
+      gap: 16px;
+
+      margin-bottom: 28px;
+    }
+
+    .voit-overview {
+      padding: 28px;
+
+      border: 1px solid var(--line);
+      border-radius: 12px;
+
+      background: var(--card);
+    }
+
+    .voit-overview > span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.54rem;
+    }
+
+    .voit-overview h4 {
+      margin: 18px 0 15px;
+
+      font-family: "Fraunces", serif;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 400;
+      line-height: 1.06;
+    }
+
+    .voit-overview p {
+      color: var(--dim);
+
+      font-size: 0.83rem;
+      line-height: 1.75;
+    }
+
+    .voit-overview-tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-top: 25px;
+    }
+
+    .voit-overview-tags span {
+      padding: 6px 9px;
+
+      border: 1px solid var(--line);
+      border-radius: 999px;
+
+      color: var(--dim);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .voit-scope-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 10px;
+    }
+
+    .voit-scope-card {
+      padding: 22px;
+
+      border: 1px solid var(--line);
+      border-radius: 9px;
+
+      background: var(--bg);
+    }
+
+    .voit-scope-card span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.49rem;
+    }
+
+    .voit-scope-card h5 {
+      margin: 13px 0 8px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    .voit-scope-card p {
+      color: var(--dim);
+
+      font-size: 0.72rem;
+      line-height: 1.62;
+    }
+
+    .voit-tabs {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+
+      margin-bottom: 20px;
+
+      overflow-x: auto;
+
+      scrollbar-width: none;
+    }
+
+    .voit-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .voit-tab {
+      flex: 0 0 auto;
+
+      min-height: 38px;
+
+      padding: 0 14px;
+
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+
+      background: transparent;
+      color: var(--dim);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+
+      cursor: pointer;
+    }
+
+    .voit-tab.active {
+      border-color: var(--accent);
+
+      background: var(--accent);
+      color: #FFF;
+    }
+
+    .voit-view {
+      display: none;
+    }
+
+    .voit-view.active {
+      display: block;
+    }
+
+    .voit-view-intro {
+      max-width: 760px;
+
+      margin-bottom: 24px;
+    }
+
+    .voit-view-intro span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .voit-view-intro h4 {
+      margin: 9px 0 9px;
+
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+      font-weight: 400;
+    }
+
+    .voit-view-intro p {
+      color: var(--dim);
+
+      font-size: 0.82rem;
+      line-height: 1.68;
+    }
+
+    .voit-social-gallery {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--bg);
+    }
+
+    .voit-social-gallery .strip {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .voit-gallery-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 16px;
+
+      padding: 15px 18px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .voit-gallery-toolbar span {
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.54rem;
+    }
+
+    .voit-gallery-toolbar strong {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.54rem;
+    }
+
+    .voit-articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 10px;
+    }
+
+    .voit-article-card {
+      position: relative;
+
+      min-height: 240px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 22px;
+
+      border: 1px solid var(--line);
+      border-radius: 9px;
+
+      background: var(--bg);
+    }
+
+    .voit-article-number {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .voit-article-card h5 {
+      margin: 26px 0 10px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .voit-article-card p {
+      color: var(--dim);
+
+      font-size: 0.73rem;
+      line-height: 1.65;
+    }
+
+    .voit-article-placeholder {
+      margin-top: auto;
+      padding-top: 24px;
+
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .voit-materials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 10px;
+    }
+
+    .voit-material-card {
+      min-height: 230px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 22px;
+
+      border: 1px solid var(--line);
+      border-radius: 9px;
+
+      background: var(--bg);
+    }
+
+    .voit-material-card > span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.49rem;
+    }
+
+    .voit-material-card h5 {
+      margin: 20px 0 10px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .voit-material-card p {
+      color: var(--dim);
+
+      font-size: 0.72rem;
+      line-height: 1.65;
+    }
+
+    .voit-material-card small {
+      margin-top: auto;
+      padding-top: 22px;
+
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .voit-process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+
+      gap: 10px;
+    }
+
+    .voit-process-card {
+      min-height: 250px;
+
+      padding: 22px;
+
+      border: 1px solid var(--line);
+      border-radius: 9px;
+
+      background: var(--bg);
+    }
+
+    .voit-process-card > span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .voit-process-card h5 {
+      margin: 42px 0 10px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    .voit-process-card p {
+      color: var(--dim);
+
+      font-size: 0.7rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       RENATA
+       ========================================================= */
 
     .renata-presentation {
       padding: 0 var(--page-pad) 20px;
@@ -2925,7 +3132,9 @@
 
     .renata-deck-dots {
       display: flex;
+
       gap: 5px;
+
       flex: 0 0 auto;
     }
 
@@ -2965,8 +3174,6 @@
     .renata-deck-body {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 310px;
-
-      min-height: 0;
     }
 
     .renata-stage-column {
@@ -3006,16 +3213,6 @@
       background: #FFF;
 
       cursor: zoom-in;
-
-      transition:
-        opacity 0.18s ease,
-        transform 0.25s ease;
-    }
-
-    .renata-stage.is-changing img {
-      opacity: 0.3;
-
-      transform: scale(0.992);
     }
 
     .renata-stage-number {
@@ -3034,8 +3231,6 @@
 
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.52rem;
-
-      pointer-events: none;
     }
 
     .renata-toolbar {
@@ -3076,19 +3271,6 @@
       font-size: 0.62rem;
 
       cursor: pointer;
-
-      transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .renata-deck-button:hover {
-      border-color: var(--accent);
-
-      background: var(--accent);
-
-      transform: translateY(-1px);
     }
 
     .renata-slide-position {
@@ -3172,26 +3354,12 @@
       height: 100%;
 
       background: var(--accent);
-
-      transition: width 0.3s ease;
-    }
-
-    .renata-scope {
-      display: grid;
-
-      gap: 0;
-
-      margin-top: 4px;
     }
 
     .renata-scope article {
       padding: 15px 0;
 
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .renata-scope article:last-child {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .renata-scope span {
@@ -3214,7 +3382,6 @@
 
     .renata-side-link {
       display: inline-flex;
-      align-items: center;
 
       width: fit-content;
 
@@ -3232,6 +3399,10 @@
 
       text-decoration: none;
     }
+
+    /* =========================================================
+       SOCIAL
+       ========================================================= */
 
     .social-compact-block .project-summary {
       max-width: 800px;
@@ -3305,11 +3476,11 @@
 
       margin-bottom: 4px;
 
+      color: var(--accent);
+
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.52rem;
       font-weight: 600;
-
-      color: var(--accent);
     }
 
     .social-showcase-note span {
@@ -3340,20 +3511,23 @@
       margin-bottom: 15px;
     }
 
-    .social-gallery-head span {
-      color: var(--muted);
-
+    .social-gallery-head span,
+    .social-gallery-head strong {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.53rem;
+    }
+
+    .social-gallery-head span {
+      color: var(--muted);
     }
 
     .social-gallery-head strong {
       color: var(--accent);
-
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.53rem;
-      font-weight: 600;
     }
+
+    /* =========================================================
+       SKILLS / CONTATO
+       ========================================================= */
 
     .skills {
       padding: 0 var(--page-pad) 70px;
@@ -3376,6 +3550,7 @@
 
     .skill-item h3 {
       margin-bottom: 10px;
+
       font-size: 0.9rem;
     }
 
@@ -3453,8 +3628,13 @@
 
     footer a {
       color: var(--dim);
+
       text-decoration: none;
     }
+
+    /* =========================================================
+       MODAL
+       ========================================================= */
 
     .img-modal {
       position: fixed;
@@ -3497,88 +3677,9 @@
       cursor: pointer;
     }
 
-    .drawer-overlay {
-      position: fixed;
-      inset: 0;
-
-      z-index: 800;
-
-      display: none;
-
-      background: rgba(0, 0, 0, 0.65);
-    }
-
-    .drawer-overlay.active {
-      display: block;
-    }
-
-    .side-drawer {
-      position: fixed;
-      top: 0;
-      right: -100%;
-
-      z-index: 900;
-
-      width: 100%;
-      max-width: 600px;
-      height: 100%;
-
-      padding: 50px 40px;
-
-      overflow-y: auto;
-
-      background: var(--bg);
-
-      transition: right 0.4s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .side-drawer.active {
-      right: 0;
-    }
-
-    .drawer-close-btn {
-      margin-bottom: 30px;
-
-      border: 0;
-
-      background: none;
-      color: var(--ink);
-
-      cursor: pointer;
-    }
-
-    .drawer-header {
-      margin-bottom: 36px;
-
-      padding-bottom: 20px;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .drawer-header h2 {
-      margin: 10px 0 12px;
-
-      font-family: "Fraunces", serif;
-      font-size: 2rem;
-      font-weight: 400;
-    }
-
-    .drawer-header p,
-    .drawer-section p {
-      color: var(--dim);
-
-      line-height: 1.7;
-    }
-
-    .drawer-section {
-      margin-bottom: 40px;
-    }
-
-    .drawer-section h3 {
-      margin-bottom: 12px;
-
-      color: var(--accent);
-    }
+    /* =========================================================
+       RESPONSIVO
+       ========================================================= */
 
     @media (max-width: 1050px) {
       .fernando-case-editorial {
@@ -3594,33 +3695,12 @@
         display: block;
       }
 
-      .fernando-decision {
-        grid-template-columns: 40px 1fr;
+      .voit-process-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .fa-system {
-        grid-template-columns: 1fr;
-      }
-
-      .fa-system-sidebar {
-        display: flex;
-
-        gap: 6px;
-
-        overflow-x: auto;
-      }
-
-      .fa-system-sidebar > span {
-        display: none;
-      }
-
-      .fa-system-btn {
-        flex: 0 0 auto;
-        width: auto;
-      }
-
-      .social-showcase-grid {
-        grid-template-columns: 1fr;
+      .voit-materials-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -3634,8 +3714,8 @@
         border-left: 0;
       }
 
-      .renata-side-link {
-        margin-top: 24px;
+      .voit-intro-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -3664,10 +3744,7 @@
       }
 
       .process-fold-grid,
-      .constructivist-about {
-        grid-template-columns: 1fr;
-      }
-
+      .constructivist-about,
       .case-grid,
       .fernando-overview-grid {
         grid-template-columns: 1fr;
@@ -3692,10 +3769,103 @@
         display: none;
       }
 
-      .fernando-case-editorial-list,
-      .fernando-rationale,
-      .fernando-compare-points,
-      .fa-responsive-notes {
+      .fernando-tabs-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .fernando-product-link {
+        align-self: flex-start;
+      }
+
+      .fernando-case-editorial-list {
+        grid-template-columns: 1fr;
+      }
+
+      /* =====================================================
+         CORREÇÃO PRINCIPAL DO FERNANDO NO MOBILE
+         ===================================================== */
+
+      .fernando-decision {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        align-items: stretch;
+
+        padding: 22px;
+      }
+
+      .fernando-decision-number {
+        width: fit-content;
+      }
+
+      .fernando-decision-copy {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .fernando-rationale {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+      }
+
+      .fernando-rationale > div {
+        width: 100%;
+        min-height: auto;
+
+        padding: 18px;
+      }
+
+      .fernando-decision-media {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+
+        aspect-ratio: 16 / 10;
+      }
+
+      .fernando-decision-media img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .fernando-device-pair {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        gap: 18px;
+      }
+
+      .fernando-mini-desktop {
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 16 / 10;
+      }
+
+      .fernando-mini-mobile {
+        width: min(250px, 78vw);
+        height: 510px;
+
+        margin: 0 auto;
+      }
+
+      .fernando-mini-mobile iframe {
+        width: 390px;
+        height: 900px;
+
+        transform: scale(0.595);
+      }
+
+      .fernando-compare-section {
         grid-template-columns: 1fr;
       }
 
@@ -3703,15 +3873,48 @@
         grid-template-columns: 1fr !important;
       }
 
+      .fernando-compare-points {
+        grid-template-columns: 1fr;
+      }
+
       .fa-responsive-showcase {
         grid-template-columns: 1fr;
       }
 
-      .fa-color-grid,
-      .fa-type-grid,
-      .fa-component-grid,
-      .fa-form-system-row.two,
-      .fa-form-system-row.three {
+      .fa-responsive-notes {
+        grid-template-columns: 1fr;
+      }
+
+      .fernando-closing {
+        grid-template-columns: 1fr;
+      }
+
+      .fernando-closing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fernando-closing-main,
+      .fernando-closing-grid article {
+        padding: 22px;
+      }
+
+      .voit-scope-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .voit-articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .voit-materials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .voit-process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-showcase-grid {
         grid-template-columns: 1fr;
       }
 
@@ -3722,13 +3925,48 @@
       .strip-item.ig-ratio {
         width: 70vw;
       }
-
-      .strip-item.widescreen {
-        width: 80vw;
-      }
     }
 
     @media (max-width: 620px) {
+      .fernando-case-shell,
+      .voit-case-shell {
+        padding-inline: 16px;
+      }
+
+      .fernando-decision {
+        padding: 18px;
+      }
+
+      .fernando-decision-heading {
+        margin-top: 48px;
+      }
+
+      .fernando-rationale > div {
+        padding: 17px;
+      }
+
+      .fernando-decision-media {
+        aspect-ratio: 4 / 3;
+      }
+
+      .fernando-case-editorial-main {
+        min-height: auto;
+
+        padding: 22px;
+      }
+
+      .fernando-case-editorial-main h4 {
+        font-size: 2rem;
+      }
+
+      .fernando-editorial-point {
+        padding: 18px;
+      }
+
+      .fernando-editorial-point-number {
+        margin-bottom: 15px;
+      }
+
       .renata-presentation {
         padding-inline: 16px;
       }
@@ -3767,13 +4005,21 @@
       .social-gallery-shell {
         padding: 18px;
       }
+
+      .voit-overview,
+      .voit-scope-card,
+      .voit-article-card,
+      .voit-material-card,
+      .voit-process-card {
+        padding: 18px;
+      }
+
+      .voit-overview h4 {
+        font-size: 2rem;
+      }
     }
 
     @media (max-width: 520px) {
-      .fernando-case-shell {
-        padding-inline: 16px;
-      }
-
       .skill-grid {
         grid-template-columns: 1fr;
       }
@@ -3798,6 +4044,10 @@
 
 <body class="intro-active">
 
+  <!-- =======================================================
+       INTRO
+       ======================================================= -->
+
   <div
     id="intro-overlay"
     aria-hidden="true"
@@ -3817,6 +4067,10 @@
   </div>
 
   <div id="site-content">
+
+    <!-- =====================================================
+         NAV
+         ===================================================== -->
 
     <nav id="top">
 
@@ -3872,6 +4126,10 @@
     </nav>
 
     <main>
+
+      <!-- ===================================================
+           HERO
+           =================================================== -->
 
       <section class="hero">
 
@@ -4128,7 +4386,6 @@
                   >
 
                     <div class="wf-top-bar">
-
                       <span class="wf-title">
                         Prototipagem de Wireframes
                       </span>
@@ -4136,7 +4393,6 @@
                       <span class="wf-card-label mono">
                         12 cols
                       </span>
-
                     </div>
 
                     <div
@@ -4319,6 +4575,10 @@
 
       </section>
 
+      <!-- ===================================================
+           PROCESSO
+           =================================================== -->
+
       <section class="process-fold-section">
 
         <span class="process-kicker mono">
@@ -4381,6 +4641,10 @@
         </div>
 
       </section>
+
+      <!-- ===================================================
+           SOBRE
+           =================================================== -->
 
       <div
         class="section-head"
@@ -4452,6 +4716,7 @@
                 UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO •
               </textPath>
             </text>
+
           </svg>
 
           <div class="const-floater badge">
@@ -4480,6 +4745,10 @@
 
       </section>
 
+      <!-- ===================================================
+           PROJETOS
+           =================================================== -->
+
       <div
         class="section-head"
         id="projetos"
@@ -4491,9 +4760,9 @@
 
       <div id="projects-container">
 
-        <!-- =====================================================
+        <!-- =================================================
              FERNANDO AMARAL
-             ===================================================== -->
+             ================================================= -->
 
         <article
           class="project-block"
@@ -5040,6 +5309,8 @@
 
             </section>
 
+            <!-- As outras abas continuam exatamente na lógica atual -->
+
             <section
               class="fernando-view"
               data-fernando-view="compare"
@@ -5062,218 +5333,30 @@
 
               </div>
 
-              <article class="fernando-compare-section">
-
-                <div class="fernando-compare-copy">
-
-                  <span class="mono">
-                    01 / ABERTURA
-                  </span>
-
-                  <h5>
-                    Posicionamento e prioridade de ação.
-                  </h5>
-
-                  <div class="fernando-compare-note">
-
-                    <strong>
-                      Problema identificado
-                    </strong>
-
-                    <p>
-                      A abertura precisava explicar rapidamente a atuação do
-                      profissional e deixar claras as ações disponíveis.
-                    </p>
-
-                  </div>
-
-                  <div class="fernando-compare-note">
-
-                    <strong>
-                      Decisão de design
-                    </strong>
-
-                    <p>
-                      O novo hero prioriza a apresentação do serviço e duas
-                      ações: solicitar orçamento e explorar os serviços.
-                    </p>
-
-                  </div>
-
-                  <div class="fernando-compare-note">
-
-                    <strong>
-                      Justificativa
-                    </strong>
-
-                    <p>
-                      A hierarquia cria uma entrada mais direta para um conteúdo
-                      naturalmente técnico e extenso.
-                    </p>
-
-                  </div>
-
-                </div>
-
-                <div class="fa-compare-grid fernando-compare-browsers">
-
-                  <article class="fa-compare-card">
-
-                    <div class="fa-compare-label">
-                      <span>ANTES</span>
-                      <span>site anterior</span>
-                    </div>
-
-                    <div class="fa-browser">
-
-                      <div class="fa-browser-bar">
-
-                        <div class="fa-browser-dots">
-                          <i></i>
-                          <i></i>
-                          <i></i>
-                        </div>
-
-                        <div class="fa-browser-address">
-                          versão anterior
-                        </div>
-
-                        <a
-                          href="https://fernando-amaral-website-web.vercel.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="fa-browser-link"
-                        >
-                          ABRIR ↗
-                        </a>
-
-                      </div>
-
-                      <div
-                        class="fa-desktop-viewport"
-                        data-fa-desktop-height="760"
-                      >
-
-                        <div class="fa-desktop-canvas">
-
-                          <iframe
-                            src="https://fernando-amaral-website-web.vercel.app/"
-                            title="Fernando Amaral antigo"
-                          ></iframe>
-
-                        </div>
-
-                      </div>
-
-                    </div>
-
-                  </article>
-
-                  <article class="fa-compare-card">
-
-                    <div class="fa-compare-label">
-                      <span>DEPOIS</span>
-                      <span>produto publicado</span>
-                    </div>
-
-                    <div class="fa-browser">
-
-                      <div class="fa-browser-bar">
-
-                        <div class="fa-browser-dots">
-                          <i></i>
-                          <i></i>
-                          <i></i>
-                        </div>
-
-                        <div class="fa-browser-address">
-                          fernando-amaral.vercel.app
-                        </div>
-
-                        <a
-                          href="https://fernando-amaral.vercel.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="fa-browser-link"
-                        >
-                          LIVE ↗
-                        </a>
-
-                      </div>
-
-                      <div
-                        class="fa-desktop-viewport"
-                        data-fa-desktop-height="760"
-                      >
-
-                        <div class="fa-desktop-canvas">
-
-                          <iframe
-                            src="https://fernando-amaral.vercel.app/"
-                            title="Fernando Amaral novo"
-                          ></iframe>
-
-                        </div>
-
-                      </div>
-
-                    </div>
-
-                  </article>
-
-                </div>
-
-              </article>
-
               <div class="fernando-compare-points">
 
                 <article>
-
-                  <span class="mono">
-                    02 / SERVIÇOS
-                  </span>
-
-                  <h5>
-                    Menos conteúdo simultâneo.
-                  </h5>
-
+                  <span class="mono">01 / ABERTURA</span>
+                  <h5>Posicionamento</h5>
                   <p>
-                    As especialidades foram reunidas em uma experiência
-                    navegável.
+                    Apresentação direta do serviço e das principais ações.
                   </p>
-
                 </article>
 
                 <article>
+                  <span class="mono">02 / SERVIÇOS</span>
+                  <h5>Menos conteúdo simultâneo</h5>
+                  <p>
+                    Especialidades reunidas em uma experiência navegável.
+                  </p>
+                </article>
 
-                  <span class="mono">
-                    03 / PROCESSO
-                  </span>
-
-                  <h5>
-                    Relação entre etapas.
-                  </h5>
-
+                <article>
+                  <span class="mono">03 / PROCESSO</span>
+                  <h5>Relação entre etapas</h5>
                   <p>
                     A metodologia passou a usar sequência e numeração.
                   </p>
-
-                </article>
-
-                <article>
-
-                  <span class="mono">
-                    04 / PROJETOS
-                  </span>
-
-                  <h5>
-                    Mais contexto em cada case.
-                  </h5>
-
-                  <p>
-                    Área, escopo e especialidade foram incorporados aos cards.
-                  </p>
-
                 </article>
 
               </div>
@@ -5284,9 +5367,7 @@
               class="fernando-view"
               data-fernando-view="system"
             >
-
               <div class="fernando-system-intro">
-
                 <span class="mono">
                   SISTEMA VISUAL & COMPONENTES
                 </span>
@@ -5299,482 +5380,7 @@
                   Foundations, componentes, variantes e estados utilizados no
                   produto publicado.
                 </p>
-
               </div>
-
-              <div class="fa-system">
-
-                <aside class="fa-system-sidebar">
-
-                  <span>
-                    FERNANDO UI
-                  </span>
-
-                  <button
-                    class="fa-system-btn active"
-                    data-fa-system="foundation"
-                    type="button"
-                  >
-                    Foundations
-                  </button>
-
-                  <button
-                    class="fa-system-btn"
-                    data-fa-system="buttons"
-                    type="button"
-                  >
-                    Buttons & states
-                  </button>
-
-                  <button
-                    class="fa-system-btn"
-                    data-fa-system="navigation"
-                    type="button"
-                  >
-                    Navigation
-                  </button>
-
-                  <button
-                    class="fa-system-btn"
-                    data-fa-system="cards"
-                    type="button"
-                  >
-                    Cards
-                  </button>
-
-                  <button
-                    class="fa-system-btn"
-                    data-fa-system="forms"
-                    type="button"
-                  >
-                    Forms
-                  </button>
-
-                  <button
-                    class="fa-system-btn"
-                    data-fa-system="tokens"
-                    type="button"
-                  >
-                    Tokens
-                  </button>
-
-                </aside>
-
-                <div class="fa-system-canvas">
-
-                  <section
-                    class="fa-system-panel active"
-                    data-fa-system-panel="foundation"
-                  >
-
-                    <h4 class="fa-system-title">
-                      Foundations
-                    </h4>
-
-                    <div class="fa-component-grid">
-
-                      <article class="fa-component-box wide">
-
-                        <div class="fa-component-label">
-                          <span>Color system</span>
-                          <span>Light + Dark</span>
-                        </div>
-
-                        <div class="fa-color-grid">
-
-                          <div class="fa-color-token navy">
-                            <strong>Primary</strong>
-                            <span>#00152A</span>
-                          </div>
-
-                          <div class="fa-color-token gold">
-                            <strong>Accent</strong>
-                            <span>#B8860B</span>
-                          </div>
-
-                          <div class="fa-color-token slate">
-                            <strong>Slate</strong>
-                            <span>#64748B</span>
-                          </div>
-
-                          <div class="fa-color-token light">
-                            <strong>Background</strong>
-                            <span>#F4F6F8</span>
-                          </div>
-
-                          <div class="fa-color-token white">
-                            <strong>Surface</strong>
-                            <span>#FFFFFF</span>
-                          </div>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box wide">
-
-                        <div class="fa-component-label">
-                          <span>Typography</span>
-                          <span>Display + Body</span>
-                        </div>
-
-                        <div class="fa-type-grid">
-
-                          <article class="fa-type-card manrope">
-
-                            <span>
-                              DISPLAY / MANROPE
-                            </span>
-
-                            <strong>
-                              Aa
-                            </strong>
-
-                            <p>
-                              Projetos elétricos para arquitetos, engenheiros,
-                              construtoras e incorporadoras.
-                            </p>
-
-                          </article>
-
-                          <article class="fa-type-card dm">
-
-                            <span>
-                              BODY / DM SANS
-                            </span>
-
-                            <strong>
-                              Aa
-                            </strong>
-
-                            <p>
-                              Clareza e legibilidade para conteúdo técnico.
-                            </p>
-
-                          </article>
-
-                        </div>
-
-                      </article>
-
-                    </div>
-
-                  </section>
-
-                  <section
-                    class="fa-system-panel"
-                    data-fa-system-panel="buttons"
-                  >
-
-                    <h4 class="fa-system-title">
-                      Buttons & states
-                    </h4>
-
-                    <div class="fa-component-grid">
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Primary CTA</span>
-                          <span>Hero / contato</span>
-                        </div>
-
-                        <button
-                          class="fa-primary-demo"
-                          id="faPrimaryDemo"
-                          type="button"
-                        >
-                          SOLICITAR ORÇAMENTO
-                        </button>
-
-                        <div class="fa-state-controls">
-
-                          <button
-                            class="active"
-                            data-fa-button-state="default"
-                            type="button"
-                          >
-                            Default
-                          </button>
-
-                          <button
-                            data-fa-button-state="hover"
-                            type="button"
-                          >
-                            Hover
-                          </button>
-
-                          <button
-                            data-fa-button-state="disabled"
-                            type="button"
-                          >
-                            Disabled
-                          </button>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Secondary CTA</span>
-                          <span>Hero</span>
-                        </div>
-
-                        <button
-                          class="fa-secondary-demo"
-                          type="button"
-                        >
-                          VER SERVIÇOS
-                        </button>
-
-                      </article>
-
-                    </div>
-
-                  </section>
-
-                  <section
-                    class="fa-system-panel"
-                    data-fa-system-panel="navigation"
-                  >
-
-                    <h4 class="fa-system-title">
-                      Navigation
-                    </h4>
-
-                    <div class="fa-component-grid">
-
-                      <article class="fa-component-box wide">
-
-                        <div class="fa-component-label">
-                          <span>Desktop</span>
-                          <span>Header</span>
-                        </div>
-
-                        <div class="fa-nav-preview">
-
-                          <strong>
-                            FERNANDO AMARAL
-                          </strong>
-
-                          <div class="fa-nav-preview-links">
-                            <span>Serviços</span>
-                            <span>Processo</span>
-                            <span>Portfólio</span>
-                            <span>Sobre</span>
-                            <span>Contato</span>
-                          </div>
-
-                          <button type="button">
-                            SOLICITAR ORÇAMENTO
-                          </button>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-component-label">
-                          <span>Mobile</span>
-                          <span>Compact</span>
-                        </div>
-
-                        <div class="fa-mobile-nav-preview">
-
-                          <strong>
-                            FERNANDO AMARAL
-                          </strong>
-
-                          <button type="button">
-                            ☰
-                          </button>
-
-                        </div>
-
-                      </article>
-
-                    </div>
-
-                  </section>
-
-                  <section
-                    class="fa-system-panel"
-                    data-fa-system-panel="cards"
-                  >
-
-                    <h4 class="fa-system-title">
-                      Cards
-                    </h4>
-
-                    <div class="fa-component-grid">
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-quality-card">
-
-                          <strong>
-                            Segurança e conformidade
-                          </strong>
-
-                          <p>
-                            Componente utilizado na apresentação dos
-                            diferenciais.
-                          </p>
-
-                        </div>
-
-                      </article>
-
-                      <article class="fa-component-box">
-
-                        <div class="fa-quality-card dark">
-
-                          <strong>
-                            Clareza para execução
-                          </strong>
-
-                          <p>
-                            O mesmo componente adaptado ao tema escuro.
-                          </p>
-
-                        </div>
-
-                      </article>
-
-                    </div>
-
-                  </section>
-
-                  <section
-                    class="fa-system-panel"
-                    data-fa-system-panel="forms"
-                  >
-
-                    <h4 class="fa-system-title">
-                      Forms
-                    </h4>
-
-                    <div class="fa-component-box">
-
-                      <div class="fa-form-system-demo">
-
-                        <div class="fa-form-system-row two">
-
-                          <label>
-                            <span>Nome completo</span>
-
-                            <input
-                              type="text"
-                              placeholder="Nome completo"
-                            >
-                          </label>
-
-                          <label>
-                            <span>E-mail ou WhatsApp</span>
-
-                            <input
-                              type="text"
-                              placeholder="E-mail ou WhatsApp"
-                            >
-                          </label>
-
-                        </div>
-
-                        <div class="fa-form-system-row three">
-
-                          <label>
-                            <span>Cidade / UF</span>
-
-                            <input
-                              type="text"
-                              placeholder="Cidade / UF"
-                            >
-                          </label>
-
-                          <label>
-                            <span>Tipo de projeto</span>
-
-                            <select>
-                              <option>Tipo de projeto</option>
-                              <option>Projeto Elétrico</option>
-                              <option>SPDA</option>
-                              <option>Subestação</option>
-                              <option>BIM</option>
-                            </select>
-                          </label>
-
-                          <label>
-                            <span>Área aproximada</span>
-
-                            <input
-                              type="text"
-                              placeholder="Área aproximada"
-                            >
-                          </label>
-
-                        </div>
-
-                        <label>
-                          <span>Mensagem</span>
-
-                          <textarea
-                            placeholder="Descreva brevemente sua necessidade técnica..."
-                          ></textarea>
-                        </label>
-
-                      </div>
-
-                    </div>
-
-                  </section>
-
-                  <section
-                    class="fa-system-panel"
-                    data-fa-system-panel="tokens"
-                  >
-
-                    <h4 class="fa-system-title">
-                      Tokens
-                    </h4>
-
-                    <div class="fa-system-token-grid">
-
-                      <div>
-                        <strong>8px</strong>
-                        <span>Radius base</span>
-                      </div>
-
-                      <div>
-                        <strong>100px</strong>
-                        <span>Desktop gutter</span>
-                      </div>
-
-                      <div>
-                        <strong>22px</strong>
-                        <span>Mobile gutter</span>
-                      </div>
-
-                      <div>
-                        <strong>1440px</strong>
-                        <span>Desktop reference</span>
-                      </div>
-
-                      <div>
-                        <strong>390px</strong>
-                        <span>Mobile reference</span>
-                      </div>
-
-                    </div>
-
-                  </section>
-
-                </div>
-
-              </div>
-
             </section>
 
             <section
@@ -5794,160 +5400,36 @@
 
                 <p>
                   A versão mobile não replica simplesmente o desktop em escala
-                  menor. Navegação, galerias, tipografia e componentes mudam de
-                  composição quando o espaço disponível exige outra solução.
+                  menor.
                 </p>
-
-              </div>
-
-              <div class="fa-responsive-showcase">
-
-                <div class="fa-device-desktop">
-
-                  <div class="fa-browser-bar">
-
-                    <div class="fa-browser-dots">
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                    </div>
-
-                    <div class="fa-browser-address">
-                      fernando-amaral.vercel.app
-                    </div>
-
-                    <span class="fa-browser-link">
-                      DESKTOP / 1440
-                    </span>
-
-                  </div>
-
-                  <div
-                    class="fa-desktop-viewport"
-                    data-fa-desktop-height="780"
-                  >
-
-                    <div class="fa-desktop-canvas">
-
-                      <iframe
-                        src="https://fernando-amaral.vercel.app/"
-                        title="Fernando Amaral — versão desktop"
-                        loading="lazy"
-                      ></iframe>
-
-                    </div>
-
-                  </div>
-
-                  <div class="fa-responsive-device-caption">
-
-                    <strong>
-                      Desktop
-                    </strong>
-
-                    <span>
-                      1440px • navegação completa
-                    </span>
-
-                  </div>
-
-                </div>
-
-                <div class="fa-device-mobile-artboard">
-
-                  <div class="fa-mobile-artboard-bar">
-
-                    <span>
-                      MOBILE VIEWPORT
-                    </span>
-
-                    <strong>
-                      390px
-                    </strong>
-
-                  </div>
-
-                  <div class="fa-mobile-artboard-stage">
-
-                    <div class="fa-mobile-artboard-viewport">
-
-                      <iframe
-                        src="https://fernando-amaral.vercel.app/"
-                        title="Fernando Amaral — versão mobile"
-                        loading="lazy"
-                      ></iframe>
-
-                    </div>
-
-                  </div>
-
-                  <div class="fa-responsive-device-caption">
-
-                    <strong>
-                      Mobile
-                    </strong>
-
-                    <span>
-                      390px • composição adaptada
-                    </span>
-
-                  </div>
-
-                </div>
 
               </div>
 
               <div class="fa-responsive-notes">
 
                 <article class="fa-responsive-note">
-
-                  <span>
-                    01 / NAVIGATION
-                  </span>
-
-                  <h4>
-                    Menu compacto
-                  </h4>
-
+                  <span>01 / NAVIGATION</span>
+                  <h4>Menu compacto</h4>
                   <p>
-                    A navegação horizontal do desktop é substituída por um
-                    controle dedicado, preservando espaço para o conteúdo.
+                    A navegação horizontal é substituída por um controle
+                    dedicado.
                   </p>
-
                 </article>
 
                 <article class="fa-responsive-note">
-
-                  <span>
-                    02 / GALLERIES
-                  </span>
-
-                  <h4>
-                    Uma imagem por vez
-                  </h4>
-
+                  <span>02 / GALLERIES</span>
+                  <h4>Uma imagem por vez</h4>
                   <p>
-                    No mobile, a galeria prioriza o conteúdo ativo sem manter a
-                    pré-visualização da próxima imagem ocupando a tela.
+                    A galeria prioriza o conteúdo ativo em telas estreitas.
                   </p>
-
                 </article>
 
                 <article class="fa-responsive-note">
-
-                  <span>
-                    03 / TYPOGRAPHY
-                  </span>
-
-                  <h4>
-                    Escala específica
-                  </h4>
-
+                  <span>03 / TYPOGRAPHY</span>
+                  <h4>Escala específica</h4>
                   <p>
-                    Títulos, textos e espaçamentos recebem escalas próprias para
-                    manter legibilidade e evitar quebras desconfortáveis.
+                    Títulos, textos e espaçamentos recebem escalas próprias.
                   </p>
-
                 </article>
 
               </div>
@@ -5959,41 +5441,31 @@
               data-fernando-view="prototype"
             >
 
-              <div class="fa-figma-shell">
+              <div class="fernando-system-intro">
 
-                <div class="fa-figma-head">
+                <span class="mono">
+                  PROTÓTIPO
+                </span>
 
-                  <div>
-                    <span>
-                      PROTOTYPE
-                    </span>
+                <h4>
+                  Fluxo navegável antes da implementação.
+                </h4>
 
-                    <strong>
-                      Fernando Amaral
-                    </strong>
-                  </div>
-
-                  <a
-                    href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    abrir no Figma ↗
-                  </a>
-
-                </div>
-
-                <div class="fa-figma-frame">
-
-                  <iframe
-                    src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
-                    allowfullscreen
-                    title="Protótipo Fernando Amaral"
-                  ></iframe>
-
-                </div>
+                <p>
+                  O protótipo foi usado para estruturar estados, navegação e
+                  comportamento antes da implementação.
+                </p>
 
               </div>
+
+              <a
+                class="fernando-product-link"
+                href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                abrir protótipo no Figma ↗
+              </a>
 
             </section>
 
@@ -6052,16 +5524,19 @@
 
         </article>
 
-        <!-- =====================================================
-             VOIT CONSULTORIA
-             ===================================================== -->
+        <!-- =================================================
+             VOIT CONSULTORIA — NOVA ESTRUTURA
+             ================================================= -->
 
-        <article class="project-block">
+        <article
+          class="project-block"
+          id="voit-project"
+        >
 
           <div class="project-head">
 
             <span class="n mono">
-              02 / 05 • COMUNICAÇÃO / CONTEÚDO
+              02 / 05 • COMUNICAÇÃO MULTICANAL / CONTEÚDO
             </span>
 
             <h3>
@@ -6069,9 +5544,10 @@
             </h3>
 
             <p class="project-summary">
-              Comunicação contínua para uma consultoria com mais de 15 anos de
-              mercado, conectando conteúdo, design, comunicação comercial e
-              materiais para diferentes públicos.
+              Atuação contínua em comunicação para uma consultoria com mais de
+              15 anos de mercado, desenvolvendo conteúdos para redes sociais,
+              artigos, apresentações comerciais, materiais técnicos e ações de
+              comunicação interna.
             </p>
 
             <div class="case-grid">
@@ -6079,12 +5555,12 @@
               <div class="case-item">
 
                 <span class="project-block-label">
-                  01 / desafio
+                  01 / contexto
                 </span>
 
                 <p>
-                  Manter consistência de marca e qualidade de comunicação em
-                  diferentes formatos.
+                  Comunicação para diferentes áreas, públicos e serviços dentro
+                  de uma operação consultiva multidisciplinar.
                 </p>
 
               </div>
@@ -6096,8 +5572,8 @@
                 </span>
 
                 <p>
-                  Social media, copywriting, apresentações, materiais técnicos
-                  e endomarketing.
+                  Pesquisa, copywriting, design, apresentações, materiais
+                  comerciais, social media e apoio à comunicação interna.
                 </p>
 
               </div>
@@ -6109,7 +5585,8 @@
                 </span>
 
                 <p>
-                  Planejamento, pesquisa, produção e validação técnica.
+                  Planejamento com a gestão, pesquisa de pautas, produção
+                  multicanal e validação técnica com especialistas.
                 </p>
 
               </div>
@@ -6117,12 +5594,12 @@
               <div class="case-item">
 
                 <span class="project-block-label">
-                  04 / escopo
+                  04 / entrega
                 </span>
 
                 <p>
-                  Produção multicanal para redes sociais, artigos, apresentações
-                  e comunicação interna.
+                  Ecossistema de comunicação composto por redes sociais,
+                  artigos, apresentações, materiais técnicos e peças internas.
                 </p>
 
               </div>
@@ -6130,90 +5607,571 @@
             </div>
 
             <div class="project-proof">
-              <span>Canva</span>
-              <span>Adobe</span>
-              <span>Figma</span>
+              <span>Social Media</span>
               <span>Copywriting</span>
-              <span>Comunicação multicanal</span>
+              <span>Conteúdo de Blog</span>
+              <span>Apresentações</span>
+              <span>Endomarketing</span>
+              <span>Comunicação Multicanal</span>
             </div>
 
           </div>
 
-          <div class="project-full-link-row">
+          <div class="voit-case-shell">
 
-            <button
-              type="button"
-              class="strip-full-link"
-              id="openVoitDrawer"
+            <div class="voit-intro-grid">
+
+              <div class="voit-overview">
+
+                <span>
+                  COMUNICAÇÃO CONTÍNUA
+                </span>
+
+                <h4>
+                  Uma marca, diferentes formatos e públicos.
+                </h4>
+
+                <p>
+                  O trabalho com a Voit exigia consistência entre diferentes
+                  canais. Cada entrega tinha uma função própria, mas precisava
+                  manter clareza, reconhecimento de marca e adequação ao público.
+                </p>
+
+                <div class="voit-overview-tags">
+                  <span>Social</span>
+                  <span>Blog</span>
+                  <span>Comercial</span>
+                  <span>Interno</span>
+                  <span>Técnico</span>
+                </div>
+
+              </div>
+
+              <div class="voit-scope-grid">
+
+                <article class="voit-scope-card">
+
+                  <span>
+                    01 / SOCIAL MEDIA
+                  </span>
+
+                  <h5>
+                    Conteúdo recorrente.
+                  </h5>
+
+                  <p>
+                    Posts, carrosséis e legendas para comunicação institucional,
+                    técnica e comercial.
+                  </p>
+
+                </article>
+
+                <article class="voit-scope-card">
+
+                  <span>
+                    02 / ARTIGOS
+                  </span>
+
+                  <h5>
+                    Conteúdo aprofundado.
+                  </h5>
+
+                  <p>
+                    Pesquisa e produção de artigos técnicos com validação dos
+                    especialistas responsáveis pelas áreas.
+                  </p>
+
+                </article>
+
+                <article class="voit-scope-card">
+
+                  <span>
+                    03 / COMERCIAL
+                  </span>
+
+                  <h5>
+                    Informação transformada em apresentação.
+                  </h5>
+
+                  <p>
+                    Estruturação visual de propostas, dados e materiais de apoio
+                    para apresentações comerciais.
+                  </p>
+
+                </article>
+
+                <article class="voit-scope-card">
+
+                  <span>
+                    04 / INTERNO
+                  </span>
+
+                  <h5>
+                    Comunicação com o time.
+                  </h5>
+
+                  <p>
+                    Peças e materiais de endomarketing para ações e comunicação
+                    interna.
+                  </p>
+
+                </article>
+
+              </div>
+
+            </div>
+
+            <div class="voit-tabs">
+
+              <button
+                type="button"
+                class="voit-tab active"
+                data-voit-tab="social"
+              >
+                Social Media
+              </button>
+
+              <button
+                type="button"
+                class="voit-tab"
+                data-voit-tab="articles"
+              >
+                Artigos
+              </button>
+
+              <button
+                type="button"
+                class="voit-tab"
+                data-voit-tab="materials"
+              >
+                Materiais
+              </button>
+
+              <button
+                type="button"
+                class="voit-tab"
+                data-voit-tab="process"
+              >
+                Processo
+              </button>
+
+            </div>
+
+            <!-- SOCIAL -->
+
+            <section
+              class="voit-view active"
+              data-voit-view="social"
             >
-              Ver método e processo completo ↗
-            </button>
 
-          </div>
+              <div class="voit-view-intro">
 
-          <div class="strip voit-strip">
+                <span>
+                  SOCIAL MEDIA
+                </span>
 
-            <div class="strip-item voit-card">
-              <img
-                src="img/img-voit/voit-01.jpeg"
-                alt="Voit 01"
-                class="js-lightbox-image"
-              >
-            </div>
+                <h4>
+                  Conteúdo recorrente para diferentes frentes da consultoria.
+                </h4>
 
-            <div class="strip-item voit-card">
-              <img
-                src="img/img-voit/voit-02.jpeg"
-                alt="Voit 02"
-                class="js-lightbox-image"
-              >
-            </div>
+                <p>
+                  A seleção mostra peças desenvolvidas para transformar temas
+                  institucionais, comerciais e técnicos em conteúdos adequados
+                  às redes sociais.
+                </p>
 
-            <div class="strip-item voit-card">
-              <img
-                src="img/img-voit/voit-03.jpeg"
-                alt="Voit 03"
-                class="js-lightbox-image"
-              >
-            </div>
+              </div>
 
-            <div class="strip-item voit-card">
-              <img
-                src="img/img-voit/voit-04.jpeg"
-                alt="Voit 04"
-                class="js-lightbox-image"
-              >
-            </div>
+              <div class="voit-social-gallery">
 
-          </div>
+                <div class="voit-gallery-toolbar">
 
-          <div class="strip-nav">
+                  <span>
+                    seleção de peças
+                  </span>
 
-            <div class="strip-nav-arrows">
+                  <strong>
+                    Social Media
+                  </strong>
 
-              <button
-                class="strip-btn prev"
-                type="button"
-              >
-                ←
-              </button>
+                </div>
 
-              <button
-                class="strip-btn next"
-                type="button"
-              >
-                →
-              </button>
+                <div class="strip voit-strip">
 
-            </div>
+                  <div class="strip-item voit-card">
+                    <img
+                      src="img/img-voit/voit-01.jpeg"
+                      alt="Voit Consultoria — peça de social media 01"
+                      class="js-lightbox-image"
+                    >
+                  </div>
+
+                  <div class="strip-item voit-card">
+                    <img
+                      src="img/img-voit/voit-02.jpeg"
+                      alt="Voit Consultoria — peça de social media 02"
+                      class="js-lightbox-image"
+                    >
+                  </div>
+
+                  <div class="strip-item voit-card">
+                    <img
+                      src="img/img-voit/voit-03.jpeg"
+                      alt="Voit Consultoria — peça de social media 03"
+                      class="js-lightbox-image"
+                    >
+                  </div>
+
+                  <div class="strip-item voit-card">
+                    <img
+                      src="img/img-voit/voit-04.jpeg"
+                      alt="Voit Consultoria — peça de social media 04"
+                      class="js-lightbox-image"
+                    >
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+            <!-- ARTIGOS -->
+
+            <section
+              class="voit-view"
+              data-voit-view="articles"
+            >
+
+              <div class="voit-view-intro">
+
+                <span>
+                  BLOG / CONTEÚDO
+                </span>
+
+                <h4>
+                  Artigos desenvolvidos para aprofundar temas da consultoria.
+                </h4>
+
+                <p>
+                  Os conteúdos eram pesquisados e estruturados para aprofundar
+                  assuntos relevantes às áreas de atuação da Voit, passando por
+                  validação técnica antes da publicação.
+                </p>
+
+              </div>
+
+              <div class="voit-articles-grid">
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 01
+                  </span>
+
+                  <h5>
+                    Artigo selecionado
+                  </h5>
+
+                  <p>
+                    Espaço preparado para título, breve contexto do conteúdo e
+                    acesso à publicação.
+                  </p>
+
+                  <span class="voit-article-placeholder">
+                    aguardando link do artigo ↗
+                  </span>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 02
+                  </span>
+
+                  <h5>
+                    Artigo selecionado
+                  </h5>
+
+                  <p>
+                    Espaço preparado para título, breve contexto do conteúdo e
+                    acesso à publicação.
+                  </p>
+
+                  <span class="voit-article-placeholder">
+                    aguardando link do artigo ↗
+                  </span>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 03
+                  </span>
+
+                  <h5>
+                    Artigo selecionado
+                  </h5>
+
+                  <p>
+                    Espaço preparado para título, breve contexto do conteúdo e
+                    acesso à publicação.
+                  </p>
+
+                  <span class="voit-article-placeholder">
+                    aguardando link do artigo ↗
+                  </span>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 04
+                  </span>
+
+                  <h5>
+                    Artigo selecionado
+                  </h5>
+
+                  <p>
+                    Espaço preparado para título, breve contexto do conteúdo e
+                    acesso à publicação.
+                  </p>
+
+                  <span class="voit-article-placeholder">
+                    aguardando link do artigo ↗
+                  </span>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 05
+                  </span>
+
+                  <h5>
+                    Artigo selecionado
+                  </h5>
+
+                  <p>
+                    Espaço preparado para título, breve contexto do conteúdo e
+                    acesso à publicação.
+                  </p>
+
+                  <span class="voit-article-placeholder">
+                    aguardando link do artigo ↗
+                  </span>
+
+                </article>
+
+              </div>
+
+            </section>
+
+            <!-- MATERIAIS -->
+
+            <section
+              class="voit-view"
+              data-voit-view="materials"
+            >
+
+              <div class="voit-view-intro">
+
+                <span>
+                  MATERIAIS / COMUNICAÇÃO
+                </span>
+
+                <h4>
+                  Mais do que conteúdo para redes sociais.
+                </h4>
+
+                <p>
+                  A atuação também incluía transformar informações, dados e
+                  direcionamentos em materiais adequados a contextos comerciais,
+                  técnicos e internos.
+                </p>
+
+              </div>
+
+              <div class="voit-materials-grid">
+
+                <article class="voit-material-card">
+
+                  <span>
+                    01 / APRESENTAÇÕES
+                  </span>
+
+                  <h5>
+                    Comercial
+                  </h5>
+
+                  <p>
+                    Organização de informações, estrutura de conteúdo e design
+                    de apresentações utilizadas em conversas com leads e
+                    clientes.
+                  </p>
+
+                  <small>
+                    inserir exemplo selecionado
+                  </small>
+
+                </article>
+
+                <article class="voit-material-card">
+
+                  <span>
+                    02 / MATERIAIS
+                  </span>
+
+                  <h5>
+                    Técnico
+                  </h5>
+
+                  <p>
+                    Desenvolvimento visual de materiais voltados a diferentes
+                    serviços e setores atendidos pela consultoria.
+                  </p>
+
+                  <small>
+                    inserir exemplo selecionado
+                  </small>
+
+                </article>
+
+                <article class="voit-material-card">
+
+                  <span>
+                    03 / ENDOMARKETING
+                  </span>
+
+                  <h5>
+                    Comunicação interna
+                  </h5>
+
+                  <p>
+                    Peças e materiais voltados a ações internas e comunicação
+                    com os colaboradores.
+                  </p>
+
+                  <small>
+                    inserir exemplo selecionado
+                  </small>
+
+                </article>
+
+              </div>
+
+            </section>
+
+            <!-- PROCESSO -->
+
+            <section
+              class="voit-view"
+              data-voit-view="process"
+            >
+
+              <div class="voit-view-intro">
+
+                <span>
+                  MÉTODO DE TRABALHO
+                </span>
+
+                <h4>
+                  Da pauta à publicação.
+                </h4>
+
+                <p>
+                  A rotina exigia alinhamento com a gestão e especialistas,
+                  produção para diferentes canais e revisão antes da entrega.
+                </p>
+
+              </div>
+
+              <div class="voit-process-grid">
+
+                <article class="voit-process-card">
+
+                  <span>
+                    01 / PLANEJAMENTO
+                  </span>
+
+                  <h5>
+                    Alinhamento estratégico
+                  </h5>
+
+                  <p>
+                    Reuniões com a gerência para definir temas, prioridades,
+                    objetivos e necessidades do período.
+                  </p>
+
+                </article>
+
+                <article class="voit-process-card">
+
+                  <span>
+                    02 / PESQUISA
+                  </span>
+
+                  <h5>
+                    Construção da pauta
+                  </h5>
+
+                  <p>
+                    Pesquisa de tendências, referências e informações para
+                    estruturar conteúdos adequados a cada canal.
+                  </p>
+
+                </article>
+
+                <article class="voit-process-card">
+
+                  <span>
+                    03 / PRODUÇÃO
+                  </span>
+
+                  <h5>
+                    Conteúdo + design
+                  </h5>
+
+                  <p>
+                    Desenvolvimento de textos, peças visuais, artigos,
+                    apresentações e materiais de apoio.
+                  </p>
+
+                </article>
+
+                <article class="voit-process-card">
+
+                  <span>
+                    04 / VALIDAÇÃO
+                  </span>
+
+                  <h5>
+                    Revisão técnica
+                  </h5>
+
+                  <p>
+                    Conteúdos técnicos passavam pela validação dos especialistas
+                    responsáveis antes da publicação.
+                  </p>
+
+                </article>
+
+              </div>
+
+            </section>
 
           </div>
 
         </article>
 
-        <!-- =====================================================
-             RENATA BRANDÃO
-             ===================================================== -->
+        <!-- =================================================
+             RENATA
+             ================================================= -->
 
         <article
           class="project-block"
@@ -6240,55 +6198,39 @@
             <div class="case-grid">
 
               <div class="case-item">
-
-                <span class="project-block-label">
-                  01 / contexto
-                </span>
+                <span class="project-block-label">01 / contexto</span>
 
                 <p>
                   Diferentes apresentações para treinamentos, propostas e
                   conteúdos sobre vendas, gestão comercial e consultoria.
                 </p>
-
               </div>
 
               <div class="case-item">
-
-                <span class="project-block-label">
-                  02 / meu papel
-                </span>
+                <span class="project-block-label">02 / meu papel</span>
 
                 <p>
                   Desenvolvimento do conteúdo, estrutura narrativa, organização
                   da informação e design dos slides.
                 </p>
-
               </div>
 
               <div class="case-item">
-
-                <span class="project-block-label">
-                  03 / desafio
-                </span>
+                <span class="project-block-label">03 / desafio</span>
 
                 <p>
                   Transformar diferentes objetivos e volumes de informação em
                   apresentações claras, envolventes e visualmente consistentes.
                 </p>
-
               </div>
 
               <div class="case-item">
-
-                <span class="project-block-label">
-                  04 / entrega
-                </span>
+                <span class="project-block-label">04 / entrega</span>
 
                 <p>
                   Conjunto de apresentações editáveis e reutilizáveis no Canva,
                   reunindo cerca de 50 slides.
                 </p>
-
               </div>
 
             </div>
@@ -6311,10 +6253,7 @@
 
                 <div class="renata-deck-title">
 
-                  <div
-                    class="renata-deck-dots"
-                    aria-hidden="true"
-                  >
+                  <div class="renata-deck-dots">
                     <i></i>
                     <i></i>
                     <i></i>
@@ -6350,7 +6289,6 @@
                       alt="Renata Brandão — slide 1 de 50"
                       role="button"
                       tabindex="0"
-                      aria-label="Ampliar slide 1 da apresentação de Renata Brandão"
                     >
 
                     <span
@@ -6370,7 +6308,6 @@
                         type="button"
                         class="renata-deck-button"
                         id="renataPrev"
-                        aria-label="Slide anterior"
                       >
                         ←
                       </button>
@@ -6386,7 +6323,6 @@
                         type="button"
                         class="renata-deck-button"
                         id="renataNext"
-                        aria-label="Próximo slide"
                       >
                         →
                       </button>
@@ -6407,10 +6343,6 @@
 
                   </div>
 
-                  <p class="renata-deck-help">
-                    use ← → no teclado ou deslize no celular para navegar
-                  </p>
-
                 </div>
 
                 <aside class="renata-side">
@@ -6426,8 +6358,7 @@
                   <p>
                     A seleção reúne materiais de treinamento, apresentações e
                     propostas desenvolvidos a partir das necessidades da
-                    cliente. Em cada projeto, trabalhei o conteúdo, a hierarquia
-                    das informações, a narrativa e o design final dos slides.
+                    cliente.
                   </p>
 
                   <div class="renata-progress">
@@ -6437,42 +6368,27 @@
                   <div class="renata-scope">
 
                     <article>
-
-                      <span>
-                        01 / CONTEÚDO
-                      </span>
+                      <span>01 / CONTEÚDO</span>
 
                       <p>
-                        Desenvolvimento e organização das informações a partir
-                        dos direcionamentos e objetivos definidos pela cliente.
+                        Desenvolvimento e organização das informações.
                       </p>
-
                     </article>
 
                     <article>
-
-                      <span>
-                        02 / NARRATIVA
-                      </span>
+                      <span>02 / NARRATIVA</span>
 
                       <p>
-                        Estruturação da sequência dos conteúdos para criar
-                        lógica, ritmo e progressão entre os slides.
+                        Estruturação da sequência e progressão dos slides.
                       </p>
-
                     </article>
 
                     <article>
-
-                      <span>
-                        03 / DESIGN
-                      </span>
+                      <span>03 / DESIGN</span>
 
                       <p>
-                        Hierarquia, composição e linguagem visual adaptadas ao
-                        objetivo de cada apresentação.
+                        Hierarquia, composição e linguagem visual.
                       </p>
-
                     </article>
 
                   </div>
@@ -6496,9 +6412,9 @@
 
         </article>
 
-        <!-- =====================================================
+        <!-- =================================================
              SOMOS BRADUCA
-             ===================================================== -->
+             ================================================= -->
 
         <article class="project-block social-compact-block">
 
@@ -6515,65 +6431,7 @@
             <p class="project-summary">
               Criação e diagramação de conteúdos para as redes sociais de uma
               iniciativa educacional voltada a estudantes da rede pública.
-              A partir dos conteúdos e da identidade visual fornecidos,
-              desenvolvi peças claras, acessíveis e consistentes com a marca.
             </p>
-
-            <div class="case-grid">
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  01 / contexto
-                </span>
-
-                <p>
-                  Comunicação sobre mentorias de inglês, testes de proficiência
-                  e oportunidades educacionais.
-                </p>
-
-              </div>
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  02 / meu papel
-                </span>
-
-                <p>
-                  Transformação dos conteúdos fornecidos em posts e carrosséis,
-                  aplicando a identidade visual existente.
-                </p>
-
-              </div>
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  03 / desafio
-                </span>
-
-                <p>
-                  Organizar informações educacionais de maneira simples,
-                  atrativa e adequada ao público estudantil.
-                </p>
-
-              </div>
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  04 / entrega
-                </span>
-
-                <p>
-                  Conjunto de peças para redes sociais, com hierarquia,
-                  legibilidade e consistência visual.
-                </p>
-
-              </div>
-
-            </div>
 
             <div class="project-proof">
               <span>Social Media</span>
@@ -6586,177 +6444,69 @@
 
           <div class="social-showcase">
 
-            <div class="social-showcase-grid">
+            <div class="social-gallery-shell">
 
-              <aside class="social-showcase-copy">
+              <div class="social-gallery-head">
+                <span>seleção de peças</span>
+                <strong>07 peças selecionadas</strong>
+              </div>
 
-                <span>
-                  APLICAÇÃO DE IDENTIDADE
-                </span>
+              <div class="strip">
 
-                <h4>
-                  Conteúdo educacional com leitura simples e linguagem consistente.
-                </h4>
-
-                <p>
-                  Transformei conteúdos sobre mentorias, proficiência e
-                  oportunidades educacionais em peças adequadas às redes
-                  sociais, priorizando hierarquia, leitura rápida e
-                  reconhecimento da marca.
-                </p>
-
-                <div class="social-showcase-note">
-
-                  <div>
-                    <strong>
-                      PÚBLICO
-                    </strong>
-
-                    <span>
-                      Estudantes da rede pública e jovens interessados em inglês
-                      e oportunidades educacionais.
-                    </span>
-                  </div>
-
-                  <div>
-                    <strong>
-                      FOCO
-                    </strong>
-
-                    <span>
-                      Clareza, acessibilidade visual e adaptação consistente da
-                      identidade já existente.
-                    </span>
-                  </div>
-
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/img-braduca/braduca-01.jpeg"
+                    alt="Somos Braduca — peça 01"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
-              </aside>
-
-              <div class="social-gallery-shell">
-
-                <div class="social-gallery-head">
-                  <span>
-                    seleção de peças
-                  </span>
-
-                  <strong>
-                    07 peças selecionadas
-                  </strong>
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/img-braduca/braduca-02.jpeg"
+                    alt="Somos Braduca — peça 02"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
-                <div
-                  class="strip"
-                  aria-label="Galeria de conteúdos para redes sociais da Somos Braduca"
-                >
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/img-braduca/braduca-01.jpeg"
-                      alt="Somos Braduca — peça para redes sociais 01"
-                      class="js-lightbox-image"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/img-braduca/braduca-02.jpeg"
-                      alt="Somos Braduca — peça para redes sociais 02"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/img-braduca/braduca-03.jpeg"
-                      alt="Somos Braduca — peça para redes sociais 03"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/img-braduca/braduca-04.jpeg"
-                      alt="Somos Braduca — peça para redes sociais 04"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/img-braduca/braduca-05.jpeg"
-                      alt="Somos Braduca — peça para redes sociais 05"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/img-braduca/braduca-06.jpeg"
-                      alt="Somos Braduca — peça para redes sociais 06"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/img-braduca/braduca-07.jpeg"
-                      alt="Somos Braduca — peça para redes sociais 07"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/img-braduca/braduca-03.jpeg"
+                    alt="Somos Braduca — peça 03"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
-                <div class="strip-nav">
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/img-braduca/braduca-04.jpeg"
+                    alt="Somos Braduca — peça 04"
+                    class="js-lightbox-image"
+                  >
+                </div>
 
-                  <div class="strip-nav-arrows">
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/img-braduca/braduca-05.jpeg"
+                    alt="Somos Braduca — peça 05"
+                    class="js-lightbox-image"
+                  >
+                </div>
 
-                    <button
-                      class="strip-btn prev"
-                      type="button"
-                      aria-label="Ver peças anteriores da Somos Braduca"
-                    >
-                      ←
-                    </button>
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/img-braduca/braduca-06.jpeg"
+                    alt="Somos Braduca — peça 06"
+                    class="js-lightbox-image"
+                  >
+                </div>
 
-                    <button
-                      class="strip-btn next"
-                      type="button"
-                      aria-label="Ver próximas peças da Somos Braduca"
-                    >
-                      →
-                    </button>
-
-                  </div>
-
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/img-braduca/braduca-07.jpeg"
+                    alt="Somos Braduca — peça 07"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
               </div>
@@ -6767,9 +6517,9 @@
 
         </article>
 
-        <!-- =====================================================
-             AYMÉE FERRAZ
-             ===================================================== -->
+        <!-- =================================================
+             AYMÉE
+             ================================================= -->
 
         <article class="project-block social-compact-block">
 
@@ -6785,66 +6535,8 @@
 
             <p class="project-summary">
               Desenvolvimento de peças para as redes sociais de uma especialista
-              em CS/CX, Felicidade Corporativa e gestão. A partir dos conteúdos
-              e da identidade visual fornecidos, organizei as informações e
-              desenvolvi o design dos posts.
+              em CS/CX, Felicidade Corporativa e gestão.
             </p>
-
-            <div class="case-grid">
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  01 / contexto
-                </span>
-
-                <p>
-                  Conteúdo profissional para fortalecer o posicionamento e a
-                  presença digital de uma marca pessoal.
-                </p>
-
-              </div>
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  02 / meu papel
-                </span>
-
-                <p>
-                  Criação e diagramação de posts e carrosséis com base nos
-                  conteúdos e na identidade visual da cliente.
-                </p>
-
-              </div>
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  03 / desafio
-                </span>
-
-                <p>
-                  Apresentar temas conceituais e profissionais com clareza,
-                  mantendo personalidade e autoridade.
-                </p>
-
-              </div>
-
-              <div class="case-item">
-
-                <span class="project-block-label">
-                  04 / entrega
-                </span>
-
-                <p>
-                  Conjunto de peças para redes sociais, adaptadas a diferentes
-                  conteúdos e formatos.
-                </p>
-
-              </div>
-
-            </div>
 
             <div class="project-proof">
               <span>Social Media</span>
@@ -6857,188 +6549,77 @@
 
           <div class="social-showcase">
 
-            <div class="social-showcase-grid">
+            <div class="social-gallery-shell">
 
-              <aside class="social-showcase-copy">
+              <div class="social-gallery-head">
+                <span>seleção de peças</span>
+                <strong>08 peças selecionadas</strong>
+              </div>
 
-                <span>
-                  MARCA PESSOAL / SOCIAL MEDIA
-                </span>
+              <div class="strip">
 
-                <h4>
-                  Conteúdo profissional com clareza, personalidade e autoridade.
-                </h4>
-
-                <p>
-                  Organizei conteúdos sobre CS/CX, gestão e felicidade
-                  corporativa em posts e carrosséis, mantendo clareza e
-                  consistência com o posicionamento profissional da cliente.
-                </p>
-
-                <div class="social-showcase-note">
-
-                  <div>
-                    <strong>
-                      PÚBLICO
-                    </strong>
-
-                    <span>
-                      Profissionais e lideranças interessados em experiência do
-                      cliente, gestão e felicidade corporativa.
-                    </span>
-                  </div>
-
-                  <div>
-                    <strong>
-                      FOCO
-                    </strong>
-
-                    <span>
-                      Transformar temas conceituais em peças de leitura clara sem
-                      perder o caráter profissional da marca pessoal.
-                    </span>
-                  </div>
-
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-01.jpeg"
+                    alt="Aymée Ferraz — peça 01"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
-              </aside>
-
-              <div class="social-gallery-shell">
-
-                <div class="social-gallery-head">
-                  <span>
-                    seleção de peças
-                  </span>
-
-                  <strong>
-                    08 peças selecionadas
-                  </strong>
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-02.jpeg"
+                    alt="Aymée Ferraz — peça 02"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
-                <div
-                  class="strip"
-                  aria-label="Galeria de conteúdos para redes sociais de Aymée Ferraz"
-                >
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-01.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 01"
-                      class="js-lightbox-image"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-02.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 02"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-03.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 03"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-04.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 04"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-05.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 05"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-06.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 06"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-07.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 07"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
-                  <div class="strip-item ig-ratio">
-                    <img
-                      src="img/Aymee-img/img-08.jpeg"
-                      alt="Aymée Ferraz — peça para redes sociais 08"
-                      class="js-lightbox-image"
-                      loading="lazy"
-                      tabindex="0"
-                      role="button"
-                      aria-haspopup="dialog"
-                    >
-                  </div>
-
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-03.jpeg"
+                    alt="Aymée Ferraz — peça 03"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
-                <div class="strip-nav">
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-04.jpeg"
+                    alt="Aymée Ferraz — peça 04"
+                    class="js-lightbox-image"
+                  >
+                </div>
 
-                  <div class="strip-nav-arrows">
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-05.jpeg"
+                    alt="Aymée Ferraz — peça 05"
+                    class="js-lightbox-image"
+                  >
+                </div>
 
-                    <button
-                      class="strip-btn prev"
-                      type="button"
-                      aria-label="Ver peças anteriores de Aymée Ferraz"
-                    >
-                      ←
-                    </button>
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-06.jpeg"
+                    alt="Aymée Ferraz — peça 06"
+                    class="js-lightbox-image"
+                  >
+                </div>
 
-                    <button
-                      class="strip-btn next"
-                      type="button"
-                      aria-label="Ver próximas peças de Aymée Ferraz"
-                    >
-                      →
-                    </button>
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-07.jpeg"
+                    alt="Aymée Ferraz — peça 07"
+                    class="js-lightbox-image"
+                  >
+                </div>
 
-                  </div>
-
+                <div class="strip-item ig-ratio">
+                  <img
+                    src="img/Aymee-img/img-08.jpeg"
+                    alt="Aymée Ferraz — peça 08"
+                    class="js-lightbox-image"
+                  >
                 </div>
 
               </div>
@@ -7050,6 +6631,10 @@
         </article>
 
       </div>
+
+      <!-- ===================================================
+           HABILIDADES
+           =================================================== -->
 
       <div
         class="section-head centered"
@@ -7119,6 +6704,10 @@
         </div>
 
       </section>
+
+      <!-- ===================================================
+           CONTATO
+           =================================================== -->
 
       <section
         class="cta-band"
@@ -7195,95 +6784,9 @@
 
   </div>
 
-  <div
-    id="drawerOverlay"
-    class="drawer-overlay"
-  ></div>
-
-  <aside
-    id="voitDrawer"
-    class="side-drawer"
-  >
-
-    <button
-      class="drawer-close-btn js-close-drawer"
-      type="button"
-    >
-      ← Fechar janela
-    </button>
-
-    <div class="drawer-header">
-
-      <span class="mono">
-        Método e Processo • Voit Consultoria
-      </span>
-
-      <h2>
-        Metodologia de Execução
-      </h2>
-
-      <p>
-        Do planejamento à entrega, com alinhamento, produção e validação.
-      </p>
-
-    </div>
-
-    <section class="drawer-section">
-
-      <h3>
-        01. Alinhamento Estratégico
-      </h3>
-
-      <p>
-        Definição de temas, objetivos e direcionamentos junto à gestão.
-      </p>
-
-    </section>
-
-    <section class="drawer-section">
-
-      <h3>
-        02. Pesquisa & Produção
-      </h3>
-
-      <p>
-        Pesquisa de referências e produção de materiais para diferentes canais.
-      </p>
-
-    </section>
-
-    <section class="drawer-section">
-
-      <h3>
-        03. Validação Técnica
-      </h3>
-
-      <p>
-        Revisão do conteúdo junto aos especialistas responsáveis.
-      </p>
-
-    </section>
-
-    <section class="drawer-section">
-
-      <h3>
-        04. Comercial & Endomarketing
-      </h3>
-
-      <p>
-        Apresentações comerciais, materiais técnicos e comunicação interna.
-      </p>
-
-    </section>
-
-    <button
-      class="drawer-close-btn js-close-drawer"
-      type="button"
-    >
-      ← Fechar janela
-    </button>
-
-  </aside>
+  <!-- =======================================================
+       MODAL
+       ======================================================= -->
 
   <div
     id="imgModal"
@@ -7321,6 +6824,10 @@
           "(prefers-reduced-motion: reduce)"
         );
 
+      /* =====================================================
+         INTRO
+         ===================================================== */
+
       const introOverlay =
         $("#intro-overlay");
 
@@ -7333,7 +6840,8 @@
       const siteContent =
         $("#site-content");
 
-      let introFinished = false;
+      let introFinished =
+        false;
 
       function sizeIntroWords() {
         if (
@@ -7343,7 +6851,8 @@
           return;
         }
 
-        let maxWidth = 0;
+        let maxWidth =
+          0;
 
         introWords.forEach(
           word => {
@@ -7364,7 +6873,8 @@
           return;
         }
 
-        introFinished = true;
+        introFinished =
+          true;
 
         introOverlay
           ?.classList
@@ -7457,6 +6967,10 @@
 
       startIntro();
 
+      /* =====================================================
+         NAV
+         ===================================================== */
+
       $("#logoHome")
         ?.addEventListener(
           "click",
@@ -7473,6 +6987,10 @@
             });
           }
         );
+
+      /* =====================================================
+         TEMA
+         ===================================================== */
 
       const themeToggle =
         $("#themeToggle");
@@ -7523,6 +7041,10 @@
         );
 
       updateTheme();
+
+      /* =====================================================
+         HERO WIREFRAME
+         ===================================================== */
 
       const wfNavItems =
         $$(".wf-nav-item");
@@ -7582,13 +7104,17 @@
                 item => {
                   item
                     .classList
-                    .remove("active");
+                    .remove(
+                      "active"
+                    );
                 }
               );
 
               swatch
                 .classList
-                .add("active");
+                .add(
+                  "active"
+                );
 
               selectedColor =
                 swatch.dataset.color || "";
@@ -7597,7 +7123,9 @@
         }
       );
 
-      function contrastColor(hex) {
+      function contrastColor(
+        hex
+      ) {
         if (!hex) {
           return "";
         }
@@ -7725,7 +7253,9 @@
               item => {
                 item
                   .classList
-                  .remove("active");
+                  .remove(
+                    "active"
+                  );
               }
             );
 
@@ -7754,86 +7284,24 @@
           event => {
             event.stopPropagation();
 
-            deliveryCount += 1;
+            deliveryCount +=
+              1;
 
             const counter =
               $("#wfCounter");
 
             if (counter) {
               counter.textContent =
-                String(deliveryCount);
+                String(
+                  deliveryCount
+                );
             }
           }
         );
 
-      $$(".wf-task-item")
-        .forEach(
-          task => {
-            task.addEventListener(
-              "click",
-              () => {
-                task
-                  .classList
-                  .toggle("checked");
-              }
-            );
-          }
-        );
-
-      const wfWindow =
-        $("#wfWindow");
-
-      const wfSwitchMode =
-        $("#wfSwitchMode");
-
-      let wfDark =
-        false;
-
-      wfSwitchMode
-        ?.addEventListener(
-          "click",
-          event => {
-            event.stopPropagation();
-
-            wfDark =
-              !wfDark;
-
-            if (wfDark) {
-              wfWindow.style.setProperty(
-                "--wf-bg",
-                "#12110F"
-              );
-
-              wfWindow.style.setProperty(
-                "--wf-card",
-                "#1C1A17"
-              );
-
-              wfWindow.style.setProperty(
-                "--wf-text",
-                "#F0ECE1"
-              );
-
-              wfSwitchMode.textContent =
-                "modo clean";
-            } else {
-              wfWindow.style.removeProperty(
-                "--wf-bg"
-              );
-
-              wfWindow.style.removeProperty(
-                "--wf-card"
-              );
-
-              wfWindow.style.removeProperty(
-                "--wf-text"
-              );
-
-              wfSwitchMode.textContent =
-                "modo app";
-            }
-          }
-        );
+      /* =====================================================
+         FERNANDO TABS
+         ===================================================== */
 
       const fernandoTabs =
         $$(".fernando-tab");
@@ -7841,179 +7309,34 @@
       const fernandoViews =
         $$(".fernando-view");
 
-      function activateFernandoTab(
-        name
-      ) {
-        fernandoTabs.forEach(
-          tab => {
-            tab
-              .classList
-              .toggle(
-                "active",
-                tab.dataset.fernandoTab ===
-                  name
-              );
-          }
-        );
-
-        fernandoViews.forEach(
-          view => {
-            view
-              .classList
-              .toggle(
-                "active",
-                view.dataset.fernandoView ===
-                  name
-              );
-          }
-        );
-
-        requestAnimationFrame(
-          resizeFernandoFrames
-        );
-      }
-
       fernandoTabs.forEach(
         tab => {
           tab.addEventListener(
             "click",
             () => {
-              activateFernandoTab(
-                tab.dataset
-                  .fernandoTab
-              );
-            }
-          );
-        }
-      );
-
-      const FA_DESKTOP_BASE_WIDTH =
-        1440;
-
-      function resizeFernandoFrame(
-        viewport
-      ) {
-        if (!viewport) {
-          return;
-        }
-
-        const canvas =
-          $(
-            ".fa-desktop-canvas",
-            viewport
-          );
-
-        if (
-          !canvas ||
-          !viewport.clientWidth
-        ) {
-          return;
-        }
-
-        const scale =
-          Math.min(
-            1,
-            viewport.clientWidth /
-              FA_DESKTOP_BASE_WIDTH
-          );
-
-        canvas.style.transform =
-          `scale(${scale})`;
-
-        const sourceHeight =
-          Number(
-            viewport.dataset
-              .faDesktopHeight ||
-              620
-          );
-
-        viewport.style.height =
-          `${Math.round(
-            sourceHeight *
-              scale
-          )}px`;
-      }
-
-      function resizeFernandoFrames() {
-        $$(".fa-desktop-viewport")
-          .forEach(
-            resizeFernandoFrame
-          );
-      }
-
-      window.addEventListener(
-        "load",
-        resizeFernandoFrames
-      );
-
-      window.addEventListener(
-        "resize",
-        resizeFernandoFrames
-      );
-
-      if (
-        "ResizeObserver" in window
-      ) {
-        const observer =
-          new ResizeObserver(
-            entries => {
-              entries.forEach(
-                entry => {
-                  resizeFernandoFrame(
-                    entry.target
-                  );
-                }
-              );
-            }
-          );
-
-        $$(".fa-desktop-viewport")
-          .forEach(
-            viewport => {
-              observer.observe(
-                viewport
-              );
-            }
-          );
-      }
-
-      resizeFernandoFrames();
-
-      const systemButtons =
-        $$(".fa-system-btn");
-
-      const systemPanels =
-        $$(".fa-system-panel");
-
-      systemButtons.forEach(
-        button => {
-          button.addEventListener(
-            "click",
-            () => {
               const target =
-                button.dataset
-                  .faSystem;
+                tab.dataset
+                  .fernandoTab;
 
-              systemButtons.forEach(
+              fernandoTabs.forEach(
                 item => {
                   item
                     .classList
-                    .remove("active");
+                    .toggle(
+                      "active",
+                      item === tab
+                    );
                 }
               );
 
-              button
-                .classList
-                .add("active");
-
-              systemPanels.forEach(
-                panel => {
-                  panel
+              fernandoViews.forEach(
+                view => {
+                  view
                     .classList
                     .toggle(
                       "active",
-                      panel.dataset
-                        .faSystemPanel ===
+                      view.dataset
+                        .fernandoView ===
                         target
                     );
                 }
@@ -8023,74 +7346,56 @@
         }
       );
 
-      const faPrimaryDemo =
-        $("#faPrimaryDemo");
+      /* =====================================================
+         VOIT TABS
+         ===================================================== */
 
-      $$("[data-fa-button-state]")
-        .forEach(
-          button => {
-            button.addEventListener(
-              "click",
-              () => {
-                $$(
-                  "[data-fa-button-state]"
-                )
-                  .forEach(
-                    item => {
-                      item
-                        .classList
-                        .remove("active");
-                    }
-                  );
+      const voitTabs =
+        $$(".voit-tab");
 
-                button
-                  .classList
-                  .add("active");
+      const voitViews =
+        $$(".voit-view");
 
-                if (!faPrimaryDemo) {
-                  return;
-                }
+      voitTabs.forEach(
+        tab => {
+          tab.addEventListener(
+            "click",
+            () => {
+              const target =
+                tab.dataset
+                  .voitTab;
 
-                faPrimaryDemo
-                  .classList
-                  .remove(
-                    "is-hover",
-                    "is-disabled"
-                  );
-
-                faPrimaryDemo.disabled =
-                  false;
-
-                const state =
-                  button.dataset
-                    .faButtonState;
-
-                if (
-                  state === "hover"
-                ) {
-                  faPrimaryDemo
+              voitTabs.forEach(
+                item => {
+                  item
                     .classList
-                    .add(
-                      "is-hover"
+                    .toggle(
+                      "active",
+                      item === tab
                     );
                 }
+              );
 
-                if (
-                  state === "disabled"
-                ) {
-                  faPrimaryDemo
+              voitViews.forEach(
+                view => {
+                  view
                     .classList
-                    .add(
-                      "is-disabled"
+                    .toggle(
+                      "active",
+                      view.dataset
+                        .voitView ===
+                        target
                     );
-
-                  faPrimaryDemo.disabled =
-                    true;
                 }
-              }
-            );
-          }
-        );
+              );
+            }
+          );
+        }
+      );
+
+      /* =====================================================
+         GALERIAS
+         ===================================================== */
 
       $$(".project-block")
         .forEach(
@@ -8136,6 +7441,10 @@
               );
           }
         );
+
+      /* =====================================================
+         MODAL
+         ===================================================== */
 
       const imgModal =
         $("#imgModal");
@@ -8184,20 +7493,9 @@
           image => {
             image.addEventListener(
               "click",
-              () => openImage(image)
-            );
-
-            image.addEventListener(
-              "keydown",
-              event => {
-                if (
-                  event.key === "Enter" ||
-                  event.key === " "
-                ) {
-                  event.preventDefault();
-                  openImage(image);
-                }
-              }
+              () => openImage(
+                image
+              )
             );
           }
         );
@@ -8221,6 +7519,22 @@
           }
         );
 
+      document.addEventListener(
+        "keydown",
+        event => {
+          if (
+            event.key ===
+            "Escape"
+          ) {
+            closeImage();
+          }
+        }
+      );
+
+      /* =====================================================
+         RENATA SLIDES
+         ===================================================== */
+
       const RENATA_TOTAL_SLIDES =
         50;
 
@@ -8234,9 +7548,6 @@
       const renataMainSlide =
         $("#renataMainSlide");
 
-      const renataStage =
-        $("#renataStage");
-
       const renataCounter =
         $("#renataCounter");
 
@@ -8249,19 +7560,7 @@
       const renataProgress =
         $("#renataProgress");
 
-      const renataPrev =
-        $("#renataPrev");
-
-      const renataNext =
-        $("#renataNext");
-
-      const renataOpenSlide =
-        $("#renataOpenSlide");
-
       let renataIndex =
-        0;
-
-      let renataTouchStartX =
         0;
 
       const renataResolvedSources =
@@ -8298,18 +7597,12 @@
           );
 
         if (cached) {
-          image.onerror =
-            null;
-
-          image.onload =
-            () => {
-              callback?.(
-                cached
-              );
-            };
-
           image.src =
             cached;
+
+          callback?.(
+            cached
+          );
 
           return;
         }
@@ -8325,16 +7618,8 @@
         function tryNext() {
           if (
             extensionIndex >=
-              RENATA_EXTENSIONS.length
+            RENATA_EXTENSIONS.length
           ) {
-            image.onerror =
-              null;
-
-            image.alt =
-              `Slide ${
-                index + 1
-              } não encontrado`;
-
             callback?.(
               null
             );
@@ -8359,9 +7644,6 @@
                 source
               );
 
-              image.onerror =
-                null;
-
               callback?.(
                 source
               );
@@ -8377,34 +7659,12 @@
         tryNext();
       }
 
-      function preloadRenataSlide(
-        index
+      function setRenataSlide(
+        nextIndex
       ) {
         if (
-          index < 0 ||
-          index >=
-            RENATA_TOTAL_SLIDES ||
-          renataResolvedSources.has(
-            index
-          )
+          !renataMainSlide
         ) {
-          return;
-        }
-
-        const image =
-          new Image();
-
-        loadRenataImage(
-          image,
-          index
-        );
-      }
-
-      function setRenataSlide(
-        nextIndex,
-        animate = true
-      ) {
-        if (!renataMainSlide) {
           return;
         }
 
@@ -8415,27 +7675,9 @@
           ) %
           RENATA_TOTAL_SLIDES;
 
-        if (
-          animate &&
-          !reducedMotion.matches
-        ) {
-          renataStage
-            ?.classList
-            .add(
-              "is-changing"
-            );
-        }
-
         loadRenataImage(
           renataMainSlide,
-          renataIndex,
-          () => {
-            renataStage
-              ?.classList
-              .remove(
-                "is-changing"
-              );
-          }
+          renataIndex
         );
 
         const current =
@@ -8454,13 +7696,6 @@
           } de ${
             RENATA_TOTAL_SLIDES
           }`;
-
-        renataMainSlide.setAttribute(
-          "aria-label",
-          `Ampliar slide ${
-            renataIndex + 1
-          } da apresentação de Renata Brandão`
-        );
 
         if (renataCounter) {
           renataCounter.textContent =
@@ -8489,253 +7724,54 @@
               100
             }%`;
         }
-
-        preloadRenataSlide(
-          (
-            renataIndex + 1
-          ) %
-          RENATA_TOTAL_SLIDES
-        );
-
-        preloadRenataSlide(
-          (
-            renataIndex -
-            1 +
-            RENATA_TOTAL_SLIDES
-          ) %
-          RENATA_TOTAL_SLIDES
-        );
       }
 
-      function nextRenataSlide() {
-        setRenataSlide(
-          renataIndex + 1
-        );
-      }
-
-      function previousRenataSlide() {
-        setRenataSlide(
-          renataIndex - 1
-        );
-      }
-
-      renataPrev
+      $("#renataPrev")
         ?.addEventListener(
           "click",
-          previousRenataSlide
-        );
-
-      renataNext
-        ?.addEventListener(
-          "click",
-          nextRenataSlide
-        );
-
-      function openRenataSlide() {
-        if (renataMainSlide) {
-          openImage(
-            renataMainSlide
-          );
-        }
-      }
-
-      renataOpenSlide
-        ?.addEventListener(
-          "click",
-          openRenataSlide
-        );
-
-      renataMainSlide
-        ?.addEventListener(
-          "click",
-          openRenataSlide
-        );
-
-      renataMainSlide
-        ?.addEventListener(
-          "keydown",
-          event => {
-            if (
-              event.key ===
-                "Enter" ||
-              event.key ===
-                " "
-            ) {
-              event.preventDefault();
-
-              openRenataSlide();
-            }
-          }
-        );
-
-      renataStage
-        ?.addEventListener(
-          "touchstart",
-          event => {
-            renataTouchStartX =
-              event
-                .changedTouches[0]
-                .clientX;
-          },
-          {
-            passive: true
-          }
-        );
-
-      renataStage
-        ?.addEventListener(
-          "touchend",
-          event => {
-            const endX =
-              event
-                .changedTouches[0]
-                .clientX;
-
-            const difference =
-              endX -
-              renataTouchStartX;
-
-            if (
-              Math.abs(
-                difference
-              ) < 45
-            ) {
-              return;
-            }
-
-            if (
-              difference < 0
-            ) {
-              nextRenataSlide();
-            } else {
-              previousRenataSlide();
-            }
-          },
-          {
-            passive: true
-          }
-        );
-
-      document.addEventListener(
-        "keydown",
-        event => {
-          const renataProject =
-            $("#renata-project");
-
-          if (!renataProject) {
-            return;
-          }
-
-          const bounds =
-            renataProject
-              .getBoundingClientRect();
-
-          const projectVisible =
-            bounds.bottom > 0 &&
-            bounds.top <
-              window.innerHeight;
-
-          if (
-            !projectVisible ||
-            imgModal
-              ?.classList
-              .contains(
-                "open"
-              )
-          ) {
-            return;
-          }
-
-          if (
-            event.key ===
-            "ArrowLeft"
-          ) {
-            previousRenataSlide();
-          }
-
-          if (
-            event.key ===
-            "ArrowRight"
-          ) {
-            nextRenataSlide();
-          }
-        }
-      );
-
-      setRenataSlide(
-        0,
-        false
-      );
-
-      const drawer =
-        $("#voitDrawer");
-
-      const drawerOverlay =
-        $("#drawerOverlay");
-
-      function openDrawer() {
-        drawer
-          ?.classList
-          .add("active");
-
-        drawerOverlay
-          ?.classList
-          .add("active");
-
-        document.body
-          .classList
-          .add("locked");
-      }
-
-      function closeDrawer() {
-        drawer
-          ?.classList
-          .remove("active");
-
-        drawerOverlay
-          ?.classList
-          .remove("active");
-
-        document.body
-          .classList
-          .remove("locked");
-      }
-
-      $("#openVoitDrawer")
-        ?.addEventListener(
-          "click",
-          openDrawer
-        );
-
-      $$(".js-close-drawer")
-        .forEach(
-          button => {
-            button.addEventListener(
-              "click",
-              closeDrawer
+          () => {
+            setRenataSlide(
+              renataIndex - 1
             );
           }
         );
 
-      drawerOverlay
+      $("#renataNext")
         ?.addEventListener(
           "click",
-          closeDrawer
+          () => {
+            setRenataSlide(
+              renataIndex + 1
+            );
+          }
         );
 
-      document.addEventListener(
-        "keydown",
-        event => {
-          if (
-            event.key !==
-            "Escape"
-          ) {
-            return;
+      $("#renataOpenSlide")
+        ?.addEventListener(
+          "click",
+          () => {
+            if (
+              renataMainSlide
+            ) {
+              openImage(
+                renataMainSlide
+              );
+            }
           }
+        );
 
-          closeImage();
-          closeDrawer();
-        }
+      renataMainSlide
+        ?.addEventListener(
+          "click",
+          () => {
+            openImage(
+              renataMainSlide
+            );
+          }
+        );
+
+      setRenataSlide(
+        0
       );
 
     })();
