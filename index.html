@@ -929,6 +929,29 @@
       text-align: center;
     }
 
+    .section-head.about-title {
+      display: block;
+    }
+
+    .about-title-label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-head.about-title h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+    }
+
     /* =========================================================
        SOBRE
        ========================================================= */
@@ -1761,8 +1784,8 @@
       width: 100%;
       height: 100%;
 
-      object-fit: cover;
-      object-position: top;
+      object-fit: contain;
+      object-position: center top;
     }
 
     .fernando-device-pair {
@@ -1786,11 +1809,13 @@
     }
 
     .fernando-mini-desktop img {
+      display: block;
+
       width: 100%;
       height: 100%;
 
-      object-fit: cover;
-      object-position: top;
+      object-fit: contain;
+      object-position: center top;
     }
 
     .fernando-mini-mobile {
@@ -3450,14 +3475,14 @@
 
       <ul>
         <li>
-          <a href="#sobre">
-            sobre
+          <a href="#projetos">
+            projetos
           </a>
         </li>
 
         <li>
-          <a href="#projetos">
-            projetos
+          <a href="#sobre">
+            sobre
           </a>
         </li>
 
@@ -3921,176 +3946,6 @@
       </section>
 
       <!-- ===================================================
-           PROCESSO
-           =================================================== -->
-
-      <section class="process-fold-section">
-
-        <span class="process-kicker mono">
-          método & execução
-        </span>
-
-        <div class="process-fold-grid">
-
-          <article class="process-fold-card">
-
-            <span class="process-step-num">
-              01 / DIAGNÓSTICO
-            </span>
-
-            <h2>
-              Entendimento & Imersão
-            </h2>
-
-            <p>
-              Investigação do problema inicial, escopo e alinhamento de
-              expectativas para estruturar o caminho antes da execução visual.
-            </p>
-
-          </article>
-
-          <article class="process-fold-card">
-
-            <span class="process-step-num">
-              02 / ESTRUTURAÇÃO
-            </span>
-
-            <h2>
-              Pesquisa & Direção Visual
-            </h2>
-
-            <p>
-              Organização da informação, definição de hierarquia, referências,
-              tom visual e critérios que dão sustentação à solução.
-            </p>
-
-          </article>
-
-          <article class="process-fold-card">
-
-            <span class="process-step-num">
-              03 / ENTREGA
-            </span>
-
-            <h2>
-              Execução & Validação
-            </h2>
-
-            <p>
-              Desenvolvimento, refinamento e revisão das entregas com as
-              ferramentas adequadas a cada projeto.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-      <!-- ===================================================
-           SOBRE
-           =================================================== -->
-
-      <div
-        class="section-head"
-        id="sobre"
-      >
-        <h2>
-          Sobre mim
-        </h2>
-      </div>
-
-      <section class="constructivist-about">
-
-        <div class="const-text-wrapper">
-
-          <span class="const-manifesto-title">
-            design como ferramenta de clareza
-          </span>
-
-          <p>
-            Sou Designer Gráfica formada pela Estácio, com especialização em
-            UI/UX Design em andamento e três anos de atuação no mercado.
-            Trabalho entre comunicação visual e interfaces digitais,
-            transformando informações, necessidades de negócio e identidade de
-            marca em soluções visuais claras e consistentes.
-          </p>
-
-          <p>
-            Minha atuação passa por Figma, Pacote Adobe e Canva, da organização
-            da informação à execução final. Também utilizo IA generativa como
-            ferramenta de apoio ao workflow, principalmente em exploração,
-            produtividade e refinamento de conteúdo.
-          </p>
-
-          <p>
-            Mais do que escolher uma estética, procuro entender o problema,
-            estruturar prioridades e construir soluções que façam sentido para
-            quem comunica e para quem utiliza.
-          </p>
-
-          <div class="const-tags">
-            <span class="const-tag">UI Design</span>
-            <span class="const-tag">Comunicação Visual</span>
-            <span class="const-tag">Figma & Adobe</span>
-            <span class="const-tag">Canva</span>
-            <span class="const-tag">Arquitetura de Informação</span>
-            <span class="const-tag">Workflow com IA</span>
-          </div>
-
-        </div>
-
-        <div class="const-visual-showcase">
-
-          <div class="const-orbit-ring"></div>
-
-          <svg
-            class="const-orbit-text"
-            viewBox="0 0 200 200"
-            aria-hidden="true"
-          >
-            <defs>
-              <path
-                id="orbitPath"
-                d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
-              />
-            </defs>
-
-            <text>
-              <textPath href="#orbitPath">
-                UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO •
-              </textPath>
-            </text>
-
-          </svg>
-
-          <div class="const-floater badge">
-            ❖ auto-layout 8px
-          </div>
-
-          <div class="const-floater spec">
-            ↔ 380px × 380px
-          </div>
-
-          <div class="const-floater cursor">
-            ➤ Raquel • Design
-          </div>
-
-          <div class="const-photo-frame">
-
-            <img
-              src="img/img-perfil/foto-perfil.jpeg"
-              alt="Retrato de Raquel Renovato"
-              class="js-lightbox-image"
-            >
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- ===================================================
            PROJETOS
            =================================================== -->
 
@@ -4117,7 +3972,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              01 / 05 • UI DESIGN / FRONT-END • PRODUTO PUBLICADO
+              01 / 05 • UI DESIGN / FRONT-END • JUL. 2026 – ATUAL
             </span>
 
             <h3>
@@ -4144,8 +3999,11 @@
                 </h4>
 
                 <p>
-                  O projeto partiu de um site com grande volume de conteúdo
-                  técnico, diferentes especialidades e uma estrutura extensa.
+                  O projeto começou em julho de 2026 e passou por alinhamento,
+                  organização do conteúdo, desenvolvimento da interface e
+                  refinamentos sucessivos. O site anterior reunia um grande
+                  volume de conteúdo técnico, diferentes especialidades e uma
+                  estrutura extensa.
                 </p>
 
               </article>
@@ -4310,7 +4168,7 @@
                 <div class="fernando-case-editorial-main">
 
                   <span class="fernando-case-eyebrow mono">
-                    CASE STUDY / UI + FRONT-END
+                    ESTUDO DE CASO / UI + FRONT-END
                   </span>
 
                   <h4>
@@ -4757,7 +4615,7 @@
               <div class="fernando-system-intro">
 
                 <span class="mono">
-                  RESPONSIVE DESIGN
+                  DESIGN RESPONSIVO
                 </span>
 
                 <h4>
@@ -4776,7 +4634,7 @@
                 <article class="fa-responsive-note">
 
                   <span>
-                    01 / NAVIGATION
+                    01 / NAVEGAÇÃO
                   </span>
 
                   <h4>
@@ -4793,7 +4651,7 @@
                 <article class="fa-responsive-note">
 
                   <span>
-                    02 / GALLERIES
+                    02 / GALERIAS
                   </span>
 
                   <h4>
@@ -4809,7 +4667,7 @@
                 <article class="fa-responsive-note">
 
                   <span>
-                    03 / TYPOGRAPHY
+                    03 / TIPOGRAFIA
                   </span>
 
                   <h4>
@@ -4926,7 +4784,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              02 / 05 • COMUNICAÇÃO MULTICANAL / CONTEÚDO
+              02 / 05 • COMUNICAÇÃO MULTICANAL / CONTEÚDO • JUN. 2023 – ATUAL
             </span>
 
             <h3>
@@ -5794,7 +5652,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              03 / 05 • PRESENTATION DESIGN / CONTEÚDO
+              03 / 05 • PRESENTATION DESIGN / CONTEÚDO • JUN. 2024 – FEV. 2026
             </span>
 
             <h3>
@@ -6065,7 +5923,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              04 / 05 • SOCIAL MEDIA / DESIGN GRÁFICO
+              04 / 05 • SOCIAL MEDIA / DESIGN GRÁFICO • MAR. 2025 – ATUAL
             </span>
 
             <h3>
@@ -6289,7 +6147,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              05 / 05 • SOCIAL MEDIA / MARCA PESSOAL
+              05 / 05 • SOCIAL MEDIA / MARCA PESSOAL • JUL. 2025 – ATUAL
             </span>
 
             <h3>
@@ -6513,6 +6371,170 @@
         </article>
 
       </div>
+
+      <!-- ===================================================
+           SOBRE
+           =================================================== -->
+
+      <div
+        class="section-head about-title"
+        id="sobre"
+      >
+        <span class="about-title-label">
+          Designer
+        </span>
+
+        <h2>
+          Raquel Renovato.
+        </h2>
+      </div>
+
+      <section class="constructivist-about">
+
+        <div class="const-text-wrapper">
+
+          <p>
+            Sou Designer Gráfica formada pela Estácio, com três anos de atuação
+            em Design Gráfico e especialização em UI/UX Design em andamento.
+            Trabalho entre comunicação visual e interfaces digitais,
+            transformando informações, necessidades de negócio e identidade de
+            marca em soluções visuais claras e consistentes.
+          </p>
+
+          <p>
+            Minha atuação passa por Figma, Pacote Adobe e Canva, da organização
+            da informação à execução final. Também utilizo IA generativa como
+            ferramenta de apoio ao workflow, principalmente em exploração,
+            produtividade e refinamento de conteúdo.
+          </p>
+
+          <div class="const-tags">
+            <span class="const-tag">UI Design</span>
+            <span class="const-tag">Comunicação Visual</span>
+            <span class="const-tag">Figma & Adobe</span>
+            <span class="const-tag">Canva</span>
+            <span class="const-tag">Arquitetura de Informação</span>
+            <span class="const-tag">Workflow com IA</span>
+          </div>
+
+        </div>
+
+        <div class="const-visual-showcase">
+
+          <div class="const-orbit-ring"></div>
+
+          <svg
+            class="const-orbit-text"
+            viewBox="0 0 200 200"
+            aria-hidden="true"
+          >
+            <defs>
+              <path
+                id="orbitPath"
+                d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
+              />
+            </defs>
+
+            <text>
+              <textPath href="#orbitPath">
+                UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO •
+              </textPath>
+            </text>
+
+          </svg>
+
+          <div class="const-floater badge">
+            ❖ auto-layout 8px
+          </div>
+
+          <div class="const-floater spec">
+            ↔ 380px × 380px
+          </div>
+
+          <div class="const-floater cursor">
+            ➤ Raquel • Design
+          </div>
+
+          <div class="const-photo-frame">
+
+            <img
+              src="img/img-perfil/foto-perfil.jpeg"
+              alt="Retrato de Raquel Renovato"
+              class="js-lightbox-image"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ===================================================
+           PROCESSO
+           =================================================== -->
+
+      <section class="process-fold-section">
+
+        <span class="process-kicker mono">
+          método & execução
+        </span>
+
+        <div class="process-fold-grid">
+
+          <article class="process-fold-card">
+
+            <span class="process-step-num">
+              01 / DIAGNÓSTICO
+            </span>
+
+            <h2>
+              Entendimento & Imersão
+            </h2>
+
+            <p>
+              Investigação do problema inicial, escopo e alinhamento de
+              expectativas para estruturar o caminho antes da execução visual.
+            </p>
+
+          </article>
+
+          <article class="process-fold-card">
+
+            <span class="process-step-num">
+              02 / ESTRUTURAÇÃO
+            </span>
+
+            <h2>
+              Pesquisa & Direção Visual
+            </h2>
+
+            <p>
+              Organização da informação, definição de hierarquia, referências,
+              tom visual e critérios que dão sustentação à solução.
+            </p>
+
+          </article>
+
+          <article class="process-fold-card">
+
+            <span class="process-step-num">
+              03 / ENTREGA
+            </span>
+
+            <h2>
+              Execução & Validação
+            </h2>
+
+            <p>
+              Desenvolvimento, refinamento e revisão das entregas com as
+              ferramentas adequadas a cada projeto.
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
 
       <!-- ===================================================
            HABILIDADES
