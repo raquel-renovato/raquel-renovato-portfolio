@@ -289,7 +289,10 @@
       align-items: center;
       justify-content: center;
 
-      padding: 6px 14px;
+      width: 34px;
+      height: 34px;
+
+      padding: 0;
 
       border: 1px solid var(--line-strong);
       border-radius: 999px;
@@ -300,6 +303,29 @@
       font-size: 0.72rem;
 
       cursor: pointer;
+    }
+
+    .theme-toggle svg {
+      width: 16px;
+      height: 16px;
+
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    .theme-toggle .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     nav ul {
@@ -4597,8 +4623,15 @@
           type="button"
           id="themeToggle"
           class="theme-toggle mono"
+          aria-label="Alternar modo noturno"
+          title="Alternar modo noturno"
         >
-          <span id="themeLabel">
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path>
+          </svg>
+
+          <span id="themeLabel" class="sr-only">
             Sombrio
           </span>
         </button>
@@ -4677,6 +4710,14 @@
                 href="#contato"
               >
                 entrar em contato ↗
+              </a>
+
+              <a
+                class="hero-secondary-link mono"
+                href="img/PDF/Curriculo_Raquel_Renovato.pdf"
+                download
+              >
+                baixar currículo ↓
               </a>
 
             </div>
