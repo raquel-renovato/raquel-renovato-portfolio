@@ -1910,6 +1910,79 @@
       line-height: 1.5;
     }
 
+    .fernando-live-preview {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+      background: #fff;
+    }
+
+    .fernando-system-components {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .fernando-system-component {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+    }
+
+    .fernando-system-component > span {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fernando-system-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .fernando-system-buttons button {
+      padding: 9px 13px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      color: var(--bg);
+      background: var(--accent);
+      font: 600 0.62rem "IBM Plex Mono", monospace;
+    }
+
+    .fernando-system-buttons button:last-child {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .fernando-system-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 0.65rem;
+    }
+
+    .fernando-system-nav strong {
+      font-family: "Fraunces", serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .fernando-system-nav span {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
     .fernando-compare-points {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1964,7 +2037,7 @@
 
     .fernando-compare-before-stage,
     .fernando-compare-after-stage {
-      min-height: 350px;
+      min-height: 0;
     }
 
     .fernando-compare-before-stage {
@@ -3446,6 +3519,7 @@
       .fernando-compare-showcase,
       .fernando-compare-points,
       .fernando-system-gallery,
+      .fernando-system-components,
       .fa-responsive-notes,
       .fernando-closing,
       .fernando-closing-grid {
@@ -4758,11 +4832,12 @@
 
                   <div class="fernando-compare-after-stage">
 
-                    <img
-                      class="js-lightbox-image"
-                      src="img/img-fernando/Layout%20-%20Web.png"
-                      alt="Site de Fernando Amaral após o redesign"
-                    >
+                    <iframe
+                      class="fernando-live-preview"
+                      src="https://fernando-amaral.vercel.app/"
+                      title="Site de Fernando Amaral após o redesign"
+                      loading="lazy"
+                    ></iframe>
 
                   </div>
 
@@ -4875,6 +4950,23 @@
 
               </div>
 
+              <div class="fernando-system-components">
+                <article class="fernando-system-component">
+                  <span>BOTÕES / ESTADOS</span>
+                  <div class="fernando-system-buttons">
+                    <button type="button">Solicitar orçamento</button>
+                    <button type="button">Ver serviços</button>
+                  </div>
+                </article>
+                <article class="fernando-system-component">
+                  <span>NAVEGAÇÃO / HIERARQUIA</span>
+                  <div class="fernando-system-nav">
+                    <strong>Fernando Amaral</strong>
+                    <span>Menu compacto ☰</span>
+                  </div>
+                </article>
+              </div>
+
             </section>
 
             <section
@@ -4952,6 +5044,15 @@
 
               </div>
 
+              <div class="fernando-responsive-preview">
+                <iframe
+                  class="fernando-live-preview"
+                  src="https://fernando-amaral.vercel.app/"
+                  title="Site responsivo de Fernando Amaral"
+                  loading="lazy"
+                ></iframe>
+              </div>
+
             </section>
 
             <section
@@ -4975,6 +5076,14 @@
                 </p>
 
               </div>
+
+              <iframe
+                class="fernando-live-preview"
+                src="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&embed-host=share"
+                title="Protótipo navegável de Fernando Amaral no Figma"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
 
               <a
                 class="fernando-product-link"
