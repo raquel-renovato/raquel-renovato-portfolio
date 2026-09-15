@@ -289,7 +289,10 @@
       align-items: center;
       justify-content: center;
 
-      padding: 6px 14px;
+      width: 34px;
+      height: 34px;
+
+      padding: 0;
 
       border: 1px solid var(--line-strong);
       border-radius: 999px;
@@ -300,6 +303,29 @@
       font-size: 0.72rem;
 
       cursor: pointer;
+    }
+
+    .theme-toggle svg {
+      width: 16px;
+      height: 16px;
+
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    .theme-toggle .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     nav ul {
@@ -333,6 +359,7 @@
       padding: 8px 16px;
 
       border: 1px solid var(--ink);
+      border-radius: var(--radius);
 
       color: var(--ink);
 
@@ -928,6 +955,29 @@
       text-align: center;
     }
 
+    .section-head.about-title {
+      display: block;
+    }
+
+    .about-title-label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-head.about-title h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+    }
+
     /* =========================================================
        SOBRE
        ========================================================= */
@@ -981,6 +1031,7 @@
       padding: 6px 12px;
 
       border: 1.5px solid var(--ink);
+      border-radius: var(--radius);
 
       background: var(--card);
       color: var(--ink);
@@ -1759,8 +1810,8 @@
       width: 100%;
       height: 100%;
 
-      object-fit: cover;
-      object-position: top;
+      object-fit: contain;
+      object-position: center top;
     }
 
     .fernando-device-pair {
@@ -1784,11 +1835,13 @@
     }
 
     .fernando-mini-desktop img {
+      display: block;
+
       width: 100%;
       height: 100%;
 
-      object-fit: cover;
-      object-position: top;
+      object-fit: contain;
+      object-position: center top;
     }
 
     .fernando-mini-mobile {
@@ -1817,6 +1870,77 @@
 
       transform: scale(0.387);
       transform-origin: top left;
+    }
+
+    .fa-browser {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      background: #FFF;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+    }
+
+    .fa-browser-bar {
+      min-height: 44px;
+      display: grid;
+      grid-template-columns: 65px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      padding: 0 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .fa-browser-dots { display: flex; gap: 5px; }
+
+    .fa-browser-dots i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+      opacity: 0.5;
+    }
+
+    .fa-browser-address {
+      overflow: hidden;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .fa-browser-link {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+      text-decoration: none;
+    }
+
+    .fa-desktop-viewport {
+      position: relative;
+      width: 100%;
+      min-height: 420px;
+      overflow: hidden;
+      background: #FFF;
+    }
+
+    .fa-desktop-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      transform-origin: top left;
+    }
+
+    .fa-desktop-canvas iframe {
+      display: block;
+      width: 1440px !important;
+      height: 1200px !important;
+      max-width: none !important;
+      border: 0;
+      background: #FFF;
     }
 
     .fernando-compare-intro,
@@ -1850,6 +1974,202 @@
       line-height: 1.7;
     }
 
+    .fernando-system-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+    }
+
+    .fernando-system-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+    }
+
+    .fernando-system-gallery img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      object-position: center;
+      background: #f4f6f8;
+      cursor: zoom-in;
+    }
+
+    .fernando-system-gallery figcaption {
+      padding: 13px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--dim);
+      font-size: 0.64rem;
+      line-height: 1.5;
+    }
+
+    .fernando-live-preview {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+      background: #fff;
+    }
+
+    .fernando-system-components {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .fernando-system-component {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+    }
+
+    .fernando-system-component > span {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fernando-system-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .fernando-system-buttons button {
+      padding: 9px 13px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      color: var(--bg);
+      background: var(--accent);
+      font: 600 0.62rem "IBM Plex Mono", monospace;
+    }
+
+    .fernando-system-buttons button:last-child {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .fernando-system-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 0.65rem;
+    }
+
+    .fernando-system-nav strong {
+      font-family: "Fraunces", serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .fernando-system-nav span {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .fernando-compare-section {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+
+      gap: 34px;
+
+      align-items: start;
+    }
+
+    .fernando-compare-copy > span {
+      color: var(--accent);
+      font-size: 0.52rem;
+    }
+
+    .fernando-compare-copy h5 {
+      margin: 10px 0 20px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .fernando-compare-note {
+      padding: 14px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .fernando-compare-note strong {
+      font-size: 0.72rem;
+    }
+
+    .fernando-compare-note p {
+      margin-top: 6px;
+
+      color: var(--dim);
+
+      font-size: 0.69rem;
+      line-height: 1.62;
+    }
+
+    .fa-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .fa-compare-card {
+      min-width: 0;
+    }
+
+    .fa-compare-label {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      margin-bottom: 10px;
+    }
+
+    .fa-compare-label span:first-child {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.55rem;
+    }
+
+    .fa-compare-label span:last-child {
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fernando-compare-browsers {
+      grid-template-columns: 1fr 1fr !important;
+      align-items: stretch;
+    }
+
+    .fernando-compare-browsers .fa-compare-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fernando-compare-browsers .fa-browser {
+      flex: 1;
+    }
+
     .fernando-compare-points {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1857,6 +2177,868 @@
       gap: 10px;
 
       margin-top: 35px;
+    }
+
+    .fernando-compare-points article {
+      padding: 20px;
+
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .fernando-compare-points span {
+      color: var(--accent);
+      font-size: 0.49rem;
+    }
+
+    .fernando-compare-points h5 {
+      margin: 13px 0 7px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.14rem;
+      font-weight: 400;
+    }
+
+    .fernando-compare-points p {
+      color: var(--dim);
+
+      font-size: 0.69rem;
+      line-height: 1.6;
+    }
+
+    .fa-system {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+
+      gap: 1px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--line);
+    }
+
+    .fa-system-sidebar {
+      padding: 18px;
+
+      background: var(--card);
+    }
+
+    .fa-system-sidebar > span {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: #9A7669;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.53rem;
+      letter-spacing: 0.08em;
+    }
+
+    .fa-system-btn {
+      width: 100%;
+      min-height: 36px;
+
+      padding: 9px 10px;
+
+      border: 0;
+      border-radius: 4px;
+
+      background: transparent;
+      color: var(--dim);
+
+      font-size: 0.65rem;
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .fa-system-btn.active {
+      background: #EAD0BE;
+      color: #E8590C;
+    }
+
+    [data-theme="dark"] .fa-system-btn.active {
+      background: rgba(242, 109, 29, 0.16);
+      color: var(--accent);
+    }
+
+    .fa-system-canvas {
+      min-width: 0;
+
+      padding: 30px;
+
+      background: var(--bg);
+    }
+
+    .fa-system-panel {
+      display: none;
+    }
+
+    .fa-system-panel.active {
+      display: block;
+    }
+
+    .fa-system-title {
+      margin-bottom: 22px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+    }
+
+    .fa-component-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+    }
+
+    .fa-component-box {
+      min-height: 180px;
+
+      padding: 18px;
+
+      border: 1px solid var(--line);
+      border-radius: 7px;
+
+      background: var(--card);
+    }
+
+    .fa-component-box.wide {
+      grid-column: 1 / -1;
+    }
+
+    .fa-component-label {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      margin-bottom: 24px;
+
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.53rem;
+    }
+
+    .fa-color-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      gap: 8px;
+    }
+
+    .fa-color-token {
+      min-height: 145px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 14px;
+
+      border-radius: 6px;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .fa-color-token.navy {
+      background: #00152A;
+      color: #FFF;
+    }
+
+    .fa-color-token.gold {
+      background: #B8860B;
+      color: #FFF;
+    }
+
+    .fa-color-token.slate {
+      background: #64748B;
+      color: #FFF;
+    }
+
+    .fa-color-token.light {
+      border: 1px solid #CFD7DE;
+
+      background: #F4F6F8;
+      color: #00152A;
+    }
+
+    .fa-color-token.white {
+      border: 1px solid #CFD7DE;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 12px;
+    }
+
+    .fa-type-card {
+      min-height: 200px;
+
+      padding: 20px;
+
+      border: 1px solid #D8DDE2;
+      border-radius: 6px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-type-card > span {
+      color: #64748B;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .fa-type-card strong {
+      display: block;
+
+      margin: 20px 0 10px;
+
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .fa-type-card.manrope,
+    .fa-type-card.manrope strong,
+    .fa-type-card.manrope p {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .fa-type-card.dm,
+    .fa-type-card.dm strong,
+    .fa-type-card.dm p {
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .fa-primary-demo,
+    .fa-secondary-demo {
+      padding: 10px 16px;
+
+      border-radius: 5px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.66rem;
+    }
+
+    .fa-primary-demo {
+      border: 1px solid var(--fa-gold);
+
+      background: var(--fa-gold);
+      color: #FFF;
+    }
+
+    .fa-secondary-demo {
+      border: 1px solid var(--fa-navy);
+
+      background: transparent;
+      color: var(--fa-navy);
+    }
+
+    .fa-primary-demo.is-hover {
+      transform: translateY(-2px);
+      filter: brightness(0.86);
+    }
+
+    .fa-primary-demo.is-disabled {
+      opacity: 0.35;
+    }
+
+    .fa-state-controls {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      margin-top: 18px;
+    }
+
+    .fa-state-controls button {
+      padding: 5px 9px;
+
+      border: 1px solid var(--line);
+      border-radius: 4px;
+
+      background: var(--bg);
+      color: var(--dim);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+
+      cursor: pointer;
+    }
+
+    .fa-state-controls button.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .fa-quality-card {
+      padding: 16px;
+
+      border: 1px solid #CED3D7;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #0D2E48;
+    }
+
+    .fa-quality-card.dark {
+      border-color: #00152A;
+
+      background: #00152A;
+      color: #FFF;
+    }
+
+    .fa-quality-card p {
+      margin-top: 7px;
+
+      font-size: 0.66rem;
+      line-height: 1.5;
+    }
+
+    .fa-nav-preview {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+
+      align-items: center;
+
+      gap: 22px;
+
+      padding: 18px;
+
+      border: 1px solid #D1D8DF;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-nav-preview > strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.69rem;
+    }
+
+    .fa-nav-preview-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      font-size: 0.54rem;
+    }
+
+    .fa-nav-preview > button {
+      padding: 8px 10px;
+
+      border: 1px solid #00152A;
+      border-radius: 5px;
+
+      background: transparent;
+      color: #00152A;
+
+      font-size: 0.51rem;
+    }
+
+    .fa-mobile-nav-preview {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 16px;
+
+      border: 1px solid #D1D8DF;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-mobile-nav-preview strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.65rem;
+    }
+
+    .fa-mobile-nav-preview button {
+      width: 37px;
+      height: 37px;
+
+      border: 1px solid #C5CED8;
+      border-radius: 6px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-form-system-demo {
+      display: grid;
+      gap: 13px;
+    }
+
+    .fa-form-system-row {
+      display: grid;
+      gap: 11px;
+    }
+
+    .fa-form-system-row.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fa-form-system-row.three {
+      grid-template-columns: 0.8fr 1.1fr 1fr;
+    }
+
+    .fa-form-system-demo label {
+      display: grid;
+      gap: 6px;
+    }
+
+    .fa-form-system-demo label > span {
+      color: #64748B;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.47rem;
+    }
+
+    .fa-form-system-demo input,
+    .fa-form-system-demo select,
+    .fa-form-system-demo textarea {
+      width: 100%;
+
+      border: 1px solid #8297AD;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.65rem;
+    }
+
+    .fa-form-system-demo input,
+    .fa-form-system-demo select {
+      min-height: 43px;
+      padding: 0 11px;
+    }
+
+    .fa-form-system-demo textarea {
+      min-height: 95px;
+      padding: 11px;
+    }
+
+    .fa-system-token-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 8px;
+    }
+
+    .fa-system-token-grid > div {
+      min-height: 103px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding: 14px;
+
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .fa-system-token-grid strong {
+      color: var(--accent);
+
+      font-family: "Fraunces", serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .fa-system-token-grid span {
+      margin-top: 6px;
+
+      color: var(--dim);
+
+      font-size: 0.61rem;
+    }
+
+    .fa-responsive-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+
+      gap: 24px;
+
+      align-items: stretch;
+
+      padding: 24px;
+
+      border: 1px solid var(--line);
+      border-radius: 12px;
+
+      background: var(--card);
+    }
+
+    .fa-device-desktop,
+    .fa-device-mobile-artboard {
+      min-width: 0;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+
+      background: #FFF;
+
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
+    }
+
+    .fa-device-desktop,
+    .fa-device-mobile-artboard {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fa-mobile-artboard-bar {
+      min-height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding: 0 13px;
+
+      border-bottom: 1px solid rgba(31, 28, 24, 0.12);
+
+      background: #EEE9E1;
+    }
+
+    .fa-mobile-artboard-bar span,
+    .fa-mobile-artboard-bar strong {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .fa-mobile-artboard-stage {
+      flex: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      min-height: 410px;
+
+      padding: 18px;
+
+      overflow: hidden;
+
+      background: linear-gradient(
+        180deg,
+        #F8F8F7 0%,
+        #EFEDE9 100%
+      );
+    }
+
+    .fa-mobile-artboard-viewport {
+      position: relative;
+
+      width: 240px;
+      height: 480px;
+
+      overflow: hidden;
+
+      border: 1px solid #D1D5D8;
+      border-radius: 13px;
+
+      background: #FFF;
+
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.11);
+    }
+
+    .fa-mobile-artboard-viewport iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 390px;
+      height: 780px;
+
+      border: 0;
+
+      transform: scale(0.6153846);
+      transform-origin: top left;
+    }
+
+    .fa-responsive-device-caption {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 18px;
+
+      padding: 11px 13px;
+
+      border-top: 1px solid rgba(31, 28, 24, 0.12);
+
+      background: #FFF;
+    }
+
+    .fa-responsive-device-caption strong,
+    .fa-responsive-device-caption span {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fa-responsive-notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 1px;
+
+      margin-top: 18px;
+
+      border: 1px solid var(--line);
+
+      background: var(--line);
+    }
+
+    .fa-responsive-note {
+      padding: 20px;
+
+      background: var(--bg);
+    }
+
+    .fa-responsive-note > span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fa-responsive-note h4 {
+      margin: 10px 0 7px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.08rem;
+      font-weight: 400;
+    }
+
+    .fa-responsive-note p {
+      color: var(--dim);
+
+      font-size: 0.7rem;
+      line-height: 1.6;
+    }
+
+    .fa-figma-shell {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .fa-figma-head {
+      min-height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 13px 16px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fa-figma-head span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.48rem;
+    }
+
+    .fa-figma-head strong {
+      display: block;
+
+      margin-top: 4px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .fa-figma-head a {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+
+      text-decoration: none;
+    }
+
+    .fa-figma-frame iframe {
+      width: 100%;
+      height: 700px;
+
+      border: 0;
+    }
+
+
+    .fernando-compare-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 10px;
+
+      margin-top: 35px;
+    }
+
+    .fernando-compare-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+
+      margin-bottom: 24px;
+    }
+
+    .fernando-compare-preview {
+      min-width: 0;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--bg);
+    }
+
+    .fernando-compare-preview-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding: 13px 16px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fernando-compare-preview-head span {
+      color: var(--accent);
+
+      font-size: 0.5rem;
+    }
+
+    .fernando-compare-preview-head strong {
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .fernando-compare-before-stage,
+    .fernando-compare-after-stage {
+      min-height: 0;
+    }
+
+    .fernando-compare-before-stage {
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+
+      padding: 22px;
+
+      background: var(--card);
+    }
+
+    .fernando-compare-before-stage iframe {
+      display: block;
+
+      width: 100%;
+      height: 350px;
+
+      border: 0;
+
+      background: #fff;
+    }
+
+    .fernando-compare-note {
+      color: var(--dim);
+
+      font-size: 0.64rem;
+      line-height: 1.55;
+    }
+
+    .fernando-compare-after-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      background: #f4f6f8;
+    }
+
+    .fernando-compare-after-stage img {
+      display: block;
+
+      width: 100%;
+      height: 350px;
+
+      object-fit: contain;
+      object-position: center top;
+
+      cursor: zoom-in;
+    }
+
+    .fernando-compare-after-link {
+      display: inline-flex;
+      align-items: center;
+
+      margin: 14px 16px 16px;
+
+      padding-bottom: 3px;
+
+      border-bottom: 1px solid transparent;
+
+      color: var(--accent);
+
+      font-size: 0.64rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition:
+        color var(--transition),
+        border-color var(--transition);
+    }
+
+    .fernando-compare-after-link:hover {
+      border-color: var(--accent);
+    }
+
+    .fernando-compare-after-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
 
     .fernando-compare-points article {
@@ -2429,14 +3611,68 @@
       line-height: 1.65;
     }
 
-    .voit-article-placeholder {
-      margin-top: auto;
-      padding-top: 24px;
+    .voit-article-link {
+      display: inline-flex;
+      align-items: center;
 
-      color: var(--muted);
+      gap: 6px;
+      width: fit-content;
+      margin-top: auto;
+      padding-top: 16px;
+
+      border-bottom: 1px solid transparent;
+
+      color: var(--accent);
 
       font-family: "IBM Plex Mono", monospace;
-      font-size: 0.52rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition:
+        color var(--transition),
+        border-color var(--transition);
+    }
+
+    .voit-article-link:hover {
+      border-color: var(--accent);
+    }
+
+    .voit-article-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .voit-confidentiality-note {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 18px;
+      margin-bottom: 10px;
+      padding: 18px 20px;
+
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--accent);
+      border-radius: 9px;
+
+      background: var(--accent-soft);
+    }
+
+    .voit-confidentiality-note strong {
+      flex: 0 0 auto;
+
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.58rem;
+      line-height: 1.6;
+    }
+
+    .voit-confidentiality-note p {
+      color: var(--dim);
+
+      font-size: 0.74rem;
+      line-height: 1.65;
     }
 
     .voit-materials-grid {
@@ -2960,7 +4196,7 @@
       padding: 12px 24px;
 
       border: 1.5px solid var(--accent);
-      border-radius: 4px;
+      border-radius: var(--radius);
 
       color: var(--accent);
 
@@ -3200,7 +4436,10 @@
         transform: scale(0.595);
       }
 
+      .fernando-compare-showcase,
       .fernando-compare-points,
+      .fernando-system-gallery,
+      .fernando-system-components,
       .fa-responsive-notes,
       .fernando-closing,
       .fernando-closing-grid {
@@ -3212,6 +4451,16 @@
       .voit-materials-grid,
       .voit-process-grid {
         grid-template-columns: 1fr;
+      }
+
+      .voit-article-link {
+        padding-top: 12px;
+      }
+
+      .voit-confidentiality-note {
+        flex-direction: column;
+
+        gap: 8px;
       }
 
       .skill-grid {
@@ -3374,8 +4623,15 @@
           type="button"
           id="themeToggle"
           class="theme-toggle mono"
+          aria-label="Alternar modo noturno"
+          title="Alternar modo noturno"
         >
-          <span id="themeLabel">
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path>
+          </svg>
+
+          <span id="themeLabel" class="sr-only">
             Sombrio
           </span>
         </button>
@@ -3384,14 +4640,14 @@
 
       <ul>
         <li>
-          <a href="#sobre">
-            sobre
+          <a href="#projetos">
+            projetos
           </a>
         </li>
 
         <li>
-          <a href="#projetos">
-            projetos
+          <a href="#sobre">
+            sobre
           </a>
         </li>
 
@@ -3454,6 +4710,14 @@
                 href="#contato"
               >
                 entrar em contato ↗
+              </a>
+
+              <a
+                class="hero-secondary-link mono"
+                href="img/PDF/Curriculo_Raquel_Renovato.pdf"
+                download
+              >
+                baixar currículo ↓
               </a>
 
             </div>
@@ -3855,176 +5119,6 @@
       </section>
 
       <!-- ===================================================
-           PROCESSO
-           =================================================== -->
-
-      <section class="process-fold-section">
-
-        <span class="process-kicker mono">
-          método & execução
-        </span>
-
-        <div class="process-fold-grid">
-
-          <article class="process-fold-card">
-
-            <span class="process-step-num">
-              01 / DIAGNÓSTICO
-            </span>
-
-            <h2>
-              Entendimento & Imersão
-            </h2>
-
-            <p>
-              Investigação do problema inicial, escopo e alinhamento de
-              expectativas para estruturar o caminho antes da execução visual.
-            </p>
-
-          </article>
-
-          <article class="process-fold-card">
-
-            <span class="process-step-num">
-              02 / ESTRUTURAÇÃO
-            </span>
-
-            <h2>
-              Pesquisa & Direção Visual
-            </h2>
-
-            <p>
-              Organização da informação, definição de hierarquia, referências,
-              tom visual e critérios que dão sustentação à solução.
-            </p>
-
-          </article>
-
-          <article class="process-fold-card">
-
-            <span class="process-step-num">
-              03 / ENTREGA
-            </span>
-
-            <h2>
-              Execução & Validação
-            </h2>
-
-            <p>
-              Desenvolvimento, refinamento e revisão das entregas com as
-              ferramentas adequadas a cada projeto.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
-      <!-- ===================================================
-           SOBRE
-           =================================================== -->
-
-      <div
-        class="section-head"
-        id="sobre"
-      >
-        <h2>
-          Sobre mim
-        </h2>
-      </div>
-
-      <section class="constructivist-about">
-
-        <div class="const-text-wrapper">
-
-          <span class="const-manifesto-title">
-            design como ferramenta de clareza
-          </span>
-
-          <p>
-            Sou Designer Gráfica formada pela Estácio, com especialização em
-            UI/UX Design em andamento e três anos de atuação no mercado.
-            Trabalho entre comunicação visual e interfaces digitais,
-            transformando informações, necessidades de negócio e identidade de
-            marca em soluções visuais claras e consistentes.
-          </p>
-
-          <p>
-            Minha atuação passa por Figma, Pacote Adobe e Canva, da organização
-            da informação à execução final. Também utilizo IA generativa como
-            ferramenta de apoio ao workflow, principalmente em exploração,
-            produtividade e refinamento de conteúdo.
-          </p>
-
-          <p>
-            Mais do que escolher uma estética, procuro entender o problema,
-            estruturar prioridades e construir soluções que façam sentido para
-            quem comunica e para quem utiliza.
-          </p>
-
-          <div class="const-tags">
-            <span class="const-tag">UI Design</span>
-            <span class="const-tag">Comunicação Visual</span>
-            <span class="const-tag">Figma & Adobe</span>
-            <span class="const-tag">Canva</span>
-            <span class="const-tag">Arquitetura de Informação</span>
-            <span class="const-tag">Workflow com IA</span>
-          </div>
-
-        </div>
-
-        <div class="const-visual-showcase">
-
-          <div class="const-orbit-ring"></div>
-
-          <svg
-            class="const-orbit-text"
-            viewBox="0 0 200 200"
-            aria-hidden="true"
-          >
-            <defs>
-              <path
-                id="orbitPath"
-                d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
-              />
-            </defs>
-
-            <text>
-              <textPath href="#orbitPath">
-                UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO •
-              </textPath>
-            </text>
-
-          </svg>
-
-          <div class="const-floater badge">
-            ❖ auto-layout 8px
-          </div>
-
-          <div class="const-floater spec">
-            ↔ 380px × 380px
-          </div>
-
-          <div class="const-floater cursor">
-            ➤ Raquel • Design
-          </div>
-
-          <div class="const-photo-frame">
-
-            <img
-              src="img/img-perfil/foto-perfil.jpeg"
-              alt="Retrato de Raquel Renovato"
-              class="js-lightbox-image"
-            >
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- ===================================================
            PROJETOS
            =================================================== -->
 
@@ -4051,7 +5145,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              01 / 05 • UI DESIGN / FRONT-END • PRODUTO PUBLICADO
+              01 / 05 • UI DESIGN / FRONT-END • JUL. 2026 – ATUAL
             </span>
 
             <h3>
@@ -4078,8 +5172,11 @@
                 </h4>
 
                 <p>
-                  O projeto partiu de um site com grande volume de conteúdo
-                  técnico, diferentes especialidades e uma estrutura extensa.
+                  O projeto começou em julho de 2026 e passou por alinhamento,
+                  organização do conteúdo, desenvolvimento da interface e
+                  refinamentos sucessivos. O site anterior reunia um grande
+                  volume de conteúdo técnico, diferentes especialidades e uma
+                  estrutura extensa.
                 </p>
 
               </article>
@@ -4244,7 +5341,7 @@
                 <div class="fernando-case-editorial-main">
 
                   <span class="fernando-case-eyebrow mono">
-                    CASE STUDY / UI + FRONT-END
+                    ESTUDO DE CASO / UI + FRONT-END
                   </span>
 
                   <h4>
@@ -4611,48 +5708,218 @@
 
               </div>
 
-              <div class="fernando-compare-points">
+              <article class="fernando-compare-section">
 
-                <article>
+                <div class="fernando-compare-copy">
+
                   <span class="mono">
                     01 / ABERTURA
                   </span>
 
                   <h5>
-                    Posicionamento
+                    Posicionamento e prioridade de ação.
                   </h5>
 
-                  <p>
-                    Apresentação direta do serviço e das principais ações.
-                  </p>
-                </article>
+                  <div class="fernando-compare-note">
+
+                    <strong>
+                      Problema identificado
+                    </strong>
+
+                    <p>
+                      A abertura precisava explicar rapidamente a atuação do
+                      profissional e deixar claras as ações disponíveis.
+                    </p>
+
+                  </div>
+
+                  <div class="fernando-compare-note">
+
+                    <strong>
+                      Decisão de design
+                    </strong>
+
+                    <p>
+                      O novo hero prioriza a apresentação do serviço e duas
+                      ações: solicitar orçamento e explorar os serviços.
+                    </p>
+
+                  </div>
+
+                  <div class="fernando-compare-note">
+
+                    <strong>
+                      Justificativa
+                    </strong>
+
+                    <p>
+                      A hierarquia cria uma entrada mais direta para um conteúdo
+                      naturalmente técnico e extenso.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div class="fa-compare-grid fernando-compare-browsers">
+
+                  <article class="fa-compare-card">
+
+                    <div class="fa-compare-label">
+                      <span>ANTES</span>
+                      <span>site anterior</span>
+                    </div>
+
+                    <div class="fa-browser">
+
+                      <div class="fa-browser-bar">
+
+                        <div class="fa-browser-dots">
+                          <i></i>
+                          <i></i>
+                          <i></i>
+                        </div>
+
+                        <div class="fa-browser-address">
+                          versão anterior
+                        </div>
+
+                        <a
+                          href="https://fernando-amaral-website-web.vercel.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="fa-browser-link"
+                        >
+                          ABRIR ↗
+                        </a>
+
+                      </div>
+
+                      <div
+                        class="fa-desktop-viewport"
+                        data-fa-desktop-height="760"
+                      >
+
+                        <div class="fa-desktop-canvas">
+
+                          <iframe
+                            src="https://fernando-amaral-website-web.vercel.app/"
+                            title="Fernando Amaral antigo"
+                          ></iframe>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                  <article class="fa-compare-card">
+
+                    <div class="fa-compare-label">
+                      <span>DEPOIS</span>
+                      <span>produto publicado</span>
+                    </div>
+
+                    <div class="fa-browser">
+
+                      <div class="fa-browser-bar">
+
+                        <div class="fa-browser-dots">
+                          <i></i>
+                          <i></i>
+                          <i></i>
+                        </div>
+
+                        <div class="fa-browser-address">
+                          fernando-amaral.vercel.app
+                        </div>
+
+                        <a
+                          href="https://fernando-amaral.vercel.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="fa-browser-link"
+                        >
+                          LIVE ↗
+                        </a>
+
+                      </div>
+
+                      <div
+                        class="fa-desktop-viewport"
+                        data-fa-desktop-height="760"
+                      >
+
+                        <div class="fa-desktop-canvas">
+
+                          <iframe
+                            src="https://fernando-amaral.vercel.app/"
+                            title="Fernando Amaral novo"
+                          ></iframe>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                </div>
+
+              </article>
+
+              <div class="fernando-compare-points">
 
                 <article>
+
                   <span class="mono">
                     02 / SERVIÇOS
                   </span>
 
                   <h5>
-                    Menos conteúdo simultâneo
+                    Menos conteúdo simultâneo.
                   </h5>
 
                   <p>
-                    Especialidades reunidas em uma experiência navegável.
+                    As especialidades foram reunidas em uma experiência
+                    navegável.
                   </p>
+
                 </article>
 
                 <article>
+
                   <span class="mono">
                     03 / PROCESSO
                   </span>
 
                   <h5>
-                    Relação entre etapas
+                    Relação entre etapas.
                   </h5>
 
                   <p>
                     A metodologia passou a usar sequência e numeração.
                   </p>
+
+                </article>
+
+                <article>
+
+                  <span class="mono">
+                    04 / PROJETOS
+                  </span>
+
+                  <h5>
+                    Mais contexto em cada case.
+                  </h5>
+
+                  <p>
+                    Área, escopo e especialidade foram incorporados aos cards.
+                  </p>
+
                 </article>
 
               </div>
@@ -4681,6 +5948,479 @@
 
               </div>
 
+              <div class="fa-system">
+
+                <aside class="fa-system-sidebar">
+
+                  <span>
+                    FERNANDO UI
+                  </span>
+
+                  <button
+                    class="fa-system-btn active"
+                    data-fa-system="foundation"
+                    type="button"
+                  >
+                    Foundations
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="buttons"
+                    type="button"
+                  >
+                    Buttons & states
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="navigation"
+                    type="button"
+                  >
+                    Navigation
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="cards"
+                    type="button"
+                  >
+                    Cards
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="forms"
+                    type="button"
+                  >
+                    Forms
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="tokens"
+                    type="button"
+                  >
+                    Tokens
+                  </button>
+
+                </aside>
+
+                <div class="fa-system-canvas">
+
+                  <section
+                    class="fa-system-panel active"
+                    data-fa-system-panel="foundation"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Foundations
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Color system</span>
+                          <span>Light + Dark</span>
+                        </div>
+
+                        <div class="fa-color-grid">
+
+                          <div class="fa-color-token navy">
+                            <strong>Primary</strong>
+                            <span>#00152A</span>
+                          </div>
+
+                          <div class="fa-color-token gold">
+                            <strong>Accent</strong>
+                            <span>#B8860B</span>
+                          </div>
+
+                          <div class="fa-color-token slate">
+                            <strong>Slate</strong>
+                            <span>#64748B</span>
+                          </div>
+
+                          <div class="fa-color-token light">
+                            <strong>Background</strong>
+                            <span>#F4F6F8</span>
+                          </div>
+
+                          <div class="fa-color-token white">
+                            <strong>Surface</strong>
+                            <span>#FFFFFF</span>
+                          </div>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Typography</span>
+                          <span>Display + Body</span>
+                        </div>
+
+                        <div class="fa-type-grid">
+
+                          <article class="fa-type-card manrope">
+
+                            <span>
+                              DISPLAY / MANROPE
+                            </span>
+
+                            <strong>
+                              Aa
+                            </strong>
+
+                            <p>
+                              Projetos elétricos para arquitetos, engenheiros,
+                              construtoras e incorporadoras.
+                            </p>
+
+                          </article>
+
+                          <article class="fa-type-card dm">
+
+                            <span>
+                              BODY / DM SANS
+                            </span>
+
+                            <strong>
+                              Aa
+                            </strong>
+
+                            <p>
+                              Clareza e legibilidade para conteúdo técnico.
+                            </p>
+
+                          </article>
+
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="buttons"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Buttons & states
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Primary CTA</span>
+                          <span>Hero / contato</span>
+                        </div>
+
+                        <button
+                          class="fa-primary-demo"
+                          id="faPrimaryDemo"
+                          type="button"
+                        >
+                          SOLICITAR ORÇAMENTO
+                        </button>
+
+                        <div class="fa-state-controls">
+
+                          <button
+                            class="active"
+                            data-fa-button-state="default"
+                            type="button"
+                          >
+                            Default
+                          </button>
+
+                          <button
+                            data-fa-button-state="hover"
+                            type="button"
+                          >
+                            Hover
+                          </button>
+
+                          <button
+                            data-fa-button-state="disabled"
+                            type="button"
+                          >
+                            Disabled
+                          </button>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Secondary CTA</span>
+                          <span>Hero</span>
+                        </div>
+
+                        <button
+                          class="fa-secondary-demo"
+                          type="button"
+                        >
+                          VER SERVIÇOS
+                        </button>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="navigation"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Navigation
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Desktop</span>
+                          <span>Header</span>
+                        </div>
+
+                        <div class="fa-nav-preview">
+
+                          <strong>
+                            FERNANDO AMARAL
+                          </strong>
+
+                          <div class="fa-nav-preview-links">
+                            <span>Serviços</span>
+                            <span>Processo</span>
+                            <span>Portfólio</span>
+                            <span>Sobre</span>
+                            <span>Contato</span>
+                          </div>
+
+                          <button type="button">
+                            SOLICITAR ORÇAMENTO
+                          </button>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Mobile</span>
+                          <span>Compact</span>
+                        </div>
+
+                        <div class="fa-mobile-nav-preview">
+
+                          <strong>
+                            FERNANDO AMARAL
+                          </strong>
+
+                          <button type="button">
+                            ☰
+                          </button>
+
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="cards"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Cards
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-quality-card">
+
+                          <strong>
+                            Segurança e conformidade
+                          </strong>
+
+                          <p>
+                            Componente utilizado na apresentação dos
+                            diferenciais.
+                          </p>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-quality-card dark">
+
+                          <strong>
+                            Clareza para execução
+                          </strong>
+
+                          <p>
+                            O mesmo componente adaptado ao tema escuro.
+                          </p>
+
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="forms"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Forms
+                    </h4>
+
+                    <div class="fa-component-box">
+
+                      <div class="fa-form-system-demo">
+
+                        <div class="fa-form-system-row two">
+
+                          <label>
+                            <span>Nome completo</span>
+
+                            <input
+                              type="text"
+                              placeholder="Nome completo"
+                            >
+                          </label>
+
+                          <label>
+                            <span>E-mail ou WhatsApp</span>
+
+                            <input
+                              type="text"
+                              placeholder="E-mail ou WhatsApp"
+                            >
+                          </label>
+
+                        </div>
+
+                        <div class="fa-form-system-row three">
+
+                          <label>
+                            <span>Cidade / UF</span>
+
+                            <input
+                              type="text"
+                              placeholder="Cidade / UF"
+                            >
+                          </label>
+
+                          <label>
+                            <span>Tipo de projeto</span>
+
+                            <select>
+                              <option>Tipo de projeto</option>
+                              <option>Projeto Elétrico</option>
+                              <option>SPDA</option>
+                              <option>Subestação</option>
+                              <option>BIM</option>
+                            </select>
+                          </label>
+
+                          <label>
+                            <span>Área aproximada</span>
+
+                            <input
+                              type="text"
+                              placeholder="Área aproximada"
+                            >
+                          </label>
+
+                        </div>
+
+                        <label>
+                          <span>Mensagem</span>
+
+                          <textarea
+                            placeholder="Descreva brevemente sua necessidade técnica..."
+                          ></textarea>
+                        </label>
+
+                      </div>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="tokens"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Tokens
+                    </h4>
+
+                    <div class="fa-system-token-grid">
+
+                      <div>
+                        <strong>8px</strong>
+                        <span>Radius base</span>
+                      </div>
+
+                      <div>
+                        <strong>100px</strong>
+                        <span>Desktop gutter</span>
+                      </div>
+
+                      <div>
+                        <strong>22px</strong>
+                        <span>Mobile gutter</span>
+                      </div>
+
+                      <div>
+                        <strong>1440px</strong>
+                        <span>Desktop reference</span>
+                      </div>
+
+                      <div>
+                        <strong>390px</strong>
+                        <span>Mobile reference</span>
+                      </div>
+
+                    </div>
+
+                  </section>
+
+                </div>
+
+              </div>
+
             </section>
 
             <section
@@ -4691,7 +6431,7 @@
               <div class="fernando-system-intro">
 
                 <span class="mono">
-                  RESPONSIVE DESIGN
+                  DESIGN RESPONSIVO
                 </span>
 
                 <h4>
@@ -4700,8 +6440,106 @@
 
                 <p>
                   A versão mobile não replica simplesmente o desktop em escala
-                  menor.
+                  menor. Navegação, galerias, tipografia e componentes mudam de
+                  composição quando o espaço disponível exige outra solução.
                 </p>
+
+              </div>
+
+              <div class="fa-responsive-showcase">
+
+                <div class="fa-device-desktop">
+
+                  <div class="fa-browser-bar">
+
+                    <div class="fa-browser-dots">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+
+                    <div class="fa-browser-address">
+                      fernando-amaral.vercel.app
+                    </div>
+
+                    <span class="fa-browser-link">
+                      DESKTOP / 1440
+                    </span>
+
+                  </div>
+
+                  <div
+                    class="fa-desktop-viewport"
+                    data-fa-desktop-height="780"
+                  >
+
+                    <div class="fa-desktop-canvas">
+
+                      <iframe
+                        src="https://fernando-amaral.vercel.app/"
+                        title="Fernando Amaral — versão desktop"
+                        loading="lazy"
+                      ></iframe>
+
+                    </div>
+
+                  </div>
+
+                  <div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Desktop
+                    </strong>
+
+                    <span>
+                      1440px • navegação completa
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <div class="fa-device-mobile-artboard">
+
+                  <div class="fa-mobile-artboard-bar">
+
+                    <span>
+                      MOBILE VIEWPORT
+                    </span>
+
+                    <strong>
+                      390px
+                    </strong>
+
+                  </div>
+
+                  <div class="fa-mobile-artboard-stage">
+
+                    <div class="fa-mobile-artboard-viewport">
+
+                      <iframe
+                        src="https://fernando-amaral.vercel.app/"
+                        title="Fernando Amaral — versão mobile"
+                        loading="lazy"
+                      ></iframe>
+
+                    </div>
+
+                  </div>
+
+                  <div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Mobile
+                    </strong>
+
+                    <span>
+                      390px • composição adaptada
+                    </span>
+
+                  </div>
+
+                </div>
 
               </div>
 
@@ -4710,7 +6548,7 @@
                 <article class="fa-responsive-note">
 
                   <span>
-                    01 / NAVIGATION
+                    01 / NAVEGAÇÃO
                   </span>
 
                   <h4>
@@ -4718,8 +6556,8 @@
                   </h4>
 
                   <p>
-                    A navegação horizontal é substituída por um controle
-                    dedicado.
+                    A navegação horizontal do desktop é substituída por um
+                    controle dedicado, preservando espaço para o conteúdo.
                   </p>
 
                 </article>
@@ -4727,7 +6565,7 @@
                 <article class="fa-responsive-note">
 
                   <span>
-                    02 / GALLERIES
+                    02 / GALERIAS
                   </span>
 
                   <h4>
@@ -4735,7 +6573,8 @@
                   </h4>
 
                   <p>
-                    A galeria prioriza o conteúdo ativo em telas estreitas.
+                    No mobile, a galeria prioriza o conteúdo ativo sem manter a
+                    pré-visualização da próxima imagem ocupando a tela.
                   </p>
 
                 </article>
@@ -4743,7 +6582,7 @@
                 <article class="fa-responsive-note">
 
                   <span>
-                    03 / TYPOGRAPHY
+                    03 / TIPOGRAFIA
                   </span>
 
                   <h4>
@@ -4751,7 +6590,8 @@
                   </h4>
 
                   <p>
-                    Títulos, textos e espaçamentos recebem escalas próprias.
+                    Títulos, textos e espaçamentos recebem escalas próprias para
+                    manter legibilidade e evitar quebras desconfortáveis.
                   </p>
 
                 </article>
@@ -4765,31 +6605,41 @@
               data-fernando-view="prototype"
             >
 
-              <div class="fernando-system-intro">
+              <div class="fa-figma-shell">
 
-                <span class="mono">
-                  PROTÓTIPO
-                </span>
+                <div class="fa-figma-head">
 
-                <h4>
-                  Fluxo navegável antes da implementação.
-                </h4>
+                  <div>
+                    <span>
+                      PROTÓTIPO
+                    </span>
 
-                <p>
-                  O protótipo foi usado para estruturar estados, navegação e
-                  comportamento antes da implementação.
-                </p>
+                    <strong>
+                      Fernando Amaral
+                    </strong>
+                  </div>
+
+                  <a
+                    href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    abrir no Figma ↗
+                  </a>
+
+                </div>
+
+                <div class="fa-figma-frame">
+
+                  <iframe
+                    src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
+                    allowfullscreen
+                    title="Protótipo Fernando Amaral"
+                  ></iframe>
+
+                </div>
 
               </div>
-
-              <a
-                class="fernando-product-link"
-                href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                abrir protótipo no Figma ↗
-              </a>
 
             </section>
 
@@ -4860,7 +6710,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              02 / 05 • COMUNICAÇÃO MULTICANAL / CONTEÚDO
+              02 / 05 • COMUNICAÇÃO MULTICANAL / CONTEÚDO • JUN. 2023 – ATUAL
             </span>
 
             <h3>
@@ -5095,13 +6945,14 @@
                 </span>
 
                 <h4>
-                  Conteúdo recorrente para diferentes frentes da consultoria.
+                  Desdobramentos da nova identidade em conteúdos para redes sociais.
                 </h4>
 
                 <p>
-                  A seleção mostra peças desenvolvidas para transformar temas
-                  institucionais, comerciais e técnicos em conteúdos adequados
-                  às redes sociais.
+                  A seleção reúne peças desenvolvidas após o rebrand da Voit.
+                  A partir da nova identidade visual da marca, atuei na criação
+                  e diagramação dos conteúdos, adaptando linguagem, hierarquia e
+                  composição a diferentes temas e áreas da consultoria.
                 </p>
 
               </div>
@@ -5115,7 +6966,7 @@
                   </span>
 
                   <strong>
-                    Social Media
+                    13 peças selecionadas
                   </strong>
 
                 </div>
@@ -5149,7 +7000,7 @@
                     <div class="strip-item voit-card">
 
                       <img
-                        src="img/img-voit/voit-01.jpeg"
+                        src="img/img-voit-redesocial/voit-01.jpeg"
                         alt="Voit Consultoria — peça de social media 01"
                         class="js-lightbox-image"
                       >
@@ -5159,7 +7010,7 @@
                     <div class="strip-item voit-card">
 
                       <img
-                        src="img/img-voit/voit-02.jpeg"
+                        src="img/img-voit-redesocial/voit-02.jpeg"
                         alt="Voit Consultoria — peça de social media 02"
                         class="js-lightbox-image"
                       >
@@ -5169,7 +7020,7 @@
                     <div class="strip-item voit-card">
 
                       <img
-                        src="img/img-voit/voit-03.jpeg"
+                        src="img/img-voit-redesocial/voit-03.jpeg"
                         alt="Voit Consultoria — peça de social media 03"
                         class="js-lightbox-image"
                       >
@@ -5179,8 +7030,98 @@
                     <div class="strip-item voit-card">
 
                       <img
-                        src="img/img-voit/voit-04.jpeg"
+                        src="img/img-voit-redesocial/voit-04.jpeg"
                         alt="Voit Consultoria — peça de social media 04"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-05.jpeg"
+                        alt="Voit Consultoria — peça de social media 05"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-06.jpeg"
+                        alt="Voit Consultoria — peça de social media 06"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-07.jpeg"
+                        alt="Voit Consultoria — peça de social media 07"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-08.jpeg"
+                        alt="Voit Consultoria — peça de social media 08"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-09.jpeg"
+                        alt="Voit Consultoria — peça de social media 09"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-10.jpeg"
+                        alt="Voit Consultoria — peça de social media 10"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-11.jpeg"
+                        alt="Voit Consultoria — peça de social media 11"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-12.jpeg"
+                        alt="Voit Consultoria — peça de social media 12"
+                        class="js-lightbox-image"
+                      >
+
+                    </div>
+
+                    <div class="strip-item voit-card">
+
+                      <img
+                        src="img/img-voit-redesocial/voit-13.jpeg"
+                        alt="Voit Consultoria — peça de social media 13"
                         class="js-lightbox-image"
                       >
 
@@ -5242,17 +7183,22 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    NR-1 atualizada: o que muda e como preparar sua empresa
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Conteúdo sobre as atualizações da NR-1 e os impactos das
+                    novas exigências para a gestão e a rotina das empresas.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/nr-1-atualizada/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5263,17 +7209,22 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    Feedback estratégico para colaboradores
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Conteúdo voltado à utilização do feedback como ferramenta
+                    de desenvolvimento, alinhamento e fortalecimento das equipes.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/feedback-estrategico-colaborador/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5284,17 +7235,23 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    “Bombeiros do RH”: recrutamento estratégico
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Artigo sobre recrutamento estratégico e a importância de
+                    substituir processos reativos por uma atuação mais planejada
+                    na área de RH.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/bombeiros-do-rh-recrutamento-estrategico/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5305,17 +7262,23 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    Técnicas de fidelização de clientes
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Conteúdo sobre estratégias de relacionamento e práticas que
+                    ajudam empresas a fortalecer a experiência e a retenção de
+                    clientes.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/tecnicas-de-fidelizacao-clientes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5326,17 +7289,77 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    Estratégias para ter qualidade na confecção
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Artigo direcionado ao setor de confecção, abordando
+                    organização, processos e estratégias relacionadas à qualidade
+                    das operações.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/estrategias-para-ter-qualidade-na-confeccao/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 06
                   </span>
+
+                  <h5>
+                    Curva ABC, PEPS e ERP: qual a melhor estratégia?
+                  </h5>
+
+                  <p>
+                    Conteúdo sobre métodos e ferramentas utilizados na
+                    organização e gestão de estoques, comparando diferentes
+                    estratégias de controle.
+                  </p>
+
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/curva-abc-peps-erp-qual-a-melhor-estrategia/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 07
+                  </span>
+
+                  <h5>
+                    Planejamento orçamentário 2025
+                  </h5>
+
+                  <p>
+                    Conteúdo sobre planejamento orçamentário e a importância de
+                    estruturar decisões financeiras com antecedência para o novo
+                    ciclo empresarial.
+                  </p>
+
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/planejamento-orcamentario-2025/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5369,6 +7392,20 @@
 
               </div>
 
+              <aside class="voit-confidentiality-note">
+
+                <strong>
+                  CONFIDENCIALIDADE
+                </strong>
+
+                <p>
+                  Parte das apresentações, materiais técnicos e peças internas
+                  não é exibida por conter informações da empresa e de seus
+                  clientes.
+                </p>
+
+              </aside>
+
               <div class="voit-materials-grid">
 
                 <article class="voit-material-card">
@@ -5387,10 +7424,6 @@
                     clientes.
                   </p>
 
-                  <small>
-                    inserir exemplo selecionado
-                  </small>
-
                 </article>
 
                 <article class="voit-material-card">
@@ -5408,10 +7441,6 @@
                     serviços e setores atendidos pela consultoria.
                   </p>
 
-                  <small>
-                    inserir exemplo selecionado
-                  </small>
-
                 </article>
 
                 <article class="voit-material-card">
@@ -5428,10 +7457,6 @@
                     Peças e materiais voltados a ações internas e comunicação
                     com os colaboradores.
                   </p>
-
-                  <small>
-                    inserir exemplo selecionado
-                  </small>
 
                 </article>
 
@@ -5553,7 +7578,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              03 / 05 • PRESENTATION DESIGN / CONTEÚDO
+              03 / 05 • PRESENTATION DESIGN / CONTEÚDO • JUN. 2024 – FEV. 2026
             </span>
 
             <h3>
@@ -5616,7 +7641,7 @@
 
                 <p>
                   Conjunto de apresentações editáveis e reutilizáveis no Canva,
-                  reunindo cerca de 50 slides.
+                  reunindo 50 slides.
                 </p>
 
               </div>
@@ -5799,7 +7824,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Ver conteúdo no Canva ↗
+                    Ver projeto completo no Canva ↗
                   </a>
 
                 </aside>
@@ -5824,7 +7849,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              04 / 05 • SOCIAL MEDIA / DESIGN GRÁFICO
+              04 / 05 • SOCIAL MEDIA / DESIGN GRÁFICO • MAR. 2025 – ATUAL
             </span>
 
             <h3>
@@ -6048,7 +8073,7 @@
           <div class="project-head">
 
             <span class="n mono">
-              05 / 05 • SOCIAL MEDIA / MARCA PESSOAL
+              05 / 05 • SOCIAL MEDIA / MARCA PESSOAL • JUL. 2025 – ATUAL
             </span>
 
             <h3>
@@ -6143,7 +8168,29 @@
 
               </div>
 
-              <div class="strip">
+              <div
+                class="pieces-carousel"
+                data-carousel
+              >
+
+                <button
+                  type="button"
+                  class="pieces-carousel__arrow pieces-carousel__arrow--prev"
+                  data-carousel-prev
+                  aria-label="Ver peças anteriores da Aymée Ferraz"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M15 18 9 12l6-6"/>
+                  </svg>
+                </button>
+
+                <div
+                  class="strip"
+                  data-carousel-viewport
+                >
 
                 <div class="strip-item ig-ratio">
 
@@ -6225,6 +8272,22 @@
 
                 </div>
 
+                </div>
+
+                <button
+                  type="button"
+                  class="pieces-carousel__arrow pieces-carousel__arrow--next"
+                  data-carousel-next
+                  aria-label="Ver próximas peças da Aymée Ferraz"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 18 6-6-6-6"/>
+                  </svg>
+                </button>
+
               </div>
 
             </div>
@@ -6234,6 +8297,170 @@
         </article>
 
       </div>
+
+      <!-- ===================================================
+           SOBRE
+           =================================================== -->
+
+      <div
+        class="section-head about-title"
+        id="sobre"
+      >
+        <span class="about-title-label">
+          Designer
+        </span>
+
+        <h2>
+          Raquel Renovato.
+        </h2>
+      </div>
+
+      <section class="constructivist-about">
+
+        <div class="const-text-wrapper">
+
+          <p>
+            Sou Designer Gráfica formada pela Estácio, com três anos de atuação
+            em Design Gráfico e especialização em UI/UX Design em andamento.
+            Trabalho entre comunicação visual e interfaces digitais,
+            transformando informações, necessidades de negócio e identidade de
+            marca em soluções visuais claras e consistentes.
+          </p>
+
+          <p>
+            Minha atuação passa por Figma, Pacote Adobe e Canva, da organização
+            da informação à execução final. Também utilizo IA generativa como
+            ferramenta de apoio ao workflow, principalmente em exploração,
+            produtividade e refinamento de conteúdo.
+          </p>
+
+          <div class="const-tags">
+            <span class="const-tag">UI Design</span>
+            <span class="const-tag">Comunicação Visual</span>
+            <span class="const-tag">Figma & Adobe</span>
+            <span class="const-tag">Canva</span>
+            <span class="const-tag">Arquitetura de Informação</span>
+            <span class="const-tag">Workflow com IA</span>
+          </div>
+
+        </div>
+
+        <div class="const-visual-showcase">
+
+          <div class="const-orbit-ring"></div>
+
+          <svg
+            class="const-orbit-text"
+            viewBox="0 0 200 200"
+            aria-hidden="true"
+          >
+            <defs>
+              <path
+                id="orbitPath"
+                d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
+              />
+            </defs>
+
+            <text>
+              <textPath href="#orbitPath">
+                UI DESIGN • COMUNICAÇÃO VISUAL • RAQUEL RENOVATO •
+              </textPath>
+            </text>
+
+          </svg>
+
+          <div class="const-floater badge">
+            ❖ auto-layout 8px
+          </div>
+
+          <div class="const-floater spec">
+            ↔ 380px × 380px
+          </div>
+
+          <div class="const-floater cursor">
+            ➤ Raquel • Design
+          </div>
+
+          <div class="const-photo-frame">
+
+            <img
+              src="img/img-perfil/foto-perfil.jpeg"
+              alt="Retrato de Raquel Renovato"
+              class="js-lightbox-image"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ===================================================
+           PROCESSO
+           =================================================== -->
+
+      <section class="process-fold-section">
+
+        <span class="process-kicker mono">
+          método & execução
+        </span>
+
+        <div class="process-fold-grid">
+
+          <article class="process-fold-card">
+
+            <span class="process-step-num">
+              01 / DIAGNÓSTICO
+            </span>
+
+            <h2>
+              Entendimento & Imersão
+            </h2>
+
+            <p>
+              Investigação do problema inicial, escopo e alinhamento de
+              expectativas para estruturar o caminho antes da execução visual.
+            </p>
+
+          </article>
+
+          <article class="process-fold-card">
+
+            <span class="process-step-num">
+              02 / ESTRUTURAÇÃO
+            </span>
+
+            <h2>
+              Pesquisa & Direção Visual
+            </h2>
+
+            <p>
+              Organização da informação, definição de hierarquia, referências,
+              tom visual e critérios que dão sustentação à solução.
+            </p>
+
+          </article>
+
+          <article class="process-fold-card">
+
+            <span class="process-step-num">
+              03 / ENTREGA
+            </span>
+
+            <h2>
+              Execução & Validação
+            </h2>
+
+            <p>
+              Desenvolvimento, refinamento e revisão das entregas com as
+              ferramentas adequadas a cada projeto.
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
 
       <!-- ===================================================
            HABILIDADES
@@ -6322,12 +8549,11 @@
         </span>
 
         <h2>
-          Tem um projeto, uma vaga ou um problema que precisa de design?
+          Vamos trabalhar juntos?
         </h2>
 
         <p>
-          Estou aberta a conversar sobre oportunidades em comunicação visual,
-          UI Design e experiências digitais.
+          Entre em contato para conversarmos sobre novos projetos e parcerias.
         </p>
 
         <div class="cta-buttons">
@@ -6997,7 +9223,7 @@
 
       /* =====================================================
          NOVO — CARROSSEL REUTILIZÁVEL
-         VOIT + BRADUCA
+         VOIT + BRADUCA + AYMÉE
          ===================================================== */
 
       const carousels =
@@ -7069,13 +9295,6 @@
               viewport.scrollWidth -
               viewport.clientWidth;
 
-            const atStart =
-              viewport.scrollLeft <= 3;
-
-            const atEnd =
-              viewport.scrollLeft >=
-              maxScrollLeft - 3;
-
             const hasOverflow =
               maxScrollLeft > 4;
 
@@ -7083,7 +9302,6 @@
               .classList
               .toggle(
                 "is-disabled",
-                atStart ||
                 !hasOverflow
               );
 
@@ -7091,31 +9309,71 @@
               .classList
               .toggle(
                 "is-disabled",
-                atEnd ||
                 !hasOverflow
               );
 
             prevButton.setAttribute(
               "aria-disabled",
-              String(
-                atStart ||
-                !hasOverflow
-              )
+              String(!hasOverflow)
             );
 
             nextButton.setAttribute(
               "aria-disabled",
-              String(
-                atEnd ||
-                !hasOverflow
-              )
+              String(!hasOverflow)
             );
           }
 
           function move(direction) {
+            const scrollAmount =
+              getScrollAmount();
+
+            const maxScrollLeft =
+              viewport.scrollWidth -
+              viewport.clientWidth;
+
+            if (
+              direction > 0 &&
+              viewport.scrollLeft >=
+                maxScrollLeft - 3
+            ) {
+              const firstItem =
+                viewport.firstElementChild;
+
+              if (firstItem) {
+                viewport.appendChild(
+                  firstItem
+                );
+
+                viewport.scrollLeft =
+                  Math.max(
+                    0,
+                    viewport.scrollLeft -
+                      scrollAmount
+                  );
+              }
+            }
+
+            if (
+              direction < 0 &&
+              viewport.scrollLeft <= 3
+            ) {
+              const lastItem =
+                viewport.lastElementChild;
+
+              if (lastItem) {
+                viewport.insertBefore(
+                  lastItem,
+                  viewport.firstElementChild
+                );
+
+                viewport.scrollLeft +=
+                  scrollAmount;
+              }
+            }
+
             viewport.scrollBy({
               left:
-                getScrollAmount() *
+                scrollAmount *
                 direction,
 
               behavior:
@@ -7531,6 +9789,143 @@
       setRenataSlide(
         0
       );
+
+      const FA_DESKTOP_BASE_WIDTH =
+        1440;
+
+      function resizeFernandoFrame(
+        viewport
+      ) {
+        if (!viewport) {
+          return;
+        }
+
+        const canvas =
+          $(
+            ".fa-desktop-canvas",
+            viewport
+          );
+
+        if (
+          !canvas ||
+          !viewport.clientWidth
+        ) {
+          return;
+        }
+
+        const scale =
+          Math.min(
+            1,
+            viewport.clientWidth /
+              FA_DESKTOP_BASE_WIDTH
+          );
+
+        canvas.style.transform =
+          `scale(${scale})`;
+
+        const sourceHeight =
+          Number(
+            viewport.dataset
+              .faDesktopHeight ||
+              620
+          );
+
+        viewport.style.height =
+          `${Math.round(
+            sourceHeight *
+              scale
+          )}px`;
+      }
+
+      function resizeFernandoFrames() {
+        $$(".fa-desktop-viewport")
+          .forEach(
+            resizeFernandoFrame
+          );
+      }
+
+      window.addEventListener(
+        "load",
+        resizeFernandoFrames
+      );
+
+      window.addEventListener(
+        "resize",
+        resizeFernandoFrames
+      );
+
+      if (
+        "ResizeObserver" in window
+      ) {
+        const observer =
+          new ResizeObserver(
+            entries => {
+              entries.forEach(
+                entry => {
+                  resizeFernandoFrame(
+                    entry.target
+                  );
+                }
+              );
+            }
+          );
+
+        $$(".fa-desktop-viewport")
+          .forEach(
+            viewport => {
+              observer.observe(
+                viewport
+              );
+            }
+          );
+      }
+
+      resizeFernandoFrames();
+
+      const systemButtons =
+        $$(".fa-system-btn");
+
+      const systemPanels =
+        $$(".fa-system-panel");
+
+      systemButtons.forEach(
+        button => {
+          button.addEventListener(
+            "click",
+            () => {
+              const target =
+                button.dataset
+                  .faSystem;
+
+              systemButtons.forEach(
+                item => {
+                  item
+                    .classList
+                    .remove("active");
+                }
+              );
+
+              button
+                .classList
+                .add("active");
+
+              systemPanels.forEach(
+                panel => {
+                  panel
+                    .classList
+                    .toggle(
+                      "active",
+                      panel.dataset
+                        .faSystemPanel ===
+                        target
+                    );
+                }
+              );
+            }
+          );
+        }
+      );
+
 
     })();
   </script>
