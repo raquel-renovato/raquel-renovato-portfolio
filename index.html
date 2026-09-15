@@ -1886,6 +1886,135 @@
       margin-top: 35px;
     }
 
+    .fernando-compare-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+
+      margin-bottom: 24px;
+    }
+
+    .fernando-compare-preview {
+      min-width: 0;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--bg);
+    }
+
+    .fernando-compare-preview-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding: 13px 16px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fernando-compare-preview-head span {
+      color: var(--accent);
+
+      font-size: 0.5rem;
+    }
+
+    .fernando-compare-preview-head strong {
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .fernando-compare-before-stage,
+    .fernando-compare-after-stage {
+      min-height: 350px;
+    }
+
+    .fernando-compare-before-stage {
+      display: flex;
+      flex-direction: column;
+
+      gap: 14px;
+
+      padding: 22px;
+
+      background: var(--card);
+    }
+
+    .fernando-compare-before-stage iframe {
+      display: block;
+
+      width: 100%;
+      height: 350px;
+
+      border: 0;
+
+      background: #fff;
+    }
+
+    .fernando-compare-note {
+      color: var(--dim);
+
+      font-size: 0.64rem;
+      line-height: 1.55;
+    }
+
+    .fernando-compare-after-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      background: #f4f6f8;
+    }
+
+    .fernando-compare-after-stage img {
+      display: block;
+
+      width: 100%;
+      height: 350px;
+
+      object-fit: contain;
+      object-position: center top;
+
+      cursor: zoom-in;
+    }
+
+    .fernando-compare-after-link {
+      display: inline-flex;
+      align-items: center;
+
+      margin: 14px 16px 16px;
+
+      padding-bottom: 3px;
+
+      border-bottom: 1px solid transparent;
+
+      color: var(--accent);
+
+      font-size: 0.64rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition:
+        color var(--transition),
+        border-color var(--transition);
+    }
+
+    .fernando-compare-after-link:hover {
+      border-color: var(--accent);
+    }
+
+    .fernando-compare-after-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
     .fernando-compare-points article {
       padding: 20px;
 
@@ -3281,6 +3410,7 @@
         transform: scale(0.595);
       }
 
+      .fernando-compare-showcase,
       .fernando-compare-points,
       .fa-responsive-notes,
       .fernando-closing,
@@ -4532,6 +4662,86 @@
                   A comparação destaca decisões de estrutura, hierarquia e
                   apresentação do conteúdo.
                 </p>
+
+              </div>
+
+              <div class="fernando-compare-showcase">
+
+                <article class="fernando-compare-preview">
+
+                  <div class="fernando-compare-preview-head">
+
+                    <span class="mono">
+                      SITE ANTES
+                    </span>
+
+                    <strong>
+                      Estrutura anterior
+                    </strong>
+
+                  </div>
+
+                  <div class="fernando-compare-before-stage">
+
+                    <iframe
+                      src="https://fernando-amaral-website-web.vercel.app/"
+                      title="Site antigo de Fernando Amaral"
+                      loading="lazy"
+                    ></iframe>
+
+                    <a
+                      class="fernando-compare-after-link mono"
+                      href="https://fernando-amaral-website-web.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Abrir site antigo ↗
+                    </a>
+
+                    <p class="fernando-compare-note">
+                      Prévia do site existente no início do projeto, que reunia
+                      grande volume de conteúdo técnico, diferentes especialidades
+                      e uma estrutura extensa.
+                    </p>
+
+                  </div>
+
+                </article>
+
+                <article class="fernando-compare-preview">
+
+                  <div class="fernando-compare-preview-head">
+
+                    <span class="mono">
+                      SITE DEPOIS
+                    </span>
+
+                    <strong>
+                      Redesign publicado
+                    </strong>
+
+                  </div>
+
+                  <div class="fernando-compare-after-stage">
+
+                    <img
+                      class="js-lightbox-image"
+                      src="img/img-fernando/Layout%20-%20Web.png"
+                      alt="Site de Fernando Amaral após o redesign"
+                    >
+
+                  </div>
+
+                  <a
+                    class="fernando-compare-after-link mono"
+                    href="https://fernando-amaral.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver site publicado ↗
+                  </a>
+
+                </article>
 
               </div>
 
