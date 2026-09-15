@@ -1983,6 +1983,829 @@
       font-size: 0.52rem;
     }
 
+    .fernando-compare-section {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+
+      gap: 34px;
+
+      align-items: start;
+    }
+
+    .fernando-compare-copy > span {
+      color: var(--accent);
+      font-size: 0.52rem;
+    }
+
+    .fernando-compare-copy h5 {
+      margin: 10px 0 20px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .fernando-compare-note {
+      padding: 14px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .fernando-compare-note strong {
+      font-size: 0.72rem;
+    }
+
+    .fernando-compare-note p {
+      margin-top: 6px;
+
+      color: var(--dim);
+
+      font-size: 0.69rem;
+      line-height: 1.62;
+    }
+
+    .fa-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .fa-compare-card {
+      min-width: 0;
+    }
+
+    .fa-compare-label {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      margin-bottom: 10px;
+    }
+
+    .fa-compare-label span:first-child {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.55rem;
+    }
+
+    .fa-compare-label span:last-child {
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fernando-compare-browsers {
+      grid-template-columns: 1fr 1fr !important;
+      align-items: stretch;
+    }
+
+    .fernando-compare-browsers .fa-compare-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fernando-compare-browsers .fa-browser {
+      flex: 1;
+    }
+
+    .fernando-compare-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 10px;
+
+      margin-top: 35px;
+    }
+
+    .fernando-compare-points article {
+      padding: 20px;
+
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .fernando-compare-points span {
+      color: var(--accent);
+      font-size: 0.49rem;
+    }
+
+    .fernando-compare-points h5 {
+      margin: 13px 0 7px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.14rem;
+      font-weight: 400;
+    }
+
+    .fernando-compare-points p {
+      color: var(--dim);
+
+      font-size: 0.69rem;
+      line-height: 1.6;
+    }
+
+    .fa-system {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+
+      gap: 1px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+
+      background: var(--line);
+    }
+
+    .fa-system-sidebar {
+      padding: 18px;
+
+      background: var(--card);
+    }
+
+    .fa-system-sidebar > span {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: #9A7669;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.53rem;
+      letter-spacing: 0.08em;
+    }
+
+    .fa-system-btn {
+      width: 100%;
+      min-height: 36px;
+
+      padding: 9px 10px;
+
+      border: 0;
+      border-radius: 4px;
+
+      background: transparent;
+      color: var(--dim);
+
+      font-size: 0.65rem;
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .fa-system-btn.active {
+      background: #EAD0BE;
+      color: #E8590C;
+    }
+
+    [data-theme="dark"] .fa-system-btn.active {
+      background: rgba(242, 109, 29, 0.16);
+      color: var(--accent);
+    }
+
+    .fa-system-canvas {
+      min-width: 0;
+
+      padding: 30px;
+
+      background: var(--bg);
+    }
+
+    .fa-system-panel {
+      display: none;
+    }
+
+    .fa-system-panel.active {
+      display: block;
+    }
+
+    .fa-system-title {
+      margin-bottom: 22px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+    }
+
+    .fa-component-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+    }
+
+    .fa-component-box {
+      min-height: 180px;
+
+      padding: 18px;
+
+      border: 1px solid var(--line);
+      border-radius: 7px;
+
+      background: var(--card);
+    }
+
+    .fa-component-box.wide {
+      grid-column: 1 / -1;
+    }
+
+    .fa-component-label {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      margin-bottom: 24px;
+
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.53rem;
+    }
+
+    .fa-color-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+
+      gap: 8px;
+    }
+
+    .fa-color-token {
+      min-height: 145px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 14px;
+
+      border-radius: 6px;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .fa-color-token.navy {
+      background: #00152A;
+      color: #FFF;
+    }
+
+    .fa-color-token.gold {
+      background: #B8860B;
+      color: #FFF;
+    }
+
+    .fa-color-token.slate {
+      background: #64748B;
+      color: #FFF;
+    }
+
+    .fa-color-token.light {
+      border: 1px solid #CFD7DE;
+
+      background: #F4F6F8;
+      color: #00152A;
+    }
+
+    .fa-color-token.white {
+      border: 1px solid #CFD7DE;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 12px;
+    }
+
+    .fa-type-card {
+      min-height: 200px;
+
+      padding: 20px;
+
+      border: 1px solid #D8DDE2;
+      border-radius: 6px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-type-card > span {
+      color: #64748B;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .fa-type-card strong {
+      display: block;
+
+      margin: 20px 0 10px;
+
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .fa-type-card.manrope,
+    .fa-type-card.manrope strong,
+    .fa-type-card.manrope p {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .fa-type-card.dm,
+    .fa-type-card.dm strong,
+    .fa-type-card.dm p {
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .fa-primary-demo,
+    .fa-secondary-demo {
+      padding: 10px 16px;
+
+      border-radius: 5px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.66rem;
+    }
+
+    .fa-primary-demo {
+      border: 1px solid var(--fa-gold);
+
+      background: var(--fa-gold);
+      color: #FFF;
+    }
+
+    .fa-secondary-demo {
+      border: 1px solid var(--fa-navy);
+
+      background: transparent;
+      color: var(--fa-navy);
+    }
+
+    .fa-primary-demo.is-hover {
+      transform: translateY(-2px);
+      filter: brightness(0.86);
+    }
+
+    .fa-primary-demo.is-disabled {
+      opacity: 0.35;
+    }
+
+    .fa-state-controls {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      margin-top: 18px;
+    }
+
+    .fa-state-controls button {
+      padding: 5px 9px;
+
+      border: 1px solid var(--line);
+      border-radius: 4px;
+
+      background: var(--bg);
+      color: var(--dim);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+
+      cursor: pointer;
+    }
+
+    .fa-state-controls button.active {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .fa-quality-card {
+      padding: 16px;
+
+      border: 1px solid #CED3D7;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #0D2E48;
+    }
+
+    .fa-quality-card.dark {
+      border-color: #00152A;
+
+      background: #00152A;
+      color: #FFF;
+    }
+
+    .fa-quality-card p {
+      margin-top: 7px;
+
+      font-size: 0.66rem;
+      line-height: 1.5;
+    }
+
+    .fa-nav-preview {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+
+      align-items: center;
+
+      gap: 22px;
+
+      padding: 18px;
+
+      border: 1px solid #D1D8DF;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-nav-preview > strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.69rem;
+    }
+
+    .fa-nav-preview-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 15px;
+
+      font-size: 0.54rem;
+    }
+
+    .fa-nav-preview > button {
+      padding: 8px 10px;
+
+      border: 1px solid #00152A;
+      border-radius: 5px;
+
+      background: transparent;
+      color: #00152A;
+
+      font-size: 0.51rem;
+    }
+
+    .fa-mobile-nav-preview {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 16px;
+
+      border: 1px solid #D1D8DF;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-mobile-nav-preview strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 0.65rem;
+    }
+
+    .fa-mobile-nav-preview button {
+      width: 37px;
+      height: 37px;
+
+      border: 1px solid #C5CED8;
+      border-radius: 6px;
+
+      background: #FFF;
+      color: #00152A;
+    }
+
+    .fa-form-system-demo {
+      display: grid;
+      gap: 13px;
+    }
+
+    .fa-form-system-row {
+      display: grid;
+      gap: 11px;
+    }
+
+    .fa-form-system-row.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fa-form-system-row.three {
+      grid-template-columns: 0.8fr 1.1fr 1fr;
+    }
+
+    .fa-form-system-demo label {
+      display: grid;
+      gap: 6px;
+    }
+
+    .fa-form-system-demo label > span {
+      color: #64748B;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.47rem;
+    }
+
+    .fa-form-system-demo input,
+    .fa-form-system-demo select,
+    .fa-form-system-demo textarea {
+      width: 100%;
+
+      border: 1px solid #8297AD;
+      border-radius: 7px;
+
+      background: #FFF;
+      color: #00152A;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.65rem;
+    }
+
+    .fa-form-system-demo input,
+    .fa-form-system-demo select {
+      min-height: 43px;
+      padding: 0 11px;
+    }
+
+    .fa-form-system-demo textarea {
+      min-height: 95px;
+      padding: 11px;
+    }
+
+    .fa-system-token-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 8px;
+    }
+
+    .fa-system-token-grid > div {
+      min-height: 103px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      padding: 14px;
+
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .fa-system-token-grid strong {
+      color: var(--accent);
+
+      font-family: "Fraunces", serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .fa-system-token-grid span {
+      margin-top: 6px;
+
+      color: var(--dim);
+
+      font-size: 0.61rem;
+    }
+
+    .fa-responsive-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+
+      gap: 24px;
+
+      align-items: stretch;
+
+      padding: 24px;
+
+      border: 1px solid var(--line);
+      border-radius: 12px;
+
+      background: var(--card);
+    }
+
+    .fa-device-desktop,
+    .fa-device-mobile-artboard {
+      min-width: 0;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+
+      background: #FFF;
+
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
+    }
+
+    .fa-device-desktop,
+    .fa-device-mobile-artboard {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fa-mobile-artboard-bar {
+      min-height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding: 0 13px;
+
+      border-bottom: 1px solid rgba(31, 28, 24, 0.12);
+
+      background: #EEE9E1;
+    }
+
+    .fa-mobile-artboard-bar span,
+    .fa-mobile-artboard-bar strong {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+    }
+
+    .fa-mobile-artboard-stage {
+      flex: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      min-height: 410px;
+
+      padding: 18px;
+
+      overflow: hidden;
+
+      background: linear-gradient(
+        180deg,
+        #F8F8F7 0%,
+        #EFEDE9 100%
+      );
+    }
+
+    .fa-mobile-artboard-viewport {
+      position: relative;
+
+      width: 240px;
+      height: 480px;
+
+      overflow: hidden;
+
+      border: 1px solid #D1D5D8;
+      border-radius: 13px;
+
+      background: #FFF;
+
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.11);
+    }
+
+    .fa-mobile-artboard-viewport iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 390px;
+      height: 780px;
+
+      border: 0;
+
+      transform: scale(0.6153846);
+      transform-origin: top left;
+    }
+
+    .fa-responsive-device-caption {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 18px;
+
+      padding: 11px 13px;
+
+      border-top: 1px solid rgba(31, 28, 24, 0.12);
+
+      background: #FFF;
+    }
+
+    .fa-responsive-device-caption strong,
+    .fa-responsive-device-caption span {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fa-responsive-notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 1px;
+
+      margin-top: 18px;
+
+      border: 1px solid var(--line);
+
+      background: var(--line);
+    }
+
+    .fa-responsive-note {
+      padding: 20px;
+
+      background: var(--bg);
+    }
+
+    .fa-responsive-note > span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+    }
+
+    .fa-responsive-note h4 {
+      margin: 10px 0 7px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1.08rem;
+      font-weight: 400;
+    }
+
+    .fa-responsive-note p {
+      color: var(--dim);
+
+      font-size: 0.7rem;
+      line-height: 1.6;
+    }
+
+    .fa-figma-shell {
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .fa-figma-head {
+      min-height: 66px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 13px 16px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fa-figma-head span {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.48rem;
+    }
+
+    .fa-figma-head strong {
+      display: block;
+
+      margin-top: 4px;
+
+      font-family: "Fraunces", serif;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .fa-figma-head a {
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.5rem;
+
+      text-decoration: none;
+    }
+
+    .fa-figma-frame iframe {
+      width: 100%;
+      height: 700px;
+
+      border: 0;
+    }
+
+
     .fernando-compare-points {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -4773,129 +5596,218 @@
 
               </div>
 
-              <div class="fernando-compare-showcase">
+              <article class="fernando-compare-section">
 
-                <article class="fernando-compare-preview">
+                <div class="fernando-compare-copy">
 
-                  <div class="fernando-compare-preview-head">
-
-                    <span class="mono">
-                      SITE ANTES
-                    </span>
-
-                    <strong>
-                      Estrutura anterior
-                    </strong>
-
-                  </div>
-
-                  <div class="fernando-compare-before-stage">
-
-                    <iframe
-                      src="https://fernando-amaral-website-web.vercel.app/"
-                      title="Site antigo de Fernando Amaral"
-                      loading="lazy"
-                    ></iframe>
-
-                    <a
-                      class="fernando-compare-after-link mono"
-                      href="https://fernando-amaral-website-web.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Abrir site antigo ↗
-                    </a>
-
-                    <p class="fernando-compare-note">
-                      Prévia do site existente no início do projeto, que reunia
-                      grande volume de conteúdo técnico, diferentes especialidades
-                      e uma estrutura extensa.
-                    </p>
-
-                  </div>
-
-                </article>
-
-                <article class="fernando-compare-preview">
-
-                  <div class="fernando-compare-preview-head">
-
-                    <span class="mono">
-                      SITE DEPOIS
-                    </span>
-
-                    <strong>
-                      Redesign publicado
-                    </strong>
-
-                  </div>
-
-                  <div class="fernando-compare-after-stage">
-
-                    <iframe
-                      class="fernando-live-preview"
-                      src="https://fernando-amaral.vercel.app/"
-                      title="Site de Fernando Amaral após o redesign"
-                      loading="lazy"
-                    ></iframe>
-
-                  </div>
-
-                  <a
-                    class="fernando-compare-after-link mono"
-                    href="https://fernando-amaral.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Ver site publicado ↗
-                  </a>
-
-                </article>
-
-              </div>
-
-              <div class="fernando-compare-points">
-
-                <article>
                   <span class="mono">
                     01 / ABERTURA
                   </span>
 
                   <h5>
-                    Posicionamento
+                    Posicionamento e prioridade de ação.
                   </h5>
 
-                  <p>
-                    Apresentação direta do serviço e das principais ações.
-                  </p>
-                </article>
+                  <div class="fernando-compare-note">
+
+                    <strong>
+                      Problema identificado
+                    </strong>
+
+                    <p>
+                      A abertura precisava explicar rapidamente a atuação do
+                      profissional e deixar claras as ações disponíveis.
+                    </p>
+
+                  </div>
+
+                  <div class="fernando-compare-note">
+
+                    <strong>
+                      Decisão de design
+                    </strong>
+
+                    <p>
+                      O novo hero prioriza a apresentação do serviço e duas
+                      ações: solicitar orçamento e explorar os serviços.
+                    </p>
+
+                  </div>
+
+                  <div class="fernando-compare-note">
+
+                    <strong>
+                      Justificativa
+                    </strong>
+
+                    <p>
+                      A hierarquia cria uma entrada mais direta para um conteúdo
+                      naturalmente técnico e extenso.
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div class="fa-compare-grid fernando-compare-browsers">
+
+                  <article class="fa-compare-card">
+
+                    <div class="fa-compare-label">
+                      <span>ANTES</span>
+                      <span>site anterior</span>
+                    </div>
+
+                    <div class="fa-browser">
+
+                      <div class="fa-browser-bar">
+
+                        <div class="fa-browser-dots">
+                          <i></i>
+                          <i></i>
+                          <i></i>
+                        </div>
+
+                        <div class="fa-browser-address">
+                          versão anterior
+                        </div>
+
+                        <a
+                          href="https://fernando-amaral-website-web.vercel.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="fa-browser-link"
+                        >
+                          ABRIR ↗
+                        </a>
+
+                      </div>
+
+                      <div
+                        class="fa-desktop-viewport"
+                        data-fa-desktop-height="760"
+                      >
+
+                        <div class="fa-desktop-canvas">
+
+                          <iframe
+                            src="https://fernando-amaral-website-web.vercel.app/"
+                            title="Fernando Amaral antigo"
+                          ></iframe>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                  <article class="fa-compare-card">
+
+                    <div class="fa-compare-label">
+                      <span>DEPOIS</span>
+                      <span>produto publicado</span>
+                    </div>
+
+                    <div class="fa-browser">
+
+                      <div class="fa-browser-bar">
+
+                        <div class="fa-browser-dots">
+                          <i></i>
+                          <i></i>
+                          <i></i>
+                        </div>
+
+                        <div class="fa-browser-address">
+                          fernando-amaral.vercel.app
+                        </div>
+
+                        <a
+                          href="https://fernando-amaral.vercel.app/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="fa-browser-link"
+                        >
+                          LIVE ↗
+                        </a>
+
+                      </div>
+
+                      <div
+                        class="fa-desktop-viewport"
+                        data-fa-desktop-height="760"
+                      >
+
+                        <div class="fa-desktop-canvas">
+
+                          <iframe
+                            src="https://fernando-amaral.vercel.app/"
+                            title="Fernando Amaral novo"
+                          ></iframe>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </article>
+
+                </div>
+
+              </article>
+
+              <div class="fernando-compare-points">
 
                 <article>
+
                   <span class="mono">
                     02 / SERVIÇOS
                   </span>
 
                   <h5>
-                    Menos conteúdo simultâneo
+                    Menos conteúdo simultâneo.
                   </h5>
 
                   <p>
-                    Especialidades reunidas em uma experiência navegável.
+                    As especialidades foram reunidas em uma experiência
+                    navegável.
                   </p>
+
                 </article>
 
                 <article>
+
                   <span class="mono">
                     03 / PROCESSO
                   </span>
 
                   <h5>
-                    Relação entre etapas
+                    Relação entre etapas.
                   </h5>
 
                   <p>
                     A metodologia passou a usar sequência e numeração.
                   </p>
+
+                </article>
+
+                <article>
+
+                  <span class="mono">
+                    04 / PROJETOS
+                  </span>
+
+                  <h5>
+                    Mais contexto em cada case.
+                  </h5>
+
+                  <p>
+                    Área, escopo e especialidade foram incorporados aos cards.
+                  </p>
+
                 </article>
 
               </div>
@@ -4924,50 +5836,164 @@
 
               </div>
 
-              <div class="fernando-system-gallery">
+              <div class="fa-system">
 
-                <figure>
-                  <img
-                    class="js-lightbox-image"
-                    src="img/img-fernando/Layout%20-%20Web-1.png"
-                    alt="Aplicação do sistema visual no site de Fernando Amaral"
+                <aside class="fa-system-sidebar">
+
+                  <span>
+                    FERNANDO UI
+                  </span>
+
+                  <button
+                    class="fa-system-btn active"
+                    data-fa-system="foundation"
+                    type="button"
                   >
-                  <figcaption>
-                    Aplicação do sistema visual na estrutura de conteúdo.
-                  </figcaption>
-                </figure>
+                    Foundations
+                  </button>
 
-                <figure>
-                  <img
-                    class="js-lightbox-image"
-                    src="img/img-fernando/Layout%20-%20Web-2.png"
-                    alt="Componentes e hierarquia visual do site de Fernando Amaral"
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="buttons"
+                    type="button"
                   >
-                  <figcaption>
-                    Componentes, hierarquia e estados apresentados no produto.
-                  </figcaption>
-                </figure>
+                    Buttons & states
+                  </button>
 
-              </div>
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="navigation"
+                    type="button"
+                  >
+                    Navigation
+                  </button>
 
-              <div class="fernando-system-components">
-                <article class="fernando-system-component">
-                  <span>BOTÕES / ESTADOS</span>
-                  <div class="fernando-system-buttons">
-                    <button type="button">Solicitar orçamento</button>
-                    <button type="button">Ver serviços</button>
-                  </div>
-                </article>
-                <article class="fernando-system-component">
-                  <span>NAVEGAÇÃO / HIERARQUIA</span>
-                  <div class="fernando-system-nav">
-                    <strong>Fernando Amaral</strong>
-                    <span>Menu compacto ☰</span>
-                  </div>
-                </article>
-              </div>
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="cards"
+                    type="button"
+                  >
+                    Cards
+                  </button>
 
-            </section>
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="forms"
+                    type="button"
+                  >
+                    Forms
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="tokens"
+                    type="button"
+                  >
+                    Tokens
+                  </button>
+
+                </aside>
+
+                <div class="fa-system-canvas">
+
+                  <section
+                    class="fa-system-panel active"
+                    data-fa-system-panel="foundation"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Foundations
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Color system</span>
+                          <span>Light + Dark</span>
+                        </div>
+
+                        <div class="fa-color-grid">
+
+                          <div class="fa-color-token navy">
+                            <strong>Primary</strong>
+                            <span>#00152A</span>
+                          </div>
+
+                          <div class="fa-color-token gold">
+                            <strong>Accent</strong>
+                            <span>#B8860B</span>
+                          </div>
+
+                          <div class="fa-color-token slate">
+                            <strong>Slate</strong>
+                            <span>#64748B</span>
+                          </div>
+
+                          <div class="fa-color-token light">
+                            <strong>Background</strong>
+                            <span>#F4F6F8</span>
+                          </div>
+
+                          <div class="fa-color-token white">
+                            <strong>Surface</strong>
+                            <span>#FFFFFF</span>
+                          </div>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Typography</span>
+                          <span>Display + Body</span>
+                        </div>
+
+                        <div class="fa-type-grid">
+
+                          <article class="fa-type-card manrope">
+
+                            <span>
+                              DISPLAY / MANROPE
+                            </span>
+
+                            <strong>
+                              Aa
+                            </strong>
+
+                            <p>
+                              Projetos elétricos para arquitetos, engenheiros,
+                              construtoras e incorporadoras.
+                            </p>
+
+                          </article>
+
+                          <article class="fa-type-card dm">
+
+                            <span>
+                              BODY / DM SANS
+                            </span>
+
+                            <strong>
+                              Aa
+                            </strong>
+
+                            <p>
+                              Clareza e legibilidade para conteúdo técnico.
+                            </p>
+
+                          </article>
+
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
 
             <section
               class="fernando-view"
@@ -4986,8 +6012,106 @@
 
                 <p>
                   A versão mobile não replica simplesmente o desktop em escala
-                  menor.
+                  menor. Navegação, galerias, tipografia e componentes mudam de
+                  composição quando o espaço disponível exige outra solução.
                 </p>
+
+              </div>
+
+              <div class="fa-responsive-showcase">
+
+                <div class="fa-device-desktop">
+
+                  <div class="fa-browser-bar">
+
+                    <div class="fa-browser-dots">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+
+                    <div class="fa-browser-address">
+                      fernando-amaral.vercel.app
+                    </div>
+
+                    <span class="fa-browser-link">
+                      DESKTOP / 1440
+                    </span>
+
+                  </div>
+
+                  <div
+                    class="fa-desktop-viewport"
+                    data-fa-desktop-height="780"
+                  >
+
+                    <div class="fa-desktop-canvas">
+
+                      <iframe
+                        src="https://fernando-amaral.vercel.app/"
+                        title="Fernando Amaral — versão desktop"
+                        loading="lazy"
+                      ></iframe>
+
+                    </div>
+
+                  </div>
+
+                  <div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Desktop
+                    </strong>
+
+                    <span>
+                      1440px • navegação completa
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <div class="fa-device-mobile-artboard">
+
+                  <div class="fa-mobile-artboard-bar">
+
+                    <span>
+                      MOBILE VIEWPORT
+                    </span>
+
+                    <strong>
+                      390px
+                    </strong>
+
+                  </div>
+
+                  <div class="fa-mobile-artboard-stage">
+
+                    <div class="fa-mobile-artboard-viewport">
+
+                      <iframe
+                        src="https://fernando-amaral.vercel.app/"
+                        title="Fernando Amaral — versão mobile"
+                        loading="lazy"
+                      ></iframe>
+
+                    </div>
+
+                  </div>
+
+                  <div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Mobile
+                    </strong>
+
+                    <span>
+                      390px • composição adaptada
+                    </span>
+
+                  </div>
+
+                </div>
 
               </div>
 
@@ -5004,8 +6128,8 @@
                   </h4>
 
                   <p>
-                    A navegação horizontal é substituída por um controle
-                    dedicado.
+                    A navegação horizontal do desktop é substituída por um
+                    controle dedicado, preservando espaço para o conteúdo.
                   </p>
 
                 </article>
@@ -5021,7 +6145,8 @@
                   </h4>
 
                   <p>
-                    A galeria prioriza o conteúdo ativo em telas estreitas.
+                    No mobile, a galeria prioriza o conteúdo ativo sem manter a
+                    pré-visualização da próxima imagem ocupando a tela.
                   </p>
 
                 </article>
@@ -5037,20 +6162,12 @@
                   </h4>
 
                   <p>
-                    Títulos, textos e espaçamentos recebem escalas próprias.
+                    Títulos, textos e espaçamentos recebem escalas próprias para
+                    manter legibilidade e evitar quebras desconfortáveis.
                   </p>
 
                 </article>
 
-              </div>
-
-              <div class="fernando-responsive-preview">
-                <iframe
-                  class="fernando-live-preview"
-                  src="https://fernando-amaral.vercel.app/"
-                  title="Site responsivo de Fernando Amaral"
-                  loading="lazy"
-                ></iframe>
               </div>
 
             </section>
@@ -5060,39 +6177,41 @@
               data-fernando-view="prototype"
             >
 
-              <div class="fernando-system-intro">
+              <div class="fa-figma-shell">
 
-                <span class="mono">
-                  PROTÓTIPO
-                </span>
+                <div class="fa-figma-head">
 
-                <h4>
-                  Fluxo navegável antes da implementação.
-                </h4>
+                  <div>
+                    <span>
+                      PROTÓTIPO
+                    </span>
 
-                <p>
-                  O protótipo foi usado para estruturar estados, navegação e
-                  comportamento antes da implementação.
-                </p>
+                    <strong>
+                      Fernando Amaral
+                    </strong>
+                  </div>
+
+                  <a
+                    href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    abrir no Figma ↗
+                  </a>
+
+                </div>
+
+                <div class="fa-figma-frame">
+
+                  <iframe
+                    src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
+                    allowfullscreen
+                    title="Protótipo Fernando Amaral"
+                  ></iframe>
+
+                </div>
 
               </div>
-
-              <iframe
-                class="fernando-live-preview"
-                src="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&embed-host=share"
-                title="Protótipo navegável de Fernando Amaral no Figma"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
-
-              <a
-                class="fernando-product-link"
-                href="https://www.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                abrir protótipo no Figma ↗
-              </a>
 
             </section>
 
@@ -8242,6 +9361,143 @@
       setRenataSlide(
         0
       );
+
+      const FA_DESKTOP_BASE_WIDTH =
+        1440;
+
+      function resizeFernandoFrame(
+        viewport
+      ) {
+        if (!viewport) {
+          return;
+        }
+
+        const canvas =
+          $(
+            ".fa-desktop-canvas",
+            viewport
+          );
+
+        if (
+          !canvas ||
+          !viewport.clientWidth
+        ) {
+          return;
+        }
+
+        const scale =
+          Math.min(
+            1,
+            viewport.clientWidth /
+              FA_DESKTOP_BASE_WIDTH
+          );
+
+        canvas.style.transform =
+          `scale(${scale})`;
+
+        const sourceHeight =
+          Number(
+            viewport.dataset
+              .faDesktopHeight ||
+              620
+          );
+
+        viewport.style.height =
+          `${Math.round(
+            sourceHeight *
+              scale
+          )}px`;
+      }
+
+      function resizeFernandoFrames() {
+        $$(".fa-desktop-viewport")
+          .forEach(
+            resizeFernandoFrame
+          );
+      }
+
+      window.addEventListener(
+        "load",
+        resizeFernandoFrames
+      );
+
+      window.addEventListener(
+        "resize",
+        resizeFernandoFrames
+      );
+
+      if (
+        "ResizeObserver" in window
+      ) {
+        const observer =
+          new ResizeObserver(
+            entries => {
+              entries.forEach(
+                entry => {
+                  resizeFernandoFrame(
+                    entry.target
+                  );
+                }
+              );
+            }
+          );
+
+        $$(".fa-desktop-viewport")
+          .forEach(
+            viewport => {
+              observer.observe(
+                viewport
+              );
+            }
+          );
+      }
+
+      resizeFernandoFrames();
+
+      const systemButtons =
+        $$(".fa-system-btn");
+
+      const systemPanels =
+        $$(".fa-system-panel");
+
+      systemButtons.forEach(
+        button => {
+          button.addEventListener(
+            "click",
+            () => {
+              const target =
+                button.dataset
+                  .faSystem;
+
+              systemButtons.forEach(
+                item => {
+                  item
+                    .classList
+                    .remove("active");
+                }
+              );
+
+              button
+                .classList
+                .add("active");
+
+              systemPanels.forEach(
+                panel => {
+                  panel
+                    .classList
+                    .toggle(
+                      "active",
+                      panel.dataset
+                        .faSystemPanel ===
+                        target
+                    );
+                }
+              );
+            }
+          );
+        }
+      );
+
 
     })();
   </script>
