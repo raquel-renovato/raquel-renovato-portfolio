@@ -2461,6 +2461,38 @@
       outline-offset: 4px;
     }
 
+    .voit-confidentiality-note {
+      display: flex;
+      align-items: flex-start;
+
+      gap: 18px;
+      margin-bottom: 10px;
+      padding: 18px 20px;
+
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--accent);
+      border-radius: 9px;
+
+      background: var(--accent-soft);
+    }
+
+    .voit-confidentiality-note strong {
+      flex: 0 0 auto;
+
+      color: var(--accent);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.58rem;
+      line-height: 1.6;
+    }
+
+    .voit-confidentiality-note p {
+      color: var(--dim);
+
+      font-size: 0.74rem;
+      line-height: 1.65;
+    }
+
     .voit-materials-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3238,6 +3270,12 @@
 
       .voit-article-link {
         padding-top: 12px;
+      }
+
+      .voit-confidentiality-note {
+        flex-direction: column;
+
+        gap: 8px;
       }
 
       .skill-grid {
@@ -5568,6 +5606,20 @@
 
               </div>
 
+              <aside class="voit-confidentiality-note">
+
+                <strong>
+                  CONFIDENCIALIDADE
+                </strong>
+
+                <p>
+                  Parte das apresentações, materiais técnicos e peças internas
+                  não é exibida por conter informações da empresa e de seus
+                  clientes.
+                </p>
+
+              </aside>
+
               <div class="voit-materials-grid">
 
                 <article class="voit-material-card">
@@ -5586,10 +5638,6 @@
                     clientes.
                   </p>
 
-                  <small>
-                    inserir exemplo selecionado
-                  </small>
-
                 </article>
 
                 <article class="voit-material-card">
@@ -5607,10 +5655,6 @@
                     serviços e setores atendidos pela consultoria.
                   </p>
 
-                  <small>
-                    inserir exemplo selecionado
-                  </small>
-
                 </article>
 
                 <article class="voit-material-card">
@@ -5627,10 +5671,6 @@
                     Peças e materiais voltados a ações internas e comunicação
                     com os colaboradores.
                   </p>
-
-                  <small>
-                    inserir exemplo selecionado
-                  </small>
 
                 </article>
 
@@ -5815,7 +5855,7 @@
 
                 <p>
                   Conjunto de apresentações editáveis e reutilizáveis no Canva,
-                  reunindo cerca de 50 slides.
+                  reunindo 50 slides.
                 </p>
 
               </div>
@@ -5998,7 +6038,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Ver conteúdo no Canva ↗
+                    Ver projeto completo no Canva ↗
                   </a>
 
                 </aside>
@@ -7736,5 +7776,3 @@
 
 </body>
 </html>
-index.html
-HTML
