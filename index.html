@@ -1877,6 +1877,39 @@
       line-height: 1.7;
     }
 
+    .fernando-system-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+    }
+
+    .fernando-system-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+    }
+
+    .fernando-system-gallery img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      object-position: center;
+      background: #f4f6f8;
+      cursor: zoom-in;
+    }
+
+    .fernando-system-gallery figcaption {
+      padding: 13px 16px;
+      border-top: 1px solid var(--line);
+      color: var(--dim);
+      font-size: 0.64rem;
+      line-height: 1.5;
+    }
+
     .fernando-compare-points {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -3412,6 +3445,7 @@
 
       .fernando-compare-showcase,
       .fernando-compare-points,
+      .fernando-system-gallery,
       .fa-responsive-notes,
       .fernando-closing,
       .fernando-closing-grid {
@@ -4812,6 +4846,32 @@
                   Foundations, componentes, variantes e estados utilizados no
                   produto publicado.
                 </p>
+
+              </div>
+
+              <div class="fernando-system-gallery">
+
+                <figure>
+                  <img
+                    class="js-lightbox-image"
+                    src="img/img-fernando/Layout%20-%20Web-1.png"
+                    alt="Aplicação do sistema visual no site de Fernando Amaral"
+                  >
+                  <figcaption>
+                    Aplicação do sistema visual na estrutura de conteúdo.
+                  </figcaption>
+                </figure>
+
+                <figure>
+                  <img
+                    class="js-lightbox-image"
+                    src="img/img-fernando/Layout%20-%20Web-2.png"
+                    alt="Componentes e hierarquia visual do site de Fernando Amaral"
+                  >
+                  <figcaption>
+                    Componentes, hierarquia e estados apresentados no produto.
+                  </figcaption>
+                </figure>
 
               </div>
 
