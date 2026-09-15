@@ -2429,14 +2429,36 @@
       line-height: 1.65;
     }
 
-    .voit-article-placeholder {
-      margin-top: auto;
-      padding-top: 24px;
+    .voit-article-link {
+      display: inline-flex;
+      align-items: center;
 
-      color: var(--muted);
+      gap: 6px;
+      width: fit-content;
+      margin-top: auto;
+      padding-top: 16px;
+
+      border-bottom: 1px solid transparent;
+
+      color: var(--accent);
 
       font-family: "IBM Plex Mono", monospace;
-      font-size: 0.52rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      transition:
+        color var(--transition),
+        border-color var(--transition);
+    }
+
+    .voit-article-link:hover {
+      border-color: var(--accent);
+    }
+
+    .voit-article-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
 
     .voit-materials-grid {
@@ -3212,6 +3234,10 @@
       .voit-materials-grid,
       .voit-process-grid {
         grid-template-columns: 1fr;
+      }
+
+      .voit-article-link {
+        padding-top: 12px;
       }
 
       .skill-grid {
@@ -5242,17 +5268,22 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    NR-1 atualizada: o que muda e como preparar sua empresa
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Conteúdo sobre as atualizações da NR-1 e os impactos das
+                    novas exigências para a gestão e a rotina das empresas.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/nr-1-atualizada/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5263,17 +5294,22 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    Feedback estratégico para colaboradores
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Conteúdo voltado à utilização do feedback como ferramenta
+                    de desenvolvimento, alinhamento e fortalecimento das equipes.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/feedback-estrategico-colaborador/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5284,17 +5320,23 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    “Bombeiros do RH”: recrutamento estratégico
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Artigo sobre recrutamento estratégico e a importância de
+                    substituir processos reativos por uma atuação mais planejada
+                    na área de RH.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/bombeiros-do-rh-recrutamento-estrategico/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5305,17 +5347,23 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    Técnicas de fidelização de clientes
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Conteúdo sobre estratégias de relacionamento e práticas que
+                    ajudam empresas a fortalecer a experiência e a retenção de
+                    clientes.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
-                  </span>
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/tecnicas-de-fidelizacao-clientes/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
@@ -5326,17 +5374,77 @@
                   </span>
 
                   <h5>
-                    Artigo selecionado
+                    Estratégias para ter qualidade na confecção
                   </h5>
 
                   <p>
-                    Espaço preparado para título, breve contexto do conteúdo e
-                    acesso à publicação.
+                    Artigo direcionado ao setor de confecção, abordando
+                    organização, processos e estratégias relacionadas à qualidade
+                    das operações.
                   </p>
 
-                  <span class="voit-article-placeholder">
-                    aguardando link do artigo ↗
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/estrategias-para-ter-qualidade-na-confeccao/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 06
                   </span>
+
+                  <h5>
+                    Curva ABC, PEPS e ERP: qual a melhor estratégia?
+                  </h5>
+
+                  <p>
+                    Conteúdo sobre métodos e ferramentas utilizados na
+                    organização e gestão de estoques, comparando diferentes
+                    estratégias de controle.
+                  </p>
+
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/curva-abc-peps-erp-qual-a-melhor-estrategia/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
+
+                </article>
+
+                <article class="voit-article-card">
+
+                  <span class="voit-article-number">
+                    ARTIGO 07
+                  </span>
+
+                  <h5>
+                    Planejamento orçamentário 2025
+                  </h5>
+
+                  <p>
+                    Conteúdo sobre planejamento orçamentário e a importância de
+                    estruturar decisões financeiras com antecedência para o novo
+                    ciclo empresarial.
+                  </p>
+
+                  <a
+                    class="voit-article-link"
+                    href="https://voitconsultoria.com.br/planejamento-orcamentario-2025/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ler artigo completo ↗
+                  </a>
 
                 </article>
 
