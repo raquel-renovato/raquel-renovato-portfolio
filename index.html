@@ -7347,13 +7347,6 @@
               viewport.scrollWidth -
               viewport.clientWidth;
 
-            const atStart =
-              viewport.scrollLeft <= 3;
-
-            const atEnd =
-              viewport.scrollLeft >=
-              maxScrollLeft - 3;
-
             const hasOverflow =
               maxScrollLeft > 4;
 
@@ -7361,7 +7354,6 @@
               .classList
               .toggle(
                 "is-disabled",
-                atStart ||
                 !hasOverflow
               );
 
@@ -7369,31 +7361,71 @@
               .classList
               .toggle(
                 "is-disabled",
-                atEnd ||
                 !hasOverflow
               );
 
             prevButton.setAttribute(
               "aria-disabled",
-              String(
-                atStart ||
-                !hasOverflow
-              )
+              String(!hasOverflow)
             );
 
             nextButton.setAttribute(
               "aria-disabled",
-              String(
-                atEnd ||
-                !hasOverflow
-              )
+              String(!hasOverflow)
             );
           }
 
           function move(direction) {
+            const scrollAmount =
+              getScrollAmount();
+
+            const maxScrollLeft =
+              viewport.scrollWidth -
+              viewport.clientWidth;
+
+            if (
+              direction > 0 &&
+              viewport.scrollLeft >=
+                maxScrollLeft - 3
+            ) {
+              const firstItem =
+                viewport.firstElementChild;
+
+              if (firstItem) {
+                viewport.appendChild(
+                  firstItem
+                );
+
+                viewport.scrollLeft =
+                  Math.max(
+                    0,
+                    viewport.scrollLeft -
+                      scrollAmount
+                  );
+              }
+            }
+
+            if (
+              direction < 0 &&
+              viewport.scrollLeft <= 3
+            ) {
+              const lastItem =
+                viewport.lastElementChild;
+
+              if (lastItem) {
+                viewport.insertBefore(
+                  lastItem,
+                  viewport.firstElementChild
+                );
+
+                viewport.scrollLeft +=
+                  scrollAmount;
+              }
+            }
+
             viewport.scrollBy({
               left:
-                getScrollAmount() *
+                scrollAmount *
                 direction,
 
               behavior:
