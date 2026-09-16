@@ -2554,6 +2554,18 @@
       font-size: 0.69rem;
     }
 
+    .fa-nav-theme-icon {
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border: 1px solid #C5CED8;
+      border-radius: 6px;
+      color: #00152A;
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
     .fa-nav-preview-links {
       display: flex;
       justify-content: center;
@@ -2595,6 +2607,10 @@
     .fa-mobile-nav-preview strong {
       font-family: "Manrope", sans-serif;
       font-size: 0.65rem;
+    }
+
+    .fa-mobile-nav-preview .fa-nav-theme-icon {
+      flex: 0 0 24px;
     }
 
     .fa-mobile-nav-preview button {
@@ -4934,17 +4950,17 @@
                     <div class="wf-task-list">
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox"></div>
+                        <div class="wf-checkbox wf-paintable" data-paint-type="bg"></div>
                         <span>Hierarquia visual definida</span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox"></div>
+                        <div class="wf-checkbox wf-paintable" data-paint-type="bg"></div>
                         <span>Prototipagem de interações</span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox"></div>
+                        <div class="wf-checkbox wf-paintable" data-paint-type="bg"></div>
                         <span>Design System alinhado</span>
                       </div>
 
@@ -6238,6 +6254,7 @@
                         </div>
 
                         <div class="fa-nav-preview">
+                          <span class="fa-nav-theme-icon" aria-hidden="true">☾</span>
                           <strong>FERNANDO AMARAL</strong>
                           <div class="fa-nav-preview-links">
                             <span>Serviços</span>
@@ -6259,6 +6276,8 @@
                         </div>
 
                         <div class="fa-mobile-nav-preview">
+
+                          <span class="fa-nav-theme-icon" aria-hidden="true">☾</span>
 
                           <strong>
                             FERNANDO AMARAL
@@ -9112,7 +9131,6 @@
             checkbox.addEventListener(
               "click",
               event => {
-                event.stopPropagation();
                 checkbox.classList.toggle("checked");
                 checkbox.textContent =
                   checkbox.classList.contains("checked")
