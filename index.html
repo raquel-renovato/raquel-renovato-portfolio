@@ -633,10 +633,10 @@
     }
 
     #wfWindow[data-wf-theme="dark"] {
-      --wf-bg: #101A24;
-      --wf-card: #172635;
-      --wf-text: #F4F7FA;
-      --wf-line: rgba(244, 247, 250, 0.16);
+      --wf-bg: #181614;
+      --wf-card: #23201C;
+      --wf-text: #F0ECE1;
+      --wf-line: rgba(240, 236, 225, 0.15);
     }
 
     #wfWindow[data-wf-theme="dark"] .wf-switch-mode {
@@ -817,6 +817,14 @@
       color: #FFF;
 
       font-size: 0.5rem;
+
+      cursor: pointer;
+    }
+
+    .wf-checkbox.checked {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #FFF;
     }
 
     .color-palette {
@@ -4838,10 +4846,7 @@
 
               <div class="wf-body">
 
-                <div
-                  class="wf-sidebar wf-paintable"
-                  data-paint-type="bg"
-                >
+                <div class="wf-sidebar">
 
                   <div
                     class="wf-nav-item wf-paintable active"
@@ -4869,10 +4874,7 @@
 
                 </div>
 
-                <div
-                  class="wf-main wf-paintable"
-                  data-paint-type="bg"
-                >
+                <div class="wf-main">
 
                   <div
                     class="wf-view active"
@@ -4932,17 +4934,17 @@
                     <div class="wf-task-list">
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">✓</div>
+                        <div class="wf-checkbox"></div>
                         <span>Hierarquia visual definida</span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">✓</div>
+                        <div class="wf-checkbox"></div>
                         <span>Prototipagem de interações</span>
                       </div>
 
                       <div class="wf-task-item">
-                        <div class="wf-checkbox">✓</div>
+                        <div class="wf-checkbox"></div>
                         <span>Design System alinhado</span>
                       </div>
 
@@ -5029,7 +5031,10 @@
 
                     </div>
 
-                    <div class="wf-card">
+                    <div
+                      class="wf-card wf-paintable"
+                      data-paint-type="card-bg"
+                    >
 
                       <span class="wf-card-label mono">
                         Estados de Botão
@@ -5057,7 +5062,10 @@
 
                     </div>
 
-                    <div class="wf-card">
+                    <div
+                      class="wf-card wf-paintable"
+                      data-paint-type="card-bg"
+                    >
 
                       <span class="wf-card-label mono">
                         Tipografia & Escala
@@ -6229,21 +6237,16 @@
                           <span>Header</span>
                         </div>
 
-                        <div class="fa-browser fa-navigation-live">
-                          <div class="fa-browser-bar">
-                            <div class="fa-browser-dots"><i></i><i></i><i></i></div>
-                            <div class="fa-browser-address">fernando-amaral.vercel.app</div>
-                            <span class="fa-browser-link">LIVE / HEADER</span>
+                        <div class="fa-nav-preview">
+                          <strong>FERNANDO AMARAL</strong>
+                          <div class="fa-nav-preview-links">
+                            <span>Serviços</span>
+                            <span>Processo</span>
+                            <span>Portfólio</span>
+                            <span>Sobre</span>
+                            <span>Contato</span>
                           </div>
-                          <div class="fa-desktop-viewport" data-fa-desktop-height="620">
-                            <div class="fa-desktop-canvas">
-                              <iframe
-                                src="https://fernando-amaral.vercel.app/"
-                                title="Navegação real do site Fernando Amaral"
-                                loading="lazy"
-                              ></iframe>
-                            </div>
-                          </div>
+                          <button type="button">SOLICITAR ORÇAMENTO</button>
                         </div>
 
                       </article>
@@ -9100,6 +9103,23 @@
                     textColor;
                 }
               );
+          }
+        );
+
+      $$(".wf-checkbox")
+        .forEach(
+          checkbox => {
+            checkbox.addEventListener(
+              "click",
+              event => {
+                event.stopPropagation();
+                checkbox.classList.toggle("checked");
+                checkbox.textContent =
+                  checkbox.classList.contains("checked")
+                    ? "✓"
+                    : "";
+              }
+            );
           }
         );
 
