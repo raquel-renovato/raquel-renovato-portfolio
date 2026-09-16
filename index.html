@@ -632,6 +632,18 @@
       cursor: pointer;
     }
 
+    #wfWindow[data-wf-theme="dark"] {
+      --wf-bg: #101A24;
+      --wf-card: #172635;
+      --wf-text: #F4F7FA;
+      --wf-line: rgba(244, 247, 250, 0.16);
+    }
+
+    #wfWindow[data-wf-theme="dark"] .wf-switch-mode {
+      color: #F4F7FA;
+      border-color: rgba(244, 247, 250, 0.35);
+    }
+
     .wf-body {
       display: flex;
       flex: 1;
@@ -2897,9 +2909,20 @@
 
     .fa-figma-frame iframe {
       width: 100%;
-      height: 700px;
+      height: 560px;
 
       border: 0;
+    }
+
+    .fernando-mini-desktop iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .fa-navigation-live {
+      height: 420px;
     }
 
 
@@ -5661,10 +5684,11 @@
 
                     <div class="fernando-mini-desktop">
 
-                      <img
-                        src="img/img-fernando/Layout%20-%20Web.png"
-                        alt="Versão desktop do site Fernando Amaral"
-                      >
+                      <iframe
+                        src="https://fernando-amaral.vercel.app/"
+                        title="Versão desktop navegável do site Fernando Amaral"
+                        loading="lazy"
+                      ></iframe>
 
                     </div>
 
@@ -6199,24 +6223,21 @@
                           <span>Header</span>
                         </div>
 
-                        <div class="fa-nav-preview">
-
-                          <strong>
-                            FERNANDO AMARAL
-                          </strong>
-
-                          <div class="fa-nav-preview-links">
-                            <span>Serviços</span>
-                            <span>Processo</span>
-                            <span>Portfólio</span>
-                            <span>Sobre</span>
-                            <span>Contato</span>
+                        <div class="fa-browser fa-navigation-live">
+                          <div class="fa-browser-bar">
+                            <div class="fa-browser-dots"><i></i><i></i><i></i></div>
+                            <div class="fa-browser-address">fernando-amaral.vercel.app</div>
+                            <span class="fa-browser-link">LIVE / HEADER</span>
                           </div>
-
-                          <button type="button">
-                            SOLICITAR ORÇAMENTO
-                          </button>
-
+                          <div class="fa-desktop-viewport" data-fa-desktop-height="620">
+                            <div class="fa-desktop-canvas">
+                              <iframe
+                                src="https://fernando-amaral.vercel.app/"
+                                title="Navegação real do site Fernando Amaral"
+                                loading="lazy"
+                              ></iframe>
+                            </div>
+                          </div>
                         </div>
 
                       </article>
@@ -6632,7 +6653,7 @@
                 <div class="fa-figma-frame">
 
                   <iframe
-                    src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=min-zoom&content-scaling=fixed&embed-host=portfolio"
+                    src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=scale-down&content-scaling=responsive&embed-host=portfolio"
                     allowfullscreen
                     title="Protótipo Fernando Amaral"
                   ></iframe>
@@ -8885,13 +8906,14 @@
       const wfViews =
         $$(".wf-view");
 
+      const wfWindow =
+        $("#wfWindow");
+
       wfNavItems.forEach(
         item => {
           item.addEventListener(
             "click",
             event => {
-              event.stopPropagation();
-
               const tab =
                 item.dataset.tab;
 
@@ -8921,6 +8943,31 @@
           );
         }
       );
+
+      const wfSwitchMode =
+        $("#wfSwitchMode");
+
+      wfSwitchMode
+        ?.addEventListener(
+          "click",
+          event => {
+            event.stopPropagation();
+
+            const dark =
+              wfWindow?.getAttribute("data-wf-theme") ===
+              "dark";
+
+            if (wfWindow) {
+              if (dark) {
+                wfWindow.removeAttribute("data-wf-theme");
+                wfSwitchMode.textContent = "modo app";
+              } else {
+                wfWindow.setAttribute("data-wf-theme", "dark");
+                wfSwitchMode.textContent = "modo claro";
+              }
+            }
+          }
+        );
 
       let selectedColor =
         "#E8590C";
