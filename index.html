@@ -2534,7 +2534,7 @@
 
     .fa-nav-preview {
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto auto minmax(0, 1fr) auto;
 
       align-items: center;
 
@@ -2568,7 +2568,7 @@
 
     .fa-nav-preview-links {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       flex-wrap: wrap;
 
       gap: 15px;
