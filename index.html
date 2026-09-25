@@ -4212,7 +4212,9 @@
     .tools-strip {
       margin-top: 28px;
       padding: 18px 0;
-      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
       overflow-y: hidden;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -4235,26 +4237,10 @@
 
     .tools-strip-track {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
-      width: max-content;
-      animation: toolsMarquee 17s linear infinite;
-      will-change: transform;
-    }
-
-    .tools-strip:hover .tools-strip-track,
-    .tools-strip:focus-within .tools-strip-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes toolsMarquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(calc(-50% - 5px));
-      }
+      width: auto;
     }
 
     .tool-logo {
@@ -4270,13 +4256,14 @@
       color: var(--ink);
       background: var(--card);
       scroll-snap-align: start;
-      transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+      transition: border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
     }
 
     .tool-logo:hover {
       border-color: var(--accent);
       color: var(--accent);
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.06);
+      box-shadow: 0 7px 16px rgba(232, 89, 12, 0.16);
     }
 
     .tool-logo img {
@@ -10116,16 +10103,6 @@
 
 
     })();
-  </script>
-
-  <script>
-    document.querySelectorAll('.tools-strip-track').forEach((track) => {
-      [...track.children].forEach((item) => {
-        const clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        track.appendChild(clone);
-      });
-    });
   </script>
 
 </body>
