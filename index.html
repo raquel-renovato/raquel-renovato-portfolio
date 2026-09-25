@@ -4211,22 +4211,16 @@
 
     .tools-strip {
       margin-top: 28px;
-      padding: 22px 0;
+      padding: 18px 0;
       overflow-x: auto;
       overflow-y: hidden;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      scrollbar-width: thin;
-      scrollbar-color: var(--accent) transparent;
+      scrollbar-width: none;
     }
 
     .tools-strip::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    .tools-strip::-webkit-scrollbar-thumb {
-      background: var(--accent);
-      border-radius: 999px;
+      display: none;
     }
 
     .tools-strip-label {
@@ -4244,7 +4238,7 @@
       flex-wrap: nowrap;
       gap: 10px;
       width: max-content;
-      animation: toolsMarquee 28s linear infinite;
+      animation: toolsMarquee 17s linear infinite;
       will-change: transform;
     }
 
@@ -4267,11 +4261,12 @@
       display: inline-flex;
       flex: 0 0 auto;
       align-items: center;
-      gap: 9px;
-      min-height: 42px;
-      padding: 8px 14px 8px 9px;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      padding: 12px;
       border: 1px solid var(--line);
-      border-radius: 999px;
+      border-radius: 50%;
       color: var(--ink);
       background: var(--card);
       scroll-snap-align: start;
@@ -4285,14 +4280,17 @@
     }
 
     .tool-logo img {
-      width: 22px;
-      height: 22px;
+      width: 32px;
+      height: 32px;
       object-fit: contain;
     }
 
     .tool-logo span {
-      font-size: 0.72rem;
-      font-weight: 600;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
       white-space: nowrap;
     }
 
@@ -8586,7 +8584,7 @@
             </h3>
 
             <p>
-              Figma, prototipagem interativa, arquitetura de informação,
+              Pesquisa, prototipagem interativa, arquitetura de informação,
               componentes e layouts responsivos.
             </p>
 
@@ -8599,8 +8597,8 @@
             </h3>
 
             <p>
-              Photoshop, Illustrator, InDesign, After Effects, Canva e
-              diagramação.
+              Direção visual, composição, tratamento de imagem, diagramação
+              e motion.
             </p>
 
           </article>
@@ -8625,8 +8623,8 @@
             </h3>
 
             <p>
-              IA generativa aplicada ao workflow, exploração, produtividade e
-              refinamento.
+              Exploração, produtividade e refinamento aplicados ao processo
+              criativo.
             </p>
 
           </article>
@@ -8634,10 +8632,6 @@
         </div>
 
         <div class="tools-strip">
-
-          <span class="tools-strip-label">
-            Ferramentas do meu workflow
-          </span>
 
           <div class="tools-strip-track">
 
@@ -8669,6 +8663,11 @@
             <a class="tool-logo" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">
               <img src="img/img-logo-ferramentas/canva-icon.svg" alt="">
               <span>Canva</span>
+            </a>
+
+            <a class="tool-logo" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" aria-label="Claude">
+              <img src="img/img-logo-ferramentas/claude-ai-icon.svg" alt="">
+              <span>Claude</span>
             </a>
 
             <a class="tool-logo" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">
