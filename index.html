@@ -2933,19 +2933,16 @@
 
     .fa-figma-frame iframe {
       width: 100%;
-      max-width: 100%;
-      height: 5200px;
+      height: 820px;
 
       border: 0;
     }
 
     .fa-figma-frame {
       width: 100%;
-      height: 560px;
-      min-height: 0;
+      min-height: 820px;
       overflow-y: auto;
       overflow-x: hidden;
-      overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
     }
 
@@ -4210,6 +4207,76 @@
 
       font-size: 0.8rem;
       line-height: 1.6;
+    }
+
+    .tools-strip {
+      margin-top: 28px;
+      padding: 22px 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) transparent;
+    }
+
+    .tools-strip::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .tools-strip::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .tools-strip-label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.56rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tools-strip-track {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      width: max-content;
+    }
+
+    .tool-logo {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 9px;
+      min-height: 42px;
+      padding: 8px 14px 8px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--card);
+      scroll-snap-align: start;
+      transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .tool-logo:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .tool-logo img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .tool-logo span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     /* =========================================================
@@ -6648,8 +6715,7 @@
                 <div class="fa-figma-frame">
 
                   <iframe
-                    src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&p=f&t=LvWVDSaMcsgKOKxe-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2026%3A1912&embed-host=portfolio"
-                    scrolling="yes"
+                    src="https://embed.figma.com/proto/njp56nlWmMz3M1iEDbTPQH/FA?node-id=2026-1912&starting-point-node-id=2026%3A1912&scaling=scale-down&content-scaling=responsive&embed-host=portfolio"
                     allowfullscreen
                     title="Protótipo Fernando Amaral"
                   ></iframe>
@@ -8547,6 +8613,53 @@
             </p>
 
           </article>
+
+        </div>
+
+        <div class="tools-strip">
+
+          <span class="tools-strip-label">
+            Ferramentas do meu workflow
+          </span>
+
+          <div class="tools-strip-track">
+
+            <a class="tool-logo" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">
+              <img src="img/img-logo-ferramentas/figma-icon.svg" alt="">
+              <span>Figma</span>
+            </a>
+
+            <a class="tool-logo" href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer">
+              <img src="img/img-logo-ferramentas/adobe-photoshop-icon.svg" alt="">
+              <span>Photoshop</span>
+            </a>
+
+            <a class="tool-logo" href="https://www.adobe.com/products/illustrator.html" target="_blank" rel="noopener noreferrer">
+              <img src="img/img-logo-ferramentas/adobe-illustrator-icon.svg" alt="">
+              <span>Illustrator</span>
+            </a>
+
+            <a class="tool-logo" href="https://www.adobe.com/products/indesign.html" target="_blank" rel="noopener noreferrer">
+              <img src="img/img-logo-ferramentas/indesign-icon.svg" alt="">
+              <span>InDesign</span>
+            </a>
+
+            <a class="tool-logo" href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="noopener noreferrer">
+              <img src="img/img-logo-ferramentas/adobe-after-effects-icon.svg" alt="">
+              <span>After Effects</span>
+            </a>
+
+            <a class="tool-logo" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">
+              <img src="img/img-logo-ferramentas/canva-icon.svg" alt="">
+              <span>Canva</span>
+            </a>
+
+            <a class="tool-logo" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">
+              <img src="img/img-logo-ferramentas/chatgpt-icon.svg" alt="">
+              <span>IA generativa</span>
+            </a>
+
+          </div>
 
         </div>
 
