@@ -4244,6 +4244,23 @@
       flex-wrap: nowrap;
       gap: 10px;
       width: max-content;
+      animation: toolsMarquee 28s linear infinite;
+      will-change: transform;
+    }
+
+    .tools-strip:hover .tools-strip-track,
+    .tools-strip:focus-within .tools-strip-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes toolsMarquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 5px));
+      }
     }
 
     .tool-logo {
@@ -10100,6 +10117,16 @@
 
 
     })();
+  </script>
+
+  <script>
+    document.querySelectorAll('.tools-strip-track').forEach((track) => {
+      [...track.children].forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+    });
   </script>
 
 </body>
