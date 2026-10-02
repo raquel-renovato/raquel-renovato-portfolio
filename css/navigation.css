@@ -1,0 +1,57 @@
+/* Navigation and previews; the original Hero and wireframe styles are untouched. */
+.skip-link { position: fixed; top: -100px; left: 20px; z-index: 1000; padding: 12px 18px; background: var(--ink); color: var(--bg); }
+.skip-link:focus { top: 12px; }
+.project-showcase { padding: 48px var(--page-pad) 56px; scroll-margin-top: 90px; }
+.showcase-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 32px; }
+.showcase-label,.preview-category { color: var(--dim); font-size: .65rem; letter-spacing: .06em; }
+.showcase-heading h2,.showcase-heading h1 { font-family: "Fraunces",serif; font-weight: 400; font-size: clamp(1.8rem,3.4vw,2.8rem); margin-top: 10px; }
+.showcase-heading > p { color: var(--dim); font-size: .9rem; line-height: 1.6; }
+.preview-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px 28px; }
+.project-preview { color: var(--ink); text-decoration: none; min-width: 0; display: block; }
+.preview-image { aspect-ratio: 16/10; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 28px; transition: background-color .25s ease; }
+.preview-image img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s ease; }
+.preview-fernando-amaral .preview-image { background: #DDE4E6; }
+.preview-voit-consultoria .preview-image { background: #DDE4DE; }
+.preview-renata-brandao .preview-image { background: #E7DFD8; }
+.preview-somos-braduca .preview-image { background: #D8E8DF; }
+.preview-aymee-ferraz .preview-image { background: #DDDDE9; }
+[data-theme="dark"] .preview-image { background: var(--card); }
+.preview-copy { padding: 20px 0 0; }
+.preview-copy h3 { font-family: "Fraunces",serif; font-size: clamp(1.35rem,2.4vw,1.85rem); font-weight: 400; margin: 8px 0 10px; }
+.preview-copy p { color: var(--dim); line-height: 1.6; font-size: .94rem; max-width: 52ch; }
+.preview-open { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; font-family: "IBM Plex Mono",monospace; font-size: .72rem; color: var(--accent); }
+.preview-open > span { font-size: 1.2rem; }
+.project-preview:hover .preview-image img { transform: scale(1.025); }
+.project-preview:hover h3 { color: var(--accent); }
+.all-projects-link { display: block; width: fit-content; margin: 36px auto 0; padding: 12px 0; color: var(--ink); text-underline-offset: 6px; font-family: "IBM Plex Mono",monospace; font-size: .78rem; }
+.case-breadcrumb { display: flex; justify-content: space-between; gap: 16px; padding: 36px var(--page-pad) 0; color: var(--dim); font-size: .7rem; }
+.case-breadcrumb a,.case-next a,.archive-back { color: var(--ink); text-decoration: none; }
+.case-breadcrumb a:hover,.case-next a:hover,.archive-back:hover { color: var(--accent); }
+.case-page .project-block { margin-top: 20px; }
+.case-title { margin: 12px 0 14px; font-family: "Fraunces",serif; font-size: clamp(1.9rem,4.4vw,3rem); font-weight: 400; }
+.case-next { display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); padding: 32px var(--page-pad) 48px; font-family: "IBM Plex Mono",monospace; font-size: .75rem; }
+.archive { padding-top: 48px; }
+.archive-back { font-size: .7rem; display: inline-block; margin-bottom: 16px; }
+#sobre,#habilidades,#contato { scroll-margin-top: 90px; }
+.img-modal.open { display: flex; }
+@media (max-width: 700px) {
+ .showcase-heading { display: block; }
+ .showcase-heading > p { margin-top: 14px; }
+ .project-showcase { padding-top: 32px; }
+ .preview-grid { grid-template-columns: 1fr; gap: 32px; }
+ .preview-image { padding: 20px; }
+ .preview-category { font-size: .6rem; }
+ .case-breadcrumb { flex-direction: column; padding-top: 24px; }
+ .case-next { flex-direction: column; line-height: 1.6; }
+}
+.case-page .fernando-tabs { max-width: 100%; }
+@media (max-width: 700px) {
+ .case-page .fernando-tabs-row { min-width: 0; }
+ .case-page .fernando-compare-browsers { grid-template-columns: minmax(0,1fr) !important; }
+ .case-page .fa-compare-label { flex-wrap: wrap; gap: 6px; }
+}
+@media (max-width: 700px) {
+ .case-page .fernando-compare-section { grid-template-columns: minmax(0,1fr); gap: 24px; }
+ .case-page .fa-browser-dots { width: auto; }
+ .case-page .fa-browser-bar { grid-template-columns: 30px minmax(0,1fr) auto; }
+}

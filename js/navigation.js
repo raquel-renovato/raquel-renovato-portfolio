@@ -1,0 +1,87 @@
+/* Enhancements shared by the Home and case pages. No wireframe behavior here. */
+(() => {
+  'use strict';
+  const themeToggle = document.getElementById('themeToggle');
+  const syncTheme = () => themeToggle?.setAttribute('aria-pressed', String(document.documentElement.dataset.theme === 'dark'));
+  syncTheme();
+  themeToggle?.addEventListener('click', () => {
+    syncTheme();
+    try { localStorage.setItem('portfolio-theme', document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'); } catch (_) {}
+  });
+  const loadEmbeds = (panel) => {
+    panel?.querySelectorAll('iframe[data-src]').forEach(frame => {
+      frame.src = frame.dataset.src;
+      delete frame.dataset.src;
+      frame.loading = 'lazy';
+    });
+    requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+  };
+  const setupTabs = (buttonsSelector, panelsSelector, buttonKey, panelKey) => {
+    const buttons = [...document.querySelectorAll(buttonsSelector)];
+    const panels = [...document.querySelectorAll(panelsSelector)];
+    if (!buttons.length) return;
+    buttons[0].parentElement.setAttribute('role', 'tablist');
+    buttons[0].parentElement.setAttribute('aria-label', buttonKey === 'fernandoTab' ? 'Conteúdo do projeto Fernando Amaral' : 'Conteúdo do projeto Voit');
+    const sync = () => buttons.forEach(button => {
+      const active = button.classList.contains('active');
+      button.setAttribute('aria-selected', String(active));
+      button.tabIndex = active ? 0 : -1;
+      const panel = panels.find(panel => panel.dataset[panelKey] === button.dataset[buttonKey]);
+      if (panel) { panel.hidden = !active; if (active) loadEmbeds(panel); }
+    });
+    buttons.forEach((button, i) => {
+      button.id = `${buttonKey}-${button.dataset[buttonKey]}`;
+      button.setAttribute('role', 'tab');
+      const panel = panels.find(panel => panel.dataset[panelKey] === button.dataset[buttonKey]);
+      if (panel) {
+        panel.id = `${panelKey}-${panel.dataset[panelKey]}`;
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', button.id);
+        panel.tabIndex = 0;
+        button.setAttribute('aria-controls', panel.id);
+      }
+      button.addEventListener('click', sync);
+      button.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (i + 1) % buttons.length;
+        else if (event.key === 'ArrowLeft') next = (i - 1 + buttons.length) % buttons.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = buttons.length - 1;
+        if (next === undefined) return;
+        event.preventDefault(); buttons[next].click(); buttons[next].focus();
+      });
+    });
+    sync();
+  };
+  setupTabs('.fernando-tab', '.fernando-view', 'fernandoTab', 'fernandoView');
+  setupTabs('.voit-tab', '.voit-view', 'voitTab', 'voitView');
+  const modal = document.getElementById('imgModal');
+  const close = document.getElementById('imgModalClose');
+  let previousFocus;
+  let wasOpen = false;
+  if (modal && close) {
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Imagem ampliada');
+    modal.setAttribute('aria-hidden', 'true');
+    const observer = new MutationObserver(() => {
+      const open = modal.classList.contains('open');
+      if (open === wasOpen) return;
+      wasOpen = open;
+      modal.setAttribute('aria-hidden', String(!open));
+      if (open) { previousFocus = document.activeElement; close.focus(); }
+      else previousFocus?.focus();
+    });
+    observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
+    document.querySelectorAll('.js-lightbox-image').forEach(image => {
+      image.tabIndex = 0; image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', `Ampliar: ${image.alt}`);
+      image.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); image.click(); }
+      });
+    });
+    modal.addEventListener('keydown', event => {
+      if (event.key === 'Tab') { event.preventDefault(); close.focus(); }
+    });
+  }
+})();

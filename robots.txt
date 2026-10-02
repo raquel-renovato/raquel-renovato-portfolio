@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://raquel-renovato-portfolio.vercel.app/sitemap.xml
