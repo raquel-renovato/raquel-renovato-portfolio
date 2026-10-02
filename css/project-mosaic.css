@@ -1,0 +1,56 @@
+/* A moving wall of real project previews; only the Home showcase uses this. */
+.project-mosaic-showcase { padding-top:48px; padding-bottom:64px; }
+.project-mosaic-layout { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,1fr); gap:clamp(28px,5vw,80px); align-items:center; }
+.project-mosaic-visual { min-width:0; }
+.project-mosaic-window { position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:14px; background:#171816; isolation:isolate; }
+.project-mosaic-window::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,#15161344,transparent 15%,transparent 85%,#15161344); box-shadow:inset 0 0 30px #0003; }
+.project-mosaic-plane { position:absolute; width:119%; left:-9%; top:-24%; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; transform:perspective(1000px) rotateX(6deg) rotateY(-9deg) rotateZ(-3deg); transform-origin:50% 15%; }
+.project-mosaic-column { min-width:0; display:flex; flex-direction:column; gap:16px; animation:mosaic-travel 42s linear infinite; animation-play-state:paused; }
+.project-mosaic-column:nth-child(2) { animation-duration:49s; animation-direction:reverse; }
+.project-mosaic-column:nth-child(3) { animation-duration:46s; }
+.project-mosaic-showcase[data-moving="true"] .project-mosaic-column { animation-play-state:running; }
+.project-mosaic-window:hover .project-mosaic-column { animation-play-state:paused; }
+.project-mosaic-group { display:flex; flex-direction:column; gap:16px; }
+.project-mosaic-tile { display:flex; aspect-ratio:4/3; min-width:0; overflow:hidden; border-radius:5px; background:#111; box-shadow:0 2px 8px #0004; }
+.project-mosaic-tile img { display:block; width:100%; height:100%; min-width:0; object-fit:contain; }
+.project-mosaic-tile img + img { border-left:4px solid #151613; }
+.project-mosaic-tile:has(img + img) img { width:50%; }
+.mosaic-fernando-amaral { background:#00152a; }
+.mosaic-renata-brandao { background:#261c25; }
+.mosaic-voit-consultoria { background:#061712; }
+.mosaic-somos-braduca { background:#f5f0e7; }
+.project-mosaic-tile:hover { outline:2px solid var(--accent); outline-offset:-2px; }
+.project-mosaic-motion { display:flex; align-items:center; gap:8px; margin:14px 0 0 auto; border:0; background:none; padding:6px 0; color:var(--dim); font:.65rem "IBM Plex Mono",monospace; cursor:pointer; }
+.project-mosaic-motion > span:first-child { font-size:.9rem; }
+.project-mosaic-copy h2 { margin:14px 0 18px; font:400 clamp(2rem,3.6vw,3.5rem)/1.05 "Fraunces",serif; letter-spacing:-.035em; }
+.project-mosaic-copy > p { color:var(--dim); font-size:.9rem; line-height:1.7; margin-bottom:24px; }
+.project-mosaic-case { display:flex; align-items:center; gap:15px; padding:15px 0; text-decoration:none; color:var(--ink); border-bottom:1px solid var(--line); }
+.mosaic-case-number { color:var(--dim); font-size:.6rem; }
+.project-mosaic-case strong { display:block; font:400 clamp(1.05rem,1.6vw,1.35rem) "Fraunces",serif; }
+.project-mosaic-case small { display:block; margin-top:5px; color:var(--dim); font-size:.67rem; line-height:1.5; }
+.mosaic-case-arrow { margin-left:auto; color:var(--accent); font-size:1.15rem; }
+.project-mosaic-case:hover strong { color:var(--accent); }
+.project-mosaic-copy .all-projects-link { margin:22px 0 0; font-size:.7rem; }
+.project-mosaic-case:focus-visible,.project-mosaic-motion:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+@keyframes mosaic-travel { to { transform:translateY(calc(-50% - 8px)); } }
+@media(max-width:900px) {
+ .project-mosaic-layout { grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:28px; }
+ .project-mosaic-window { aspect-ratio:3/4; }
+ .project-mosaic-plane { width:156%; left:-28%; top:-12%; }
+ .project-mosaic-copy h2 { font-size:2.25rem; }
+ .project-mosaic-case { padding:13px 0; gap:10px; }
+}
+@media(max-width:700px) {
+ .project-mosaic-showcase { padding-top:32px; }
+ .project-mosaic-layout { grid-template-columns:minmax(0,1fr); gap:25px; }
+ .project-mosaic-window { aspect-ratio:4/3; border-radius:10px; }
+ .project-mosaic-plane { width:128%; left:-14%; top:-18%; gap:10px; transform:perspective(700px) rotateX(5deg) rotateY(-8deg) rotateZ(-3deg); }
+ .project-mosaic-column,.project-mosaic-group { gap:10px; }
+ .project-mosaic-copy h2 { font-size:2.4rem; }
+ .project-mosaic-motion { font-size:.6rem; margin-top:8px; }
+ @keyframes mosaic-travel { to { transform:translateY(calc(-50% - 5px)); } }
+}
+@media(prefers-reduced-motion:reduce) {
+ .project-mosaic-column { animation:none; }
+ .project-mosaic-motion { display:none; }
+}
