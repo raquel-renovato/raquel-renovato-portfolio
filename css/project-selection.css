@@ -45,3 +45,34 @@
  .swiss-project-cover img,.swiss-project-title > span { transition:none; }
  .swiss-project:hover .swiss-project-cover img,.swiss-project:hover .swiss-project-title > span { transform:none; }
 }
+
+/* The portfolio's serif voice and project-specific compositions. */
+.swiss-selection-heading { border-bottom-color:var(--line); }
+.swiss-selection-heading h2 { font-family:"Fraunces",serif; font-weight:400; line-height:1.02; letter-spacing:-.04em; }
+.swiss-selection-heading h2 em { font-weight:400; color:var(--accent); }
+.swiss-selection-heading > div { position:relative; }
+.swiss-selection-heading > div::before { content:""; display:block; width:42px; height:3px; background:var(--accent); margin-bottom:20px; }
+.swiss-project-title h3 { font-family:"Fraunces",serif; font-weight:400; font-size:clamp(1.6rem,2.7vw,2.6rem); letter-spacing:-.025em; }
+.authored-cover { display:grid; gap:12px; align-items:center; }
+.authored-cover img { width:100%; height:100%; min-width:0; min-height:0; }
+.cover-fernando-amaral { grid-template-columns:3fr 1fr; padding:20px; background:#00152a; }
+.cover-fernando-amaral img:first-child { object-fit:contain; }
+.cover-fernando-amaral img:last-child { object-fit:contain; max-height:90%; }
+.cover-voit-consultoria { grid-template-columns:1fr .78fr 1fr; }
+.cover-voit-consultoria img:nth-child(2) { height:78%; }
+.cover-renata-brandao { grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:10px; }
+.cover-renata-brandao img:first-child { grid-row:1 / 3; }
+.cover-renata-brandao img { object-fit:contain; }
+.cover-somos-braduca { grid-template-columns:1fr 1fr 1fr; }
+.cover-somos-braduca img:nth-child(1) { align-self:start; height:88%; }
+.cover-somos-braduca img:nth-child(2) { align-self:end; height:88%; }
+.cover-somos-braduca img:nth-child(3) { height:88%; }
+@media(max-width:900px) {
+ .authored-cover { gap:7px; }
+ .cover-fernando-amaral { padding:12px; }
+ .cover-renata-brandao { gap:6px; }
+}
+@media(max-width:600px) {
+ .swiss-selection-heading h2 { font-size:clamp(2.6rem,11vw,4rem); }
+ .swiss-project-title h3 { font-size:1.85rem; }
+}
