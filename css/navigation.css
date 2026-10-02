@@ -167,3 +167,14 @@
  .project-preview .preview-voit-gallery img + img,
  .project-preview .preview-series img { animation: none; }
 }
+
+/* The complete case content also appears in the single-page portfolio. */
+#projects-container .fernando-tabs { max-width:100%; }
+@media(max-width:700px) {
+ #projects-container .fernando-tabs-row { min-width:0; }
+ #projects-container .fernando-compare-browsers { grid-template-columns:minmax(0,1fr) !important; }
+ #projects-container .fa-compare-label { flex-wrap:wrap; gap:6px; }
+ #projects-container .fernando-compare-section { grid-template-columns:minmax(0,1fr); gap:24px; }
+ #projects-container .fa-browser-dots { width:auto; }
+ #projects-container .fa-browser-bar { grid-template-columns:30px minmax(0,1fr) auto; }
+}
