@@ -48,3 +48,21 @@
  .voit-dialog-stage img { max-width:calc(100% - 76px); }
  .voit-dialog-toolbar h2 { font-size:.85rem; }
 }
+
+/* One horizontal row per identity, and one row for all videos. */
+.voit-horizontal-row { min-width:0; }
+.voit-row-controls { display:flex; align-items:center; justify-content:flex-end; gap:8px; margin:0 0 12px; }
+.voit-row-position { font:.68rem "IBM Plex Mono",monospace; color:var(--dim); margin-right:8px; min-width:7ch; }
+.voit-row-controls button { width:40px; height:40px; display:grid; place-items:center; padding:0; border:1px solid var(--line); border-radius:50%; background:transparent; color:var(--ink); font-size:1.1rem; cursor:pointer; }
+.voit-row-controls button:hover { background:var(--ink); color:var(--bg); }
+.voit-row-controls button:focus-visible,.voit-horizontal-track:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.voit-post-grid.voit-horizontal-track,.voit-video-grid.voit-horizontal-track { display:flex; overflow-x:auto; overflow-y:hidden; gap:18px; align-items:flex-start; scroll-snap-type:x mandatory; scrollbar-width:none; padding:4px 3px 8px; scroll-padding-inline:3px; }
+.voit-horizontal-track::-webkit-scrollbar { display:none; }
+.voit-horizontal-track > figure { flex:0 0 clamp(200px,24vw,310px); scroll-snap-align:start; }
+.voit-horizontal-track > .voit-video-card { flex:0 0 clamp(180px,20vw,250px); scroll-snap-align:start; }
+@media(max-width:700px) {
+ .voit-post-grid.voit-horizontal-track,.voit-video-grid.voit-horizontal-track { gap:12px; }
+ .voit-horizontal-track > figure { flex-basis:78%; }
+ .voit-horizontal-track > .voit-video-card { flex-basis:72%; max-width:250px; }
+ .voit-row-controls button { width:38px; height:38px; }
+}

@@ -8,6 +8,7 @@
    filter.setAttribute('aria-selected',String(selected));filter.tabIndex=selected?0:-1;
    document.getElementById(filter.getAttribute('aria-controls')).hidden=!selected;
   });
+  requestAnimationFrame(()=>rows.forEach(updatePosition));
  };
  filters.forEach((button,index)=>{
   button.addEventListener('click',()=>selectIdentity(button));
@@ -21,13 +22,40 @@
    event.preventDefault();selectIdentity(filters[next]);filters[next].focus();
   });
  });
- document.querySelectorAll('.voit-show-posts').forEach(button=>button.addEventListener('click',()=>{
-  const panel=button.closest('.voit-identity-panel');
-  const expanded=button.getAttribute('aria-expanded')!=='true';
-  panel.querySelectorAll('.voit-extra-post').forEach(post=>post.hidden=!expanded);
-  button.setAttribute('aria-expanded',String(expanded));
-  button.textContent=expanded?'Mostrar menos ↑':`Ver os ${panel.querySelectorAll('.voit-post-grid figure').length} posts ↓`;
- }));
+ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+ const rows=[...document.querySelectorAll('.voit-horizontal-row')];
+ const updatePosition=row=>{
+  const track=row.querySelector('.voit-horizontal-track');
+  if(!track.clientWidth)return;
+  const items=[...track.children];
+  const origin=items[0].offsetLeft;
+  const current=items.reduce((nearest,item,index)=>Math.abs(item.offsetLeft-origin-track.scrollLeft)<Math.abs(items[nearest].offsetLeft-origin-track.scrollLeft)?index:nearest,0);
+  row.querySelector('.voit-row-position').textContent=`${String(current+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}`;
+ };
+ const moveRow=(row,direction)=>{
+  const track=row.querySelector('.voit-horizontal-track');
+  const max=track.scrollWidth-track.clientWidth;
+  const item=track.firstElementChild;
+  const step=item.getBoundingClientRect().width+parseFloat(getComputedStyle(track).columnGap||0);
+  const end=direction>0&&track.scrollLeft>=max-3;
+  const start=direction<0&&track.scrollLeft<=3;
+  track.scrollTo({left:end?0:start?max:track.scrollLeft+direction*step,behavior:reducedMotion.matches?'instant':'smooth'});
+ };
+ rows.forEach(row=>{
+  const track=row.querySelector('.voit-horizontal-track');
+  row.querySelectorAll('[data-row-step]').forEach(button=>button.addEventListener('click',()=>moveRow(row,Number(button.dataset.rowStep))));
+  track.addEventListener('scroll',()=>updatePosition(row),{passive:true});
+  track.addEventListener('keydown',event=>{
+   if(event.target!==track)return;
+   if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();moveRow(row,event.key==='ArrowRight'?1:-1);}
+   if(event.key==='Home'||event.key==='End'){event.preventDefault();track.scrollTo({left:event.key==='Home'?0:track.scrollWidth,behavior:reducedMotion.matches?'instant':'smooth'});}
+  });
+  updatePosition(row);
+ });
+ const updateRows=()=>requestAnimationFrame(()=>rows.forEach(updatePosition));
+ filters.forEach(button=>button.addEventListener('click',updateRows));
+ document.querySelectorAll('.voit-tab').forEach(button=>button.addEventListener('click',updateRows));
+ addEventListener('resize',updateRows);
  const dialog=document.getElementById('voitCarouselDialog');
  const image=document.getElementById('voitCarouselImage');
  const title=document.getElementById('voitCarouselTitle');
