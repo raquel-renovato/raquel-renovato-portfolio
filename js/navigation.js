@@ -55,6 +55,32 @@
   };
   setupTabs('.fernando-tab', '.fernando-view', 'fernandoTab', 'fernandoView');
   setupTabs('.voit-tab', '.voit-view', 'voitTab', 'voitView');
+  // Scroll depth is measured from each stationary project, never from its moving cover.
+  const galleryItems = [...document.querySelectorAll('.project-preview')];
+  if (galleryItems.length) {
+    const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+    let frame = 0;
+    const updateGallery = () => {
+      frame = 0;
+      const mobile = innerWidth <= 700;
+      const depths = [0.065, -0.1, 0.08, -0.06];
+      const limit = mobile ? 18 : 42;
+      const positions = galleryItems.map((item, index) => {
+        const bounds = item.getBoundingClientRect();
+        const visible = bounds.bottom > -100 && bounds.top < innerHeight + 100;
+        const distance = innerHeight / 2 - (bounds.top + bounds.height / 2);
+        return motionPreference.matches || !visible ? 0 : Math.max(-limit, Math.min(limit, distance * depths[index % depths.length]));
+      });
+      galleryItems.forEach((item, index) => item.style.setProperty('--gallery-shift', `${positions[index].toFixed(2)}px`));
+    };
+    const queueGallery = () => { if (!frame) frame = requestAnimationFrame(updateGallery); };
+    addEventListener('scroll', queueGallery, { passive: true });
+    addEventListener('resize', queueGallery);
+    addEventListener('load', queueGallery);
+    motionPreference.addEventListener('change', queueGallery);
+    galleryItems.forEach(item => item.querySelectorAll('img').forEach(image => image.addEventListener('load', queueGallery, { once: true })));
+    queueGallery();
+  }
   const modal = document.getElementById('imgModal');
   const close = document.getElementById('imgModalClose');
   let previousFocus;
