@@ -8,14 +8,10 @@
 .showcase-heading > p { color: var(--dim); font-size: .9rem; line-height: 1.6; }
 .preview-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px 28px; }
 .project-preview { color: var(--ink); text-decoration: none; min-width: 0; display: block; }
-.preview-image { aspect-ratio: 16/10; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 28px; transition: background-color .25s ease; }
-.preview-image img { width: 100%; height: 100%; object-fit: contain; transition: transform .3s ease; }
-.preview-fernando-amaral .preview-image { background: #DDE4E6; }
-.preview-voit-consultoria .preview-image { background: #DDE4DE; }
-.preview-renata-brandao .preview-image { background: #E7DFD8; }
-.preview-somos-braduca .preview-image { background: #D8E8DF; }
-.preview-aymee-ferraz .preview-image { background: #DDDDE9; }
-[data-theme="dark"] .preview-image { background: var(--card); }
+.preview-image { aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.preview-image img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .3s ease; }
+.preview-image.preview-series { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+.preview-series img { height: auto; max-height: 100%; width: 100%; object-fit: contain; }
 .preview-copy { padding: 20px 0 0; }
 .preview-copy h3 { font-family: "Fraunces",serif; font-size: clamp(1.35rem,2.4vw,1.85rem); font-weight: 400; margin: 8px 0 10px; }
 .preview-copy p { color: var(--dim); line-height: 1.6; font-size: .94rem; max-width: 52ch; }
@@ -39,7 +35,7 @@
  .showcase-heading > p { margin-top: 14px; }
  .project-showcase { padding-top: 32px; }
  .preview-grid { grid-template-columns: 1fr; gap: 32px; }
- .preview-image { padding: 20px; }
+ .preview-image.preview-series { gap: 7px; }
  .preview-category { font-size: .6rem; }
  .case-breadcrumb { flex-direction: column; padding-top: 24px; }
  .case-next { flex-direction: column; line-height: 1.6; }
