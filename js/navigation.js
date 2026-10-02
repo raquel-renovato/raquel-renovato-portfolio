@@ -6,7 +6,7 @@
   syncTheme();
   themeToggle?.addEventListener('click', () => {
     syncTheme();
-    try { localStorage.setItem('portfolio-theme', document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'); } catch (_) {}
+    try { sessionStorage.setItem('portfolio-theme-manual', document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'); } catch (_) {}
   });
   const loadEmbeds = (panel) => {
     panel?.querySelectorAll('iframe[data-src]').forEach(frame => {

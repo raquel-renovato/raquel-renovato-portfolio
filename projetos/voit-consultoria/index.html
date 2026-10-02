@@ -40,7 +40,7 @@
   <meta property="og:image:alt" content="Voit Consultoria — Raquel Renovato">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://raquel-renovato-portfolio.vercel.app/projetos/voit-consultoria/">
-  <script>try { const theme = localStorage.getItem('portfolio-theme'); if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.setAttribute('data-theme', 'dark'); } catch (_) {}</script>
+  <script>try { document.documentElement.removeAttribute('data-theme'); if (sessionStorage.getItem('portfolio-theme-manual') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (_) {}</script>
 </head>
 <body class="case-page"><div id="site-content" class="visible"><a class="skip-link" href="#main-content">Pular para o conteúdo</a>    <nav id="top">
 
