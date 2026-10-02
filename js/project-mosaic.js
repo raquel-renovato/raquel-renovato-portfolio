@@ -1,15 +1,17 @@
 /* Pause the moving previews on request, out of view and for reduced motion. */
 (() => {
  'use strict';
- const showcase=document.querySelector('.project-mosaic-showcase');
- if(!showcase)return;
- const button=showcase.querySelector('.project-mosaic-motion');
+ const showcases=document.querySelectorAll('.project-mosaic-project');
+ if(!showcases.length)return;
  const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+ showcases.forEach(showcase=>{
+ const button=showcase.querySelector('.project-mosaic-motion');
+ const name=showcase.querySelector('h3').textContent;
  let paused=false,visible=false;
  const sync=()=>{
   showcase.dataset.moving=String(visible&&!paused&&!motionPreference.matches&&!document.hidden);
   button.setAttribute('aria-pressed',String(paused));
-  button.setAttribute('aria-label',paused?'Retomar animação das prévias':'Pausar animação das prévias');
+  button.setAttribute('aria-label',(paused?'Retomar animação: ':'Pausar animação: ')+name);
   button.firstElementChild.textContent=paused?'▷':'Ⅱ';
   button.lastElementChild.textContent=paused?'Retomar movimento':'Pausar movimento';
  };
@@ -19,4 +21,5 @@
  motionPreference.addEventListener('change',sync);
  document.addEventListener('visibilitychange',sync);
  sync();
+ });
 })();
