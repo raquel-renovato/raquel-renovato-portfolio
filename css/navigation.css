@@ -83,3 +83,53 @@
 @media (min-width: 701px) and (max-width: 1100px) {
  .cover-article-excerpt { display: none; }
 }
+
+/* Image-led project gallery with a compact caption. */
+.project-showcase .showcase-heading { margin-bottom: 38px; }
+.project-showcase .showcase-heading h2,
+.project-showcase .showcase-heading h1 { font-size: clamp(2.2rem,4.7vw,4rem); line-height: 1.08; letter-spacing: -.045em; }
+.preview-grid { gap: 24px; }
+.project-preview { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--bg); transition: border-color .2s ease; }
+.project-preview:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.project-preview:hover { border-color: var(--accent); }
+.project-preview .preview-image { aspect-ratio: 16/11; overflow: hidden; border-radius: 12px; margin: 8px 8px 0; background: #e8e5df; }
+.preview-fernando-amaral .preview-image { background: #dbe1e4; }
+.preview-voit-consultoria .preview-image { background: #dce6e0; }
+.preview-renata-brandao .preview-image { background: #e6dfef; padding: 8%; }
+.preview-somos-braduca .preview-image { background: #eddfd0; }
+.preview-aymee-ferraz .preview-image { background: #e8e0db; }
+.project-preview .preview-copy { display: grid; grid-template-columns: minmax(0,1fr) auto; grid-template-rows: auto auto; gap: 7px 18px; padding: 21px 22px 23px; align-items: center; }
+.preview-copy h3 { grid-column: 1; grid-row: 1; margin: 0; font-family: "IBM Plex Sans",sans-serif; font-size: clamp(1.05rem,1.6vw,1.4rem); font-weight: 600; line-height: 1.25; }
+.preview-copy .preview-category { grid-column: 1; grid-row: 2; font-family: "IBM Plex Sans",sans-serif; font-size: .76rem; color: var(--dim); letter-spacing: 0; line-height: 1.45; font-weight: 400; }
+.preview-copy > p { display: none; }
+.preview-copy .preview-open { grid-column: 2; grid-row: 1 / 3; gap: 12px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 30px; color: var(--ink); font-size: .66rem; white-space: nowrap; }
+.preview-open > span { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: var(--bg); font-size: 1rem; }
+.project-preview:hover .preview-open > span { background: var(--accent); color: #fff; }
+.project-preview .cover-desktop { left: 7%; top: 15%; width: 79%; border-width: 4px; border-bottom-width: 8px; border-radius: 6px; box-shadow: 0 14px 24px #00152a22; }
+.project-preview .cover-mobile { right: 5%; bottom: 10%; width: 23%; border-width: 4px; border-radius: 16px; }
+.project-preview .cover-social { left: 6%; top: 12%; width: 34%; height: 76%; }
+.project-preview .cover-editorial { right: 6%; top: 12%; width: 50%; height: 76%; padding: clamp(12px,1.7vw,24px); }
+.project-preview .cover-channels { display: none; }
+.project-preview .cover-article-title { font-size: clamp(1rem,1.65vw,1.5rem); }
+.project-preview .preview-series { padding: 7%; gap: 3%; }
+.project-preview .preview-series img { width: 100%; height: auto; max-height: 100%; }
+.project-preview.preview-renata-brandao .preview-image img { height: auto; box-shadow: 0 12px 28px #25153b20; }
+@media (max-width: 900px) {
+ .project-preview .preview-copy { padding: 17px 15px; gap: 6px 10px; }
+ .preview-copy .preview-open { padding: 7px 9px; gap: 6px; font-size: .6rem; }
+ .preview-open > span { width: 24px; height: 24px; }
+ .preview-copy .preview-category { font-size: .69rem; }
+}
+@media (max-width: 700px) {
+ .preview-grid { gap: 22px; }
+ .project-showcase .showcase-heading { margin-bottom: 26px; }
+ .project-preview .preview-copy { padding: 17px 15px 19px; }
+ .project-preview .cover-desktop { border-width: 3px; border-bottom-width: 6px; }
+ .project-preview .cover-mobile { border-width: 3px; border-radius: 12px; }
+ .project-preview .cover-article-title { font-size: clamp(.88rem,4vw,1.2rem); }
+ .project-preview .cover-editorial { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .project-preview,.preview-image img { transition: none; }
+ .project-preview:hover .preview-image img { transform: none; }
+}
