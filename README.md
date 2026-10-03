@@ -15,10 +15,7 @@ A Home reúne os cinco projetos completos na mesma página. As páginas `/projet
 - `css/navigation.css`: vitrine, navegação contextual e páginas individuais.
 - `js/portfolio.js`: interações originais, wireframe, carrosséis e apresentação.
 - `js/navigation.js`: preferência de tema, abas acessíveis, carregamento de embeds e foco do lightbox.
-- `img/previews/`: imagens de prévia.
-- `img/previews/motion/`: vídeos MP4 sem áudio e capas JPG dos cinco projetos.
-- `css/project-films.css`, `js/project-films.js`: prévias com reprodução automática apenas quando visíveis, pausa manual e respeito à preferência de movimento reduzido.
-- `tools/build-project-previews.cjs`: renderiza as prévias a partir das peças públicas existentes; requer Playwright, Chromium e FFmpeg.
+- `img/previews/`: versões WebP usadas na vitrine.
 - `img/`: materiais dos cases e demais imagens existentes.
 
 ## Executar localmente
