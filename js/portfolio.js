@@ -86,64 +86,28 @@
           },
           reducedMotion.matches
             ? 0
-            : 350
+            : 250
         );
       }
 
       function startIntro() {
-        sizeIntroWords();
-
-        if (
-          reducedMotion.matches ||
-          introWords.length < 3
-        ) {
+        if (!introOverlay) {
           finishIntro();
-
           return;
         }
-
-        introWords[0]
-          .classList
-          .add("active");
-
-        window.setTimeout(
-          () => {
-            introWords[0]
-              .classList
-              .remove("active");
-
-            introWords[0]
-              .classList
-              .add("exit");
-
-            introWords[1]
-              .classList
-              .add("active");
-          },
-          1200
-        );
-
-        window.setTimeout(
-          () => {
-            introWords[1]
-              .classList
-              .remove("active");
-
-            introWords[1]
-              .classList
-              .add("exit");
-
-            introWords[2]
-              .classList
-              .add("active");
-          },
-          2400
-        );
-
-        window.setTimeout(
-          finishIntro,
-          3800
-        );
+        let alreadySeen = document.documentElement.classList.contains("intro-seen");
+        try {
+          alreadySeen = alreadySeen || sessionStorage.getItem("portfolio-intro-seen") === "true";
+          sessionStorage.setItem("portfolio-intro-seen", "true");
+        } catch (_) {}
+        if (alreadySeen || reducedMotion.matches || !introWords.length) {
+          finishIntro();
+          introOverlay.style.display = "none";
+          return;
+        }
+        sizeIntroWords();
+        introWords[introWords.length - 1].classList.add("active");
+        window.setTimeout(finishIntro, 850);
       }
 
       document.fonts

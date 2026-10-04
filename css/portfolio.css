@@ -145,8 +145,8 @@
       background: var(--bg);
 
       transition:
-        opacity 0.35s cubic-bezier(.65, 0, .35, 1),
-        transform 0.35s cubic-bezier(.65, 0, .35, 1);
+        opacity 0.25s cubic-bezier(.65, 0, .35, 1),
+        transform 0.25s cubic-bezier(.65, 0, .35, 1);
     }
 
     #intro-overlay.expand {
@@ -4148,7 +4148,7 @@
        ========================================================= */
 
     .skills {
-      padding: 0 var(--page-pad) 70px;
+      padding: 0 var(--page-pad) 60px;
     }
 
     .skill-grid {
@@ -4216,10 +4216,10 @@
       flex: 0 0 auto;
       align-items: center;
       justify-content: center;
-      width: 58px;
-      height: 58px;
-      padding: 12px;
-      border: 1px solid var(--line);
+      width: 52px;
+      height: 52px;
+      padding: 11px;
+      border: 1px solid color-mix(in srgb,var(--line) 65%,transparent);
       border-radius: 50%;
       color: var(--ink);
       background: var(--card);
@@ -4230,14 +4230,16 @@
     .tool-logo:hover {
       border-color: var(--accent);
       color: var(--accent);
-      transform: translateY(-3px) scale(1.06);
-      box-shadow: 0 7px 16px rgba(251, 70, 23, 0.16);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 3px 9px rgba(17, 17, 17, 0.06);
     }
 
     .tool-logo img {
-      width: 32px;
-      height: 32px;
+      width: 29px;
+      height: 29px;
       object-fit: contain;
+      filter: saturate(.72);
+      transition: filter 180ms ease;
     }
 
     .tool-logo span {
@@ -4254,7 +4256,7 @@
        ========================================================= */
 
     .cta-band {
-      padding: 80px var(--page-pad);
+      padding: 68px var(--page-pad);
 
       text-align: center;
     }
@@ -4669,4 +4671,17 @@
         scroll-behavior: auto !important;
       }
     }
-  
+
+/* Small editorial refinements; keep content and interactive layouts intact. */
+.tool-logo:hover img, .tool-logo:focus-visible img { filter:saturate(1); }
+.tool-logo:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+html.intro-seen #intro-overlay { display:none; }
+html.intro-seen #site-content { opacity:1; }
+html.intro-seen body.intro-active { overflow:visible; height:auto; }
+.case-page .project-block { padding-top:48px; }
+.case-page .project-head { margin-bottom:26px; }
+.case-page .fernando-compare-intro, .case-page .fernando-system-intro { margin-bottom:30px; }
+.case-page .fernando-closing { margin-top:52px; }
+.case-page .voit-video-section { margin-top:42px; }
+.case-page .case-next { padding-top:28px; padding-bottom:42px; }
+@media(prefers-reduced-motion:reduce) { .tool-logo, .tool-logo img { transition:none; } }

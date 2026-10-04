@@ -46,3 +46,12 @@
 @media(prefers-reduced-motion:reduce) {
  .project-icon-slide { transition:none; transform:none; }
 }
+
+.project-index-copy { display:flex; flex-direction:column; gap:8px; min-width:0; }
+.project-index-category { font-family:"IBM Plex Sans",sans-serif; font-size:.75rem; line-height:1.4; letter-spacing:.015em; color:var(--dim); }
+.project-icon-large { transform:perspective(700px) rotateX(var(--icon-x,0deg)) rotateY(var(--icon-y,0deg)); transition:transform .2s ease-out; }
+@media(max-width:700px) {
+ .project-index-category { font-size:.62rem; }
+ .project-index-copy { gap:5px; }
+}
+@media(prefers-reduced-motion:reduce) { .project-icon-large { transform:none; transition:none; } }
