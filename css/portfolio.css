@@ -4685,3 +4685,19 @@ html.intro-seen body.intro-active { overflow:visible; height:auto; }
 .case-page .voit-video-section { margin-top:42px; }
 .case-page .case-next { padding-top:28px; padding-bottom:42px; }
 @media(prefers-reduced-motion:reduce) { .tool-logo, .tool-logo img { transition:none; } }
+
+/* Compact the Fernando case's text cards without changing media previews. */
+.case-page #fernando-project .fernando-overview-card { min-height:0; padding:20px; }
+.case-page #fernando-project .fernando-overview-card .project-block-label { margin-bottom:16px; }
+.case-page #fernando-project .fernando-case-editorial-main { min-height:0; padding:24px; }
+.case-page #fernando-project .fernando-case-editorial-main h4 { font-size:clamp(1.8rem,2.6vw,2.35rem); line-height:1.12; margin-bottom:16px; }
+.case-page #fernando-project .fernando-case-eyebrow { margin-bottom:18px; }
+.case-page #fernando-project .fernando-editorial-point { padding:18px; }
+.case-page #fernando-project .fernando-decision-heading { margin-top:48px; margin-bottom:24px; }
+.case-page #fernando-project .fernando-rationale > div { min-height:0; }
+.case-page #fernando-project .fa-component-box,.case-page #fernando-project .fa-type-card { min-height:0; }
+.case-page #fernando-project .fa-component-label { margin-bottom:18px; }
+.case-page #fernando-project .fernando-closing { margin-top:40px; }
+@media(max-width:620px) {
+ .case-page #fernando-project .fernando-overview-card,.case-page #fernando-project .fernando-case-editorial-main { padding:18px; }
+}
