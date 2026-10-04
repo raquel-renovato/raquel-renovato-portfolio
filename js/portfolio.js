@@ -1196,6 +1196,7 @@
             sourceHeight *
               scale
           )}px`;
+        canvas.querySelector('iframe')?.style.setProperty('height', `${sourceHeight}px`, 'important');
       }
 
       function resizeFernandoFrames() {
@@ -1289,4 +1290,4 @@
 
 
     })();
-  
+

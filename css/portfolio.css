@@ -4701,3 +4701,32 @@ html.intro-seen body.intro-active { overflow:visible; height:auto; }
 @media(max-width:620px) {
  .case-page #fernando-project .fernando-overview-card,.case-page #fernando-project .fernando-case-editorial-main { padding:18px; }
 }
+
+/* Fernando: clearer tabs, compact titles and full interactive viewports. */
+.case-page #fernando-project .fernando-case-editorial-main h4 { font-size:clamp(1.6rem,2.15vw,1.95rem); }
+.case-page #fernando-project .fernando-tab { color:var(--accent); border-color:color-mix(in srgb,var(--accent) 55%,var(--line)); }
+.case-page #fernando-project .fernando-tab.active { color:#FFF; background:var(--accent); }
+.case-page #fernando-project .fernando-tab:hover { background:var(--accent-soft); }
+.case-page #fernando-project .fernando-tab.active:hover { background:var(--accent-hover); }
+.fernando-decision-example { margin:0; min-width:0; }
+.fernando-decision-example figcaption { color:var(--dim); font:.6rem "IBM Plex Mono",monospace; margin-bottom:10px; }
+.case-page #fernando-project .fernando-decision .fernando-closing { display:block; margin:0; background:var(--bg); }
+.case-page #fernando-project .fernando-decision .fernando-closing-main { padding:20px; }
+.case-page #fernando-project .fernando-decision .fernando-closing-main h4 { font-size:1.5rem; }
+.case-page #fernando-project .fernando-decision .fernando-closing-grid { grid-template-columns:1fr; }
+.case-page #fernando-project .fernando-decision .fernando-closing-grid article { padding:16px 20px; }
+.case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr) 360px; }
+.case-page #fernando-project .fa-mobile-artboard-viewport { width:100%; max-width:280px; height:auto; aspect-ratio:1 / 2; }
+.case-page #fernando-project .fa-mobile-artboard-viewport iframe { transform:scale(var(--mobile-scale,.7179487)); }
+.case-page #fernando-project .fa-figma-frame { height:700px; min-height:0; overflow:auto; }
+.case-page #fernando-project .fa-figma-frame iframe { display:block; height:100%; }
+.fa-figma-status { padding:12px 16px; color:var(--dim); font-size:.75rem; border-bottom:1px solid var(--line); }
+@media(max-width:1000px) {
+ .case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
+}
+@media(max-width:620px) {
+ .case-page #fernando-project .fa-responsive-showcase { padding:12px; gap:18px; }
+ .case-page #fernando-project .fa-mobile-artboard-stage { padding:12px; }
+ .case-page #fernando-project .fa-figma-frame { height:600px; }
+}
+.case-page #fernando-project .fa-responsive-showcase .fa-desktop-viewport { min-height:0; }

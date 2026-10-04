@@ -10,9 +10,9 @@
   });
   const loadEmbeds = (panel) => {
     panel?.querySelectorAll('iframe[data-src]').forEach(frame => {
+      frame.loading = 'eager';
       frame.src = frame.dataset.src;
       delete frame.dataset.src;
-      frame.loading = 'lazy';
     });
     requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
   };
@@ -55,6 +55,23 @@
   };
   setupTabs('.fernando-tab', '.fernando-view', 'fernandoTab', 'fernandoView');
   setupTabs('.voit-tab', '.voit-view', 'voitTab', 'voitView');
+  const prototype = document.querySelector('.fa-figma-frame iframe');
+  if (prototype) {
+    const status = document.querySelector('.fa-figma-status');
+    prototype.addEventListener('load', () => { if (status) status.textContent = 'Protótipo interativo · Role ou arraste dentro da prévia para explorar.'; });
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        loadEmbeds(prototype.parentElement);
+        observer.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(document.querySelector('#fernando-project'));
+  }
+  document.querySelectorAll('.fa-mobile-artboard-viewport').forEach(viewport => {
+    const resize = () => { if (viewport.clientWidth) viewport.style.setProperty('--mobile-scale', String(viewport.clientWidth / 390)); };
+    new ResizeObserver(resize).observe(viewport);
+    resize();
+  });
   // Scroll depth is measured from each stationary project, never from its moving cover.
   const galleryItems = [...document.querySelectorAll('.project-preview')];
   if (galleryItems.length) {
