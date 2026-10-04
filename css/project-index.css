@@ -2,8 +2,8 @@
 .project-directory { background:var(--bg); color:var(--ink); padding:30px 0 38px; scroll-margin-top:74px; }
 .project-directory .section-head { padding-bottom:36px; }
 .project-directory .section-head h2 { font-size:clamp(2rem,4vw,3.8rem); }
-.project-index { position:static; display:block; padding:0 var(--page-pad) 30px; background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; }
-.project-index ul { display:block; width:58%; margin:0 0 0 auto; justify-self:stretch; list-style:none; padding:0; border-top:1px solid var(--line); }
+.project-index { position:static; display:grid; grid-template-columns:42% minmax(0,58%); padding:0 var(--page-pad) 30px; background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.project-index ul { display:block; width:100%; margin:0; justify-self:stretch; list-style:none; padding:0; border-top:1px solid var(--line); }
 .project-index li { border-bottom:1px solid var(--line); }
 .project-index-link { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:25px 0; color:var(--ink); text-decoration:none; transition:color .2s ease; }
 .project-index-name { font-family:"Fraunces",serif; font-size:clamp(1.65rem,2.6vw,2.45rem); line-height:1.2; letter-spacing:-.025em; }
@@ -13,14 +13,14 @@
 .project-index-link:hover .project-index-arrow, .project-index-link:focus-visible .project-index-arrow { transform:translate(3px,-3px); }
 .project-index-link:focus-visible { outline:2px solid var(--accent); outline-offset:6px; }
 @media(min-width:701px) and (max-width:1000px) {
- .project-index ul { width:72%; }
+ .project-index { grid-template-columns:28% minmax(0,72%); }
  .project-index-link { gap:16px; }
  .project-index-action { gap:8px; font-size:.65rem; }
 }
 @media(max-width:700px) {
  .project-directory { padding:16px 0 20px; }
  .project-directory .section-head { padding-bottom:25px; }
- .project-index { padding-bottom:20px; }
+ .project-index { display:block; padding-bottom:20px; }
  .project-index ul { width:100%; }
  .project-index-link { padding:23px 0; gap:14px; }
  .project-index-name { font-size:clamp(1.3rem,5.4vw,1.85rem); }
@@ -29,4 +29,20 @@
 }
 @media(prefers-reduced-motion:reduce) {
  .project-index-link, .project-index-arrow { transition:none; }
+}
+
+/* The same icons act as quiet cues on mobile and a changing illustration on desktop. */
+.project-icon-stage { position:relative; align-self:center; width:clamp(150px,19vw,260px); aspect-ratio:1; justify-self:center; margin-right:12%; color:var(--accent); pointer-events:none; }
+.project-icon-slide { position:absolute; inset:0; opacity:0; transform:translateY(12px) scale(.97); transition:opacity .22s ease,transform .3s ease; }
+.project-icon-slide.is-active { opacity:1; transform:translateY(0) scale(1); }
+.project-icon-large { display:block; width:100%; height:100%; }
+.project-index-label { display:flex; align-items:center; gap:10px; min-width:0; }
+.project-icon-mobile { display:none; }
+@media(max-width:700px) {
+ .project-icon-stage { display:none; }
+ .project-icon-mobile { display:block; width:26px; height:26px; flex-shrink:0; color:var(--accent); stroke-width:3; }
+ .project-index-name { font-size:clamp(1.15rem,4.7vw,1.6rem); }
+}
+@media(prefers-reduced-motion:reduce) {
+ .project-icon-slide { transition:none; transform:none; }
 }
