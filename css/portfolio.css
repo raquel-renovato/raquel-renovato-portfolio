@@ -4730,3 +4730,11 @@ html.intro-seen body.intro-active { overflow:visible; height:auto; }
  .case-page #fernando-project .fa-figma-frame { height:600px; }
 }
 .case-page #fernando-project .fa-responsive-showcase .fa-desktop-viewport { min-height:0; }
+
+/* Keep browser previews snug and give the mobile preview more width. */
+.case-page #fernando-project .fa-desktop-viewport { min-height:0; }
+.case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr) 400px; align-items:start; }
+.case-page #fernando-project .fa-mobile-artboard-viewport { max-width:320px; }
+@media(max-width:1000px) {
+ .case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
+}
