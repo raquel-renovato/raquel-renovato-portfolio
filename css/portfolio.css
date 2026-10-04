@@ -4738,3 +4738,14 @@ html.intro-seen body.intro-active { overflow:visible; height:auto; }
 @media(max-width:1000px) {
  .case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
 }
+
+/* Matching desktop/mobile frames and a tighter Figma viewport. */
+.case-page #fernando-project .fa-responsive-showcase { align-items:stretch; }
+.fa-desktop-artboard-stage { padding:18px; background:linear-gradient(180deg,#F8F8F7,#EFEDE9); }
+.case-page #fernando-project .fa-desktop-artboard-stage .fa-desktop-viewport { border:1px solid #D1D5D8; border-radius:13px; box-shadow:0 12px 28px rgba(0,0,0,.11); }
+.case-page #fernando-project .fernando-compare-intro { max-width:100%; }
+.case-page #fernando-project .fernando-compare-intro h4 { font-size:clamp(1.6rem,2.5vw,2.3rem); }
+.case-page #fernando-project .fa-figma-frame { overflow:hidden; }
+.case-page #fernando-project .fa-figma-frame iframe { width:108.7%; max-width:none; height:calc(100% + 120px); margin-left:-4.35%; transform:translateY(-60px); }
+@media(max-width:620px) { .fa-desktop-artboard-stage { padding:12px; } }
+.case-page #fernando-project .fa-mobile-artboard-bar { min-height:44px; }
