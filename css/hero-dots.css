@@ -1,20 +1,15 @@
-/* Small decorative particles, isolated behind the existing Hero. */
+/* Decorative particles follow the pointer behind the existing Hero. */
 .hero { position:relative; isolation:isolate; }
 .hero-dots { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:-1; }
-.hero-dot { position:absolute; left:var(--dot-x); top:var(--dot-y); width:var(--dot-size); height:var(--dot-size); border-radius:50%; background:var(--ink); opacity:.22; animation:hero-dot-drift var(--dot-duration) ease-in-out var(--dot-delay) infinite; animation-play-state:paused; }
+.hero-dot { position:absolute; left:var(--dot-x); top:var(--dot-y); width:var(--dot-size); height:var(--dot-size); border-radius:50%; background:var(--ink); opacity:.22; transform:translate3d(calc(var(--mouse-x, 0px) * var(--dot-depth)),calc(var(--mouse-y, 0px) * var(--dot-depth)),0); }
 .hero-dot-accent { background:var(--accent); opacity:.3; }
 .hero-dot-ring { background:transparent; border:1px solid var(--ink); }
 .hero-dot-ring.hero-dot-accent { border-color:var(--accent); }
-.hero-dots[data-active="true"] .hero-dot { animation-play-state:running; }
-@keyframes hero-dot-drift {
- 0%,100% { transform:translate3d(0,0,0); }
- 50% { transform:translate3d(var(--dot-dx),var(--dot-dy),0); }
-}
 @media(max-width:780px) {
  .hero-dot:nth-child(even) { display:none; }
  .hero-dot { opacity:.18; }
  .hero-dot-accent { opacity:.25; }
 }
 @media(prefers-reduced-motion:reduce) {
- .hero-dot { animation:none; }
+ .hero-dot { transform:none; }
 }
