@@ -26,21 +26,16 @@
  directory.addEventListener('pointerleave',reset);
  window.addEventListener('blur',reset);
  preference.addEventListener('change',reset);
- // Keep the illustration centered within the list, then fade through its final row.
+ // Keep the illustration in its column and hide it early as the final row approaches.
  if(stage&&links.length){
   const desktop=matchMedia('(min-width: 701px)');
   let frame=0;
   const updateScroll=()=>{
    frame=0;
    if(!desktop.matches)return;
-   const list=directory.querySelector('ul').getBoundingClientRect();
    const last=links[links.length-1].getBoundingClientRect();
-   const height=stage.offsetHeight;
-   const center=window.innerHeight/2;
-   const base=list.top+(list.height-height)/2;
-   const top=Math.max(list.top,Math.min(center-height/2,list.bottom-height));
-   stage.style.setProperty('--icon-offset',`${(top-base).toFixed(2)}px`);
-   const opacity=Math.max(0,Math.min(1,(last.bottom-center)/last.height));
+   const end=window.innerHeight/2+40;
+   const opacity=Math.max(0,Math.min(1,(last.top-end)/40));
    stage.style.setProperty('--icon-opacity',String(opacity));
   };
   const schedule=()=>{if(!frame)frame=requestAnimationFrame(updateScroll);};
