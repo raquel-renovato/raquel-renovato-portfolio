@@ -66,7 +66,8 @@
  .voit-horizontal-track > .voit-video-card { flex-basis:72%; max-width:250px; }
  .voit-row-controls button { width:38px; height:38px; }
 }
-.voit-scope-grid { align-self:start; }
+.voit-scope-grid { align-self:stretch; }
+.voit-overview h4 { font-size:clamp(1.6rem,2.1vw,2rem); line-height:1.15; margin:14px 0 12px; }
 .voit-scope-card,.voit-process-card,.voit-article-card,.voit-material-card { min-height:0; padding:20px; }
 .voit-process-card h5,.voit-article-card h5 { margin-top:16px; }
 .voit-material-card h5 { margin-top:14px; }
