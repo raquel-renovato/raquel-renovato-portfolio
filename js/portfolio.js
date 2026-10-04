@@ -304,7 +304,7 @@
         );
 
       let selectedColor =
-        "#E8590C";
+        "#FB4617";
 
       const swatches =
         $$(".swatch");
@@ -367,7 +367,7 @@
           ) / 1000;
 
         return luminance > 150
-          ? "#1F1C18"
+          ? "#111111"
           : "#FFFFFF";
       }
 
@@ -485,7 +485,7 @@
               swatches.find(
                 swatch =>
                   swatch.dataset.color ===
-                  "#E8590C"
+                  "#FB4617"
               );
 
             defaultSwatch
@@ -493,7 +493,7 @@
               .add("active");
 
             selectedColor =
-              "#E8590C";
+              "#FB4617";
           }
         );
 
