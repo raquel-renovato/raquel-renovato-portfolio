@@ -2,31 +2,59 @@
 (() => {
   'use strict';
 
-  const MOBILE_PREVIEW_WIDTH = 412;
-  const MOBILE_PREVIEW_HEIGHT = 760;
+  /* Render the real mobile site at a wider CSS viewport, then scale it down
+     inside the fixed preview column. This keeps the card compact without
+     forcing the headline into the narrow 360/412px wrapping seen before. */
+  const MOBILE_PREVIEW_WIDTH = 480;
+  const MOBILE_PREVIEW_HEIGHT = 960;
 
   const finishingStyles = document.createElement('style');
   finishingStyles.textContent = `
     .case-page #fernando-project .fa-responsive-showcase,
     #projects-container #fernando-project .fa-responsive-showcase {
-      padding:0; border:0; border-radius:0; background:transparent;
-      grid-template-columns:minmax(0,1fr) 440px; gap:24px; align-items:start;
+      padding:0 !important; border:0 !important; border-radius:0 !important; background:transparent !important;
+      box-shadow:none !important; grid-template-columns:minmax(0,1fr) 440px; gap:24px; align-items:start;
+    }
+    .case-page #fernando-project .fa-device-desktop,
+    .case-page #fernando-project .fa-device-mobile-artboard,
+    #projects-container #fernando-project .fa-device-desktop,
+    #projects-container #fernando-project .fa-device-mobile-artboard {
+      border:0 !important; border-radius:0 !important; box-shadow:none !important; background:transparent !important;
+      overflow:hidden;
+    }
+    .case-page #fernando-project .fa-browser,
+    #projects-container #fernando-project .fa-browser {
+      border:0 !important; border-radius:0 !important; box-shadow:none !important;
     }
     .case-page #fernando-project .fa-desktop-viewport,
     #projects-container #fernando-project .fa-desktop-viewport {
-      height:560px !important; overflow:hidden;
+      height:780px !important; overflow:hidden;
     }
     .case-page #fernando-project .fa-mobile-artboard-stage,
-    #projects-container #fernando-project .fa-mobile-artboard-stage { padding:18px; min-height:0; }
+    #projects-container #fernando-project .fa-mobile-artboard-stage { padding:0 !important; min-height:0; background:transparent !important; }
     .case-page #fernando-project .fa-mobile-artboard-viewport,
     #projects-container #fernando-project .fa-mobile-artboard-viewport {
-      width:100%; max-width:400px; height:620px; aspect-ratio:auto; overflow:hidden;
+      width:100%; max-width:440px; height:780px; aspect-ratio:auto; overflow:hidden;
+      border:0 !important; border-radius:0 !important; box-shadow:none !important;
     }
     .case-page #fernando-project .fa-mobile-artboard-viewport iframe,
     #projects-container #fernando-project .fa-mobile-artboard-viewport iframe {
-      width:${MOBILE_PREVIEW_WIDTH}px; height:${MOBILE_PREVIEW_HEIGHT}px;
-      transform:scale(var(--mobile-scale,.970874)); transform-origin:top left;
+      width:${MOBILE_PREVIEW_WIDTH}px; height:${MOBILE_PREVIEW_HEIGHT}px; max-width:none !important;
+      border:0 !important; transform:scale(var(--mobile-scale,.916667)); transform-origin:top left;
     }
+
+    /* Before/after: keep the embedded page fitted to the visible browser area.
+       The previous empty white area came from a tall browser container around a
+       much shorter scaled canvas. */
+    .case-page #fernando-project .fernando-compare-browsers .fa-browser,
+    #projects-container #fernando-project .fernando-compare-browsers .fa-browser {
+      flex:0 0 auto !important; height:auto !important; min-height:0 !important;
+    }
+    .case-page #fernando-project .fernando-compare-browsers .fa-desktop-viewport,
+    #projects-container #fernando-project .fernando-compare-browsers .fa-desktop-viewport {
+      height:auto !important; min-height:0 !important; aspect-ratio:16 / 9; background:transparent !important;
+    }
+
     @media(max-width:1000px){
       .case-page #fernando-project .fa-responsive-showcase,
       #projects-container #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
@@ -36,12 +64,10 @@
     @media(max-width:620px){
       .case-page #fernando-project .fa-responsive-showcase,
       #projects-container #fernando-project .fa-responsive-showcase { padding:0; gap:18px; }
-      .case-page #fernando-project .fa-mobile-artboard-stage,
-      #projects-container #fernando-project .fa-mobile-artboard-stage { padding:10px 0; }
       .case-page #fernando-project .fa-mobile-artboard-viewport,
-      #projects-container #fernando-project .fa-mobile-artboard-viewport { max-width:400px; height:600px; border-radius:0; }
+      #projects-container #fernando-project .fa-mobile-artboard-viewport { max-width:440px; height:780px; }
       .case-page #fernando-project .fa-desktop-viewport,
-      #projects-container #fernando-project .fa-desktop-viewport { height:500px !important; }
+      #projects-container #fernando-project .fa-desktop-viewport { height:780px !important; }
     }
 
     .mobile-nav-toggle { display:none; }
@@ -112,6 +138,7 @@
       document.body.classList.remove('mobile-menu-active');
       toggle.setAttribute('aria-expanded','false');
       toggle.setAttribute('aria-label','Abrir navegação');
+      toggle.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
     };
     toggle.addEventListener('click', () => {
       setMenuTop();
