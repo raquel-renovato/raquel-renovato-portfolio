@@ -15,8 +15,8 @@
     .case-page #fernando-project .fa-device-mobile-artboard,
     #projects-container #fernando-project .fa-device-desktop,
     #projects-container #fernando-project .fa-device-mobile-artboard {
-      height:824px !important; border:0 !important; border-radius:12px !important; box-shadow:none !important;
-      background:transparent !important; overflow:visible !important;
+      height:auto !important; border:0 !important; border-radius:12px !important; box-shadow:none !important;
+      background:transparent !important; overflow:hidden !important;
     }
     .case-page #fernando-project .fa-browser,
     #projects-container #fernando-project .fa-browser {
@@ -58,12 +58,21 @@
       .case-page #fernando-project .fa-device-desktop,
       .case-page #fernando-project .fa-device-mobile-artboard,
       #projects-container #fernando-project .fa-device-desktop,
-      #projects-container #fernando-project .fa-device-mobile-artboard { height:824px !important; }
+      #projects-container #fernando-project .fa-device-mobile-artboard { height:auto !important; }
       .case-page #fernando-project .fa-mobile-artboard-viewport,
       #projects-container #fernando-project .fa-mobile-artboard-viewport { max-width:440px; height:780px; }
       .case-page #fernando-project .fa-desktop-viewport,
       #projects-container #fernando-project .fa-desktop-viewport { height:780px !important; }
     }
+
+    .case-page #fernando-project .fa-desktop-artboard-stage { padding:0 !important; background:transparent !important; }
+    .case-page #fernando-project .fa-responsive-showcase .fa-desktop-viewport,
+    .case-page #fernando-project .fa-responsive-showcase .fa-mobile-artboard-viewport {
+      border:0 !important; border-radius:0 !important; box-shadow:none !important;
+      max-width:none !important; height:780px !important; min-height:0 !important; flex:none;
+    }
+    .case-page #fernando-project .fa-responsive-showcase .fa-mobile-artboard-stage { flex:none; min-height:0; }
+    .case-page #fernando-project .fa-responsive-showcase .fa-responsive-device-caption { min-height:32px; flex:none; box-sizing:border-box; }
 
     .mobile-nav-toggle { display:none; }
     @media(max-width:700px){
@@ -91,7 +100,7 @@
     if(label) label.style.display='none';
   });
 
-  document.querySelectorAll('.fa-mobile-artboard-viewport').forEach(viewport=>{const resize=()=>{if(!viewport.clientWidth)return;viewport.style.setProperty('--mobile-scale',String(viewport.clientWidth/MOBILE_PREVIEW_WIDTH));};new ResizeObserver(resize).observe(viewport);resize();});
+  document.querySelectorAll('.fa-mobile-artboard-viewport').forEach(viewport=>{const resize=()=>{if(!viewport.clientWidth)return;const scale=viewport.clientWidth/MOBILE_PREVIEW_WIDTH;viewport.style.setProperty('--mobile-scale',String(scale));viewport.querySelector('iframe')?.style.setProperty('height',`${Math.max(MOBILE_PREVIEW_HEIGHT,viewport.clientHeight/scale)}px`,'important');};new ResizeObserver(resize).observe(viewport);resize();});
 
   const topNav=document.getElementById('top');const navList=topNav?.querySelector(':scope > ul');
   if(topNav&&navList&&!topNav.querySelector('.mobile-nav-toggle')){const toggle=document.createElement('button');toggle.type='button';toggle.className='mobile-nav-toggle';toggle.setAttribute('aria-label','Abrir navegação');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';topNav.appendChild(toggle);const setMenuTop=()=>document.documentElement.style.setProperty('--mobile-nav-top',`${topNav.getBoundingClientRect().bottom}px`);const closeMenu=()=>{topNav.classList.remove('mobile-nav-open');document.body.classList.remove('mobile-menu-active');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir navegação');toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';};toggle.addEventListener('click',()=>{setMenuTop();const open=topNav.classList.toggle('mobile-nav-open');document.body.classList.toggle('mobile-menu-active',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fechar navegação':'Abrir navegação');toggle.innerHTML=open?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';});navList.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));window.addEventListener('resize',()=>{setMenuTop();if(innerWidth>700)closeMenu();});setMenuTop();}

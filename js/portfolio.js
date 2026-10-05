@@ -1192,13 +1192,8 @@
           );
 
         const showcase = viewport.closest('.fa-responsive-showcase');
-        if (showcase && window.innerWidth > 1000) {
-          const mobile = showcase.querySelector('.fa-mobile-artboard-viewport');
-          const mobileBar = showcase.querySelector('.fa-mobile-artboard-bar');
-          const desktopBar = showcase.querySelector('.fa-browser-bar');
-          if (mobile?.offsetHeight) {
-            sourceHeight = (mobile.offsetHeight + mobileBar.offsetHeight - desktopBar.offsetHeight) / scale;
-          }
+        if (showcase) {
+          sourceHeight = viewport.clientHeight / scale;
         }
 
         viewport.style.height =
