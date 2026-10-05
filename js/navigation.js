@@ -72,6 +72,18 @@
     new ResizeObserver(resize).observe(viewport);
     resize();
   });
+  document.querySelectorAll('.fa-nav-preview-stage').forEach(stage => {
+    const preview = stage.querySelector('.fa-nav-preview');
+    const resize = () => {
+      if (!stage.clientWidth) return;
+      const scale = Math.min(1, stage.clientWidth / 720);
+      stage.style.setProperty('--nav-preview-scale', String(scale));
+      stage.style.setProperty('--nav-preview-height', `${preview.offsetHeight * scale}px`);
+    };
+    new ResizeObserver(resize).observe(stage);
+    window.addEventListener('resize', resize);
+    resize();
+  });
   // Scroll depth is measured from each stationary project, never from its moving cover.
   const galleryItems = [...document.querySelectorAll('.project-preview')];
   if (galleryItems.length) {

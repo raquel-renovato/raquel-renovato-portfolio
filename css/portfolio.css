@@ -4764,9 +4764,11 @@ html.intro-seen body.intro-active { overflow:visible; height:auto; }
  .case-page #fernando-project .fa-system-sidebar > span { flex-basis:100%; margin-bottom:4px; }
  .case-page #fernando-project .fa-system-btn { width:auto; min-height:40px; padding:10px 12px; }
  .case-page #fernando-project .fa-system-canvas { padding:20px; }
- .case-page #fernando-project .fa-nav-preview { grid-template-columns:24px minmax(0,1fr); }
- .case-page #fernando-project .fa-nav-preview-links { grid-column:1 / -1; justify-content:flex-start; gap:10px; }
- .case-page #fernando-project .fa-nav-preview > button { grid-column:1 / -1; justify-self:start; }
+ .case-page #fernando-project .fa-nav-preview-stage { position:relative; overflow:hidden; height:var(--nav-preview-height,40px); }
+ .case-page #fernando-project .fa-nav-preview { width:720px; position:absolute; top:0; left:0; transform:scale(var(--nav-preview-scale,.4)); transform-origin:top left; grid-template-columns:auto auto minmax(0,1fr) auto; }
+ .case-page #fernando-project .fa-nav-preview-links { flex-wrap:nowrap; gap:12px; }
+ .case-page #fernando-project .fa-nav-preview > strong,
+ .case-page #fernando-project .fa-nav-preview > button { white-space:nowrap; }
 }
 @media(max-width:620px) {
  .case-page #fernando-project .fa-system-canvas { padding:14px; }
