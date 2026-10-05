@@ -90,8 +90,6 @@
   `;
   document.head.appendChild(finishingStyles);
 
-  const toolsTrack=document.querySelector('.tools-strip-track');
-  if(toolsTrack&&!toolsTrack.querySelector('[data-tool-github]')){const github=document.createElement('a');github.className='tool-logo';github.href='https://github.com/raquel-renovato';github.target='_blank';github.rel='noopener noreferrer';github.dataset.toolGithub='';github.setAttribute('aria-label','GitHub');github.innerHTML='<img src="/img/img-logo-ferramentas/github-icon.svg" alt=""><span>GitHub</span>';toolsTrack.appendChild(github);}
 
   /* Keep only the useful device labels; remove pixel/composition metadata. */
   document.querySelectorAll('.fa-mobile-artboard-bar strong').forEach(label=>{ label.style.display='none'; });
