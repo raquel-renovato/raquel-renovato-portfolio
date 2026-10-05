@@ -3,29 +3,35 @@
   'use strict';
 
   const MOBILE_PREVIEW_WIDTH = 412;
-  const MOBILE_PREVIEW_HEIGHT = 915;
+  const MOBILE_PREVIEW_HEIGHT = 760;
 
   const finishingStyles = document.createElement('style');
   finishingStyles.textContent = `
     .case-page #fernando-project .fa-responsive-showcase,
     #projects-container #fernando-project .fa-responsive-showcase {
       padding:0; border:0; border-radius:0; background:transparent;
-      grid-template-columns:minmax(0,1fr) 400px; gap:24px; align-items:stretch;
+      grid-template-columns:minmax(0,1fr) 440px; gap:24px; align-items:start;
+    }
+    .case-page #fernando-project .fa-desktop-viewport,
+    #projects-container #fernando-project .fa-desktop-viewport {
+      height:560px !important; overflow:hidden;
     }
     .case-page #fernando-project .fa-mobile-artboard-stage,
-    #projects-container #fernando-project .fa-mobile-artboard-stage { padding:18px; }
+    #projects-container #fernando-project .fa-mobile-artboard-stage { padding:18px; min-height:0; }
     .case-page #fernando-project .fa-mobile-artboard-viewport,
     #projects-container #fernando-project .fa-mobile-artboard-viewport {
-      width:100%; max-width:360px; height:auto; aspect-ratio:360 / 800; overflow:hidden;
+      width:100%; max-width:400px; height:620px; aspect-ratio:auto; overflow:hidden;
     }
     .case-page #fernando-project .fa-mobile-artboard-viewport iframe,
     #projects-container #fernando-project .fa-mobile-artboard-viewport iframe {
       width:${MOBILE_PREVIEW_WIDTH}px; height:${MOBILE_PREVIEW_HEIGHT}px;
-      transform:scale(var(--mobile-scale,.873786)); transform-origin:top left;
+      transform:scale(var(--mobile-scale,.970874)); transform-origin:top left;
     }
     @media(max-width:1000px){
       .case-page #fernando-project .fa-responsive-showcase,
       #projects-container #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
+      .case-page #fernando-project .fa-device-mobile-artboard,
+      #projects-container #fernando-project .fa-device-mobile-artboard { width:min(100%,440px); }
     }
     @media(max-width:620px){
       .case-page #fernando-project .fa-responsive-showcase,
@@ -33,22 +39,32 @@
       .case-page #fernando-project .fa-mobile-artboard-stage,
       #projects-container #fernando-project .fa-mobile-artboard-stage { padding:10px 0; }
       .case-page #fernando-project .fa-mobile-artboard-viewport,
-      #projects-container #fernando-project .fa-mobile-artboard-viewport { max-width:360px; border-radius:0; }
+      #projects-container #fernando-project .fa-mobile-artboard-viewport { max-width:400px; height:600px; border-radius:0; }
+      .case-page #fernando-project .fa-desktop-viewport,
+      #projects-container #fernando-project .fa-desktop-viewport { height:500px !important; }
     }
 
     .mobile-nav-toggle { display:none; }
     @media(max-width:700px){
-      #top { position:relative; }
+      #top { position:relative; z-index:300; }
       #top > .cta { display:none; }
-      #top > ul { display:none; position:absolute; top:calc(100% + 1px); left:0; right:0; z-index:100;
-        margin:0; padding:14px var(--page-pad) 18px; background:var(--bg); border-bottom:1px solid var(--line);
-        flex-direction:column; align-items:stretch; gap:0; }
-      #top.mobile-nav-open > ul { display:flex; }
-      #top > ul li { width:100%; }
-      #top > ul a { display:block; padding:12px 0; }
+      #top > ul {
+        display:none !important; position:fixed !important;
+        top:var(--mobile-nav-top, 0px) !important; left:0 !important; right:0 !important;
+        width:100vw !important; max-width:none !important; height:calc(100dvh - var(--mobile-nav-top, 0px)) !important;
+        margin:0 !important; padding:42px var(--page-pad) !important; box-sizing:border-box !important;
+        background:var(--bg) !important; border:0 !important;
+        flex-direction:column !important; align-items:stretch !important; justify-content:flex-start !important; gap:0 !important;
+        z-index:299 !important; overflow:auto;
+      }
+      #top.mobile-nav-open > ul { display:flex !important; }
+      #top > ul li { width:100% !important; border-bottom:1px solid var(--line); }
+      #top > ul a { display:flex !important; align-items:center; justify-content:space-between; width:100%; padding:22px 0 !important; font-size:1.2rem; text-decoration:none; }
+      #top > ul a::after { content:'↗'; font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--accent); }
       .mobile-nav-toggle { display:inline-flex; align-items:center; justify-content:center; width:56px; height:48px;
-        border:1px solid var(--ink); border-radius:12px; background:transparent; color:var(--ink); cursor:pointer; }
+        border:1px solid var(--ink); border-radius:12px; background:var(--bg); color:var(--ink); cursor:pointer; z-index:301; }
       .mobile-nav-toggle svg { width:23px; height:23px; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; }
+      body.mobile-menu-active { overflow:hidden; }
     }
   `;
   document.head.appendChild(finishingStyles);
@@ -90,18 +106,24 @@
     toggle.setAttribute('aria-expanded','false');
     toggle.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
     topNav.appendChild(toggle);
+    const setMenuTop = () => document.documentElement.style.setProperty('--mobile-nav-top', `${topNav.getBoundingClientRect().bottom}px`);
     const closeMenu = () => {
       topNav.classList.remove('mobile-nav-open');
+      document.body.classList.remove('mobile-menu-active');
       toggle.setAttribute('aria-expanded','false');
       toggle.setAttribute('aria-label','Abrir navegação');
     };
     toggle.addEventListener('click', () => {
+      setMenuTop();
       const open = topNav.classList.toggle('mobile-nav-open');
+      document.body.classList.toggle('mobile-menu-active', open);
       toggle.setAttribute('aria-expanded',String(open));
       toggle.setAttribute('aria-label',open ? 'Fechar navegação' : 'Abrir navegação');
+      toggle.innerHTML = open ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
     });
     navList.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-    document.addEventListener('click', event => { if (!topNav.contains(event.target)) closeMenu(); });
+    window.addEventListener('resize', () => { setMenuTop(); if (innerWidth > 700) closeMenu(); });
+    setMenuTop();
   }
 
   const themeToggle = document.getElementById('themeToggle');
