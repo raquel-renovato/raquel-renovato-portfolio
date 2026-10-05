@@ -16,7 +16,7 @@
     #projects-container #fernando-project .fa-device-desktop,
     #projects-container #fernando-project .fa-device-mobile-artboard {
       height:824px !important; border:0 !important; border-radius:12px !important; box-shadow:none !important;
-      background:transparent !important; overflow:hidden;
+      background:transparent !important; overflow:visible !important;
     }
     .case-page #fernando-project .fa-browser,
     #projects-container #fernando-project .fa-browser {
@@ -83,8 +83,14 @@
 
   const toolsTrack=document.querySelector('.tools-strip-track');
   if(toolsTrack&&!toolsTrack.querySelector('[data-tool-github]')){const github=document.createElement('a');github.className='tool-logo';github.href='https://github.com/raquel-renovato';github.target='_blank';github.rel='noopener noreferrer';github.dataset.toolGithub='';github.setAttribute('aria-label','GitHub');github.innerHTML='<img src="/img/img-logo-ferramentas/github-icon.svg" alt=""><span>GitHub</span>';toolsTrack.appendChild(github);}
-  document.querySelectorAll('.fa-mobile-artboard-bar strong').forEach(label=>{label.textContent=`${MOBILE_PREVIEW_WIDTH}px`;});
-  document.querySelectorAll('.fa-responsive-device-caption span').forEach(label=>{if(/\d+px/.test(label.textContent))label.textContent=label.textContent.replace(/\d+px/,`${MOBILE_PREVIEW_WIDTH}px`);});
+
+  /* Keep only the useful device labels; remove pixel/composition metadata. */
+  document.querySelectorAll('.fa-mobile-artboard-bar strong').forEach(label=>{ label.style.display='none'; });
+  document.querySelectorAll('.fa-responsive-device-caption').forEach(caption=>{
+    const label=caption.querySelector('span');
+    if(label) label.style.display='none';
+  });
+
   document.querySelectorAll('.fa-mobile-artboard-viewport').forEach(viewport=>{const resize=()=>{if(!viewport.clientWidth)return;viewport.style.setProperty('--mobile-scale',String(viewport.clientWidth/MOBILE_PREVIEW_WIDTH));};new ResizeObserver(resize).observe(viewport);resize();});
 
   const topNav=document.getElementById('top');const navList=topNav?.querySelector(':scope > ul');
