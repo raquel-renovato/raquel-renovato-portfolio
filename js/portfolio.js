@@ -86,64 +86,28 @@
           },
           reducedMotion.matches
             ? 0
-            : 350
+            : 250
         );
       }
 
       function startIntro() {
-        sizeIntroWords();
-
-        if (
-          reducedMotion.matches ||
-          introWords.length < 3
-        ) {
+        if (!introOverlay) {
           finishIntro();
-
           return;
         }
-
-        introWords[0]
-          .classList
-          .add("active");
-
-        window.setTimeout(
-          () => {
-            introWords[0]
-              .classList
-              .remove("active");
-
-            introWords[0]
-              .classList
-              .add("exit");
-
-            introWords[1]
-              .classList
-              .add("active");
-          },
-          1200
-        );
-
-        window.setTimeout(
-          () => {
-            introWords[1]
-              .classList
-              .remove("active");
-
-            introWords[1]
-              .classList
-              .add("exit");
-
-            introWords[2]
-              .classList
-              .add("active");
-          },
-          2400
-        );
-
-        window.setTimeout(
-          finishIntro,
-          3800
-        );
+        let alreadySeen = document.documentElement.classList.contains("intro-seen");
+        try {
+          alreadySeen = alreadySeen || sessionStorage.getItem("portfolio-intro-seen") === "true";
+          sessionStorage.setItem("portfolio-intro-seen", "true");
+        } catch (_) {}
+        if (alreadySeen || reducedMotion.matches || !introWords.length) {
+          finishIntro();
+          introOverlay.style.display = "none";
+          return;
+        }
+        sizeIntroWords();
+        introWords[introWords.length - 1].classList.add("active");
+        window.setTimeout(finishIntro, 850);
       }
 
       document.fonts
@@ -304,7 +268,7 @@
         );
 
       let selectedColor =
-        "#E8590C";
+        "#FB4617";
 
       const swatches =
         $$(".swatch");
@@ -367,7 +331,7 @@
           ) / 1000;
 
         return luminance > 150
-          ? "#1F1C18"
+          ? "#111111"
           : "#FFFFFF";
       }
 
@@ -485,7 +449,7 @@
               swatches.find(
                 swatch =>
                   swatch.dataset.color ===
-                  "#E8590C"
+                  "#FB4617"
               );
 
             defaultSwatch
@@ -493,7 +457,7 @@
               .add("active");
 
             selectedColor =
-              "#E8590C";
+              "#FB4617";
           }
         );
 
@@ -1220,18 +1184,29 @@
         canvas.style.transform =
           `scale(${scale})`;
 
-        const sourceHeight =
+        let sourceHeight =
           Number(
             viewport.dataset
               .faDesktopHeight ||
               620
           );
 
+        const showcase = viewport.closest('.fa-responsive-showcase');
+        if (showcase && window.innerWidth > 1000) {
+          const mobile = showcase.querySelector('.fa-mobile-artboard-viewport');
+          const mobileBar = showcase.querySelector('.fa-mobile-artboard-bar');
+          const desktopBar = showcase.querySelector('.fa-browser-bar');
+          if (mobile?.offsetHeight) {
+            sourceHeight = (mobile.offsetHeight + mobileBar.offsetHeight - desktopBar.offsetHeight) / scale;
+          }
+        }
+
         viewport.style.height =
           `${Math.round(
             sourceHeight *
               scale
           )}px`;
+        canvas.querySelector('iframe')?.style.setProperty('height', `${sourceHeight}px`, 'important');
       }
 
       function resizeFernandoFrames() {
@@ -1325,4 +1300,4 @@
 
 
     })();
-  
+

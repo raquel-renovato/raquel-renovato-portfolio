@@ -1,0 +1,13 @@
+/* A quiet dot grid with a fading pointer trail behind the Hero. */
+.hero { position:relative; isolation:isolate; }
+.hero-dots { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:-1; }
+.hero-dots::before, .hero-dots-trail { content:""; position:absolute; inset:0; background-position:0 0; background-size:20px 20px; pointer-events:none; }
+.hero-dots::before { background-image:radial-gradient(circle,var(--ink) 1.2px,transparent 1.6px); opacity:.09; }
+.hero-dots-trail { background-image:radial-gradient(circle,var(--accent) 2px,transparent 2.4px); opacity:.65; -webkit-mask-image:linear-gradient(transparent,transparent); mask-image:linear-gradient(transparent,transparent); }
+@media(max-width:780px) {
+ .hero-dots::before, .hero-dots-trail { background-size:24px 24px; }
+ .hero-dots::before { opacity:.07; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .hero-dots-trail { display:none; }
+}

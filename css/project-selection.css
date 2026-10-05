@@ -1,0 +1,78 @@
+/* Home project selection: a restrained editorial grid. */
+.swiss-selection { padding-top:64px; padding-bottom:64px; }
+.swiss-selection-heading { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:end; gap:24px; padding-bottom:36px; border-bottom:1px solid var(--ink); margin-bottom:36px; }
+.swiss-eyebrow,.swiss-project-index,.swiss-project-footer { font-family:"IBM Plex Mono",monospace; font-size:.62rem; line-height:1.6; }
+.swiss-eyebrow { letter-spacing:.07em; color:var(--dim); }
+.swiss-selection-heading h2 { margin:22px 0 0; font:600 clamp(2.8rem,6.2vw,6rem)/.98 "IBM Plex Sans",sans-serif; letter-spacing:-.055em; }
+.swiss-selection-heading > p { margin:0; font-size:.95rem; line-height:1.6; color:var(--dim); }
+.swiss-project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:52px 32px; }
+.swiss-project { display:block; min-width:0; color:var(--ink); text-decoration:none; }
+.swiss-project-index { display:flex; align-items:center; gap:20px; padding-bottom:12px; text-transform:uppercase; }
+.swiss-project-index > span:first-child { flex:none; color:var(--accent); }
+.swiss-project-cover { display:flex; align-items:center; justify-content:center; aspect-ratio:3/2; overflow:hidden; }
+.swiss-project-cover img { display:block; width:100%; height:100%; object-fit:contain; transition:transform .35s ease; }
+.swiss-cover-fernando-amaral { background:#00152a; }
+.swiss-cover-renata-brandao { background:#211411; }
+.swiss-cover-series { gap:12px; }
+.swiss-cover-series img { width:calc((100% - 24px)/3); }
+.swiss-project-title { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:20px; }
+.swiss-project-title h3 { margin:0; font:600 clamp(1.4rem,2.5vw,2.3rem)/1.1 "IBM Plex Sans",sans-serif; letter-spacing:-.035em; }
+.swiss-project-title > span { font-size:1.6rem; color:var(--accent); transition:transform .2s; }
+.swiss-project > p { margin:12px 0 20px; color:var(--dim); font-size:.86rem; line-height:1.6; max-width:52ch; }
+.swiss-project-footer { display:flex; justify-content:space-between; gap:12px; padding-top:12px; border-top:1px solid var(--line); color:var(--dim); }
+.swiss-project-footer > span:last-child { color:var(--ink); }
+.swiss-project:hover .swiss-project-title > span { transform:translate(3px,-3px); }
+.swiss-project:hover .swiss-project-cover img { transform:scale(1.015); }
+.swiss-project:focus-visible { outline:2px solid var(--accent); outline-offset:8px; }
+.swiss-selection > .all-projects-link { margin:40px 0 0 auto; }
+@media(max-width:900px) {
+ .swiss-project-grid { gap:38px 24px; }
+ .swiss-project-index { align-items:start; gap:12px; font-size:.56rem; }
+ .swiss-cover-series { gap:7px; }
+ .swiss-cover-series img { width:calc((100% - 14px)/3); }
+}
+@media(max-width:600px) {
+ .swiss-selection { padding-top:36px; padding-bottom:40px; }
+ .swiss-selection-heading { grid-template-columns:1fr; gap:20px; padding-bottom:24px; margin-bottom:28px; }
+ .swiss-selection-heading h2 { font-size:clamp(2.5rem,11vw,4rem); margin-top:16px; }
+ .swiss-selection-heading > p { font-size:.85rem; }
+ .swiss-project-grid { grid-template-columns:1fr; gap:36px; }
+ .swiss-project-index { font-size:.57rem; }
+ .swiss-project-title h3 { font-size:1.6rem; }
+ .swiss-project-footer { font-size:.55rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .swiss-project-cover img,.swiss-project-title > span { transition:none; }
+ .swiss-project:hover .swiss-project-cover img,.swiss-project:hover .swiss-project-title > span { transform:none; }
+}
+
+/* The portfolio's serif voice and project-specific compositions. */
+.swiss-selection-heading { border-bottom-color:var(--line); }
+.swiss-selection-heading h2 { font-family:"Fraunces",serif; font-weight:400; line-height:1.02; letter-spacing:-.04em; }
+.swiss-selection-heading h2 em { font-weight:400; color:var(--accent); }
+.swiss-selection-heading > div { position:relative; }
+.swiss-selection-heading > div::before { content:""; display:block; width:42px; height:3px; background:var(--accent); margin-bottom:20px; }
+.swiss-project-title h3 { font-family:"Fraunces",serif; font-weight:400; font-size:clamp(1.6rem,2.7vw,2.6rem); letter-spacing:-.025em; }
+.authored-cover { display:grid; gap:12px; align-items:center; }
+.authored-cover img { width:100%; height:100%; min-width:0; min-height:0; }
+.cover-fernando-amaral { grid-template-columns:3fr 1fr; padding:20px; background:#00152a; }
+.cover-fernando-amaral img:first-child { object-fit:contain; }
+.cover-fernando-amaral img:last-child { object-fit:contain; max-height:90%; }
+.cover-voit-consultoria { grid-template-columns:1fr .78fr 1fr; }
+.cover-voit-consultoria img:nth-child(2) { height:78%; }
+.cover-renata-brandao { grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:10px; }
+.cover-renata-brandao img:first-child { grid-row:1 / 3; }
+.cover-renata-brandao img { object-fit:contain; }
+.cover-somos-braduca { grid-template-columns:1fr 1fr 1fr; }
+.cover-somos-braduca img:nth-child(1) { align-self:start; height:88%; }
+.cover-somos-braduca img:nth-child(2) { align-self:end; height:88%; }
+.cover-somos-braduca img:nth-child(3) { height:88%; }
+@media(max-width:900px) {
+ .authored-cover { gap:7px; }
+ .cover-fernando-amaral { padding:12px; }
+ .cover-renata-brandao { gap:6px; }
+}
+@media(max-width:600px) {
+ .swiss-selection-heading h2 { font-size:clamp(2.6rem,11vw,4rem); }
+ .swiss-project-title h3 { font-size:1.85rem; }
+}

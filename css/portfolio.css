@@ -1,19 +1,19 @@
 
     :root {
       --bg: #F3EFEA;
-      --ink: #1F1C18;
+      --ink: #111111;
       --dim: #59534C;
       --muted: #8A8379;
 
-      --line: rgba(31, 28, 24, 0.15);
-      --line-strong: rgba(31, 28, 24, 0.35);
+      --line: rgba(17, 17, 17, 0.15);
+      --line-strong: rgba(17, 17, 17, 0.35);
 
       --card: #E5DFD5;
       --card-hover: #DCD5C9;
 
-      --accent: #E8590C;
-      --accent-hover: #C24A08;
-      --accent-soft: rgba(232, 89, 12, 0.10);
+      --accent: #FB4617;
+      --accent-hover: #D9360B;
+      --accent-soft: rgba(251, 70, 23, 0.10);
 
       --accent-green: #38483A;
 
@@ -21,8 +21,8 @@
 
       --wf-bg: #FAF7F2;
       --wf-card: #EAE4D9;
-      --wf-text: #1F1C18;
-      --wf-line: rgba(31, 28, 24, 0.12);
+      --wf-text: #111111;
+      --wf-line: rgba(17, 17, 17, 0.12);
 
       --page-pad: 40px;
       --radius: 8px;
@@ -36,7 +36,7 @@
     }
 
     [data-theme="dark"] {
-      --bg: #181614;
+      --bg: #111111;
       --ink: #F0ECE1;
       --dim: #A6A095;
       --muted: #6E685E;
@@ -47,13 +47,13 @@
       --card: #23201C;
       --card-hover: #2C2823;
 
-      --accent: #F26D1D;
-      --accent-hover: #F98A46;
-      --accent-soft: rgba(242, 109, 29, 0.14);
+      --accent: #FB4617;
+      --accent-hover: #FF704C;
+      --accent-soft: rgba(251, 70, 23, 0.14);
 
       --accent-green: #6E8B73;
 
-      --nav-bg: rgba(24, 22, 20, 0.90);
+      --nav-bg: rgba(17, 17, 17, 0.90);
 
       --wf-bg: #12110F;
       --wf-card: #1C1A17;
@@ -145,8 +145,8 @@
       background: var(--bg);
 
       transition:
-        opacity 0.35s cubic-bezier(.65, 0, .35, 1),
-        transform 0.35s cubic-bezier(.65, 0, .35, 1);
+        opacity 0.25s cubic-bezier(.65, 0, .35, 1),
+        transform 0.25s cubic-bezier(.65, 0, .35, 1);
     }
 
     #intro-overlay.expand {
@@ -603,7 +603,7 @@
     }
 
     #wfWindow[data-wf-theme="dark"] {
-      --wf-bg: #181614;
+      --wf-bg: #111111;
       --wf-card: #23201C;
       --wf-text: #F0ECE1;
       --wf-line: rgba(240, 236, 225, 0.15);
@@ -2248,11 +2248,11 @@
 
     .fa-system-btn.active {
       background: #EAD0BE;
-      color: #E8590C;
+      color: #FB4617;
     }
 
     [data-theme="dark"] .fa-system-btn.active {
-      background: rgba(242, 109, 29, 0.16);
+      background: rgba(251, 70, 23, 0.16);
       color: var(--accent);
     }
 
@@ -2733,7 +2733,7 @@
 
       padding: 0 13px;
 
-      border-bottom: 1px solid rgba(31, 28, 24, 0.12);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.12);
 
       background: #EEE9E1;
     }
@@ -2802,7 +2802,7 @@
 
       padding: 11px 13px;
 
-      border-top: 1px solid rgba(31, 28, 24, 0.12);
+      border-top: 1px solid rgba(17, 17, 17, 0.12);
 
       background: #FFF;
     }
@@ -3310,7 +3310,7 @@
       color: var(--ink);
 
       box-shadow:
-        0 5px 18px rgba(31, 28, 24, 0.13);
+        0 5px 18px rgba(17, 17, 17, 0.13);
 
       cursor: pointer;
 
@@ -4148,7 +4148,7 @@
        ========================================================= */
 
     .skills {
-      padding: 0 var(--page-pad) 70px;
+      padding: 0 var(--page-pad) 60px;
     }
 
     .skill-grid {
@@ -4216,10 +4216,10 @@
       flex: 0 0 auto;
       align-items: center;
       justify-content: center;
-      width: 58px;
-      height: 58px;
-      padding: 12px;
-      border: 1px solid var(--line);
+      width: 52px;
+      height: 52px;
+      padding: 11px;
+      border: 1px solid color-mix(in srgb,var(--line) 65%,transparent);
       border-radius: 50%;
       color: var(--ink);
       background: var(--card);
@@ -4230,14 +4230,16 @@
     .tool-logo:hover {
       border-color: var(--accent);
       color: var(--accent);
-      transform: translateY(-3px) scale(1.06);
-      box-shadow: 0 7px 16px rgba(232, 89, 12, 0.16);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 3px 9px rgba(17, 17, 17, 0.06);
     }
 
     .tool-logo img {
-      width: 32px;
-      height: 32px;
+      width: 29px;
+      height: 29px;
       object-fit: contain;
+      filter: saturate(.72);
+      transition: filter 180ms ease;
     }
 
     .tool-logo span {
@@ -4254,7 +4256,7 @@
        ========================================================= */
 
     .cta-band {
-      padding: 80px var(--page-pad);
+      padding: 68px var(--page-pad);
 
       text-align: center;
     }
@@ -4669,4 +4671,118 @@
         scroll-behavior: auto !important;
       }
     }
-  
+
+/* Small editorial refinements; keep content and interactive layouts intact. */
+.tool-logo:hover img, .tool-logo:focus-visible img { filter:saturate(1); }
+.tool-logo:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+html.intro-seen #intro-overlay { display:none; }
+html.intro-seen #site-content { opacity:1; }
+html.intro-seen body.intro-active { overflow:visible; height:auto; }
+.case-page .project-block { padding-top:48px; }
+.case-page .project-head { margin-bottom:26px; }
+.case-page .fernando-compare-intro, .case-page .fernando-system-intro { margin-bottom:30px; }
+.case-page .fernando-closing { margin-top:52px; }
+.case-page .voit-video-section { margin-top:42px; }
+.case-page .case-next { padding-top:28px; padding-bottom:42px; }
+@media(prefers-reduced-motion:reduce) { .tool-logo, .tool-logo img { transition:none; } }
+
+/* Compact the Fernando case's text cards without changing media previews. */
+.case-page #fernando-project .fernando-overview-card { min-height:0; padding:20px; }
+.case-page #fernando-project .fernando-overview-card .project-block-label { margin-bottom:16px; }
+.case-page #fernando-project .fernando-case-editorial-main { min-height:0; padding:24px; }
+.case-page #fernando-project .fernando-case-editorial-main h4 { font-size:clamp(1.8rem,2.6vw,2.35rem); line-height:1.12; margin-bottom:16px; }
+.case-page #fernando-project .fernando-case-eyebrow { margin-bottom:18px; }
+.case-page #fernando-project .fernando-editorial-point { padding:18px; }
+.case-page #fernando-project .fernando-decision-heading { margin-top:48px; margin-bottom:24px; }
+.case-page #fernando-project .fernando-rationale > div { min-height:0; }
+.case-page #fernando-project .fa-component-box,.case-page #fernando-project .fa-type-card { min-height:0; }
+.case-page #fernando-project .fa-component-label { margin-bottom:18px; }
+.case-page #fernando-project .fernando-closing { margin-top:40px; }
+@media(max-width:620px) {
+ .case-page #fernando-project .fernando-overview-card,.case-page #fernando-project .fernando-case-editorial-main { padding:18px; }
+}
+
+/* Fernando: clearer tabs, compact titles and full interactive viewports. */
+.case-page #fernando-project .fernando-case-editorial-main h4 { font-size:clamp(1.6rem,2.15vw,1.95rem); }
+.case-page #fernando-project .fernando-tab { color:var(--accent); border-color:color-mix(in srgb,var(--accent) 55%,var(--line)); }
+.case-page #fernando-project .fernando-tab.active { color:#FFF; background:var(--accent); }
+.case-page #fernando-project .fernando-tab:hover { background:var(--accent-soft); }
+.case-page #fernando-project .fernando-tab.active:hover { background:var(--accent-hover); }
+.fernando-decision-example { margin:0; min-width:0; }
+.fernando-decision-example figcaption { color:var(--dim); font:.6rem "IBM Plex Mono",monospace; margin-bottom:10px; }
+.case-page #fernando-project .fernando-decision .fernando-closing { display:block; margin:0; background:var(--bg); }
+.case-page #fernando-project .fernando-decision .fernando-closing-main { padding:20px; }
+.case-page #fernando-project .fernando-decision .fernando-closing-main h4 { font-size:1.5rem; }
+.case-page #fernando-project .fernando-decision .fernando-closing-grid { grid-template-columns:1fr; }
+.case-page #fernando-project .fernando-decision .fernando-closing-grid article { padding:16px 20px; }
+.case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr) 360px; }
+.case-page #fernando-project .fa-mobile-artboard-viewport { width:100%; max-width:280px; height:auto; aspect-ratio:1 / 2; }
+.case-page #fernando-project .fa-mobile-artboard-viewport iframe { transform:scale(var(--mobile-scale,.7179487)); }
+.case-page #fernando-project .fa-figma-frame { height:700px; min-height:0; overflow:auto; }
+.case-page #fernando-project .fa-figma-frame iframe { display:block; height:100%; }
+.fa-figma-status { padding:12px 16px; color:var(--dim); font-size:.75rem; border-bottom:1px solid var(--line); }
+@media(max-width:1000px) {
+ .case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
+}
+@media(max-width:620px) {
+ .case-page #fernando-project .fa-responsive-showcase { padding:12px; gap:18px; }
+ .case-page #fernando-project .fa-mobile-artboard-stage { padding:12px; }
+ .case-page #fernando-project .fa-figma-frame { height:600px; }
+}
+.case-page #fernando-project .fa-responsive-showcase .fa-desktop-viewport { min-height:0; }
+
+/* Keep browser previews snug and give the mobile preview more width. */
+.case-page #fernando-project .fa-desktop-viewport { min-height:0; }
+.case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr) 400px; align-items:start; }
+.case-page #fernando-project .fa-mobile-artboard-viewport { max-width:320px; }
+@media(max-width:1000px) {
+ .case-page #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
+}
+
+/* Matching desktop/mobile frames and a tighter Figma viewport. */
+.case-page #fernando-project .fa-responsive-showcase { align-items:stretch; }
+.fa-desktop-artboard-stage { padding:18px; background:linear-gradient(180deg,#F8F8F7,#EFEDE9); }
+.case-page #fernando-project .fa-desktop-artboard-stage .fa-desktop-viewport { border:1px solid #D1D5D8; border-radius:13px; box-shadow:0 12px 28px rgba(0,0,0,.11); }
+.case-page #fernando-project .fernando-compare-intro { max-width:100%; }
+.case-page #fernando-project .fernando-compare-intro h4 { font-size:clamp(1.6rem,2.5vw,2.3rem); }
+.case-page #fernando-project .fa-figma-frame { overflow:hidden; }
+.case-page #fernando-project .fa-figma-frame iframe { width:108.7%; max-width:none; height:calc(100% + 120px); margin-left:-4.35%; transform:translateY(-60px); }
+@media(max-width:620px) { .fa-desktop-artboard-stage { padding:12px; } }
+.case-page #fernando-project .fa-mobile-artboard-bar { min-height:44px; }
+
+/* The visual-system examples use the full screen width on smaller devices. */
+.case-page #fernando-project .fa-component-box,
+.case-page #fernando-project .fa-type-card,
+.case-page #fernando-project .fa-form-system-demo label { min-width:0; }
+.case-page #fernando-project .fa-color-grid { grid-template-columns:repeat(5,minmax(0,1fr)); }
+.case-page #fernando-project .fa-type-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.case-page #fernando-project .fa-component-label { flex-wrap:wrap; gap:6px 12px; }
+.case-page #fernando-project .fa-nav-preview { gap:12px; }
+@media(max-width:900px) {
+ .case-page #fernando-project .fa-system { grid-template-columns:minmax(0,1fr); }
+ .case-page #fernando-project .fa-system-sidebar { display:flex; flex-wrap:wrap; gap:6px; padding:14px; }
+ .case-page #fernando-project .fa-system-sidebar > span { flex-basis:100%; margin-bottom:4px; }
+ .case-page #fernando-project .fa-system-btn { width:auto; min-height:40px; padding:10px 12px; }
+ .case-page #fernando-project .fa-system-canvas { padding:20px; }
+ .case-page #fernando-project .fa-nav-preview-stage { position:relative; overflow:hidden; height:var(--nav-preview-height,40px); }
+ .case-page #fernando-project .fa-nav-preview { width:720px; position:absolute; top:0; left:0; transform:scale(var(--nav-preview-scale,.4)); transform-origin:top left; grid-template-columns:auto auto minmax(0,1fr) auto; }
+ .case-page #fernando-project .fa-nav-preview-links { flex-wrap:nowrap; gap:12px; }
+ .case-page #fernando-project .fa-nav-preview > strong,
+ .case-page #fernando-project .fa-nav-preview > button { white-space:nowrap; }
+}
+@media(max-width:620px) {
+ .case-page #fernando-project .fa-system-canvas { padding:14px; }
+ .case-page #fernando-project .fa-component-grid,
+ .case-page #fernando-project .fa-type-grid,
+ .case-page #fernando-project .fa-form-system-row.two,
+ .case-page #fernando-project .fa-form-system-row.three { grid-template-columns:minmax(0,1fr); }
+ .case-page #fernando-project .fa-color-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .case-page #fernando-project .fa-color-token { min-height:110px; padding:12px; }
+ .case-page #fernando-project .fa-component-box,
+ .case-page #fernando-project .fa-type-card { padding:14px; }
+ .case-page #fernando-project .fa-system-token-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .case-page #fernando-project .fa-mobile-nav-preview { gap:8px; padding:12px; }
+ .case-page #fernando-project .fa-mobile-nav-preview button { flex-shrink:0; }
+ .case-page #fernando-project .fa-primary-demo,
+ .case-page #fernando-project .fa-secondary-demo { max-width:100%; }
+}

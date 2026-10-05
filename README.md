@@ -4,11 +4,11 @@ Portfólio de Comunicação Visual e UI Design, desenvolvido com HTML, CSS e Jav
 
 **Site:** https://raquel-renovato-portfolio.vercel.app/
 
-A Home apresenta quatro trabalhos selecionados. A página `/projetos/` reúne os cinco projetos, cada um com seu case independente. O case Fernando Amaral mantém as abas Case, Antes × depois, Sistema visual, Responsivo e Protótipo.
+A Home reúne os cinco projetos completos na mesma página. As páginas `/projetos/` e os cases individuais continuam disponíveis como acessos adicionais. O case Fernando Amaral mantém as abas Case, Antes × depois, Sistema visual, Responsivo e Protótipo.
 
 ## Estrutura
 
-- `index.html`: apresentação, wireframe interativo, seleção de projetos, sobre, método, habilidades e contato.
+- `index.html`: apresentação, wireframe interativo, cinco projetos completos, sobre, método, habilidades e contato.
 - `projetos/index.html`: todos os projetos.
 - `projetos/<nome>/index.html`: cases individuais.
 - `css/portfolio.css`: estilos originais do portfólio e cases.
@@ -34,6 +34,6 @@ O projeto é um site estático, sem etapa de build, publicado na Vercel. O domí
 
 ## Manutenção
 
-O HTML e as interações do wireframe da Hero foram preservados durante a separação dos cases. Evite alterar esse componente ao editar a vitrine.
+O HTML e as interações do wireframe da Hero foram preservados durante a separação dos cases. Evite alterar esse componente ao editar os projetos.
 
 Ao adicionar um projeto, atualize a Home (quando fizer parte da seleção), a página de todos os projetos, a navegação de próximo projeto e o sitemap. Os materiais originais continuam no repositório.
