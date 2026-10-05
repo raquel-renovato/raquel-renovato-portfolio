@@ -1,6 +1,83 @@
 /* Enhancements shared by the Home and case pages. No wireframe behavior here. */
 (() => {
   'use strict';
+
+  /* Requested finishing touches: GitHub in the tools strip and a cleaner Fernando responsive preview. */
+  const finishingStyles = document.createElement('style');
+  finishingStyles.textContent = `
+    .case-page #fernando-project .fa-responsive-showcase,
+    #projects-container #fernando-project .fa-responsive-showcase {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      grid-template-columns: minmax(0, 1fr) 400px;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .case-page #fernando-project .fa-mobile-artboard-stage,
+    #projects-container #fernando-project .fa-mobile-artboard-stage {
+      padding: 18px;
+    }
+    .case-page #fernando-project .fa-mobile-artboard-viewport,
+    #projects-container #fernando-project .fa-mobile-artboard-viewport {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      aspect-ratio: 360 / 800;
+    }
+    .case-page #fernando-project .fa-mobile-artboard-viewport iframe,
+    #projects-container #fernando-project .fa-mobile-artboard-viewport iframe {
+      width: 360px;
+      height: 800px;
+      transform: scale(var(--mobile-scale, 1));
+      transform-origin: top left;
+    }
+    @media (max-width: 1000px) {
+      .case-page #fernando-project .fa-responsive-showcase,
+      #projects-container #fernando-project .fa-responsive-showcase {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    @media (max-width: 620px) {
+      .case-page #fernando-project .fa-responsive-showcase,
+      #projects-container #fernando-project .fa-responsive-showcase {
+        padding: 0;
+        gap: 18px;
+      }
+      .case-page #fernando-project .fa-mobile-artboard-stage,
+      #projects-container #fernando-project .fa-mobile-artboard-stage {
+        padding: 10px 0;
+      }
+      .case-page #fernando-project .fa-mobile-artboard-viewport,
+      #projects-container #fernando-project .fa-mobile-artboard-viewport {
+        max-width: 360px;
+        border-radius: 0;
+      }
+    }
+  `;
+  document.head.appendChild(finishingStyles);
+
+  const toolsTrack = document.querySelector('.tools-strip-track');
+  if (toolsTrack && !toolsTrack.querySelector('[data-tool-github]')) {
+    const github = document.createElement('a');
+    github.className = 'tool-logo';
+    github.href = 'https://github.com/raquel-renovato';
+    github.target = '_blank';
+    github.rel = 'noopener noreferrer';
+    github.dataset.toolGithub = '';
+    github.setAttribute('aria-label', 'GitHub');
+    github.innerHTML = '<img src="/img/img-logo-ferramentas/github-icon.svg" alt=""><span>GitHub</span>';
+    toolsTrack.appendChild(github);
+  }
+
+  document.querySelectorAll('.fa-mobile-artboard-bar strong').forEach(label => {
+    if (label.textContent.trim() === '390px') label.textContent = '360px';
+  });
+  document.querySelectorAll('.fa-responsive-device-caption span').forEach(label => {
+    if (label.textContent.includes('390px')) label.textContent = label.textContent.replace('390px', '360px');
+  });
+
   const themeToggle = document.getElementById('themeToggle');
   const syncTheme = () => themeToggle?.setAttribute('aria-pressed', String(document.documentElement.dataset.theme === 'dark'));
   syncTheme();
@@ -68,7 +145,7 @@
     observer.observe(document.querySelector('#fernando-project'));
   }
   document.querySelectorAll('.fa-mobile-artboard-viewport').forEach(viewport => {
-    const resize = () => { if (viewport.clientWidth) viewport.style.setProperty('--mobile-scale', String(viewport.clientWidth / 390)); };
+    const resize = () => { if (viewport.clientWidth) viewport.style.setProperty('--mobile-scale', String(viewport.clientWidth / 360)); };
     new ResizeObserver(resize).observe(viewport);
     resize();
   });
