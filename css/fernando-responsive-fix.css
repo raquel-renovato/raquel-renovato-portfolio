@@ -1,0 +1,25 @@
+/* Fernando Amaral — responsive showcase overrides */
+.case-page #fernando-project .fa-responsive-showcase{
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  padding:0!important;
+  box-shadow:none!important;
+  grid-template-columns:minmax(0,1fr) 400px!important;
+  gap:24px!important;
+  align-items:start!important;
+}
+.case-page #fernando-project .fa-device-desktop,
+.case-page #fernando-project .fa-device-mobile-artboard{align-self:start!important;height:auto!important;}
+.case-page #fernando-project .fa-mobile-artboard-stage{flex:none!important;min-height:0!important;padding:18px!important;}
+.case-page #fernando-project .fa-mobile-artboard-viewport{width:360px!important;max-width:100%!important;height:720px!important;aspect-ratio:auto!important;}
+.case-page #fernando-project .fa-mobile-artboard-viewport iframe{width:360px!important;height:720px!important;transform:none!important;transform-origin:top left!important;}
+@media(max-width:1000px){
+ .case-page #fernando-project .fa-responsive-showcase{grid-template-columns:minmax(0,1fr)!important;}
+ .case-page #fernando-project .fa-device-mobile-artboard{width:min(100%,400px);}
+}
+@media(max-width:620px){
+ .case-page #fernando-project .fa-mobile-artboard-stage{padding:12px!important;}
+ .case-page #fernando-project .fa-mobile-artboard-viewport{width:360px!important;max-width:100%!important;height:auto!important;aspect-ratio:1/2!important;}
+ .case-page #fernando-project .fa-mobile-artboard-viewport iframe{width:360px!important;height:720px!important;transform:scale(var(--mobile-scale,1))!important;}
+}
