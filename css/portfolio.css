@@ -4749,3 +4749,38 @@ html.intro-seen body.intro-active { overflow:visible; height:auto; }
 .case-page #fernando-project .fa-figma-frame iframe { width:108.7%; max-width:none; height:calc(100% + 120px); margin-left:-4.35%; transform:translateY(-60px); }
 @media(max-width:620px) { .fa-desktop-artboard-stage { padding:12px; } }
 .case-page #fernando-project .fa-mobile-artboard-bar { min-height:44px; }
+
+/* The visual-system examples use the full screen width on smaller devices. */
+.case-page #fernando-project .fa-component-box,
+.case-page #fernando-project .fa-type-card,
+.case-page #fernando-project .fa-form-system-demo label { min-width:0; }
+.case-page #fernando-project .fa-color-grid { grid-template-columns:repeat(5,minmax(0,1fr)); }
+.case-page #fernando-project .fa-type-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.case-page #fernando-project .fa-component-label { flex-wrap:wrap; gap:6px 12px; }
+.case-page #fernando-project .fa-nav-preview { gap:12px; }
+@media(max-width:900px) {
+ .case-page #fernando-project .fa-system { grid-template-columns:minmax(0,1fr); }
+ .case-page #fernando-project .fa-system-sidebar { display:flex; flex-wrap:wrap; gap:6px; padding:14px; }
+ .case-page #fernando-project .fa-system-sidebar > span { flex-basis:100%; margin-bottom:4px; }
+ .case-page #fernando-project .fa-system-btn { width:auto; min-height:40px; padding:10px 12px; }
+ .case-page #fernando-project .fa-system-canvas { padding:20px; }
+ .case-page #fernando-project .fa-nav-preview { grid-template-columns:24px minmax(0,1fr); }
+ .case-page #fernando-project .fa-nav-preview-links { grid-column:1 / -1; justify-content:flex-start; gap:10px; }
+ .case-page #fernando-project .fa-nav-preview > button { grid-column:1 / -1; justify-self:start; }
+}
+@media(max-width:620px) {
+ .case-page #fernando-project .fa-system-canvas { padding:14px; }
+ .case-page #fernando-project .fa-component-grid,
+ .case-page #fernando-project .fa-type-grid,
+ .case-page #fernando-project .fa-form-system-row.two,
+ .case-page #fernando-project .fa-form-system-row.three { grid-template-columns:minmax(0,1fr); }
+ .case-page #fernando-project .fa-color-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .case-page #fernando-project .fa-color-token { min-height:110px; padding:12px; }
+ .case-page #fernando-project .fa-component-box,
+ .case-page #fernando-project .fa-type-card { padding:14px; }
+ .case-page #fernando-project .fa-system-token-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .case-page #fernando-project .fa-mobile-nav-preview { gap:8px; padding:12px; }
+ .case-page #fernando-project .fa-mobile-nav-preview button { flex-shrink:0; }
+ .case-page #fernando-project .fa-primary-demo,
+ .case-page #fernando-project .fa-secondary-demo { max-width:100%; }
+}
