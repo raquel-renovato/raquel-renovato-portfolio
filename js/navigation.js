@@ -1,15 +1,17 @@
 /* Enhancements shared by the Home and case pages. No wireframe behavior here. */
 (() => {
   'use strict';
-  const MOBILE_PREVIEW_WIDTH = 480;
-  const MOBILE_PREVIEW_HEIGHT = 960;
+  // Simula um celular real (390 × 844, padrão iPhone 12–15) exibido a 360px de largura
+  const MOBILE_PREVIEW_WIDTH = 390;
+  const MOBILE_PREVIEW_HEIGHT = 844;
+  const MOBILE_FRAME_WIDTH = 360;
 
   const finishingStyles = document.createElement('style');
   finishingStyles.textContent = `
     .case-page #fernando-project .fa-responsive-showcase,
     #projects-container #fernando-project .fa-responsive-showcase {
       padding:0 !important; border:0 !important; border-radius:0 !important; background:transparent !important;
-      box-shadow:none !important; grid-template-columns:minmax(0,1fr) 440px; gap:24px; align-items:stretch;
+      box-shadow:none !important; grid-template-columns:minmax(0,1fr) ${MOBILE_FRAME_WIDTH}px; gap:24px; align-items:stretch;
     }
     .case-page #fernando-project .fa-device-desktop,
     .case-page #fernando-project .fa-device-mobile-artboard,
@@ -28,13 +30,13 @@
     #projects-container #fernando-project .fa-mobile-artboard-stage { padding:0 !important; min-height:0; background:transparent !important; }
     .case-page #fernando-project .fa-mobile-artboard-viewport,
     #projects-container #fernando-project .fa-mobile-artboard-viewport {
-      width:100%; max-width:440px; height:780px; aspect-ratio:auto; overflow:hidden;
+      width:100%; max-width:${MOBILE_FRAME_WIDTH}px; height:780px; aspect-ratio:auto; overflow:hidden;
       border:0 !important; border-radius:0 0 12px 12px !important; box-shadow:none !important;
     }
     .case-page #fernando-project .fa-mobile-artboard-viewport iframe,
     #projects-container #fernando-project .fa-mobile-artboard-viewport iframe {
       width:${MOBILE_PREVIEW_WIDTH}px; height:${MOBILE_PREVIEW_HEIGHT}px; max-width:none !important; border:0 !important;
-      transform:scale(var(--mobile-scale,.916667)); transform-origin:top left;
+      transform:scale(var(--mobile-scale,.923077)); transform-origin:top left;
     }
     .case-page #fernando-project .fa-mobile-artboard-bar,
     #projects-container #fernando-project .fa-mobile-artboard-bar { border-radius:12px 12px 0 0 !important; }
@@ -50,7 +52,7 @@
       .case-page #fernando-project .fa-responsive-showcase,
       #projects-container #fernando-project .fa-responsive-showcase { grid-template-columns:minmax(0,1fr); }
       .case-page #fernando-project .fa-device-mobile-artboard,
-      #projects-container #fernando-project .fa-device-mobile-artboard { width:min(100%,440px); }
+      #projects-container #fernando-project .fa-device-mobile-artboard { width:min(100%,${MOBILE_FRAME_WIDTH}px); justify-self:center; }
     }
     @media(max-width:620px){
       .case-page #fernando-project .fa-responsive-showcase,
@@ -60,7 +62,7 @@
       #projects-container #fernando-project .fa-device-desktop,
       #projects-container #fernando-project .fa-device-mobile-artboard { height:auto !important; }
       .case-page #fernando-project .fa-mobile-artboard-viewport,
-      #projects-container #fernando-project .fa-mobile-artboard-viewport { max-width:440px; height:780px; }
+      #projects-container #fernando-project .fa-mobile-artboard-viewport { max-width:${MOBILE_FRAME_WIDTH}px; height:auto !important; aspect-ratio:${MOBILE_PREVIEW_WIDTH} / ${MOBILE_PREVIEW_HEIGHT}; }
       .case-page #fernando-project .fa-desktop-viewport,
       #projects-container #fernando-project .fa-desktop-viewport { height:780px !important; }
     }
@@ -72,6 +74,8 @@
       max-width:none !important; height:780px !important; min-height:0 !important; flex:none;
     }
     .case-page #fernando-project .fa-responsive-showcase .fa-mobile-artboard-stage { flex:none; min-height:0; }
+    /* No celular, a prévia desktop mantém a proporção de uma tela 1440 × 900 em vez de 780px de altura */
+    @media(max-width:620px){ .case-page #fernando-project .fa-responsive-showcase .fa-desktop-viewport { height:auto !important; aspect-ratio:1440 / 900; } }
     .case-page #fernando-project .fa-responsive-showcase .fa-responsive-device-caption { min-height:32px; flex:none; box-sizing:border-box; }
 
     .mobile-nav-toggle { display:none; }
@@ -98,7 +102,10 @@
     if(label) label.style.display='none';
   });
 
-  document.querySelectorAll('.fa-mobile-artboard-viewport').forEach(viewport=>{const resize=()=>{if(!viewport.clientWidth)return;const scale=viewport.clientWidth/MOBILE_PREVIEW_WIDTH;viewport.style.setProperty('--mobile-scale',String(scale));viewport.querySelector('iframe')?.style.setProperty('height',`${Math.max(MOBILE_PREVIEW_HEIGHT,viewport.clientHeight/scale)}px`,'important');};new ResizeObserver(resize).observe(viewport);resize();});
+  /* Prévia mobile: o iframe tem a largura de um celular real (390px) e é reduzido para caber na moldura.
+     A largura extra da barra de rolagem fica fora da área visível, para o site ser exibido com 390px úteis. */
+  const scrollbarWidth=()=>Math.max(0,innerWidth-document.documentElement.clientWidth);
+  document.querySelectorAll('.fa-mobile-artboard-viewport').forEach(viewport=>{const resize=()=>{if(!viewport.clientWidth)return;const scale=viewport.clientWidth/MOBILE_PREVIEW_WIDTH;viewport.style.setProperty('--mobile-scale',String(scale));const frame=viewport.querySelector('iframe');if(!frame)return;frame.style.setProperty('width',`${MOBILE_PREVIEW_WIDTH+scrollbarWidth()}px`,'important');frame.style.setProperty('height',`${Math.max(MOBILE_PREVIEW_HEIGHT,viewport.clientHeight/scale)}px`,'important');};new ResizeObserver(resize).observe(viewport);addEventListener('resize',resize);resize();});
 
   const topNav=document.getElementById('top');const navList=topNav?.querySelector(':scope > ul');
   if(topNav&&navList&&!topNav.querySelector('.mobile-nav-toggle')){const toggle=document.createElement('button');toggle.type='button';toggle.className='mobile-nav-toggle';toggle.setAttribute('aria-label','Abrir navegação');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';topNav.appendChild(toggle);const setMenuTop=()=>document.documentElement.style.setProperty('--mobile-nav-top',`${topNav.getBoundingClientRect().bottom}px`);const closeMenu=()=>{topNav.classList.remove('mobile-nav-open');document.body.classList.remove('mobile-menu-active');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir navegação');toggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';};toggle.addEventListener('click',()=>{setMenuTop();const open=topNav.classList.toggle('mobile-nav-open');document.body.classList.toggle('mobile-menu-active',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fechar navegação':'Abrir navegação');toggle.innerHTML=open?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';});navList.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));window.addEventListener('resize',()=>{setMenuTop();if(innerWidth>700)closeMenu();});setMenuTop();}
