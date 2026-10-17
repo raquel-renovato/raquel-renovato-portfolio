@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Landing page para psicóloga de orientação psicanalítica: UI Design no Figma e front-end publicado, com sistema visual acolhedor, modo escuro e agendamento pelo WhatsApp."
+  >
+
+  <title>Alana Santos — Raquel Renovato</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600&family=Inter:wght@600&family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="preconnect" href="https://embed.figma.com"><link rel="preconnect" href="https://www.figma.com"><link rel="stylesheet" href="/css/portfolio.css">
+  <link rel="stylesheet" href="/css/navigation.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Alana Santos — Raquel Renovato">
+  <meta property="og:description" content="Landing page para psicóloga de orientação psicanalítica: UI Design no Figma e front-end publicado, com sistema visual acolhedor, modo escuro e agendamento pelo WhatsApp.">
+  <meta property="og:url" content="https://raquel-renovato-portfolio.vercel.app/projetos/alana-santos/">
+  <meta property="og:image" content="https://raquel-renovato-portfolio.vercel.app/img/img-alana/alana-og.jpg">
+  <meta property="og:image:alt" content="Alana Santos — Raquel Renovato">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://raquel-renovato-portfolio.vercel.app/projetos/alana-santos/">
+  <script>try { document.documentElement.removeAttribute('data-theme'); if (sessionStorage.getItem('portfolio-theme-manual') === 'dark') document.documentElement.setAttribute('data-theme', 'dark'); } catch (_) {}</script>
+
+  <style>
+    /* Case Alana Santos: reaproveita a estrutura do case Fernando e troca a identidade das demonstrações */
+    .case-page #fernando-project.alana-project .fa-color-token { border:1px solid rgba(0,0,0,.08); }
+    .case-page #fernando-project.alana-project .fa-type-card.lora, .case-page #fernando-project.alana-project .fa-type-card.lora strong, .case-page #fernando-project.alana-project .fa-type-card.lora p { font-family:"Lora",serif; color:#0b3d2e; }
+    .case-page #fernando-project.alana-project .fa-type-card.source, .case-page #fernando-project.alana-project .fa-type-card.source strong, .case-page #fernando-project.alana-project .fa-type-card.source p { font-family:"Source Sans 3",sans-serif; color:#0b3d2e; }
+    .case-page #fernando-project.alana-project .fa-type-card { background:#fdfbf7; border-color:#efe6dd; }
+    .case-page #fernando-project.alana-project .fa-primary-demo, .case-page #fernando-project.alana-project .fa-secondary-demo { border-radius:32px; padding:12px 22px; font-family:"Inter",sans-serif; font-weight:600; font-size:.72rem; transition:background-color .2s,color .2s,border-color .2s; }
+    .case-page #fernando-project.alana-project .fa-primary-demo { background:#0b3d2e; border-color:#0b3d2e; color:#fff; }
+    .case-page #fernando-project.alana-project .fa-primary-demo.is-hover { background:#c9a227; border-color:#c9a227; color:#0b3d2e; transform:none; filter:none; }
+    .case-page #fernando-project.alana-project .fa-secondary-demo { background:#fdfbf7; border-color:#c9a227; color:#0b3d2e; }
+    .case-page #fernando-project.alana-project .fa-quality-card { background:#fff; border-color:rgba(201,162,39,.4); border-radius:16px; color:#0b3d2e; }
+    .case-page #fernando-project.alana-project .fa-quality-card.dark { background:#1a2d24; border-color:rgba(201,162,39,.32); color:#ece6dc; }
+    .case-page #fernando-project.alana-project .fa-quality-card strong { font-family:"Lora",serif; font-weight:600; }
+    .case-page #fernando-project.alana-project .fa-nav-preview, .case-page #fernando-project.alana-project .fa-mobile-nav-preview { background:#fdfbf7; border-color:#efe6dd; color:#0b3d2e; }
+    .case-page #fernando-project.alana-project .fa-nav-preview > strong, .case-page #fernando-project.alana-project .fa-mobile-nav-preview strong { font-family:"Lora",serif; font-weight:500; font-size:.8rem; }
+    .case-page #fernando-project.alana-project .fa-nav-preview > button { border-radius:32px; border-color:#0b3d2e; background:#0b3d2e; color:#fff; }
+    .case-page #fernando-project.alana-project .fa-nav-theme-icon { border-radius:50%; border-color:#efe6dd; color:#0b3d2e; }
+    .case-page #fernando-project.alana-project .fa-mobile-nav-preview button { border-color:#efe6dd; color:#0b3d2e; }
+    .case-page #fernando-project.alana-project .fa-form-system-demo input, .case-page #fernando-project.alana-project .fa-form-system-demo select, .case-page #fernando-project.alana-project .fa-form-system-demo textarea { border-radius:5px; border-color:rgba(33,77,57,.4); }
+  </style>
+</head>
+<body class="case-page"><div id="site-content" class="visible"><a class="skip-link" href="#main-content">Pular para o conteúdo</a>    <nav id="top">
+
+      <div class="nav-left">
+
+        <button
+          type="button"
+          id="themeToggle"
+          class="theme-toggle mono"
+          aria-label="Alternar modo noturno"
+          title="Alternar modo noturno"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z"></path>
+          </svg>
+
+          <span id="themeLabel" class="sr-only">
+            Sombrio
+          </span>
+        </button>
+
+        <a
+          href="/"
+          class="logo"
+
+        >
+          Raquel Renovato
+        </a>
+
+      </div>
+
+      <ul>
+        <li>
+          <a href="/#projetos">
+            projetos
+          </a>
+        </li>
+
+        <li>
+          <a href="/#sobre">
+            sobre
+          </a>
+        </li>
+
+        <li>
+          <a href="/#habilidades">
+            habilidades
+          </a>
+        </li>
+      </ul>
+
+      <a
+        class="cta"
+        href="/#contato"
+      >
+        contato
+      </a>
+
+    </nav><main id="main-content"><div class="case-breadcrumb mono"><a href="/#projetos">← Projetos</a><span>UI Design · Front-end</span></div><article
+          class="project-block alana-project"
+          id="fernando-project"
+        >
+
+          <div class="project-head">
+
+            <span class="n mono">
+              02 / 06 • UI DESIGN / FRONT-END
+            </span>
+
+            <h1 class="case-title">Alana Santos</h1>
+
+            <p class="project-summary fernando-summary">
+              Landing page da psicóloga Alana Santos, de orientação psicanalítica.
+              Fui responsável pelo UI Design no Figma, do sistema visual ao protótipo,
+              e pela implementação front-end do site publicado.
+            </p>
+
+            <div class="fernando-overview-grid">
+
+              <article class="fernando-overview-card">
+                <span class="project-block-label">01 / CONTEXTO</span>
+                <h4>Uma primeira presença digital.</h4>
+                <p>
+                  A Alana precisava de um site para apresentar seu trabalho clínico,
+                  atender adolescentes e adultos, online e em Goiânia, e facilitar o
+                  primeiro contato com quem busca atendimento.
+                </p>
+              </article>
+
+              <article class="fernando-overview-card">
+                <span class="project-block-label">02 / DESAFIO</span>
+                <h4>Acolher sem prometer.</h4>
+                <p>
+                  Comunicar cuidado e confiança com linguagem ética, sem promessas
+                  de resultado nem depoimentos, e conduzir a pessoa até o agendamento
+                  sem pressa.
+                </p>
+              </article>
+
+              <article class="fernando-overview-card">
+                <span class="project-block-label">03 / MEU PAPEL</span>
+                <h4>Do design ao código.</h4>
+                <p>
+                  Arquitetura da informação, UI Design, sistema visual, prototipagem
+                  e implementação front-end.
+                </p>
+              </article>
+
+              <article class="fernando-overview-card">
+                <span class="project-block-label">04 / ENTREGA</span>
+                <h4>Site responsivo publicado.</h4>
+                <p>
+                  Landing page com modo escuro opcional, formulário que abre o
+                  WhatsApp com a mensagem pronta e botão flutuante de contato.
+                </p>
+                <a class="fernando-delivery-status" href="https://alana-santos-psicologa.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  VER SITE PUBLICADO ↗
+                </a>
+              </article>
+
+            </div>
+
+            <div class="project-proof fernando-tags">
+              <span>Figma</span>
+              <span>UI Design</span>
+              <span>Sistema visual</span>
+              <span>Prototipagem</span>
+              <span>Front-end</span>
+              <span>Modo escuro</span>
+              <span>Produto publicado</span>
+            </div>
+
+            <div class="fernando-project-facts">
+              <span>Escopo: Arquitetura da Informação, UI Design e Front-end</span>
+              <span>Tecnologias: Figma, HTML, CSS e JavaScript</span>
+              <span>Status: Produto publicado</span>
+            </div>
+
+          </div>
+
+          <div class="fernando-case-shell">
+
+            <div class="fernando-tabs-row">
+              <div class="fernando-tabs">
+                <button class="fernando-tab active" data-fernando-tab="case" type="button">Case</button>
+                <button class="fernando-tab" data-fernando-tab="system" type="button">Sistema visual</button>
+                <button class="fernando-tab" data-fernando-tab="responsive" type="button">Responsivo</button>
+                <button class="fernando-tab" data-fernando-tab="prototype" type="button">Protótipo</button>
+              </div>
+            </div>
+
+            <section class="fernando-view active" data-fernando-view="case">
+
+              <div class="fernando-case-editorial">
+                <div class="fernando-case-editorial-main">
+                  <span class="fernando-case-eyebrow mono">ESTUDO DE CASO / UI + FRONT-END</span>
+                  <h4>Uma página que acolhe antes de convidar.</h4>
+                  <p>
+                    O site precisava transmitir a escuta da Alana: calma, cuidado e
+                    clareza. A estrutura leva a pessoa da identificação com o que está
+                    vivendo até o primeiro contato.
+                  </p>
+                  <div class="fernando-case-meta">
+                    <span>UI Design</span>
+                    <span>Arquitetura de Informação</span>
+                    <span>Front-end</span>
+                  </div>
+                </div>
+                <div class="fernando-case-editorial-list">
+                  <article class="fernando-editorial-point">
+                    <div class="fernando-editorial-point-number">01</div>
+                    <div class="fernando-editorial-point-copy">
+                      <span>ARQUITETURA DA INFORMAÇÃO</span>
+                      <h5>Da identificação ao contato.</h5>
+                      <p>Hero, temas de atendimento, apresentação, abordagem, como funciona, passo a passo, dúvidas e contato, nessa ordem.</p>
+                    </div>
+                  </article>
+                  <article class="fernando-editorial-point">
+                    <div class="fernando-editorial-point-number">02</div>
+                    <div class="fernando-editorial-point-copy">
+                      <span>SISTEMA VISUAL</span>
+                      <h5>Verde, bege e dourado.</h5>
+                      <p>Paleta da identidade da Alana, Lora nos títulos, fotos com recorte orgânico e folhas e curvas como ornamentos sutis.</p>
+                    </div>
+                  </article>
+                  <article class="fernando-editorial-point">
+                    <div class="fernando-editorial-point-number">03</div>
+                    <div class="fernando-editorial-point-copy">
+                      <span>IMPLEMENTAÇÃO</span>
+                      <h5>Do Figma ao site publicado.</h5>
+                      <p>HTML, CSS e JavaScript fiéis ao protótipo, com interações, modo escuro e versão mobile próprios.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div class="fernando-decision-heading">
+                <span class="mono">DECISÕES DE DESIGN</span>
+                <h4>O que guiou a interface.</h4>
+                <p>Três decisões que estruturaram a experiência final.</p>
+              </div>
+
+              <div class="fernando-decisions">
+                <article class="fernando-decision">
+                  <div class="fernando-decision-number mono">01</div>
+                  <div class="fernando-decision-copy">
+                    <span class="project-block-label">ABERTURA</span>
+                    <h5>Uma frase que acolhe no primeiro contato.</h5>
+                    <p>O hero começa por quem visita, não pela profissional: a pessoa se reconhece antes de ser convidada a agendar.</p>
+                    <div class="fernando-rationale">
+                      <div><span>PROBLEMA</span><p>Sites de psicologia costumam abrir com títulos genéricos e chamadas diretas demais para quem ainda está em dúvida.</p></div>
+                      <div><span>DECISÃO</span><p>Título empático, foto da Alana com recorte orgânico e duas ações: iniciar o atendimento ou conhecer a abordagem.</p></div>
+                    </div>
+                  </div>
+                  <figure class="fernando-decision-example"><figcaption>Imagem da interface · Clique para ampliar</figcaption><div class="fernando-decision-media">
+                    <img loading="lazy" decoding="async" src="/img/img-alana/alana-hero.webp" alt="Hero da landing page de Alana Santos" class="js-lightbox-image">
+                  </div></figure>
+                </article>
+                <article class="fernando-decision">
+                  <div class="fernando-decision-number mono">02</div>
+                  <div class="fernando-decision-copy">
+                    <span class="project-block-label">TEMAS DE ATENDIMENTO</span>
+                    <h5>Nomear o que a pessoa sente.</h5>
+                    <p>Oito cards com ícones apresentam situações comuns, para quem chega sem saber explicar o que está vivendo.</p>
+                    <div class="fernando-rationale">
+                      <div><span>PROBLEMA</span><p>Listar especialidades técnicas afasta quem não se identifica com termos clínicos.</p></div>
+                      <div><span>DECISÃO</span><p>Cards curtos que descrevem situações do cotidiano, seguidos de uma mensagem de acolhimento e uma ação.</p></div>
+                    </div>
+                  </div>
+                  <figure class="fernando-decision-example"><figcaption>Imagem da interface · Clique para ampliar</figcaption><div class="fernando-decision-media">
+                    <img loading="lazy" decoding="async" src="/img/img-alana/alana-temas.webp" alt="Seção de temas de atendimento com oito cards" class="js-lightbox-image">
+                  </div></figure>
+                </article>
+                <article class="fernando-decision">
+                  <div class="fernando-decision-number mono">03</div>
+                  <div class="fernando-decision-copy">
+                    <span class="project-block-label">AGENDAMENTO</span>
+                    <h5>Contato simples e sem atrito.</h5>
+                    <p>O caminho até o agendamento precisava ser claro sem pressionar, respeitando o tempo de cada pessoa.</p>
+                    <div class="fernando-rationale">
+                      <div><span>PROBLEMA</span><p>Formulários longos ou que exigem e-mail desestimulam o primeiro contato e não condizem com o canal que a Alana usa.</p></div>
+                      <div><span>DECISÃO</span><p>Formulário curto que abre o WhatsApp com a mensagem pronta, botão flutuante de contato e informações das sessões antes do contato.</p></div>
+                    </div>
+                  </div>
+                  <figure class="fernando-decision-example"><figcaption>Imagem da interface · Clique para ampliar</figcaption><div class="fernando-decision-media">
+                    <img loading="lazy" decoding="async" src="/img/img-alana/alana-contato.webp" alt="Seção de contato com formulário de agendamento" class="js-lightbox-image">
+                  </div></figure>
+                </article>
+              </div>
+
+            </section>
+
+            <section
+              class="fernando-view"
+              data-fernando-view="system"
+            >
+
+              <div class="fernando-system-intro">
+
+                <span class="mono">
+                  SISTEMA VISUAL & COMPONENTES
+                </span>
+
+                <h4>
+                  Regras que conectam design e implementação.
+                </h4>
+
+                <p>
+                  Cores, tipografia, componentes e estados utilizados no Figma e no site publicado.
+                </p>
+
+              </div>
+
+              <div class="fa-system">
+
+                <aside class="fa-system-sidebar">
+
+                  <span>
+                    ALANA UI
+                  </span>
+
+                  <button
+                    class="fa-system-btn active"
+                    data-fa-system="foundation"
+                    type="button"
+                  >
+                    Foundations
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="buttons"
+                    type="button"
+                  >
+                    Buttons & states
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="navigation"
+                    type="button"
+                  >
+                    Navigation
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="cards"
+                    type="button"
+                  >
+                    Cards
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="forms"
+                    type="button"
+                  >
+                    Forms
+                  </button>
+
+                  <button
+                    class="fa-system-btn"
+                    data-fa-system="tokens"
+                    type="button"
+                  >
+                    Tokens
+                  </button>
+
+                </aside>
+
+                <div class="fa-system-canvas">
+
+                  <section
+                    class="fa-system-panel active"
+                    data-fa-system-panel="foundation"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Foundations
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Color system</span>
+                          <span>Identidade da Alana</span>
+                        </div>
+
+                        <div class="fa-color-grid">
+                          <div class="fa-color-token" style="background:#0B3D2E;color:#fff"><strong>Verde profundo</strong><span>#0B3D2E</span></div>
+                          <div class="fa-color-token" style="background:#214D39;color:#fff"><strong>Verde principal</strong><span>#214D39</span></div>
+                          <div class="fa-color-token" style="background:#C9A227;color:#0b3d2e"><strong>Dourado</strong><span>#C9A227</span></div>
+                          <div class="fa-color-token" style="background:#EFE6DD;color:#0b3d2e"><strong>Bege</strong><span>#EFE6DD</span></div>
+                          <div class="fa-color-token" style="background:#FDFBF7;color:#0b3d2e"><strong>Off-white</strong><span>#FDFBF7</span></div>
+                        </div>
+                      </article>
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Typography</span>
+                          <span>Títulos + Texto</span>
+                        </div>
+
+                        <div class="fa-type-grid">
+                          <article class="fa-type-card lora"><span>TÍTULOS / LORA</span><strong>Aa</strong><p>Você não precisa ter todas as respostas para começar a se escutar.</p></article>
+                          <article class="fa-type-card source"><span>TEXTOS / SOURCE SANS 3</span><strong>Aa</strong><p>Leitura confortável para textos longos e acolhedores.</p></article>
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="buttons"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Buttons & states
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Primary CTA</span>
+                          <span>Hover dourado</span>
+                        </div>
+
+                        <button
+                          class="fa-primary-demo"
+                          id="faPrimaryDemo"
+                          type="button"
+                        >
+                          Quero iniciar meu atendimento
+                        </button>
+
+                        <div class="fa-state-controls">
+
+                          <button
+                            class="active"
+                            data-fa-button-state="default"
+                            type="button"
+                          >
+                            Default
+                          </button>
+
+                          <button
+                            data-fa-button-state="hover"
+                            type="button"
+                          >
+                            Hover
+                          </button>
+
+                          <button
+                            data-fa-button-state="disabled"
+                            type="button"
+                          >
+                            Disabled
+                          </button>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Secondary CTA</span>
+                          <span>Hero</span>
+                        </div>
+
+                        <button
+                          class="fa-secondary-demo"
+                          type="button"
+                        >
+                          Conheça minha abordagem
+                        </button>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="navigation"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Navigation
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box wide">
+
+                        <div class="fa-component-label">
+                          <span>Desktop</span>
+                          <span>Header</span>
+                        </div>
+
+                        <div class="fa-nav-preview-stage">
+                        <div class="fa-nav-preview">
+                          <span class="fa-nav-theme-icon" aria-hidden="true">☾</span>
+                          <strong>Alana Santos</strong>
+                          <div class="fa-nav-preview-links">
+                            <span>Sobre mim</span>
+                            <span>Como posso ajudar</span>
+                            <span>Minha abordagem</span>
+                            <span>Atendimento</span>
+                            <span>Dúvidas</span>
+                          </div>
+                          <button type="button">Agendar consulta</button>
+                        </div>
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-component-label">
+                          <span>Mobile</span>
+                          <span>Compact</span>
+                        </div>
+
+                        <div class="fa-mobile-nav-preview">
+
+                          <span class="fa-nav-theme-icon" aria-hidden="true">☾</span>
+
+                          <strong>Alana Santos</strong>
+
+                          <button type="button">
+                            ☰
+                          </button>
+
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="cards"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Cards
+                    </h4>
+
+                    <div class="fa-component-grid">
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-quality-card">
+
+                          <strong>Ansiedade e angústia</strong>
+                          <p>Card de tema de atendimento, com ícone e descrição curta.</p>
+
+                        </div>
+
+                      </article>
+
+                      <article class="fa-component-box">
+
+                        <div class="fa-quality-card dark">
+
+                          <strong>Ansiedade e angústia</strong>
+                          <p>O mesmo componente no modo escuro.</p>
+
+                        </div>
+
+                      </article>
+
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="forms"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Forms
+                    </h4>
+
+                    <div class="fa-component-box">
+
+                      <div class="fa-form-system-demo">
+                        <div class="fa-form-system-row two">
+                          <label><span>Nome completo*</span><input type="text" placeholder="Nome completo"></label>
+                          <label><span>WhatsApp com DDD *</span><input type="text" placeholder="(62) 99999-9999"></label>
+                        </div>
+                        <div class="fa-form-system-row two">
+                          <label><span>Modalidade de atendimento *</span><select><option>Selecione a modalidade</option><option>Online</option><option>Presencial</option><option>Ainda não decidi</option></select></label>
+                          <label><span>Para quem é o atendimento? *</span><select><option>Selecione o público</option><option>Para mim - adulto</option><option>Para adolescente de 12 a 17 anos</option></select></label>
+                        </div>
+                        <label><span>Mensagem (opcional)</span><textarea placeholder="Escreva aqui, se desejar."></textarea></label>
+                      </div>
+                    </div>
+
+                  </section>
+
+                  <section
+                    class="fa-system-panel"
+                    data-fa-system-panel="tokens"
+                  >
+
+                    <h4 class="fa-system-title">
+                      Tokens
+                    </h4>
+
+                    <div class="fa-system-token-grid">
+                      <div><strong>32px</strong><span>Radius dos botões</span></div>
+                      <div><strong>16px</strong><span>Radius dos cards</span></div>
+                      <div><strong>100px</strong><span>Margem desktop</span></div>
+                      <div><strong>16px</strong><span>Margem mobile</span></div>
+                      <div><strong>1440px</strong><span>Referência desktop</span></div>
+                      <div><strong>390px</strong><span>Referência mobile</span></div>
+                    </div>
+
+                  </section>
+
+                </div>
+
+              </div>
+
+            </section>
+
+            <section
+              class="fernando-view"
+              data-fernando-view="responsive"
+            >
+
+              <div class="fernando-system-intro">
+
+                <span class="mono">
+                  DESIGN RESPONSIVO
+                </span>
+
+                <h4>
+                  O mesmo conteúdo, com decisões próprias para cada tela.
+                </h4>
+
+                <p>
+                  A versão mobile não replica simplesmente o desktop em escala
+                  menor. Navegação, galerias, tipografia e componentes mudam de
+                  composição quando o espaço disponível exige outra solução.
+                </p>
+
+              </div>
+
+              <div class="fa-responsive-showcase">
+
+                <div class="fa-device-desktop">
+
+                  <div class="fa-browser-bar">
+
+                    <div class="fa-browser-dots">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+
+                    <div class="fa-browser-address">
+                      alana-santos-psicologa.vercel.app
+                    </div>
+
+                    <span class="fa-browser-link">
+                      DESKTOP
+                    </span>
+
+                  </div>
+
+                  <div class="fa-desktop-artboard-stage"><div
+                    class="fa-desktop-viewport"
+                    data-fa-desktop-height="780"
+                  >
+
+                    <div class="fa-desktop-canvas">
+
+                      <iframe
+                        data-src="https://alana-santos-psicologa.vercel.app/"
+                        title="Alana Santos — versão desktop"
+                        loading="lazy"
+                      ></iframe>
+
+                    </div>
+
+                  </div>
+
+                  </div><div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Desktop
+                    </strong>
+
+                    <span>
+                      1440px • navegação completa
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <div class="fa-device-mobile-artboard">
+
+                  <div class="fa-mobile-artboard-bar">
+
+                    <span>
+                      MOBILE VIEWPORT
+                    </span>
+
+                    <strong>
+                      390px
+                    </strong>
+
+                  </div>
+
+                  <div class="fa-mobile-artboard-stage">
+
+                    <div class="fa-mobile-artboard-viewport">
+
+                      <iframe
+                        data-src="https://alana-santos-psicologa.vercel.app/"
+                        title="Alana Santos — versão mobile"
+                        loading="lazy"
+                      ></iframe>
+
+                    </div>
+
+                  </div>
+
+                  <div class="fa-responsive-device-caption">
+
+                    <strong>
+                      Mobile
+                    </strong>
+
+                    <span>
+                      390px • composição adaptada
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="fa-responsive-notes">
+
+                <article class="fa-responsive-note">
+
+                  <span>
+                    01 / NAVEGAÇÃO
+                  </span>
+
+                  <h4>
+                    Menu compacto
+                  </h4>
+
+                  <p>
+                    A navegação horizontal do desktop é substituída por um
+                    controle dedicado, preservando espaço para o conteúdo.
+                  </p>
+
+                </article>
+
+                <article class="fa-responsive-note">
+
+                  <span>
+                    02 / GALERIAS
+                  </span>
+
+                  <h4>
+                    Uma imagem por vez
+                  </h4>
+
+                  <p>
+                    No mobile, a galeria prioriza o conteúdo ativo sem manter a
+                    pré-visualização da próxima imagem ocupando a tela.
+                  </p>
+
+                </article>
+
+                <article class="fa-responsive-note">
+
+                  <span>
+                    03 / TIPOGRAFIA
+                  </span>
+
+                  <h4>
+                    Escala específica
+                  </h4>
+
+                  <p>
+                    Títulos, textos e espaçamentos recebem escalas próprias para
+                    manter legibilidade e evitar quebras desconfortáveis.
+                  </p>
+
+                </article>
+
+              </div>
+
+            </section>
+
+            <section
+              class="fernando-view"
+              data-fernando-view="prototype"
+            >
+
+              <div class="fa-figma-shell">
+
+                <div class="fa-figma-head">
+
+                  <div>
+                    <span>
+                      PROTÓTIPO
+                    </span>
+
+                    <strong>
+                      Alana Santos
+                    </strong>
+                  </div>
+
+                  <a
+                    href="https://www.figma.com/proto/rsLL40KKKQTPCHCG6cmpMs/Alana-Santos?node-id=36-1536&starting-point-node-id=36%3A1536"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    abrir no Figma ↗
+                  </a>
+
+                </div>
+
+                <p class="fa-figma-status" role="status">Preparando o protótipo… Você também pode abrir no Figma ↗.</p><div class="fa-figma-frame">
+
+                  <iframe
+                    data-src="https://embed.figma.com/proto/rsLL40KKKQTPCHCG6cmpMs/Alana-Santos?node-id=36-1536&starting-point-node-id=36%3A1536&scaling=scale-down-width&content-scaling=fixed&viewport-controls=true&device-frame=false&embed-host=portfolio"
+                    allowfullscreen
+                    title="Protótipo Alana Santos"
+                  ></iframe>
+
+                </div>
+
+              </div>
+
+            </section>
+
+          </div>
+
+        </article><div class="case-next"><a href="/projetos/fernando-amaral/">← Projeto anterior: Fernando Amaral</a><a href="/projetos/voit-consultoria/">Próximo projeto: Voit Consultoria →</a></div></main>    <footer>
+
+      <span>
+        © 2026 Raquel Renovato
+      </span>
+
+      <span>
+
+        <a href="mailto:raquel.renovato.design@gmail.com">
+          raquel.renovato.design@gmail.com
+        </a>
+
+        ·
+
+        <a
+          href="https://www.linkedin.com/in/raquel-renovato-b1269b14b/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a> <a class="footer-github" href="https://github.com/raquel-renovato" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Raquel Renovato"><img src="/img/img-logo-ferramentas/github-icon.svg" width="22" height="22" alt="GitHub"></a>
+
+      </span>
+
+    </footer></div><div
+    id="imgModal"
+    class="img-modal"
+  >
+
+    <button
+      type="button"
+      class="img-modal-close"
+      id="imgModalClose"
+      aria-label="Fechar imagem"
+    >
+      ×
+    </button>
+
+    <img
+      id="imgModalTarget"
+      class="img-modal-content"
+      alt=""
+    >
+
+  </div><script src="/js/portfolio.js" defer></script><script src="/js/navigation.js" defer></script></body></html>
