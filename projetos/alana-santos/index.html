@@ -62,7 +62,12 @@
     .case-page #fernando-project.alana-project .fa-mobile-nav-preview button { border-color:#efe6dd; color:#0b3d2e; }
     .case-page #fernando-project.alana-project .fa-form-system-demo input, .case-page #fernando-project.alana-project .fa-form-system-demo select, .case-page #fernando-project.alana-project .fa-form-system-demo textarea { border-radius:5px; border-color:rgba(33,77,57,.4); }
     /* Protótipo: fundo do Figma no tom off-white da Alana; o recorte do case Fernando esconde as margens do embed */
-    .case-page #fernando-project.alana-project .fa-figma-frame { background:#fdfbf7; }
+    .case-page #fernando-project.alana-project .fa-figma-frame { position:relative; background:#fdfbf7 url("/img/img-alana/alana-hero.webp") top center / 100% auto no-repeat; }
+    /* Enquanto o Figma carrega, mostra a imagem do hero com um aviso; o protótipo aparece quando estiver pronto */
+    .case-page #fernando-project.alana-project .fa-figma-frame iframe { opacity:0; transition:opacity .4s; }
+    .case-page #fernando-project.alana-project .fa-figma-frame.is-ready iframe { opacity:1; }
+    .case-page #fernando-project.alana-project .fa-figma-frame::after { content:"Carregando o protótipo do Figma…"; position:absolute; left:50%; bottom:24px; transform:translateX(-50%); padding:8px 16px; border-radius:32px; background:rgba(11,61,46,.9); color:#fff; font:500 .75rem/1.2 "IBM Plex Sans",sans-serif; pointer-events:none; transition:opacity .3s; }
+    .case-page #fernando-project.alana-project .fa-figma-frame.is-ready::after { opacity:0; }
   </style>
 </head>
 <body class="case-page"><div id="site-content" class="visible"><a class="skip-link" href="#main-content">Pular para o conteúdo</a>    <nav id="top">
@@ -932,4 +937,10 @@
       alt=""
     >
 
-  </div><script src="/js/portfolio.js" defer></script><script src="/js/navigation.js" defer></script></body></html>
+  </div><script>
+  document.addEventListener('DOMContentLoaded',()=>{const frame=document.querySelector('.alana-project .fa-figma-frame');const iframe=frame?.querySelector('iframe');if(!iframe)return;
+    const ready=()=>setTimeout(()=>frame.classList.add('is-ready'),1800);iframe.addEventListener('load',()=>{if(iframe.src)ready();});
+    // carrega o protótipo assim que a pessoa abre a aba, sem esperar a rolagem
+    document.querySelector('[data-fernando-tab="prototype"]')?.addEventListener('click',()=>{if(iframe.dataset.src){iframe.src=iframe.dataset.src;delete iframe.dataset.src;}});
+    setTimeout(()=>frame.classList.add('is-ready'),12000);});
+  </script><script src="/js/portfolio.js" defer></script><script src="/js/navigation.js" defer></script></body></html>
