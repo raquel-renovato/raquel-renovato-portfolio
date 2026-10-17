@@ -917,10 +917,10 @@
         50;
 
       const RENATA_EXTENSIONS = [
+        "webp",
         "png",
         "jpg",
-        "jpeg",
-        "webp"
+        "jpeg"
       ];
 
       const renataMainSlide =
