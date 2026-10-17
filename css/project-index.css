@@ -55,3 +55,9 @@
  .project-index-copy { gap:4px; }
 }
 @media(prefers-reduced-motion:reduce) { .project-icon-large { transform:none; transition:none; } }
+
+/* Grupos da lista de projetos: UI em destaque, comunicação visual em seguida */
+.project-index li.project-index-group { display:flex; justify-content:space-between; align-items:baseline; padding:28px 0 10px; border-bottom:1px solid var(--ink); font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); }
+.project-index li.project-index-group:first-child { padding-top:6px; }
+.project-index li.project-index-group span:last-child { color:var(--dim, #777); }
+@media (max-width:700px){ .project-index li.project-index-group { padding-top:22px; font-size:.68rem; } }
