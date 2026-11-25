@@ -11,9 +11,9 @@
       --card: #E5DFD5;
       --card-hover: #DCD5C9;
 
-      --accent: #FB4617;
-      --accent-hover: #D9360B;
-      --accent-soft: rgba(251, 70, 23, 0.10);
+      --accent: #842C46;
+      --accent-hover: #652036;
+      --accent-soft: rgba(132, 44, 70, 0.10);
 
       --accent-green: #38483A;
 
@@ -47,9 +47,9 @@
       --card: #23201C;
       --card-hover: #2C2823;
 
-      --accent: #FB4617;
-      --accent-hover: #FF704C;
-      --accent-soft: rgba(251, 70, 23, 0.14);
+      --accent: #C96E86;
+      --accent-hover: #E39BAD;
+      --accent-soft: rgba(201, 110, 134, 0.14);
 
       --accent-green: #6E8B73;
 
@@ -2249,12 +2249,12 @@
     }
 
     .fa-system-btn.active {
-      background: #EAD0BE;
-      color: #FB4617;
+      background: rgba(132, 44, 70, 0.12);
+      color: var(--accent);
     }
 
     [data-theme="dark"] .fa-system-btn.active {
-      background: rgba(251, 70, 23, 0.16);
+      background: rgba(201, 110, 134, 0.16);
       color: var(--accent);
     }
 
