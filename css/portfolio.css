@@ -1108,6 +1108,8 @@
       height: 100%;
 
       object-fit: cover;
+      /* Prioriza o rosto no retrato vertical dentro da moldura circular. */
+      object-position: center 12%;
     }
 
     .const-floater {
